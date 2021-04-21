@@ -12,6 +12,7 @@ namespace EmotionalFix
 {
     public class Harmony_Patch
     {
+        public static string modPath;
         public static bool Hastrigger;
         public static List<EmotionCardXmlInfo> emotion1;
         public static List<EmotionCardXmlInfo> emotion2;
@@ -36,18 +37,15 @@ namespace EmotionalFix
             MethodInfo method8 = typeof(StageController).GetMethod("GameOver", AccessTools.all);
             HarmonyMethod postfix4 = new HarmonyMethod(method7);
             harmony.Patch((MethodBase)method8, postfix: postfix4);
-            //MethodInfo method9 = typeof(Harmony_Patch).GetMethod("BattleDiceBehavior_get_DiceMin_Pre");
-            //MethodInfo method10 = typeof(BattleDiceBehavior).GetMethod("get_DiceMin", AccessTools.all);
-            //HarmonyMethod prefix1 = new HarmonyMethod(method9);
-            //harmony.Patch((MethodBase)method10, prefix: prefix1);
-            MethodInfo method11 = typeof(Harmony_Patch).GetMethod("Decay_OnRoundEnd");
-            MethodInfo method12 = typeof(BattleUnitBuf_Decay).GetMethod("OnRoundEnd", AccessTools.all);
+            MethodInfo method9 = typeof(Harmony_Patch).GetMethod("Decay_OnRoundEnd");
+            MethodInfo method10 = typeof(BattleUnitBuf_Decay).GetMethod("OnRoundEnd", AccessTools.all);
+            HarmonyMethod prefix1 = new HarmonyMethod(method9);
+            harmony.Patch((MethodBase)method10, prefix: prefix1);
+            MethodInfo method11 = typeof(Harmony_Patch).GetMethod("BattleDiceBehavior_UpdateDiceFinalValue");
+            MethodInfo method12 = typeof(BattleDiceBehavior).GetMethod("UpdateDiceFinalValue", AccessTools.all);
             HarmonyMethod prefix2 = new HarmonyMethod(method11);
             harmony.Patch((MethodBase)method12, prefix: prefix2);
-            MethodInfo method13 = typeof(Harmony_Patch).GetMethod("BattleDiceBehavior_UpdateDiceFinalValue");
-            MethodInfo method14 = typeof(BattleDiceBehavior).GetMethod("UpdateDiceFinalValue", AccessTools.all);
-            HarmonyMethod prefix3 = new HarmonyMethod(method13);
-            harmony.Patch((MethodBase)method14, prefix: prefix3);
+            modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
             EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
             EmotionCardAbility_bossbird7.Change = new List<BattleDiceCardModel>();
             EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
@@ -150,27 +148,27 @@ namespace EmotionalFix
         public static Difficulty DifficultyTweak()
         {
             Difficulty Dif = Difficulty.Normal;
-            foreach(string str in File.ReadAllLines(Application.dataPath + "/BaseMods/EmotionFIx/Mod介绍.txt"))
+            foreach(string str in File.ReadAllLines(modPath + "/Difficulty.txt"))
             {
                 string text = str.Trim();
-                if (!text.StartsWith("请选择你的难度"))
+                if (!text.StartsWith("Choose Your Difficulty (Casual, Normal, Hard, Brutal):"))
                     continue;
-                if (text.Contains("至福乐土"))
+                if (text.Contains("Casual"))
                 {
                     Dif = Difficulty.Easy;
                     break;
                 }
-                if (text.Contains("水仙花平原"))
+                if (text.Contains("Normal"))
                 {
                     Dif = Difficulty.Normal;
                     break;
                 }
-                if (text.Contains("塔耳塔罗斯"))
+                if (text.Contains("Hard"))
                 {
                     Dif = Difficulty.Hard;
                     break;
                 }
-                if (text.Contains("冥王神殿"))
+                if (text.Contains("Brutal"))
                 {
                     Dif = Difficulty.Brutal;
                     break;
