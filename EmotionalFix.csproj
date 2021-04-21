@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D1EBD28-4EE4-4E80-BA13-4225F10F0CAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmotionalFix</RootNamespace>
+    <AssemblyName>EmotionalFix</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseMod">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\BaseMod.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BehaviourAction_BossBird6SoundFar.cs" />
+    <Compile Include="BehaviourAction_BossBird6SoundNear.cs" />
+    <Compile Include="BattleVoidBehaviour.cs" />
+    <Compile Include="DiceCardAbility_invalid.cs" />
+    <Compile Include="DiceCardAbility_PlagueDoctor.cs" />
+    <Compile Include="DiceCardAbility_Tear.cs" />
+    <Compile Include="DiceCardAbility_Reflect.cs" />
+    <Compile Include="DiceCardSelfAbility_emotion_bless_upgraded.cs" />
+    <Compile Include="DiceCardSelfAbility_BigBirdParalysis.cs" />
+    <Compile Include="DiceCardSelfAbility_BlessingPlagueUpGraded.cs" />
+    <Compile Include="DiceCardSelfAbility_BlessingPlague.cs" />
+    <Compile Include="DiceCardSelfAbility_SilenceStun.cs" />
+    <Compile Include="DiceCardSelfAbility_Clothes.cs" />
+    <Compile Include="DiceCardSelfAbility_King.cs" />
+    <Compile Include="DiceCardSelfAbility_Servant.cs" />
+    <Compile Include="DiceCardSelfAbility_Knight.cs" />
+    <Compile Include="DiceCardSelfAbility_Queen.cs" />
+    <Compile Include="DiceCardSelfAbility_Request.cs" />
+    <Compile Include="DiceCardAbility_Execute.cs" />
+    <Compile Include="EmotionCardAbility_bluestar1.cs" />
+    <Compile Include="EmotionCardAbility_bluestar3.cs" />
+    <Compile Include="EmotionCardAbility_bluestar2.cs" />
+    <Compile Include="EmotionCardAbility_bossbird3.cs" />
+    <Compile Include="EmotionCardAbility_bossbird2.cs" />
+    <Compile Include="EmotionCardAbility_bossbird1.cs" />
+    <Compile Include="EmotionCardAbility_bossbird5.cs" />
+    <Compile Include="EmotionCardAbility_bossbird4.cs" />
+    <Compile Include="EmotionCardAbility_bossbird6.cs" />
+    <Compile Include="EmotionCardAbility_bossbird8.cs" />
+    <Compile Include="EmotionCardAbility_bossbird7.cs" />
+    <Compile Include="EmotionCardAbility_bloodbath3.cs" />
+    <Compile Include="EmotionCardAbility_bloodbath2.cs" />
+    <Compile Include="EmotionCardAbility_bloodbath.cs" />
+    <Compile Include="EmotionCardAbility_bloodytree2.cs" />
+    <Compile Include="EmotionCardAbility_bigbird2.cs" />
+    <Compile Include="EmotionCardAbility_bigbadwolf3.cs" />
+    <Compile Include="EmotionCardAbility_bigbadwolf2.cs" />
+    <Compile Include="EmotionCardAbility_doki.cs" />
+    <Compile Include="EmotionCardAbility_danggocreature3.cs" />
+    <Compile Include="EmotionCardAbility_danggocreature2.cs" />
+    <Compile Include="EmotionCardAbility_danggocreature1.cs" />
+    <Compile Include="EmotionCardAbility_clownofnihil2.cs" />
+    <Compile Include="EmotionCardAbility_clownofnihil1.cs" />
+    <Compile Include="EmotionCardAbility_clownofnihil3.cs" />
+    <Compile Include="EmotionCardAbility_heart_rush.cs" />
+    <Compile Include="EmotionCardAbility_heart.cs" />
+    <Compile Include="EmotionCardAbility_longbird3.cs" />
+    <Compile Include="EmotionCardAbility_longbird1.cs" />
+    <Compile Include="EmotionCardAbility_longbird2.cs" />
+    <Compile Include="EmotionCardAbility_ozma3.cs" />
+    <Compile Include="EmotionCardAbility_ozma2.cs" />
+    <Compile Include="EmotionCardAbility_pinocchio3.cs" />
+    <Compile Include="EmotionCardAbility_plaguedoctor1.cs" />
+    <Compile Include="EmotionCardAbility_snowqueen3.cs" />
+    <Compile Include="EmotionCardAbility_snowqueen1.cs" />
+    <Compile Include="EmotionCardAbility_silence3.cs" />
+    <Compile Include="EmotionCardAbility_silence1.cs" />
+    <Compile Include="EmotionCardAbility_smallbird3.cs" />
+    <Compile Include="EmotionCardAbility_smallbird2.cs" />
+    <Compile Include="EmotionCardAbility_smallbird1.cs" />
+    <Compile Include="EmotionCardAbility_pinocchio1.cs" />
+    <Compile Include="EmotionCardAbility_whitenight4.cs" />
+    <Compile Include="EmotionCardAbility_whitenight3.cs" />
+    <Compile Include="EmotionCardAbility_whitenight2.cs" />
+    <Compile Include="EmotionCardAbility_wizard2.cs" />
+    <Compile Include="EmotionCardAbility_wizard3.cs" />
+    <Compile Include="EmotionCardAbility_wizard1.cs" />
+    <Compile Include="EmotionCardAbility_waybackhome3.cs" />
+    <Compile Include="EmotionCardAbility_waybackhome2.cs" />
+    <Compile Include="EmotionCardAbility_lumberjack3.cs" />
+    <Compile Include="EmotionCardAbility_nothing3.cs" />
+    <Compile Include="EmotionCardAbility_nosferatu2.cs" />
+    <Compile Include="EmotionCardAbility_nosferatu1.cs" />
+    <Compile Include="EmotionCardAbility_redhood3.cs" />
+    <Compile Include="EmotionCardAbility_redhood2.cs" />
+    <Compile Include="EmotionCardAbility_redhood1.cs" />
+    <Compile Include="EmotionCardAbility_scarecrow3.cs" />
+    <Compile Include="EmotionCardAbility_scarecrow1.cs" />
+    <Compile Include="EmotionCardAbility_servantofwrath3.cs" />
+    <Compile Include="EmotionCardAbility_servantofwrath2.cs" />
+    <Compile Include="EmotionCardAbility_servantofwrath1.cs" />
+    <Compile Include="EmotionCardAbility_kingofgreed2.cs" />
+    <Compile Include="EmotionCardAbility_kingofgreed1.cs" />
+    <Compile Include="EmotionCardAbility_knightofdespair2.cs" />
+    <Compile Include="EmotionCardAbility_knightofdespair3.cs" />
+    <Compile Include="EmotionCardAbility_knightofdespair1.cs" />
+    <Compile Include="EmotionCardAbility_queenofhatred1.cs" />
+    <Compile Include="EmotionCardAbility_queenofhatred3.cs" />
+    <Compile Include="EmotionCardAbility_queenofhatred2.cs" />
+    <Compile Include="EmotionCardAbility_orchestra3.cs" />
+    <Compile Include="EmotionCardAbility_orchestra2.cs" />
+    <Compile Include="EmotionCardAbility_orchestra1.cs" />
+    <Compile Include="EmotionCardAbility_alriune3.cs" />
+    <Compile Include="EmotionCardAbility_alriune2.cs" />
+    <Compile Include="EmotionCardAbility_alriune1.cs" />
+    <Compile Include="EmotionCardAbility_freischutz1.cs" />
+    <Compile Include="EmotionCardAbility_porccubus.cs" />
+    <Compile Include="EmotionCardAbility_porccubus2.cs" />
+    <Compile Include="EmotionCardAbility_galaxyChild2.cs" />
+    <Compile Include="EmotionCardAbility_galaxyChild3.cs" />
+    <Compile Include="EmotionCardAbility_fragmentSpace3.cs" />
+    <Compile Include="EmotionCardAbility_fragmentSpace2.cs" />
+    <Compile Include="EmotionCardAbility_fragmentSpace.cs" />
+    <Compile Include="EmotionCardAbility_blackswan3.cs" />
+    <Compile Include="EmotionCardAbility_blackswan2.cs" />
+    <Compile Include="EmotionCardAbility_blackswan1.cs" />
+    <Compile Include="EmotionCardAbility_latitia1.cs" />
+    <Compile Include="EmotionCardAbility_latitia2.cs" />
+    <Compile Include="EmotionCardAbility_spiderBud2.cs" />
+    <Compile Include="EmotionCardAbility_redShoes3.cs" />
+    <Compile Include="EmotionCardAbility_redShoes2.cs" />
+    <Compile Include="EmotionCardAbility_redShoes.cs" />
+    <Compile Include="EmotionCardAbility_freischutz3.cs" />
+    <Compile Include="EmotionCardAbility_freischutz2.cs" />
+    <Compile Include="EmotionCardAbility_butterfly3.cs" />
+    <Compile Include="EmotionCardAbility_butterfly2.cs" />
+    <Compile Include="EmotionCardAbility_butterfly1.cs" />
+    <Compile Include="EmotionCardAbility_singingMachine3.cs" />
+    <Compile Include="EmotionCardAbility_singingMachine2.cs" />
+    <Compile Include="EmotionCardAbility_singingMachine.cs" />
+    <Compile Include="EmotionCardAbility_murderer3.cs" />
+    <Compile Include="EmotionCardAbility_murderer2.cs" />
+    <Compile Include="EmotionCardAbility_murderer1.cs" />
+    <Compile Include="EmotionCardAbility_queenbee3.cs" />
+    <Compile Include="EmotionCardAbility_queenbee2.cs" />
+    <Compile Include="EmotionCardAbility_queenbee1.cs" />
+    <Compile Include="EmotionCardAbility_fairy3.cs" />
+    <Compile Include="EmotionCardAbility_fairy1.cs" />
+    <Compile Include="EmotionCardAbility_teddy3.cs" />
+    <Compile Include="EmotionCardAbility_teddy2.cs" />
+    <Compile Include="EmotionCardAbility_teddy.cs" />
+    <Compile Include="EmotionCardAbility_burnningGirl3.cs" />
+    <Compile Include="EmotionCardAbility_burnningGirl.cs" />
+    <Compile Include="EmotionCardAbility_snowwhite3.cs" />
+    <Compile Include="EmotionCardAbility_snowwhite2.cs" />
+    <Compile Include="EmotionCardAbility_snowwhite1.cs" />
+    <Compile Include="EmotionCardAbility_burnningGirl2.cs" />
+    <Compile Include="Harmony_Patch.cs" />
+    <Compile Include="PassiveAbility_1106301.cs" />
+    <Compile Include="PassiveAbility_668.cs" />
+    <Compile Include="PassiveAbility_667.cs" />
+    <Compile Include="PassiveAbility_666.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
