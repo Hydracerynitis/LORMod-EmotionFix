@@ -52,6 +52,7 @@ public class BattleVoidBehaviour
         this._diceResultValue = DiceStatCalculator.MakeDiceResult(this.GetDiceMin(), this.GetDiceMax(), 0);
         this.owner.passiveDetail.ChangeDiceResult(OriginalDice, ref this._diceResultValue);
         this.owner.emotionDetail.ChangeDiceResult(OriginalDice, ref this._diceResultValue);
+        this.owner.bufListDetail.ChangeDiceResult(OriginalDice, ref this._diceResultValue);
         if (this._diceResultValue < this.GetDiceMin())
             this._diceResultValue = this.GetDiceMin();
         if (this._diceResultValue < 1)
@@ -86,13 +87,17 @@ public class BattleVoidBehaviour
     {
         if (target == null)
             return;
-        DiceStatBonus diceStatBonus = this._statBonus.Copy();
         this.abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage()));
         this.abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage(target)));
         this.owner.BeforeGiveDamage(OriginalDice);
         this.RefreshStatBonus();
-        double num1 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.dmg + this.owner.UnitData.unitData.giftInventory.GetStatBonus_Dmg(this.behaviourInCard.Detail)) - (double)target.GetDamageReduction(OriginalDice)) * (1.0 + (double)(this._statBonus.dmgRate + target.GetDamageIncreaseRate()) / 100.0) * (1.0 + (double)target.GetDamageRate() / 100.0);
-        double num2 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.breakDmg) - (double)target.GetBreakDamageReduction(OriginalDice)) * (1.0 + (double)(this._statBonus.breakRate + target.GetBreakDamageIncreaseRate()) / 100.0) * (1.0 + (double)target.GetBreakDamageRate() / 100.0);
+        if (OriginalDice.IsBlocked)
+        {
+            this.owner.battleCardResultLog.SetIsBlocked(true);
+            return;
+        }
+        double num1 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.dmg + this.owner.UnitData.unitData.giftInventory.GetStatBonus_Dmg(this.behaviourInCard.Detail)) - (double)target.GetDamageReduction(OriginalDice)) * (double)Mathf.Min((1.0f + (float)(this._statBonus.dmgRate + target.GetDamageIncreaseRate()) / 100.0f),0.0f) * (double)target.GetDamageRate();
+        double num2 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.breakDmg) - (double)target.GetBreakDamageReduction(OriginalDice)) * (double)Mathf.Min((1.0f + (float)(this._statBonus.breakRate + target.GetBreakDamageIncreaseRate()) / 100.0f),0f) * (double)target.GetBreakDamageRate();
         Vector3 normalized = (target.view.WorldPosition - this.owner.view.WorldPosition).normalized;
         AtkResist resistHp = target.GetResistHP(this.behaviourInCard.Detail);
         AtkResist resistBp = target.GetResistBP(this.behaviourInCard.Detail);
@@ -105,8 +110,8 @@ public class BattleVoidBehaviour
                 break;
             }
         }
-        int dmg;
-        int breakdmg;
+        double dmg;
+        double breakdmg;
         if (flag)
         {
             int num3 = int.MaxValue;
@@ -151,12 +156,12 @@ public class BattleVoidBehaviour
             dmg = 0;
             breakdmg = 0;
         }
-        int damage = target.TakeDamage(dmg, attacker: this.owner);
+        int damage = target.TakeDamage((int)dmg, attacker: this.owner);
         this.owner.emotionDetail.CheckDmg(damage, target);
         this.owner.passiveDetail.AfterGiveDamage(damage);
-        target.TakeBreakDamage(breakdmg, attacker: this.owner, atkResist: resistBp);
+        target.TakeBreakDamage((int)breakdmg, attacker: this.owner, atkResist: resistBp);
         this.owner.battleCardResultLog.SetDamageGiven(damage);
-        this.owner.battleCardResultLog.SetBreakDmgGiven(breakdmg);
+        this.owner.battleCardResultLog.SetBreakDmgGiven((int)breakdmg);
         target.battleCardResultLog.SetDeathState(target.IsDead());
         this.owner.history.damageAtOneRoundByDice += damage;
         if (target.faction == Faction.Player)
