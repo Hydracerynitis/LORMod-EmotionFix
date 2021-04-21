@@ -83,9 +83,9 @@ namespace EmotionalFix
                 emotionCard = card;
                 stack = 0;
             }
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail)
+            public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
-                if (behaviourDetail == BehaviourDetail.Slash)
+                if (behavior.Detail == BehaviourDetail.Slash)
                 {
                     int reduce = EmotionCardAbility_bloodbath2.Reduce;
                     this._owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
@@ -93,7 +93,7 @@ namespace EmotionalFix
                     this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                     return reduce;
                 }
-                return base.GetDamageReduction(behaviourDetail);
+                return base.GetDamageReduction(behavior);
             }
             public override void OnRoundEnd()
             {
@@ -111,9 +111,9 @@ namespace EmotionalFix
                 emotionCard = card;
                 stack = 0;
             }
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail)
+            public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
-                if (behaviourDetail == BehaviourDetail.Hit)
+                if (behavior.Detail == BehaviourDetail.Hit)
                 {
                     int reduce = EmotionCardAbility_bloodbath2.Reduce;
                     this._owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
@@ -121,7 +121,7 @@ namespace EmotionalFix
                     this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                     return reduce;
                 }
-                return base.GetDamageReduction(behaviourDetail);
+                return base.GetDamageReduction(behavior);
             }
             public override void OnRoundEnd()
             {
@@ -139,9 +139,9 @@ namespace EmotionalFix
                 emotionCard = card;
                 stack = 0;
             }
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail)
+            public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
-                if (behaviourDetail == BehaviourDetail.Penetrate)
+                if (behavior.Detail == BehaviourDetail.Penetrate)
                 {
                     int reduce = EmotionCardAbility_bloodbath2.Reduce;
                     this._owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
@@ -149,7 +149,7 @@ namespace EmotionalFix
                     this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                     return reduce;
                 }
-                return base.GetDamageReduction(behaviourDetail);
+                return base.GetDamageReduction(behavior);
             }
             public override void OnRoundEnd()
             {

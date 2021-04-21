@@ -63,7 +63,7 @@ namespace EmotionalFix
             {
                 return -AddDmg;
             }
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail)
+            public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
                 return -AddDmg;
             }

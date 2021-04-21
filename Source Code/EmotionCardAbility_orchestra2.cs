@@ -64,7 +64,7 @@ namespace EmotionalFix
                 this.stack = 0;
             }
             public override bool TeamKill() => true;
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail) => -DmgAdd;
+            public override int GetDamageReduction(BattleDiceBehavior behavior) => -DmgAdd;
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
@@ -119,7 +119,7 @@ namespace EmotionalFix
             {
                 return true;
             }
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail) => -DmgAdd;
+            public override int GetDamageReduction(BattleDiceBehavior behavior) => -DmgAdd;
             public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
             {
                 BattleUnitModel owner = atkDice.owner;

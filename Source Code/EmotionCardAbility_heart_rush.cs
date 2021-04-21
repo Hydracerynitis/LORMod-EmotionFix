@@ -59,7 +59,7 @@ namespace EmotionalFix
             protected override string keywordId => "HeartExhaust";
             private int count;
             public override int SpeedDiceBreakedAdder() => 100;
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail) => -2;
+            public override int GetDamageReduction(BattleDiceBehavior behavior) => -2;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

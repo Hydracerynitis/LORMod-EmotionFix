@@ -33,7 +33,7 @@ namespace EmotionalFix
 
             public Nettle(int value) => this.stack = value;
 
-            public override int GetDamageReduction(BehaviourDetail behaviourDetail)
+            public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
                 return this.stack;
             }
