@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1101501">
+      <LocalizedName>恶意</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1101005">
+      <LocalizedName>第七枚子弹</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1103501">
+      <LocalizedName>破伞</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1103502">
+      <LocalizedName>编织衣物</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104401">
+      <LocalizedName>邪恶的化身！！！</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104501">
+      <LocalizedName>博爱魔法少女</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104502">
+      <LocalizedName>正义魔法少女</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104503">
+      <LocalizedName>幸福魔法少女</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104504">
+      <LocalizedName>勇气魔法少女</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1106201">
+      <LocalizedName>狼的角色</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1107401">
+      <LocalizedName>拯救</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1107501">
+      <LocalizedName>眼棱</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1108101">
+      <LocalizedName>沉默</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1108401">
+      <LocalizedName>洗礼</LocalizedName>
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

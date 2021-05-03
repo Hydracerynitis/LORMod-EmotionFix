@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<BattleCardAbility ID="Request">
+		<Desc>使用会消耗其拥有者25%最大混乱抗性</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Execute">
+		<Desc>对目标造成该骰子威力的伤害</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Reflect">
+		<Desc>[拼点胜利]对目标造成目标骰子威力的伤害和混乱伤害</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Clothes">
+		<Desc>[使用时]抽取一张书页，使所有友方单位获得2层荨麻衣</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Queen">
+		<Desc>[装备时]1幕之内使自身与博爱魔法少女[同化](每4幕至多同化1次)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Knight">
+		<Desc>[装备时]1幕之内使自身与正义魔法少女[同化](每4幕至多同化1次)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="King">
+		<Desc>[装备时]1幕之内使自身与幸运魔法少女[同化](每4幕至多同化1次)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Servant">
+		<Desc>[装备时]1幕之内使自身与勇气魔法少女[同化](每4幕至多同化1次)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="invalid">
+		<Desc>该骰子无法投掷出任何数值</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="SilenceStun">
+		<Desc>[装备时]使目标和自身在这一幕内施加眩晕</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="BlessingPlague">
+		<Desc>[战斗开始]使目标在这一幕获得1层忍耐并恢复6点血量</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="BlessingPlagueUpGraded">
+		<Desc>[战斗开始]使目标在这一幕获得2层忍耐并恢复12点血量</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="PlagueDoctor">
+		<Desc>[我会治愈所有的疾病，你将重获新生]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="emotion_bless">
+		<Desc>本书页将在装备后回到手中</Desc>
+		<Desc>[装备时]指定1名友方角色并在这一幕中使其获得1层[忍耐]且恢复6点体力</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="emotion_bless_upgraded">
+		<Desc>本书页将在装备后回到手中</Desc>
+		<Desc>[装备时]指定1名友方角色并在这一幕中使其获得2层[忍耐]且恢复12点体力</Desc>
+	</BattleCardAbility>
+</BattleCardAbilityDescRoot>
