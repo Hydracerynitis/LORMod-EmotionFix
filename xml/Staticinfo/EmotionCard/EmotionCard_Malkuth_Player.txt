@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <EmotionCard ID="2">
+		<Name>ScorchedGirl_Walk</Name>
+		<State>Negative</State>
+		<Sephirah>Malkuth</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-3</EmotionRate>
+		<TargetType>SelectOne</TargetType> 
+		<Script>burnningGirl</Script>
+	</EmotionCard>
+</EmotionCardXmlRoot>

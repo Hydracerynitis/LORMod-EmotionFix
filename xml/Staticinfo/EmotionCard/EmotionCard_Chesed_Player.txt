@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EmotionCard ID="4">
+		<Name>LumberJack_Cut</Name>
+		<State>Positive</State>
+		<Sephirah>Chesed</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>  
+		<TargetType>SelectOne</TargetType>
+		<Script>lumberjack1</Script>
+	</EmotionCard>
+	<EmotionCard ID="10">
+		<Name>Ozma_Boom</Name>
+		<State>Negative</State>
+		<Sephirah>Chesed</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>ozma1</Script>
+	</EmotionCard>
+	<EmotionCard ID="13">
+		<Name>Oz_Emerald</Name>
+		<State>Positive</State>
+		<Sephirah>Chesed</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>wizard1</Script>
+	</EmotionCard>
+	<EmotionCard ID="14">
+		<Name>Oz_Gift</Name>
+		<State>Negative</State>
+		<Sephirah>Chesed</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>All</TargetType>
+		<Script>wizard2</Script>
+	</EmotionCard>
+</EmotionCardXmlRoot>
