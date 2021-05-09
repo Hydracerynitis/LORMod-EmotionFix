@@ -28,9 +28,9 @@ namespace EmotionalFix
             {
                 this._owner.view.StartDeadEffect(false);
             }
-            catch (Exception ex)
+            catch
             {
-                Debug.LogError((object)ex);
+
             }
         }
         public override void OnRoundStart()

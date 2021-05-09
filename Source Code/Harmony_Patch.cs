@@ -21,36 +21,86 @@ namespace EmotionalFix
         public Harmony_Patch()
         {
             Harmony harmony = new Harmony("Hydracerynitis.EmotionFix");
-            MethodInfo method1 = typeof(Harmony_Patch).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
-            MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
-            HarmonyMethod postfix1 = new HarmonyMethod(method1);
-            harmony.Patch((MethodBase)method2, postfix: postfix1);
-            MethodInfo method3 = typeof(Harmony_Patch).GetMethod("StageController_StartBattle");
-            MethodInfo method4 = typeof(StageController).GetMethod("StartBattle", AccessTools.all);
-            HarmonyMethod postfix2 = new HarmonyMethod(method3);
-            harmony.Patch((MethodBase)method4, postfix: postfix2);
-            MethodInfo method5 = typeof(Harmony_Patch).GetMethod("StageController_EndBattlePhase");
-            MethodInfo method6 = typeof(StageController).GetMethod("EndBattlePhase", AccessTools.all);
-            HarmonyMethod postfix3 = new HarmonyMethod(method5);
-            harmony.Patch((MethodBase)method6, postfix: postfix3);
-            MethodInfo method7 = typeof(Harmony_Patch).GetMethod("StageController_GameOver");
-            MethodInfo method8 = typeof(StageController).GetMethod("GameOver", AccessTools.all);
-            HarmonyMethod postfix4 = new HarmonyMethod(method7);
-            harmony.Patch((MethodBase)method8, postfix: postfix4);
-            MethodInfo method9 = typeof(Harmony_Patch).GetMethod("Decay_OnRoundEnd");
-            MethodInfo method10 = typeof(BattleUnitBuf_Decay).GetMethod("OnRoundEnd", AccessTools.all);
-            HarmonyMethod prefix1 = new HarmonyMethod(method9);
-            harmony.Patch((MethodBase)method10, prefix: prefix1);
-            MethodInfo method11 = typeof(Harmony_Patch).GetMethod("BattleDiceBehavior_UpdateDiceFinalValue");
-            MethodInfo method12 = typeof(BattleDiceBehavior).GetMethod("UpdateDiceFinalValue", AccessTools.all);
-            HarmonyMethod prefix2 = new HarmonyMethod(method11);
-            harmony.Patch((MethodBase)method12, prefix: prefix2);
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
+            Debug.ModPatchDebug();
             EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
             EmotionCardAbility_bossbird7.Change = new List<BattleDiceCardModel>();
             EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
-            EmotionCardAbility_plaguedoctor1.WhiteNightClock=new Dictionary<UnitBattleDataModel, int>();
+            EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
             PassiveAbility_668.Leveluped = new List<UnitBattleDataModel>();
+            MethodInfo method1 = typeof(Harmony_Patch).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
+            MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
+            try
+            {
+                HarmonyMethod postfix1 = new HarmonyMethod(method1);
+                harmony.Patch((MethodBase)method2, postfix: postfix1);
+                Debug.Log("Patch " + method1.Name + " Succeed");
+            }
+            catch(Exception ex)
+            {
+                Debug.Error("HP_" + method1.Name, ex);
+            }
+            MethodInfo method3 = typeof(Harmony_Patch).GetMethod("StageController_StartBattle");
+            MethodInfo method4 = typeof(StageController).GetMethod("StartBattle", AccessTools.all);
+            try
+            {
+                HarmonyMethod postfix2 = new HarmonyMethod(method3);
+                harmony.Patch((MethodBase)method4, postfix: postfix2);
+                Debug.Log("Patch " + method3.Name + " Succeed");
+            }
+            catch(Exception ex)
+            {
+                Debug.Error("HP_" + method3.Name, ex);
+            }
+            MethodInfo method5 = typeof(Harmony_Patch).GetMethod("StageController_EndBattlePhase");
+            MethodInfo method6 = typeof(StageController).GetMethod("EndBattlePhase", AccessTools.all);
+            try
+            {
+                HarmonyMethod postfix3 = new HarmonyMethod(method5);
+                harmony.Patch((MethodBase)method6, postfix: postfix3);
+                Debug.Log("Patch " + method5.Name + " Succeed");
+            }
+            catch(Exception ex)
+            {
+                Debug.Error("HP_" + method5.Name, ex);
+            }
+            MethodInfo method7 = typeof(Harmony_Patch).GetMethod("StageController_GameOver");
+            MethodInfo method8 = typeof(StageController).GetMethod("GameOver", AccessTools.all);
+            try
+            {
+                HarmonyMethod postfix4 = new HarmonyMethod(method7);
+                harmony.Patch((MethodBase)method8, postfix: postfix4);
+                Debug.Log("Patch " + method7.Name + " Succeed");
+            }
+            catch(Exception ex)
+            {
+                Debug.Error("HP_" + method7.Name, ex);
+            }
+            MethodInfo method9 = typeof(Harmony_Patch).GetMethod("Decay_OnRoundEnd");
+            MethodInfo method10 = typeof(BattleUnitBuf_Decay).GetMethod("OnRoundEnd", AccessTools.all);
+            try
+            {
+                HarmonyMethod prefix1 = new HarmonyMethod(method9);
+                harmony.Patch((MethodBase)method10, prefix: prefix1);
+                Debug.Log("Patch " + method9.Name + " Succeed");
+            }
+            catch (Exception ex)
+            {
+                Debug.Error("HP_" + method9.Name, ex);
+            }
+            MethodInfo method11 = typeof(Harmony_Patch).GetMethod("BattleDiceBehavior_UpdateDiceFinalValue");
+            MethodInfo method12 = typeof(BattleDiceBehavior).GetMethod("UpdateDiceFinalValue", AccessTools.all);
+            try
+            {
+                HarmonyMethod prefix2 = new HarmonyMethod(method11);
+                harmony.Patch((MethodBase)method12, prefix: prefix2);
+                Debug.Log("Patch " + method11.Name + " Succeed");
+            }
+            catch (Exception ex)
+            {
+                Debug.Error("HP_" + method11.Name, ex);
+            }
+
         }
         public static void EmotionCardXmlList_GetEnemyEmotionNeutralCardList(ref List<EmotionCardXmlInfo> __result)
         {
@@ -69,6 +119,7 @@ namespace EmotionalFix
                 emotion3.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(15, SephirahType.Hokma));
                 enermy = Singleton<EmotionCardXmlList>.Instance.GetDataList_enemy(SephirahType.None);
                 Hastrigger = false;
+                Difficulty diff = DifficultyTweak();
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
                 {
                     if (alive.faction == Faction.Enemy)
@@ -90,7 +141,7 @@ namespace EmotionalFix
                             if (trigger)
                                 Hastrigger = true;
                         }
-                        switch (DifficultyTweak())
+                        switch (diff)
                         {
                             case (Difficulty.Easy):
                                 break;
@@ -107,6 +158,7 @@ namespace EmotionalFix
                                 typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(alive.passiveDetail, passiveList);
                                 break;
                         }
+                        Debug.Log("Passive is Added to "+alive.UnitData.unitData.name);
                     }
                     if (EmotionCardAbility_clownofnihil2.Clown.Contains(alive.UnitData))
                         alive.bufListDetail.AddBuf(new EmotionCardAbility_clownofnihil2.Clear());
@@ -148,11 +200,15 @@ namespace EmotionalFix
         public static Difficulty DifficultyTweak()
         {
             Difficulty Dif = Difficulty.Normal;
+            Debug.PathDebug("/Difficulty.txt", PathType.File);
+            Debug.Log("Difficulty input found");
             foreach(string str in File.ReadAllLines(modPath + "/Difficulty.txt"))
             {
                 string text = str.Trim();
                 if (!text.StartsWith("Choose Your Difficulty (Casual, Normal, Hard, Brutal):"))
                     continue;
+                int i = text.IndexOf("Choose Your Difficulty (Casual, Normal, Hard, Brutal):");
+                text = text.Remove(i, "Choose Your Difficulty (Casual, Normal, Hard, Brutal):".Length);
                 if (text.Contains("Casual"))
                 {
                     Dif = Difficulty.Easy;
@@ -174,6 +230,7 @@ namespace EmotionalFix
                     break;
                 }
             }
+            Debug.Log("Your Difficulty is " + Dif.ToString());
             return Dif;
         }
         public enum Difficulty

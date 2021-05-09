@@ -62,6 +62,7 @@
     <Compile Include="Source Code\Binah\BehaviourAction_BossBird6SoundFar.cs" />
     <Compile Include="Source Code\Binah\BehaviourAction_BossBird6SoundNear.cs" />
     <Compile Include="Source Code\Binah\BattleVoidBehaviour.cs" />
+    <Compile Include="Source Code\Debug.cs" />
     <Compile Include="Source Code\DiceCardAbility_invalid.cs" />
     <Compile Include="Source Code\Hokma\DiceCardAbility_PlagueDoctor.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardAbility_Tear.cs" />

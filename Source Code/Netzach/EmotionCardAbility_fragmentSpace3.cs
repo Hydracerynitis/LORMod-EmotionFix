@@ -39,9 +39,9 @@ namespace EmotionalFix
                 SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Cosmos_Sing")?.SetGlobalPosition(this._owner.view.WorldPosition);
                 SingletonBehavior<BattleCamManager>.Instance?.AddCameraFilter<CameraFilterCustom_universe>(true);
             }
-            catch (Exception ex)
+            catch 
             {
-                Debug.LogError((object)("Camera Filter Adding Failed " + (object)ex));
+
             }
         }
     }

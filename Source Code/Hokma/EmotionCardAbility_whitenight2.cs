@@ -41,7 +41,6 @@ namespace EmotionalFix
                     DropBookXmlInfo data = Singleton<DropBookXmlList>.Instance.GetData(id);
                     if (data == null)
                     {
-                        Debug.LogError((object)("dont exist book : " + (object)id));
                         break;
                     }
                     SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.DropBook(new List<string>()

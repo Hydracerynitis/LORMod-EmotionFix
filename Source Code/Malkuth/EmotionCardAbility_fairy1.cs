@@ -24,9 +24,9 @@ namespace EmotionalFix
                 this._effect?.SetLayer("Character");
                 SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Fariy_Special")?.SetGlobalPosition(this._owner.view.WorldPosition);
             }
-            catch (Exception ex)
+            catch 
             {
-                Debug.LogError((object)ex);
+
             }
         }
         public override void OnRoundEnd()
