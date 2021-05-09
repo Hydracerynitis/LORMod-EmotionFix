@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiceCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Card ID="1101501">
-		<Name>의뢰</Name>
+		<Name>恶意</Name>
 		<Artwork>SnowWhite_malice</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="FarAreaEach" Cost="0"/>
@@ -14,7 +14,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1100005">
-		<Name>의뢰</Name>
+		<Name>委托</Name>
 		<Artwork>Matan_Request</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="FarAreaEach" Cost="0" Affection="All"/>
@@ -27,7 +27,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1101005">
-		<Name>의뢰</Name>
+		<Name>第七颗子弹</Name>
 		<Artwork>Matan_Seven</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="Far" Cost="0"/>
@@ -40,7 +40,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1103501">
-		<Name>의뢰</Name>
+		<Name>破伞</Name>
 		<Artwork>BlackSwan_Umbrella</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="Near" Cost="0"/>
@@ -56,7 +56,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1103502">
-		<Name>의뢰</Name>
+		<Name>荨麻衣</Name>
 		<Artwork>BlackSwan_Family</Artwork>
 		<Rarity>Uncommon</Rarity>
 		<Spec Range="Near" Cost="0"/>
@@ -69,7 +69,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1104401">
-		<Name>의뢰</Name>
+		<Name>邪恶的化身</Name>
 		<Artwork>Angry_Angry</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="FarAreaEach" Cost="0" Affection="All"/>
@@ -84,7 +84,7 @@
 		<Priority>100</Priority>
 	</Card>
 	<Card ID="1104501">
-		<Name>의뢰</Name>
+		<Name>博爱魔法少女</Name>
 		<Artwork>QueenOfHatred_Laser</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="Instance" Cost="0"/>
@@ -94,7 +94,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1104502">
-		<Name>의뢰</Name>
+		<Name>绝望魔法少女</Name>
 		<Artwork>KnightOfDespair_Gaho</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="Instance" Cost="0"/>
@@ -104,7 +104,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1104503">
-		<Name>의뢰</Name>
+		<Name>幸运魔法少女</Name>
 		<Artwork>Greed_Protect</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="Instance" Cost="0"/>
@@ -114,7 +114,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1104504">
-		<Name>의뢰</Name>
+		<Name>勇气魔法少女</Name>
 		<Artwork>Angry_Poison</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="Instance" Cost="0"/>
@@ -124,7 +124,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1106201">
-		<Name>의뢰</Name>
+		<Name>狼的角色</Name>
 		<Artwork>BigBadWolf_Change</Artwork>
 		<Rarity>Uncommon</Rarity>
 		<Spec Range="Near" Cost="0"/>
@@ -138,7 +138,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1100015">
-		<Name>에메랄드</Name>
+		<Name>翡翠</Name>
 		<Artwork>Oz_Emerald</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="Instance" Cost="5"/>
@@ -150,7 +150,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1107401">
-		<Name>의뢰</Name>
+		<Name>巨目</Name>
 		<Artwork>Bigbird_Save</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="Near" Cost="0"/>
@@ -163,7 +163,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1107501">
-		<Name>의뢰</Name>
+		<Name>遮盖天空的双翅</Name>
 		<Artwork>ApocalypseBird_EGO_Laser</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="FarAreaEach" Cost="0"/>
@@ -173,7 +173,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1108101">
-		<Name>에메랄드</Name>
+		<Name>沉默</Name>
 		<Artwork>Clock_Kill</Artwork>
 		<Rarity>Rare</Rarity>
 		<Spec Range="Instance" Cost="2"/>
@@ -185,7 +185,7 @@
 		<Priority>0</Priority>
 	</Card>
 	<Card ID="1108401">
-		<Name>의뢰</Name>
+		<Name>洗礼</Name>
 		<Artwork>WhiteNight_Bless</Artwork>
 		<Rarity>Unique</Rarity>
 		<Spec Range="Far" Cost="0"/>
