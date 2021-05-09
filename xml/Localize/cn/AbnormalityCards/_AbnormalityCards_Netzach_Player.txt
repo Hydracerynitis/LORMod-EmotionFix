@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+    	<AbnormalityCard ID="UniverseZogak_Tentacle">
+			<Abnormality>宇宙碎片</Abnormality>
+			<CardName>穿透</CardName>
+			<AbilityDesc>[选择一名司书]
+该司书击中以穿刺骰子击中目标时将追加15%目标混乱抗性</AbilityDesc>
+			<FlaborText>被触须穿透的那一瞬间，今后的人生将再也无法激起你分毫的兴趣……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">否定。攻击。用以。帮助。给予。</Dialogue>
+				<Dialogue ID="2">我们。知识。只是。给予。传达。尚未。</Dialogue>
+				<Dialogue ID="3">人类。攻击。我们。遵从。协同。攻击。</Dialogue>
+				<Dialogue ID="4">攻击。快速。穿透。</Dialogue>
+				<Dialogue ID="5">人类。攻击。灵魂。消散。希望。毫无。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="UniverseZogak_Sing">
+			<Abnormality>宇宙碎片</Abnormality>
+			<CardName>无法理解</CardName>
+			<AbilityDesc>[选择一名司书]
+该司书击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)</AbilityDesc>
+			<FlaborText>总而言之，那家伙成功踏入了“宇宙碎片”的领域，但他的大脑显然无法承受。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">理解。与你。一同。人类。与我。</Dialogue>
+				<Dialogue ID="2">希望。理解。与你。与我。学习。</Dialogue>
+				<Dialogue ID="3">讲述。我之。故事。愿你。理解。努力。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ChildofGalaxy_Tear">
+			<Abnormality>银河之子</Abnormality>
+			<CardName>泪水</CardName>
+			<AbilityDesc>[选择一名司书]
+该司书陷入混乱时对所有角色造成等同于”该来宾混乱上限x35%“的混乱伤害(至多20点)</AbilityDesc>
+			<FlaborText>耳畔传来他的低语和呼吸……接着便是一片漆黑……就像我与他初见的那个夜晚……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">和我一起，在银河中漫步吧。</Dialogue>
+				<Dialogue ID="2">你也变成卵石吧，和我永不分离。</Dialogue>
+				<Dialogue ID="3">就和那夜一样，让我们再度回到从前……</Dialogue>
+				<Dialogue ID="4">能和你相遇，我很开心。</Dialogue>
+				<Dialogue ID="5">如果我又哭鼻子了，请帮我擦掉泪水吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ChildofGalaxy_Friend">
+			<Abnormality>银河之子</Abnormality>
+			<CardName>友谊之证</CardName>
+			<AbilityDesc>[选择一名司书]
+3幕之内，每一幕开始时为所有司书恢复15%的体力。(至多18点)</AbilityDesc>
+			<FlaborText>你手中的卵石闪耀着，摇曳着，颤动着。在那之后，它便化作整个银河。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">请不要丢掉它，也不要把它交给别人……</Dialogue>
+				<Dialogue ID="2">这是友谊的证明，请好好珍惜……</Dialogue>
+				<Dialogue ID="3">只要带上它，我就能永远伴你左右。</Dialogue>
+				<Dialogue ID="4">无论何时都要陪在我身边哦？请不要忘记我们的约定。</Dialogue>
+				<Dialogue ID="5">朋友受伤什么的……真叫人伤心难过呐。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Porccubus_Thorn">
+			<Abnormality>棘刺公交</Abnormality>
+			<CardName>棘刺</CardName>
+			<AbilityDesc>[选择一名司书]
+该司书以突刺骰子击中目标时将对其施加1层“快感”。
+若“快感”层数达到4，则对目标造成2~7点伤害与混乱伤害并重置该层数。</AbilityDesc>
+			<FlaborText>最初只需要把刺儿轻轻戳进皮肉，而如今需要用全身疯狂地摩擦才能获得等同的刺激。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">好呀，人家会亲热地弯下腰~这样你就可以摸摸人家啦~</Dialogue>
+				<Dialogue ID="2">一开始难免会觉得害怕，但试过几次就好办啦~</Dialogue>
+				<Dialogue ID="3">快到人家下面来，人家会帮你脱离苦海~</Dialogue>
+				<Dialogue ID="4">品尝一小口天堂的滋味罢了，有什么不好的呀~？</Dialogue>
+				<Dialogue ID="5">那些不知幸福为何物的家伙，还真是可怜呢~</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Porccubus_Boom">
+			<Abnormality>棘刺公交</Abnormality>
+			<CardName>嗨爆</CardName>
+			<AbilityDesc>[选择一名司书]
+该司书被击中时有50%的概率失去2~7点混乱抗性并抽取1张书页恢复1点光芒。(每一幕至多触发2次)</AbilityDesc>
+			<FlaborText>我的脑袋就要爆炸了，再见咯~</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">贪求常人无法承受的欢乐，迟早会崩溃的啦。</Dialogue>
+				<Dialogue ID="2">人家只是为你们送来临终前的欢笑~</Dialogue>
+				<Dialogue ID="3">先从一根开始，往后越来越多。</Dialogue>
+				<Dialogue ID="4">幸福得就像脑袋要爆了一样。</Dialogue>
+				<Dialogue ID="5">尝过甜头，就别想逃啦。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Alriune_flower">
+			<Abnormality>爱娜温</Abnormality>
+			<CardName>花瓣</CardName>
+			<AbilityDesc>[选择一名司书]
+每一幕开始时若该来宾混乱抗性超过50%失去其25%混乱抗性并为所有其他司书恢复等量的混乱抗性</AbilityDesc>
+			<FlaborText>你曾对我说，要用花瓣代替泪水。“我们都是从尘土中走来的，请不要轻言我的结局。”你告诉过我，漫身的鲜花将化作最后的遗言。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">空洞的眼窝亦能看清一切。</Dialogue>
+				<Dialogue ID="2">与所有渴望“生”的事物，一同归于尘土。</Dialogue>
+				<Dialogue ID="3">这些花朵肆意绽放，永不凋零。</Dialogue>
+				<Dialogue ID="4">裂隙之中……依然绽放着美丽的花朵。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Alriune_Bush">
+			<Abnormality>爱娜温</Abnormality>
+			<CardName>秋日的消逝</CardName>
+			<AbilityDesc>[选择一名司书]
+为该司书的突刺骰子赋予额外效果“[命中时] 对目标施加2层[余香]”
+(余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后将“余香”层数减半。)</AbilityDesc>
+			<FlaborText>怀着归于尘土的心愿，将所有渴望“生”的事物一同带入坟墓。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我的赎罪，于冰冷的窒息中，迎来尾声。</Dialogue>
+				<Dialogue ID="2">它被遗弃在黑暗的森林里，身心交瘁。</Dialogue>
+				<Dialogue ID="3">生于尘土，欲复归于尘土。</Dialogue>
+				<Dialogue ID="4">这并非我们的终局。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SilentOrchestra_Finale">
+			<Abnormality>沉默乐团</Abnormality>
+			<CardName>闭幕曲</CardName>
+			<AbilityDesc>[选择一名司书]
+若该司书使目标陷入混乱，则下一幕开始时使所有来宾失去3~4点光芒。</AbilityDesc>
+			<FlaborText>这首乐章会穿透你的一切。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">音乐将贯穿你的灵魂。</Dialogue>
+				<Dialogue ID="2">双脚站稳，献上掌声。</Dialogue>
+				<Dialogue ID="3">永不间断的掌声，激励着指挥家再次舞动指挥棒。</Dialogue>
+				<Dialogue ID="4">动人的旋律于空荡的舞台中回响。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>
