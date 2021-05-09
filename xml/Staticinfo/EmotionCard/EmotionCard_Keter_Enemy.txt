@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EmotionCard ID="91001">
+		<Name>Bloodbath_Blood_Enemy</Name>
+		<Artwork>Bloodbath_Blood</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>   
+		<Script>bloodbath</Script>
+	</EmotionCard>
+	<EmotionCard ID="91002">
+		<Name>Bloodbath_Scar_Enemy</Name>
+		<Artwork>Bloodbath_Scar</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>bloodbath2</Script>
+	</EmotionCard>
+	<EmotionCard ID="91003">
+		<Name>Bloodbath_Hands_Enemy</Name>
+		<Artwork>Bloodbath_Hands</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>bloodbath3</Script>
+	</EmotionCard>
+	<EmotionCard ID="91004">
+		<Name>HeartofAspiration_Heart_Enemy</Name>
+		<Artwork>HeartofAspiration_Heart</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>doki</Script>
+	</EmotionCard>
+	<EmotionCard ID="91005">
+		<Name>HeartofAspiration_Doki_Enemy</Name>
+		<Artwork>HeartofAspiration_Doki</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>heart</Script>
+	</EmotionCard>
+	<EmotionCard ID="91006">
+		<Name>HeartofAspiration_Atk_Enemy</Name>
+		<Artwork>HeartofAspiration_Atk</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-3</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>heart_rush</Script>
+	</EmotionCard>
+	<EmotionCard ID="91007">
+		<Name>Pinocchio_Learn_Enemy</Name>
+		<Artwork>Pinocchio_Learn</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>pinocchio1</Script>
+	</EmotionCard>  
+	<EmotionCard ID="91008">
+		<Name>Pinocchio_Lie_Enemy</Name>
+		<Artwork>Pinocchio_Lie</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>pinocchio2</Script>
+	</EmotionCard>
+	<EmotionCard ID="91009">
+		<Name>Pinocchio_Curious_Enemy</Name>
+		<Artwork>Pinocchio_Curious</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>pinocchio3</Script>
+	</EmotionCard>
+	<EmotionCard ID="91010">
+		<Name>TheSnowQueen_Sord_Enemy</Name>
+		<Artwork>TheSnowQueen_Sord</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>snowqueen1</Script>
+	</EmotionCard>
+	<EmotionCard ID="91011">
+		<Name>TheSnowQueen_Chu_Enemy</Name>
+		<Artwork>TheSnowQueen_Chu</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>3</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>snowqueen2</Script>
+	</EmotionCard>
+	<EmotionCard ID="91012">
+		<Name>TheSnowQueen_Snow_Enemy</Name>
+		<Artwork>TheSnowQueen_Snow</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>snowqueen3</Script>
+  </EmotionCard>
+</EmotionCardXmlRoot>
