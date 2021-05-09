@@ -131,5 +131,38 @@
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>snowqueen3</Script>
-  </EmotionCard>
+  	</EmotionCard>
+  	<EmotionCard ID="91013">
+		<Name>QuietKid_Hammer_Enemy</Name>
+		<Artwork>QuietKid_Hammer</Artwork>
+    	<State>Positive</State>
+    	<Sephirah>None</Sephirah>
+    	<Level>6</Level>
+    	<EmotionLevel>2</EmotionLevel>
+    	<EmotionRate>1</EmotionRate>
+    	<TargetType>SelectOne</TargetType>
+    	<Script>quietKidHammer</Script>
+  	</EmotionCard>
+  	<EmotionCard ID="91014">
+    	<Name>QuietKid_Eyeshine_Enemy</Name>
+		<Artwork>QuietKid_Eyeshine</Artwork>
+    	<State>Negative</State>
+    	<Sephirah>None</Sephirah>
+    	<Level>6</Level>
+    	<EmotionLevel>3</EmotionLevel>
+    	<EmotionRate>-1</EmotionRate>
+    	<TargetType>SelectOne</TargetType>
+    	<Script>quietKidEyeShine</Script>
+  	</EmotionCard>
+  	<EmotionCard ID="91015">
+    	<Name>QuietKid_Guilty_Enemy</Name>
+		<Artwork>QuietKid_Guilty</Artwork>
+    	<State>Negative</State>
+    	<Sephirah>None</Sephirah>
+    	<Level>6</Level>
+    	<EmotionLevel>2</EmotionLevel>
+    	<EmotionRate>-2</EmotionRate>
+    	<TargetType>SelectOne</TargetType>
+    	<Script>quietKidGuilty</Script>
+  	</EmotionCard>
 </EmotionCardXmlRoot>
