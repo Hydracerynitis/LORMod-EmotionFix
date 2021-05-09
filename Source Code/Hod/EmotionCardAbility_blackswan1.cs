@@ -11,29 +11,26 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_blackswan1 : EmotionCardAbilityBase
     {
-        private bool givedmg;
-        private BattleUnitModel tempTarget;
-        public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+        private List<KeywordBuf> ActivatedBuf;
+        private KeywordBuf[] debuff => new KeywordBuf[]
         {
-            this.tempTarget = behavior?.card?.target;
-            this.givedmg = true;
-            this.tempTarget.Book.SetResistHP(BehaviourDetail.Slash, AtkResist.Weak);
-            this.tempTarget.Book.SetResistHP(BehaviourDetail.Penetrate, AtkResist.Weak);
-            this.tempTarget.Book.SetResistHP(BehaviourDetail.Hit, AtkResist.Weak);
-            this.tempTarget.Book.SetResistBP(BehaviourDetail.Slash, AtkResist.Weak);
-            this.tempTarget.Book.SetResistBP(BehaviourDetail.Penetrate, AtkResist.Weak);
-            this.tempTarget.Book.SetResistBP(BehaviourDetail.Hit, AtkResist.Weak);
-        }
-        public override void CheckDmg(int dmg, BattleUnitModel target)
-        {
-            if (this.tempTarget == null || !this.givedmg)
-                return;
-            this.tempTarget.Book.SetOriginalResists();
-            this.tempTarget = null;
-            this.givedmg = false;
-        }
+            KeywordBuf.Burn,
+            KeywordBuf.Paralysis,
+            KeywordBuf.Bleeding,
+            KeywordBuf.Vulnerable,
+            KeywordBuf.Weak,
+            KeywordBuf.Disarm,
+            KeywordBuf.Binding
+        };
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
+            if (ActivatedBuf.Count <= 0)
+                return;
+            KeywordBuf buff = RandomUtil.SelectOne<KeywordBuf>(ActivatedBuf);
+            foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList_opponent(this._owner.faction))
+            {
+                unit.bufListDetail.AddKeywordBufThisRoundByEtc(buff, 1);
+            }
             UnityEngine.Object original = Resources.Load("Prefabs/Battle/CreatureEffect/FinalBattle/EGO_BlackSwan_Feather");
             if (!(original != (UnityEngine.Object)null))
                 return;
@@ -46,7 +43,18 @@ namespace EmotionalFix
         }
         public override void OnRoundStart()
         {
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
+            for(int i=0; i<3;i++)
+                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(RandomUtil.SelectOne<KeywordBuf>(debuff),1);
+        }
+        public override void OnStartBattle()
+        {
+            base.OnStartBattle();
+            ActivatedBuf = new List<KeywordBuf>();
+            foreach(KeywordBuf buftype in debuff)
+            {
+                if (this._owner.bufListDetail.GetActivatedBuf(buftype) != null)
+                    ActivatedBuf.Add(buftype);
+            }
         }
     }
 }

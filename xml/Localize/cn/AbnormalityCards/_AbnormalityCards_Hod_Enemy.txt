@@ -163,7 +163,7 @@
 		<AbnormalityCard ID="BlackSwan_Feather_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>污秽</CardName>
-			<AbilityDesc>该来宾进攻骰伤害翻倍且无视抗性，每一幕开始时获得2层虚弱</AbilityDesc>
+			<AbilityDesc>该来宾每一幕开始时获得3层随机负面buff，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
 			<FlaborText>艾丽莎痛苦地跪倒在地，也如旁人那般呕吐不止……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">徐徐水波划过湖面，仿佛有一群天鹅刚刚起飞……</Dialogue>
