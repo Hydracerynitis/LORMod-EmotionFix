@@ -11,7 +11,7 @@ namespace EmotionalFix
     {
         private static bool Prob => (double)RandomUtil.valueForProb < 0.5;
         private static int Bind => RandomUtil.Range(1, 3);
-        private static int Dmg => RandomUtil.Range(2, 5);
+        private static int Dmg => RandomUtil.Range(2, 4);
         public override void OnWinParrying(BattleDiceBehavior behavior)
         {
             base.OnWinParrying(behavior);

@@ -4,8 +4,8 @@
 		<AbnormalityCard ID="Bloodbath_Blood_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>鲜血</CardName>
-			<AbilityDesc>该来宾的“防御型”骰子威力+1~3
-被击中时所受混乱伤害+3~5</AbilityDesc>
+			<AbilityDesc>该来宾的“防御型”骰子威力+1~3，被击中时所受混乱伤害+2~4
+每一幕结束时保留反击池里所有防御骰</AbilityDesc>
 			<FlaborText>望向浴缸内部，你会莫名感到无法承受的忧郁。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">他只是无法直面这悲惨的现实。</Dialogue>
@@ -18,7 +18,7 @@
 		<AbnormalityCard ID="Bloodbath_Scar_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>疤痕</CardName>
-			<AbilityDesc>根据上一幕所受伤害该来宾被造成最多伤害类型的骰子受到击中时所受伤害-2~5</AbilityDesc>
+			<AbilityDesc>根据上一幕所受伤害该来宾被造成最多伤害类型的骰子受到击中时所受伤害-2~4</AbilityDesc>
 			<FlaborText>当我注视着她那伤痕累累的手腕时，我想起了我们的酒窖。那一夜，我把最后一瓶喝得精光。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">要想割开手腕，必须拥有强大的勇气与意志。</Dialogue>
@@ -59,8 +59,7 @@
 		<AbnormalityCard ID="HeartofAspiration_Doki_Enemy">
 			<Abnormality>渴望之心</Abnormality>
 			<CardName>渴望</CardName>
-			<AbilityDesc>该来宾的速度+1~2，体力上限+15%并恢复等量体力。
-若在这一幕造成30点伤害则在下一幕获得1个速度骰</AbilityDesc>
+			<AbilityDesc>该来宾的速度+1~2，体力上限+15%并恢复等量体力。</AbilityDesc>
 			<FlaborText>携带者的心率瞬间提升至2倍以上，并获得惊人的肌肉活力与力量。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">渴望着，期盼着，直到心脏应答的那一刻。</Dialogue>
@@ -126,7 +125,7 @@
 			<Abnormality>冰雪女皇</Abnormality>
 			<CardName>凌剑</CardName>
 			<AbilityDesc>该来宾拼点胜利时有50%的概率在下一幕中对目标施加1~3层“束缚”。
-该来宾击中处于“束缚”状态下的目标时将追加2~5点伤害和混乱伤害。</AbilityDesc>
+该来宾击中处于“束缚”状态下的目标时将追加2~4点伤害和混乱伤害。</AbilityDesc>
 			<FlaborText>寒冷的冬林中，唯有一位女皇。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">锐利的剑锋冰冷无比。</Dialogue>

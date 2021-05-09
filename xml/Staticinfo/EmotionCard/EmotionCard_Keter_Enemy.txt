@@ -50,7 +50,7 @@
 		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
-		<EmotionLevel>2</EmotionLevel>
+		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>heart</Script>
@@ -116,7 +116,7 @@
 		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>5</Level>
-		<EmotionLevel>2</EmotionLevel>
+		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>snowqueen2</Script>

@@ -197,4 +197,17 @@
 		<Chapter>0</Chapter>
 		<Priority>100</Priority>
 	</Card>
+	<Card ID="1110001">
+		<Name>鲜血</Name>
+		<Artwork>Bloodbath_Blood</Artwork>
+		<Rarity>Unique</Rarity>
+		<Spec Range="Near" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
+	</Card>
 </DiceCardXmlRoot>

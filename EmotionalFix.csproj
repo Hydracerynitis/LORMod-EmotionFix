@@ -104,7 +104,6 @@
     <Compile Include="Source Code\Tiphereth\EmotionCardAbility_clownofnihil1.cs" />
     <Compile Include="Source Code\Tiphereth\EmotionCardAbility_clownofnihil3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_heart_rush.cs" />
-    <Compile Include="Source Code\Keter\EmotionCardAbility_heart.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_longbird3.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_longbird1.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_longbird2.cs" />

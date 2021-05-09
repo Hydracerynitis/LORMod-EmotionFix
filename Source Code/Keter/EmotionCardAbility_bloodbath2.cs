@@ -13,7 +13,7 @@ namespace EmotionalFix
     public class EmotionCardAbility_bloodbath2 : EmotionCardAbilityBase
     {
         private static bool Prob => (double)RandomUtil.valueForProb < 0.2;
-        private static int Reduce => RandomUtil.Range(2, 5);
+        private static int Reduce => RandomUtil.Range(2, 4);
         private Dictionary<BehaviourDetail, int> dict;
         private BehaviourDetail atk;
         public override void OnSelectEmotion()
