@@ -39,5 +39,15 @@
    		 <EmotionRate>0</EmotionRate>
     		<TargetType>SelectOne</TargetType>
    		 <Script>latitia2</Script>
- 	 </EmotionCard>
+ 	</EmotionCard>
+	<EmotionCard ID="13">
+		<Name>BlackSwan_Feather</Name>
+		<State>Negative</State>
+		<Sephirah>Hod</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>blackswan1</Script>
+	</EmotionCard>
 </EmotionCardXmlRoot>
