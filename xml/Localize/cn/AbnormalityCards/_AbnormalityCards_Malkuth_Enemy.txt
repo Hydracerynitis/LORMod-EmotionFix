@@ -44,7 +44,7 @@
     	<AbnormalityCard ID="HappyTeddyBear_Hug_Enemy">
       		<Abnormality>快乐泰迪</Abnormality>
       		<CardName>思念的拥抱</CardName>
-      		<AbilityDesc>该来宾有40%的概率追加等同于“自身骰子点数”的混乱伤害。(每个司书只能触发一次)</AbilityDesc>
+      		<AbilityDesc>该来宾有40%的概率追加等同于“自身骰子点数”的混乱伤害。</AbilityDesc>
       		<FlaborText>泰迪正紧紧抱着某人。泰迪非常喜欢拥抱。但，似乎有些不对劲。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">我们来抱抱吧？这样你会好受些的。</Dialogue>
