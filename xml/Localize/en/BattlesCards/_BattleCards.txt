@@ -5,7 +5,7 @@
       <LocalizedName>Malice</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1101005">
-      <LocalizedName>第七枚子弹</LocalizedName>
+      <LocalizedName>The Seventh Bullet</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1103501">
       <LocalizedName>破伞</LocalizedName>

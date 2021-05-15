@@ -94,8 +94,7 @@
 		<AbnormalityCard ID="SingingMachine_Rhythm_Enemy">
 			<Abnormality>歌唱机</Abnormality>
 			<CardName>旋律</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕开始时该司书将获得1层“节奏”。拥有“节奏”的角色每击中目标3次便在下一幕中随机使1名角色获得1层“节奏”。
+			<AbilityDesc>每一幕开始时该司书将获得1层“节奏”。拥有“节奏”的角色每击中目标3次便在下一幕中随机使1名角色获得1层“节奏”。
 (节奏: “进攻型”骰子威力+1）</AbilityDesc>
 			<FlaborText>这世上再也没有比“人”更加动听的旋律了。</FlaborText>
 			<Dialogues>
@@ -164,7 +163,7 @@
 			<Abnormality>魔弹射手</Abnormality>
 			<CardName>委托</CardName>
 			<AbilityDesc>将1张0费“射杀委托”置入该来宾手中。
-效果为“[范围杀伤书页][交锋] 突刺(7~11) 将除自身外的其余角色指定为攻击目标</AbilityDesc>
+效果为“[范围杀伤书页][交锋] 突刺(7~11)使用会消耗其拥有者25%最大混乱抗性, 将除自身外的其余角色指定为攻击目标</AbilityDesc>
 			<FlaborText>恶魔的子弹会穿透你指定的任何目标，直到永远。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">有人称其为正义的猎手。也有人，称其为血腥的屠夫。</Dialogue>

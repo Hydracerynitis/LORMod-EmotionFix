@@ -2,177 +2,174 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
     	<AbnormalityCard ID="ForsakenMurderer_Tie">
-			<Abnormality>被遗弃的杀人魔</Abnormality>
-			<CardName>受缚的愤怒</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书的打击骰子威力+2~3
-速度固定为1点。</AbilityDesc>
-			<FlaborText>即使全身遭到束缚，他仍比任何人都要自由。这还远远无法阻止他施暴。</FlaborText>
+			<Abnormality>Forsaken Murderer</Abnormality>
+			<CardName>Chained Wrath</CardName>
+			<AbilityDesc>[Single Ally]
+Blunt dice gain 1-3 Power. Speed is fixed at 1.</AbilityDesc>
+			<FlaborText>He wears a straitjacket, but is as free as any man. No amount of chains and restraints is enough to prevent him from committing violence.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">就算绑住俺的身体……俺照样能动弹。</Dialogue>
-				<Dialogue ID="2">放开俺……凭啥绑着俺！</Dialogue>
-				<Dialogue ID="3">别用那种眼神盯着俺，可怜的家伙是你们才对……</Dialogue>
-				<Dialogue ID="4">这东西绑不住俺！！！</Dialogue>
-				<Dialogue ID="5">就算被绑成这副鸟样，你们也照样会怕俺。</Dialogue>
+				<Dialogue ID="1">Even if my body is tied… I’ll be as free as any man.</Dialogue>
+				<Dialogue ID="2">Release me… Why do I have to be bound!</Dialogue>
+				<Dialogue ID="3">Don’t look at me with those eyes. You’re the most pitiful ones here…</Dialogue>
+				<Dialogue ID="4">You’re not going to keep me shackled with this!</Dialogue>
+				<Dialogue ID="5">I may be a mess now, but you’ll have to fear me all the same.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ForsakenMurderer_Metal">
-			<Abnormality>被遗弃的杀人魔</Abnormality>
-			<CardName>铁块的回声</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书以打击骰子击中目标时将削弱目标下一个进攻骰子并减少其50%的伤害和混乱伤害。</AbilityDesc>
-			<FlaborText>“脑袋……铁块……大脑上的褶皱……变光滑了……”</FlaborText>
+			<Abnormality>Forsaken Murderer</Abnormality>
+			<CardName>Metallic Ringing</CardName>
+			<AbilityDesc>[Single Ally]
+Upon successful Blunt attack, reduce Physical and Stagger damage of enemy's next Offensive dice by 50%</AbilityDesc>
+			<FlaborText>“My head… turning into metal… folds in my brain, being flattened…”</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">俺的脑袋又在嗡嗡响了，又吵又闹的……铁块，敲击声……</Dialogue>
-				<Dialogue ID="2">感觉就像，脑袋变成了冰冷的铁块。</Dialogue>
-				<Dialogue ID="3">俺的脑袋，真就变成铁块了？</Dialogue>
-				<Dialogue ID="4">脑袋一碰，就会响起清脆的声音。</Dialogue>
-				<Dialogue ID="5">大脑变成铁块的话，上面的褶皱也会消失吧。</Dialogue>
+				<Dialogue ID="1">My head is ringing. I can hear the sound of metal, clear and loud…</Dialogue>
+				<Dialogue ID="2">It feels as if my head is turning to cold steel.</Dialogue>
+				<Dialogue ID="3">Is my head actually turning into metal?</Dialogue>
+				<Dialogue ID="4">When I bash my head onto a wall, it makes a refreshing sound.</Dialogue>
+				<Dialogue ID="5">If my head turns into steel, all the wrinkles in my brain will be gone.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ForsakenMurderer_Violence">
-			<Abnormality>被遗弃的杀人魔</Abnormality>
-			<CardName>极端暴力</CardName>
-			<AbilityDesc>[选择一名司书]
-若该司书以打击骰子击中目标且掷出最大值，则追加3~7点混乱伤害。</AbilityDesc>
-			<FlaborText>“最可怜的明明是你们，道貌岸然的伪君子，死在俺手里的小人。”</FlaborText>
+			<Abnormality>Forsaken Murderer</Abnormality>
+			<CardName>Violence</CardName>
+			<AbilityDesc>[Single Ally]
+Upon a successful Blunt attack, if the die rolled max. value, deal 3-7 bonus Stagger damage.</AbilityDesc>
+			<FlaborText>“What’s really pitiful is people like you dying to the likes of me.”</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">不要以为，把俺绑起来，就万事大吉了……</Dialogue>
-				<Dialogue ID="2">……</Dialogue>
-				<Dialogue ID="3">结束了……开始了……又结束了……又开始了……</Dialogue>
-				<Dialogue ID="4">脑袋一碰，就会嗡嗡乱响。</Dialogue>
+				<Dialogue ID="1">Don’t think that you’ve won by chaining me…</Dialogue>
+				<Dialogue ID="2">………</Dialogue>
+				<Dialogue ID="3">Ends… Begins. Ends again, begins once more…</Dialogue>
+				<Dialogue ID="4">When I bash my head onto a wall, it makes a refreshing sound.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SingingMachine_Music">
-			<Abnormality>歌唱机</Abnormality>
-			<CardName>音乐</CardName>
-			<AbilityDesc>[影响所有司书]
-所有司书击中目标时伤害+3~5，被击中时将追加承受3~5点混乱伤害。</AbilityDesc>
-			<FlaborText>此乃，旋律。</FlaborText>
+			<Abnormality>Singing Machine</Abnormality>
+			<CardName>Music</CardName>
+			<AbilityDesc>[All Allies]
+Deal 3-5 additional damage with attacks this Act. Suffer 3-5 additional Stagger damage upon taking a hit.</AbilityDesc>
+			<FlaborText>But nothing could compare to the music it makes when it eats a human.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">由一个活人制造出的旋律是最美妙的。</Dialogue>
-				<Dialogue ID="2">想不想听听美妙的音乐呢？你知道该怎么做的。</Dialogue>
-				<Dialogue ID="3">没关系的，他肯定愿意成为一件好乐器。</Dialogue>
-				<Dialogue ID="4">人人都有音乐天赋。</Dialogue>
-				<Dialogue ID="5">勇敢的人儿呐，快来靠近我呀，和我一起演奏吧。</Dialogue>
+				<Dialogue ID="1">Nothing makes as fascinating music as a human can.</Dialogue>
+				<Dialogue ID="2">Don’t you want to hear a beautiful song? You already know how.</Dialogue>
+				<Dialogue ID="3">Don’t you worry. I’m sure that one wants to be a fine instrument, too.</Dialogue>
+				<Dialogue ID="4">People all carry musical talent in them.</Dialogue>
+				<Dialogue ID="5">Those who are fortitudinous, come to me. Join me.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SingingMachine_Rhythm">
-			<Abnormality>歌唱机</Abnormality>
-			<CardName>旋律</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕开始时该司书将获得1层“节奏”。拥有“节奏”的角色每击中目标3次便在下一幕中随机使1名角色获得1层“节奏”。
-(节奏: “进攻型”骰子威力+1)</AbilityDesc>
-			<FlaborText>这世上再也没有比“人”更加动听的旋律了。</FlaborText>
+			<Abnormality>Singing Machine</Abnormality>
+			<CardName>Rhythm</CardName>
+			<AbilityDesc>[Single Ally]
+For the duration of the battle, gain 1 Rhythm at the start of each Scene. Upon 3 successful hit by character with Rhythm, a random character gains 1 Rhythm next Scene
+(Rhythm: Gain 1 Strength per stack, lasts 1 Scene)</AbilityDesc>
+			<FlaborText>It was creating a rhythm.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">大家都想再听我唱歌呢。</Dialogue>
-				<Dialogue ID="2">各种各样的声音混合在一起，就形成了音乐。</Dialogue>
-				<Dialogue ID="3">你和我都想成为乐器呀……</Dialogue>
-				<Dialogue ID="4">如果人人都愿意献出自身，那一定可以产生更加甜美的音色。</Dialogue>
-				<Dialogue ID="5">其他旋律再也传不进你的耳朵里啦。</Dialogue>
+				<Dialogue ID="1">Everyone wants to hear my song again.</Dialogue>
+				<Dialogue ID="2">Various sounds join together to create music.</Dialogue>
+				<Dialogue ID="3">They’re all volunteering to be instruments…</Dialogue>
+				<Dialogue ID="4">If everyone threw their bodies into me, it’ll certainly create an even sweeter melody.</Dialogue>
+				<Dialogue ID="5">You won’t want to hear any other music anymore.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SingingMachine_Atk">
-			<Abnormality>歌唱机</Abnormality>
-			<CardName>成瘾</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书的“进攻型”骰子威力+1~3“但防御型”骰子威力-1~3。</AbilityDesc>
-			<FlaborText>艺术本就是绝望与苦痛之魔施舍的礼物，不要停止演奏，直到你的身体已如碎肉一般破烂不堪。</FlaborText>
+			<Abnormality>Singing Machine</Abnormality>
+			<CardName>Musical Addiction</CardName>
+			<AbilityDesc>[Single Ally]
+Offensive dice gain 1-3 Power.Defensive dice lose 1-3 Power.</AbilityDesc>
+			<FlaborText>After all, art is a devil’s gift, born from despair and suffering. Never stop performing until the body crumbles to dust.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">其他音乐对我而言，不过是吵闹的噪音罢了……</Dialogue>
-				<Dialogue ID="2">指引我的脚步……用那歌声照亮我的前路！</Dialogue>
-				<Dialogue ID="3">嘻嘻嘻……嘻……我该怎么办？我能怎么办？嘻嘻……</Dialogue>
-				<Dialogue ID="4">倘若这段旋律能永远响彻，那我便将得到亘古不灭的幸福……</Dialogue>
-				<Dialogue ID="5">没错！就是这……就是这激昂的曲调！！</Dialogue>
+				<Dialogue ID="1">All other music is nothing more than noise to me…</Dialogue>
+				<Dialogue ID="2">Make me move… Light my path with the songs!</Dialogue>
+				<Dialogue ID="3">Hahaha… Ha… What will I do? What can I do? Haha…</Dialogue>
+				<Dialogue ID="4">Eternal happiness would be mine if this tune lasted forever…</Dialogue>
+				<Dialogue ID="5">Yes! This is it… Behold this powerful melody!</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Butterfly_White">
-			<Abnormality>亡蝶葬仪</Abnormality>
-			<CardName>安息</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中目标时根据所损失的体力伤害提高0~7</AbilityDesc>
-			<FlaborText>人死后会化作有着小小翅膀的美妙存在，这实在荒谬。</FlaborText>
+			<Abnormality>The Funeral of the Dead Butterflies</Abnormality>
+			<CardName>Eternal Rest</CardName>
+			<AbilityDesc>[Single Ally]
+Deal 0-7 additional damage according to ratio of enemy's lost HP.</AbilityDesc>
+			<FlaborText>People believed that they would become beautiful beings with small wings when they died. It’s a silly story. Nonsensical too.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">永恒的长眠……愿你安息。</Dialogue>
-				<Dialogue ID="2">我相信，人死后会化作有着小小翅膀的美妙存在。</Dialogue>
-				<Dialogue ID="3">请不要折磨自己了，我会帮你解脱。</Dialogue>
-				<Dialogue ID="4">带着得来的一切，满怀希望地回归安息之所。</Dialogue>
-				<Dialogue ID="5">死亡再可怖，会比这现实更可怖吗？死后唯有解脱。</Dialogue>
+				<Dialogue ID="1">An eternal rest… May you rest in peace.</Dialogue>
+				<Dialogue ID="2">They believed that they would become beautiful beings with small wings when they died.</Dialogue>
+				<Dialogue ID="3">I’ll help liberate you from tormenting yourselves.</Dialogue>
+				<Dialogue ID="4">They must have returned home, having earned what they wanted and being full of hope.</Dialogue>
+				<Dialogue ID="5">Death may seem fearsome, it doesn’t compare to the terror of reality. It’ll feel liberating, rather.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Butterfly_Fly">
-			<Abnormality>亡蝶葬仪</Abnormality>
-			<CardName>哀悼</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中目标时根据所损失的混乱抗性混乱伤害提高0~7</AbilityDesc>
-			<FlaborText>身负重担的悼念者，
-前来此地救赎众生。</FlaborText>
+			<Abnormality>The Funeral of the Dead Butterflies</Abnormality>
+			<CardName>Lament</CardName>
+			<AbilityDesc>[Single Ally]
+Deal 0-7 additional Stagger damage according to ratio of enemy's lost Stagger Resist.</AbilityDesc>
+			<FlaborText>They say the mourner with a huge luggage on his back had come to be a savior to all.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">向那些深陷悲伤的可怜灵魂……致以深切的哀悼。</Dialogue>
-				<Dialogue ID="2">向逝者寄托哀思，向生者致以哀悼。</Dialogue>
-				<Dialogue ID="3">悲伤的泪水，只是无谓地浸透翅膀。</Dialogue>
-				<Dialogue ID="4">葬礼只消肃穆，无需招摇。</Dialogue>
-				<Dialogue ID="5">这里连一朵像样的鲜花都不曾拥有。</Dialogue>
+				<Dialogue ID="1">For you poor souls who cannot stop grieving… I offer my condolences.</Dialogue>
+				<Dialogue ID="2">Grief for the dead, and early lament for the living.</Dialogue>
+				<Dialogue ID="3">Frivolous forms of sadness such as tears will only wet the wings.</Dialogue>
+				<Dialogue ID="4">Not a sliver of impurity is allowed for the mind of those who mourn, for it must remain reverent and solemn.</Dialogue>
+				<Dialogue ID="5">Not a single proper flower blooms to honor the butterflies.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Butterfly_Casket">
-			<Abnormality>亡蝶葬仪</Abnormality>
-			<CardName>棺柩</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中目标时会根据目标所损失的体力施加棺柩进度(0~50%)
-棺柩进度到100%时会封印其1颗速度骰子。</AbilityDesc>
-			<FlaborText>背负棺柩的他，只为悼念无处可去的职员，但这远不足以安抚那些无辜的替罪羔羊。</FlaborText>
+			<Abnormality>The Funeral of the Dead Butterflies</Abnormality>
+			<CardName>Coffin</CardName>
+			<AbilityDesc>[Single Ally]
+On a successful attack increase enemy's Coffin progress according to ratio of that enemy lost HP (0-50%)
+When Coffin progress reach 100%, one Speed die of the enemy is sealed for one Scene.</AbilityDesc>
+			<FlaborText>He’s carrying a coffin. A large coffin to pay tribute to the employees who have nowhere else to go. It is still too small to comfort those innocent sacrifices.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">这具棺柩，承载着空洞的信仰，只为悼念那无家可归之人……</Dialogue>
-				<Dialogue ID="2">人死后会去往何方？</Dialogue>
-				<Dialogue ID="3">你承受不了，这蝴蝶的分量。</Dialogue>
-				<Dialogue ID="4">连这巨大的棺柩，都不足以抚慰那些无辜的牺牲者。</Dialogue>
-				<Dialogue ID="5">轻柔地拍动翅膀，静候那终将到来的永眠。</Dialogue>
+				<Dialogue ID="1">A single coffin to pay tribute to those who had nowhere to go, wandering with the memory of an empty faith…</Dialogue>
+				<Dialogue ID="2">Where does one go when they die?</Dialogue>
+				<Dialogue ID="3">The weight of the butterflies that died in vain would be too great to carry.</Dialogue>
+				<Dialogue ID="4">That large coffin, simply too small to comfort those innocent sacrifices.</Dialogue>
+				<Dialogue ID="5">The fragile wings will keep fluttering, waiting for the moment to fall asleep.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Matan_Request">
-			<Abnormality>魔弹射手</Abnormality>
-			<CardName>委托</CardName>
-			<AbilityDesc>[选择一名司书]
-将1张0费“射杀委托”置入该司书手中。
-效果为“[范围杀伤书页][交锋] 突刺(7~11))将除自身外的其余角色指定为攻击目标“ </AbilityDesc>
-			<FlaborText>恶魔的子弹会穿透你指定的任何目标，直到永远。</FlaborText>
+			<Abnormality>Der Freischütz</Abnormality>
+			<CardName>Request</CardName>
+			<AbilityDesc>[Single Ally]
+Add a 'Request' page to the hand: ‘Cost 0 - [Mass Attack; Individual] Roll Range: 7~11; Spend 25% Max Stagger Resist to use; target all characters.’</AbilityDesc>
+			<FlaborText>Just as the Devil said, the bullets will puncture anything you please. Forever.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">有人称其为正义的猎手。也有人，称其为血腥的屠夫。</Dialogue>
-				<Dialogue ID="2">子弹总是不偏不倚地向前挺进。</Dialogue>
-				<Dialogue ID="3">随意瞄准即可，枪口自会搜寻目标。</Dialogue>
-				<Dialogue ID="4">飞驰的子弹不分善恶。</Dialogue>
-				<Dialogue ID="5">他有时会帮助深陷困境的人们，亦或是与邪恶作斗争。</Dialogue>
+				<Dialogue ID="1">Some call him a righteous hunter, while others would call him a bloodstained gunman.</Dialogue>
+				<Dialogue ID="2">The bullets always travel across a straight line, along the horizon.</Dialogue>
+				<Dialogue ID="3">I simply follow my impulse, pointing my rifle as I like.</Dialogue>
+				<Dialogue ID="4">The advancing bullet has no morals, no good or evil intent.</Dialogue>
+				<Dialogue ID="5">Sometimes I helped those in need or fought evil.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Matan_Seven">
-			<Abnormality>魔弹射手</Abnormality>
-			<CardName>第七颗子弹</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书每使用1张书页，便获得1层“魔法子弹”(每层伤害+1，每2层威力+1).
-该司书使用的第七张书页里所有骰子将会用于灌注射向自身的魔法子弹。</AbilityDesc>
-			<FlaborText>那恶魔开出一条幼稚的契约: 最后一颗子弹将穿透心爱之人的头颅。射手听罢，便将心爱的人们一一射杀。</FlaborText>
+			<Abnormality>Der Freischütz</Abnormality>
+			<CardName>The Seventh Bullet</CardName>
+			<AbilityDesc>[Single Ally]
+Each time the librarian uses a page gain one Magic Bullet (Increase damage by 1 per stack.Increase Power by 1 per 2 stacks)
+The seventh page will be infused into A “magic bullet” targeting self.</AbilityDesc>
+			<FlaborText>The Devil proposed a childish contract: The last bullet would puncture the head of his beloved. The moment he heard that, he sought and shot all the people he loved.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">最后一颗子弹会穿透心爱之人的头颅。</Dialogue>
-				<Dialogue ID="2">当真如此……这是能击中任何人的魔弹，一切如你所言。</Dialogue>
-				<Dialogue ID="3">子弹会穿透你指定的任何目标，直到永远。</Dialogue>
-				<Dialogue ID="4">让那最后一颗子弹，永远无法出现。</Dialogue>
+				<Dialogue ID="1">The last bullet will puncture the head of your beloved.</Dialogue>
+				<Dialogue ID="2">You’re right… This magical bullet can truly hit anyone just like you say.</Dialogue>
+				<Dialogue ID="3">The bullets will puncture anything you please. Forever.</Dialogue>
+				<Dialogue ID="4">No bullet will ever be the last.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Matan_Flame">
-			<Abnormality>魔弹射手</Abnormality>
-			<CardName>黑焰</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕结束时每有一个其他单位死亡该司书永久获得1层黑焰
-(每一幕开始时获得1层强壮1层守护，混乱抗性减少12%)
-切换舞台不会清空黑焰层数但陷入混乱时将会失去所有黑焰层数</AbilityDesc>
-			<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
+			<Abnormality>Der Freischütz</Abnormality>
+			<CardName>Dark Flame</CardName>
+			<AbilityDesc>[Single Ally]
+Upon death of other character, gain 1 Dark Flame for the duration of battle. Lose all Dark Flame when staggered.
+(At the start of the Scene, gain 1 Strength, Protection per stack. Reduce Max Stagger Resist by 12% per stack)
+If the librarian did not deal any damage with attacks by the end of the Scene, take 3-6 Stagger damage.</AbilityDesc>
+			<FlaborText>One day, the marksman realized the Devil no longer followed him. He pondered why, then realized that his soul had already fallen to Hell from the beginning.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>
-				<Dialogue ID="2">我的灵魂徐徐燃烧，而后堕入地狱。</Dialogue>
-				<Dialogue ID="3">察觉到眼前空无一物的那一瞬间，灵魂便已随之死去。</Dialogue>
-				<Dialogue ID="4">绝望的心无法焚毁，只是冰冷地燃烧。</Dialogue>
-				<Dialogue ID="5">绝望永远伴我左右，不离不弃。</Dialogue>
+				<Dialogue ID="1">Was it despair that he wished for?</Dialogue>
+				<Dialogue ID="2">My soul began to burn bit by bit, until it ultimately descended to Hell.</Dialogue>
+				<Dialogue ID="3">When one feels there’s nothing left to aim for, their soul falls down to Hell.</Dialogue>
+				<Dialogue ID="4">The despaired heart couldn’t go out in a passionate flame. It would only burn with a cold fire.</Dialogue>
+				<Dialogue ID="5">The despair shall linger around you at all times.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>

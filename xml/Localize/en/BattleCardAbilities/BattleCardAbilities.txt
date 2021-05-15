@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BattleCardAbilityDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<BattleCardAbility ID="Request">
-		<Desc>使用会消耗其拥有者25%最大混乱抗性</Desc>
+		<Desc>Spend 25% Max Stagger Resist to use</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Execute">
-		<Desc>对目标造成该骰子威力的伤害</Desc>
+		<Desc>Inflict damage equal to the Power of this die</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Reflect">
 		<Desc>[拼点胜利]对目标造成目标骰子威力的伤害和混乱伤害</Desc>

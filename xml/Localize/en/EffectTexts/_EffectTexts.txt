@@ -10,24 +10,24 @@
       		<Desc>At the start of each Scene, inflict {0} Bind</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitDebuff">
-      		<Name>回声</Name>
-      		<Desc>下{0}个进攻骰会被削弱而且其伤害和混乱伤害-50%</Desc>
+      		<Name>Ringing</Name>
+      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 50%</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitDebuff_Enemy">
-      		<Name>回声</Name>
-      		<Desc>下{0}个进攻骰会被削弱而且其伤害和混乱伤害-25%</Desc>
+      		<Name>Ringing</Name>
+      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 25%</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SingingMachine_Rhythm">
-      		<Name>节奏</Name>
-      		<Desc>每一幕开始开始时施加{0}层强壮，每一幕结束时清空层数</Desc>
+      		<Name>Rhythm</Name>
+      		<Desc>At the start of Scnee, gain {0} Strength ，clear all stack at the end of the Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SealGauge">
-      		<Name>棺柩</Name>
-      		<Desc>目前{0}%进度，如果达到100%则会封印目标一个速度骰</Desc>
+      		<Name>Coffin</Name>
+      		<Desc>Currently Progres is {0}%. When reach 100%, one speed dice is sealed for one Scene</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Freischutz_Bullet">
-      		<Name>魔法子弹</Name>
-      		<Desc>每层伤害+1，每2层威力+1</Desc>
+      		<Name>Magic Bullet</Name>
+      		<Desc>Increase damage by 1 per stack.Increase Power by 1 per 2 stacks</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Flame">
       		<Name>黑焰</Name>
