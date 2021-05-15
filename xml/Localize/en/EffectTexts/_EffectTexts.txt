@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<effectTextList>
+    	<BattleEffectText ID="Teddy_Memory">
+      		<Name>Memory</Name>
+      		<Desc>All dices of Guest with [Happy Memory] increase {0} in a clash with self</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="Malice_Enemy">
+      		<Name>恶意</Name>
+      		<Desc>每回合开始时施加{0}层缠绕</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="HitDebuff">
+      		<Name>回声</Name>
+      		<Desc>下{0}个进攻骰会被削弱而且其伤害和混乱伤害-50%</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="HitDebuff_Enemy">
+      		<Name>回声</Name>
+      		<Desc>下{0}个进攻骰会被削弱而且其伤害和混乱伤害-25%</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="SingingMachine_Rhythm">
+      		<Name>节奏</Name>
+      		<Desc>每一幕开始开始时施加{0}层强壮，每一幕结束时清空层数</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="SealGauge">
+      		<Name>棺柩</Name>
+      		<Desc>目前{0}%进度，如果达到100%则会封印目标一个速度骰</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Freischutz_Bullet">
+      		<Name>魔法子弹</Name>
+      		<Desc>每层伤害+1，每2层威力+1</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Flame">
+      		<Name>黑焰</Name>
+      		<Desc>每一幕开始时获得{0}层强壮守护</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="ShinyShoes">
+      		<Name>闪亮亮鞋子</Name>
+      		<Desc>进攻威力+1~3并且速度提升1~2，受到的伤害的混乱伤害提升50%</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="TheChosen">
+      		<Name>红舞鞋</Name>
+      		<Desc>带有”血之渴望“的角色只能攻击该角色而且命中时额外追加3~8点伤害</Desc>
+    	</BattleEffectText>			
+		<BattleEffectText ID="DeepBleed">
+      		<Name>创口撕裂</Name>
+      		<Desc>投掷进攻骰时会受到等于该层数的伤害，这一幕结束时层数清零</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Latitia_Gift">
+      		<Name>小小礼物</Name>
+      		<Desc>该角色与非赠礼者拼点时有50%的概率承受3~8点伤害并在下一幕中获得2层“流血”。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="BlackSwan_Nettle">
+      		<Name>荨麻衣</Name>
+      		<Desc>所受伤害和混乱伤害减少{0}</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Porccubus_Happy_Enemy">
+      		<Name>快感</Name>
+      		<Desc>当快感达到3层时受到3~7伤害和混乱伤害并层数清零</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Porccubus_Happy">
+      		<Name>快感</Name>
+      		<Desc>当快感达到4层时受到2~7伤害和混乱伤害并层数清零</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Enthusiastic">
+      		<Name>狂热崇拜</Name>
+      		<Desc>角色已失去控制若陷入混乱则在下一幕开始时解除此状态。被没失去理智的司书击中时该角色将只承受混乱伤害并且该混乱伤害提高100%。并被来宾击中时所受伤害+2~4</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Gaho">
+      		<Name>加护</Name>
+      		<Desc>减少30%所受伤害和混乱伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Tear">
+      		<Name>泪剑</Name>
+      		<Desc>拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%的伤害，如果没有一颗骰子命中则对自身造成最大生命值10%的伤害。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Angry_Angry">
+      		<Name>愤怒</Name>
+      		<Desc>该司书已失去控制且指定攻击目标时不分敌我。每一幕开始时获得2层“强壮”，恢复2点光芒并额外抽取2张书页。若场上有“朋友”则优先攻击朋友</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Berserk_Enemy">
+      		<Name>愤怒</Name>
+      		<Desc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Decay">
+      		<Name>腐蚀</Name>
+      		<Desc>每一幕开始时承受等同于“腐蚀”层数的伤害，随后将“腐蚀”层数清零。被击中时将失去等同于“腐蚀”层数的体力与混乱抗性。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="RandomEmotion">
+      		<Name>空虚</Name>
+      		<Desc>每一幕开始时清空自身所有的异想体，每清除一个异想体书页从所有已解锁的异想体里随机选择1个应用到自身</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Nihil_Nihil">
+      		<Name>虚无</Name>
+      		<Desc>移除异想体书页“贪婪”，“憎恶”，“绝望”与“愤怒”的负面效果。
+每一幕开始时对除该司书外的其余角色施加5层“虚弱”，“破绽”与“束缚”。
+“贪婪”- 效果仅对自身生效。
+“憎恶”- 拼点失败时不再追加承受混乱伤害。
+“绝望”-其他司书死亡时不会失去混乱抗性
+“愤怒”- 可控制处于“愤怒”状态下的司书。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="MountainCorpse">
+      		<Name>尸山</Name>
+      		<Desc>每层骰子威力+1，所受伤害提高25%并提高体型</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Indicator">
+      		<Name>计数器</Name>
+      		<Desc>恢复量为{0}</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="FearOfWater">
+      		<Name>恐水症</Name>
+      		<Desc>该单位不受控制并且只能攻击血量最高的敌人</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Shell">
+      		<Name>躯壳</Name>
+      		<Desc>该单位不受混乱伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Lion_Player">
+      		<Name>同行之路</Name>
+      		<Desc>若该司书保护某司书免受攻击(转移攻击目标)，则使该司书当前书页的所有骰子威力+1~2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Lion_Enemy">
+      		<Name>同行之路</Name>
+      		<Desc>若未能保护某司书免受该来宾攻击(转移攻击目标)，则使该来宾当前书页的所有骰子威力+1~2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Ozma_revive">
+      		<Name>生命的粉末</Name>
+      		<Desc>异想体书页-“生命的粉末”可生效。
+承受致死伤害时将无视此次伤害并恢复所有体力和混乱抗性，并在之后清空其所有的光芒。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Wizard_potion">
+      		<Name>激发勇气的药水</Name>
+      		<Desc>将交替体验勇敢阶段(获得2点强壮持续2幕)和胆小阶段(获得2点虚弱持续2幕)</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Wizard_poket">
+      		<Name>装有锯末的布袋</Name>
+      		<Desc>每一幕开始的抽牌时将最后加入手牌的书页的复制(复制使用时消耗)置入手牌，所有牌骰子威力-1~2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Wizard_heart">
+      		<Name>用铅制成的心脏</Name>
+      		<Desc>每一幕开始时不再获得光芒持续{0}幕。若一幕开始时层数为0便恢复所有得光芒并获得恢复光芒数量的层数</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Wizard_home">
+      		<Name>永远回不去的家</Name>
+      		<Desc>如果在这一幕未曾攻击过目标则进攻骰子威力加1~3，否则进攻骰子威力-1~3</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Wizard_change">
+      		<Name>催生变异的粉末</Name>
+      		<Desc>每一幕结束时恢复随机友方角色30%血量和混乱抗性并将角色随机1张手牌变形为南瓜</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Charm">
+      		<Name>魅惑</Name>
+      		<Desc>这一幕只能攻击使用“永燃灯”的来宾</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="SmallBird_Punishment">
+      		<Name>惩戒</Name>
+      		<Desc>这一幕中使用书页的第1颗骰子威力+2~4</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Smallbird_Beak">
+      		<Name>责罚之喙</Name>
+      		<Desc>伤害和混乱伤害提高2~3</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Sinner">
+      		<Name>罪人</Name>
+      		<Desc>应用了“审判”的角色第一次命中“罪人”时会追加其15%生命值的伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Longbird">
+      		<Name>长臂</Name>
+      		<Desc>进攻骰上限-5，获得目标罪痕层数的威力</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EggSin">
+      		<Name>罪痕</Name>
+      		<Desc>击中任意司书时获得1层，击杀任意司书时获得5层，若一幕内未命中司书则这一幕结束时减少1/3层</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Longbird_Enemy">
+      		<Name>长臂</Name>
+      		<Desc>免疫原版的负面状态</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Bigbird">
+      		<Name>巨目</Name>
+      		<Desc>最大混乱抗性减少50%，被单方面攻击时以斩击4-10的反击骰迎战</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Bigbird_Enemy">
+      		<Name>巨目</Name>
+      		<Desc>拼点时目标司书的骰子将不受威力增减效果影响。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Smallbird">
+      		<Name>小喙</Name>
+      		<Desc>最大血量减少50%，与进攻骰拼点时骰子威力提高3~4点</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Smallbird_Enemy">
+      		<Name>小喙</Name>
+      		<Desc>每一幕开始时随机一个司书的2张手牌费用+1</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="ApocalypseBird_Big">
+      		<Name>遮掩天空的黑翼</Name>
+      		<Desc>战斗开始时将以牌库内的随机一张书页为蓝本释放范围杀伤交锋“眼棱”，若该书页至少命中目标一次则使其获得“恐慌”</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="ApocalypseBird_Small">
+      		<Name>处以极刑的巨爪</Name>
+      		<Desc>这一幕内将所有书页转化为清算范围杀伤书页</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="ApocalypseBird_Long">
+      		<Name>随意断罪的独眼</Name>
+      		<Desc>这一幕内进攻骰命中时追加等同于骰子威力一半的百分比伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="BigBirdParalysis">
+      		<Name>恐慌</Name>
+      		<Desc>这一幕内所有骰子上限-5</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="ApocalypseBird_Peace">
+      		<Name>入侵者</Name>
+      		<Desc>造成伤害和混乱伤害减少3~5，所受伤害和混乱伤害提高3~5</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="BloodyTree_Emotion_Damage">
+      		<Name>不要转移视线</Name>
+      		<Desc>与非应用“萎缩的血翼”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="SlashProtect"> 
+      		<Name>疤痕-斩击</Name>
+      		<Desc>被斩击骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="HitProtect">
+      		<Name>疤痕-打击</Name>
+      		<Desc>被打击骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="PenetrateProtect">
+      		<Name>疤痕-穿刺</Name>
+      		<Desc>被穿刺骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="AspirationHeart">
+      		<Name>渴望</Name>
+      		<Desc>速度+1~2，体力上限+15%并恢复等量体力。若在这一幕造成30点伤害则在下一幕获得1个速度骰</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="HeartExhaust">
+      		<Name>疲倦</Name>
+      		<Desc>这一幕内无法行动并且受到伤害提高2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="SnowQueen_Emotion_Stun">
+      		<Name>雪暴</Name>
+      		<Desc>若该角色为来宾则下一幕中获得6层“束缚”。</Desc>
+    	</BattleEffectText>
+	</effectTextList>
+</BattleEffectTextRoot>
