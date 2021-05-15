@@ -3,11 +3,11 @@
 	<effectTextList>
     	<BattleEffectText ID="Teddy_Memory">
       		<Name>Memory</Name>
-      		<Desc>All dices of Guest with [Happy Memory] increase {0} in a clash with self</Desc>
+      		<Desc>All dices of Guest with [Happy Memory] increase {0} in a clash with self.</Desc>
     	</BattleEffectText>
     	<BattleEffectText ID="Malice_Enemy">
-      		<Name>恶意</Name>
-      		<Desc>每回合开始时施加{0}层缠绕</Desc>
+      		<Name>Malice</Name>
+      		<Desc>At the start of each Scene, inflict {0} Bind</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitDebuff">
       		<Name>回声</Name>

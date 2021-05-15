@@ -2,15 +2,15 @@
 <PassiveDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<PassiveDesc ID="666">
 		<Name>Cogito, ergo sum</Name> 
-		<Desc>At the end of each Scene, if the Emotion Level reached 1, 3 and 5, acquire a random accessible Abnormality Pages</Desc>
+		<Desc>At the end of each Scene, if the Emotion Level reached 1, 3 and 5, acquire a random accessible Abnormality Pages.</Desc>
 	</PassiveDesc>
 	<PassiveDesc ID="667">
 		<Name>Her mesmerizing voice</Name> 
-		<Desc>At the end of each Scene, if the Emotion Level rise, acquire a random accessible Abnormality Pages</Desc>
+		<Desc>At the end of each Scene, if the Emotion Level rise, acquire a random accessible Abnormality Pages.</Desc>
 	</PassiveDesc>
 	<PassiveDesc ID="668">
 		<Name>Seed of Light</Name> 
-		<Desc>At the start of the Act, set the Emotion Level to average of all libriarians' Emotion Level
-At the end of each Scene, if the Emotion Level rise, acquire a random accessible Abnormality Pages</Desc>
+		<Desc>At the start of the Act, set the Emotion Level to average of all libriarians' Emotion Level.
+At the end of each Scene, if the Emotion Level rise, acquire a random accessible Abnormality Pages.</Desc>
 	</PassiveDesc>
 </PassiveDescRoot>

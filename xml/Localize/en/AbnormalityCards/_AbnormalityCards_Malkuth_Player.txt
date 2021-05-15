@@ -17,117 +17,116 @@ When a librarian's HP is at 20% or lower, deal 30% of Max HP to all enermies as 
 		</AbnormalityCard>
     	<AbnormalityCard ID="HappyTeddyBear_Hug">
       		<Abnormality>Happy Teddy Bear</Abnormality>
-      		<CardName>思念的拥抱</CardName>
+      		<CardName>Nostalgic Embrace of the Old Days</CardName>
       		<AbilityDesc>[Single Ally]
-该司书拼点胜利时有20%的概率追加等同于“自身骰子点数”的混乱伤害。
-每对同一来宾拼点一次，该异想体触发率提高10%。
-与其他来宾拼点会重置触发概率</AbilityDesc>
-      		<FlaborText>泰迪正紧紧抱着某人。泰迪非常喜欢拥抱。但，似乎有些不对劲。</FlaborText>
+Upon winning a clash, deal bonus Stagger damage equal to the dice value at a 20% chance.
+Clashing against the same target multiple times will increase the likelihood by 10%. 
+likelihood will be reset when clash with other target.</AbilityDesc>
+      		<FlaborText>Teddy was hugging someone tightly. Teddy loved hugs. But something was odd.</FlaborText>
       		<Dialogues>
-				<Dialogue ID="1">我们来抱抱吧？这样你会好受些的。</Dialogue>
-        		<Dialogue ID="2">大家都喜欢拥抱，对不对？</Dialogue>
-        		<Dialogue ID="3">快来感受一下，这份暖暖的心意吧。</Dialogue>
-        		<Dialogue ID="4">没关系的，请不要害怕。我只是，想好好抱抱你。</Dialogue>
-        		<Dialogue ID="5">累了吗？快来我怀里歇歇吧。</Dialogue>
+        		<Dialogue ID="1">Give me a tight hug, will you? It’ll soothe your mind.</Dialogue>
+        		<Dialogue ID="2">Everyone loves hugs. Don’t you agree?</Dialogue>
+        		<Dialogue ID="3">Come over here and feel this fuzzy and warm feeling.</Dialogue>
+        		<Dialogue ID="4">It’s okay. Don’t be afraid. All I do, is wrap you up in my arms.</Dialogue>
+        		<Dialogue ID="5">You’re tired, aren’t you? Come take a rest in my embrace.</Dialogue>
       		</Dialogues>
     	</AbnormalityCard>
     	<AbnormalityCard ID="HappyTeddyBear_Lonely">
-      		<Abnormality>快乐泰迪</Abnormality>
-      		<CardName>表达爱意</CardName>
-      		<AbilityDesc>[选择一名司书]
-该司书拼点时自身的所有骰子威力+1~3
-单方面攻击时自身的所有骰子威力-1~3</AbilityDesc>
-      		<FlaborText>它的记忆始于温暖的怀抱。</FlaborText>
+      		<Abnormality>Happy Teddy Bear</Abnormality>
+      		<CardName>Display of Affection</CardName>
+      		<AbilityDesc>[Single Ally]
+All dice gain 1-3 Power in a clash.
+All dice lose 1-3 Power in a one-sided attack.</AbilityDesc>
+      		<FlaborText>Its memories began with a warm hug.</FlaborText>
       		<Dialogues>
-        		<Dialogue ID="1">你来找我玩啦，我好开心呀。</Dialogue>
-        		<Dialogue ID="2">你真亲切呢？我们再来一次吧，嗯？</Dialogue>
-        		<Dialogue ID="3">愿意和这样的我一起玩，我好感动……</Dialogue>
-        		<Dialogue ID="4">来吧，我会温柔地抱住你，让你感受暖暖的爱意。</Dialogue>
-        		<Dialogue ID="5">没关系，不要怕，只是紧紧抱一下哟？</Dialogue>
-      			</Dialogues>
+        		<Dialogue ID="1">I’m so happy that you’re playing with me.</Dialogue>
+        		<Dialogue ID="2">You’re a kind one, aren’t you? Let’s do it again, okay?</Dialogue>
+        		<Dialogue ID="3">You were so eager to play with me. I’m touched…</Dialogue>
+        		<Dialogue ID="4">Come over here and feel this fuzzy and warm feeling of love with my hug.</Dialogue>
+        		<Dialogue ID="5">Don’t worry. It’s nothing scary. All I do is wrap you up in my arms.</Dialogue>
+      		</Dialogues>
     	</AbnormalityCard>
 		<AbnormalityCard ID="FairyCarnival_Care">
-      		<Abnormality>精灵盛宴</Abnormality>
-      		<CardName>精灵的呵护</CardName>
-          	<AbilityDesc>[选择一名司书]
-3幕之内，每一幕结束时为该司书恢复20%的体力。(至多24点)
-若该司书在此期间承受超过25%体力(至多30点)，则失去25%的体力并移除该效果。(至多30点)</AbilityDesc>
-      		<FlaborText>精灵会保护职员们。在她们的悉心照料下，一切都会变得安宁祥和。</FlaborText>
+      		<Abnormality>Fairy Festival</Abnormality>
+      		<CardName>The Fairies’ Care</CardName>
+          	<AbilityDesc>[Single Ally]
+For three Scenes, recover 20% of Max HP (Max. 24) at the end of the Scene.
+If the librarian lose 25% of Max HP (Max. 30)or above while this effect is active, lose 25% of the current HP (Max. 30) and lose this effect.</AbilityDesc>
+      		<FlaborText>The fairies protect our employees. Everything will be peaceful while you are under the fairies’ care.</FlaborText>
       		<Dialogues>
-        		<Dialogue ID="1">不用担心！我们会好好照顾你哒。</Dialogue>
-        		<Dialogue ID="2">不要害怕，我们是来保护你哒。</Dialogue>
-        		<Dialogue ID="3">精灵们都是神圣的化身，要对自己有信心哟。</Dialogue>
-        		<Dialogue ID="4">待人友善，热爱自然的你，理应受到我们的关怀。</Dialogue>
-        		<Dialogue ID="5">呐，你很特别哦。其他人就需要回顾人生，好好反思反思了。</Dialogue>
+        		<Dialogue ID="1">Don’t worry, now! We’ll take good care of you.</Dialogue>
+        		<Dialogue ID="2">Don’t be alarmed. We’re here to protect you.</Dialogue>
+        		<Dialogue ID="3">Fairies are sacred beings, you know. Have some confidence.</Dialogue>
+        		<Dialogue ID="4">You’re a good-hearted lover of nature, you deserve our care.</Dialogue>
+        		<Dialogue ID="5">You’re the special one. The others should reflect on themselves.</Dialogue>
       		</Dialogues>
     	</AbnormalityCard>
     	<AbnormalityCard ID="FairyCarnival_QueenAtk">
-      		<Abnormality>精灵盛宴</Abnormality>
-      		<CardName>猎食</CardName>
-      		<AbilityDesc>[选择一名司书]
-该来宾造成伤害的50%会转换为体力，每一幕最多恢复20%的体力(至多24).
-如果在上一幕内没有恢复10%的体力(至多12)则损失10%的体力(至多12)并在这一幕提高30%的伤害</AbilityDesc>
-      		<FlaborText>他的内脏和眼球遭到不明生物啃食，受损严重。此外，我们察觉到精灵们的嘴角沾有某人的血肉。</FlaborText>
+      		<Abnormality>Fairy Festival</Abnormality>
+      		<CardName>Predation</CardName>
+      		<AbilityDesc>[Single Ally]
+Heal 50% of the amount of damage dealt. In each Scene heal at most 20% of Max HP (Max. 24)
+if fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increase damage by 30% in this Scene.</AbilityDesc>
+      		<FlaborText>His stomach and face were ripped off, and his eyeballs and organs were damaged as if they were eaten by something. Meanwhile, the fairies had someone’s blood and flesh smeared all over their mouths.</FlaborText>
       		<Dialogues>
-        		<Dialogue ID="1">精灵的数量，就是这样减少的……朕也无可奈何。</Dialogue>
-        		<Dialogue ID="2">受了伤，肉就不再好吃了！</Dialogue>
-        		<Dialogue ID="3">朕想吃新鲜的肉，烂掉的肉毫无营养。</Dialogue>
-        		<Dialogue ID="4">肉要新鲜才好，趁热吃吧？</Dialogue>
-        		<Dialogue ID="5">满是伤疤的烂肉，真难吃……</Dialogue>
+        		<Dialogue ID="1">My fairies are dwindling in numbers… But it can’t be helped.</Dialogue>
+        		<Dialogue ID="2">Scarred and rotten meat isn’t tasty!</Dialogue>
+        		<Dialogue ID="3">I need something fresh. Spoiled meat isn’t nutritious.</Dialogue>
+        		<Dialogue ID="4">I must eat it before it spoils, hm?</Dialogue>
+        		<Dialogue ID="5">Scarred and rotten meat isn’t tasty.</Dialogue>
       		</Dialogues>
     	</AbnormalityCard>
     	<AbnormalityCard ID="QueenBee_Bee">
-      		<Abnormality>蜂后</Abnormality>
-      		<CardName>工蜂</CardName>
-      		<AbilityDesc>[选择一名司书]
-战斗开始时该司书指定的第一个单位被标记为威胁。
-未应用该异想体书页的司书击中“威胁”时将提高2~4点伤害。</AbilityDesc>
-      		<FlaborText>工蜂只表现出两种行为模式: 为蜂后提供营养素，扩大蜂群数量。</FlaborText>
+      		<Abnormality>Queen Bee</Abnormality>
+      		<CardName>Worker Bee</CardName>
+      		<AbilityDesc>[Single Ally]
+Combat Start the first enemy the selected librarian target at is marked. Other allies deal 2-4 more damage to the marked foe with attacks.</AbilityDesc>
+      		<FlaborText>They show only two forms of behavior: Delivering nutrients to the Queen, and proliferating.</FlaborText>
       		<Dialogues>
-        		<Dialogue ID="1">我的工蜂们，是时候行动了。</Dialogue>
-        		<Dialogue ID="2">翅膀，前足，下颚……能动的部位都动起来，赶在他们夺走蜂蜜之前！</Dialogue>
-        		<Dialogue ID="3">现在正是忙碌的时刻，速度再快一点！</Dialogue>
-        		<Dialogue ID="4">又有谁会记得，那些为王国而死的工蜂呢……？</Dialogue>
+        		<Dialogue ID="1">My bees. It is time to move.</Dialogue>
+        		<Dialogue ID="2">Your wings, legs, jaw… Put every part of your body to work. Lest they pillage our honey.</Dialogue>
+        		<Dialogue ID="3">Make haste, my minions. We cannot waste a minute.</Dialogue>
+        		<Dialogue ID="4">Who will remember the bees that have died for the kingdom…</Dialogue>
       		</Dialogues>
     	</AbnormalityCard>
 		<AbnormalityCard ID="QueenBee_Loyalty">
-      		<Abnormality>蜂后</Abnormality>
-      		<CardName>忠诚</CardName>
-      		<AbilityDesc>[选择一名司书]
-若有其他司书存活，该司书无法行动并在每一幕开始时为其他司书施加2层强壮忍耐敏捷</AbilityDesc>
-      		<FlaborText>蜜蜂的忠诚是一种自然本能，一旦找到激发这种本能的方法，那么许多事情都将改变。</FlaborText>
+      		<Abnormality>Queen Bee</Abnormality>
+      		<CardName>Loyalty</CardName>
+      		<AbilityDesc>[Single Ally]
+As long as there are other alive allies, Cannot act and at the start of each Scene give other allies 2 Strength, Endurance, Quickness</AbilityDesc>
+      		<FlaborText>The loyalty of bees is a naturally developed instinct. If we discover a way to draw forth that instinct, many things could change.</FlaborText>
       		<Dialogues>
-        		<Dialogue ID="1">快为我献上更多蜜来。</Dialogue>
-        		<Dialogue ID="2">我即是王国，王国即是我。对我忠诚即是对王国忠诚。</Dialogue>
-        		<Dialogue ID="3">哪怕翅膀被撕碎，只要腿还能动，就必须全力工作。</Dialogue>
-        		<Dialogue ID="4">“为女王献身”只是一句空话，你必须活下去，继续保护我。</Dialogue>
+        		<Dialogue ID="1">Hurry and supply me with more honey.</Dialogue>
+        		<Dialogue ID="2">I am the kingdom, and the kingdom is I. Loyalty to me is loyalty to your kingdom.</Dialogue>
+        		<Dialogue ID="3">Even if your wings are torn, you should give your everything to serve as long as your legs are working.</Dialogue>
+        		<Dialogue ID="4">“Giving one’s life” is an empty vow. What I want from you is to survive and continue to protect me.。</Dialogue>
       		</Dialogues>
     	</AbnormalityCard>
 		<AbnormalityCard ID="SnowWhite_Thorn">
-			<Abnormality>白雪公主的苹果</Abnormality>
-			<CardName>毒刺屏障</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书被击中时对攻击方施加2~8点伤害并恢复等同于伤害量的体力。
-在一幕内同一攻击者每击中该司书一次该异想体对该攻击者伤害提升20%。</AbilityDesc>
-			<FlaborText>被白雪公主咬过一口便遗弃在烂泥中的苹果，永远得不到幸福。那颗苹果在孤独与憎恶之中，日复一日地等待着腐烂……</FlaborText>
+			<Abnormality>Snow White’s Apple</Abnormality>
+			<CardName>Barrier of Thorns</CardName>
+			<AbilityDesc>[Single Ally]
+When hit and lose 1% of Max HP or above, inflict 2-8 damage and recover HP equal to the amount of damage.
+Increase damage by 20% everytime the effect is applied to same attacker in one Scene.</AbilityDesc>
+			<FlaborText>The apple that dropped from Snow White’s hand after a single bite could never be happy. The apple, full of loneliness and hatred towards the princess, waited for the day it would rot away and return to the earth.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">美丽的苹果，被遗弃在寂静的森林之中。噢，美丽的苹果……</Dialogue>
-				<Dialogue ID="2">腐烂之物围绕着它，那颗苹果无法回归土壤。</Dialogue>
-				<Dialogue ID="3">那颗被遗弃在烂泥中的苹果，永远——无法——幸福。</Dialogue>
-				<Dialogue ID="4">带刺的藤蔓，从伤透的心中蔓生而出。</Dialogue>
+				<Dialogue ID="1">A pretty apple, abandoned in a forlorn place. Oh, pretty apple…</Dialogue>
+				<Dialogue ID="2">The apple couldn’t return to the earth, and only rotting impurities were around it.</Dialogue>
+				<Dialogue ID="3">The apple that was dropped on the dirt floor couldn’t be happy.</Dialogue>
+				<Dialogue ID="4">Thorned vines grew from the wounded heart.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SnowWhite_malice">
-			<Abnormality>白雪公主的苹果</Abnormality>
-			<CardName>恶意</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕结束时会对该来宾造成最多伤害的司书施加1层恶意如果没有受到伤害则随机一个司书会被施加1层恶意(每一幕开始时获得1层缠绕)
-战斗开始时会所有具有缠绕的敌人释放效果为[交锋]穿刺3~6(上限提升敌方全场缠绕总数)的范围杀伤书页</AbilityDesc>
-			<FlaborText>伴随那与生俱来的恶意，花朵绽放之时，所有生命都将消亡。</FlaborText>
+			<Abnormality>Snow White’s Apple</Abnormality>
+			<CardName>Malice</CardName>
+			<AbilityDesc>[Single Ally]
+At the end of each Scene, inflict the enemy who dealt the most damage to self 1 Malice (At the start of each Scene, gain 1 Bind per stack)
+Combat Start play a Mass Attack Card ‘Roll Range: 7~11;Boost dice's max value by the sum of Bind stack all enemies have.’, targeting all enemy who has Bind.</AbilityDesc>
+			<FlaborText>The inherent malice caused all life to crumble as soon as it bloomed.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">诞生自愤怒与诅咒的我，却给他人带去了幸福。</Dialogue>
-				<Dialogue ID="2">充满死气的藤蔓仍在生长。</Dialogue>
-				<Dialogue ID="3">淹没在恐怖的愤怒与复仇欲中……强忍着孤独长大。</Dialogue>
+				<Dialogue ID="1">My existence was born from wrath and a curse, yet I served as a blessing to someone else.</Dialogue>
+				<Dialogue ID="2">The lifeless vines continued to grow.</Dialogue>
+				<Dialogue ID="3">It grew, swallowing dreadful thoughts of revenge, anger at itself… and loneliness.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>
