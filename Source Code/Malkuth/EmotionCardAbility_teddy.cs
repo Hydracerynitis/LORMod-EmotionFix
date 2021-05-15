@@ -39,7 +39,20 @@ namespace EmotionalFix
                 this._lastTarget = behavior.card?.target;
             }
         }
-        public override void OnSelectEmotion() => this._owner.view.unitBottomStatUI.SetBufs();
-        public override Sprite GetAbilityBufIcon() => Resources.Load<Sprite>("Sprites/BufIcon/Ability/Teddy_Head");
+        public override void OnSelectEmotion()
+        {
+            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_teddy_hug());
+        }
+        public class BattleUnitBuf_teddy_hug : BattleUnitBuf
+        {
+            protected override string keywordId => "Teddy_Head";
+            public override BufPositiveType positiveType => BufPositiveType.Positive;
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                this.stack = 0;
+            }
+            public override void OnDie() => this.Destroy();
+        }
     }
 }
