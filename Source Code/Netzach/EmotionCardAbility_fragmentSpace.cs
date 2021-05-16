@@ -35,7 +35,7 @@ namespace EmotionalFix
         {
             if(this._owner.faction==Faction.Enemy && Trigger)
             {
-                curCard.owner.TakeBreakDamage(BrkDmg);
+                curCard.owner.TakeBreakDamage(RandomUtil.Range(3, 6));
                 this._owner.battleCardResultLog.SetEndCardActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Effect));
             }
         }

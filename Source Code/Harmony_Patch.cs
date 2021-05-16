@@ -100,6 +100,18 @@ namespace EmotionalFix
             {
                 Debug.Error("HP_" + method11.Name, ex);
             }
+            MethodInfo method13 = typeof(Harmony_Patch).GetMethod("BattleUnitBuf_Alriune_Debuf_OnRoundEndTheLast");
+            MethodInfo method14 = typeof(BattleUnitBuf_Alriune_Debuf).GetMethod("OnRoundEndTheLast", AccessTools.all);
+            try
+            {
+                HarmonyMethod prefix3 = new HarmonyMethod(method13);
+                harmony.Patch((MethodBase)method14, prefix: prefix3);
+                Debug.Log("Patch " + method13.Name + " Succeed");
+            }
+            catch (Exception ex)
+            {
+                Debug.Error("HP_" + method13.Name, ex);
+            }
 
         }
         public static void EmotionCardXmlList_GetEnemyEmotionNeutralCardList(ref List<EmotionCardXmlInfo> __result)
@@ -196,6 +208,17 @@ namespace EmotionalFix
         {
             ____diceFinalResultValue = Mathf.Max(1, ____diceResultValue);
             return true;
+        }
+        public static bool BattleUnitBuf_Alriune_Debuf_OnRoundEndTheLast(BattleUnitBuf_Alriune_Debuf __instance, ref int ___reserve, BattleUnitModel ____owner)
+        {
+            ____owner.TakeBreakDamage(__instance.stack, DamageType.Buf);
+            __instance.stack= __instance.stack * 2 / 3;
+            __instance.stack += ___reserve;
+            ___reserve = 0;
+            if (__instance.stack > 0)
+                return false;
+            __instance.Destroy();
+            return false;
         }
         public static Difficulty DifficultyTweak()
         {

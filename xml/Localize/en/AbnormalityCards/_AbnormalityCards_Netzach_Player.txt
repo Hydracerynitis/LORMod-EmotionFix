@@ -2,126 +2,126 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
     	<AbnormalityCard ID="UniverseZogak_Tentacle">
-			<Abnormality>宇宙碎片</Abnormality>
-			<CardName>穿透</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中以穿刺骰子击中目标时将追加15%目标混乱抗性</AbilityDesc>
-			<FlaborText>被触须穿透的那一瞬间，今后的人生将再也无法激起你分毫的兴趣……</FlaborText>
+			<Abnormality>Fragment of the Universe</Abnormality>
+			<CardName>Tentacles</CardName>
+			<AbilityDesc>[Single Ally]
+Upon successful Pierce hit, enemy lose 15% of Stagger Ressist (Once per Scene for one enemy).</AbilityDesc>
+			<FlaborText>The moment its tentacle penetrates you, it’ll drain all the interest for the life you’re currently living out of you.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">否定。攻击。用以。帮助。给予。</Dialogue>
-				<Dialogue ID="2">我们。知识。只是。给予。传达。尚未。</Dialogue>
-				<Dialogue ID="3">人类。攻击。我们。遵从。协同。攻击。</Dialogue>
-				<Dialogue ID="4">攻击。快速。穿透。</Dialogue>
-				<Dialogue ID="5">人类。攻击。灵魂。消散。希望。毫无。</Dialogue>
+				<Dialogue ID="1">Negative. Attack. Come. Help. Give.</Dialogue>
+				<Dialogue ID="2">Knowledge. Our. Simple. Give. Relay. None.</Dialogue>
+				<Dialogue ID="3">Human. Attack. I. Protect. Along. Attack.</Dialogue>
+				<Dialogue ID="4">Attack. Swift. Impale.</Dialogue>
+				<Dialogue ID="5">Human. Attack. Soul. Disappear. Gone. Want.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="UniverseZogak_Sing">
-			<Abnormality>宇宙碎片</Abnormality>
-			<CardName>无法理解</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)</AbilityDesc>
-			<FlaborText>总而言之，那家伙成功踏入了“宇宙碎片”的领域，但他的大脑显然无法承受。</FlaborText>
+			<Abnormality>Fragment of the Universe</Abnormality>
+			<CardName>Incomprehensible</CardName>
+			<AbilityDesc>[Single Ally]
+Upon succesful hit, inflict 1 Feeble and Disarm next Scene at 50% chance (Three times per Scene).</AbilityDesc>
+			<FlaborText>Eventually, he succeeded in entering the domain of the ‘Fragment of the Universe’. However, it was obvious that his small brain couldn’t withstand it.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">理解。与你。一同。人类。与我。</Dialogue>
-				<Dialogue ID="2">希望。理解。与你。与我。学习。</Dialogue>
-				<Dialogue ID="3">讲述。我之。故事。愿你。理解。努力。</Dialogue>
+				<Dialogue ID="1">Understand. You. Together. Human. I.</Dialogue>
+				<Dialogue ID="2">Want. Understand. I. You. Study.</Dialogue>
+				<Dialogue ID="3">I. Tell. Story. You. Understand. Try.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ChildofGalaxy_Tear">
-			<Abnormality>银河之子</Abnormality>
-			<CardName>泪水</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书陷入混乱时对所有角色造成等同于”该来宾混乱上限x35%“的混乱伤害(至多20点)</AbilityDesc>
-			<FlaborText>耳畔传来他的低语和呼吸……接着便是一片漆黑……就像我与他初见的那个夜晚……</FlaborText>
+			<Abnormality>Child of the Galaxy</Abnormality>
+			<CardName>Teardrop</CardName>
+			<AbilityDesc>[Single Ally]
+On getting staggered, inflict Stagger damage equal to 35% of Max Stagger (Max. 20) to all character.</AbilityDesc>
+			<FlaborText>I hear his whispers and breath. Pitch black darkness follows… just like the night I met him…</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">和我一起，在银河中漫步吧。</Dialogue>
-				<Dialogue ID="2">你也变成卵石吧，和我永不分离。</Dialogue>
-				<Dialogue ID="3">就和那夜一样，让我们再度回到从前……</Dialogue>
-				<Dialogue ID="4">能和你相遇，我很开心。</Dialogue>
-				<Dialogue ID="5">如果我又哭鼻子了，请帮我擦掉泪水吧。</Dialogue>
+				<Dialogue ID="1">Walk across the Milky Way with me.</Dialogue>
+				<Dialogue ID="2">You’ll become a pebble, and join me.</Dialogue>
+				<Dialogue ID="3">Let’s go back, just like that night.</Dialogue>
+				<Dialogue ID="4">I’m so glad to meet you.</Dialogue>
+				<Dialogue ID="5">If you find me crying again, then wipe my tears for me.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ChildofGalaxy_Friend">
-			<Abnormality>银河之子</Abnormality>
-			<CardName>友谊之证</CardName>
-			<AbilityDesc>[选择一名司书]
-3幕之内，每一幕开始时为所有司书恢复15%的体力。(至多18点)</AbilityDesc>
-			<FlaborText>你手中的卵石闪耀着，摇曳着，颤动着。在那之后，它便化作整个银河。</FlaborText>
+			<Abnormality>Child of the Galaxy</Abnormality>
+			<CardName>A Token of Friendship</CardName>
+			<AbilityDesc>[Single Ally]
+For 3 Scenes, recover 10% of Max HP for all allies at the start of the Scene. (Max. 12).</AbilityDesc>
+			<FlaborText>The pebble dropped into your hand sparkles, sways, tickles, and eventually becomes the universe.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">请不要丢掉它，也不要把它交给别人……</Dialogue>
-				<Dialogue ID="2">这是友谊的证明，请好好珍惜……</Dialogue>
-				<Dialogue ID="3">只要带上它，我就能永远伴你左右。</Dialogue>
-				<Dialogue ID="4">无论何时都要陪在我身边哦？请不要忘记我们的约定。</Dialogue>
-				<Dialogue ID="5">朋友受伤什么的……真叫人伤心难过呐。</Dialogue>
+				<Dialogue ID="1">Don’t lose it, and don’t give it to anyone else.</Dialogue>
+				<Dialogue ID="2">It’s my gift to celebrate our friendship. Please treasure it.</Dialogue>
+				<Dialogue ID="3">As long as you’re holding it, I’ll be right next to you.</Dialogue>
+				<Dialogue ID="4">You have to stay by my side forever, promise? Don’t forget this.</Dialogue>
+				<Dialogue ID="5">If my friend gets hurt… That would be sad.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Porccubus_Thorn">
-			<Abnormality>棘刺公交</Abnormality>
-			<CardName>棘刺</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书以突刺骰子击中目标时将对其施加1层“快感”。
-若“快感”层数达到4，则对目标造成2~7点伤害与混乱伤害并重置该层数。</AbilityDesc>
-			<FlaborText>最初只需要把刺儿轻轻戳进皮肉，而如今需要用全身疯狂地摩擦才能获得等同的刺激。</FlaborText>
+			<Abnormality>Porccubus</Abnormality>
+			<CardName>Thorns</CardName>
+			<AbilityDesc>[Single Ally]
+On a successful Pierce attack, inflict 1 Thrill to the target.
+when Thrill's stack reach 4, deal 2-7 bonus damage and Stagger damage, then remove all stacks of Thrill.</AbilityDesc>
+			<FlaborText>At first, all I had to do was be lightly pricked by one of the thorns. Now I have to rub my whole body against it to get the same high.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">好呀，人家会亲热地弯下腰~这样你就可以摸摸人家啦~</Dialogue>
-				<Dialogue ID="2">一开始难免会觉得害怕，但试过几次就好办啦~</Dialogue>
-				<Dialogue ID="3">快到人家下面来，人家会帮你脱离苦海~</Dialogue>
-				<Dialogue ID="4">品尝一小口天堂的滋味罢了，有什么不好的呀~？</Dialogue>
-				<Dialogue ID="5">那些不知幸福为何物的家伙，还真是可怜呢~</Dialogue>
+				<Dialogue ID="1">Sure, I’ll bend down for you~ Feel free to pet me.</Dialogue>
+				<Dialogue ID="2">It’s scary at first, but the next step won’t be difficult at all.</Dialogue>
+				<Dialogue ID="3">Come under me. I’ll liberate you from all kinds of pain.</Dialogue>
+				<Dialogue ID="4">Just a little taste of the heaven won’t hurt, right?</Dialogue>
+				<Dialogue ID="5">I pity those fools who don’t know this happiness~</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Porccubus_Boom">
-			<Abnormality>棘刺公交</Abnormality>
-			<CardName>嗨爆</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书被击中时有50%的概率失去2~7点混乱抗性并抽取1张书页恢复1点光芒。(每一幕至多触发2次)</AbilityDesc>
-			<FlaborText>我的脑袋就要爆炸了，再见咯~</FlaborText>
+			<Abnormality>Porccubus</Abnormality>
+			<CardName>Pleasure</CardName>
+			<AbilityDesc>[Single Ally]
+When hit, receive 2-7 bonus Stagger damage, draw 1 card and restore 1 Light with a 50% chance. (Twice per Scene)</AbilityDesc>
+			<FlaborText>Now it’s time for my head to burst. Good day.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">贪求常人无法承受的欢乐，迟早会崩溃的啦。</Dialogue>
-				<Dialogue ID="2">人家只是为你们送来临终前的欢笑~</Dialogue>
-				<Dialogue ID="3">先从一根开始，往后越来越多。</Dialogue>
-				<Dialogue ID="4">幸福得就像脑袋要爆了一样。</Dialogue>
-				<Dialogue ID="5">尝过甜头，就别想逃啦。</Dialogue>
+				<Dialogue ID="1">If you wish for unbearable pleasure, you’ll break down eventually.</Dialogue>
+				<Dialogue ID="2">I’m just giving you laughter, so much that you might die laughing~</Dialogue>
+				<Dialogue ID="3">You’ll start with one, and keep wanting more.</Dialogue>
+				<Dialogue ID="4">Your head will soon be filled with happiness, almost enough to burst your head.</Dialogue>
+				<Dialogue ID="5">Once you’ve had a taste of this sweetness, you can’t quit.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Alriune_flower">
-			<Abnormality>爱娜温</Abnormality>
-			<CardName>花瓣</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕开始时若该来宾混乱抗性超过50%失去其25%混乱抗性并为所有其他司书恢复等量的混乱抗性</AbilityDesc>
-			<FlaborText>你曾对我说，要用花瓣代替泪水。“我们都是从尘土中走来的，请不要轻言我的结局。”你告诉过我，漫身的鲜花将化作最后的遗言。</FlaborText>
+			<Abnormality>Alriune</Abnormality>
+			<CardName>Flower Petals</CardName>
+			<AbilityDesc>[Single Ally]
+At the start of the Scene, lose 25% Stagger Resist and other allies recover equal amount of Stagger Resist if have more than 50% of Max Stagger Resist.</AbilityDesc>
+			<FlaborText>Shedding flower petals in place of tears, you spoke to me. “We were all part of earth once, so I plead you not to speak of the end here and now.”</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">空洞的眼窝亦能看清一切。</Dialogue>
-				<Dialogue ID="2">与所有渴望“生”的事物，一同归于尘土。</Dialogue>
-				<Dialogue ID="3">这些花朵肆意绽放，永不凋零。</Dialogue>
-				<Dialogue ID="4">裂隙之中……依然绽放着美丽的花朵。</Dialogue>
+				<Dialogue ID="1">I have no eyes, but I can see everything.</Dialogue>
+				<Dialogue ID="2">Let us go back to the grave with all that lives and breathes</Dialogue>
+				<Dialogue ID="3">These flowers bloom without an end, and not one of them would wither.</Dialogue>
+				<Dialogue ID="4">I am cracked… yet beautiful flowers fill that space.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Alriune_Bush">
-			<Abnormality>爱娜温</Abnormality>
-			<CardName>秋日的消逝</CardName>
-			<AbilityDesc>[选择一名司书]
-为该司书的突刺骰子赋予额外效果“[命中时] 对目标施加2层[余香]”
-(余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后将“余香”层数减半。)</AbilityDesc>
-			<FlaborText>怀着归于尘土的心愿，将所有渴望“生”的事物一同带入坟墓。</FlaborText>
+			<Abnormality>Alriune</Abnormality>
+			<CardName>Autumn’s Passing</CardName>
+			<AbilityDesc>[Single Ally]
+Upon a successful Pierce attack, inflict 2 Aroma.
+(Aroma: At the start of the Scene, take Stagger damage equal to the amount of Aroma and reduce one third the stack.)</AbilityDesc>
+			<FlaborText>Bearing the hope to return to dust, it shall go back to the grave with all that desires to live.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">我的赎罪，于冰冷的窒息中，迎来尾声。</Dialogue>
-				<Dialogue ID="2">它被遗弃在黑暗的森林里，身心交瘁。</Dialogue>
-				<Dialogue ID="3">生于尘土，欲复归于尘土。</Dialogue>
-				<Dialogue ID="4">这并非我们的终局。</Dialogue>
+				<Dialogue ID="1">My atonement ended with a heavy breath in the cold.</Dialogue>
+				<Dialogue ID="2">I was abandoned in a dark forest; my mind, life, and heart withering away.</Dialogue>
+				<Dialogue ID="3">I was born from earth, so now I yearn to return to it.</Dialogue>
+				<Dialogue ID="4">Please don’t think of this as our last moment.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SilentOrchestra_Finale">
-			<Abnormality>沉默乐团</Abnormality>
-			<CardName>闭幕曲</CardName>
-			<AbilityDesc>[选择一名司书]
-若该司书使目标陷入混乱，则下一幕开始时使所有来宾失去3~4点光芒。</AbilityDesc>
-			<FlaborText>这首乐章会穿透你的一切。</FlaborText>
+			<Abnormality>The Silent Orchestra</Abnormality>
+			<CardName>The Finale</CardName>
+			<AbilityDesc>[Single Ally]
+Whenever the selected Guest Staggers an enemy, all enemies lose 3-4 Light at the start of the next Scene.</AbilityDesc>
+			<FlaborText>“The music shall perforate your entire being.”</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">音乐将贯穿你的灵魂。</Dialogue>
-				<Dialogue ID="2">双脚站稳，献上掌声。</Dialogue>
-				<Dialogue ID="3">永不间断的掌声，激励着指挥家再次舞动指挥棒。</Dialogue>
-				<Dialogue ID="4">动人的旋律于空荡的舞台中回响。</Dialogue>
+				<Dialogue ID="1">The music shall perforate your entire being.</Dialogue>
+				<Dialogue ID="2">If you can stand with your two legs, be willing to send your praise.</Dialogue>
+				<Dialogue ID="3">An endless applause, to inspire the conductor to lift their baton once more.</Dialogue>
+				<Dialogue ID="4">The beautiful melody circles the empty stage.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>

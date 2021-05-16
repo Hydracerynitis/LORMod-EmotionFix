@@ -54,16 +54,22 @@
       		<Desc>Reduce Physical and Stagger Damage taken by {0}</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Porccubus_Happy_Enemy">
-      		<Name>快感</Name>
-      		<Desc>当快感达到3层时受到3~7伤害和混乱伤害并层数清零</Desc>
+      		<Name>Thrill</Name>
+      		<Desc>When Thrill's stack reach 3, taake 3-7 Physical and Stagger damage and remove all stacks</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Porccubus_Happy">
-      		<Name>快感</Name>
-      		<Desc>当快感达到4层时受到2~7伤害和混乱伤害并层数清零</Desc>
+      		<Name>Thrill</Name>
+      		<Desc>When Thrill's stack reach 4, taake 2-7 Physical and Stagger damage and remove all stacks</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="Alriune_Debuf">
+      		<Name>Aroma</Name>
+      		<Desc>At the start of the Scene, take {0} Stagger damage and halve the stack. (Rounded down)</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Enthusiastic">
-      		<Name>狂热崇拜</Name>
-      		<Desc>角色已失去控制若陷入混乱则在下一幕开始时解除此状态。被没失去理智的司书击中时该角色将只承受混乱伤害并且该混乱伤害提高100%。并被来宾击中时所受伤害+2~4</Desc>
+      		<Name>Fervent Adoration</Name>
+      		<Desc>Uncontrollable. Upon becoming Staggered, this status is removed, and the character recovers from Stagger next Scene.
+Only takes Stagger damage from sane librarians, increase Stagger Damage taken by 100%;
+Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Gaho">
       		<Name>加护</Name>

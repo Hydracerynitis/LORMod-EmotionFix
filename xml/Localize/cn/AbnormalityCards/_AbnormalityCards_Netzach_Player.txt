@@ -102,7 +102,7 @@
 			<CardName>秋日的消逝</CardName>
 			<AbilityDesc>[选择一名司书]
 为该司书的突刺骰子赋予额外效果“[命中时] 对目标施加2层[余香]”
-(余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后将“余香”层数减半。)</AbilityDesc>
+(余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后减少“余香”1/3层数。)</AbilityDesc>
 			<FlaborText>怀着归于尘土的心愿，将所有渴望“生”的事物一同带入坟墓。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我的赎罪，于冰冷的窒息中，迎来尾声。</Dialogue>

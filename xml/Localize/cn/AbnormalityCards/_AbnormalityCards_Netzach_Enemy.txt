@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="UniverseZogak_Echo_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>异界的回响</CardName>
-			<AbilityDesc>该来宾被单方面攻击时有50%几率对攻击者造成5-10混乱伤害</AbilityDesc>
+			<AbilityDesc>该来宾被单方面攻击时有50%几率对攻击者造成3-6混乱伤害</AbilityDesc>
 			<FlaborText>眼前响起了悦耳的歌声，它正慢慢朝你靠近……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">歌声。制作。人类。歌声。双耳。聆听。</Dialogue>
@@ -136,7 +136,7 @@
 			<Abnormality>爱娜温</Abnormality>
 			<CardName>秋日的消逝</CardName>
 			<AbilityDesc>为该来宾的进攻骰子赋予额外效果“[命中时] 对目标施加1层[余香]”
-(余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后将“余香”层数减半。)</AbilityDesc>
+(余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后减少“余香”1/3层数。)</AbilityDesc>
 			<FlaborText>怀着归于尘土的心愿，将所有渴望“生”的事物一同带入坟墓。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我的赎罪，于冰冷的窒息中，迎来尾声。</Dialogue>
