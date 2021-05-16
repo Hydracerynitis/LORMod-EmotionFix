@@ -66,6 +66,7 @@
     <Compile Include="Source Code\DiceCardAbility_invalid.cs" />
     <Compile Include="Source Code\Hokma\DiceCardAbility_PlagueDoctor.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_quietKidGuilty.cs" />
+    <Compile Include="Source Code\Netzach\EmotionCardAbility_porccubus3.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardAbility_Tear.cs" />
     <Compile Include="Source Code\Hod\DiceCardAbility_Reflect.cs" />
     <Compile Include="Source Code\Binah\DiceCardSelfAbility_BigBirdParalysis.cs" />

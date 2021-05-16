@@ -20,16 +20,6 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>galaxyChild3</Script>
 	</EmotionCard>
-	<EmotionCard ID="9">
-		<Name>Porccubus_Happy</Name>
-		<State>Positive</State>
-		<Sephirah>Netzach</Sephirah>
-		<Level>4</Level>
-		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>0</EmotionRate>
-		<TargetType>All</TargetType>
-		<Script>porccubus3</Script>
-	</EmotionCard>
 	<EmotionCard ID="14">
 		<Name>SilentOrchestra_Affect</Name>
 		<State>Positive</State>

@@ -18,7 +18,7 @@ namespace EmotionalFix
                 return;
             if (behavior.Detail != BehaviourDetail.Penetrate && this._owner.faction==Faction.Player)
                 return;
-            this._hitEffect = this.MakeEffect("4/Fragment_Hit", destroyTime: 1f);
+            this._hitEffect = this.MakeEffect("4/Fragment_Hit", destroyTime: 1f,target: behavior.card.target);
             this._hitEffect?.gameObject.SetActive(false);
             if (behavior.card.target == null)
                 return;
@@ -29,7 +29,7 @@ namespace EmotionalFix
         {
             if (behavior.Detail != BehaviourDetail.Penetrate && this._owner.faction == Faction.Player)
                 return;
-            behavior.card.target.TakeBreakDamage((int)((double)behavior.card.target.breakDetail.breakGauge * 0.15));
+            behavior.card.target.TakeBreakDamage((int)((double)behavior.card.target.breakDetail.breakGauge * 0.10));
             if (this._owner.faction == Faction.Enemy)
                 victim.Add(behavior.card.target);
         }

@@ -12,7 +12,11 @@ namespace EmotionalFix
     {
         private int cnt;
         private bool Prob() => (double)RandomUtil.valueForProb <= 0.5;
-
+        public override void OnSelectEmotion()
+        {
+            base.OnSelectEmotion();
+            this._owner.allyCardDetail.SetMaxDrawHand(6);
+        }
         public override void OnRoundStart()
         {
             base.OnRoundStart();

@@ -91,7 +91,7 @@
 	<EmotionCard ID="90409">
 		<Name>Porccubus_Happy_Enemy</Name>
 		<Artwork>Porccubus_Happy</Artwork>
-		<State>Positive</State>
+		<State>Negative</State>
 		<Sephirah>None</Sephirah>
 		<Level>4</Level>
 		<EmotionLevel>1</EmotionLevel>

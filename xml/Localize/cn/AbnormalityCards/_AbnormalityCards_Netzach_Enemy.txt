@@ -17,7 +17,8 @@
 		<AbnormalityCard ID="UniverseZogak_Tentacle_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>穿透</CardName>
-			<AbilityDesc>该来宾击中目标时将追加15%目标混乱抗性(同一单位只能触发次)</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时将追加10%目标混乱抗性(同一单位只能触发次)
+该来宾手牌上限-2</AbilityDesc>
 			<FlaborText>被触须穿透的那一瞬间，今后的人生将再也无法激起你分毫的兴趣……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">否定。攻击。用以。帮助。给予。</Dialogue>
@@ -110,7 +111,8 @@
 		<AbnormalityCard ID="Porccubus_Happy_Enemy">
 			<Abnormality>棘刺公交</Abnormality>
 			<CardName>笑粉</CardName>
-			<AbilityDesc>该来宾被击中时若尚未陷入混乱，则恢复2~4点混乱抗性。</AbilityDesc>
+			<AbilityDesc>该来宾被击中时若尚未陷入混乱，则恢复2~4点混乱抗性。
+提高承受伤害1~3点。</AbilityDesc>
 			<FlaborText>如果棘刺上散落的粉末被世人所知，那么人类恐怕将永远陷入狂喜的泥淖中无法自拔。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">人家会在你的小脑瓜里注满幸福哦。</Dialogue>

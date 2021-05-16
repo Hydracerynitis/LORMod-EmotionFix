@@ -17,7 +17,7 @@
 		<AbnormalityCard ID="UniverseZogak_Tentacle_Enemy">
 			<Abnormality>Fragment of the Universe</Abnormality>
 			<CardName>Tentacles</CardName>
-			<AbilityDesc>Upon successful hit, enemy lose 15% of Stagger Ressist (Once per Scene for one enemy).</AbilityDesc>
+			<AbilityDesc>Upon successful hit, enemy lose 10% of Stagger Ressist (Once per Scene for one enemy).</AbilityDesc>
 			<FlaborText>The moment its tentacle penetrates you, it’ll drain all the interest for the life you’re currently living out of you.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Negative. Attack. Come. Help. Give.</Dialogue>
@@ -30,7 +30,8 @@
 		<AbnormalityCard ID="UniverseZogak_Sing_Enemy">
 			<Abnormality>Fragment of the Universe</Abnormality>
 			<CardName>Incomprehensible</CardName>
-			<AbilityDesc>Upon succesful hit, inflict 1 Feeble and Disarm next Scene at 50% chance (Three times per Scene).</AbilityDesc>
+			<AbilityDesc>Upon succesful hit, inflict 1 Feeble and Disarm next Scene at 50% chance (Three times per Scene).
+Reduce Maximun Draw Card by 2.</AbilityDesc>
 			<FlaborText>Eventually, he succeeded in entering the domain of the ‘Fragment of the Universe’. However, it was obvious that his small brain couldn’t withstand it.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Understand. You. Together. Human. I.</Dialogue>
@@ -110,7 +111,8 @@ attack other enemy also remove all stacks of Thrill</AbilityDesc>
 		<AbnormalityCard ID="Porccubus_Happy_Enemy">
 			<Abnormality>Porccubus</Abnormality>
 			<CardName>Laughing Powder</CardName>
-			<AbilityDesc>When hit, recover 2-4 Stagger Resist if the character isn't staggered.</AbilityDesc>
+			<AbilityDesc>When hit, recover 2-4 Stagger Resist if the character isn't staggered.
+Increase damage taken by 1-3.</AbilityDesc>
 			<FlaborText>When the powder that falls from the thorns becomes known to the world, people may forever sink into the swamp of intoxication.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Your head will soon be filled with happiness.</Dialogue>

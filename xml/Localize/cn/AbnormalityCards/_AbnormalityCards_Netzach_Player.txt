@@ -5,7 +5,7 @@
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>穿透</CardName>
 			<AbilityDesc>[选择一名司书]
-该司书击中以穿刺骰子击中目标时将追加15%目标混乱抗性</AbilityDesc>
+该司书击中以穿刺骰子击中目标时将追加10%目标混乱抗性</AbilityDesc>
 			<FlaborText>被触须穿透的那一瞬间，今后的人生将再也无法激起你分毫的兴趣……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">否定。攻击。用以。帮助。给予。</Dialogue>
@@ -19,7 +19,8 @@
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>无法理解</CardName>
 			<AbilityDesc>[选择一名司书]
-该司书击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)</AbilityDesc>
+该司书击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)
+该司书手牌上限-2</AbilityDesc>
 			<FlaborText>总而言之，那家伙成功踏入了“宇宙碎片”的领域，但他的大脑显然无法承受。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">理解。与你。一同。人类。与我。</Dialogue>
@@ -84,6 +85,21 @@
 				<Dialogue ID="5">尝过甜头，就别想逃啦。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="Porccubus_Happy">
+			<Abnormality>棘刺公交</Abnormality>
+			<CardName>笑粉</CardName>
+			<AbilityDesc>[所有司书]
+该司书被击中时若尚未陷入混乱，则恢复2~4点混乱抗性。
+提高承受伤害1~3点。</AbilityDesc>
+			<FlaborText>如果棘刺上散落的粉末被世人所知，那么人类恐怕将永远陷入狂喜的泥淖中无法自拔。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">人家会在你的小脑瓜里注满幸福哦。</Dialogue>
+				<Dialogue ID="2">强忍不笑可是会生病的，来和人家一起欢笑吧？</Dialogue>
+				<Dialogue ID="3">笑多了会快乐哦~所以笑就是幸福，对不对？</Dialogue>
+				<Dialogue ID="4">如果所有人都聚在一起笑，那里就会变成幸福的乐园吧？</Dialogue>
+				<Dialogue ID="5">来，和人家一起笑吧~把你的嘴角撕得大大的~</Dialogue>
+			</Dialogues>
+		</AbnormalityCard> 
 		<AbnormalityCard ID="Alriune_flower">
 			<Abnormality>爱娜温</Abnormality>
 			<CardName>花瓣</CardName>
