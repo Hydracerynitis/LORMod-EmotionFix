@@ -8,10 +8,10 @@
       <LocalizedName>The Seventh Bullet</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1103501">
-      <LocalizedName>破伞</LocalizedName>
+      <LocalizedName>Well-worn Parasol</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1103502">
-      <LocalizedName>编织衣物</LocalizedName>
+      <LocalizedName>Weaving Clothes</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104401">
       <LocalizedName>邪恶的化身！！！</LocalizedName>

@@ -92,7 +92,7 @@
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>破伞</CardName>
 			<AbilityDesc>[选择一名司书]
-该司书被单方面攻击时以4个6-10反击防御骰迎战
+该司书被单方面攻击时以2个6-10反击防御骰迎战
 (效果为拼点胜利对目标造成等同于目标骰子威力的伤害和混乱伤害)</AbilityDesc>
 			<FlaborText>心怀美梦的黑天鹅试图通过荨麻解除自身的诅咒，可如今的她只剩下那把珍爱的破伞。</FlaborText>
 			<Dialogues>

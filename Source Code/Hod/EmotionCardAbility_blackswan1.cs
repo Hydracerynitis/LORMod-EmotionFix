@@ -29,7 +29,7 @@ namespace EmotionalFix
             KeywordBuf buff = RandomUtil.SelectOne<KeywordBuf>(ActivatedBuf);
             foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList_opponent(this._owner.faction))
             {
-                unit.bufListDetail.AddKeywordBufThisRoundByEtc(buff, 1);
+                unit.bufListDetail.AddKeywordBufByEtc(buff, 1);
             }
             UnityEngine.Object original = Resources.Load("Prefabs/Battle/CreatureEffect/FinalBattle/EGO_BlackSwan_Feather");
             if (!(original != (UnityEngine.Object)null))

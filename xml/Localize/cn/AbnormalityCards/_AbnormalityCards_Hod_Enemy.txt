@@ -83,7 +83,7 @@
 		<AbnormalityCard ID="SpiderBud_Cocoon_Enemy">
 			<Abnormality>蜘蛛巢</Abnormality>
 			<CardName>茧缚</CardName>
-			<AbilityDesc>若该来宾击中目标且掷出最大值，则追加2~4点混乱伤害并在下一幕中对其施加1层“易损”。</AbilityDesc>
+			<AbilityDesc>若该来宾击中目标且掷出最大值，则下一幕中对目标施加1~2层“麻痹”，“束缚”与“易损”。</AbilityDesc>
 			<FlaborText>没有人自愿取回茧中的尸体。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">是哪个不长眼的踩死了我的宝宝？</Dialogue>
@@ -109,8 +109,8 @@
 		<AbnormalityCard ID="SpiderBud_Dinner_Enemy">
 			<Abnormality>蜘蛛巢</Abnormality>
 			<CardName>警戒</CardName>
-			<AbilityDesc>该来宾的速度+1~3
-拼点胜利时有50%的概率在下一幕中对目标施加1层“束缚”与“易损”。</AbilityDesc>
+			<AbilityDesc>该来宾拼点时目标的骰子威力-1
+该来宾拼点胜利时有50%的概率在下一幕中对目标施加1层“束缚”与“易损”。</AbilityDesc>
 			<FlaborText>为了饥肠辘辘的孩子们，于黑暗中觅食的眼瞳发出阵阵红光。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">身处黑暗，也能看得一清二楚……</Dialogue>
@@ -176,7 +176,7 @@
 		<AbnormalityCard ID="BlackSwan_Umbrella_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>破伞</CardName>
-			<AbilityDesc>该来宾被单方面攻击时以4个6-10反击防御骰迎战
+			<AbilityDesc>该来宾被单方面攻击时以2个6-10反击防御骰迎战
 (效果为拼点胜利对目标造成等同于目标骰子威力的伤害和混乱伤害)</AbilityDesc>
 			<FlaborText>心怀美梦的黑天鹅试图通过荨麻解除自身的诅咒，可如今的她只剩下那把珍爱的破伞。</FlaborText>
 			<Dialogues>

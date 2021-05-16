@@ -7,7 +7,7 @@
 		<Desc>Inflict damage equal to the Power of this die</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Reflect">
-		<Desc>[拼点胜利]对目标造成目标骰子威力的伤害和混乱伤害</Desc>
+		<Desc>[On Clash Win] inflict Physical and Stagger damage equal to Power of target's die to enemy</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Clothes">
 		<Desc>[使用时]抽取一张书页，使所有友方单位获得2层荨麻衣</Desc>
@@ -25,7 +25,7 @@
 		<Desc>[装备时]1幕之内使自身与勇气魔法少女[同化](每4幕至多同化1次)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="invalid">
-		<Desc>该骰子无法投掷出任何数值</Desc>
+		<Desc>This die is invalid</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="SilenceStun">
 		<Desc>[装备时]使目标和自身在这一幕内施加眩晕</Desc>

@@ -3,19 +3,19 @@
 	<effectTextList>
     	<BattleEffectText ID="Teddy_Memory">
       		<Name>Memory</Name>
-      		<Desc>All dices of Guest with [Happy Memory] increase {0} in a clash with self.</Desc>
+      		<Desc>All dices of enemy with “Happy Memory” increase {0} in a clash with self.</Desc>
     	</BattleEffectText>
     	<BattleEffectText ID="Malice_Enemy">
       		<Name>Malice</Name>
-      		<Desc>At the start of each Scene, inflict {0} Bind</Desc>
+      		<Desc>At the start of each Scene, inflict {0} Bind.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitDebuff">
       		<Name>Ringing</Name>
-      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 50%</Desc>
+      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 50%.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitDebuff_Enemy">
       		<Name>Ringing</Name>
-      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 25%</Desc>
+      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 25%.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SingingMachine_Rhythm">
       		<Name>Rhythm</Name>
@@ -23,35 +23,35 @@
     	</BattleEffectText>
 		<BattleEffectText ID="SealGauge">
       		<Name>Coffin</Name>
-      		<Desc>Currently Progres is {0}%. When reach 100%, one speed dice is sealed for one Scene</Desc>
+      		<Desc>Currently Progres is {0}%. When reach 100%, one speed dice is sealed for one Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Freischutz_Bullet">
       		<Name>Magic Bullet</Name>
-      		<Desc>Increase damage by 1 per stack.Increase Power by 1 per 2 stacks</Desc>
+      		<Desc>Increase damage by 1 per stack.Increase Power by 1 per 2 stacks.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Flame">
-      		<Name>黑焰</Name>
-      		<Desc>每一幕开始时获得{0}层强壮守护</Desc>
+      		<Name>Dark Flume</Name>
+      		<Desc>At the start of the Scene, gain {0} Strength and Protection. Reduce Max Stagger Resist by 12% per stack.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ShinyShoes">
-      		<Name>闪亮亮鞋子</Name>
-      		<Desc>进攻威力+1~3并且速度提升1~2，受到的伤害的混乱伤害提升50%</Desc>
+      		<Name>Glittering Shoes</Name>
+      		<Desc>Offensive Dice gain 1-3 power and increase Speed by 1-2, increase Physical and Stagger Damage taken by 50%.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="TheChosen">
-      		<Name>红舞鞋</Name>
-      		<Desc>带有”血之渴望“的角色只能攻击该角色而且命中时额外追加3~8点伤害</Desc>
+      		<Name>The Red Shoes</Name>
+      		<Desc>Enemy with “Obsession” can only attack self and inflict 3-8 damage upon hit.</Desc>
     	</BattleEffectText>			
 		<BattleEffectText ID="DeepBleed">
-      		<Name>创口撕裂</Name>
-      		<Desc>投掷进攻骰时会受到等于该层数的伤害，这一幕结束时层数清零</Desc>
+      		<Name>Laceration</Name>
+      		<Desc>For the Scene, take 1 damage per stack every time rolls an Offensive die.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Latitia_Gift">
-      		<Name>小小礼物</Name>
-      		<Desc>该角色与非赠礼者拼点时有50%的概率承受3~8点伤害并在下一幕中获得2层“流血”。</Desc>
+      		<Name>Giftee</Name>
+      		<Desc>Upon clashes against a character other than the Guest that gave the 'Gift', the 'Gift' explodes with a 50% chance, dealing 3-8 damage at the start of the clash and inflicting 2 Bleed next Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="BlackSwan_Nettle">
-      		<Name>荨麻衣</Name>
-      		<Desc>所受伤害和混乱伤害减少{0}</Desc>
+      		<Name>Nettle Clothes</Name>
+      		<Desc>Reduce Physical and Stagger Damage taken by {0}</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Porccubus_Happy_Enemy">
       		<Name>快感</Name>

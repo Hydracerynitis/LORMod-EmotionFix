@@ -2,119 +2,119 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
 		<AbnormalityCard ID="RedShoes_Kirakira">
-			<Abnormality>红舞鞋</Abnormality>
-			<CardName>闪亮</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书会获得”闪亮亮鞋子“(进攻威力+1~3并且速度提升1~2，受到的伤害的混乱伤害提升50%)
-被击杀时击杀者会获得”闪亮亮鞋子“，若无击杀者则击杀方随机1个角色会获得”闪亮亮鞋子“</AbilityDesc>
-			<FlaborText>这双鞋是无色的。
-不过很快就会染红了。</FlaborText>
+			<Abnormality>The Red Shoes</Abnormality>
+			<CardName>Glitter</CardName>
+			<AbilityDesc>[Single Ally]
+Gain Glittering Shoes. (Offensive Dice gain 1-3 power and increase Speed by 1-2, increase Physical and Stagger Damage taken by 50%)
+On Killed attacker gain Glittering Shoes. If attacker absent random enemy gain Glittering Shoes.</AbilityDesc>
+			<FlaborText>The shoes were colorless. 
+They will soon turn red.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">红得太鲜艳了，会觉得晃眼吗？</Dialogue>
-				<Dialogue ID="2">杀掉这个人……鞋子就是你的了。</Dialogue>
-				<Dialogue ID="3">没关系，砍断脚踝就能轻松摘下鞋子了。</Dialogue>
-				<Dialogue ID="4">想不想成为最靓的仔？</Dialogue>
-				<Dialogue ID="5">这份华丽，只有你配得上。</Dialogue>
+				<Dialogue ID="1">The red is so vivid, isn’t it simply dazzling?</Dialogue>
+				<Dialogue ID="2">Once you get rid of that person… The shoes are all yours.</Dialogue>
+				<Dialogue ID="3">It’s fine. It won’t be hard to take the shoes off their feet if you chop at their ankles.</Dialogue>
+				<Dialogue ID="4">Don’t you want to be the one shining the brightest here?</Dialogue>
+				<Dialogue ID="5">This glamour should be yours alone.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="RedShoes_Desire">
-			<Abnormality>红舞鞋</Abnormality>
-			<CardName>血之渴望</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书会标记随机来宾为”红舞鞋“，该司书只能攻击”红舞鞋“并且命中”红舞鞋“会追加造成3~8点伤害.
-击杀“红舞鞋”后会标记其他随机来宾为”红舞鞋“</AbilityDesc>
-			<FlaborText>我要砍断你的狗腿，这辈子都别想跳舞。</FlaborText>
+			<Abnormality>The Red Shoes</Abnormality>
+			<CardName>Obsession</CardName>
+			<AbilityDesc>[Single Ally]
+Mark random enemy as The Red Shoes. Can only attack The Red Shoes and inflict 3-8 damage upon hit.
+On kill The Red Shoes mark another random enemy as such.</AbilityDesc>
+			<FlaborText>I’ll break your legs, then you won’t be able to dance ever again.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">最受关注的人必须是我！</Dialogue>
-				<Dialogue ID="2">只有我才能跳出优美的舞蹈……</Dialogue>
-				<Dialogue ID="3">我要让你永远无法起舞。</Dialogue>
-				<Dialogue ID="4">只要废掉那双腿，我就能成为主角吧？</Dialogue>
-				<Dialogue ID="5">让我瞧瞧你的最后一支舞吧。</Dialogue>
+				<Dialogue ID="1">I should be the one in the spotlight!</Dialogue>
+				<Dialogue ID="2">Only I should perform an elegant dance…</Dialogue>
+				<Dialogue ID="3">I’ll make you unable to dance forever.</Dialogue>
+				<Dialogue ID="4">If I rendered those legs unusable, could I take the position of the protagonist?</Dialogue>
+				<Dialogue ID="5">Show me your one last dance.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="RedShoes_Cut">
-			<Abnormality>红舞鞋</Abnormality>
-			<CardName>利斧</CardName>
-			<AbilityDesc>[选择一名司书]
-斩击骰子命中目标时会在下一幕施加1层创口撕裂
-(投掷进攻骰时会受到等于该层数的伤害，回合结束时清零)</AbilityDesc>
-			<FlaborText>前辈突然换上舞鞋，颇为满意地露出微笑。她的笑容有些奇怪，不……那根本不是在笑……</FlaborText>
+			<Abnormality>The Red Shoes</Abnormality>
+			<CardName>Axe</CardName>
+			<AbilityDesc>[Single Ally]
+Upon as successful Slash hit, inflict 1 Laceration next Scene.
+(Laceration: For the Scene, take 1 damage per stack every time rolls an Offensive die.)</AbilityDesc>
+			<FlaborText>At some point, &lt;Redacted&gt; was wearing the shoes, grinning from ear to ear. It was uh, well it was quite strange. That wasn’t a smile. It was…</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">把斧刃磨快……一下就能砍断……</Dialogue>
-				<Dialogue ID="2">积蓄的欲望……压抑的情感……全部……全部释放出来！！！</Dialogue>
-				<Dialogue ID="3">猩红的斧子……还有比这更美丽的事物吗？</Dialogue>
+				<Dialogue ID="1">Hone the axe over and over… So that it can chop them off in one swing.</Dialogue>
+				<Dialogue ID="2">The desires you’ve amassed… Unravel the emotions you’ve concealed and repressed…</Dialogue>
+				<Dialogue ID="3">The sanguine red axe… Nothing could be more beautiful.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SpiderBud_BabyAtk">
-			<Abnormality>蜘蛛巢</Abnormality>
-			<CardName>进食</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中处于混乱状态的目标时将为所有司书恢复3~7点体力。</AbilityDesc>
-			<FlaborText>成为茧后，员工彼得被倒吊在收容单元的天花板上，为蜘蛛可爱的子女们献上丰盛的一餐。</FlaborText>
+      		<Abnormality>Spider Bud</Abnormality>
+			<CardName>Meal</CardName>
+			<AbilityDesc>[Single Ally]
+On hit against a staggered enemy, all allies recover 3-7 HP.</AbilityDesc>
+			<FlaborText>Peter was dragged to the ceiling in only a moment. The cocooned employee hanging off the ceiling of the Containment Unit will be a healthy meal for the spider’s offspring.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">感到欢喜吧，你会让我的宝宝们更加幸福。</Dialogue>
-				<Dialogue ID="2">成长期的宝宝们总是饥肠辘辘。</Dialogue>
-				<Dialogue ID="3">进食，生存，天经地义。</Dialogue>
-				<Dialogue ID="4">食物充足，无所忧虑。</Dialogue>
-				<Dialogue ID="5">我们有了可口的食物……宝宝们，聚过来。</Dialogue>
+				<Dialogue ID="1">Rejoice. You will bring joy to my offspring.</Dialogue>
+				<Dialogue ID="2">Growing children are always hungry.</Dialogue>
+				<Dialogue ID="3">It’s all for our survival, it couldn’t be helped.</Dialogue>
+				<Dialogue ID="4">It’s relieving to have plenty of food.</Dialogue>
+				<Dialogue ID="5">Well now, we have a tasty meal ready for consumption… Come, children.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Laetitia_Present">
-			<Abnormality>蕾蒂希娅</Abnormality>
-			<CardName>惊喜礼物</CardName>
-			<AbilityDesc>[选择一名司书]
-第1名与该司书拼点的来宾将被赠予1份“小小礼物”。
-拥有礼物的来宾与非赠礼者拼点时有50%的概率失去3~8点体力并在下一幕中获得2层“流血”。
-拥有礼物的来宾死亡后，该司书可向其余来宾赠予礼物。</AbilityDesc>
-			<FlaborText>如果遇见喜欢的人，她会把亲手制作的礼物送给他们。但礼物的内容是绝对保密的！</FlaborText>
+			<Abnormality>Laetitia</Abnormality>
+			<CardName>Surprise Gift</CardName>
+			<AbilityDesc>[Single Ally]
+The first opponent to clash against the selected Guest gains the 'Giftee' status.
+If the 'Giftee' clashes against a character other than the Guest that gave the 'Gift', the 'Gift' explodes with a 50% chance, dealing 3-8 damage at the start of the clash and inflicting 2 Bleed next Scene.
+When the 'Giftee' dies, a new 'Gift' can be given.</AbilityDesc>
+			<FlaborText>And when the kid meets someone she likes, she will give them a gift made all by herself. The gift's content is a secret though!</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">打开礼物后，你会吓一跳的哦！真的会跳起来哟？</Dialogue>
-				<Dialogue ID="2">礼物里装着什么？这是秘密，告诉你可就没意思哩~</Dialogue>
-				<Dialogue ID="3">这是我亲手制作的礼物，希望你能接受！</Dialogue>
-				<Dialogue ID="4">啊偶……我把小秘密说出来了。</Dialogue>
+				<Dialogue ID="1">When you open the gift, you’ll be surprised, like WHOA!</Dialogue>
+				<Dialogue ID="2">What’s inside the gift? That’s a secret! It’s boring to spoil it.</Dialogue>
+				<Dialogue ID="3">It’s a heartfelt gift I made myself. I want you to take it!</Dialogue>
+				<Dialogue ID="4">Whoops… There goes the secret of the gift.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="BlackSwan_Feather">
-			<Abnormality>黑天鹅之梦</Abnormality>
-			<CardName>污秽</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书每一幕开始时获得3层随机负面buff，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
-			<FlaborText>艾丽莎痛苦地跪倒在地，也如旁人那般呕吐不止……</FlaborText>
+			<Abnormality>Dream of a Black Swan</Abnormality>
+			<CardName>Gooey Waste</CardName>
+			<AbilityDesc>[Single Ally]
+At start of each Scene, inflict self with 1 random status ailment (Burn, Bleed, Paralysis, Feeble, Disarm, Bind, or Fragile) 3 times
+Upon successful hit, inflict all enemy with 1 random activated status ailment next Scene.</AbilityDesc>
+			<FlaborText>Elijah fell to her knees and finally started to puke up the thing everyone else was vomiting.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">徐徐水波划过湖面，仿佛有一群天鹅刚刚起飞……</Dialogue>
-				<Dialogue ID="2">面对这丑恶的现实，内心的情感无法遏制地爆发。</Dialogue>
-				<Dialogue ID="3">我也和其他人一样，无法控制地呕吐……</Dialogue>
-				<Dialogue ID="4">我的肺像被刺中数刀，污物紧随呼吸喷涌而出。</Dialogue>
-				<Dialogue ID="5">鲜血……与绿色污秽的混合……</Dialogue>
+				<Dialogue ID="1">The lake ripples gently. As if a number of swans just took flight.</Dialogue>
+				<Dialogue ID="2">I was faced with reality. The things swelling up inside spilt right out.</Dialogue>
+				<Dialogue ID="3">I began to puke up the thing everyone else was vomiting.</Dialogue>
+				<Dialogue ID="4">As if my lungs were stabbed, it bursts forth as I breathe.</Dialogue>
+				<Dialogue ID="5">I threw up a mixture of blood and green waste.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="BlackSwan_Umbrella">
-			<Abnormality>黑天鹅之梦</Abnormality>
-			<CardName>破伞</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书被单方面攻击时以4个6-10反击防御骰迎战
-(效果为拼点胜利对目标造成等同于目标骰子威力的伤害和混乱伤害)</AbilityDesc>
-			<FlaborText>心怀美梦的黑天鹅试图通过荨麻解除自身的诅咒，可如今的她只剩下那把珍爱的破伞。</FlaborText>
+			<Abnormality>Dream of a Black Swan</Abnormality>
+			<CardName>Well-worn Parasol</CardName>
+			<AbilityDesc>[Single Ally]
+Gain 2 Counter die (Slash, 6-10; On Clash Win: inflict Physical and Stagger damage equal to Power of target's die to enemy) at combat start.</AbilityDesc>
+			<FlaborText>Believing that it would turn white, the black swan wanted to lift the curse by weaving together nettles. All that was left is a worn parasol it once treasured.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">当黑天鹅从成为白天鹅的美梦中苏醒时，会发生什么呢？</Dialogue>
-				<Dialogue ID="2">留给我的，只有这把珍贵的阳伞……还有胸针……</Dialogue>
-				<Dialogue ID="3">阳光……太过刺眼，我只能缩在伞下。</Dialogue>
-				<Dialogue ID="4">我渴望着永不醒来的梦，可现实始终是那样残酷。</Dialogue>
+				<Dialogue ID="1">What happens when the black swan wakes up from dreaming of a white swan?</Dialogue>
+				<Dialogue ID="2">All that I had left was the parasol and this brooch.</Dialogue>
+				<Dialogue ID="3">The sun was too bright, I had to shade it off.</Dialogue>
+				<Dialogue ID="4">I yearned to have a dream I would never wake up from, but reality was cruel as ever.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="BlackSwan_Family">
-			<Abnormality>黑天鹅之梦</Abnormality>
-			<CardName>亲爱的家人</CardName>
-			<AbilityDesc>[选择一名司书]
-将3张0费编织衣物置入该司书牌库，效果为使用时抽取一张牌并使所有友方单位获得2层荨麻衣
-(所受伤害和混乱伤害减少2)</AbilityDesc>
-			<FlaborText>艾丽莎动身寻找她的哥哥们。她期盼着用荨麻衣解除家人的诅咒，与他们一同分享幸福的梦。</FlaborText>
+			<Abnormality>Dream of a Black Swan</Abnormality>
+			<CardName>Loving Family</CardName>
+			<AbilityDesc>[Single Ally]
+3 'Weaving Clothes' pages are shuffled into the deck.
+On use 'Weaving Clothes', draw 1 card and all allies gain 2 Nettle Clothes (Reduce 1 Physical and Stagger damage taken per stack)</AbilityDesc>
+			<FlaborText>She began to look for her brothers. Her family who needed to wear the nettle clothing to be free from the curse. Ones whom she shared happy dreams with.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">虽然没有值钱的东西能传给他们，可他们人人怀揣着名为“勤奋”与“真诚”的珍贵宝石。</Dialogue>
-				<Dialogue ID="2">我一直坚信……一定能让大家幸福……</Dialogue>
-				<Dialogue ID="3">只要再努力一些……就能好起来……</Dialogue>
-				<Dialogue ID="4">我的家人，本该穿上荨麻衣获得自由……</Dialogue>
-				<Dialogue ID="5">我们也曾一同分享幸福的梦。</Dialogue>
+				<Dialogue ID="1">Although they didn’t have anything to pass onto her, they had honesty and diligence as their most valuable treasure.</Dialogue>
+				<Dialogue ID="2">I believed… that there had to be a way for everyone to be happy.</Dialogue>
+				<Dialogue ID="3">I thought if I just worked a little harder, things would work themselves out.</Dialogue>
+				<Dialogue ID="4">My family, who should have been freed by wearing the nettle clothing…</Dialogue>
+				<Dialogue ID="5">We shared happy dreams with each other.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>

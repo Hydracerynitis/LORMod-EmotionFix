@@ -49,8 +49,6 @@
 		<BehaviourList>
 			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect" ActionScript="" Desc=""/>
 			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect" ActionScript="" Desc=""/>
-			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect" ActionScript="" Desc=""/>
-			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect" ActionScript="" Desc=""/>
 		</BehaviourList>
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>

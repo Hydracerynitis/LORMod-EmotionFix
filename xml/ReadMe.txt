@@ -1,6 +1,10 @@
-将原版图书馆大部分的强度堪忧或者不太符合异想体设定的异想体书页进行了应有的重做和加强
-同时让5.27版本前的来宾也能装备异想体书页的游戏机制回归了游戏(异想体书页也照顾了来宾的特性进行了应有的改动)
-自己拥有专属异想体书页的来宾不会额外获得来自图书馆的异想体
-适配的Mod有秘法师，安眠事务所，黑鸦议会和克隆战
+Thanks for downloading My mod.
 
-感谢404，WoOo,漠北九月等设计重做和再平衡的帮助
+In this Mod, I give Guests the ability to apply random abnormality cards when leveling up in battle
+The intensity of how frequent guest acquire can be config through Difficulty.txt
+All emotion cards have been tweaked to ensure every Guest are able to gain advantage from it,
+They may have a entirely different ability from the emotion cards Librarian harnessed
+
+I also have reworked many vanilla abnormality cards that I think are underwhelming so that they could be more fun to use.
+
+Enjoy -----by Hydracerynitis

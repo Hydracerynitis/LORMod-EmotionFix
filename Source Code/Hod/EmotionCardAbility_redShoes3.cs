@@ -51,6 +51,7 @@ namespace EmotionalFix
             protected override string keywordId => "DeepBleed";
             protected override string keywordIconId => "Bleeding";
             public int reserve;
+            public override bool independentBufIcon => true;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
