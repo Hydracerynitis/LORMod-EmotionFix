@@ -90,14 +90,18 @@ public class BattleVoidBehaviour
         this.abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage()));
         this.abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage(target)));
         this.owner.BeforeGiveDamage(OriginalDice);
-        this.RefreshStatBonus();
         if (OriginalDice.IsBlocked)
         {
+            this.RefreshStatBonus();
             this.owner.battleCardResultLog.SetIsBlocked(true);
             return;
         }
         double num1 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.dmg + this.owner.UnitData.unitData.giftInventory.GetStatBonus_Dmg(this.behaviourInCard.Detail)) - (double)target.GetDamageReduction(OriginalDice)) * (double)Mathf.Min((1.0f + (float)(this._statBonus.dmgRate + target.GetDamageIncreaseRate()) / 100.0f),0.0f) * (double)target.GetDamageRate();
         double num2 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.breakDmg) - (double)target.GetBreakDamageReduction(OriginalDice)) * (double)Mathf.Min((1.0f + (float)(this._statBonus.breakRate + target.GetBreakDamageIncreaseRate()) / 100.0f),0f) * (double)target.GetBreakDamageRate();
+        if (target.emotionDetail.IsTakeDamageDouble())
+            num1 *= 2.0;
+        if (this.owner.emotionDetail.IsGiveDamageDouble())
+            num1 *= 2.0;
         Vector3 normalized = (target.view.WorldPosition - this.owner.view.WorldPosition).normalized;
         AtkResist resistHp = target.GetResistHP(this.behaviourInCard.Detail);
         AtkResist resistBp = target.GetResistBP(this.behaviourInCard.Detail);
