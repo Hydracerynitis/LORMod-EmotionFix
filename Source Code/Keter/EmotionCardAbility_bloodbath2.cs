@@ -76,7 +76,7 @@ namespace EmotionalFix
         public class SlashProt: BattleUnitBuf
         {
             private BattleEmotionCardModel emotionCard;
-            protected override string keywordIconId => "StanceSlash";
+            protected override string keywordIconId => "Roland_4th_DmgReduction_Slash";
             protected override string keywordId => "SlashProtect";
             public SlashProt(BattleEmotionCardModel card)
             {
@@ -104,7 +104,7 @@ namespace EmotionalFix
         public class HitProt : BattleUnitBuf
         {
             private BattleEmotionCardModel emotionCard;
-            protected override string keywordIconId => "StanceHit";
+            protected override string keywordIconId => "Roland_4th_DmgReduction_Hit";
             protected override string keywordId => "HitProtect";
             public HitProt(BattleEmotionCardModel card)
             {
@@ -132,7 +132,7 @@ namespace EmotionalFix
         public class PenetrateProt : BattleUnitBuf
         {
             private BattleEmotionCardModel emotionCard;
-            protected override string keywordIconId => "StancePenetrate";
+            protected override string keywordIconId => "Roland_4th_DmgReduction_Penetrate";
             protected override string keywordId => "PenetrateProtect";
             public PenetrateProt(BattleEmotionCardModel card)
             {
