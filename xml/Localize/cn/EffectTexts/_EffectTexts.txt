@@ -221,15 +221,19 @@
     	</BattleEffectText>
 		<BattleEffectText ID="SlashProtect"> 
       		<Name>疤痕-斩击</Name>
-      		<Desc>被斩击骰子击中时减少2~5伤害</Desc>
+      		<Desc>被斩击骰子击中时减少2~4伤害</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitProtect">
       		<Name>疤痕-打击</Name>
-      		<Desc>被打击骰子击中时减少2~5伤害</Desc>
+      		<Desc>被打击骰子击中时减少2~4伤害</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="PenetrateProtect">
       		<Name>疤痕-穿刺</Name>
-      		<Desc>被穿刺骰子击中时减少2~5伤害</Desc>
+      		<Desc>被穿刺骰子击中时减少2~4伤害</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="BloodBath_Hand_Enemy">
+      		<Name>瘆白之手</Name>
+      		<Desc>被应用异想体书页-“瘆白之手”的来宾连续击中3次时将追加承受3~12点混乱伤害并重置该计数。</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="AspirationHeart">
       		<Name>渴望</Name>

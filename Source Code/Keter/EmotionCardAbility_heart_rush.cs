@@ -16,11 +16,10 @@ namespace EmotionalFix
             base.OnRoundStart();
             if (this._owner.faction == Faction.Enemy && count > 0)
                 return;
-            int n = this._owner.faction==Faction.Player? 4:2;
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, n, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, n, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Quickness, n, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, n, this._owner);
+            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 4, this._owner);
+            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 4, this._owner);
+            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Quickness, 4, this._owner);
+            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, 4, this._owner);
         }
         public override void OnRoundEnd()
         {
@@ -60,6 +59,7 @@ namespace EmotionalFix
             private int count;
             public override int SpeedDiceBreakedAdder() => 100;
             public override int GetDamageReduction(BattleDiceBehavior behavior) => -2;
+            public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail) => -2;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

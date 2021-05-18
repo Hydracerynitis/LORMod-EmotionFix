@@ -16,12 +16,10 @@ namespace EmotionalFix.Source_Code.Keter
             {
                 atkDice.owner.TakeBreakDamage(dmg, DamageType.Emotion);
             }
-            if (this._owner.faction == Faction.Enemy)
-            {
-                if ((double)dmg < (double)this._owner.MaxHp * 0.02)
-                    return;
-                atkDice.owner.TakeBreakDamage(dmg, DamageType.Emotion);
-            }
+        }
+        public override double ChangeDamage(BattleUnitModel attacker, double dmg)
+        {
+            return dmg-attacker.history.damageToEnemyAtRound/5;
         }
     }
 }

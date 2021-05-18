@@ -85,7 +85,7 @@ Lose 1-3 HP upon using pages without the Pebble.</AbilityDesc>
 			<CardName>Thorns</CardName>
 			<AbilityDesc>On a successful attack, inflict 1 Thrill to the target.
 when Thrill's stack reach 3, deal 3-7 bonus damage and Stagger damage, then remove all stacks of Thrill.
-attack other enemy also remove all stacks of Thrill</AbilityDesc>
+(Resets upon attacking a different target)</AbilityDesc>
 			<FlaborText>At first, all I had to do was be lightly pricked by one of the thorns. Now I have to rub my whole body against it to get the same high.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Sure, I’ll bend down for you~ Feel free to pet me.</Dialogue>

@@ -44,7 +44,7 @@
       <LocalizedName>洗礼</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1110001">
-      <LocalizedName>鲜血</LocalizedName>
+      <LocalizedName>Blood</LocalizedName>
     </BattleCardDesc>
   </cardDescList>
 </BattleCardDescRoot>

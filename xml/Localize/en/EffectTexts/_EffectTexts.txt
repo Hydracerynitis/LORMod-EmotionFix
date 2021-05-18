@@ -222,28 +222,28 @@ Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
       		<Desc>与非应用“萎缩的血翼”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SlashProtect"> 
-      		<Name>疤痕-斩击</Name>
-      		<Desc>被斩击骰子击中时减少2~5伤害</Desc>
+      		<Name>Scar -- Slash</Name>
+      		<Desc>Take 2-4 less damage from Slash attacks.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="HitProtect">
-      		<Name>疤痕-打击</Name>
-      		<Desc>被打击骰子击中时减少2~5伤害</Desc>
+      		<Name>Scar -- Blunt</Name>
+      		<Desc>Take 2-4 less damage from Blunt attacks.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="PenetrateProtect">
-      		<Name>疤痕-穿刺</Name>
-      		<Desc>被穿刺骰子击中时减少2~5伤害</Desc>
+      		<Name>Scar -- Pierce</Name>
+      		<Desc>Take 2-4 less damage from Pierce attacks.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="AspirationHeart">
-      		<Name>渴望</Name>
-      		<Desc>速度+1~2，体力上限+15%并恢复等量体力。若在这一幕造成30点伤害则在下一幕获得1个速度骰</Desc>
-    	</BattleEffectText>
+    	<BattleEffectText ID="BloodBath_Hand_Enemy">
+      		<Name>Pale Hands</Name>
+      		<Desc>Will take 3-12 additional Stagger damage on every third hit from the Guest with 'Pale Hands'.</Desc>
+   		</BattleEffectText>
 		<BattleEffectText ID="HeartExhaust">
-      		<Name>疲倦</Name>
-      		<Desc>这一幕内无法行动并且受到伤害提高2</Desc>
+      		<Name>Exhaust</Name>
+      		<Desc>Increase damage and Stagger damage by 2</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SnowQueen_Emotion_Stun">
-      		<Name>雪暴</Name>
-      		<Desc>若该角色为来宾则下一幕中获得6层“束缚”。</Desc>
+      		<Name>Blizzard</Name>
+      		<Desc>if the character is guest, gian 6 Bind Next Scene</Desc>
     	</BattleEffectText>
 	</effectTextList>
 </BattleEffectTextRoot>
