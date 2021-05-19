@@ -12,6 +12,7 @@ namespace EmotionalFix
 {
     public class Harmony_Patch
     {
+        public static Difficulty diff;
         public static string modPath;
         public static bool Hastrigger;
         public static List<EmotionCardXmlInfo> emotion1;
@@ -111,6 +112,18 @@ namespace EmotionalFix
             catch (Exception ex)
             {
                 Debug.Error("HP_" + method13.Name, ex);
+            }//RoundStartPhase_System
+            MethodInfo method15 = typeof(Harmony_Patch).GetMethod("StageController_RoundStartPhase_System");
+            MethodInfo method16 = typeof(StageController).GetMethod("RoundStartPhase_System", AccessTools.all);
+            try
+            {
+                HarmonyMethod postfix5 = new HarmonyMethod(method15);
+                harmony.Patch((MethodBase)method16, postfix: postfix5);
+                Debug.Log("Patch " + method15.Name + " Succeed");
+            }
+            catch (Exception ex)
+            {
+                Debug.Error("HP_" + method15.Name, ex);
             }
 
         }
@@ -131,47 +144,9 @@ namespace EmotionalFix
                 emotion3.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(15, SephirahType.Hokma));
                 enermy = Singleton<EmotionCardXmlList>.Instance.GetDataList_enemy(SephirahType.None);
                 Hastrigger = false;
-                Difficulty diff = DifficultyTweak();
+                diff = DifficultyTweak();
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
                 {
-                    if (alive.faction == Faction.Enemy)
-                    {
-                        if (ExcludedEnemyID.Contains(alive.UnitData.unitData.EnemyUnitId))
-                            continue;
-                        if (ExcludedBookID.Contains(alive.Book.GetBookClassInfoId()))
-                            continue;
-                        List<PassiveAbilityBase> passiveList = alive.passiveDetail.PassiveList;
-                        foreach (PassiveAbilityBase passive in passiveList)
-                        {
-                            if (ExcluededPassive.Contains(passive.GetType().ToString()))
-                                continue;
-                        }
-                        bool trigger = false;
-                        if (!Hastrigger)
-                        {
-                            trigger = RandomUtil.valueForProb <= 0.01;
-                            if (trigger)
-                                Hastrigger = true;
-                        }
-                        switch (diff)
-                        {
-                            case (Difficulty.Easy):
-                                break;
-                            case (Difficulty.Normal):
-                                passiveList.Add(new PassiveAbility_666(alive, trigger));
-                                typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(alive.passiveDetail, passiveList);
-                                break;
-                            case (Difficulty.Hard):
-                                passiveList.Add(new PassiveAbility_667(alive, trigger));
-                                typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(alive.passiveDetail, passiveList);
-                                break;
-                            case (Difficulty.Brutal):
-                                passiveList.Add(new PassiveAbility_668(alive, trigger));
-                                typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(alive.passiveDetail, passiveList);
-                                break;
-                        }
-                        Debug.Log("Passive is Added to "+alive.UnitData.unitData.name);
-                    }
                     if (EmotionCardAbility_clownofnihil2.Clown.Contains(alive.UnitData))
                         alive.bufListDetail.AddBuf(new EmotionCardAbility_clownofnihil2.Clear());
                 }
@@ -219,6 +194,23 @@ namespace EmotionalFix
                 return false;
             __instance.Destroy();
             return false;
+        }
+        public static void StageController_RoundStartPhase_System()
+        {
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
+            {
+                if (alive.faction == Faction.Enemy)
+                {
+                    if (ExcludedEnemyID.Contains(alive.UnitData.unitData.EnemyUnitId))
+                        continue;
+                    if (ExcludedBookID.Contains(alive.Book.GetBookClassInfoId()))
+                        continue;
+                    if(!(alive.passiveDetail.HasPassive<PassiveAbility_666>() || alive.passiveDetail.HasPassive<PassiveAbility_667>() || alive.passiveDetail.HasPassive<PassiveAbility_668>()))
+                        AssignPassive(alive);
+                }
+                if (EmotionCardAbility_clownofnihil2.Clown.Contains(alive.UnitData))
+                    alive.bufListDetail.AddBuf(new EmotionCardAbility_clownofnihil2.Clear());
+            }
         }
         public static Difficulty DifficultyTweak()
         {
@@ -277,6 +269,40 @@ namespace EmotionalFix
             list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Hokma , LibraryModel.Instance.GetFloor(SephirahType.Hokma ).Level, emotionlevel));
             list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Keter , LibraryModel.Instance.GetFloor(SephirahType.Keter ).Level, emotionlevel));
             return list;
+        }
+        public static void AssignPassive(BattleUnitModel unit)
+        {
+            List<PassiveAbilityBase> passiveList = unit.passiveDetail.PassiveList;
+            foreach (PassiveAbilityBase passive in passiveList)
+            {
+                if (ExcluededPassive.Contains(passive.GetType().ToString()))
+                    continue;
+            }
+            bool trigger = false;
+            if (!Hastrigger)
+            {
+                trigger = RandomUtil.valueForProb <= 0.01;
+                if (trigger)
+                    Hastrigger = true;
+            }
+            switch (diff)
+            {
+                case (Difficulty.Easy):
+                    break;
+                case (Difficulty.Normal):
+                    passiveList.Add(new PassiveAbility_666(unit, trigger));
+                    typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
+                    break;
+                case (Difficulty.Hard):
+                    passiveList.Add(new PassiveAbility_667(unit, trigger));
+                    typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
+                    break;
+                case (Difficulty.Brutal):
+                    passiveList.Add(new PassiveAbility_668(unit, trigger));
+                    typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
+                    break;
+            }
+            Debug.Log("Passive is Added to " + unit.UnitData.unitData.name);
         }
         public static List<int> ExcludedBookID => new List<int>() 
         { 
