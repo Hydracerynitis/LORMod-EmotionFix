@@ -72,37 +72,41 @@ Only takes Stagger damage from sane librarians, increase Stagger Damage taken by
 Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Gaho">
-      		<Name>加护</Name>
-      		<Desc>减少30%所受伤害和混乱伤害</Desc>
+      		<Name>Blessing</Name>
+      		<Desc>Reduce incomming damage and Stagger Damage by 30% for {0} Scenes</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Tear">
-      		<Name>泪剑</Name>
-      		<Desc>拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%的伤害，如果没有一颗骰子命中则对自身造成最大生命值10%的伤害。</Desc>
+      		<Name>Sword Sharpened with Tears</Name>
+      		<Desc>On parry, if all Offensive Dices successfully hit target, inflict damage equal to  10% of target's Max HP. 
+On parry, if fail to give an successful attack, take damage equal to 10% of Max HP.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Angry_Angry">
-      		<Name>愤怒</Name>
-      		<Desc>该司书已失去控制且指定攻击目标时不分敌我。每一幕开始时获得2层“强壮”，恢复2点光芒并额外抽取2张书页。若场上有“朋友”则优先攻击朋友</Desc>
+      		<Name>Wrath</Name>
+      		<Desc>The librarian will become uncontrollable and target random characters, including allies.
+Also, the librarian gains 2 Strength, restores 2 Light, and draws 2 more pages each Scene.
+Prioritize 'Companion' if 'Companion' exist.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Berserk_Enemy">
-      		<Name>愤怒</Name>
-      		<Desc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</Desc>
+      		<Name>Wrath</Name>
+      		<Desc>Use Mass attack card 'EMBODIMENTS OF EVIL!!!' targeting all other characters every Scene</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Decay">
-      		<Name>腐蚀</Name>
-      		<Desc>每一幕开始时承受等同于“腐蚀”层数的伤害，随后将“腐蚀”层数清零。被击中时将失去等同于“腐蚀”层数的体力与混乱抗性。</Desc>
+      		<Name>Erosion</Name>
+      		<Desc>At the end of the Scene, take damage equal to the amount of Erosion and lose all stack; when taking a hit, take bonus damage and Stagger damage equal to the amount of Erosion.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="RandomEmotion">
-      		<Name>空虚</Name>
-      		<Desc>每一幕开始时清空自身所有的异想体，每清除一个异想体书页从所有已解锁的异想体里随机选择1个应用到自身</Desc>
+      		<Name>Void</Name>
+      		<Desc>At the start of each Scene, clear all euqiped abnormality cards.
+Whenever an abnormality cards is cleared, apply new random accessible abnormality cards to self.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Nihil_Nihil">
-      		<Name>虚无</Name>
-      		<Desc>移除异想体书页“贪婪”，“憎恶”，“绝望”与“愤怒”的负面效果。
-每一幕开始时对除该司书外的其余角色施加5层“虚弱”，“破绽”与“束缚”。
-“贪婪”- 效果仅对自身生效。
-“憎恶”- 拼点失败时不再追加承受混乱伤害。
-“绝望”-其他司书死亡时不会失去混乱抗性
-“愤怒”- 可控制处于“愤怒”状态下的司书。</Desc>
+      		<Name>Nihil</Name>
+      		<Desc>At the start of each Scene, inflict 5 Feeble, Disarm, and Bind to all other characters.
+'Greed', 'Hate', and 'Wrath' lose their drawbacks.
+'Greed'- Only the librarian can activate this effect.
+'Hate'- No longer inflict damage to allies.
+'Despair'- No longer lose Stagger Resist when other allies die.
+'Wrath'- Can control Librarian in wrath state</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="MountainCorpse">
       		<Name>尸山</Name>

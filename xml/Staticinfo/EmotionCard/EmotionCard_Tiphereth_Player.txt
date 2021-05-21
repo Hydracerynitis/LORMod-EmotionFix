@@ -122,6 +122,7 @@
 	</EmotionCard>
 	<EmotionCard ID="13">
 		<Name>NihilClown_Card</Name>
+		<Artwork>NihilClown_fusion</Artwork>
 		<State>Positive</State>
 		<Sephirah>Tiphereth</Sephirah>
 		<Level>6</Level>
@@ -142,6 +143,7 @@
 	</EmotionCard>
 	<EmotionCard ID="15">
 		<Name>NihilClown_fusion</Name>
+		<Artwork>NihilClown_Card</Artwork>
 		<State>Negative</State>
 		<Sephirah>Tiphereth</Sephirah>
 		<Level>6</Level>

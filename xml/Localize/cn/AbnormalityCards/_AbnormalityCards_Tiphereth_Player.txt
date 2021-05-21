@@ -76,7 +76,7 @@
 			<Abnormality>绝望骑士</Abnormality>
 			<CardName>绝望</CardName>
 			<AbilityDesc>[选择一名司书]
-其他司书死亡时将在下一幕中使该司书获得1~3层“强壮”和1~3层伤害增加并失去25%最大混乱抗性。
+其他司书死亡时将在下一幕中使该司书获得2~3层“强壮”和2~3层伤害增加并失去25%最大混乱抗性。
 若一幕内有多个司书死去则在下两幕内获得“泪剑”效果</AbilityDesc>
 			<FlaborText>越是与人倾诉，越会削其锋芒。一如她的哀伤。</FlaborText>
 			<Dialogues>

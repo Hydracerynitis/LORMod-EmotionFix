@@ -55,6 +55,7 @@ namespace EmotionalFix
             AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104502));
             AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104503));
             AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104504));
+            this._owner.allyCardDetail.Shuffle();
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
         {

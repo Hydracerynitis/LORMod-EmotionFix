@@ -13,16 +13,16 @@
 		<Desc>[On Use] Draw 1 Card，all allies gain 2 Nettle Clothes</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Queen">
-		<Desc>[装备时]1幕之内使自身与博爱魔法少女[同化](每4幕至多同化1次)</Desc>
+		<Desc>[On play] [Synchronize] with the Magical Girl of Love for the duration of the Scene. (At most once per 4 Scene)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Knight">
-		<Desc>[装备时]1幕之内使自身与正义魔法少女[同化](每4幕至多同化1次)</Desc>
+		<Desc>[On play] [Synchronize] with the Magical Girl of Justice for the duration of the Scene. (At most once per 4 Scene)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="King">
-		<Desc>[装备时]1幕之内使自身与幸运魔法少女[同化](每4幕至多同化1次)</Desc>
+		<Desc>[On play] [Synchronize] with the Magical Girl of Happiness for the duration of the Scene. (At most once per 4 Scene)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="Servant">
-		<Desc>[装备时]1幕之内使自身与勇气魔法少女[同化](每4幕至多同化1次)</Desc>
+		<Desc>[On play] [Synchronize] with the Magical Girl of Courage for the duration of the Scene. (At most once per 4 Scene)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="invalid">
 		<Desc>This die is invalid</Desc>

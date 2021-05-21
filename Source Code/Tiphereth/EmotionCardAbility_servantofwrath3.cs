@@ -32,7 +32,7 @@ namespace EmotionalFix
             if (this._owner.faction != Faction.Enemy)
                 return;
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Player))
-                alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 6, this._owner);
+                alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, this._owner);
         }
     }
 }

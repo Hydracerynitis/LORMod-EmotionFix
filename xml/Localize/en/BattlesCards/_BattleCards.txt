@@ -14,19 +14,19 @@
       <LocalizedName>Weaving Clothes</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104401">
-      <LocalizedName>邪恶的化身！！！</LocalizedName>
+      <LocalizedName>EMBODIMENTS OF EVIL!!!</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104501">
-      <LocalizedName>博爱魔法少女</LocalizedName>
+      <LocalizedName>The Magical Girl of Love</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104502">
-      <LocalizedName>正义魔法少女</LocalizedName>
+      <LocalizedName>The Magical Girl of Justice</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104503">
-      <LocalizedName>幸福魔法少女</LocalizedName>
+      <LocalizedName>The Magical Girl of Happiness</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104504">
-      <LocalizedName>勇气魔法少女</LocalizedName>
+      <LocalizedName>The Magical Girl of Courage</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1106201">
       <LocalizedName>狼的角色</LocalizedName>

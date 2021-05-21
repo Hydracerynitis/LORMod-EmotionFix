@@ -44,7 +44,6 @@ namespace EmotionalFix
                     9905634,
                     9905634
                 }, 8);
-                this._owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
                 this._owner.view.ChangeCreatureSkin("Nihil_GreedLibrarian");
                 this._owner.view.StartEgoSkinChangeEffect("Character");
                 this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());

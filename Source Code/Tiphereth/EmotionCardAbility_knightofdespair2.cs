@@ -13,8 +13,8 @@ namespace EmotionalFix
         private int stack;
         private int tempStack;
         private SpriteFilter_Despair _filter;
-        private static int Power => RandomUtil.Range(1, 3);
-        private static int DmgUp => RandomUtil.Range(1, 3);
+        private static int Power => RandomUtil.Range(2, 3);
+        private static int DmgUp => RandomUtil.Range(2, 3);
         public override void OnDieOtherUnit(BattleUnitModel unit)
         {
             base.OnDieOtherUnit(unit);
