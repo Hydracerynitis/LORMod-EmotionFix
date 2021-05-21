@@ -2,127 +2,99 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
 		<AbnormalityCard ID="Redhood_Hunt">
-			<Abnormality>小红帽雇佣兵</Abnormality>
-			<CardName>猎物</CardName>
-			<AbilityDesc>[选择一名司书]
-应用该异想体书页后，该司书击中的第1名来宾将被标记为“猎物”。
-该司书击中“猎物”时伤害+2~6,"猎物"死亡后，该司书可将其余来宾标记为“猎物”。</AbilityDesc>
-			<FlaborText>那头狼的惨死，是我生命中唯一喜爱的事。</FlaborText>
+			<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
+			<CardName>Prey</CardName>
+			<AbilityDesc>[Single Ally]
+If no marked enemy, mark the first enemy that is attacked by this guest after the page is selected.
+Deal 2-6 additional damage when attacking the marked foe.</AbilityDesc>
+			<FlaborText>The wolf’s death is the one and only thing I can love in my life.</FlaborText>
 			<Dialogues>
-			<Dialogue ID="1">狩猎这块儿我可是行家，那种猎物手到擒来。</Dialogue>
-				<Dialogue ID="2">别眨眼，盯紧那畜生的每一个举动。</Dialogue>
-				<Dialogue ID="3">一旦定下目标，就要与之拼杀到底，永不言弃。</Dialogue>
-				<Dialogue ID="4">死死盯住你的猎物，抱着必杀无疑的决心踏出脚步。</Dialogue>
-				<Dialogue ID="5">你要是委托我，那我可以考虑帮忙。</Dialogue>
+				<Dialogue ID="1">I’m a pro. I can handle that easily.</Dialogue>
+				<Dialogue ID="2">Don’t take your eyes off it. Fix your sight upon its movement.</Dialogue>
+				<Dialogue ID="3">Once you’ve set your sights on a target, commit to your hunt. Don’t give up.</Dialogue>
+				<Dialogue ID="4">Fix your gaze upon your target and run at it. Have the resolve to kill it, whatever it takes.</Dialogue>
+				<Dialogue ID="5">If you make a request, then I might help you.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Redhood_RedScar">
-			<Abnormality>小红帽雇佣兵</Abnormality>
-			<CardName>伤疤</CardName>
-			<AbilityDesc>[选择一名司书]
-应用该异想体书页后，该司书的最大体力会设定为其当前体力。
-因此每损失15%的最大生命值便永久获得1点“强壮”</AbilityDesc>
-			<FlaborText>15岁时，磨斧子取代了采野花，成为我生命中习以为常的一部分。</FlaborText>
+			<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
+			<CardName>Crimson Scar</CardName>
+			<AbilityDesc>[Single Ally]
+Set Max HP equal to current HP.
+At the start of each Scene gain 1 strength per 15% of Max HP for reduced Max HP consequently.</AbilityDesc>
+			<FlaborText>I got used to grinding the axe instead of picking flowers when I was 15.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">这并非幸存者的勋章，而是求生意志的证明。</Dialogue>
-				<Dialogue ID="2">伤疤越多，求生的意志就越是强大。</Dialogue>
-				<Dialogue ID="3">可别以此为荣，每一道伤疤都在诉说你的无能。</Dialogue>
-				<Dialogue ID="4">……这些伤疤让我毛骨悚然，牙齿打颤。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="BigBadWolf_Claw">
-			<Abnormality>大坏狼</Abnormality>
-			<CardName>凶残利爪</CardName>
-			<AbilityDesc>[选择一名司书]
-若该司书承受其体力上限25%的伤害，则下一幕中自身将无法被指定为攻击目标且无法改变来宾的攻击目标。
-在此状态下，该司书将获得2层“强壮”且击中目标时将在下一幕中对其施加1层“流血”。</AbilityDesc>
-			<FlaborText>很久以前，这对利爪曾破开无数生物的肚囊，将其内脏一一撕裂。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我的爪子又大又利，能让我更好地扮演天生的角色……</Dialogue>
-				<Dialogue ID="2">因为狼是坏事做尽，且理应受到惩罚的存在……</Dialogue>
-				<Dialogue ID="3">凶暴的爪子会突入皮肉，将其撕烂……</Dialogue>
-				<Dialogue ID="4">要想撕裂内脏，没有什么能比这对爪子更好……</Dialogue>
+				<Dialogue ID="1">This isn’t a proud decoration of a survivor. It’s the proof of my will to live.</Dialogue>
+				<Dialogue ID="2">The more scars you get, the stronger your will to survive becomes.</Dialogue>
+				<Dialogue ID="3">Don’t take pride in it. It’s a sign that you weren’t skilled enough.</Dialogue>
+				<Dialogue ID="4">…I feel horrible when I look at these scars. It makes me shudder in fury.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Mountain_Eat">
-			<Abnormality>微笑的尸山</Abnormality>
-			<CardName>死尸吸收</CardName>
-			<AbilityDesc>[选择一名司书]
-场上每有一个其他角色死亡时该司书恢复20%血量和20%混乱抗性(上限为30)并恢复1点光芒</AbilityDesc>
-			<FlaborText>它唯一想要的，就是浸泡在鲜血中的人肉。一闻到血腥便会狂奔而来。</FlaborText>
+			<Abnormality>Mountain of Smiling Bodies</Abnormality>
+			<CardName>Absorption</CardName>
+			<AbilityDesc>[Single Ally]
+Whenever other character die, heal 20% of Max HP and 20% of Max Stagger Resist, Recover 1 light.</AbilityDesc>
+			<FlaborText>It only wants one thing: our flesh drenched in blood. Once it gets a whiff of the scent, it will pursue us in an instant.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">肉……好吃的……日……欧……</Dialogue>
-				<Dialogue ID="2">味道……是在……这边吗……</Dialogue>
-				<Dialogue ID="3">还……不够……继续……吃……咳……</Dialogue>
-				<Dialogue ID="4">身体，变大……就能……更强……</Dialogue>
+				<Dialogue ID="1">Meat… Tasty… me…at…</Dialogue>
+				<Dialogue ID="2">The smell… this… way…</Dialogue>
+				<Dialogue ID="3">Not… enough… must eat… more…</Dialogue>
+				<Dialogue ID="4">More bodies… will… make us… stronger…</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Mountain_Shout">
-			<Abnormality>微笑的尸山</Abnormality>
-			<CardName>尸体在笑</CardName>
-			<AbilityDesc>[选择一名司书]
-当其他司书死亡时将死亡司书牌库里3张随机的书页置入该司书的牌库</AbilityDesc>
-			<FlaborText>一座尸山。那些死尸面带微笑，成为互相分享残肢的一个整体。</FlaborText>
+			<Abnormality>Mountain of Smiling Bodies</Abnormality>
+			<CardName>Laughter</CardName>
+			<AbilityDesc>[Single Ally]
+Whenever other ally die, shuffle 3 card from that ally into deck.</AbilityDesc>
+			<FlaborText>From the mountains of bodies; the dead gave life to something. The dead fused with one another, all smiling.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">咕噜噜……咕噜……嗝……</Dialogue>
-				<Dialogue ID="2">互相……帮助……变成手……脚……</Dialogue>
-				<Dialogue ID="3">大家……笑脸……好……幸福……</Dialogue>
-				<Dialogue ID="4">一起……来……帮忙……</Dialogue>
+				<Dialogue ID="1">Krrrh… Ghh… Grgh…</Dialogue>
+				<Dialogue ID="2">We help… each other… Sharing with each other… our hands… and feet…</Dialogue>
+				<Dialogue ID="3">All… are smiling… we… are happy…</Dialogue>
+				<Dialogue ID="4">We are… together… helping…</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Mountain_Vomit">
-			<Abnormality>微笑的尸山</Abnormality>
-			<CardName>尸山</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕开始时该司书每恢复10%的最大生命值的血量，获得1层“尸山”(骰子威力+1但提高25%所受伤害)
-每一幕开始时司书每损失10%最大生命值的血量便失去1层“尸山”</AbilityDesc>
-			<FlaborText>尸体越多，它的体型就越是庞大。而且永不满足。</FlaborText>
+			<Abnormality>Mountain of Smiling Bodies</Abnormality>
+			<CardName>Mountain of Corpses</CardName>
+			<AbilityDesc>[Single Ally]
+For each 10% of Max HP healed, gain 1 Moutainn (All dice gain 1 Power per stack; increase incoming damage by 25% per stack)
+For each 10% of Max HP damage taken, lose 1 Moutain.</AbilityDesc>
+			<FlaborText>The more bodies it comes across, the more defined its shape becomes. And it is never satisfied.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">必须……重新……合为……一体……</Dialogue>
-				<Dialogue ID="2">要赶快……回去……咳……</Dialogue>
-				<Dialogue ID="3">这样……不行……危……险……</Dialogue>
-				<Dialogue ID="4">不要离开……再贴回来……我们……是一体的……</Dialogue>
+				<Dialogue ID="1">Must… must become one… again…</Dialogue>
+				<Dialogue ID="2">Must return… Must… hurry…</Dialogue>
+				<Dialogue ID="3">No… This is… not… good…</Dialogue>
+				<Dialogue ID="4">Don’t fall off… Get together again… We are one…</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Nosferatu_BloodHope">
-			<Abnormality>诺斯费拉图</Abnormality>
-			<CardName>恐水症</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书击中目标时伤害+3~7并在下一幕中对其施加2层“流血”。
-但该司书失去控制并只会攻击血量最高的来宾</AbilityDesc>
-			<FlaborText>他们彷徨着。像在寻找什么，却又不明白自己究竟想要什么。</FlaborText>
+			<Abnormality>Nosferatu</Abnormality>
+			<CardName>Fear of Water</CardName>
+			<AbilityDesc>[Single Ally]
+Deal 3-7 additional damage with attacks, and inflict 2 Bleed on hit.
+Can not control and prioritize the librarian with the most HP.</AbilityDesc>
+			<FlaborText>He seemed lost. He was looking for something, but he didn’t appear to know what he wanted to find.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">血……我要血！！！</Dialogue>
-				<Dialogue ID="2">所有欲望都被允许的夜晚……无尽的血染之夜。</Dialogue>
-				<Dialogue ID="3">无可比拟的鲜血！赐予我永生的福祉！</Dialogue>
-				<Dialogue ID="4">死亡将与诸位共舞！被吞噬的命运人人平等！</Dialogue>
+				<Dialogue ID="1">Blood… I want vivid blood!</Dialogue>
+				<Dialogue ID="2">A night when one is allowed to pursue all kinds of desire… A neverending, blood-red night.</Dialogue>
+				<Dialogue ID="3">The blood—in its purest and clearest form! Bring me eternal happiness!</Dialogue>
+				<Dialogue ID="4">The Danse Macabre is with everyone! All and sundry have a fair chance of being eaten!</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Nosferatu_Wine">
-			<Abnormality>诺斯费拉图</Abnormality>
-			<CardName>红酒</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕结束时该来宾受到10%血量的伤害并为所有其他司书恢复伤害等量的血量</AbilityDesc>
-			<FlaborText>虽维持着人类的身姿，但只要有一滴血就会化为凶暴的怪物，度过狂乱的一夜。</FlaborText>
+			<Abnormality>Nosferatu</Abnormality>
+			<CardName>Wine</CardName>
+			<AbilityDesc>[Single Ally]
+At the end of each Scene, if has more than 50% of Max HP, take damage equal to 10% of HP and heal other allies with the same amount.</AbilityDesc>
+			<FlaborText>It maintains a human form, but a single drop of blood should be enough for it to shapeshift into a ferocious monster and spend the night in a rampage.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">啊……忍受饥渴的痛苦绝非美妙之事。</Dialogue>
-				<Dialogue ID="2">午休为时尚早……来尽情享乐吧？</Dialogue>
-				<Dialogue ID="3">舍去虚幻的希望，忘却人类的皮囊……</Dialogue>
-				<Dialogue ID="4">如饥似渴，一饮而尽。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="NothingThere_Skin">
-			<Abnormality>一无所有</Abnormality>
-			<CardName>躯壳</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书将不再承受混乱伤害。 </AbilityDesc>
-			<FlaborText>尽管拥有人类的相貌，但它绝不是人类。每隔一定时间，它便会吞噬与其互动的职员，然后披上他们的躯壳。
-在此过程中，它的骨骼和脏器将被扭成一团，呈现出极度怪诞的形状。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">窝哦……哎……泥……我爱你……</Dialogue>
-				<Dialogue ID="2">想要……一具……躯壳……</Dialogue>
-				<Dialogue ID="3">兮液……兮液……谢谢。谢谢。</Dialogue>
-				<Dialogue ID="4">库呜……酷。酷。</Dialogue>
+				<Dialogue ID="1">Ah… Holding back the pain of this thirst is not exactly a pleasing sight to behold.</Dialogue>
+				<Dialogue ID="2">It’s too early for a nap… Won’t you join me and share the pleasure?</Dialogue>
+				<Dialogue ID="3">Forfeit false hope, and forget about the pretense of humanity…</Dialogue>
+				<Dialogue ID="4">Tempted by raging thirst, the glass is emptied.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>

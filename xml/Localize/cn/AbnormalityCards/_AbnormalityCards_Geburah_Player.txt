@@ -102,27 +102,13 @@
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>红酒</CardName>
 			<AbilityDesc>[选择一名司书]
-每一幕结束时该来宾受到10%血量的伤害并为所有其他司书恢复伤害等量的血量</AbilityDesc>
+每一幕结束时如果该司书血量高于50%则受到10%血量的伤害并为所有其他司书恢复伤害等量的血量</AbilityDesc>
 			<FlaborText>虽维持着人类的身姿，但只要有一滴血就会化为凶暴的怪物，度过狂乱的一夜。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">啊……忍受饥渴的痛苦绝非美妙之事。</Dialogue>
 				<Dialogue ID="2">午休为时尚早……来尽情享乐吧？</Dialogue>
 				<Dialogue ID="3">舍去虚幻的希望，忘却人类的皮囊……</Dialogue>
 				<Dialogue ID="4">如饥似渴，一饮而尽。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="NothingThere_Skin">
-			<Abnormality>一无所有</Abnormality>
-			<CardName>躯壳</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书将不再承受混乱伤害。 </AbilityDesc>
-			<FlaborText>尽管拥有人类的相貌，但它绝不是人类。每隔一定时间，它便会吞噬与其互动的职员，然后披上他们的躯壳。
-在此过程中，它的骨骼和脏器将被扭成一团，呈现出极度怪诞的形状。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">窝哦……哎……泥……我爱你……</Dialogue>
-				<Dialogue ID="2">想要……一具……躯壳……</Dialogue>
-				<Dialogue ID="3">兮液……兮液……谢谢。谢谢。</Dialogue>
-				<Dialogue ID="4">库呜……酷。酷。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>

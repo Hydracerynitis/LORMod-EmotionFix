@@ -130,7 +130,6 @@
     <Compile Include="Source Code\Chesed\EmotionCardAbility_waybackhome3.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_waybackhome2.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_lumberjack3.cs" />
-    <Compile Include="Source Code\Geburah\EmotionCardAbility_nothing3.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_nosferatu2.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_nosferatu1.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_redhood3.cs" />

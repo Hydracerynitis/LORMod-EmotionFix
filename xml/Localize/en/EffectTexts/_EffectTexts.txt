@@ -109,20 +109,16 @@ Whenever an abnormality cards is cleared, apply new random accessible abnormalit
 'Wrath'- Can control Librarian in wrath state</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="MountainCorpse">
-      		<Name>尸山</Name>
-      		<Desc>每层骰子威力+1，所受伤害提高25%并提高体型</Desc>
+      		<Name>Mountain</Name>
+      		<Desc>All dice gain 1 Power; Increase incomming damage by 25% per stack; Become Bigger.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Indicator">
-      		<Name>计数器</Name>
-      		<Desc>恢复量为{0}</Desc>
+      		<Name>Counter</Name>
+      		<Desc>Net healing is {0}</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="FearOfWater">
-      		<Name>恐水症</Name>
-      		<Desc>该单位不受控制并且只能攻击血量最高的敌人</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Shell">
-      		<Name>躯壳</Name>
-      		<Desc>该单位不受混乱伤害</Desc>
+      		<Name>Fear of Water</Name>
+      		<Desc>Uncontrollable, prioritize enemy with highest HP</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Lion_Player">
       		<Name>同行之路</Name>

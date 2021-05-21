@@ -114,10 +114,6 @@
       		<Name>恐水症</Name>
       		<Desc>该单位不受控制并且只能攻击血量最高的敌人</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Shell">
-      		<Name>躯壳</Name>
-      		<Desc>该单位不受混乱伤害</Desc>
-    	</BattleEffectText>
 		<BattleEffectText ID="Lion_Player">
       		<Name>同行之路</Name>
       		<Desc>若该司书保护某司书免受攻击(转移攻击目标)，则使该司书当前书页的所有骰子威力+1~2</Desc>

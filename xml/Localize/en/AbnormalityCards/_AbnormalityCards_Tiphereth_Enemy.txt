@@ -132,7 +132,7 @@ If the first die of a Combat page lose a clash, all remaining dice on the self's
 		<AbnormalityCard ID="Angry_Friend_Enemy">
 			<Abnormality>The Servant of Wrath</Abnormality>
 			<CardName>Companion</CardName>
-			<AbilityDesc>When there is no 'Companion' present, the first enemy the selected librarian attacks is marked as a 'Companion'. When the selected librarian defeats the 'Companion', all librarians restore 3 Light and recover 10 HP and Stagger Resist.</AbilityDesc>
+			<AbilityDesc>When there is no 'Companion' present, the first enemy the selected guest attacks is marked as a 'Companion'. When the selected guest defeats the 'Companion', all guests restore 3 Light and recover 10 HP and Stagger Resist.</AbilityDesc>
 			<FlaborText>The Servant of Wrath valued justice and balance more than anyone, but she began sharing knowledge with the Hermit—an enemy of her realm—becoming friends with her in secret.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Call me… Call my name…</Dialogue>

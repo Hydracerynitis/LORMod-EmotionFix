@@ -11,6 +11,8 @@ namespace EmotionalFix
     {
         public override void OnRoundStart()
         {
+            if (this._owner.hp < this._owner.MaxHp * 0.5)
+                return;
             int wine = (int)(this._owner.hp * 0.1);
             this._owner.TakeDamage(wine);
             foreach (BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll((Predicate<BattleUnitModel>)(x => x != this._owner)))
