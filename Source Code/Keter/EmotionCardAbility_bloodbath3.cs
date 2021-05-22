@@ -75,7 +75,8 @@ namespace EmotionalFix
 
         public class BloodBath_HandDebuf : BattleUnitBuf
         {
-            protected override string keywordId => "Ability/BloodBath_Hand";
+            protected override string keywordIconId => "BloodBath_Hand";
+            protected override string keywordId => "Bloodbath_Hands";
             public BloodBath_HandDebuf() => this.stack = 0;
             public void OnHit() => ++this.stack;
         }

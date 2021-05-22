@@ -19,6 +19,9 @@ namespace EmotionalFix
             if (target == null || !Prob)
                 return;
             target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, Bind, this._owner);
+            if (target.bufListDetail.GetReadyBufList().Find(x => x is BattleUnitBuf_Emotion_Snowqueen_Aura) != null)
+                return;
+            target.bufListDetail.AddReadyBuf(new BattleUnitBuf_Emotion_Snowqueen_Aura());
         }
 
         public override void BeforeRollDice(BattleDiceBehavior behavior)
@@ -33,6 +36,41 @@ namespace EmotionalFix
                 dmg = bonus,
                 breakDmg =bonus
             });
+            target.battleCardResultLog?.SetNewCreatureAbilityEffect("0_K/FX_IllusionCard_0_K_SnowUnATK", 2f);
+        }
+        public class BattleUnitBuf_Emotion_Snowqueen_Aura : BattleUnitBuf
+        {
+            private GameObject aura;
+            public override bool Hide => true;
+            public override void OnRoundStart()
+            {
+                base.OnRoundStart();
+                if (this._owner == null)
+                    return;
+                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_SnowAura", 1f, this._owner.view, this._owner.view)?.gameObject;
+            }
+            public override void OnRoundEnd()
+            {
+                base.OnRoundEnd();
+                this.Destroy();
+            }
+            public override void OnDie()
+            {
+                base.OnDie();
+                this.Destroy();
+            }
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+            public void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
+                this.aura = (GameObject)null;
+            }
         }
     }
 }

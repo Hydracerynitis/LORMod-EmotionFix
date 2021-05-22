@@ -66,7 +66,9 @@ namespace EmotionalFix
         {
             if (layerName == "Character")
                 layerName = "CharacterUI";
-            this.effect?.SetLayer(layerName);
+            if ((UnityEngine.Object)this.effect == (UnityEngine.Object)null)
+                return;
+            this.effect.SetLayer(layerName);
         }
     }
 }

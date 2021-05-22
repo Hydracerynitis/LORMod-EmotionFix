@@ -30,6 +30,8 @@ namespace EmotionalFix
         public override void OnDrawCard()
         {
             base.OnDrawCard();
+            if(this._owner.faction==Faction.Enemy)
+                SoundEffectPlayer.PlaySound("Creature/Pino_On");
             BattleDiceCardModel copy = this._owner.allyCardDetail.AddNewCard(RandomUtil.SelectOne<int>(copyiedList));
             copy.temporary = true;
             copy.SetPriorityAdder(100);

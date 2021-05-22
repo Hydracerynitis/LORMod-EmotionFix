@@ -12,10 +12,13 @@ namespace EmotionalFix.Source_Code.Keter
 
         public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
         {
+            if (atkDice.owner == null)
+                return;
             if (this._owner.faction == Faction.Player)
             {
                 atkDice.owner.TakeBreakDamage(dmg, DamageType.Emotion);
             }
+            atkDice.owner.battleCardResultLog?.SetNewCreatureAbilityEffect("0_K/FX_IllusionCard_0_K_RedEye", 1f);
         }
         public override double ChangeDamage(BattleUnitModel attacker, double dmg)
         {

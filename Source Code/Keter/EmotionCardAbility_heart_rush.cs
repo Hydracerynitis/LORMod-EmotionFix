@@ -11,6 +11,21 @@ namespace EmotionalFix
     public class EmotionCardAbility_heart_rush : EmotionCardAbilityBase
     {
         private int count;
+
+        public override void OnSelectEmotion()
+        {
+            base.OnSelectEmotion();
+            this.count = 0;
+            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_FastBeat", 1f, this._owner.view, this._owner.view);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(this._owner.view.WorldPosition);
+        }
+
+        public override void OnWaveStart()
+        {
+            base.OnWaveStart();
+            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_FastBeat", 1f, this._owner.view, this._owner.view);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(this._owner.view.WorldPosition);
+        }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
@@ -44,13 +59,6 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Player && this.count < 3)
                 return AtkResist.Immune;
             return base.GetResistBP(origin, detail);
-        }
-        public override void OnSelectEmotion()
-        {
-            base.OnSelectEmotion();
-            this.count = 0;
-            this.MakeEffect("0/HeartofAspiration_Rush", destroyTime: 2f);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(this._owner.view.WorldPosition);
         }
         public class Exhaust: BattleUnitBuf
         {
