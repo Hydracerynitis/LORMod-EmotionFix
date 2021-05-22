@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>burnningGirl2</Script>
+		<Script>burnningGirl</Script>
 	</EmotionCard>
 	<EmotionCard ID="90102">
 		<Name>ScorchedGirl_Walk_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-3</EmotionRate>
 		<TargetType>SelectOne</TargetType> 
-		<Script>burnningGirl</Script>
+		<Script>burnningGirl2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90103">
 		<Name>ScorchedGirl_Ashes_Enemy</Name>

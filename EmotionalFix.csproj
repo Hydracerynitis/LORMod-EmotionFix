@@ -191,11 +191,11 @@
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_teddy2.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_teddy.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl3.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl2.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_snowwhite3.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_snowwhite2.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_snowwhite1.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl2.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl.cs" />
     <Compile Include="Source Code\Harmony_Patch.cs" />
     <Compile Include="Source Code\PassiveAbility_668.cs" />
     <Compile Include="Source Code\PassiveAbility_667.cs" />

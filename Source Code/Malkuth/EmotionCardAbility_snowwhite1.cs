@@ -64,7 +64,13 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_snowwhite_vine : BattleUnitBuf
         {
+            private Battle.CreatureEffect.CreatureEffect _aura;
             protected override string keywordId => "Snowwhite_Vine";
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("1_M/FX_IllusionCard_1_M_Vine", 1f, owner.view, owner.view);
+            }
             public override void OnDie()
             {
                 base.OnDie();
@@ -74,6 +80,18 @@ namespace EmotionalFix
             {
                 base.OnRoundEnd();
                 this.Destroy();
+            }
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+            public void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
+                this._aura = (Battle.CreatureEffect.CreatureEffect)null;
             }
         }
     }

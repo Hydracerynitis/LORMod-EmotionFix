@@ -81,7 +81,8 @@
       		<CardName>工蜂</CardName>
       		<AbilityDesc>[选择一名司书]
 战斗开始时该司书指定的第一个单位被标记为威胁。
-未应用该异想体书页的司书击中“威胁”时将提高2~4点伤害。</AbilityDesc>
+未应用该异想体书页的司书击中“威胁”时将提高2~4点伤害。
+该司书所有骰子威力-1。</AbilityDesc>
       		<FlaborText>工蜂只表现出两种行为模式: 为蜂后提供营养素，扩大蜂群数量。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">我的工蜂们，是时候行动了。</Dialogue>

@@ -2,8 +2,8 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
 		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
-			<Abnormality>求知的草人</Abnormality>
-			<CardName>被扯出的智慧</CardName>
+			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
+			<CardName>Torn Off Wisdom</CardName>
 			<AbilityDesc>应用该异想体时移除该来宾牌库内随机3张书页。
 命中目标时有25%概率将目标牌库随机1张书页置入该来宾的牌库</AbilityDesc>
 			<FlaborText>归来之时，他的前额多了一道长长的疤痕。当被人问及是否痊愈时，他只答道觉得脑袋变轻了。</FlaborText>

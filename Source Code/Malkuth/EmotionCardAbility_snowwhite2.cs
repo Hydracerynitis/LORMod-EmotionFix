@@ -48,6 +48,7 @@ namespace EmotionalFix
                 else
                     dmgData[owner] += 1;
             }
+            this._owner.battleCardResultLog?.SetCreatureAbilityEffect("1/SnowWhite_Vine_Shield", 2f);
         }
     }
 }

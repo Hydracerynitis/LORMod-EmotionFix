@@ -98,7 +98,7 @@
     	</AbnormalityCard>
     	<AbnormalityCard ID="FairyCarnival_Gluttony_Enemy">
       		<Abnormality>精灵盛宴</Abnormality>
-      		<CardName>饕餮</CardName>
+      		<CardName>贪食</CardName>
         	<AbilityDesc>若该来宾的目标在这一幕中已承受伤害，则每次命中都将为自身恢复2~5点体力并使伤害+1~3</AbilityDesc>
       		<FlaborText>说到底，这些精灵不过是一群爱吃肉的怪物罢了，所谓的“呵护”也仅仅是为了保持食物的新鲜。</FlaborText>
       		<Dialogues>

@@ -29,6 +29,12 @@ namespace EmotionalFix
                 }
             }      
         }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            base.BeforeRollDice(behavior);
+            if (_owner.faction == Faction.Enemy)
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 1 });
+        }
         public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
         {
             base.OnTakeDamageByAttack(atkDice, dmg);
@@ -111,7 +117,13 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_queenbee_punish : BattleUnitBuf
         {
+            private Battle.CreatureEffect.CreatureEffect _aura;
             protected override string keywordId => "Queenbee_Punish";
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("1_M/FX_IllusionCard_1_M_BeeMark", 1f, owner.view, owner.view);
+            }
             public override void OnDie()
             {
                 base.OnDie();
@@ -121,6 +133,18 @@ namespace EmotionalFix
             {
                 base.OnRoundEnd();
                 this.Destroy();
+            }
+            public override void Destroy()
+            {
+                base.Destroy();
+                DestroyAura();
+            }
+            public void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
+                this._aura = (Battle.CreatureEffect.CreatureEffect)null;
             }
         }
         public class BattleUnitBuf_queenbee_attacker : BattleUnitBuf

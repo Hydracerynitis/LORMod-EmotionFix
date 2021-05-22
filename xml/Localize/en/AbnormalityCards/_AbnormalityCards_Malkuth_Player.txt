@@ -80,7 +80,8 @@ if fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increa
       		<Abnormality>Queen Bee</Abnormality>
       		<CardName>Worker Bee</CardName>
       		<AbilityDesc>[Single Ally]
-Combat Start the first enemy the selected librarian target at is marked. Other allies deal 2-4 more damage to the marked foe with attacks.</AbilityDesc>
+Combat Start the first enemy the selected librarian target at is marked. Other allies deal 2-4 more damage to the marked foe with attacks.
+All Dice of the selected librarian lose 1 Power.</AbilityDesc>
       		<FlaborText>They show only two forms of behavior: Delivering nutrients to the Queen, and proliferating.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">My bees. It is time to move.</Dialogue>
