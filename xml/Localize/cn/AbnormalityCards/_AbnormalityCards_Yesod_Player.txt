@@ -30,17 +30,18 @@
 				<Dialogue ID="5">大脑变成铁块的话，上面的褶皱也会消失吧。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="ForsakenMurderer_Violence">
-			<Abnormality>被遗弃的杀人魔</Abnormality>
-			<CardName>极端暴力</CardName>
-			<AbilityDesc>[选择一名司书]
-若该司书以打击骰子击中目标且掷出最大值，则追加3~7点混乱伤害。</AbilityDesc>
-			<FlaborText>“最可怜的明明是你们，道貌岸然的伪君子，死在俺手里的小人。”</FlaborText>
+		<AbnormalityCard ID="LittleHelper_Clean">
+			<Abnormality>小帮手</Abnormality>
+			<CardName>清洁</CardName>
+			<AbilityDesc>[选择一个司书]
+该司书攻击速度低于自身的目标时将使自身的“进攻型”骰子威力+1~2</AbilityDesc>
+			<FlaborText>若是将周遭的环境识别为脏乱差，它的坏情绪指示灯会迅速亮起并进入全面清洁模式。</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">不要以为，把俺绑起来，就万事大吉了……</Dialogue>
-				<Dialogue ID="2">……</Dialogue>
-				<Dialogue ID="3">结束了……开始了……又结束了……又开始了……</Dialogue>
-				<Dialogue ID="4">脑袋一碰，就会嗡嗡乱响。</Dialogue>
+				<Dialogue ID="1">小帮手是可以为您代劳任何事情的帮手机器人！</Dialogue>
+				<Dialogue ID="2">需要帮忙喵？小帮手可以为您做任何事情。</Dialogue>
+				<Dialogue ID="3">检测到污染，开始清洁工作。</Dialogue>
+				<Dialogue ID="4">哔哔哔~嘀。发现污染对象！启动清洁模式。</Dialogue>
+				<Dialogue ID="5">小帮手内置的上百种工具为您解决一切烦恼！</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SingingMachine_Music">
@@ -159,21 +160,20 @@
 				<Dialogue ID="4">让那最后一颗子弹，永远无法出现。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="Matan_Flame">
-			<Abnormality>魔弹射手</Abnormality>
-			<CardName>黑焰</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕结束时每有一个其他单位死亡该司书永久获得1层黑焰
-(每一幕开始时获得1层强壮1层守护，混乱抗性减少12%)
-切换舞台不会清空黑焰层数但陷入混乱时将会失去所有黑焰层数</AbilityDesc>
-			<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>
-				<Dialogue ID="2">我的灵魂徐徐燃烧，而后堕入地狱。</Dialogue>
-				<Dialogue ID="3">察觉到眼前空无一物的那一瞬间，灵魂便已随之死去。</Dialogue>
-				<Dialogue ID="4">绝望的心无法焚毁，只是冰冷地燃烧。</Dialogue>
-				<Dialogue ID="5">绝望永远伴我左右，不离不弃。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
+   		<AbnormalityCard ID="Matan_Flame">
+      		<Abnormality>魔弹射手</Abnormality>
+      		<CardName>黑焰</CardName>
+      		<AbilityDesc>[选择一名司书]
+所有角色的“耐性”或“抵抗”攻击抗性将变为“脆弱”或“致命”
+每一幕开始时该司书将获得1~2层“迅捷”与2~4层“强壮”。</AbilityDesc>
+      		<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>
+        		<Dialogue ID="2">我的灵魂徐徐燃烧，而后堕入地狱。</Dialogue>
+        		<Dialogue ID="3">察觉到眼前空无一物的那一瞬间，灵魂便已随之死去。</Dialogue>
+        		<Dialogue ID="4">绝望的心无法焚毁，只是冰冷地燃烧。</Dialogue>
+        		<Dialogue ID="5">绝望永远伴我左右，不离不弃。</Dialogue>
+      		</Dialogues>
+    	</AbnormalityCard>
   	</Sephirah>
 </AbnormalityCardsRoot>

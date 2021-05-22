@@ -9,90 +9,74 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_freischutz3 : EmotionCardAbilityBase
     {
-        private int Flames;
-        private Battle.CreatureEffect.CreatureEffect aura;
-        private string path = "2/Freischutz_Emotion_Aura";
+        private string _PREFAB_PATH = "Battle/DiceAttackEffects/CreatureBattle/EGO_Freischutz_6thBullet";
+        private bool _effect;
+        private bool trigger;
+
         public override void OnSelectEmotion()
         {
-            Flames = 0;
+            base.OnSelectEmotion();
+            trigger = false;
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
+                if(alive.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Fruischutz_Flame)==null)
+                    alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Fruischutz_Flame());
         }
+
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (Flames != 0)
-            {
-                Flame flame = new Flame();
-                this._owner.bufListDetail.AddBuf(flame);
-                flame.stack += Flames;
-                this._owner.breakDetail.UpdateBreakMax();
-            }
-            if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+            if (trigger && this._owner.faction == Faction.Enemy)
                 return;
-            this.DestroyAura();
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
+                if (alive.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Fruischutz_Flame) == null)
+                    alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Fruischutz_Flame());
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            trigger = true;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (!((UnityEngine.Object)this.aura == (UnityEngine.Object)null) || Flames <= 0)
+            if (trigger && this._owner.faction == Faction.Enemy)
                 return;
-            this.aura = this.MakeEffect(this.path, target: this._owner, apply: false);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Matan_Flame")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            if (!this._effect)
+            {
+                this._effect = true;
+                Util.LoadPrefab(this._PREFAB_PATH).GetComponent<FarAreaEffect_EGO_Freischutz_6thBullet>().Init(this._owner);
+                List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList_opponent(_owner.faction);
+                if (aliveList.Count > 0)
+                    Util.LoadPrefab(this._PREFAB_PATH).GetComponent<FarAreaEffect_EGO_Freischutz_6thBullet>().Init(aliveList[0]);
+            }
+            if (this._owner.faction == Faction.Player)
+            {
+                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Quickness, RandomUtil.Range(1, 2), this._owner);
+                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, RandomUtil.Range(2, 4), this._owner);
+            }
+            else
+            {
+                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Quickness, RandomUtil.Range(2, 4), this._owner);
+                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, RandomUtil.Range(1, 2), this._owner);
+            }
         }
 
-        public override void OnRoundEnd()
+        public class BattleUnitBuf_Emotion_Fruischutz_Flame : BattleUnitBuf
         {
-            base.OnRoundEnd();
-            if (this._owner.IsBreakLifeZero())
-                Flames = 0;
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Flame)) is Flame Flame)
-                Flame.Destroy();
-            if (Flames == 0)
-                return;
-            Flame flame = new Flame();
-            this._owner.bufListDetail.AddBuf(flame);
-            flame.stack += Flames;
-            this._owner.breakDetail.UpdateBreakMax();
-        }
-        public override void OnDieOtherUnit(BattleUnitModel unit)
-        {
-            Flames += 1;
-        }
-        public override void OnDie(BattleUnitModel killer)
-        {
-            base.OnDie(killer);
-            this.DestroyAura();
-        }
-        public void Destroy()
-        {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Flame)) is Flame Flame)
-                Flame.Destroy();
-        }
-        private void DestroyAura()
-        {
-            if ((UnityEngine.Object)this.aura != (UnityEngine.Object)null && (UnityEngine.Object)this.aura.gameObject != (UnityEngine.Object)null)
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
-            this.aura = (Battle.CreatureEffect.CreatureEffect)null;
-        }
-        public class Flame: BattleUnitBuf
-        {
-            protected override string keywordId => "Flame";
-            protected override string keywordIconId => "BurnSpread";
-            public override void Init(BattleUnitModel owner)
+            protected override string keywordId => "Matan_Flame";
+
+            public override AtkResist GetResistHP(AtkResist origin, BehaviourDetail detail)
             {
-                base.Init(owner);
-                this.stack = 0;
+                if (base.GetResistHP(origin, detail) == AtkResist.Endure)
+                    return AtkResist.Vulnerable;
+                return base.GetResistHP(origin, detail) == AtkResist.Resist ? AtkResist.Weak : base.GetResistHP(origin, detail);
             }
-            public override StatBonus GetStatBonus()
+
+            public override AtkResist GetResistBP(AtkResist origin, BehaviourDetail detail)
             {
-                return new StatBonus()
-                {
-                    breakRate = -Mathf.Min(99, this.stack * 12)
-                };
-            }
-            public override void OnRoundStart()
-            {
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, stack);
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, stack);
+                if (base.GetResistBP(origin, detail) == AtkResist.Endure)
+                    return AtkResist.Vulnerable;
+                return base.GetResistBP(origin, detail) == AtkResist.Resist ? AtkResist.Weak : base.GetResistBP(origin, detail);
             }
         }
     }

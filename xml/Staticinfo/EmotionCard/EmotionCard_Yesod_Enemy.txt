@@ -7,9 +7,9 @@
 		<Sephirah>None</Sephirah>
 		<Level>2</Level>
 		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>3</EmotionRate>
+		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>murderer2</Script>
+		<Script>murderer</Script>
 	</EmotionCard> 
 	<EmotionCard ID="90202">
 		<Name>ForsakenMurderer_Tie_Enemy</Name>
@@ -20,16 +20,16 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>murderer1</Script>
+		<Script>murderer2</Script>
 	</EmotionCard>  
 	<EmotionCard ID="90203">
 		<Name>ForsakenMurderer_Violence_Enemy</Name>
 		<Artwork>ForsakenMurderer_Violence</Artwork>
-		<State>Positive</State>
+		<State>Negative</State>
 		<Sephirah>None</Sephirah>
 		<Level>2</Level>
 		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>2</EmotionRate>
+		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>murderer3</Script>
 	</EmotionCard>
@@ -40,7 +40,7 @@
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
 		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>1</EmotionRate>
+		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>helper</Script>
 	</EmotionCard>
@@ -51,7 +51,7 @@
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
 		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>0</EmotionRate>
+		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>helper2</Script>
 	</EmotionCard>  
@@ -106,7 +106,7 @@
 		<Sephirah>None</Sephirah>
 		<Level>5</Level>
 		<EmotionLevel>2</EmotionLevel>
-		<EmotionRate>2</EmotionRate> 
+		<EmotionRate>1</EmotionRate> 
 		<TargetType>SelectOne</TargetType>
 		<Script>butterfly1</Script>
 	</EmotionCard>

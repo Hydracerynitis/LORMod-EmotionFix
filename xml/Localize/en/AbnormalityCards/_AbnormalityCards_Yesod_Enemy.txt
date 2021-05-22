@@ -30,7 +30,7 @@
 		<AbnormalityCard ID="ForsakenMurderer_Violence_Enemy">
 			<Abnormality>Forsaken Murderer</Abnormality>
 			<CardName>Violence</CardName>
-			<AbilityDesc>Upon a successful attack, if the die rolled max. value, deal 2-5 bonus Stagger damage.</AbilityDesc>
+			<AbilityDesc>Lower the minimum value of all dice by 1, and raise the maximum value by 3.</AbilityDesc>
 			<FlaborText>“What’s really pitiful is people like you dying to the likes of me.”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Don’t think that you’ve won by chaining me…</Dialogue>
@@ -42,7 +42,7 @@
 		<AbnormalityCard ID="LittleHelper_Rest_Enemy">
 			<Abnormality>All-Around Helper</Abnormality>
 			<CardName>Recharge</CardName>
-			<AbilityDesc>After every three clash wins, restore 1 Light and gain 1-2 Haste next Scene.</AbilityDesc>
+			<AbilityDesc>If the guest has maximum Light at the start of a Scene, gain 1-2 Haste, and deal an additional 2-7 damage with attacks for that Scene.</AbilityDesc>
 			<FlaborText>However, the limbs were equipped with sharp instruments instead of cleaning supplies.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Beepboop… Beep… Out of battery…</Dialogue>
@@ -54,7 +54,7 @@
 		<AbnormalityCard ID="LittleHelper_Pattern_Enemy">
 			<Abnormality>All-Around Helper</Abnormality>
 			<CardName>Repetitive Pattern-Recognition</CardName>
-			<AbilityDesc>After dealing damage greater than 15% of the target's Max HP with a Combat page, restore 1 Light and gain 1-2 Haste next Scene.</AbilityDesc>
+			<AbilityDesc>After every three clash wins, restore 1 Light and gain 1-2 Haste next Scene.</AbilityDesc>
 			<FlaborText>The day I was sent to a new home for the first time, I gave them the gift they wanted so earnestly.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">When I’m done cleaning, people would always praise me!</Dialogue>
@@ -186,9 +186,8 @@ The seventh page will be infused into A “magic bullet” targeting self.</Abil
 		<AbnormalityCard ID="Matan_Flame_Enemy">
 			<Abnormality>Der Freischütz</Abnormality>
 			<CardName>Dark Flame</CardName>
-			<AbilityDesc>Upon death of other character, gain 1 Dark Flame for the duration of battle. Lose all Dark Flame when staggered.
-(At the start of the Scene, gain 1 Strength, Protection per stack. Reduce Max Stagger Resist by 12% per stack)
-If the librarian did not deal any damage with attacks by the end of the Scene, take 3-6 Stagger damage.</AbilityDesc>
+			<AbilityDesc>For the duration of the Act, the 'Endured/Ineffective' resistances of all characters change to 'Weak/Fatal'.
+Gain 1-2 Strength and 2-4 Haste each Scene.</AbilityDesc>
 			<FlaborText>One day, the marksman realized the Devil no longer followed him. He pondered why, then realized that his soul had already fallen to Hell from the beginning.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Was it despair that he wished for?</Dialogue>

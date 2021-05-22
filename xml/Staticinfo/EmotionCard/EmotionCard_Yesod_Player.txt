@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EmotionCard ID="2">
+		<Name>ForsakenMurderer_Tie</Name>
+		<State>Negative</State>
+		<Sephirah>Yesod</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-3</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>murderer2</Script>
+	</EmotionCard>
+	<EmotionCard ID="4">
+		<Name>LittleHelper_Rest</Name>
+		<State>Positive</State>
+		<Sephirah>Yesod</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>helper</Script>
+	</EmotionCard>
+	<EmotionCard ID="6">
+		<Name>LittleHelper_Clean</Name>
+		<State>Positive</State>
+		<Sephirah>Yesod</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>helper3</Script>
+	</EmotionCard>
 	<EmotionCard ID="7">
 		<Name>SingingMachine_Music</Name>
 		<State>Negative</State>
 		<Sephirah>Yesod</Sephirah>
 		<Level>4</Level>
 		<EmotionLevel>2</EmotionLevel>
-		<EmotionRate>1</EmotionRate>
+		<EmotionRate>-1</EmotionRate>
 		<TargetType>All</TargetType>
 		<Script>singingMachine</Script>
 	</EmotionCard>
@@ -16,9 +46,19 @@
 		<Sephirah>Yesod</Sephirah>
 		<Level>5</Level>
 		<EmotionLevel>2</EmotionLevel>
-		<EmotionRate>2</EmotionRate>    
+		<EmotionRate>1</EmotionRate>    
 		<TargetType>SelectOne</TargetType>
 		<Script>butterfly1</Script>
+	</EmotionCard>
+	<EmotionCard ID="11">
+		<Name>Butterfly_Fly</Name>
+		<State>Positive</State>
+		<Sephirah>Yesod</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>   
+		<TargetType>SelectOne</TargetType>
+		<Script>butterfly2</Script>
 	</EmotionCard>
 	<EmotionCard ID="12">
 		<Name>Butterfly_Casket</Name>

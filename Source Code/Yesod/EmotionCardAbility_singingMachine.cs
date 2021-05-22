@@ -30,9 +30,15 @@ namespace EmotionalFix
                 dmg = num
             });
         }
+        public override void OnKill(BattleUnitModel target)
+        {
+            base.OnKill(target);
+            this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Filter));
+        }
         public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
         {
             this._owner.breakDetail.TakeBreakDamage(RandomUtil.Range(3, 5));
         }
+        public void Filter() => new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/SingingMachine_Filter_Special", false, 2f);
     }
 }

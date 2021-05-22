@@ -29,17 +29,18 @@ Upon successful Blunt attack, reduce Physical and Stagger damage of enemy's next
 				<Dialogue ID="5">If my head turns into steel, all the wrinkles in my brain will be gone.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="ForsakenMurderer_Violence">
-			<Abnormality>Forsaken Murderer</Abnormality>
-			<CardName>Violence</CardName>
+		<AbnormalityCard ID="LittleHelper_Clean">
+			<Abnormality>All-Around Helper</Abnormality>
+			<CardName>Clean</CardName>
 			<AbilityDesc>[Single Ally]
-Upon a successful Blunt attack, if the die rolled max. value, deal 3-7 bonus Stagger damage.</AbilityDesc>
-			<FlaborText>“What’s really pitiful is people like you dying to the likes of me.”</FlaborText>
+Offensive dice gain 1-2 Power against enemies with slower Speed.</AbilityDesc>
+			<FlaborText>It recognizes a bad mood as a sign that the surroundings are dirty, and promptly enters cleaning mode.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">Don’t think that you’ve won by chaining me…</Dialogue>
-				<Dialogue ID="2">………</Dialogue>
-				<Dialogue ID="3">Ends… Begins. Ends again, begins once more…</Dialogue>
-				<Dialogue ID="4">When I bash my head onto a wall, it makes a refreshing sound.</Dialogue>
+				<Dialogue ID="1">The helper-bot can help you with any household chores!</Dialogue>
+				<Dialogue ID="2">What kind of task do you want me to do? I can help with anything.</Dialogue>
+				<Dialogue ID="3">Contamination scan complete. Initiating cleaning protocol.</Dialogue>
+				<Dialogue ID="4">Beebeebeep~ Beep. Contamination spotted! Proceeding with trash disposal protocol.</Dialogue>
+				<Dialogue ID="5">I will help you with my wide selection of tools.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SingingMachine_Music">
@@ -154,22 +155,6 @@ The seventh page will be infused into A “magic bullet” targeting self.</Abil
 				<Dialogue ID="2">You’re right… This magical bullet can truly hit anyone just like you say.</Dialogue>
 				<Dialogue ID="3">The bullets will puncture anything you please. Forever.</Dialogue>
 				<Dialogue ID="4">No bullet will ever be the last.</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="Matan_Flame">
-			<Abnormality>Der Freischütz</Abnormality>
-			<CardName>Dark Flame</CardName>
-			<AbilityDesc>[Single Ally]
-Upon death of other character, gain 1 Dark Flame for the duration of battle. Lose all Dark Flame when staggered.
-(At the start of the Scene, gain 1 Strength, Protection per stack. Reduce Max Stagger Resist by 12% per stack)
-If the librarian did not deal any damage with attacks by the end of the Scene, take 3-6 Stagger damage.</AbilityDesc>
-			<FlaborText>One day, the marksman realized the Devil no longer followed him. He pondered why, then realized that his soul had already fallen to Hell from the beginning.</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">Was it despair that he wished for?</Dialogue>
-				<Dialogue ID="2">My soul began to burn bit by bit, until it ultimately descended to Hell.</Dialogue>
-				<Dialogue ID="3">When one feels there’s nothing left to aim for, their soul falls down to Hell.</Dialogue>
-				<Dialogue ID="4">The despaired heart couldn’t go out in a passionate flame. It would only burn with a cold fire.</Dialogue>
-				<Dialogue ID="5">The despair shall linger around you at all times.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>

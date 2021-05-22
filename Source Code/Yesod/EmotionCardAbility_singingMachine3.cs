@@ -11,11 +11,10 @@ namespace EmotionalFix
     {
         private static int Add => RandomUtil.Range(1, 3);
         private static int Minus => RandomUtil.Range(1, 3);
-        public override void OnSelectEmotionOnce()
+        public override void OnSelectEmotion()
         {
-            base.OnSelectEmotionOnce();
-            Util.LoadPrefab("Battle/CreatureCard/SingingMachineCard_note_filter", SingletonBehavior<BattleSceneRoot>.Instance.transform);
-            SoundEffectPlayer.PlaySound("Creature/SingingMachine_Open");
+            base.OnSelectEmotion();
+            new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/SingingMachine_Filter_Aura", false, 2f);
         }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {

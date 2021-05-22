@@ -31,7 +31,7 @@
 		<AbnormalityCard ID="ForsakenMurderer_Violence_Enemy">
 			<Abnormality>被遗弃的杀人魔</Abnormality>
 			<CardName>极端暴力</CardName>
-			<AbilityDesc>若该来宾击中目标时掷出最大值，则追加2~5点混乱伤害。</AbilityDesc>
+			<AbilityDesc>该来宾的所有骰子最小值-1，最大值+3</AbilityDesc>
 			<FlaborText>“最可怜的明明是你们，道貌岸然的伪君子，死在俺手里的小人。”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">不要以为，把俺绑起来，就万事大吉了……</Dialogue>
@@ -43,7 +43,7 @@
 		<AbnormalityCard ID="LittleHelper_Rest_Enemy">
 			<Abnormality>小帮手</Abnormality>
 			<CardName>充能</CardName>
-			<AbilityDesc>该来宾每取得3次拼点胜利，便恢复1点光芒并在下一幕中使自身获得1~2层“迅捷”。</AbilityDesc>
+			<AbilityDesc>每一幕开始时若该来宾的光芒全满，则获得1~2层“迅捷”且击中目标时伤害+2~7。</AbilityDesc>
 			<FlaborText>机械臂上本应配备的清洁用具被全部替换成极度锋利的切割工具。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">哔啵……哔……电量不足了喵……</Dialogue>
@@ -55,7 +55,7 @@
 		<AbnormalityCard ID="LittleHelper_Pattern_Enemy">
 			<Abnormality>小帮手</Abnormality>
 			<CardName>反复识别功能</CardName>
-			<AbilityDesc>该来宾以“进攻型”骰子使司书承受超出其体力上限15%的伤害时将恢复1点光芒并在下一幕中使自身获得1~2层“迅捷”。</AbilityDesc>
+			<AbilityDesc>该来宾每取得3次拼点胜利，便恢复1点光芒并在下一幕中使自身获得1~2层“迅捷”。</AbilityDesc>
 			<FlaborText>搬进新家的第一天，我将那个人期盼已久的礼物转交给了他们。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">清洁完毕后，人们总会称赞小帮手！</Dialogue>
@@ -66,7 +66,7 @@
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="LittleHelper_Clean_Enemy">
-		<Abnormality>小帮手</Abnormality>
+			<Abnormality>小帮手</Abnormality>
 			<CardName>清洁</CardName>
 			<AbilityDesc>该来宾攻击速度低于自身的目标时将使自身的“进攻型”骰子威力+1~2</AbilityDesc>
 			<FlaborText>若是将周遭的环境识别为脏乱差，它的坏情绪指示灯会迅速亮起并进入全面清洁模式。</FlaborText>
@@ -189,9 +189,8 @@
 		<AbnormalityCard ID="Matan_Flame_Enemy">
 			<Abnormality>魔弹射手</Abnormality>
 			<CardName>黑焰</CardName>
-			<AbilityDesc>每一幕结束时每有一个其他单位死亡该来宾永久获得1层黑焰
-(每一幕开始时获得1层强壮1层守护，混乱抗性减少12%)
-切换舞台不会清空黑焰层数但陷入混乱时将会失去所有黑焰层数</AbilityDesc>
+			<AbilityDesc>[仅限本舞台] 所有角色的“耐性”或“抵抗”攻击抗性将变为“脆弱”或“致命”
+每一幕开始时该来宾将获得1~2层“强壮”与2~4层“敏捷”。</AbilityDesc>
 			<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>

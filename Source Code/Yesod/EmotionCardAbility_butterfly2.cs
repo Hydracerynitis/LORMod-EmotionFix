@@ -10,6 +10,11 @@ namespace EmotionalFix
     public class EmotionCardAbility_butterfly2 : EmotionCardAbilityBase
     {
         private bool trigger;
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("2_Y/FX_IllusionCard_2_Y_Fly", 1f, this._owner.view, this._owner.view, 2f);
+        }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);

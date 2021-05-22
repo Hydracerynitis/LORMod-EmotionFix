@@ -78,6 +78,7 @@
     <Compile Include="Source Code\Tiphereth\DiceCardSelfAbility_Servant.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardSelfAbility_Knight.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardSelfAbility_Queen.cs" />
+    <Compile Include="Source Code\Yesod\EmotionCardAbility_helper3.cs" />
     <Compile Include="Source Code\Yesod\DiceCardSelfAbility_Request.cs" />
     <Compile Include="Source Code\Yesod\DiceCardAbility_Execute.cs" />
     <Compile Include="Source Code\Hokma\EmotionCardAbility_bluestar1.cs" />
@@ -179,9 +180,8 @@
     <Compile Include="Source Code\Yesod\EmotionCardAbility_singingMachine3.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_singingMachine2.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_singingMachine.cs" />
-    <Compile Include="Source Code\Yesod\EmotionCardAbility_murderer3.cs" />
+    <Compile Include="Source Code\Yesod\EmotionCardAbility_murderer.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_murderer2.cs" />
-    <Compile Include="Source Code\Yesod\EmotionCardAbility_murderer1.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_queenbee3.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_queenbee2.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_queenbee1.cs" />

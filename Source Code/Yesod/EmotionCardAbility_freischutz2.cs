@@ -51,10 +51,15 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet)) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet)
+            if (this._owner.bufListDetail.GetActivatedBufList().Find((x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet)) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet)
             {
                 bullet.Destroy();
             }
+        }
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            base.OnSucceedAttack(behavior);
+            behavior?.card?.target?.battleCardResultLog?.SetNewCreatureAbilityEffect("2_Y/FX_IllusionCard_2_Y_Seven", 3f);
         }
         public class BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet : BattleUnitBuf
         {
