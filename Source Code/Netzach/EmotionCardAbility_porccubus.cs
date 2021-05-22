@@ -70,7 +70,11 @@ namespace EmotionalFix
             {
                 ++this.stack;
                 if (this.stack < 4)
+                {
+                    this._owner.battleCardResultLog?.SetCreatureAbilityEffect("3/Porccubuss_Delight", 1f);
                     return;
+                }
+
                 this._owner.TakeDamage(Dmg);
                 this._owner.TakeBreakDamage(Dmg);
                 this.stack = 0;

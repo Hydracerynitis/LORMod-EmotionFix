@@ -19,17 +19,13 @@ namespace EmotionalFix
                 return;
             if (behavior.Detail != BehaviourDetail.Penetrate && this._owner.faction == Faction.Player)
                 return;
-            BattleUnitBuf buf = target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Alriune_Debuf));
-            if (buf == null)
-            {
-                buf = new BattleUnitBuf_Alriune_Debuf();
-                target.bufListDetail.AddBuf(buf);
-            }
-            if (!(buf is BattleUnitBuf_Alriune_Debuf unitBufAlriuneDebuf))
-                return;
-            unitBufAlriuneDebuf.Reserve();
-            if(this._owner.faction==Faction.Player)
-                unitBufAlriuneDebuf.Reserve();
+            int num = 0;
+            if (_owner.faction == Faction.Enemy)
+                num = 1;
+            if (_owner.faction == Faction.Player)
+                num = RandomUtil.Range(1, 2);
+            target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Alriune_Debuf, num, this._owner);
+            target.battleCardResultLog?.SetCreatureAbilityEffect("0/Alriune_Stun_Effect", 1f);
         }
     }
 }

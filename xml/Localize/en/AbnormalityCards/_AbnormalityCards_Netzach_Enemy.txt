@@ -42,7 +42,7 @@ Reduce Maximun Draw Card by 2.</AbilityDesc>
 		<AbnormalityCard ID="ChildofGalaxy_Tear_Enemy">
 			<Abnormality>Child of the Galaxy</Abnormality>
 			<CardName>Teardrop</CardName>
-			<AbilityDesc>On getting staggered, inflict Stagger damage equal to 35% of Max Stagger (Max. 20) to all character.</AbilityDesc>
+			<AbilityDesc>Dice Power +1. On getting staggered, inflict Stagger damage equal to 35% of Max Stagger (Max. 20) to all character.</AbilityDesc>
 			<FlaborText>I hear his whispers and breath. Pitch black darkness follows… just like the night I met him…</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Walk across the Milky Way with me.</Dialogue>
@@ -97,8 +97,8 @@ when Thrill's stack reach 3, deal 3-7 bonus damage and Stagger damage, then remo
 		</AbnormalityCard>
 		<AbnormalityCard ID="Porccubus_Boom_Enemy">
 			<Abnormality>Porccubus</Abnormality>
-			<CardName>Pleasure</CardName>
-			<AbilityDesc>When hit, receive 2-7 bonus Stagger damage, draw 1 card and restore 1 Light with a 50% chance. (Twice per Scene)</AbilityDesc>
+			<CardName>Elation</CardName>
+			<AbilityDesc>Dice Power +1. Reduce Max Stagger Resist by 50%.</AbilityDesc>
 			<FlaborText>Now it’s time for my head to burst. Good day.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">If you wish for unbearable pleasure, you’ll break down eventually.</Dialogue>

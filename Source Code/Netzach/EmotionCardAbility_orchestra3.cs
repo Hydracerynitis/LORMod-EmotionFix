@@ -24,6 +24,20 @@ namespace EmotionalFix
             if (!this.trigger)
                 return;
             this.trigger = false;
+            Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/4_N/FX_IllusionCard_4_N_Orchestra_Light");
+            if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+            {
+                Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+                if ((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                {
+                    AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
+                    if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                    {
+                        autoDestruct.time = 3f;
+                        autoDestruct.DestroyWhenDisable();
+                    }
+                }
+            }
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
                 alive.cardSlotDetail.LosePlayPoint(Reduce);
         }

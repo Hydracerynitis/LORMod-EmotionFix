@@ -17,8 +17,7 @@
 		<AbnormalityCard ID="UniverseZogak_Tentacle_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>穿透</CardName>
-			<AbilityDesc>该来宾击中目标时将追加10%目标混乱抗性(同一单位只能触发次)
-该来宾手牌上限-2</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时将追加10%目标混乱抗性(同一单位只能触发次)</AbilityDesc>
 			<FlaborText>被触须穿透的那一瞬间，今后的人生将再也无法激起你分毫的兴趣……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">否定。攻击。用以。帮助。给予。</Dialogue>
@@ -31,7 +30,8 @@
 		<AbnormalityCard ID="UniverseZogak_Sing_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>无法理解</CardName>
-			<AbilityDesc>该来宾击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)
+该来宾手牌上限-2</AbilityDesc>
 			<FlaborText>总而言之，那家伙成功踏入了“宇宙碎片”的领域，但他的大脑显然无法承受。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">理解。与你。一同。人类。与我。</Dialogue>
@@ -42,7 +42,8 @@
 		<AbnormalityCard ID="ChildofGalaxy_Tear_Enemy">
 			<Abnormality>银河之子</Abnormality>
 			<CardName>泪水</CardName>
-			<AbilityDesc>该来宾陷入混乱时则对所有角色造成等同于”该来宾混乱上限x35%“的混乱伤害(至多20点)</AbilityDesc>
+			<AbilityDesc>该来宾的所有骰子威力+1。
+该来宾陷入混乱时则对所有角色造成等同于”该来宾混乱上限x35%“的混乱伤害(至多20点)</AbilityDesc>
 			<FlaborText>耳畔传来他的低语和呼吸……接着便是一片漆黑……就像我与他初见的那个夜晚……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">和我一起，在银河中漫步吧。</Dialogue>
@@ -98,7 +99,8 @@
 		<AbnormalityCard ID="Porccubus_Boom_Enemy">
 			<Abnormality>棘刺公交</Abnormality>
 			<CardName>嗨爆</CardName>
-			<AbilityDesc>该来宾被击中时有50%的概率失去2~7点混乱抗性并抽取1张书页恢复1点光芒。(每一幕至多触发2次)</AbilityDesc>
+			<AbilityDesc>该来宾的所有骰子威力+1
+该来宾的混乱抗性上限-50%</AbilityDesc>
 			<FlaborText>我的脑袋就要爆炸了，再见咯~</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">贪求常人无法承受的欢乐，迟早会崩溃的啦。</Dialogue>

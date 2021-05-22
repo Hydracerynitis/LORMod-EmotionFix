@@ -11,12 +11,30 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_orchestra2 : EmotionCardAbilityBase
     {
+        private CameraFilterPack_Noise_TV_2 _filter;
         private int turn;
+        public void Filter()
+        {
+            Camera effectCam = SingletonBehavior<BattleCamManager>.Instance.EffectCam;
+            if ((UnityEngine.Object)effectCam == (UnityEngine.Object)null)
+                return;
+            this._filter = effectCam.gameObject.AddComponent<CameraFilterPack_Noise_TV_2>();
+            this._filter.Fade = 0.15f;
+            this._filter.Fade_Additive = 0.0f;
+            this._filter.Fade_Distortion = 0.2f;
+        }
+        public void DestroyFilter()
+        {
+            if (!((UnityEngine.Object)this._filter != (UnityEngine.Object)null))
+                return;
+            UnityEngine.Object.Destroy((UnityEngine.Object)this._filter);
+        }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
             if (this._owner.faction == Faction.Enemy)
                 turn = 3;
+            Filter();
         }
         public override void OnRoundStart()
         {
@@ -24,7 +42,10 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Player)
             {
                 if (this.turn >= 2)
+                {
+                    DestroyFilter();
                     return;
+                }
                 ++this.turn;
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
                     alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Orchestra());
@@ -33,8 +54,13 @@ namespace EmotionalFix
             {
                 ++this.turn;
                 if (turn % 4 != 0)
+                {
+                    if (BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => x.bufListDetail.GetActivatedBufList().Exists(y => y is Enthusiastic)).Count == 0)
+                        DestroyFilter();
                     return;
-                List<BattleUnitModel> Player = BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll((Predicate<BattleUnitModel>)(x => !x.bufListDetail.GetActivatedBufList().Exists((Predicate<BattleUnitBuf>)(y => y is Enthusiastic))));
+                }
+
+                List<BattleUnitModel> Player = BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => !x.bufListDetail.GetActivatedBufList().Exists(y => y is Enthusiastic));
                 if (Player.Count == 0)
                     return;
                 BattleUnitModel unlucky = RandomUtil.SelectOne<BattleUnitModel>(Player);
@@ -43,15 +69,26 @@ namespace EmotionalFix
                 unlucky.breakDetail.nextTurnBreak = false;
                 unlucky.turnState = BattleUnitTurnState.WAIT_CARD;
                 unlucky.breakDetail.RecoverBreak(unlucky.breakDetail.GetDefaultBreakGauge());
+                Filter();
             }
+        }
+        public override void OnEndBattlePhase()
+        {
+            Destroy();
+        }
+
+        public override void OnBattleEnd()
+        {
+            Destroy();
         }
         public void Destroy()
         {
             foreach(BattleUnitModel player in BattleObjectManager.instance.GetAliveList(Faction.Player))
             {
-                if (player.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Enthusiastic)) is Enthusiastic enthusiastic)
+                if (player.bufListDetail.GetActivatedBufList().Find(x => x is Enthusiastic) is Enthusiastic enthusiastic)
                     enthusiastic.Destroy();
             }
+            DestroyFilter();
         }
         public class BattleUnitBuf_Emotion_Orchestra : BattleUnitBuf
         {
@@ -123,7 +160,7 @@ namespace EmotionalFix
             public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
             {
                 BattleUnitModel owner = atkDice.owner;
-                bool flag = owner.bufListDetail.GetActivatedBufList().Exists((Predicate<BattleUnitBuf>)(x => x is Enthusiastic));
+                bool flag = owner.bufListDetail.GetActivatedBufList().Exists(x => x is Enthusiastic);
                 if (owner.faction != this._owner.faction || flag || (!this._owner.IsBreakLifeZero() || this._bRecoverBreak))
                     return;
                 this._bRecoverBreak = true;

@@ -32,7 +32,7 @@ Reduce Maximun Draw Card by 2</AbilityDesc>
 			<Abnormality>Child of the Galaxy</Abnormality>
 			<CardName>Teardrop</CardName>
 			<AbilityDesc>[Single Ally]
-On getting staggered, inflict Stagger damage equal to 35% of Max Stagger (Max. 20) to all character.</AbilityDesc>
+Dice Power +1. On getting staggered, inflict Stagger damage equal to 35% of Max Stagger (Max. 20) to all character.</AbilityDesc>
 			<FlaborText>I hear his whispers and breath. Pitch black darkness follows… just like the night I met him…</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Walk across the Milky Way with me.</Dialogue>
@@ -71,20 +71,6 @@ when Thrill's stack reach 4, deal 2-7 bonus damage and Stagger damage, then remo
 				<Dialogue ID="5">I pity those fools who don’t know this happiness~</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="Porccubus_Boom">
-			<Abnormality>Porccubus</Abnormality>
-			<CardName>Pleasure</CardName>
-			<AbilityDesc>[Single Ally]
-When hit, receive 2-7 bonus Stagger damage, draw 1 card and restore 1 Light with a 50% chance. (Twice per Scene)</AbilityDesc>
-			<FlaborText>Now it’s time for my head to burst. Good day.</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">If you wish for unbearable pleasure, you’ll break down eventually.</Dialogue>
-				<Dialogue ID="2">I’m just giving you laughter, so much that you might die laughing~</Dialogue>
-				<Dialogue ID="3">You’ll start with one, and keep wanting more.</Dialogue>
-				<Dialogue ID="4">Your head will soon be filled with happiness, almost enough to burst your head.</Dialogue>
-				<Dialogue ID="5">Once you’ve had a taste of this sweetness, you can’t quit.</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="Porccubus_Happy">
 			<Abnormality>Porccubus</Abnormality>
 			<CardName>Laughing Powder</CardName>
@@ -117,7 +103,7 @@ At the start of the Scene, lose 25% Stagger Resist and other allies recover equa
 			<Abnormality>Alriune</Abnormality>
 			<CardName>Autumn’s Passing</CardName>
 			<AbilityDesc>[Single Ally]
-Upon a successful Pierce attack, inflict 2 Aroma.
+Upon a successful Pierce attack, inflict 1-2 Aroma.
 (Aroma: At the start of the Scene, take Stagger damage equal to the amount of Aroma and reduce one third the stack.)</AbilityDesc>
 			<FlaborText>Bearing the hope to return to dust, it shall go back to the grave with all that desires to live.</FlaborText>
 			<Dialogues>

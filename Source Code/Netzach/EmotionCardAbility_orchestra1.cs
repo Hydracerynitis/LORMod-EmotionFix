@@ -36,13 +36,24 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (!this.effect)
+            if (!this.effect && !this.trigger)
                 return;
             this.effect = false;
             this._owner.SetHp(this.savedHp);
             this._owner.breakDetail.breakGauge = this.savedBp;
             this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
             SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(this._owner, this._owner.faction, this._owner.hp, this._owner.breakDetail.breakGauge);
+            Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/4_N/FX_IllusionCard_4_N_Orchestra_Start");
+            if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+                return;
+            Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+            if (!((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null))
+                return;
+            AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
+            if (!((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null))
+                return;
+            autoDestruct.time = 3f;
+            autoDestruct.DestroyWhenDisable();
         }
         public override void OnRoundEnd()
         {
@@ -51,10 +62,6 @@ namespace EmotionalFix
             if (this._owner.history.takeDamageAtOneRound < (double)this._owner.MaxHp * 0.25)
                 return;
             this.trigger = true;
-            this._owner.SetHp(this.savedHp);
-            this._owner.breakDetail.breakGauge = this.savedBp;
-            this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
-            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(this._owner, this._owner.faction, this._owner.hp, this._owner.breakDetail.breakGauge);
         }
         public void Destroy()
         {

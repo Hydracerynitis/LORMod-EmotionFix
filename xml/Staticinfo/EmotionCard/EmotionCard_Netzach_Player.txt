@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <EmotionCard ID="2">
-		<Name>ScorchedGirl_Walk</Name>
+	<EmotionCard ID="3">
+		<Name>UniverseZogak_Sing</Name>
 		<State>Negative</State>
-		<Sephirah>Malkuth</Sephirah>
+		<Sephirah>Netzach</Sephirah>
 		<Level>2</Level>
 		<EmotionLevel>2</EmotionLevel>
-		<EmotionRate>-3</EmotionRate>
-		<TargetType>SelectOne</TargetType> 
-		<Script>burnningGirl</Script>
+		<EmotionRate>0</EmotionRate>、
+		<TargetType>SelectOne</TargetType>
+		<Script>fragmentSpace3</Script>
 	</EmotionCard>
 	<EmotionCard ID="6">
 		<Name>ChildofGalaxy_Friend</Name>
@@ -19,6 +19,16 @@
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>galaxyChild3</Script>
+	</EmotionCard>
+	<EmotionCard ID="11">
+		<Name>Alriune_Bush</Name>
+		<State>Positive</State>
+		<Sephirah>Netzach</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>alriune2</Script>
 	</EmotionCard>
 	<EmotionCard ID="14">
 		<Name>SilentOrchestra_Affect</Name>

@@ -40,7 +40,7 @@
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
 		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>-2</EmotionRate>
+		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>galaxyChild</Script>
 	</EmotionCard> 
@@ -62,7 +62,7 @@
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
 		<EmotionLevel>2</EmotionLevel>
-		<EmotionRate>1</EmotionRate>
+		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>galaxyChild3</Script>
 	</EmotionCard>
@@ -84,7 +84,7 @@
 		<Sephirah>None</Sephirah>
 		<Level>4</Level>
 		<EmotionLevel>1</EmotionLevel>
-		<EmotionRate>-1</EmotionRate>
+		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>	
 		<Script>porccubus2</Script>
 	</EmotionCard>

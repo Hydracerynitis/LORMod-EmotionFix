@@ -34,6 +34,11 @@ namespace EmotionalFix
             this._effect?.AttachEffectLayer();
             SoundEffectPlayer.PlaySound("Creature/GalaxyBoy_Cry");
         }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            base.BeforeRollDice(behavior);
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 1 });
+        }
         public override void OnPrintEffect(BattleDiceBehavior behavior)
         {
             if (!(bool)(UnityEngine.Object)this._effect)

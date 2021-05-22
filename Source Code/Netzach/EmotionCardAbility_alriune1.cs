@@ -23,6 +23,10 @@ namespace EmotionalFix
             {
                 unit.breakDetail.RecoverBreak(num);
             }
+            if (Singleton<StageController>.Instance.IsLogState())
+                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("4_N/FX_IllusionCard_4_N_FlowerPiece", 2f);
+            else
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("4_N/FX_IllusionCard_4_N_FlowerPiece", 1f, this._owner.view, this._owner.view, 2f);
         }
     }
 }

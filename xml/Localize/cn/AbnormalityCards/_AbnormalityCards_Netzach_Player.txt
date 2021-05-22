@@ -32,6 +32,7 @@
 			<Abnormality>银河之子</Abnormality>
 			<CardName>泪水</CardName>
 			<AbilityDesc>[选择一名司书]
+该司书的所有骰子威力+1。
 该司书陷入混乱时对所有角色造成等同于”该来宾混乱上限x35%“的混乱伤害(至多20点)</AbilityDesc>
 			<FlaborText>耳畔传来他的低语和呼吸……接着便是一片漆黑……就像我与他初见的那个夜晚……</FlaborText>
 			<Dialogues>
@@ -71,20 +72,6 @@
 				<Dialogue ID="5">那些不知幸福为何物的家伙，还真是可怜呢~</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="Porccubus_Boom">
-			<Abnormality>棘刺公交</Abnormality>
-			<CardName>嗨爆</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书被击中时有50%的概率失去2~7点混乱抗性并抽取1张书页恢复1点光芒。(每一幕至多触发2次)</AbilityDesc>
-			<FlaborText>我的脑袋就要爆炸了，再见咯~</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">贪求常人无法承受的欢乐，迟早会崩溃的啦。</Dialogue>
-				<Dialogue ID="2">人家只是为你们送来临终前的欢笑~</Dialogue>
-				<Dialogue ID="3">先从一根开始，往后越来越多。</Dialogue>
-				<Dialogue ID="4">幸福得就像脑袋要爆了一样。</Dialogue>
-				<Dialogue ID="5">尝过甜头，就别想逃啦。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="Porccubus_Happy">
 			<Abnormality>棘刺公交</Abnormality>
 			<CardName>笑粉</CardName>
@@ -117,7 +104,7 @@
 			<Abnormality>爱娜温</Abnormality>
 			<CardName>秋日的消逝</CardName>
 			<AbilityDesc>[选择一名司书]
-为该司书的突刺骰子赋予额外效果“[命中时] 对目标施加2层[余香]”
+为该司书的突刺骰子赋予额外效果“[命中时] 对目标施加1~2层[余香]”
 (余香: 每一幕开始时承受等同于“余香”层数的混乱伤害，随后减少“余香”1/3层数。)</AbilityDesc>
 			<FlaborText>怀着归于尘土的心愿，将所有渴望“生”的事物一同带入坟墓。</FlaborText>
 			<Dialogues>

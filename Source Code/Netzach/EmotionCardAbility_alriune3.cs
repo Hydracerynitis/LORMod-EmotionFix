@@ -22,6 +22,7 @@ namespace EmotionalFix
 
         public class BattleUnitBuf_Emotion_Alriune : BattleUnitBuf
         {
+            private Battle.CreatureEffect.CreatureEffect _aura;
             private BattleUnitModel _target;
             private int cnt;
             private static int BDmg => RandomUtil.Range(3, 7);
@@ -31,11 +32,6 @@ namespace EmotionalFix
             {
                 this._target = target;
                 this.stack = 0;
-            }
-            public override void OnRoundEnd()
-            {
-                base.OnRoundEnd();
-                this.Destroy();
             }
             public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
             {
@@ -49,6 +45,54 @@ namespace EmotionalFix
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
                     alive.TakeBreakDamage(EmotionCardAbility_alriune3.BattleUnitBuf_Emotion_Alriune.BDmg, DamageType.Emotion,this._owner);
                 this._target?.bufListDetail.AddBuf((BattleUnitBuf)new EmotionCardAbility_alriune3.BattleUnitBuf_Emotion_Alriune2());
+                this._target?.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Curtain));
+            }
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("4_N/FX_IllusionCard_4_N_Spring", 1f, this._owner.view, this._owner.view);
+            }
+
+            public override void OnRoundEnd()
+            {
+                base.OnRoundEnd();
+                this.Destroy();
+            }
+
+            public override void OnDie()
+            {
+                base.OnDie();
+                this.Destroy();
+            }
+
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+
+            public void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
+                this._aura = (Battle.CreatureEffect.CreatureEffect)null;
+            }
+            public void Curtain()
+            {
+                CreatureEffect_Alriune_Curtain original = Resources.Load<CreatureEffect_Alriune_Curtain>("Prefabs/Battle/CreatureEffect/0/CreatureEffect_Alriune_Curtain");
+                if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+                    return;
+                CreatureEffect_Alriune_Curtain effectAlriuneCurtain = UnityEngine.Object.Instantiate<CreatureEffect_Alriune_Curtain>(original);
+                RectTransform component = effectAlriuneCurtain.gameObject.GetComponent<RectTransform>();
+                effectAlriuneCurtain.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
+                effectAlriuneCurtain.gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                effectAlriuneCurtain.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+                component.offsetMin = new Vector2(0.0f, 0.0f);
+                component.offsetMax = new Vector2(0.0f, 0.0f);
+                effectAlriuneCurtain.gameObject.SetActive(true);
+                original.OnAndOpen();
+                effectAlriuneCurtain.gameObject.AddComponent<AutoDestruct>().time = 8f;
             }
         }
         public class BattleUnitBuf_Emotion_Alriune2 : BattleUnitBuf

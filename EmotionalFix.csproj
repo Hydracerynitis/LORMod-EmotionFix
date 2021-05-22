@@ -157,7 +157,6 @@
     <Compile Include="Source Code\Netzach\EmotionCardAbility_alriune1.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_freischutz1.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_porccubus.cs" />
-    <Compile Include="Source Code\Netzach\EmotionCardAbility_porccubus2.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_galaxyChild2.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_galaxyChild3.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_fragmentSpace3.cs" />
