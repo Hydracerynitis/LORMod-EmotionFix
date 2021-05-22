@@ -40,6 +40,7 @@ namespace EmotionalFix
             }
             if (active)
             {
+                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("5_T/FX_IllusionCard_5_T_HeartBroken", 2f);
                 foreach (BattleUnitModel victim in BattleObjectManager.instance.GetAliveList(this._owner.faction))
                 {
                     victim.TakeBreakDamage(BreakDmg);

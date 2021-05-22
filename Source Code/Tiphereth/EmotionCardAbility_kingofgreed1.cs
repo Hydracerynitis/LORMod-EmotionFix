@@ -28,6 +28,7 @@ namespace EmotionalFix
             { 
                 power =-2
             });
+            this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Filter));
         }
         public override void OnDrawParrying(BattleDiceBehavior behavior)
         {
@@ -48,6 +49,7 @@ namespace EmotionalFix
             {
                 power = -2
             });
+            this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Filter));
 
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
@@ -60,5 +62,6 @@ namespace EmotionalFix
             }
             return null;
         }
+        public void Filter() => new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KingOfGreed_Yellow", false);
     }
 }

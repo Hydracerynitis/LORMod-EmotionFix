@@ -8,11 +8,11 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_kingofgreed2 : EmotionCardAbilityBase
     {
+        private Battle.CreatureEffect.CreatureEffect aura;
         private List<BattleDiceCardModel> AddedCard = new List<BattleDiceCardModel>();
         private int count;
         public override void OnSelectEmotion()
         {
-
             base.OnSelectEmotion();
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KingOfGreed_Yellow", false, 2f);
             if (this._owner.faction != Faction.Player)
@@ -33,11 +33,24 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
+            if (this.count > 0)
+                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Happiness", 1f, this._owner.view, this._owner.view);
             this.count = 0;
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            DestroyAura();
+        }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            DestroyAura();
         }
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
+            this.DestroyAura();
             if (this.count <= 0 || this._owner.faction!=Faction.Enemy)
                 return;
             for(int i=this.GetStack(count);i>0 ;i--)
@@ -62,10 +75,19 @@ namespace EmotionalFix
             base.OnWinParrying(behavior);
             ++this.count;
         }
+        public void DestroyAura()
+        {
+            if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                return;
+            UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
+            this.aura = (Battle.CreatureEffect.CreatureEffect)null;
+        }
+
         public void Destroy()
         {
             foreach (BattleDiceCardModel card in AddedCard)
                 this._owner.allyCardDetail.ExhaustACardAnywhere(card);
+            DestroyAura();
         }
         private int GetStack(int cnt) => Mathf.Min(3, cnt);
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)

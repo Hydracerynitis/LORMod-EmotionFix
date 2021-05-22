@@ -15,6 +15,7 @@ namespace EmotionalFix
         public static Difficulty diff;
         public static string modPath;
         public static bool Hastrigger;
+        public static List<BattleUnitModel> enemylist;
         public static List<EmotionCardXmlInfo> emotion1;
         public static List<EmotionCardXmlInfo> emotion2;
         public static List<EmotionCardXmlInfo> emotion3;
@@ -29,6 +30,7 @@ namespace EmotionalFix
             EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
             PassiveAbility_668.Leveluped = new List<UnitBattleDataModel>();
+            enemylist = new List<BattleUnitModel>();
             MethodInfo method1 = typeof(Harmony_Patch).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
             MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
             try
@@ -143,6 +145,7 @@ namespace EmotionalFix
                 emotion2.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(12, SephirahType.Hokma));
                 emotion3.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(15, SephirahType.Hokma));
                 enermy = Singleton<EmotionCardXmlList>.Instance.GetDataList_enemy(SephirahType.None);
+                enemylist.Clear();
                 Hastrigger = false;
                 diff = DifficultyTweak();
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
@@ -205,11 +208,10 @@ namespace EmotionalFix
                         continue;
                     if (ExcludedBookID.Contains(alive.Book.GetBookClassInfoId()))
                         continue;
-                    if(!(alive.passiveDetail.HasPassive<PassiveAbility_666>() || alive.passiveDetail.HasPassive<PassiveAbility_667>() || alive.passiveDetail.HasPassive<PassiveAbility_668>()))
-                        AssignPassive(alive);
+                    if (enemylist.Contains(alive))
+                        continue;
+                    AssignPassive(alive);
                 }
-                if (EmotionCardAbility_clownofnihil2.Clown.Contains(alive.UnitData))
-                    alive.bufListDetail.AddBuf(new EmotionCardAbility_clownofnihil2.Clear());
             }
         }
         public static Difficulty DifficultyTweak()
@@ -302,6 +304,7 @@ namespace EmotionalFix
                     typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
                     break;
             }
+            enemylist.Add(unit);
             Debug.Log("Passive is Added to " + unit.UnitData.unitData.name);
         }
         public static List<int> ExcludedBookID => new List<int>() 

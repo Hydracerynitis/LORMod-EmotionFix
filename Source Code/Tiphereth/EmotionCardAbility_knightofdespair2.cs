@@ -64,6 +64,7 @@ namespace EmotionalFix
         {
             if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear Tear)
                 Tear.Destroy();
+            DestroyFilter();
         }
         public bool ifNilil(BattleUnitModel owner)
         {
@@ -72,13 +73,21 @@ namespace EmotionalFix
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            if ((UnityEngine.Object)this._filter != (UnityEngine.Object)null)
-            {
-                this._filter.ManualDestroy();
-                this._filter = (SpriteFilter_Despair)null;
-            }
+            DestroyFilter();
             this.tempStack = this.stack;
             this.stack = 0;
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            DestroyFilter();
+        }
+        public void DestroyFilter()
+        {
+            if ((UnityEngine.Object)this._filter == (UnityEngine.Object)null)
+                return;
+            this._filter.ManualDestroy();
+            this._filter = (SpriteFilter_Despair)null;
         }
     }
 }

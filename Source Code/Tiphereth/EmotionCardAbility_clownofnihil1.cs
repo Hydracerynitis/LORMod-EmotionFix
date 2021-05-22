@@ -9,26 +9,13 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_clownofnihil1 : EmotionCardAbilityBase
     {
-        private bool used1;
-        private bool used2;
-        private bool used3;
-        private bool used4;
         private List<BattleDiceCardModel> AddedCard = new List<BattleDiceCardModel>();
-        private static int Str => RandomUtil.Range(1, 2);
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
             if (this._owner.faction == Faction.Player)
             {
                 this.GiveCard();
-            }
-            if (this._owner.faction == Faction.Enemy)
-            {
-                used1 = true;
-                used2 = true;
-                used3 = true;
-                used4 = true;
-                this.GiveSpecialCardInDeck();
             }
         }
         public override void OnWaveStart()
@@ -37,14 +24,6 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Player)
             {
                 this.GiveCard();
-            }
-            if (this._owner.faction == Faction.Enemy)
-            {
-                used1 = true;
-                used2 = true;
-                used3 = true;
-                used4 = true;
-                this.GiveSpecialCardInDeck();
             }
         }
         private void GiveCard()
@@ -67,99 +46,98 @@ namespace EmotionalFix
             }
             return null;
         }
-        public override bool IsImmune(KeywordBuf buf)
+        public override void OnLoseParrying(BattleDiceBehavior behavior)
         {
-            if (this.CheckCondition())
-            {
-                switch (buf)
-                {
-                    case KeywordBuf.Weak:
-                    case KeywordBuf.Disarm:
-                    case KeywordBuf.Binding:
-                        return true;
-                }
-            }
-            return base.IsImmune(buf);
-        }
-        public override void OnRoundStart()
-        {
-            base.OnRoundStart();
+            base.OnLoseParrying(behavior);
             if (this._owner.faction != Faction.Enemy)
                 return;
-            this.GiveSpecialCardInDeck();
-            if (!this.CheckCondition())
+            if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void) != null)
                 return;
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, Str, this._owner);
+            if (!(this._owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void_Ready) is BattleUnitBuf_Emotion_Void_Ready emotionVoidReady))
+            {
+                emotionVoidReady = new BattleUnitBuf_Emotion_Void_Ready();
+                this._owner.bufListDetail.AddBuf(emotionVoidReady);
+            }
+            emotionVoidReady.Add();
         }
-        public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
+        public class BattleUnitBuf_Emotion_Void_Ready : BattleUnitBuf
         {
-            base.OnUseCard(curCard);
-            if (curCard != null)
+            public static int StackMax = 20;
+
+            protected override string keywordIconId => "CardBuf_NihilClown_Card";
+
+            protected override string keywordId => "Buf_NihilClown_Card";
+
+            public override void Init(BattleUnitModel owner)
             {
-                int? id = curCard.card?.GetID();
-                int num1 = 1100007;
-                int num2 = 1100008;
-                int num3 = 1100009;
-                int num4 = 1100010;
-                if (id.GetValueOrDefault() == num1 & id.HasValue)
-                {
-                    this.used1 = true;
-                    return;
-                }
-                if (id.GetValueOrDefault() == num2 & id.HasValue)
-                {
-                    this.used2 = true;
-                    return;
-                }
-                if (id.GetValueOrDefault() == num3 & id.HasValue)
-                {
-                    this.used3 = true;
-                    return;
-                }
-                if (id.GetValueOrDefault() == num4 & id.HasValue)
-                {
-                    this.used4 = true;
-                    return;
-                }
+                base.Init(owner);
+                this.stack = 0;
             }
-        }
-        private void GiveSpecialCardInDeck()
-        {
-            if (this.used1)
+            public override void OnRoundEndTheLast()
             {
-                BattleDiceCardModel Magician =this._owner.allyCardDetail.AddNewCardToDeck(1100007);
-                Magician.exhaust = true;
-                AddedCard.Add(Magician);
-                used1 = false;
+                base.OnRoundEndTheLast();
+                if (this.stack < StackMax)
+                    return;
+                this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Void());
+                this.Destroy();
             }
-            if (this.used2)
+            public void Add()
             {
-                BattleDiceCardModel Magician = this._owner.allyCardDetail.AddNewCardToDeck(1100008);
-                Magician.exhaust = true;
-                AddedCard.Add(Magician);
-                used2 = false;
-            }
-            if (this.used3)
-            {
-                BattleDiceCardModel Magician = this._owner.allyCardDetail.AddNewCardToDeck(1100009);
-                Magician.exhaust = true;
-                AddedCard.Add(Magician);
-                used3 = false;
-            }
-            if (this.used4)
-            {
-                BattleDiceCardModel Magician = this._owner.allyCardDetail.AddNewCardToDeck(1100010);
-                Magician.exhaust = true;
-                AddedCard.Add(Magician);
-                used4 = false;
+                ++this.stack;
+                if (this.stack <= StackMax)
+                    return;
+                this.stack = StackMax;
             }
         }
-        private bool CheckCondition() => this._owner.allyCardDetail.GetHand().Find((Predicate<BattleDiceCardModel>)(x => x.GetID() == 1100007)) != null && this._owner.allyCardDetail.GetHand().Find((Predicate<BattleDiceCardModel>)(x => x.GetID() == 1100008)) != null && (this._owner.allyCardDetail.GetHand().Find((Predicate<BattleDiceCardModel>)(x => x.GetID() == 1100009)) != null && this._owner.allyCardDetail.GetHand().Find((Predicate<BattleDiceCardModel>)(x => x.GetID() == 1100010)) != null);
-        public void Destroy()
+        public class BattleUnitBuf_Emotion_Void : BattleUnitBuf
         {
-            foreach(BattleDiceCardModel card in AddedCard)
+            private GameObject aura;
+            private int cnt;
+
+            protected override string keywordIconId => "CardBuf_NihilClown_Card";
+
+            protected override string keywordId => "NihilClown_Card";
+
+            public override void OnRoundStart()
             {
-                this._owner.allyCardDetail.ExhaustACardAnywhere(card);
+                base.OnRoundStart();
+                this.cnt = 0;
+                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, 5, this._owner);
+            }
+            public override bool IsImmune(BattleUnitBuf buf) => buf.positiveType == BufPositiveType.Negative || base.IsImmune(buf);
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                this.stack = 0;
+                owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
+                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_MagicGirl", 1f, owner.view, owner.view)?.gameObject;
+            }
+            public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
+            {
+                base.OnTakeDamageByAttack(atkDice, dmg);
+                BattleUnitModel owner = atkDice?.owner;
+                if (owner == null || this.cnt >= 2)
+                    return;
+                ++this.cnt;
+                owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 1, this._owner);
+                owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Vulnerable, 1, this._owner);
+            }
+            public override void OnDie()
+            {
+                base.OnDie();
+                this.Destroy();
+            }
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+            private void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura);
+                this.aura = (GameObject)null;
             }
         }
     }

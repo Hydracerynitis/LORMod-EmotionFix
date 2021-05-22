@@ -8,3 +8,4 @@ They may have a entirely different ability from the emotion cards Librarian harn
 I also have reworked many vanilla abnormality cards that I think are underwhelming so that they could be more fun to use.
 
 Enjoy -----by Hydracerynitis
+Credit to elder404 for contributing balance abnoramlity cards.

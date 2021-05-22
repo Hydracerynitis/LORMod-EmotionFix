@@ -156,8 +156,8 @@
 				<AbnormalityCard ID="NihilClown_Card_Enemy">
 			<Abnormality>虚无弄臣</Abnormality>
 			<CardName>魔法少女</CardName>
-			<AbilityDesc>为该来宾洗入4张“魔法少女书页”。
-若4张“魔法少女书页”皆在手中，则该司书将免疫“虚弱”，“破绽”与“束缚”且每一幕开始时获得1~2层“强壮”。</AbilityDesc>
+			<AbilityDesc>若累计取得20次拼点失败，则自下一幕起该司书将免疫所有负面状态并在每一幕开始时获得5层“守护”。
+该效果触发后，该司书拼点失败或被击中时将在下一幕中对目标施加1层“腐蚀”与“易损”(每一幕至多触发2次)</AbilityDesc>
 			<FlaborText>弄臣沿着每个人来时的路往回走，却发现路的尽头总会出现祂自己。也不知是她们合在一起变成了祂，还是祂正逐渐变成她们了呢。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">究竟是你们成就了我，还是我成就了你们。</Dialogue>

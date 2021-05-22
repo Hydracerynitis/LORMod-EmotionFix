@@ -12,9 +12,16 @@ namespace EmotionalFix
         {
             base.OnSucceedAttack(behavior);
             BattleUnitModel target = behavior?.card?.target;
-            if (target == null || target.faction==this._owner.faction|| this.GetAliveFriend() != null)
+            if (target == null || target.faction==this._owner.faction)
                 return;
-            target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Wrath_Friend());
+            if(this.GetAliveFriend() == null)
+                target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Wrath_Friend());
+            else
+            {
+                if (this.GetAliveFriend() != target)
+                    return;
+                target.battleCardResultLog?.SetNewCreatureAbilityEffect("5_T/FX_IllusionCard_5_T_ATKMarker", 1.5f);
+            }
         }
         public override void OnKill(BattleUnitModel target)
         {
@@ -27,6 +34,22 @@ namespace EmotionalFix
                 alive.breakDetail.RecoverBreak(10);
                 alive.RecoverHP(10);
             }
+            this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.KillEffect));
+        }
+        public void KillEffect()
+        {
+            CameraFilterUtil.EarthQuake(0.08f, 0.02f, 50f, 0.6f);
+            Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/5_T/FX_IllusionCard_5_T_SmokeWater");
+            if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+                return;
+            Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+            if (!((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null))
+                return;
+            AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
+            if (!((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null))
+                return;
+            autoDestruct.time = 3f;
+            autoDestruct.DestroyWhenDisable();
         }
         public void Destroy()
         {

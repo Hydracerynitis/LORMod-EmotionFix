@@ -156,8 +156,8 @@ If the first die of a Combat page lose a clash, all remaining dice on the self's
 			<AbnormalityCard ID="NihilClown_Card_Enemy">
 			<Abnormality>The Jester of Nihil</Abnormality>
 			<CardName>Magical Girls</CardName>
-			<AbilityDesc>Four unique 'Magical Girl' pages are shuffled into the deck. 
-While all four Magical Girl pages are in hand, the librarian gains 1-2 Strength each Scene, and is not affected by Feeble, Disarm, or Bind.</AbilityDesc>
+			<AbilityDesc>After losing 20 clashes, gain 5 Protection each Scene, and become immune to status ailments for the rest of the reception.
+Also, when hit, inflict 1 Erosion and Fragile next Scene to the attacker. (Twice per Scene)</AbilityDesc>
 			<FlaborText>The jester retraced the steps of a path everybody would’ve taken. The jester always found itself at the end of that road. There was no way to know if they had gathered to become the jester, or if the jester had come to resemble them.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Did you make me, or did I make you?</Dialogue>
