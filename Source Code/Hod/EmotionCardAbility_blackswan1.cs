@@ -11,6 +11,7 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_blackswan1 : EmotionCardAbilityBase
     {
+        private GameObject aura;
         private List<KeywordBuf> ActivatedBuf;
         private KeywordBuf[] debuff => new KeywordBuf[]
         {
@@ -31,20 +32,13 @@ namespace EmotionalFix
             {
                 unit.bufListDetail.AddKeywordBufByEtc(buff, 1);
             }
-            UnityEngine.Object original = Resources.Load("Prefabs/Battle/CreatureEffect/FinalBattle/EGO_BlackSwan_Feather");
-            if (!(original != (UnityEngine.Object)null))
-                return;
-            BattleUnitModel target = behavior?.card?.target;
-            if (target == null)
-                return;
-            GameObject gameObject = UnityEngine.Object.Instantiate(original, target.view.atkEffectRoot) as GameObject;
-            gameObject.transform.localPosition = Vector3.zero;
-            gameObject.transform.localScale = Vector3.one;
+            behavior?.card?.target?.battleCardResultLog?.SetNewCreatureAbilityEffect("3_H/FX_IllusionCard_3_H_Dertyfeather", 2f);
         }
         public override void OnRoundStart()
         {
             for(int i=0; i<3;i++)
                 this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(RandomUtil.SelectOne<KeywordBuf>(debuff),1);
+            this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("3_H/FX_IllusionCard_3_H_Dertyfeather_Loop", 1f, this._owner.view, this._owner.view)?.gameObject;
         }
         public override void OnStartBattle()
         {
@@ -55,6 +49,32 @@ namespace EmotionalFix
                 if (this._owner.bufListDetail.GetActivatedBuf(buftype) != null)
                     ActivatedBuf.Add(buftype);
             }
+        }
+        public override void OnRoundEnd()
+        {
+            base.OnRoundEnd();
+            DestroyAura();
+        }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            DestroyAura();
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            DestroyAura();
+        }
+        public void Destroy()
+        {
+            DestroyAura();
+        }
+        public void DestroyAura()
+        {
+            if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                return;
+            UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
+            this.aura = (GameObject)null;
         }
     }
 }
