@@ -118,7 +118,7 @@
 		<AbnormalityCard ID="Ozma_Boom_Enemy">
 			<Abnormality>奥兹玛</Abnormality>
 			<CardName>过去的力量</CardName>
-			<AbilityDesc>该来宾的所有书页费用+1且所有骰子威力+4~5</AbilityDesc>
+			<AbilityDesc>该来宾的所有书页费用+1且所有骰子威力+3~4</AbilityDesc>
 			<FlaborText>奥兹玛举起削南瓜的小刀，不顾一切地冲向巫师的所在地。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">吾名奥兹玛……被何人夺走了一切……</Dialogue>
@@ -130,8 +130,8 @@
 		<AbnormalityCard ID="Ozma_forgotten_Enemy">
 			<Abnormality>奥兹玛</Abnormality>
 			<CardName>遗忘</CardName>
-			<AbilityDesc>选中时将该来宾牌库里所有的书页列入“遥远记忆”并移除出战斗并且最大混乱抗性减少50%
-每一幕开始时自身每有一个速度骰便从“遥远记忆”随机选择一张书页置入手牌并设置为0费</AbilityDesc>
+			<AbilityDesc>选中时下一幕中使自身陷入[眩晕]并无法行动且无法被指定为攻击目标
+这一幕结束时恢复40%的体力(至多48点)与所有光芒</AbilityDesc>
 			<FlaborText>一位非常善良美丽的人，正用难以置信的表情看着自己，不是么？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">为何更易相信他人……为何……</Dialogue>

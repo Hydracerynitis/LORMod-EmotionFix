@@ -48,6 +48,7 @@ namespace EmotionalFix
                     {
                          power = this.Pow
                     });
+                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Together", 2f);
             }
         }
         public class Lion_Enemy : BattleUnitBuf
@@ -63,6 +64,7 @@ namespace EmotionalFix
                     {
                         power = this.Pow
                     });
+                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Together", 2f);
             }
         }
     }

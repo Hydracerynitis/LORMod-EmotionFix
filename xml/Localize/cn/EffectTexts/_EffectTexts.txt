@@ -114,6 +114,14 @@
       		<Name>恐水症</Name>
       		<Desc>该单位不受控制并且只能攻击血量最高的敌人</Desc>
     	</BattleEffectText>
+    	<BattleEffectText ID="WayBackHome_Emotion_Target">
+      		<Name>回家吧</Name>
+      		<Desc>应用异想体书页-“家”的司书按1-2-3的顺序攻击对应来宾时将使其“进攻型”骰子伤害+2威力+1</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="WayBackHome_Emotion_Target_Enemy">
+      		<Name>回家吧</Name>
+      		<Desc>应用异想体书页-“家”的来宾按1-2-3的顺序攻击对应司书时将使其“进攻型”骰子伤害+2</Desc>
+    	</BattleEffectText>
 		<BattleEffectText ID="Lion_Player">
       		<Name>同行之路</Name>
       		<Desc>若该司书保护某司书免受攻击(转移攻击目标)，则使该司书当前书页的所有骰子威力+1~2</Desc>
@@ -133,11 +141,15 @@
     	</BattleEffectText>
 		<BattleEffectText ID="Wizard_poket">
       		<Name>装有锯末的布袋</Name>
-      		<Desc>每一幕开始的抽牌时将最后加入手牌的书页的复制(复制使用时消耗)置入手牌，所有牌骰子威力-1~2</Desc>
+      		<Desc>每一幕开始的抽牌时将最后加入手牌的书页的佚失复制置入手牌，所有牌骰子威力-1~2</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Wizard_heart">
       		<Name>用铅制成的心脏</Name>
-      		<Desc>每一幕开始时不再获得光芒持续{0}幕。若一幕开始时层数为0便恢复所有得光芒并获得恢复光芒数量的层数</Desc>
+      		<Desc>这一幕开始时恢复所有得光芒并获得恢复光芒数量的层数</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="Wizard_heart_Deactivate">
+      		<Name>用铅制成的心脏</Name>
+      		<Desc>每一幕开始时不再获得光芒持续{0}幕。</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Wizard_home">
       		<Name>永远回不去的家</Name>
@@ -145,7 +157,7 @@
     	</BattleEffectText>
 		<BattleEffectText ID="Wizard_change">
       		<Name>催生变异的粉末</Name>
-      		<Desc>每一幕结束时恢复随机友方角色30%血量和混乱抗性并将角色随机1张手牌变形为南瓜</Desc>
+      		<Desc>每一幕开始时恢复随机友方角色30%血量和混乱抗性并将角色随机1张手牌变形为南瓜</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Charm">
       		<Name>魅惑</Name>

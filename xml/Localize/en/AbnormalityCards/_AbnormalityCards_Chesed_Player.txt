@@ -2,104 +2,87 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
 		<AbnormalityCard ID="ScareCrow_Wisdom">
-			<Abnormality>求知的草人</Abnormality>
-			<CardName>被扯出的智慧</CardName>
-			<AbilityDesc>[选择一名司书]
-应用该异想体时移除该司书牌库内随机3张书页。
-命中目标时有25%概率将目标牌库随机1张书页置入该司书的牌库</AbilityDesc>
-			<FlaborText>归来之时，他的前额多了一道长长的疤痕。当被人问及是否痊愈时，他只答道觉得脑袋变轻了。</FlaborText>
+			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
+			<CardName>Torn Off Wisdom</CardName>
+			<AbilityDesc>[Single Ally]
+Remove 3 random cards from the deck.
+Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance.</AbilityDesc>
+			<FlaborText>When he returned, he had a visibly long scar on his head. People asked him how he felt, and he responded that his head felt lighter.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">智慧……我所缺乏的东西……快把智慧给我……</Dialogue>
-				<Dialogue ID="2">我的脑袋空空如也……只是一堆不起眼的稻草……</Dialogue>
-				<Dialogue ID="3">人们说话总是不过脑……我能让那些脑子物尽其用……</Dialogue>
-				<Dialogue ID="4">成为一名智者……会是什么样的感觉……应该无所不知吧……？</Dialogue>
-				<Dialogue ID="5">如果能恢复原状……我不介意把脑袋扯下来……</Dialogue>
+        		<Dialogue ID="1">Wisdom… Give me the wisdom I lack…</Dialogue>
+        		<Dialogue ID="2">My head is all empty… I’m just a dowdy pile of hay…</Dialogue>
+        		<Dialogue ID="3">People often talk without thinking… I could make better use of those brains…</Dialogue>
+        		<Dialogue ID="4">I wonder how it feels to be wise… To know everything…</Dialogue>
+        		<Dialogue ID="5">I’m fine with detaching the head if it can get better once it comes back together…</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="LumberJack_Tree">
-			<Abnormality>热心的樵夫</Abnormality>
-			<CardName>伐木</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书命中目标时会恢复1点光芒
-如果一幕结束时光芒并没有回满至最高光芒则下一幕对自身施加2层虚弱2层破绽</AbilityDesc>
-			<FlaborText>在那拥有无数心脏的森林之中，无论怎么砍伐，树木依然青翠如常。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">砍倒了更多的树……可这片森林……依旧葱郁……</Dialogue>
-				<Dialogue ID="2">想变得温暖……需要更强的……</Dialogue>
-				<Dialogue ID="3">随手填满这个空腔……可还是……觉得冷……</Dialogue>
-				<Dialogue ID="4">为了砍倒更多的树……要一刻不停地磨斧……</Dialogue>
-			</Dialogues>
+			<Abnormality>Warm-hearted Woodsman</Abnormality>
+			<CardName>Timber</CardName>
+			<AbilityDesc>[Single Ally]
+Upon successful hit, recover 1 Light.
+At the start of each Scene, if the selected Guest doesn't have maximun light, inflict 2 Feeble and Disarm to self.</AbilityDesc>
+      		<FlaborText>This is a forest full of hearts. No matter how many he cuts down, the forest still remains dense.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I chop, and chop… Yet the forest remains dense…</Dialogue>
+        		<Dialogue ID="2">I want to be warm… I need something stronger…</Dialogue>
+        		<Dialogue ID="3">I crammed all I could find into this empty canister… yet it is… still cold…</Dialogue>
+        		<Dialogue ID="4">To cut more trees, I never neglected sharpening the axe…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="House_BigHouse">
-			<Abnormality>归家的路途</Abnormality>
-			<CardName>家</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕开始时至多为3名来宾赋予数字。
-该司书按数字顺序攻击来宾时将使自身的“进攻型”骰子威力+1伤害+2
-			</AbilityDesc>
-			<FlaborText>就这样，我开始了无尽的冒险，永远回不了家了。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">别再阻挠我们了！快让我回家！</Dialogue>
-				<Dialogue ID="2">啊~是那个家伙！那个坏巫师！</Dialogue>
-				<Dialogue ID="3">那个坏巫师，竟把我的朋友们……！</Dialogue>
-				<Dialogue ID="4">朋友啊，朋友们呐。一起回家吧？</Dialogue>
-			</Dialogues>
+			<Abnormality>The Road Home</Abnormality>
+			<CardName>Home</CardName>
+			<AbilityDesc>[Single Ally]
+At the start of the Scene, numbered targets are placed on up to three enemies.
+Each time a target is attacked in the correct order, increase dice Power by 1 and outgoing damage by 2 for the Scene.</AbilityDesc>
+      		<FlaborText>Unable to ever go back home, they began an endless journey.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Don’t bother us! Let us go home in peace!</Dialogue>
+        		<Dialogue ID="2">Ah~ That wizard! That wicked wizard!</Dialogue>
+        		<Dialogue ID="3">The mean wizard took my friends!</Dialogue>
+        		<Dialogue ID="4">Friends. Oh, friends. Will we get to go home?</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="House_Home">
-			<Abnormality>归家的路途</Abnormality>
-			<CardName>同行之路</CardName>
-			<AbilityDesc>[选择一名司书]
-若该司书保护某司书免受攻击(转移攻击目标)，则使该司书当前书页的所有骰子威力+1~2
-			</AbilityDesc>
-			<FlaborText>一同出发吧。美丽的世界。梦的世界……</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我正在睡午觉……可突然之间……</Dialogue>
-				<Dialogue ID="2">呼哟~大家一起走吧~</Dialogue>
-				<Dialogue ID="3">跳起舞来，一起回家吧！</Dialogue>
-				<Dialogue ID="4">这条路的尽头，会有无比美丽的……梦的世界。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="Ozma_Boom">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>过去的力量</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书的所有书页费用+1且所有骰子威力+4~5</AbilityDesc>
-			<FlaborText>奥兹玛举起削南瓜的小刀，不顾一切地冲向巫师的所在地。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">吾名奥兹玛……被何人夺走了一切……</Dialogue>
-				<Dialogue ID="2">不想再过着被掠夺的人生……</Dialogue>
-				<Dialogue ID="3">尔等也来亲历这般感受吧……遗忘一切……失去之痛……</Dialogue>
-				<Dialogue ID="4">这一次，轮到吾来掠夺了……</Dialogue>
-			</Dialogues>
+			<Abnormality>The Road Home</Abnormality>
+			<CardName>A Road Walked Together</CardName>
+			<AbilityDesc>[Single Ally]
+If athe character redirects an attack that was initially targeting other allies, dice on the character's page gain 1-2 Power in the clash.</AbilityDesc>
+      		<FlaborText>Let’s walk together. To a wonderful land… The world of dreams.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I was sound asleep, then the adventure suddenly began.</Dialogue>
+        		<Dialogue ID="2">Hoyoyo~ Let’s go, together~!</Dialogue>
+        		<Dialogue ID="3">Let’s skip home together!</Dialogue>
+        		<Dialogue ID="4">There must be a beautiful wonderland at the end of the road…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Ozma_forgotten">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>遗忘</CardName>
-			<AbilityDesc>[选择一名司书]
-选中时将该司书牌库里所有的书页列入“遥远记忆”并移除出战斗并且最大混乱抗性减少50%
-每一幕开始时自身每有一个速度骰便从“遥远记忆”随机选择一张书页置入手牌并设置为0费
-(使用时消耗的卡任然会从“遥远记忆”里移除)</AbilityDesc>
-			<FlaborText>一位非常善良美丽的人，正用难以置信的表情看着自己，不是么？</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">为何更易相信他人……为何……</Dialogue>
-				<Dialogue ID="2">畏惧至此……不愿触摸脸庞……</Dialogue>
-				<Dialogue ID="3">此种人生，仅是一息尚存……</Dialogue>
-				<Dialogue ID="4">被遗忘在地下……为何只得如此……</Dialogue>
-			</Dialogues>
+			<Abnormality>Ozma</Abnormality>
+			<CardName>Oblivion</CardName>
+			<AbilityDesc>[Single Ally]
+Remain Oblivion for next 3 Scene.(UnActionable,untargetable,regared as dead if none of other allies present.)
+Afterwards, draw 4 cards at the start of each Scene.</AbilityDesc>
+      		<FlaborText>There was such a fine and beautiful person, staring at her with a perplexed expression.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Why did I trust a stranger so naively… Why…</Dialogue>
+        		<Dialogue ID="2">I haven’t even touched my face… I was so afraid…</Dialogue>
+        		<Dialogue ID="3">Staying alive is all I can do in a life like this…</Dialogue>
+        		<Dialogue ID="4">A forgotten being stuck in the underground… Why did it have to be…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Ozma_Immortal">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>生命的粉末</CardName>
-			<AbilityDesc>[影响所有司书]
-所有司书承受致死伤害时将无视此次伤害并恢复所有体力和混乱抗性，
-并在之后清空其所有的光芒。(每名司书整场接待至多触发1次)</AbilityDesc>
-			<FlaborText>最后撒上自己最爱的肉桂粉，将南瓜紧紧抱在怀中。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">如今，在吾身侧……空余这些稚子。</Dialogue>
-				<Dialogue ID="2">呜呼……赐予汝新生吧。</Dialogue>
-				<Dialogue ID="3">不要再让吾孤单，常回来吧……</Dialogue>
-				<Dialogue ID="4">不要……不要再夺去吾的一切……</Dialogue>
-			</Dialogues>
+			<Abnormality>Ozma</Abnormality>
+			<CardName>Powder of Life</CardName>
+			<AbilityDesc>[All Allies]
+When the Guest takes lethal damage, nullify it and recover 100% of Max. HP and Stagger Resist, lose all Lights. Can only activate once per reception.</AbilityDesc>
+      		<FlaborText>Finally, she sprinkled cinnamon powder—her favorite—and clutched the pumpkin in her arms.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">All I have left now… are these children.</Dialogue>
+        		<Dialogue ID="2">Here, child… I’ll give you new life.</Dialogue>
+        		<Dialogue ID="3">Come back to me, so I won’t be lonely…</Dialogue>
+        		<Dialogue ID="4">No… Don’t take away what is mine, not again…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>
 </AbnormalityCardsRoot>

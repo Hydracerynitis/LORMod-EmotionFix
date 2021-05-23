@@ -46,9 +46,10 @@ namespace EmotionalFix
                 if(this._owner.faction==Faction.Player)
                     curCard.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
                     {
-                        power = 2 * this.stack
+                        power = 1 * this.stack
                     });
                 ++this.stack;
+                this._owner.battleCardResultLog?.SetCreatureAbilityEffect("7/WayBeckHome_Emotion_Atk", 1f);
             }
             else
                 this.stack = 0;
@@ -86,7 +87,7 @@ namespace EmotionalFix
                     return base.ChangeAttackTarget(card, idx);
                 foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
                 {
-                    if (enemy.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_waybackhome2.BattleUnitBuf_Emotion_WayBackHome_Target)) is EmotionCardAbility_waybackhome2.BattleUnitBuf_Emotion_WayBackHome_Target goldbrick)
+                    if (enemy.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_WayBackHome_Target)) is BattleUnitBuf_Emotion_WayBackHome_Target goldbrick)
                     {
                         if (goldbrick.stack - 1 == idx)
                             return enemy;
@@ -97,16 +98,36 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Emotion_WayBackHome_Target : BattleUnitBuf
         {
-            protected override string keywordId => "WayBackHome_Emotion_Target";
-
+            private GameObject aura;
+            protected override string keywordId => this._owner.faction==Faction.Enemy? "WayBackHome_Emotion_Target": "WayBackHome_Emotion_Target_Enemy";
             protected override string keywordIconId => "WayBackHome_Target";
-
             public BattleUnitBuf_Emotion_WayBackHome_Target(int value) => this.stack = value;
-
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateCreatureEffect("7/WayBeckHome_Emotion_Way", 1f, owner.view, owner.view)?.gameObject;
+            }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
                 this.Destroy();
+            }
+            public override void OnDie()
+            {
+                base.OnDie();
+                this.Destroy();
+            }
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+            private void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura);
+                this.aura = (GameObject)null;
             }
         }
     }

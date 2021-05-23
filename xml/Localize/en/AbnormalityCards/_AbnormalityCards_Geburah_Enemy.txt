@@ -18,7 +18,7 @@ Deal 2-6 additional damage when attacking the marked foe.</AbilityDesc>
 		<AbnormalityCard ID="Redhood_Revenge_Enemy">
 			<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
 			<CardName>Vengeance</CardName>
-			<AbilityDesc>At the start of the Scene, gain Strength based on the amount of damage taken in the previous Scene. (1 Strength per 10% of Max HP damage，up to 4)</AbilityDesc>
+			<AbilityDesc>At the start of the Scene, gain Strength based on the amount of damage taken in the previous Scene. (1 Strength per 10% of Max HP damage, up to 4)</AbilityDesc>
 			<FlaborText>Between us, there’s no victory to be won. All I think about is how I’ll kill that bastard in a way more gruesome and painful than the last time.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">I’ve been grinding the blade to behead that damned wolf.</Dialogue>

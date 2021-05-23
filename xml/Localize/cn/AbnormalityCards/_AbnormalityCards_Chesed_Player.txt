@@ -59,26 +59,12 @@
 				<Dialogue ID="4">这条路的尽头，会有无比美丽的……梦的世界。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="Ozma_Boom">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>过去的力量</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书的所有书页费用+1且所有骰子威力+4~5</AbilityDesc>
-			<FlaborText>奥兹玛举起削南瓜的小刀，不顾一切地冲向巫师的所在地。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">吾名奥兹玛……被何人夺走了一切……</Dialogue>
-				<Dialogue ID="2">不想再过着被掠夺的人生……</Dialogue>
-				<Dialogue ID="3">尔等也来亲历这般感受吧……遗忘一切……失去之痛……</Dialogue>
-				<Dialogue ID="4">这一次，轮到吾来掠夺了……</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="Ozma_forgotten">
 			<Abnormality>奥兹玛</Abnormality>
 			<CardName>遗忘</CardName>
 			<AbilityDesc>[选择一名司书]
-选中时将该司书牌库里所有的书页列入“遥远记忆”并移除出战斗并且最大混乱抗性减少50%
-每一幕开始时自身每有一个速度骰便从“遥远记忆”随机选择一张书页置入手牌并设置为0费
-(使用时消耗的卡任然会从“遥远记忆”里移除)</AbilityDesc>
+选中后3幕内处于”被遗忘“的状态(无法行动无法被指定为目标，若无其他友方单位该舞台接待终结。)
+之后每一幕开始时抽取4张书页。</AbilityDesc>
 			<FlaborText>一位非常善良美丽的人，正用难以置信的表情看着自己，不是么？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">为何更易相信他人……为何……</Dialogue>

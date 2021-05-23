@@ -4,192 +4,189 @@
 		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
 			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
 			<CardName>Torn Off Wisdom</CardName>
-			<AbilityDesc>应用该异想体时移除该来宾牌库内随机3张书页。
-命中目标时有25%概率将目标牌库随机1张书页置入该来宾的牌库</AbilityDesc>
-			<FlaborText>归来之时，他的前额多了一道长长的疤痕。当被人问及是否痊愈时，他只答道觉得脑袋变轻了。</FlaborText>
+			<AbilityDesc>Remove 3 random cards from the deck。
+Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance</AbilityDesc>
+			<FlaborText>When he returned, he had a visibly long scar on his head. People asked him how he felt, and he responded that his head felt lighter.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">智慧……我所缺乏的东西……快把智慧给我……</Dialogue>
-				<Dialogue ID="2">我的脑袋空空如也……只是一堆不起眼的稻草……</Dialogue>
-				<Dialogue ID="3">人们说话总是不过脑……我能让那些脑子物尽其用……</Dialogue>
-				<Dialogue ID="4">成为一名智者……会是什么样的感觉……应该无所不知吧……？</Dialogue>
-				<Dialogue ID="5">如果能恢复原状……我不介意把脑袋扯下来……</Dialogue>
+        		<Dialogue ID="1">Wisdom… Give me the wisdom I lack…</Dialogue>
+        		<Dialogue ID="2">My head is all empty… I’m just a dowdy pile of hay…</Dialogue>
+        		<Dialogue ID="3">People often talk without thinking… I could make better use of those brains…</Dialogue>
+        		<Dialogue ID="4">I wonder how it feels to be wise… To know everything…</Dialogue>
+        		<Dialogue ID="5">I’m fine with detaching the head if it can get better once it comes back together…</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Scarecrow_Harvest_Enemy">
-			<Abnormality>求知的草人</Abnormality>
-			<CardName>收割</CardName>
-			<AbilityDesc>该来宾击中混乱抗性高于自身的目标时将追加2~4点混乱伤害并恢复2~5点混乱抗性。</AbilityDesc>
-			<FlaborText>它会对特定职员表现出攻击性，并试图夺走对方的大脑。这类职员在IQ测试中普遍成绩优异。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我好像，真的变聪明了……现在我什么都知道了……</Dialogue>
-				<Dialogue ID="2">好……太好了……吃得越多，就会越聪明……对不对？</Dialogue>
-				<Dialogue ID="3">我变聪明了吗……？也许我不单单是一堆稻草了……</Dialogue>
-			</Dialogues>
+			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
+			<CardName>Gleaning</CardName>
+			<AbilityDesc>After attacking an enemy with a higher amount of Stagger Resist, deal 2-4 bonus Stagger damage, and recover 2-5 Stagger Resist.</AbilityDesc>
+      		<FlaborText>It shows aggression towards certain employees, attempting to take their brains. These employees are those who scored “Excellent” on the intelligence test.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I feel much smarter… I can know anything now…</Dialogue>
+        		<Dialogue ID="2">Good… Very good… I’ll be smarter the more I eat, right…?</Dialogue>
+        		<Dialogue ID="3">Have I become wiser…? Maybe I’ll be more than a stack of hay…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Scarecrow_Rake_Enemy">
-			<Abnormality>求知的草人</Abnormality>
-			<CardName>钉耙</CardName>
-			<AbilityDesc>该来宾命中目标时将目标手牌随机一个骰子加入其书页中(每张书页只能触发1次)</AbilityDesc>
-			<FlaborText>本该耕耘田地的农具却被用于破开大脑，我们当中有多少聪明才子惨死在这杆钉耙之下？</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">把你的智慧，给我……</Dialogue>
-				<Dialogue ID="2">我也想，变得和其他人一样聪明……</Dialogue>
-				<Dialogue ID="3">那引领人类前进的智慧……我好想要……</Dialogue>
-			</Dialogues>
+			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
+			<CardName>Rake</CardName>
+			<AbilityDesc>Upon hit add 1 die from an enemy's random card in hand to the dice queue. (Once per Page)</AbilityDesc>
+      		<FlaborText>The rake tilled the human brain instead of farmland. How many of the wise people among us have lost their lives to this rake?</FlaborText>
+      		<Dialogues>
+				<Dialogue ID="1">I’ll scrape your wisdom…</Dialogue>
+        		<Dialogue ID="2">I want to be smart like the others…</Dialogue>
+        		<Dialogue ID="3">The wisdom to move forward… I want it…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="LumberJack_Cut_Enemy">
-			<Abnormality>热心的樵夫</Abnormality>
-			<CardName>温暖的心</CardName>
-			<AbilityDesc>每一幕开始时若该来宾的光芒数高于2点，则使自身的“进攻型”骰子威力+1~2</AbilityDesc>
-			<FlaborText>一怒之下，它抡起斧头砍穿了巫师的心脏。那颗心正温暖而有力地跳动着。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">这就是……心跳的感觉……</Dialogue>
-				<Dialogue ID="2">心跳得越快……速度也会越快……</Dialogue>
-				<Dialogue ID="3">这个人越是热心……我的动作就越是灵敏……</Dialogue>
-				<Dialogue ID="4">心是个神奇的东西……我终于……可以笑了……</Dialogue>
-			</Dialogues>
+			<Abnormality>Warm-hearted Woodsman</Abnormality>
+			<CardName>A Warm Heart</CardName>
+			<AbilityDesc>At the start of the Scene, boost the Power of Offensive dice by +1-2 for the Scene if the guest has 3 or more Light.</AbilityDesc>
+			<FlaborText>In anger, he swung his axe through the wizard’s heart. The warm heart was pulsing vigorously.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">This is… how it feels to have a thumping heart…</Dialogue>
+        		<Dialogue ID="2">The louder the heart echoes… the faster I move…</Dialogue>
+        		<Dialogue ID="3">The kinder the owner of the heart was… the warmer my insides become…</Dialogue>
+        		<Dialogue ID="4">The heart is a peculiar thing… I can laugh now…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="LumberJack_Tree_Enemy">
-			<Abnormality>热心的樵夫</Abnormality>
-			<CardName>伐木</CardName>
-			<AbilityDesc>该来宾命中目标时会恢复1点光芒
-如果一幕结束时光芒并没有回满至最高光芒则下一幕对自身施加2层虚弱2层破绽</AbilityDesc>
-			<FlaborText>在那拥有无数心脏的森林之中，无论怎么砍伐，树木依然青翠如常。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">砍倒了更多的树……可这片森林……依旧葱郁……</Dialogue>
-				<Dialogue ID="2">想变得温暖……需要更强的……</Dialogue>
-				<Dialogue ID="3">随手填满这个空腔……可还是……觉得冷……</Dialogue>
-				<Dialogue ID="4">为了砍倒更多的树……要一刻不停地磨斧……</Dialogue>
-			</Dialogues>
+			<Abnormality>Warm-hearted Woodsman</Abnormality>
+			<CardName>Timber</CardName>
+			<AbilityDesc>Upon successful hit, recover 1 Light.
+At the start of each Scene, if the selected Guest doesn't have maximun light, inflict 2 Feeble and Disarm to self.</AbilityDesc>
+      		<FlaborText>This is a forest full of hearts. No matter how many he cuts down, the forest still remains dense.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I chop, and chop… Yet the forest remains dense…</Dialogue>
+        		<Dialogue ID="2">I want to be warm… I need something stronger…</Dialogue>
+        		<Dialogue ID="3">I crammed all I could find into this empty canister… yet it is… still cold…</Dialogue>
+        		<Dialogue ID="4">To cut more trees, I never neglected sharpening the axe…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="LumberJack_Heart_Enemy">
-			<Abnormality>热心的樵夫</Abnormality>
-			<CardName>心脏</CardName>
-			<AbilityDesc>若该来宾在1幕之内至少造成15点伤害，则随机使手中2张费用最高的书页费用-1
-若击杀目标，则效果改为费用减为0(减费的书页将在使用后复原)</AbilityDesc>
-			<FlaborText>再多的心脏也无法填补空缺，那台曾是樵夫的机器不再劈砍树木，而是采伐人类。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">需要……塞满……空腔……</Dialogue>
-				<Dialogue ID="2">我不想再感受……那空虚寂寞的心……</Dialogue>
-				<Dialogue ID="3">铅心……又硬……又冷……</Dialogue>
-				<Dialogue ID="4">怀抱空洞的心……独自悲伤……</Dialogue>
-			</Dialogues>
+			<Abnormality>Warm-hearted Woodsman</Abnormality>
+			<CardName>Cardiae</CardName>
+			<AbilityDesc>After dealing 15 or more damage to enemies in a single Scene, reduce the Cost of the two most expensive pages in hand by 1.
+On kill, reduce the Cost to 0 instead.
+The Cost reduction is reset when the pages are used.</AbilityDesc>
+      		<FlaborText>There will never be enough hearts. Once a Woodsman, he now fells people instead of trees.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I require an object… to fill this empty void…</Dialogue>
+        		<Dialogue ID="2">I do not want to feel this empty and lonely feeling anymore…</Dialogue>
+        		<Dialogue ID="3">The heart made of lead… was stiff and cold.</Dialogue>
+        		<Dialogue ID="4">I clutched my empty chest and grieved…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="House_LionAtk_Enemy">
-			<Abnormality>归家的路途</Abnormality>
-			<CardName>勇气</CardName>
-			<AbilityDesc>每一幕开始时该来宾将获得“存活来宾数-2”层“强壮”与“守护”。
-(若数值为负则改为获得“虚弱”与“易损”)</AbilityDesc>
-			<FlaborText>今后能一直跟着你喵？这样我就有勇气撕碎他们……</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">朋友呀，有你在，我就什么也不怕！</Dialogue>
-				<Dialogue ID="2">大家聚在一起走的路~跳起舞来走的路！</Dialogue>
-				<Dialogue ID="3">朋友呀，朋友们啊~！不要犹豫啦！</Dialogue>
-				<Dialogue ID="4">没有什么能阻挡我们！</Dialogue>
-			</Dialogues>
+			<Abnormality>The Road Home</Abnormality>
+			<CardName>Courage</CardName>
+			<AbilityDesc>At the start of the Scene, gain Strength and Protection equal to the number of allies currently alive subtracted by 2. (If the value is less than 0, Feeble and Fragile will be inflicted instead.)</AbilityDesc>
+      		<FlaborText>Can I follow you forever? So I can tear them apart…</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Friend. I have nothing to fear when I have you around!</Dialogue>
+        		<Dialogue ID="2">We set off with everyone~ Dancing along the road!</Dialogue>
+        		<Dialogue ID="3">Friend. Oh, friends~! Let’s not be scared!</Dialogue>
+        		<Dialogue ID="4">There’s nothing that can stop us!</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="House_BigHouse_Enemy">
-			<Abnormality>归家的路途</Abnormality>
-			<CardName>家</CardName>
-			<AbilityDesc>每一幕开始时至多为3名司书赋予数字。
-该来宾会根据数字顺序攻击司书并使自身的“进攻型”骰子伤害+2
-			</AbilityDesc>
-			<FlaborText>就这样，我开始了无尽的冒险，永远回不了家了。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">别再阻挠我们了！快让我回家！</Dialogue>
-				<Dialogue ID="2">啊~是那个家伙！那个坏巫师！</Dialogue>
-				<Dialogue ID="3">那个坏巫师，竟把我的朋友们……！</Dialogue>
-				<Dialogue ID="4">朋友啊，朋友们呐。一起回家吧？</Dialogue>
-			</Dialogues>
+			<Abnormality>The Road Home</Abnormality>
+			<CardName>Home</CardName>
+			<AbilityDesc>At the start of the Scene, numbered targets are placed on up to three enemies.
+The guest will attack in the correct order. Increase outgoing damage by 2 for the Scene.</AbilityDesc>
+      		<FlaborText>Unable to ever go back home, they began an endless journey.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Don’t bother us! Let us go home in peace!</Dialogue>
+        		<Dialogue ID="2">Ah~ That wizard! That wicked wizard!</Dialogue>
+        		<Dialogue ID="3">The mean wizard took my friends!</Dialogue>
+        		<Dialogue ID="4">Friends. Oh, friends. Will we get to go home?</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="House_Home_Enemy">
-			<Abnormality>归家的路途</Abnormality>
-			<CardName>同行之路</CardName>
-			<AbilityDesc>若未能保护某司书免受该来宾攻击(转移攻击目标)，则使该来宾当前书页的所有骰子威力+1~2
-			</AbilityDesc>
-			<FlaborText>一同出发吧。美丽的世界。梦的世界……</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我正在睡午觉……可突然之间……</Dialogue>
-				<Dialogue ID="2">呼哟~大家一起走吧~</Dialogue>
-				<Dialogue ID="3">跳起舞来，一起回家吧！</Dialogue>
-				<Dialogue ID="4">这条路的尽头，会有无比美丽的……梦的世界。</Dialogue>
-			</Dialogues>
+			<Abnormality>The Road Home</Abnormality>
+			<CardName>A Road Walked Together</CardName>
+			<AbilityDesc>If librarians failed to redirect the selected guest's attack, all dice on the guest's page gain 1-2 Power.</AbilityDesc>
+      		<FlaborText>Let’s walk together. To a wonderful land… The world of dreams.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I was sound asleep, then the adventure suddenly began.</Dialogue>
+        		<Dialogue ID="2">Hoyoyo~ Let’s go, together~!</Dialogue>
+        		<Dialogue ID="3">Let’s skip home together!</Dialogue>
+        		<Dialogue ID="4">There must be a beautiful wonderland at the end of the road…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Ozma_Boom_Enemy">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>过去的力量</CardName>
-			<AbilityDesc>该来宾的所有书页费用+1且所有骰子威力+4~5</AbilityDesc>
-			<FlaborText>奥兹玛举起削南瓜的小刀，不顾一切地冲向巫师的所在地。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">吾名奥兹玛……被何人夺走了一切……</Dialogue>
-				<Dialogue ID="2">不想再过着被掠夺的人生……</Dialogue>
-				<Dialogue ID="3">尔等也来亲历这般感受吧……遗忘一切……失去之痛……</Dialogue>
-				<Dialogue ID="4">这一次，轮到吾来掠夺了……</Dialogue>
-			</Dialogues>
+			<Abnormality>Ozma</Abnormality>
+			<CardName>Power of the Past</CardName>
+			<AbilityDesc>Increase the Cost of Combat pages by 1.
+All dice gain 3-4 Power.</AbilityDesc>
+      		<FlaborText>Ozma held the pumpkin-carving knife, then took off running towards where the lady wizard should be.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I’m Ozma… A single person took everything away from me…</Dialogue>
+        		<Dialogue ID="2">I don’t want to live a life of being thieved any longer…</Dialogue>
+        		<Dialogue ID="3">I want you to feel it all the same… The misery of forgetting it all… losing it all…</Dialogue>
+        		<Dialogue ID="4">I’ll be the one to take things away this time…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Ozma_forgotten_Enemy">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>遗忘</CardName>
-			<AbilityDesc>选中时将该来宾牌库里所有的书页列入“遥远记忆”并移除出战斗并且最大混乱抗性减少50%
-每一幕开始时自身每有一个速度骰便从“遥远记忆”随机选择一张书页置入手牌并设置为0费</AbilityDesc>
-			<FlaborText>一位非常善良美丽的人，正用难以置信的表情看着自己，不是么？</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">为何更易相信他人……为何……</Dialogue>
-				<Dialogue ID="2">畏惧至此……不愿触摸脸庞……</Dialogue>
-				<Dialogue ID="3">此种人生，仅是一息尚存……</Dialogue>
-				<Dialogue ID="4">被遗忘在地下……为何只得如此……</Dialogue>
-			</Dialogues>
+			<Abnormality>Ozma</Abnormality>
+			<CardName>Oblivion</CardName>
+			<AbilityDesc>Immobilized for next Scene; cannot be targeted. At the end of this Scene, recover 40% of Max. HP (up to 48) and fully restore Light.费</AbilityDesc>
+      		<FlaborText>There was such a fine and beautiful person, staring at her with a perplexed expression.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Why did I trust a stranger so naively… Why…</Dialogue>
+        		<Dialogue ID="2">I haven’t even touched my face… I was so afraid…</Dialogue>
+        		<Dialogue ID="3">Staying alive is all I can do in a life like this…</Dialogue>
+        		<Dialogue ID="4">A forgotten being stuck in the underground… Why did it have to be…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Ozma_Immortal_Enemy">
-			<Abnormality>奥兹玛</Abnormality>
-			<CardName>生命的粉末</CardName>
-			<AbilityDesc>该来宾承受致死伤害时将无视此次伤害并恢复所有体力和混乱抗性，
-并在之后清空其所有的光芒。(该来宾整场接待至多触发1次)</AbilityDesc>
-			<FlaborText>最后撒上自己最爱的肉桂粉，将南瓜紧紧抱在怀中。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">如今，在吾身侧……空余这些稚子。</Dialogue>
-				<Dialogue ID="2">呜呼……赐予汝新生吧。</Dialogue>
-				<Dialogue ID="3">不要再让吾孤单，常回来吧……</Dialogue>
-				<Dialogue ID="4">不要……不要再夺去吾的一切……</Dialogue>
-			</Dialogues>
+			<Abnormality>Ozma</Abnormality>
+			<CardName>Powder of Life</CardName>
+			<AbilityDesc>When the Guest takes lethal damage, nullify it and recover 100% of Max. HP and Stagger Resist, lose all Lights. Can only activate once per reception.</AbilityDesc>
+      		<FlaborText>Finally, she sprinkled cinnamon powder—her favorite—and clutched the pumpkin in her arms.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">All I have left now… are these children.</Dialogue>
+        		<Dialogue ID="2">Here, child… I’ll give you new life.</Dialogue>
+        		<Dialogue ID="3">Come back to me, so I won’t be lonely…</Dialogue>
+        		<Dialogue ID="4">No… Don’t take away what is mine, not again…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Oz_Emerald_Enemy">
-			<Abnormality>说谎的大人</Abnormality>
-			<CardName>翡翠</CardName>
-			<AbilityDesc>选中情感卡后下一幕消耗3点光芒在战斗开始时使摧毁随机司书的两张战斗书页
-之后每隔5幕该效果会再次触发一次。(该异想体效果仅会在有足够光芒时触发)</AbilityDesc>
-			<FlaborText>奥兹想到一个奇妙的主意，那翡翠般的双眼似乎愈发闪耀。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">翡翠般的道路依然闪烁着美丽的光芒。</Dialogue>
-				<Dialogue ID="2">可怜的孩子……眼神与我相仿的孩子。</Dialogue>
-				<Dialogue ID="3">沿着这条路来，或许就能找到想要的东西。</Dialogue>
-				<Dialogue ID="4">我将实现你们的愿望。你们想要什么？</Dialogue>
-			</Dialogues>
+			<Abnormality>The Adult who Tells Lies</Abnormality>
+			<CardName>Emerald</CardName>
+			<AbilityDesc>Atfer selecting, spend 3 Lights in the next Scene and at Combat Start, Destroy 2 pages from librarians.
+Atfer 5 Scene, the effect will be triggered again if the Guest has sufficient Lights.</AbilityDesc>
+      		<FlaborText>Oz came up with a brilliant idea. Her emerald eyes seemed to shine even brighter.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">The emerald roads sparkle bright as ever.</Dialogue>
+        		<Dialogue ID="2">She was a poor, poor child… Her eyes were just like mine.</Dialogue>
+        		<Dialogue ID="3">Follow along this path. You might just find what you want.</Dialogue>
+        		<Dialogue ID="4">I’ll make your wishes come true. What do you wish for?</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Oz_Gift_Enemy">
-			<Abnormality>说谎的大人</Abnormality>
-			<CardName>虚假的礼物</CardName>
-			<AbilityDesc>该来宾会随机且不重复地获得“激发勇气的药水”，“装有锯末的布袋”，“用铅制成的心脏”，“永远回不去的家”与“催生变异的粉末”这5种效果中的1种。</AbilityDesc>
-			<FlaborText>可怜的奥兹玛。也许她并不知道，说谎的大人不会无缘无故靠近她。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">到我这来，我会帮你忘掉所有烦恼和忧愁。</Dialogue>
-				<Dialogue ID="2">你就是台机器，不是吗？机器是不需要心的。</Dialogue>
-				<Dialogue ID="3">喝下这能激发勇气的药水吧，你将变得比任何人都要勇猛。</Dialogue>
-				<Dialogue ID="4">穿上这双鞋再上路吧，朝着你心念的故乡。</Dialogue>
-			</Dialogues>
+			<Abnormality>The Adult who Tells Lies</Abnormality>
+			<CardName>False Present</CardName>
+			<AbilityDesc>Guest will gain one of 'Liquid Courage', 'Silk Sack of Sawdust', 'Heart of Lead', 'Home that Cannot Be Reached', and 'Transformation' without repeatition。</AbilityDesc>
+      		<FlaborText>Poor Ozma. She didn’t know that lying adults don’t approach others without reason.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Come closer. I’ll help you forget all of your woes and worries.</Dialogue>
+        		<Dialogue ID="2">You’re a machine, aren’t you? A heart is unnecessary for a machine.</Dialogue>
+        		<Dialogue ID="3">Drink this potion, it’ll give you courage. You’ll be braver than anyone.</Dialogue>
+        		<Dialogue ID="4">Wear this pair of shoes and be on your way. To the hometown you miss so much.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Oz_Control_Enemy">
-			<Abnormality>说谎的大人</Abnormality>
-			<CardName>巫术</CardName>
-			<AbilityDesc>选中情感卡后下一幕消耗4点光芒使手中的所有书页费用减为0(使用后复原)
-之后每隔4幕该效果会再次触发一次。(该异想体效果仅会在有足够光芒时触发)</AbilityDesc>
-			<FlaborText>不久之后，奥兹被人们称为“大巫师”。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">可怜的稻草啊。赐予你无所不知，无所不晓的智慧。</Dialogue>
-				<Dialogue ID="2">冰冷的樵夫啊。赐予你宽宏大量，慈悲为怀的爱心。</Dialogue>
-				<Dialogue ID="3">胆小的狮子啊。赐予你勇往直前，无所畏惧的勇气。</Dialogue>
-				<Dialogue ID="4">最后，彷徨的路途啊。我将送你归家。</Dialogue>
-			</Dialogues>
+			<Abnormality>The Adult who Tells Lies</Abnormality>
+			<CardName>Magic Trick</CardName>
+			<AbilityDesc>Atfer selecting, spend 4 Lights in the next Scene and at Combat Start, Reduce the Cost of all pages in hand to 0. When used, their Cost is reset to the value before this effect was applied.
+Atfer 4 Scene, the effect will be triggered again if the Guest has sufficient Lights.</AbilityDesc>
+      		<FlaborText>Soon, Oz came to be called a wizard by the people.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Poor stuffing of straw. I’ll give you the wisdom to ponder over anything.</Dialogue>
+        		<Dialogue ID="2">Tin-cold woodsman. I’ll give you the heart to forgive and love anyone.</Dialogue>
+        		<Dialogue ID="3">Cowardly kitten. I’ll give you the courage to stand up to anything and everything.</Dialogue>
+        		<Dialogue ID="4">Last of all, road that is lost. I will send you home.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>
 </AbnormalityCardsRoot>

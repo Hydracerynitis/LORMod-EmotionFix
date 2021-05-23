@@ -28,6 +28,7 @@ namespace EmotionalFix
             if (diceinhand.Count == 0)
                 return;
             behavior.card.AddDice(RandomUtil.SelectOne<BattleDiceBehavior>(diceinhand));
+            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Scarecrow_Dead");
         }
         public override void OnMakeBreakState(BattleUnitModel target)
         {

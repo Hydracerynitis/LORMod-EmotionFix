@@ -12,6 +12,7 @@ namespace EmotionalFix
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             base.OnSucceedAttack(behavior);
+            behavior.card.target.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Bloodmeet", 2f);
             this._owner.cardSlotDetail.RecoverPlayPoint(1);
         }
         public override void OnRoundEnd()

@@ -13,6 +13,15 @@ namespace EmotionalFix
 
         public override void OnSelectEmotion()
         {
+            if (this._owner.faction == Faction.Player)
+            {
+                this._owner.personalEgoDetail.AddCard(1100023);
+                this._owner.personalEgoDetail.AddCard(1100024);
+                this._owner.personalEgoDetail.AddCard(1100025);
+                this._owner.personalEgoDetail.AddCard(1100026);
+                this._owner.personalEgoDetail.AddCard(1100027);
+                return;
+            }
             _remainedList.Clear();
             if(!CheckBuff(WizardBufType.Potion))
                 _remainedList.Add(WizardBufType.Potion);
@@ -47,6 +56,15 @@ namespace EmotionalFix
         }
         public override void OnWaveStart()
         {
+            if (this._owner.faction == Faction.Player)
+            {
+                this._owner.personalEgoDetail.AddCard(1100023);
+                this._owner.personalEgoDetail.AddCard(1100024);
+                this._owner.personalEgoDetail.AddCard(1100025);
+                this._owner.personalEgoDetail.AddCard(1100026);
+                this._owner.personalEgoDetail.AddCard(1100027);
+                return;
+            }
             switch (_selectedBuf)
             {
                 case WizardBufType.Potion:
@@ -110,6 +128,12 @@ namespace EmotionalFix
             protected override string keywordIconId => "Wizard_Courage";
             public BattleUnitBuf_potion() => this.stack = 0;
             private int round = 0;
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                if(this._owner.faction==Faction.Player)
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
+            }
             public override void OnRoundStart()
             {
                 round += 1;
@@ -169,6 +193,12 @@ namespace EmotionalFix
             protected override string keywordIconId => "Wizard_Scarecrow_Debuf";
             private int Pow => RandomUtil.Range(1, 2);
             public BattleUnitBuf_pocket() => this.stack = 0;
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                if (this._owner.faction == Faction.Player)
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
+            }
             public override void OnDrawCard()
             {
                 int count = this._owner.allyCardDetail.GetHand().Count;
@@ -186,9 +216,15 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_heart : BattleUnitBuf
         {
-            protected override string keywordId => "Wizard_heart";
+            protected override string keywordId => stack==0? "Wizard_heart": "Wizard_heart_Deactivate";
             protected override string keywordIconId => "Lumberjack_Piece_Final";
             public BattleUnitBuf_heart() => this.stack = 0;
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                if (this._owner.faction == Faction.Player)
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
+            }
             public override void OnRoundStart()
             {
                 if (stack > 0)
@@ -213,6 +249,12 @@ namespace EmotionalFix
             protected override string keywordId => "Wizard_home";
             protected override string keywordIconId => "WayBackHome_Super_Cancel";
             private int Pow => RandomUtil.Range(1, 3);
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                if (this._owner.faction == Faction.Player)
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
+            }
             public BattleUnitBuf_home()
             {
                 this.stack = 0;
@@ -253,6 +295,12 @@ namespace EmotionalFix
 
             protected override string keywordIconId => "Ozma_LibrarianToPumpkin";
 
+            public override void Init(BattleUnitModel owner)
+            {
+                base.Init(owner);
+                if (this._owner.faction == Faction.Player)
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
+            }
             public BattleUnitBuf_change() => this.stack = 0;
 
             public override void OnRoundStart()

@@ -29,7 +29,7 @@
       <LocalizedName>The Magical Girl of Courage</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1106201">
-      <LocalizedName>狼的角色</LocalizedName>
+      <LocalizedName>The Role of Wolf</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1107401">
       <LocalizedName>拯救</LocalizedName>

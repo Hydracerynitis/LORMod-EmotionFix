@@ -42,6 +42,7 @@ namespace EmotionalFix
                     foreach (BattleDiceCardModel battleDiceCardModel in this._owner.allyCardDetail.GetHand())
                         battleDiceCardModel.AddBuf(new DiceCardSelfAbility_oz_control.BattleDiceCardBuf_costZero1Round());
                     round = 0;
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Magic", 1f, _owner.view,_owner.view, 3f);
                 }
             }
         }
