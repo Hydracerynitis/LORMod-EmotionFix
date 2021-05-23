@@ -18,7 +18,7 @@ Deal 2-6 additional damage when attacking the marked foe.</AbilityDesc>
 		<AbnormalityCard ID="Redhood_Revenge_Enemy">
 			<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
 			<CardName>Vengeance</CardName>
-			<AbilityDesc>At the start of the Scene, gain Strength based on the amount of damage taken in the previous Scene. (1 Strength per 10% of Max HP damage)</AbilityDesc>
+			<AbilityDesc>At the start of the Scene, gain Strength based on the amount of damage taken in the previous Scene. (1 Strength per 10% of Max HP damage，up to 4)</AbilityDesc>
 			<FlaborText>Between us, there’s no victory to be won. All I think about is how I’ll kill that bastard in a way more gruesome and painful than the last time.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">I’ve been grinding the blade to behead that damned wolf.</Dialogue>
@@ -56,8 +56,7 @@ The guest gains 2 Strength that Scene, and inflicts 1 Bleed with each successful
 		<AbnormalityCard ID="BigBadWolf_Eat_Enemy">
 			<Abnormality>Big and Will be Bad Wolf</Abnormality>
 			<CardName>Instincts</CardName>
-			<AbilityDesc>Each time the selected guest wins a clash, the last die on their current page gains 1-2 Power.
-Recover 3-7 HP on a successful hit with that final die.</AbilityDesc>
+			<AbilityDesc>Each time the selected guest wins a clash, the last die on their current page gains 1-2 Power and recover 3-7 if that final die perform a successful hit.</AbilityDesc>
 			<FlaborText>The taste of flesh was so good after such a long absence. Since then, it got harder and harder to keep himself in check. Still, it didn’t matter to him. After all, he was “destined” to be a big bad wolf.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">This place reeks of an awful stench… It calls for me…</Dialogue>
@@ -105,8 +104,8 @@ Recover 3-7 HP on a successful hit with that final die.</AbilityDesc>
 		<AbnormalityCard ID="Mountain_Vomit_Enemy">
 			<Abnormality>Mountain of Smiling Bodies</Abnormality>
 			<CardName>Mountain of Corpses</CardName>
-			<AbilityDesc>For each 10% of Max HP healed, gain 1 Moutainn (All dice gain 1 Power per stack; increase incoming damage by 25% per stack; Become Bigger.)
-For each 10% of Max HP damage taken, lose 1 Moutain.</AbilityDesc>
+			<AbilityDesc>For each 10% of Max HP healed, gain 1 Mountain (All dice gain 1 Power per stack; increase incoming damage by 25% per stack; Become Bigger.)
+For each 10% of Max HP damage taken, lose 1 Mountain.</AbilityDesc>
 			<FlaborText>The more bodies it comes across, the more defined its shape becomes. And it is never satisfied.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Must… must become one… again…</Dialogue>
@@ -131,7 +130,7 @@ Prioritize the librarian with the most HP.</AbilityDesc>
 		<AbnormalityCard ID="Nosferatu_Wine_Enemy">
 			<Abnormality>Nosferatu</Abnormality>
 			<CardName>Wine</CardName>
-			<AbilityDesc>At the end of each Scene, if has more than 50% of Max HP, take damage equal to 10% of HP and heal other allies with the same amount.</AbilityDesc>
+			<AbilityDesc>Upon defeating an enemy, all allies recover 10 HP, and the selected guest gains 2 Strength while other allies gain 2 Feeble next Scene.</AbilityDesc>
 			<FlaborText>It maintains a human form, but a single drop of blood should be enough for it to shapeshift into a ferocious monster and spend the night in a rampage.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Ah… Holding back the pain of this thirst is not exactly a pleasing sight to behold.</Dialogue>
@@ -143,8 +142,7 @@ Prioritize the librarian with the most HP.</AbilityDesc>
 		<AbnormalityCard ID="Nosferatu_Vampire_Enemy">
 			<Abnormality>Nosferatu</Abnormality>
 			<CardName>Vampirism</CardName>
-			<AbilityDesc>If the target has more HP than the Guest, deal 2-4 bonus damage and inflict 1 Bleed on a successful attack. 
-Heal 2-5 HP upon attacking a target with Bleed.。</AbilityDesc>
+			<AbilityDesc>Deal +2-4 damage and recover 2-5 HP upon attacking a target with Bleed.</AbilityDesc>
 			<FlaborText>…And the thirst would never truly be quenched.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Death dances macabrely with everybody! All of you have a fair chance to be consumed!</Dialogue>

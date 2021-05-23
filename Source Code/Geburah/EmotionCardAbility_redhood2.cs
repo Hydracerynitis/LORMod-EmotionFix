@@ -33,7 +33,7 @@ namespace EmotionalFix
                 threshold = EnemyThreshold;
             for (; DamageTaken > threshold; DamageTaken -= threshold)
                 strcount += 1;
-            this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, strcount, this._owner);
+            this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, Math.Min(strcount,4), this._owner);
         }
     }
 }

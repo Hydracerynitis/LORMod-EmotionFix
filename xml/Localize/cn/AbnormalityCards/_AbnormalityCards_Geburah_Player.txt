@@ -16,6 +16,19 @@
 				<Dialogue ID="5">你要是委托我，那我可以考虑帮忙。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="Redhood_Revenge">
+			<Abnormality>小红帽雇佣兵</Abnormality>
+			<CardName>复仇</CardName>
+			<AbilityDesc>[选择一名司书]
+该来宾每承受5点伤害(包括直接攻击伤害与负面状态伤害)，便在下一幕中获得1层“强壮”。(至多4层)</AbilityDesc>
+			<FlaborText>我们之间不会有任何一方胜出，更谈不上庆祝。我只想用比前一回更残忍，更痛苦的手段撕烂那头狗杂种。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">这阵子我一直在磨刀，不为别的，只为斩下那畜生的头。</Dialogue>
+				<Dialogue ID="2">把那头阴险的杂种留给我。</Dialogue>
+				<Dialogue ID="3">我要把那杂种的脑袋挂在床头，如此我才能安心睡个好觉。</Dialogue>
+				<Dialogue ID="4">所有伤痛都是为了更好地了解对手。现在，是时候偿债了。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
 		<AbnormalityCard ID="Redhood_RedScar">
 			<Abnormality>小红帽雇佣兵</Abnormality>
 			<CardName>伤疤</CardName>
@@ -28,6 +41,19 @@
 				<Dialogue ID="2">伤疤越多，求生的意志就越是强大。</Dialogue>
 				<Dialogue ID="3">可别以此为荣，每一道伤疤都在诉说你的无能。</Dialogue>
 				<Dialogue ID="4">……这些伤疤让我毛骨悚然，牙齿打颤。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BigBadWolf_Eat">
+			<Abnormality>又大又可能很坏的狼</Abnormality>
+			<CardName>掠食本能</CardName>
+			<AbilityDesc>该来宾拼点胜利时将使自身当前书页的最后一颗骰子威力+1~2(不计入反击骰子)
+若以该骰子击中目标，之前每拼点是胜利一次便为自身恢复3~7点体力。</AbilityDesc>
+			<FlaborText>好久没吃到，如此鲜美的肉了。从那时起，想要自律变得越来越难。不过没关系，我是一头又大又“坏”的狼。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">有股难闻的气息……在呼唤着我……</Dialogue>
+				<Dialogue ID="2">正如黑暗填满新月，我的胃也要被填满……</Dialogue>
+				<Dialogue ID="3">你们让我……口水直流……</Dialogue>
+				<Dialogue ID="4">只要填饱肚子……我就满足了……</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="BigBadWolf_Claw">
@@ -102,7 +128,7 @@
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>红酒</CardName>
 			<AbilityDesc>[选择一名司书]
-每一幕结束时如果该司书血量高于50%则受到10%血量的伤害并为所有其他司书恢复伤害等量的血量</AbilityDesc>
+若该司书击杀来宾，则为所有司书恢复10点体力且下一幕开始时该司书获得2层强壮,其他司书获得2层虚弱。</AbilityDesc>
 			<FlaborText>虽维持着人类的身姿，但只要有一滴血就会化为凶暴的怪物，度过狂乱的一夜。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">啊……忍受饥渴的痛苦绝非美妙之事。</Dialogue>

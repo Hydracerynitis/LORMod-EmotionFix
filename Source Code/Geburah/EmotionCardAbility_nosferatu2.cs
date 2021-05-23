@@ -9,14 +9,27 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_nosferatu2 : EmotionCardAbilityBase
     {
+        private bool _trigger;
+        public override void OnKill(BattleUnitModel target)
+        {
+            base.OnKill(target);
+            if (this._owner.faction==Faction.Player && target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding) == null)
+                return;
+            target.battleCardResultLog?.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_TeathATK");
+            target.battleCardResultLog?.SetCreatureAbilityEffect("6/Nosferatu_Emotion_BloodDrain");
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+                alive.RecoverHP(10);
+            this._trigger = true;
+        }
         public override void OnRoundStart()
         {
-            if (this._owner.hp < this._owner.MaxHp * 0.5)
+            base.OnRoundStart();
+            if (!_trigger)
                 return;
-            int wine = (int)(this._owner.hp * 0.1);
-            this._owner.TakeDamage(wine);
-            foreach (BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll((Predicate<BattleUnitModel>)(x => x != this._owner)))
-                ally.RecoverHP(wine);
+            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll(x=> x!=this._owner))
+                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
+            this._trigger = false;
         }
     }
 }

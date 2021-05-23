@@ -59,7 +59,7 @@ At the end of each Scene, if did not deal any damage with Offensive dice, lose 2
 		</AbnormalityCard>
 		<AbnormalityCard ID="HeartofAspiration_Doki_Enemy">
 			<Abnormality>Heart of Aspiration</Abnormality>
-			<CardName>Aspiration</CardName>
+			<CardName>Urging</CardName>
 			<AbilityDesc>Increase Max HP by 15%. (Current HP increases accordingly)
 Gain 1-2 Speed.</AbilityDesc>
 			<FlaborText>When borrowed, its rate of contraction will double, enhancing the borrower’s vigor and strength.</FlaborText>

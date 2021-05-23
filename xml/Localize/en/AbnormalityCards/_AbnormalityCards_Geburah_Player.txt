@@ -16,6 +16,19 @@ Deal 2-6 additional damage when attacking the marked foe.</AbilityDesc>
 				<Dialogue ID="5">If you make a request, then I might help you.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="Redhood_Revenge">
+      		<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
+     		 <CardName>Vengeance</CardName>
+      		<AbilityDesc>[Single Ally]
+At the start of the Scene, gain Strength based on the amount of damage taken the previous Scene. (1 Strength per 5 damage, up to 4)</AbilityDesc>
+      		<FlaborText>Between us, there’s no victory to be won. All I think about is how I’ll kill that bastard in a way more gruesome and painful than the last time.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I’ve been grinding the blade to behead that damned wolf.</Dialogue>
+        		<Dialogue ID="2">Hand that dreadful, cunning bastard over to me.</Dialogue>
+        		<Dialogue ID="3">I’ll hang his head over my bed. Only then can I get up in the morning without having a nightmare.</Dialogue>
+        		<Dialogue ID="4">It was all to read the enemy. Now’s the time to return the favor.</Dialogue>
+      		</Dialogues>
+    	</AbnormalityCard>
 		<AbnormalityCard ID="Redhood_RedScar">
 			<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
 			<CardName>Crimson Scar</CardName>
@@ -28,6 +41,18 @@ At the start of each Scene gain 1 strength per 15% of Max HP for reduced Max HP 
 				<Dialogue ID="2">The more scars you get, the stronger your will to survive becomes.</Dialogue>
 				<Dialogue ID="3">Don’t take pride in it. It’s a sign that you weren’t skilled enough.</Dialogue>
 				<Dialogue ID="4">…I feel horrible when I look at these scars. It makes me shudder in fury.</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BigBadWolf_Eat">
+			<Abnormality>Big and Will be Bad Wolf</Abnormality>
+			<CardName>Instincts</CardName>
+			<AbilityDesc>Each time the selected guest wins a clash, the last die on their current page gains 1-2 Power and recover 3-7 if that final die perform a successful hit.</AbilityDesc>
+			<FlaborText>The taste of flesh was so good after such a long absence. Since then, it got harder and harder to keep himself in check. Still, it didn’t matter to him. After all, he was “destined” to be a big bad wolf.</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">This place reeks of an awful stench… It calls for me…</Dialogue>
+				<Dialogue ID="2">Like the empty moon filled with darkness, my belly should be filled with meat…</Dialogue>
+				<Dialogue ID="3">Looking at you makes my mouth water…</Dialogue>
+				<Dialogue ID="4">If I can fill my stomach… I’ll be satisfied…</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Mountain_Eat">
@@ -60,8 +85,8 @@ Whenever other ally die, shuffle 3 card from that ally into deck.</AbilityDesc>
 			<Abnormality>Mountain of Smiling Bodies</Abnormality>
 			<CardName>Mountain of Corpses</CardName>
 			<AbilityDesc>[Single Ally]
-For each 10% of Max HP healed, gain 1 Moutainn (All dice gain 1 Power per stack; increase incoming damage by 25% per stack)
-For each 10% of Max HP damage taken, lose 1 Moutain.</AbilityDesc>
+For each 10% of Max HP healed, gain 1 Mountain (All dice gain 1 Power per stack; increase incoming damage by 25% per stack)
+For each 10% of Max HP damage taken, lose 1 Mountain.</AbilityDesc>
 			<FlaborText>The more bodies it comes across, the more defined its shape becomes. And it is never satisfied.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Must… must become one… again…</Dialogue>
@@ -88,7 +113,7 @@ Can not control and prioritize the librarian with the most HP.</AbilityDesc>
 			<Abnormality>Nosferatu</Abnormality>
 			<CardName>Wine</CardName>
 			<AbilityDesc>[Single Ally]
-At the end of each Scene, if has more than 50% of Max HP, take damage equal to 10% of HP and heal other allies with the same amount.</AbilityDesc>
+Upon defeating an enemy, all allies recover 10 HP, and the selected librarian gains 2 Strength while other allies gain 2 Feeble next Scene.</AbilityDesc>
 			<FlaborText>It maintains a human form, but a single drop of blood should be enough for it to shapeshift into a ferocious monster and spend the night in a rampage.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Ah… Holding back the pain of this thirst is not exactly a pleasing sight to behold.</Dialogue>
