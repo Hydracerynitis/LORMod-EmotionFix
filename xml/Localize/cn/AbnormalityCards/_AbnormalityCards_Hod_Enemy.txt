@@ -149,9 +149,9 @@
 		<AbnormalityCard ID="Laetitia_Friend_Enemy">
 			<Abnormality>蕾蒂希娅</Abnormality>
 			<CardName>小伙伴</CardName>
-			<AbilityDesc>每一幕开始时随机为该来宾手中的1张书页赋予“伙伴标记”。(若手中已有标记则不生效)
-“伙伴书页”中的所有骰子威力+2~4
-若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该来宾失去2~7点体力。</AbilityDesc>
+			<AbilityDesc>每两幕随机为所有司书手中的1张书页赋予“伙伴标记”。
+“伙伴书页”中的所有骰子威力+1。
+若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该来宾失去3~8点体力。</AbilityDesc>
 			<FlaborText>小不点儿很伤心，她舍不得离开亲爱的朋友们。小眼珠子咕噜一转，她想出了一个绝妙的主意！</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">不能就这么丢下重要的朋友们……所以，我想出了一个绝妙的主意！</Dialogue>

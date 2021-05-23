@@ -151,9 +151,9 @@ Take 2-7 damage if it rolled the minimum value.</AbilityDesc>
 		<AbnormalityCard ID="Laetitia_Friend_Enemy">
 			<Abnormality>Laetitia</Abnormality>
 			<CardName>Friend</CardName>
-			<AbilityDesc>At the start of the Scene, sneak a 'friend' into one of the Combat pages in hand. (Does not activate when there's already a page with a 'friend' in hand.)
-The page with the 'friend' gains 2-4 Power.
-However, if the page is not used within 2 Scenes, discard it and draw 1 card, dealing 2-7 damage to the Guest.</AbilityDesc>
+			<AbilityDesc>Sneak a 'friend' into one of the Combat pages in hand of all librarians per 2 Scene.
+The page with the 'friend' gains 1 Power.
+However, if the page is not used within 2 Scenes, discard it and draw 1 card, dealing 3-8 damage to the Guest.</AbilityDesc>
 			<FlaborText>She was so sad that she had to leave her dear friends behind, so she came up with a brilliant idea!</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">I couldn’t leave my dear friends behind… So I came up with a brilliant idea!</Dialogue>
