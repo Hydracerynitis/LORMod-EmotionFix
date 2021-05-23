@@ -67,6 +67,8 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
+            if (_target == null)
+                return;
             if (this._target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
                 this._target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
             this._target = null;

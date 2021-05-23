@@ -165,68 +165,72 @@ Whenever an abnormality cards is cleared, apply new random accessible abnormalit
       		<Desc>At the start of each Scene, random ally recover 30% of Max HP and Stagger Resist, transform one card in the ally's hand into a pumpkin.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Charm">
-      		<Name>魅惑</Name>
-      		<Desc>这一幕只能攻击使用“永燃灯”的来宾</Desc>
+      		<Name>Enchanted</Name>
+      		<Desc>can only attack the guest with 'Eternally Lit Lamp' for thr duration of the Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SmallBird_Punishment">
-      		<Name>惩戒</Name>
-      		<Desc>这一幕中使用书页的第1颗骰子威力+2~4</Desc>
+      		<Name>Punishment</Name>
+      		<Desc>The first die of each page this Scene gains 1-3 Power.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Smallbird_Beak">
-      		<Name>责罚之喙</Name>
-      		<Desc>伤害和混乱伤害提高2~3</Desc>
+      		<Name>Punishing Beak</Name>
+      		<Desc>Increase damage and Stagger Damage by 2-4</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Sinner">
-      		<Name>罪人</Name>
-      		<Desc>应用了“审判”的角色第一次命中“罪人”时会追加其15%生命值的伤害</Desc>
+      		<Name>The Guilty</Name>
+      		<Desc>The enemy with 'Judgement' will inflict damage equal to 15% of Max HP of self when perform first successful hit on self.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Longbird">
-      		<Name>长臂</Name>
-      		<Desc>进攻骰上限-5，获得目标罪痕层数的威力</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="EggSin">
-      		<Name>罪痕</Name>
-      		<Desc>击中任意司书时获得1层，击杀任意司书时获得5层，若一幕内未命中司书则这一幕结束时减少1/3层</Desc>
+      		<Name>Long Arms</Name>
+      		<Desc>Reduce outgoing damage and Stagger damage by 50%.
+Upon successful hit, inflict 10% of enemy's Max HP (Max. 10)</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Longbird_Enemy">
-      		<Name>长臂</Name>
-      		<Desc>免疫原版的负面状态</Desc>
+      		<Name>Long Arms</Name>
+      		<Desc>Immune to status ailments</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Bigbird">
-      		<Name>巨目</Name>
-      		<Desc>最大混乱抗性减少50%，被单方面攻击时以斩击4-10的反击骰迎战</Desc>
+      		<Name>Big Eyes</Name>
+      		<Desc>Reduce Max Stagger Resist by 50%.
+Every time being targeted in one-side attack, gain Slash 4-10 counter die.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Bigbird_Enemy">
-      		<Name>巨目</Name>
-      		<Desc>拼点时目标司书的骰子将不受威力增减效果影响。</Desc>
+      		<Name>Big Eyes</Name>
+      		<Desc>At the Start of each Scene, reduce one random enemy's power bonus by half for the duratio of this Scene.</Desc>
+    	</BattleEffectText>		
+		<BattleEffectText ID="HalfPower">
+      		<Name>Half Power</Name>
+      		<Desc>Reduce Power bonus by half for the duration of the Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Smallbird">
-      		<Name>小喙</Name>
-      		<Desc>最大血量减少50%，与进攻骰拼点时骰子威力提高3~4点</Desc>
+      		<Name>Small Beak</Name>
+      		<Desc>Reduce Max HP by 50%.
+Against Offensive dice, all dice gain 1-3 Power.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Smallbird_Enemy">
-      		<Name>小喙</Name>
-      		<Desc>每一幕开始时随机一个司书的2张手牌费用+1</Desc>
+      		<Name>Small Beak</Name>
+      		<Desc>At the Start of each Scene, increase cost of 2 random cards from an enemy's hand by 1.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ApocalypseBird_Big">
-      		<Name>遮掩天空的黑翼</Name>
-      		<Desc>战斗开始时将以牌库内的随机一张书页为蓝本释放范围杀伤交锋“眼棱”，若该书页至少命中目标一次则使其获得“恐慌”</Desc>
+      		<Name>Wing that Covered Sky</Name>
+      		<Desc>At combat Start, play a mass attack card 'Eye Beams' based on random card in the dcek.
+If 'Eye Beams'at least hit enemy once, the enemy gain 'Horrified'.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ApocalypseBird_Small">
-      		<Name>处以极刑的巨爪</Name>
-      		<Desc>这一幕内将所有书页转化为清算范围杀伤书页</Desc>
+      		<Name>Claw that Commit Execution</Name>
+      		<Desc>Transform all cards into Mass Attack-Summation for the duration of the Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ApocalypseBird_Long">
-      		<Name>随意断罪的独眼</Name>
-      		<Desc>这一幕内进攻骰命中时追加等同于骰子威力一半的百分比伤害</Desc>
+      		<Name>Eye that Relay Judgment</Name>
+      		<Desc>Upon successful attack, executer enemy with HP lower than 25% of Max HP for the duration of the Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="BigBirdParalysis">
-      		<Name>恐慌</Name>
-      		<Desc>这一幕内所有骰子上限-5</Desc>
+      		<Name>Horrified</Name>
+      		<Desc>All maximun value of dices reduced by 5 for the duration of the Scene.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ApocalypseBird_Peace">
-      		<Name>入侵者</Name>
-      		<Desc>造成伤害和混乱伤害减少3~5，所受伤害和混乱伤害提高3~5</Desc>
+      		<Name>Intruder</Name>
+      		<Desc>Deal 2-4 less physical and Stagger damage; takes 2-4 bonus damage from attacks.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="BloodyTree_Emotion_Damage">
       		<Name>不要转移视线</Name>

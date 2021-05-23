@@ -26,6 +26,7 @@ namespace EmotionalFix
                 return;
             this._target = target;
             target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BossBird_Creature());
+            target.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Terrable_Start", 2f);
         }
         public override void OnRoundStart()
         {
@@ -40,9 +41,10 @@ namespace EmotionalFix
         private BattleUnitModel GetAliveCreature() => BattleObjectManager.instance.GetAliveList(Faction.Player).Find((Predicate<BattleUnitModel>)(x => x.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(y => y is BattleUnitBuf_Emotion_BossBird_Creature)) != null)) ?? this._target;
         public class BattleUnitBuf_Emotion_BossBird_Creature : BattleUnitBuf
         {
-            private int ReduceDmg => RandomUtil.Range(3, 5);
-            private int ReduceBreakDmg => RandomUtil.Range(3, 5);
-            private int AddDmg => RandomUtil.Range(3, 5);
+            private Battle.CreatureEffect.CreatureEffect _aura;
+            private int ReduceDmg => RandomUtil.Range(2, 4);
+            private int ReduceBreakDmg => RandomUtil.Range(2, 4);
+            private int AddDmg => RandomUtil.Range(2, 4);
             protected override string keywordIconId => "ApocalypseBird_Apocalypse";
             protected override string keywordId => "ApocalypseBird_Peace";
             public override void Init(BattleUnitModel owner)
@@ -67,10 +69,22 @@ namespace EmotionalFix
             {
                 return -AddDmg;
             }
-            public override void OnRoundEnd()
+            public override void OnDie()
             {
-                base.OnRoundEnd();
+                base.OnDie();
                 this.Destroy();
+            }
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+            public void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
+                this._aura = (Battle.CreatureEffect.CreatureEffect)null;
             }
         }
     }

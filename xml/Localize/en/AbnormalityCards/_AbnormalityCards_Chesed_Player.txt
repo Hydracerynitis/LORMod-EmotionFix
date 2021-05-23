@@ -61,7 +61,7 @@ If athe character redirects an attack that was initially targeting other allies,
 			<Abnormality>Ozma</Abnormality>
 			<CardName>Oblivion</CardName>
 			<AbilityDesc>[Single Ally]
-Remain Oblivion for next 3 Scene.(UnActionable,untargetable,regared as dead if none of other allies present.)
+Remain Oblivion for next 3 Scene. (UnActionable, untargetable, regared as dead if none of other allies present.)
 Afterwards, draw 4 cards at the start of each Scene.</AbilityDesc>
       		<FlaborText>There was such a fine and beautiful person, staring at her with a perplexed expression.</FlaborText>
       		<Dialogues>

@@ -17,6 +17,7 @@ namespace EmotionalFix
             if (target == null || target.IsDead() || target.history.damageAtOneRound <= 0)
                 return;
             target.TakeDamage(Dmg);
+            this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Feather", 3f);
         }
     }
 }

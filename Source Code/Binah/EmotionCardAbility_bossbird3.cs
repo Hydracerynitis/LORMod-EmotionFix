@@ -15,7 +15,18 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             if (this._owner.faction == Faction.Player)
+            {
                 this._owner.bufListDetail.AddBuf(new SmallBird());
+                GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
+                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+                    return;
+                Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
+                if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+                    component.Init(2);
+                AutoDestruct autoDestruct = gameObject.AddComponent<AutoDestruct>();
+                autoDestruct.time = 5f;
+                autoDestruct.DestroyWhenDisable();
+            }
             if (this._owner.faction == Faction.Enemy)
                 this._owner.bufListDetail.AddBuf(new Smallbird_Enemy());
         }
@@ -49,13 +60,13 @@ namespace EmotionalFix
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    power = RandomUtil.Range(3, 4)
+                    power = RandomUtil.Range(1, 3)
                 });
             }
         }
         public void Destroy()
         {
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is SmallBird));
+            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find(x => x is SmallBird);
             if (Buff != null)
                 Buff.Destroy();
             Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Smallbird_Enemy));

@@ -15,10 +15,29 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             if (this._owner.faction == Faction.Player)
+            {
                 this._owner.bufListDetail.AddBuf(new BigBird());
+                GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
+                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+                    return;
+                Creature_Final_Binah_ImageFilter component = gameObject.GetComponent<Creature_Final_Binah_ImageFilter>();
+                if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+                    component.Init(1);
+                AutoDestruct autoDestruct = gameObject.AddComponent<AutoDestruct>();
+                autoDestruct.time = 5f;
+                autoDestruct.DestroyWhenDisable();
+            }
             if (this._owner.faction == Faction.Enemy)
                 this._owner.bufListDetail.AddBuf(new Bigbird_Enemy());
         }
+        public void Effect()
+        {
+            if (Singleton<StageController>.Instance.IsLogState())
+                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_See", 2f);
+            else
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_See", 1f, this._owner.view, this._owner.view, 2f);
+        }
+
         public override void OnWaveStart()
         {
             base.OnWaveStart();
@@ -32,6 +51,16 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Player)
                 return new StatBonus() { breakRate = -50 };
             return base.GetStatBonus();
+        }
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+            this.Effect();
+        }
+        public override void OnStartTargetedOneSide(BattlePlayingCardDataInUnitModel curCard)
+        {
+            base.OnStartTargetedOneSide(curCard);
+            this.Effect();
         }
         public override void OnStartBattle()
         {
@@ -103,14 +132,10 @@ namespace EmotionalFix
                 base.Init(owner);
                 stack = 0;
             }
-            public override void BeforeRollDice(BattleDiceBehavior behavior)
+            public override void OnRoundStart()
             {
-                base.BeforeRollDice(behavior);
-                if (behavior.TargetDice != null)
-                    behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus()
-                    {
-                        ignorePower = true
-                    });
+                base.OnRoundStart();
+                RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(Faction.Player)).bufListDetail.AddBuf(new BattleUnitBuf_halfPower());
             }
         }
     }

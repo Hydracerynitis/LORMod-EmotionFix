@@ -16,8 +16,9 @@ namespace EmotionalFix
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
                 min = -3,
-                max = +3
+                max = +5
             });
+            this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Judgement", 3f);
         }
     }
 }

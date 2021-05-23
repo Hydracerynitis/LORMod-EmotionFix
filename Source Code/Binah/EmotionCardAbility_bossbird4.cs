@@ -12,6 +12,7 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_bossbird4 : EmotionCardAbilityBase
     {
+        private BattleUnitView.SkinInfo OriginalSkin;
         public static List<BattleDiceCardModel> Summation;
         private int round = 0;
         private ApocalypsePhase phase;
@@ -26,7 +27,14 @@ namespace EmotionalFix
                     {
                         MethodInfo destroy = ablility.GetType().GetMethod("Destroy");
                         if (destroy != null)
-                            destroy.Invoke(ablility, new object[] { });
+                            try
+                            {
+                                destroy.Invoke(ablility, new object[] { });
+                            }
+                            catch
+                            {
+
+                            }
                     }
                 }
                 ally.emotionDetail.PassiveList.Clear();
@@ -34,6 +42,36 @@ namespace EmotionalFix
             this._owner.emotionDetail.PassiveList.Add(this._emotionCard);
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BossBird_Birth", false, 4f);
             this._owner.bufListDetail.AddBuf(new Apocalypse(this));
+        }
+        public override void OnWaveStart()
+        {
+            base.OnWaveStart();
+            this._owner.bufListDetail.AddBuf(new Apocalypse(this));
+        }
+        public override void OnFixedUpdateInWaitPhase(float delta)
+        {
+            base.OnFixedUpdateInWaitPhase(delta);
+            Activate();
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            this._owner.view.ChangeSkinBySkinInfo(OriginalSkin);
+        }
+        public void Activate()
+        {
+            if (this._owner.view.GetCurrentSkinInfo().skinName != "EGO_ApocalypseBird")
+            {
+                OriginalSkin = this._owner.view.GetCurrentSkinInfo();
+                this._owner.view.ChangeEgoSkin("EGO_ApocalypseBird");
+                this._owner.view.ChangeHeight(500);
+            }
+        }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            this._owner.view.ChangeSkinBySkinInfo(OriginalSkin);
+            this._owner.view.StartEgoSkinChangeEffect("Character");
         }
         public override void OnRoundEndTheLast()
         {
@@ -120,7 +158,8 @@ namespace EmotionalFix
                 return;
             foreach(BattleDiceCardModel card in this._owner.allyCardDetail.GetAllDeck())
             {
-                DiceCardXmlInfo xmlInfo = typeof(BattleDiceCardModel).GetField("_xmlData", AccessTools.all).GetValue(card) as DiceCardXmlInfo;
+                card.CopySelf();
+                DiceCardXmlInfo xmlInfo = card.XmlData.Copy(true);
                 DiceCardSpec Spec = xmlInfo.Spec.Copy();
                 Spec.Ranged = CardRange.FarArea;
                 Spec.affection = CardAffection.Team;
@@ -153,11 +192,10 @@ namespace EmotionalFix
             if (phase != ApocalypsePhase.Long)
                 return;
             BattleUnitModel target = behavior.card.target;
-            if (target == null)
+            if (target.hp >= target.MaxHp * 0.25)
                 return;
-            int v = Mathf.RoundToInt((float)(target.MaxHp * behavior.DiceResultValue) * 0.005f);
-            target.TakeDamage(v, DamageType.Attack, this._owner);
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/LongBird_Stun", false, 1f);
+            target.Die();
         }
         public override void OnRoundEnd()
         {
@@ -174,19 +212,7 @@ namespace EmotionalFix
         {
             foreach (BattleDiceCardModel battleDiceCardModel1 in EmotionCardAbility_bossbird4.Summation)
             {
-                FieldInfo field1 = battleDiceCardModel1.GetType().GetField("_originalXmlData", AccessTools.all);
-                FieldInfo field2 = battleDiceCardModel1.GetType().GetField("_xmlData", AccessTools.all);
-                DiceCardXmlInfo diceCardXmlInfo1 = ItemXmlDataList.instance.GetCardItem(battleDiceCardModel1.XmlData.id).Copy(true);
-                FieldInfo field3 = diceCardXmlInfo1.GetType().GetField("Spec", AccessTools.all);
-                DiceCardSpec CardSpec = diceCardXmlInfo1.Spec.Copy();
-                BattleDiceCardModel battleDiceCardModel2 = battleDiceCardModel1;
-                DiceCardXmlInfo diceCardXmlInfo2 = diceCardXmlInfo1;
-                field3.SetValue((object)diceCardXmlInfo2, (object)CardSpec);
-                field2.SetValue((object)battleDiceCardModel2, (object)diceCardXmlInfo2);
-                BattleDiceCardModel battleDiceCardModel3 = battleDiceCardModel1;
-                DiceCardXmlInfo diceCardXmlInfo3 = diceCardXmlInfo1;
-                field3.SetValue((object)diceCardXmlInfo3, (object)CardSpec);
-                field1.SetValue((object)battleDiceCardModel3, (object)diceCardXmlInfo3);
+                battleDiceCardModel1.ResetToOriginalData();
             }
             EmotionCardAbility_bossbird4.Summation.Clear();
         }

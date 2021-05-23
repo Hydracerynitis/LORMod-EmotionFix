@@ -34,13 +34,19 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Emotion_SmallBird_Punish : BattleUnitBuf
         {
-            private static int Pow => RandomUtil.Range(2, 4);
+            private GameObject _aura;
+            private static int Pow => RandomUtil.Range(1, 3);
             protected override string keywordId => "SmallBird_Punishment";
             protected override string keywordIconId => "SmallBird_Emotion_Punish";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
                 this.stack = 0;
+            }
+            public override void OnRoundStart()
+            {
+                base.OnRoundStart();
+                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Punising", 1f, this._owner.view, this._owner.view)?.gameObject;
             }
             public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
             {
@@ -54,6 +60,25 @@ namespace EmotionalFix
             {
                 base.OnRoundEnd();
                 this.Destroy();
+            }
+            public override void OnDie()
+            {
+                base.OnDie();
+                this.Destroy();
+            }
+
+            public override void Destroy()
+            {
+                base.Destroy();
+                this.DestroyAura();
+            }
+
+            private void DestroyAura()
+            {
+                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura);
+                this._aura = (GameObject)null;
             }
         }
     }

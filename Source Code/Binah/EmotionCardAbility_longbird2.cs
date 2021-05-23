@@ -71,6 +71,7 @@ namespace EmotionalFix
                 if (this.stack < 4)
                     return;
                 this._owner.TakeDamage(Mathf.RoundToInt((float)this._owner.MaxHp * 0.1f), DamageType.Buf,this._owner);
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Judgement", 1f, this._owner.view, this._owner.view, 3f);
                 this.Destroy();
             }
         }

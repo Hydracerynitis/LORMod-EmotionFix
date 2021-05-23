@@ -5,7 +5,7 @@
 			<Abnormality>惩戒鸟</Abnormality>
 			<CardName>惩戒</CardName>
 			<AbilityDesc>[选择一名司书]
-若该司书承受伤害，则下一幕中自身使用书页的第1颗骰子威力+2~4</AbilityDesc>
+若该司书承受伤害，则下一幕中自身使用书页的第1颗骰子威力+1~3</AbilityDesc>
 			<FlaborText>一定是因为没人惩罚那些干坏事的人。只要有人来扮演这个角色，世上就再也不会发生坏事了。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">只要我来施加惩罚，坏人就会消失的吧？</Dialogue>
@@ -17,7 +17,7 @@
 			<Abnormality>惩戒鸟</Abnormality>
 			<CardName>责罚之喙</CardName>
 			<AbilityDesc>[选择一名司书]
-拼点时使目标骰子威力-1，每有一幕该司书未受到伤害则其在下一幕造成的伤害和混乱伤害+2~3</AbilityDesc>
+拼点时使目标骰子威力-1，若这一幕该司书未受到伤害则其在下一幕造成的伤害和混乱伤害+2~4</AbilityDesc>
 			<FlaborText>很久以前人们就犯下累累罪行。即使他们明知这是错的，却为何还要执意这么做呢？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">明知不对却执意要做，这究竟是为什么？</Dialogue>
@@ -56,7 +56,7 @@
 			<Abnormality>审判鸟</Abnormality>
 			<CardName>歪斜的天秤</CardName>
 			<AbilityDesc>[选择一名司书]
-该司书骰子下限-3但上限+3</AbilityDesc>
+该司书骰子下限-3但上限+5</AbilityDesc>
 			<FlaborText>而今，高鸟只剩下那杆不公正的天秤，可它的审判仍未停止。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">这杆天秤总会得出明确的结果，能够严正判决。</Dialogue>
@@ -97,7 +97,7 @@
 			<CardName>小喙</CardName>
 			<AbilityDesc>[选择一名司书]
 该司书最大生命值减少50%
-该司书与进攻骰拼点时骰子威力提高3~4点</AbilityDesc>
+该司书与进攻骰拼点时骰子威力提高1~3点</AbilityDesc>
 			<FlaborText>小鸟决定用他的喙惩罚那些犯错的动物们</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">“你的喙太小了，没人会觉得疼的！”</Dialogue>
@@ -108,8 +108,8 @@
 			<Abnormality>终末鸟</Abnormality>
 			<CardName>长臂</CardName>
 			<AbilityDesc>[选择一名司书]
-该司书进攻骰子上限-5点，所有来宾每次命中或击杀司书时获得"罪痕"
-该司书进攻骰获得目标“罪痕”层数的威力</AbilityDesc>
+该司书进攻骰子伤害和混乱伤害-50%。
+该司书进攻骰命中时造成目标10%最大生命值的伤害(最多10点)</AbilityDesc>
 			<FlaborText>为了森林的和平，高鸟审判着动物的罪孽</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">"如果天平不偏向任何一边，那该怎办呀？”</Dialogue>

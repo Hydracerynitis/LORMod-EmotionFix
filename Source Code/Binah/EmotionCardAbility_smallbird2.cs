@@ -28,14 +28,14 @@ namespace EmotionalFix
         }
         private void GiveBuf()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_SmallBird_Buri)) != null)
+            if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_SmallBird_Buri) != null)
                 return;
             this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SmallBird_Buri());
         }
 
         public class BattleUnitBuf_Emotion_SmallBird_Buri : BattleUnitBuf
         {
-            private int Dmg => RandomUtil.Range(2, 3);
+            private int Dmg => RandomUtil.Range(2, 4);
             protected override string keywordId => "Smallbird_Beak";
             protected override string keywordIconId => "SmallBird_Emotion_Buri";
             public override void Init(BattleUnitModel owner)
@@ -52,6 +52,7 @@ namespace EmotionalFix
                     dmg = dmg,
                     breakDmg = dmg
                 });
+                behavior.card.target.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Attack", 2f);
             }
             public override void OnRoundEnd()
             {

@@ -15,7 +15,18 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             if (this._owner.faction == Faction.Player)
+            {
                 this._owner.bufListDetail.AddBuf(new LongBird());
+                GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
+                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+                    return;
+                Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
+                if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+                    component.Init(3);
+                AutoDestruct autoDestruct = gameObject.AddComponent<AutoDestruct>();
+                autoDestruct.time = 5f;
+                autoDestruct.DestroyWhenDisable();
+            }
             if (this._owner.faction == Faction.Enemy)
                 this._owner.bufListDetail.AddBuf(new Longbird_Enemy());
         }
@@ -26,17 +37,6 @@ namespace EmotionalFix
                 this._owner.bufListDetail.AddBuf(new LongBird());
             if (this._owner.faction == Faction.Enemy)
                 this._owner.bufListDetail.AddBuf(new Longbird_Enemy());
-        }
-        public override void OnRoundStart()
-        {
-            base.OnRoundStart();
-            if (this._owner.faction != Faction.Player)
-                return;
-            foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
-            {
-                if (!(enemy.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EggSin)) is EggSin sin))
-                    enemy.bufListDetail.AddBuf(new EggSin());
-            }
         }
         public void Destroy()
         {
@@ -63,68 +63,15 @@ namespace EmotionalFix
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    max = -5
+                    dmgRate = -50,
+                    breakRate=-50
                 });
-            }
-            public override void OnDie()
-            {
-                base.OnDie();
-                this.Destroy();
-            }
-            public override void Destroy()
-            {
-                base.Destroy();
-                foreach(BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
-                {
-                    if (enemy.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EggSin)) is EggSin sin)
-                        sin.Destroy();
-                }
-            }
-            public override void OnRollDice(BattleDiceBehavior behavior)
-            {
-                base.OnRollDice(behavior);
-                BattleUnitBuf sin = behavior.card.target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EggSin));
-                if (!IsAttackDice(behavior.Detail) || sin==null)
-                    return;
-                behavior.ApplyDiceStatBonus(new DiceStatBonus()
-                {
-                    power = sin.stack
-                });
-            }
-        }
-        public class EggSin: BattleUnitBuf
-        {
-            protected override string keywordIconId => "Sin_Abnormality_Final";
-            protected override string keywordId => "EggSin";
-            private bool Hit;
-            public override void Init(BattleUnitModel owner)
-            {
-                base.Init(owner);
-                stack = 0;
-                Hit = false;
-            }
-            public override void OnKill(BattleUnitModel target)
-            {
-                base.OnKill(target);
-                if (target.faction == this._owner.faction)
-                    return;
-                stack += 5;
             }
             public override void OnSuccessAttack(BattleDiceBehavior behavior)
             {
                 base.OnSuccessAttack(behavior);
-                if (behavior.card.target.faction == this._owner.faction)
-                    return;
-                if (!Hit)
-                    Hit = true;
-                stack += 1;
-            }
-            public override void OnRoundEnd()
-            {
-                base.OnRoundEnd();
-                if (Hit)
-                    return;
-                stack = (int)stack * 2 / 3;
+                int dmg = (int)(behavior.card.target.MaxHp * 0.1);
+                behavior.card.target.TakeDamage(Math.Min(dmg, 10), DamageType.Emotion);
             }
         }
         public class Longbird_Enemy: BattleUnitBuf

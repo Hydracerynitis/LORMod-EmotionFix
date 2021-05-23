@@ -43,7 +43,7 @@
 		<AbnormalityCard ID="SmallBird_Punishment_Enemy">
 			<Abnormality>惩戒鸟</Abnormality>
 			<CardName>惩戒</CardName>
-			<AbilityDesc>若该来宾承受超过其最大生命值2%的伤害，则下一幕中自身使用书页的第1颗骰子威力+2~4</AbilityDesc>
+			<AbilityDesc>若该来宾承受超过其最大生命值2%的伤害，则下一幕中自身使用书页的第1颗骰子威力+1~3</AbilityDesc>
 			<FlaborText>一定是因为没人惩罚那些干坏事的人。只要有人来扮演这个角色，世上就再也不会发生坏事了。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">只要我来施加惩罚，坏人就会消失的吧？</Dialogue>
@@ -54,7 +54,7 @@
 		<AbnormalityCard ID="SmallBird_Beak_Enemy">
 			<Abnormality>惩戒鸟</Abnormality>
 			<CardName>责罚之喙</CardName>
-			<AbilityDesc>拼点时使目标骰子威力-1，每有一幕该来宾未受到伤害则其在下一幕造成的伤害和混乱伤害+2~3</AbilityDesc>
+			<AbilityDesc>拼点时使目标骰子威力-1，若这一幕该来宾未受到伤害则其在下一幕造成的伤害和混乱伤害+2~4</AbilityDesc>
 			<FlaborText>很久以前人们就犯下累累罪行。即使他们明知这是错的，却为何还要执意这么做呢？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">明知不对却执意要做，这究竟是为什么？</Dialogue>
@@ -90,7 +90,7 @@
         <AbnormalityCard ID="LongBird_Scale_Enemy">
 			<Abnormality>审判鸟</Abnormality>
 			<CardName>歪斜的天秤</CardName>
-			<AbilityDesc>该来宾该司书骰子下限-3但上限+3</AbilityDesc>
+			<AbilityDesc>该来宾骰子下限-3但上限+5</AbilityDesc>
 			<FlaborText>而今，高鸟只剩下那杆不公正的天秤，可它的审判仍未停止。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">这杆天秤总会得出明确的结果，能够严正判决。</Dialogue>
@@ -115,7 +115,7 @@
 		<AbnormalityCard ID="ApocalypseBird_BigEye_Enemy">
 			<Abnormality>终末鸟</Abnormality>
 			<CardName>巨目</CardName>
-			<AbilityDesc>拼点时目标司书的骰子将不受威力增减效果影响。</AbilityDesc>
+			<AbilityDesc>每一幕开始时使随机一位司书的本幕内威力加成减半</AbilityDesc>
 			<FlaborText>巨目遮蔽了光线。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">囚禁光亮。</Dialogue>
@@ -179,7 +179,7 @@
 			<Abnormality>终末鸟</Abnormality>
 			<CardName>和平</CardName>
 			<AbilityDesc>应用该异想体书页后，若舞台中不存在“入侵者”，则被该来宾击中的第1名司书将成为“入侵者”。
-(造成伤害和混乱伤害减少3-5且所受伤害提高3~5)</AbilityDesc>
+(造成伤害和混乱伤害减少2-4且所受伤害提高2~4)</AbilityDesc>
 			<FlaborText>鸟儿在森林中徘徊，四处张望着寻找那头怪兽。可那儿已经什么都没有了，没有动物，没有日月，也没有怪兽。只剩下那只鸟，还有一片“黑森林”。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">忍受恐惧之人，终将迈入和平……</Dialogue>

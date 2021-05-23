@@ -12,6 +12,7 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_bossbird5 : EmotionCardAbilityBase
     {
+        private Battle.CreatureEffect.CreatureEffect _aura;
         private List<BattleDiceCardModel> Ego = new List<BattleDiceCardModel>();
         public override void OnWaveStart()
         {
@@ -68,6 +69,7 @@ namespace EmotionalFix
                 this._owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BossBird_Birth", false, 4f);
+            this._aura=SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
             this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird1.Longbird_Enemy());
             this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird2.Bigbird_Enemy());
             this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird3.Smallbird_Enemy());
@@ -101,6 +103,16 @@ namespace EmotionalFix
             this._owner.allyCardDetail.AddCardToDeck(Ego);
             this._owner.allyCardDetail.Shuffle();
         }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            DestroyAura();
+        }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            DestroyAura();
+        }
         public void Destroy()
         {
             BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_bossbird2.Bigbird_Enemy));
@@ -114,6 +126,14 @@ namespace EmotionalFix
                 Buff.Destroy();
             foreach (BattleDiceCardModel EGO in Ego)
                 this._owner.allyCardDetail.ExhaustACardAnywhere(EGO);
+            DestroyAura();
+        }
+        public void DestroyAura()
+        {
+            if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                return;
+            UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
+            this._aura = (Battle.CreatureEffect.CreatureEffect)null;
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
         {

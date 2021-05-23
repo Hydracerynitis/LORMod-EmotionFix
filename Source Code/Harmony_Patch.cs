@@ -26,7 +26,6 @@ namespace EmotionalFix
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
             Debug.ModPatchDebug();
             EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
-            EmotionCardAbility_bossbird7.Change = new List<BattleDiceCardModel>();
             EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
             PassiveAbility_668.Leveluped = new List<UnitBattleDataModel>();
@@ -158,7 +157,6 @@ namespace EmotionalFix
         public static void StageController_EndBattlePhase()
         {
             EmotionCardAbility_bossbird4.ClearCard();
-            EmotionCardAbility_bossbird7.ClearCard();
         }
         public static void StageController_GameOver()
         {

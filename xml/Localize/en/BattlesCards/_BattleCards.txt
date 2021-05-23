@@ -32,10 +32,10 @@
       <LocalizedName>The Role of Wolf</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1107401">
-      <LocalizedName>拯救</LocalizedName>
+      <LocalizedName>Salvation</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1107501">
-      <LocalizedName>眼棱</LocalizedName>
+      <LocalizedName>Eye Beams</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1108101">
       <LocalizedName>沉默</LocalizedName>

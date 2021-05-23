@@ -2,161 +2,164 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
 		<AbnormalityCard ID="SmallBird_Punishment">
-			<Abnormality>惩戒鸟</Abnormality>
-			<CardName>惩戒</CardName>
-			<AbilityDesc>[选择一名司书]
-若该司书承受伤害，则下一幕中自身使用书页的第1颗骰子威力+2~4</AbilityDesc>
-			<FlaborText>一定是因为没人惩罚那些干坏事的人。只要有人来扮演这个角色，世上就再也不会发生坏事了。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">只要我来施加惩罚，坏人就会消失的吧？</Dialogue>
-				<Dialogue ID="2">毋须宽恕，你干坏事了。</Dialogue>
-				<Dialogue ID="3">没错！因为世上没有惩罚坏人的人，所以才会变成这样的。</Dialogue>
-			</Dialogues>
+			<Abnormality>Punishing Bird</Abnormality>
+			<CardName>Punishment</CardName>
+			<AbilityDesc>[Single Ally]
+After taking damage, the first die of page the guest uses next Scene gains 1-3 Power.</AbilityDesc>
+      		<FlaborText>“It must be because there’s no one to punish people for their misdeeds. If someone takes that role, then no foul act would happen in this world ever again!”</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">If I punished them, then there won’t be any more bad people, right?</Dialogue>
+        		<Dialogue ID="2">There’s no point in forgiving. A misdeed is a misdeed.</Dialogue>
+        		<Dialogue ID="3">That’s it! It’s gotta be because there’s no one to punish all the bad guys in the world.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="SmallBird_Beak">
-			<Abnormality>惩戒鸟</Abnormality>
-			<CardName>责罚之喙</CardName>
-			<AbilityDesc>[选择一名司书]
-拼点时使目标骰子威力-1，每有一幕该司书未受到伤害则其在下一幕造成的伤害和混乱伤害+2~3</AbilityDesc>
-			<FlaborText>很久以前人们就犯下累累罪行。即使他们明知这是错的，却为何还要执意这么做呢？</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">明知不对却执意要做，这究竟是为什么？</Dialogue>
-				<Dialogue ID="2">我要教训你。不许再干坏事了。</Dialogue>
-				<Dialogue ID="3">别再干坏事了啦！</Dialogue>
-			</Dialogues>
+			<Abnormality>Punishing Bird</Abnormality>
+			<CardName>Punishing Beak</CardName>
+			<AbilityDesc>[Single Ally]
+On Parry reduce enemy's dices' Power by 1.
+If havn't taken damage for 1 Scene, increase outgoing damage and Stagger damage next Scene by 2+4.</AbilityDesc>
+      		<FlaborText>People have been committing sins since long ago. “Why do they commit sins, knowing it’s wrong?”</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Why do they commit sins when they know it’s wrong?</Dialogue>
+        		<Dialogue ID="2">I’ll give them a good scolding, so they won’t even think about doing misdeeds again.</Dialogue>
+        		<Dialogue ID="3">Don’t do bad things from now on!</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Smallbird_Fly">
-			<Abnormality>惩戒鸟</Abnormality>
-			<CardName>小翅儿扑扑</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书攻击在这一幕内已经造成伤害的来宾会追加造成2~5点伤害</AbilityDesc>
-			<FlaborText>这是一只惩罚恶徒，罪犯以及一切不敬之人的自信小小鸟。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我离开了森林，再也没有回去。</Dialogue>
-				<Dialogue ID="2">奋力飞翔吧，愿这世界更加美好。</Dialogue>
-				<Dialogue ID="3">扑腾的小翅膀说不定能改变世界！</Dialogue>
-				<Dialogue ID="4">心儿怦怦直跳，我要更加努力才行。</Dialogue>
-			</Dialogues>
+			<Abnormality>Punishing Bird</Abnormality>
+			<CardName>Small Flutters</CardName>
+			<AbilityDesc>[Single Ally]
+On attack enemy who has inflicted damage this Scene inflict 2-5 damage to that enemy.</AbilityDesc>
+      		<FlaborText>A small and confident bird that punishes the evil, guilty, and all sorts of irreverent people.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I left the forest, and never went back.</Dialogue>
+        		<Dialogue ID="2">Let’s fly high. Let’s hope that the world will change for the better.</Dialogue>
+        		<Dialogue ID="3">My flutters might be what it takes to change the world!</Dialogue>
+        		<Dialogue ID="4">With excitement, I flapped my wings busily.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="LongBird_Sin">
-			<Abnormality>审判鸟</Abnormality>
-			<CardName>罪孽的分量</CardName>
-			<AbilityDesc>[影响所有角色]
-每一幕开始时所有角色有50%的概率获得1层“罪孽”
-每一幕结束时若“罪孽”层数到达4，则失去10%的体力并重置该层数。
-所有角色击中目标时将向其转移1层“罪孽”。(每张书页至多转移1层)</AbilityDesc>
-			<FlaborText>它的天秤永远不会忽略任何罪孽的分量。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我来衡量你的罪孽。</Dialogue>
-				<Dialogue ID="2">从不忽略任何罪孽的重量。</Dialogue>
-				<Dialogue ID="3">按罪孽轻重执行惩罚。</Dialogue>
-			</Dialogues>
+			<Abnormality>Judgement Bird</Abnormality>
+			<CardName>The Weight of Sin</CardName>
+			<AbilityDesc>[Single Ally]
+At the start of the Scene, all characters gain 1 Sin at a 50% chance.
+If a character has 4+ Sin, they take damage equal to 10% of their Max. HP at the start of the Scene, and all Sin is removed from them.
+Sin can be transferred to another character by attacking and damaging them. (Once per page)</AbilityDesc>
+      		<FlaborText>All that remains is the unjust scale. The long bird continues on, doling out judgement.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">This scale always yields a clear verdict; I can make sound, precise judgement with it.</Dialogue>
+        		<Dialogue ID="2">My subjective views might affect fair judgement.</Dialogue>
+        		<Dialogue ID="3">What if the scale doesn’t tip in either direction someday…? I can’t let that happen.</Dialogue>
+        		<Dialogue ID="4">My scale won’t cease its duty until the day all evil beings disappear.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
         <AbnormalityCard ID="LongBird_Scale">
-			<Abnormality>审判鸟</Abnormality>
-			<CardName>歪斜的天秤</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书骰子下限-3但上限+3</AbilityDesc>
-			<FlaborText>而今，高鸟只剩下那杆不公正的天秤，可它的审判仍未停止。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">这杆天秤总会得出明确的结果，能够严正判决。</Dialogue>
-				<Dialogue ID="2">我的主观意识可能会影响判决的公正。</Dialogue>
-				<Dialogue ID="3">如果天秤不偏向任何一边……那可不行。</Dialogue>
-				<Dialogue ID="4">也许直到恶人全部消失的那一刻，这杆天秤才终能停止。</Dialogue>
-		</Dialogues>
+			<Abnormality>Judgement Bird</Abnormality>
+			<CardName>Tilted Scale</CardName>
+			<AbilityDesc>[Single Ally]
+Increase the maximun value vof dice by 5.
+reduce the minimun value of dice by 3</AbilityDesc>
+      		<FlaborText>All that remains is the unjust scale. The long bird continues on, doling out judgement.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">This scale always yields a clear verdict; I can make sound, precise judgement with it.</Dialogue>
+        		<Dialogue ID="2">My subjective views might affect fair judgement.</Dialogue>
+        		<Dialogue ID="3">What if the scale doesn’t tip in either direction someday…? I can’t let that happen.</Dialogue>
+        		<Dialogue ID="4">My scale won’t cease its duty until the day all evil beings disappear.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 			<AbnormalityCard ID="LongBird_Judgement">
-			<Abnormality>审判鸟</Abnormality>
-			<CardName>审判</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕内对造成伤害最多的来宾将被标记为“罪人”。
-每一幕该司书第一次命中“罪人”时会追加15%生命值的伤害</AbilityDesc>
-			<FlaborText>“但是，如果天秤不偏向任何一边，那该怎么办呀？”高鸟听后很担心，于是它举起那杆“无论何时都能作出明确判决”的歪斜天秤。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">高举天秤之时，我愿永生审判罪恶。</Dialogue>
-				<Dialogue ID="2">一定要做出明辨善恶的公正判决……</Dialogue>
-				<Dialogue ID="3">为了守护森林而高举天秤。给予罪人永恒的审判。</Dialogue>
-				<Dialogue ID="4">为能审判森林里的所有怪兽……</Dialogue>
-			</Dialogues>
+			<Abnormality>Judgement Bird</Abnormality>
+			<CardName>Judgement</CardName>
+			<AbilityDesc>[Single Ally]
+At the Start of each Scene, Mark the enemy with most damage infliced last Scene as 'The Guilty'.
+Upon first successful hit on 'The Guilty' inflict damage equal to 15% of Max HP of 'The Guilty' each Scene.</AbilityDesc>
+      		<FlaborText>Then somebody said, “But what if the scale doesn’t tip in either direction someday?” Worried, Long Bird made a scale that always tipped to one side. That way every judgement would yield a clear verdict.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">When I lift this scale, I wish for immortality upon the guilty.</Dialogue>
+        		<Dialogue ID="2">I will pass fair judgement upon all, marking out the misdeeds…</Dialogue>
+        		<Dialogue ID="3">To protect the forest, I’ll lift the scale. Eternal judgement shall be delivered to them.</Dialogue>
+        		<Dialogue ID="4">To judge all the beasts that live in this forest…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ApocalypseBird_BigEye">
-			<Abnormality>终末鸟</Abnormality>
-			<CardName>巨目</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书最大混乱抗性减少50%
-该司书被单方面攻击时以斩击4-10的反击骰迎战</AbilityDesc>
-			<FlaborText>大鸟的眼睛可以看到很远的地方，甚至能看到我们看不见的东西</FlaborText>
+			<Abnormality>Apocalypse Bird</Abnormality>
+			<CardName>Big Eyes</CardName>
+			<AbilityDesc>[Single Ally]
+Reduce Max Stagger Resist by 50%.
+Every time being targeted in one-side attack, gain Slash 4-10 counter die.</AbilityDesc>
+			<FlaborText>For Big Bird's eyes could see very far, and see things we cannot see.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">"如果怪物在我们都睡着的晚上出现，那该怎么办呀"</Dialogue>
-				<Dialogue ID="2">大鸟听后很担心，于是它烧光了自己的羽毛，制成一盏永不熄灭的明灯。</Dialogue>
-				<Dialogue ID="3">现在，森林里的动物们日夜都处在大鸟的监视之下。</Dialogue>
+				<Dialogue ID="1">“But what if the beast shows up in the middle of the night, when the sky is dark and everyone is asleep?”</Dialogue>
+				<Dialogue ID="2">Worried, Big Bird burned all of its feathers to make an everlasting lamp.</Dialogue>
+				<Dialogue ID="3">Now the creatures of the forest were under Big Bird's constant watch, day and night. </Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ApocalypseBird_SmallPeak">
-			<Abnormality>终末鸟</Abnormality>
-			<CardName>小喙</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书最大生命值减少50%
-该司书与进攻骰拼点时骰子威力提高3~4点</AbilityDesc>
-			<FlaborText>小鸟决定用他的喙惩罚那些犯错的动物们</FlaborText>
+			<Abnormality>Apocalypse Bird</Abnormality>
+			<CardName>Small Beak</CardName>
+			<AbilityDesc>[Single Ally]
+Reduce Max HP by 50%.
+Against Offensive dice, all dice gain 1-3 Power.</AbilityDesc>
+			<FlaborText>Small Bird decided to punish the creatures' wrongdoings with its beak.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">“你的喙太小了，没人会觉得疼的！”</Dialogue>
-				<Dialogue ID="2">小鸟听后很担心，于是它撕开自己的喙，把它变成一张能吞噬任何动物的血盆大口。</Dialogue>
+				<Dialogue ID="1">“But your beak is so small, no one would find it hurtful.”</Dialogue>
+				<Dialogue ID="2">Worried, Small Bird tore its mouth wide so it could swallow any creature in one bite.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
         <AbnormalityCard ID="ApocalypseBird_LongArm">
-			<Abnormality>终末鸟</Abnormality>
-			<CardName>长臂</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书进攻骰子上限-5点，所有来宾每次命中或击杀司书时获得"罪痕"
-该司书进攻骰获得目标“罪痕”层数的威力</AbilityDesc>
-			<FlaborText>为了森林的和平，高鸟审判着动物的罪孽</FlaborText>
+			<Abnormality>Apocalypse Bird</Abnormality>
+			<CardName>Long Arms</CardName>
+			<AbilityDesc>[Single Ally]
+Reduce outgoing damage and Stagger Damage by 50%.
+Upon successful hit, inflict 10% of enemy's Max HP (Max. 10)</AbilityDesc>
+			<FlaborText>To keep the forest's peace, Long Bird weighed the sins of those who entered the forest.</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">"如果天平不偏向任何一边，那该怎办呀？”</Dialogue>
-				<Dialogue ID="2">高鸟听后很担心，于是它让天平只偏向一边，这样一来无论对谁的审判都能得出结果。</Dialogue>
+				<Dialogue ID="1">“But what if the scale doesn't tip in either direction someday?”</Dialogue>
+				<Dialogue ID="2">Worried, Long Bird made a scale that always tipped to one side. That way every judgement would yield a clear verdict.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ApocalypseBird_Apocalypse">
-			<Abnormality>终末鸟</Abnormality>
-			<CardName>怪兽</CardName>
-			<AbilityDesc>[选择一名司书]
-选中时将摧毁除该情感书页外所有司书的情感书页
-该司书每一幕结束时轮流获得一种启示鸟之力(“遮掩天空的黑翼”,“处以极刑的巨爪”“随意断罪的独眼”)</AbilityDesc>
-			<FlaborText>大鸟那能够看清数百里外的眼睛，高鸟那能够审判任何罪孽的天秤，小鸟那能够吞噬一切生物的巨口合为一体的那天，灾难降临了这片森林。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">可不能让坏人夺走所有珍贵的东西。</Dialogue>
-				<Dialogue ID="2">如果能吞噬周围的一切……</Dialogue>
-				<Dialogue ID="3">为了守护更多的人，我们才会合为一体。</Dialogue>
-				<Dialogue ID="4">必须尽快找到。不能让怪兽在这里乱蹿……</Dialogue>
-			</Dialogues>
+			<Abnormality>Apocalypse Bird</Abnormality>
+			<CardName>The Beast</CardName>
+			<AbilityDesc>[Single Ally]
+On select, Destroy all other Abnormality cards from all librarians.
+At the end of each Scene, gain one of 3 Apocalypse Bird Power in turn.(“Wing that Covered Sky”,“Claw that Commit Execution”“Eye that Relay Judgment”)</AbilityDesc>
+      		<FlaborText>The day when Big Bird’s eyes that could see hundreds of kilometers away, Long Bird who could judge any sin, and Small Bird’s mouth that could devour everything united into one, darkness fell upon the forest.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I can’t let evil take all these precious things away.</Dialogue>
+        		<Dialogue ID="2">If I could devour everything around me…</Dialogue>
+        		<Dialogue ID="3">We’ve joined forces to protect more people.</Dialogue>
+        		<Dialogue ID="4">I have to hurry up and find them. I can’t have the beast destroy this place…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ApocalypseBird_Gate">
-			<Abnormality>终末鸟</Abnormality>
-			<CardName>森林的守望者</CardName>
-			<AbilityDesc>[选择一名司书]
-所有司书将永久获得2层“迅捷”。
-若所有司书各应用1张异想体书页，则额外获得2层“强壮”与“忍耐”。</AbilityDesc>
-			<FlaborText>它们决定代替大家成为森林的守望者。比谁都热爱这片森林的它们，想要守护森林里的动物，维持森林的和平。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">为了守护比任何人都热爱的这个地方。</Dialogue>
-				<Dialogue ID="2">希冀着一个弱小生灵也能安心生活的世界。</Dialogue>
-				<Dialogue ID="3">能够守护这个地方的，只有我们了。</Dialogue>
-				<Dialogue ID="4">我们要代替它们，成为守望者，守护生命。</Dialogue>
-			</Dialogues>
+			<Abnormality>Apocalypse Bird</Abnormality>
+			<CardName>Guardians of the Forest</CardName>
+			<AbilityDesc>[Single Ally]
+All librarians gain 2 Haste at the start of each Scene for the duration of the reception.
+If all five librarians each have an Abnormality page, gain 2 Strength and Endurance in addition.</AbilityDesc>
+      		<FlaborText>That’s when the birds decided to become the guardians of the forest. They loved this forest more than anyone else did, so they wanted to protect the creatures living in the forest and keep the peace.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">To protect this place we love more than anyone.</Dialogue>
+        		<Dialogue ID="2">We hope for a world where pitiful lives can live in comfort.</Dialogue>
+        		<Dialogue ID="3">We’re the only ones who can protect this place.</Dialogue>
+        		<Dialogue ID="4">We should become the guardians instead, and save lives.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ApocalypseBird_Atk">
-			<Abnormality>终末鸟</Abnormality>
-			<CardName>和平</CardName>
-			<AbilityDesc>[选择一名司书]
-该异想体书页仅可对同时应用“巨目”，“小喙”与“长臂”这3张异想体书页的司书生效。
-该司书将会使用薄溟的力量，进攻骰命中目标时会改为造成3种进攻骰的伤害</AbilityDesc>
-			<FlaborText>大鸟那永不闭合的眼睛,高鸟那能衡量一切罪恶的天平,小鸟那能吞噬一切的巨口，这三者守护着黑森林的和平。
-而那些能够同时驾驭这三者的人也能带来和平。</FlaborText>
+			<Abnormality>Apocalypse Bird</Abnormality>
+			<CardName>Peace</CardName>
+			<AbilityDesc>[Single Ally]
+Activates when the selected librarian possesses all of the following Abnormality pages: 'Big Eyes', 'Small Beak', 'Long Arms'.
+The librarian will wield the 'Twilight'. All Offensive Dices will deal Slash, Pierce, Blunt damage at the same time.</AbilityDesc>
+			<FlaborText>Just like how the ever-watching eyes, the scale that could measure any and all sin, and the beak that could swallow everything protected the peace of the Black Forest...
+The wielder of this armament may also bring peace as they did</FlaborText>
 			<Dialogues>
-				<Dialogue ID="1">为了击退黑森林里的可怕“怪物”，三只鸟齐心协力，合为一体。</Dialogue>
-				<Dialogue ID="2">它能避免很多无辜的人遇害，但在那之前，你必须做好万无一失的准备，去踏入那片黑暗而又绝望的森林</Dialogue>
-				<Dialogue ID="3">人们最终战胜了黄昏的黑暗，准备面对黎明的光辉。</Dialogue>
-				<Dialogue ID="4">而在那片昏暗的森林中，鸟儿的叽喳鸣唱依旧响彻着吗？</Dialogue>
+				<Dialogue ID="1">The three birds united their efforts to defeat the beast.</Dialogue>
+				<Dialogue ID="2">This could stop countless incidents, but you’ll have to be prepared to step into the Black Forest…</Dialogue>
+				<Dialogue ID="3">The twilight was endured, and we now face towards dawn.</Dialogue>
+				<Dialogue ID="4">Has the birds' twittering in the forest finally stopped?</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>
