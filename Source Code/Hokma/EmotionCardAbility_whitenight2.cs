@@ -10,12 +10,20 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_whitenight2 : EmotionCardAbilityBase
     {
+        private bool _effect;
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
             this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_WhiteNight_Guard());
         }
-
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+            if (this._effect)
+                return;
+            this._effect = true;
+            new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/WhiteNight_Filter", false, 2f);
+        }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
@@ -77,26 +85,15 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_WhiteNight_Guard : BattleUnitBuf
         {
             public override bool Hide => true;
+
             public override bool IsTargetable(BattleUnitModel attacker)
             {
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction))
                 {
-                    if (SearchEmotion(alive, "WhiteNight_Guard_Enemy") != null)
-                        continue;
                     if (alive != this._owner && alive.IsTargetable(attacker))
                         return false;
                 }
                 return base.IsTargetable(attacker);
-            }
-            private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
-            {
-                List<BattleEmotionCardModel> emotion = owner.emotionDetail.PassiveList;
-                foreach (BattleEmotionCardModel card in emotion)
-                {
-                    if (card.XmlInfo.Name == Name)
-                        return card;
-                }
-                return null;
             }
         }
     }

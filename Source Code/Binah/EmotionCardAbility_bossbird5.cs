@@ -31,11 +31,18 @@ namespace EmotionalFix
             BattleEmotionCardModel Small= SearchEmotion(this._owner, "ApocalypseBird_SmallPeak_Enemy");
             if (Long != null)
             {
-                foreach (EmotionCardAbilityBase ablility in Long.GetAbilityList())
+                foreach (EmotionCardAbilityBase ability in Long.GetAbilityList())
                 {
-                    MethodInfo destroy = ablility.GetType().GetMethod("Destroy");
+                    MethodInfo destroy = ability.GetType().GetMethod("Destroy");
                     if (destroy != null)
-                        destroy.Invoke(ablility, new object[] { });
+                        try
+                        {
+                            destroy.Invoke(ability, new object[] { });
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.Error(ability.GetType().Name + "Destroy", ex);
+                        }
                 }
                 this._owner.emotionDetail.PassiveList.Remove(Long);
                 string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
@@ -44,11 +51,18 @@ namespace EmotionalFix
             }
             if (Big!= null)
             {
-                foreach (EmotionCardAbilityBase ablility in Big.GetAbilityList())
+                foreach (EmotionCardAbilityBase ability in Big.GetAbilityList())
                 {
-                    MethodInfo destroy = ablility.GetType().GetMethod("Destroy");
+                    MethodInfo destroy = ability.GetType().GetMethod("Destroy");
                     if (destroy != null)
-                        destroy.Invoke(ablility, new object[] { });
+                        try
+                        {
+                            destroy.Invoke(ability, new object[] { });
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.Error(ability.GetType().Name + "Destroy", ex);
+                        }
                 }
                 this._owner.emotionDetail.PassiveList.Remove(Big);
                 string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";
@@ -57,11 +71,18 @@ namespace EmotionalFix
             }
             if (Small != null)
             {
-                foreach (EmotionCardAbilityBase ablility in Small.GetAbilityList())
+                foreach (EmotionCardAbilityBase ability in Small.GetAbilityList())
                 {
-                    MethodInfo destroy = ablility.GetType().GetMethod("Destroy");
+                    MethodInfo destroy = ability.GetType().GetMethod("Destroy");
                     if (destroy != null)
-                        destroy.Invoke(ablility, new object[] { });
+                        try
+                        {
+                            destroy.Invoke(ability, new object[] { });
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.Error(ability.GetType().Name + "Destroy", ex);
+                        }
                 }
                 this._owner.emotionDetail.PassiveList.Remove(Small);
                 string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";

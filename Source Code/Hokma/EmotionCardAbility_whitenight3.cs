@@ -10,9 +10,22 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_whitenight3 : EmotionCardAbilityBase
     {
+        private bool _effect;
+        private GameObject _aura;
+        public override void OnSelectEmotion()
+        {
+            base.OnSelectEmotion();
+            _effect = false;
+        }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
+            if (!this._effect)
+            {
+                this._effect = true;
+                if ((UnityEngine.Object)this._aura == (UnityEngine.Object)null)
+                    this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_Power", 1f, this._owner.view, this._owner.view)?.gameObject;
+            }
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction))
             {
                 if (alive != this._owner)
@@ -21,6 +34,30 @@ namespace EmotionalFix
                     alive.bufListDetail.AddBuf(whiteNightMighty);
                 }
             }
+        }
+        public override void OnWaveStart()
+        {
+            base.OnWaveStart();
+            this.DestroyAura();
+            this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_Power", 1f, this._owner.view, this._owner.view)?.gameObject;
+        }
+
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            this.DestroyAura();
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            DestroyAura();
+        }
+        public void DestroyAura()
+        {
+            if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                return;
+            UnityEngine.Object.Destroy((UnityEngine.Object)this._aura);
+            this._aura = (GameObject)null;
         }
         public class BattleUnitBuf_Emotion_WhiteNight_Mighty : BattleUnitBuf
         {

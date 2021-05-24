@@ -17,7 +17,7 @@
 			<Abnormality>渗透天堂</Abnormality>
 			<CardName>他人的视线</CardName>
 			<AbilityDesc>每当其他司书与非该来宾的来宾拼点时，对双方造成1~8点伤害和混乱伤害
-该司书死亡时使该异想体书页效果失效。</AbilityDesc>
+该来宾死亡时使该异想体书页效果失效。</AbilityDesc>
 			<FlaborText>所谓视线正是如此。关注。无形之连接。完全集中。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">你只需闭上双眼。没错，就像那样……</Dialogue>
@@ -89,7 +89,7 @@
 		<AbnormalityCard ID="BlueStar_Atonement_Enemy">
 			<Abnormality>碧蓝新星</Abnormality>
 			<CardName>赎罪</CardName>
-			<AbilityDesc>每一幕开始时若舞台中存在处于“混乱”状态的角色，则使其承受3~7点伤害并在这一幕中使所有来宾获得1层“强壮”。(至多1层)</AbilityDesc>
+			<AbilityDesc>每一幕开始时若舞台中存在处于“混乱”状态的角色，该来宾承受3~7点伤害并在这一幕中使所有来宾获得1层“强壮”。(至多1层)</AbilityDesc>
 			<FlaborText>我们的“碧蓝新星”是接纳罪人的唯一之地，我们会在那里洗去一切罪孽。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">舍弃肮脏的皮囊，迸发闪耀的光芒。</Dialogue>
@@ -100,7 +100,8 @@
 		<AbnormalityCard ID="BlueStar_Melody_Enemy">
 			<Abnormality>碧蓝新星</Abnormality>
 			<CardName>思念之声</CardName>
-			<AbilityDesc>每三幕使该来宾在一幕内击中目标时混乱伤害+2~4</AbilityDesc>
+			<AbilityDesc>这一幕中该来宾击中目标时混乱伤害+2~4
+(此后每3幕触发1次)</AbilityDesc>
 			<FlaborText>冉冉升起的新星意味着全新的开始。你听不见那悠扬的号声吗？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">你听到了吗？你感受到我苦苦寻觅的思念之声了吗？</Dialogue>

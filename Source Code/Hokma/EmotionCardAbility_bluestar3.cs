@@ -20,6 +20,23 @@ namespace EmotionalFix
             this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(round));
 
         }
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf)) == null)
+                return;
+            Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/9_H/FX_IllusionCard_9_H_Voice");
+            if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+                return;
+            Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+            if (!((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null))
+                return;
+            AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
+            if (!((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null))
+                return;
+            autoDestruct.time = 5f;
+            autoDestruct.DestroyWhenDisable();
+        }
 
         public override void OnWaveStart()
         {

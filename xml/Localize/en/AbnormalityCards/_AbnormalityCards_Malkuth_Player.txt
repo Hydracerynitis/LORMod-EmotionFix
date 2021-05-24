@@ -122,7 +122,7 @@ Increase damage by 20% everytime the effect is applied to same attacker in one S
 			<CardName>Malice</CardName>
 			<AbilityDesc>[Single Ally]
 At the end of each Scene, inflict the enemy who dealt the most damage to self 1 Malice (At the start of each Scene, gain 1 Bind per stack)
-Combat Start play a Mass Attack Card ‘Roll Range: 7~11;Boost dice's max value by the sum of Bind stack all enemies have.’, targeting all enemy who has Bind.</AbilityDesc>
+Combat Start play a Mass Attack Card ‘Roll Range: 3~6;Boost dice's max value by the sum of Bind stack all enemies have.’, targeting all enemy who has Bind.</AbilityDesc>
 			<FlaborText>The inherent malice caused all life to crumble as soon as it bloomed.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">My existence was born from wrath and a curse, yet I served as a blessing to someone else.</Dialogue>

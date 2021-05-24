@@ -2,125 +2,72 @@
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
 		<AbnormalityCard ID="Bloodytree_Gaze">
-			<Abnormality>渗透天堂</Abnormality>
-			<CardName>他人的视线</CardName>
-			<AbilityDesc>[选择一名司书]
-每当其他来宾与非该司书的司书拼点时，对双方造成1~8点伤害和混乱伤害
-该司书死亡时使该异想体书页效果失效。</AbilityDesc>
-			<FlaborText>所谓视线正是如此。关注。无形之连接。完全集中。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">你只需闭上双眼。没错，就像那样……</Dialogue>
-				<Dialogue ID="2">无法目视之物，亦无法触及。</Dialogue>
-				<Dialogue ID="3">遥不可及的欲望终将膨胀……如同踏上荆棘丛生之路。</Dialogue>
-				<Dialogue ID="4">一旦它进入你的视野……便会重回这阴暗幽邃的地下。</Dialogue>
-			</Dialogues>
+			<Abnormality>Burrowing Heaven</Abnormality>
+			<CardName>Gaze of Others</CardName>
+			<AbilityDesc>[Single Ally]
+Upon start of clash between other characters, deal 1-8 damage and Stagger damage to each other.
+The effect no longer trigger after the selected librarian dies.</AbilityDesc>
+      		<FlaborText>That’s what a gaze is. Attention. An invisible string that connects us. Sole focus.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Just close your eyes. That’s right, you’re doing good…</Dialogue>
+        		<Dialogue ID="2">If you can’t see it, you can’t reach it.</Dialogue>
+        		<Dialogue ID="3">The desire for the unreachable will only grow bigger. And to pursue it… is to tread a path riddled with thorns.</Dialogue>
+        		<Dialogue ID="4">Once it’s brought within your cognizance… It will return to this deep, dark underground…</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Clock_Time">
-			<Abnormality>沉默的代价</Abnormality>
-			<CardName>时间</CardName>
-			<AbilityDesc>[影响所有司书]
-每一幕若战前准备阶段小于30秒，所有司书的所有骰子威力+1~2
-否则对所有司书造成15%体力的伤害</AbilityDesc>
-			<FlaborText>时流若生，生逝如时。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">所谓时间不足，仅是无谓牢骚。</Dialogue>
-				<Dialogue ID="2">明日可至，亦可不至。</Dialogue>
-				<Dialogue ID="3">汝遗失之时，吾成倍奉予。</Dialogue>
-				<Dialogue ID="4">时间给予公平，命运催生不公。</Dialogue>
-			</Dialogues>
+			<Abnormality>The Price of Silence</Abnormality>
+			<CardName>Time</CardName>
+			<AbilityDesc>[All Allies]
+If the player spend less than 30 seconds selecting Combat pages before the combat phase begins, boost the Power of all dice by 1-2 for the duration of this Scene.
+Otherwise, all librarians take damage equal to 15% of Max HP.</AbilityDesc>
+      		<FlaborText>Time flows as life does, and life goes as time does.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">That one doesn’t have enough time is a useless complaint.</Dialogue>
+        		<Dialogue ID="2">Tomorrow may or may not come.</Dialogue>
+        		<Dialogue ID="3">You’ll be given more time than you have lost.</Dialogue>
+        		<Dialogue ID="4">Time is given to everyone evenly, but fate makes it unfair.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="Clock_Kill">
-			<Abnormality>沉默的代价</Abnormality>
-			<CardName>沉默</CardName>
-			<AbilityDesc>[选择一名司书]
-将1张2费的“沉默”置入手牌，效果为装备时使自身和目标在这一幕获得眩晕
-(使用时移除该书页)。切换舞台时再次将“沉默”置入手牌</AbilityDesc>
-			<FlaborText>时而产生时间停止的错觉，时而出现刹那般的沉默。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">沉默，不止带来和平。</Dialogue>
-				<Dialogue ID="2">刹那般的沉默，时间宛若静止。</Dialogue>
-				<Dialogue ID="3">时间停止，沉默随之降临。何来二者有别之说。</Dialogue>
-				<Dialogue ID="4">纵使万物静止，灵魂亦无法消亡。</Dialogue>
-			</Dialogues>
+			<Abnormality>The Price of Silence</Abnormality>
+			<CardName>Silence</CardName>
+			<AbilityDesc>[Single Ally]
+Add a copy of 2 cost 'Silence' into hand. Add the copy across Acts.
+([On Play] Inflict Stun to target and self for the duration of the Scene.)</AbilityDesc>
+      		<FlaborText>Rarely, I feel as if time has stopped. Fleeting moments of silence sometimes befall me.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Silence does not always bring peace.</Dialogue>
+        		<Dialogue ID="2">An instant of silence, as if time had stopped.</Dialogue>
+        		<Dialogue ID="3">When time stops, silence falls. In a way, they are one and the same.</Dialogue>
+        		<Dialogue ID="4">Even when all has stopped, the soul will not perish.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="BlueStar_martyrdom">
-			<Abnormality>碧蓝新星</Abnormality>
-			<CardName>殉教</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书造成伤害前对自己失去2~4点体力，自身每损失9%最大生命值便提高10%造成的混乱伤害(至多100%)</AbilityDesc>
-			<FlaborText>让我们化作星辰再会吧。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">在那宇宙的彼端，一同沉浸于永恒的幸福当中吧。</Dialogue>
-				<Dialogue ID="2">与生俱来，无法违逆的本能，我们终有一日会回归那个地方。</Dialogue>
-				<Dialogue ID="3">我们不会死去。只是动身前往那应去之地。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="BlueStar_Melody">
-			<Abnormality>碧蓝新星</Abnormality>
-			<CardName>思念之声</CardName>
-			<AbilityDesc>[影响所有司书]
-每三幕使所有司书在一幕内击中目标时混乱伤害+2~4</AbilityDesc>
-			<FlaborText>冉冉升起的新星意味着全新的开始。你听不见那悠扬的号声吗？</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">你听到了吗？你感受到我苦苦寻觅的思念之声了吗？</Dialogue>
-				<Dialogue ID="2">啊啊啊……终于……！终于呼唤我们了！！！</Dialogue>
-				<Dialogue ID="3">只有那声呼唤，才能将我们引向接纳罪人的唯一之地……！</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="WhiteNight_Bless">
-			<Abnormality>瘟疫医生</Abnormality>
-			<CardName>洗礼</CardName>
-			<AbilityDesc>[选择一名司书]
-将1张2费“洗礼”置入该司书手中。
-效果为“[装备时] 指定1名友方角色并在这一幕中使其获得1层‘忍耐’,恢复6点体力并回到手中”</AbilityDesc>
-			<FlaborText>“我将治愈你的一切疾病，使你重获新生。”</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我是来治病的。</Dialogue>
-				<Dialogue ID="2">相信我。只有我能帮助你。</Dialogue>
-				<Dialogue ID="3">额上有伤，为何不治？</Dialogue>
-				<Dialogue ID="4">所有病痛，都可治愈。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="WhiteNight_Confess">
-			<Abnormality>一罪与百善</Abnormality>
-			<CardName>告解</CardName>
-			<AbilityDesc>[影响所有司书]
-为所有司书恢复所有混乱抗性并移除负面状态。(包含“混乱”状态)
-所有司书被击中时所受混乱伤害-2</AbilityDesc>
-			<FlaborText>仅是承受痛苦，便可洗刷一半罪孽。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">……</Dialogue>
-				<Dialogue ID="2">………</Dialogue>
-				<Dialogue ID="3">…………</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="WhiteNight_Guard">
-			<Abnormality>白夜</Abnormality>
-			<CardName>护卫</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书将无法被指定为攻击目标。(若其余司书全部死亡则不生效)
-接待结束时每名来宾转化的书籍数+1(若该司书已死亡则不生效)</AbilityDesc>
-			<FlaborText>您是他的儿子，您生来为王。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">欢呼吧，满怀恩宠之人，我与你们同在。</Dialogue>
-				<Dialogue ID="2">将每个人引向乐园。</Dialogue>
-				<Dialogue ID="3">我与你们同在，摆脱对死亡的恐惧。</Dialogue>
-				<Dialogue ID="4">谁也不会离去，我们将一同沐浴在永恒的幸福之中。</Dialogue>
-			</Dialogues>
+			<Abnormality>Blue Star</Abnormality>
+			<CardName>Martyr</CardName>
+			<AbilityDesc>[Single Ally]
+Upon dealing damage, lose 2-4 HP.
+For every 9% of Max HP lost increase outgoing Stagger damage by 10% (Up to 100%).</AbilityDesc>
+      		<FlaborText>Let us meet again as stars.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Let’s relish eternal happiness at the end of this universe together.</Dialogue>
+        		<Dialogue ID="2">Life cannot resist the instincts; we all go back to that place someday.</Dialogue>
+        		<Dialogue ID="3">We are not dying. We’re simply returning to where we belong.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="WhiteNight_White">
-			<Abnormality>白夜</Abnormality>
-			<CardName>权能</CardName>
-			<AbilityDesc>[选择一名司书]
-每一幕开始时使除该司书外的所有司书吸收不低于2点的伤害。(若该司书已死亡则不生效)
-该司书使用E.G.O书页“失乐园”后改为吸收不低于5点的伤害。</AbilityDesc>
-			<FlaborText>不要惊慌，我是你的救主，我与你同在。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">安心吧，任何灾祸都无法阻挡你们。</Dialogue>
-				<Dialogue ID="2">摆脱这堕落的肉体，何尝不是救赎。</Dialogue>
-				<Dialogue ID="3">信奉我，便可永不堕入黑暗。</Dialogue>
-				<Dialogue ID="4">我为圣，你们亦为圣。</Dialogue>
-			</Dialogues>
+			<Abnormality>WhiteNight</Abnormality>
+			<CardName>Divine Power</CardName>
+			<AbilityDesc>While this character is alive, all other allies absorb instances of 2 or less damage.
+If this character has used WhiteNight's E.G.O page, allies absorb instances of 5 or less damage instead.</AbilityDesc>
+      		<FlaborText>“Be not frightened. I am thy savior and I shall be with thee.”</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Be at ease. No calamity shall be able to trouble you.</Dialogue>
+        		<Dialogue ID="2">Ye will gain a body free of such corruption, so how could one deny that this is salvation.</Dialogue>
+        		<Dialogue ID="3">Believe in me, and forever ye will be outside of the dark.</Dialogue>
+        		<Dialogue ID="4">Ye will be revered, for I am divine.</Dialogue>
+      		</Dialogues>
 		</AbnormalityCard>
   	</Sephirah>
 </AbnormalityCardsRoot>

@@ -233,8 +233,8 @@ If 'Eye Beams'at least hit enemy once, the enemy gain 'Horrified'.</Desc>
       		<Desc>Deal 2-4 less physical and Stagger damage; takes 2-4 bonus damage from attacks.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="BloodyTree_Emotion_Damage">
-      		<Name>不要转移视线</Name>
-      		<Desc>与非应用“萎缩的血翼”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
+      		<Name>Attention and Focus</Name>
+      		<Desc>Clash with enemy other than the character with "Gaze of Others" will deal 1-8 damage and Stagger damage to each other.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SlashProtect"> 
       		<Name>Scar -- Slash</Name>

@@ -55,59 +55,6 @@
 				<Dialogue ID="3">我们不会死去。只是动身前往那应去之地。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="BlueStar_Melody">
-			<Abnormality>碧蓝新星</Abnormality>
-			<CardName>思念之声</CardName>
-			<AbilityDesc>[影响所有司书]
-每三幕使所有司书在一幕内击中目标时混乱伤害+2~4</AbilityDesc>
-			<FlaborText>冉冉升起的新星意味着全新的开始。你听不见那悠扬的号声吗？</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">你听到了吗？你感受到我苦苦寻觅的思念之声了吗？</Dialogue>
-				<Dialogue ID="2">啊啊啊……终于……！终于呼唤我们了！！！</Dialogue>
-				<Dialogue ID="3">只有那声呼唤，才能将我们引向接纳罪人的唯一之地……！</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="WhiteNight_Bless">
-			<Abnormality>瘟疫医生</Abnormality>
-			<CardName>洗礼</CardName>
-			<AbilityDesc>[选择一名司书]
-将1张2费“洗礼”置入该司书手中。
-效果为“[装备时] 指定1名友方角色并在这一幕中使其获得1层‘忍耐’,恢复6点体力并回到手中”</AbilityDesc>
-			<FlaborText>“我将治愈你的一切疾病，使你重获新生。”</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">我是来治病的。</Dialogue>
-				<Dialogue ID="2">相信我。只有我能帮助你。</Dialogue>
-				<Dialogue ID="3">额上有伤，为何不治？</Dialogue>
-				<Dialogue ID="4">所有病痛，都可治愈。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="WhiteNight_Confess">
-			<Abnormality>一罪与百善</Abnormality>
-			<CardName>告解</CardName>
-			<AbilityDesc>[影响所有司书]
-为所有司书恢复所有混乱抗性并移除负面状态。(包含“混乱”状态)
-所有司书被击中时所受混乱伤害-2</AbilityDesc>
-			<FlaborText>仅是承受痛苦，便可洗刷一半罪孽。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">……</Dialogue>
-				<Dialogue ID="2">………</Dialogue>
-				<Dialogue ID="3">…………</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="WhiteNight_Guard">
-			<Abnormality>白夜</Abnormality>
-			<CardName>护卫</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书将无法被指定为攻击目标。(若其余司书全部死亡则不生效)
-接待结束时每名来宾转化的书籍数+1(若该司书已死亡则不生效)</AbilityDesc>
-			<FlaborText>您是他的儿子，您生来为王。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">欢呼吧，满怀恩宠之人，我与你们同在。</Dialogue>
-				<Dialogue ID="2">将每个人引向乐园。</Dialogue>
-				<Dialogue ID="3">我与你们同在，摆脱对死亡的恐惧。</Dialogue>
-				<Dialogue ID="4">谁也不会离去，我们将一同沐浴在永恒的幸福之中。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="WhiteNight_White">
 			<Abnormality>白夜</Abnormality>
 			<CardName>权能</CardName>

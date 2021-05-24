@@ -13,6 +13,15 @@ namespace EmotionalFix
     {
         public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
         {
+            new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/ThePriceOfSilence_Filter", false, 2f);
+            Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/9_H/FX_IllusionCard_9_H_Silence");
+            if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+            {
+                Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original);
+                creatureEffect.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
+                creatureEffect.gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                creatureEffect.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
             base.OnUseInstance(unit, self, targetUnit);
             unit.bufListDetail.AddBuf(new EmotionCardAbility_silence3.SilenceStun());
             unit.view.speedDiceSetterUI.DeselectAll();

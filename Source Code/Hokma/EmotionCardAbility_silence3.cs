@@ -11,6 +11,7 @@ namespace EmotionalFix
     public class EmotionCardAbility_silence3 : EmotionCardAbilityBase
     {
         private BattleDiceCardModel silence;
+        private bool _effect;
         public override void OnWaveStart()
         {
             base.OnWaveStart();
@@ -28,7 +29,23 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Enemy)
                 this.Silence();
         }
-
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+            if (_effect)
+            {
+                _effect = false;
+                new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/ThePriceOfSilence_Filter", false, 2f);
+                Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/9_H/FX_IllusionCard_9_H_Silence");
+                if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+                {
+                    Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original);
+                    creatureEffect.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
+                    creatureEffect.gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                    creatureEffect.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+                }
+            }
+        }
         private void GiveCards()
         {
             silence=this._owner.allyCardDetail.AddNewCard(1108101);
@@ -49,6 +66,7 @@ namespace EmotionalFix
             if (nonstun.Count <= 0)
                 return;
             BattleUnitModel victim = RandomUtil.SelectOne<BattleUnitModel>(nonstun);
+            _effect = true;
             victim.bufListDetail.AddBuf(new SilenceStun());
             this._owner.bufListDetail.AddBuf(new SilenceStun());
         }

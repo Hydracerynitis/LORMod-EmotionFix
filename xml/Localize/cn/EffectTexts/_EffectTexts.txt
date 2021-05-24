@@ -225,7 +225,7 @@
     	</BattleEffectText>
 		<BattleEffectText ID="BloodyTree_Emotion_Damage">
       		<Name>不要转移视线</Name>
-      		<Desc>与非应用“萎缩的血翼”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
+      		<Desc>与非应用“他人的视线”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="SlashProtect"> 
       		<Name>疤痕-斩击</Name>

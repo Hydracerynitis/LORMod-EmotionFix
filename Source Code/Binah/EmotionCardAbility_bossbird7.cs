@@ -21,6 +21,11 @@ namespace EmotionalFix
             BehaviourDetail.Hit,BehaviourDetail.Penetrate,BehaviourDetail.Slash
         };
         private List<BehaviourDetail> Remain;
+        public override void OnWaveStart()
+        {
+            base.OnWaveStart();
+            this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
+        }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();

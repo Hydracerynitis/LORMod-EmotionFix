@@ -39,12 +39,4 @@
 	<BattleCardAbility ID="PlagueDoctor">
 		<Desc>[我会治愈所有的疾病，你将重获新生]</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="emotion_bless">
-		<Desc>本书页将在装备后回到手中</Desc>
-		<Desc>[装备时]指定1名友方角色并在这一幕中使其获得1层[忍耐]且恢复6点体力</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="emotion_bless_upgraded">
-		<Desc>本书页将在装备后回到手中</Desc>
-		<Desc>[装备时]指定1名友方角色并在这一幕中使其获得2层[忍耐]且恢复12点体力</Desc>
-	</BattleCardAbility>
 </BattleCardAbilityDescRoot>

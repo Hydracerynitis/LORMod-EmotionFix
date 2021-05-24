@@ -9,7 +9,7 @@ using System.IO;
 
 namespace EmotionalFix
 {
-    public class EmotionCardAbility_bluetree2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_bluestar2 : EmotionCardAbilityBase
     {
         private bool triggered;
         private int Dmg => RandomUtil.Range(3, 7);
@@ -22,7 +22,8 @@ namespace EmotionalFix
                 if (alive.IsBreakLifeZero())
                 {
                     this.triggered = true;
-                    alive.TakeDamage(this.Dmg, DamageType.Emotion, this._owner);
+                    this._owner.TakeDamage(this.Dmg, DamageType.Emotion, this._owner);
+                    SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_JudgementExplo", 1f, alive.view, alive.view, 2f);
                 }
             }
             if (!this.triggered)

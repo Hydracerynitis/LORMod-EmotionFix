@@ -23,17 +23,17 @@ namespace EmotionalFix
             {
                 foreach (BattleEmotionCardModel emotion in ally.emotionDetail.PassiveList)
                 {
-                    foreach (EmotionCardAbilityBase ablility in emotion.GetAbilityList())
+                    foreach (EmotionCardAbilityBase ability in emotion.GetAbilityList())
                     {
-                        MethodInfo destroy = ablility.GetType().GetMethod("Destroy");
+                        MethodInfo destroy = ability.GetType().GetMethod("Destroy");
                         if (destroy != null)
                             try
                             {
-                                destroy.Invoke(ablility, new object[] { });
+                                destroy.Invoke(ability, new object[] { });
                             }
-                            catch
+                            catch (Exception ex)
                             {
-
+                                Debug.Error(ability.GetType().Name + "Destroy", ex);
                             }
                     }
                 }

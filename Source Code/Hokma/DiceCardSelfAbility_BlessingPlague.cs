@@ -13,6 +13,7 @@ namespace EmotionalFix
     {
         public override void OnStartBattle()
         {
+            SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("WhiteNight_Blessing", 1f, card.target.view, card.target.view);
             this.card.target.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Endurance, 1);
             this.card.target.RecoverHP(6);
             EmotionCardAbility_plaguedoctor1.WhiteNightClock[this.owner.UnitData] += 1;

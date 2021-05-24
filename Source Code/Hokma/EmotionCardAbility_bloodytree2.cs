@@ -11,25 +11,46 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_bloodytree2 : EmotionCardAbilityBase
     {
+        private Battle.CreatureEffect.CreatureEffect _aura;
         public override void OnWaveStart()
         {
             base.OnWaveStart();
+            this._aura= SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_Eye", 1f, this._owner.view, this._owner.view);
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
             {
-                if (alive.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BloodyTree)) == null)
+                if (alive.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_BloodyTree) == null)
                     alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BloodyTree(this._owner));
             }
         }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
+            this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_Eye", 1f, this._owner.view, this._owner.view);
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
             {
                 alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BloodyTree(this._owner));
             }
         }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            DestroyAura();
+        }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            Destroy();
+        }
+        public void DestroyAura()
+        {
+            if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                return;
+            UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
+            this._aura = (Battle.CreatureEffect.CreatureEffect)null;
+        }
         public void Destroy()
         {
+            DestroyAura();
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
             {
                 if ((alive.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BloodyTree))) is BattleUnitBuf_Emotion_BloodyTree Tree)
