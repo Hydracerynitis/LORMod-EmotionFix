@@ -65,6 +65,11 @@ namespace EmotionalFix
             {
                 return -AddDmg;
             }
+            public override void OnRoundEnd()
+            {
+                base.OnRoundEnd();
+                this.Destroy();
+            }
             public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
                 return -AddDmg;

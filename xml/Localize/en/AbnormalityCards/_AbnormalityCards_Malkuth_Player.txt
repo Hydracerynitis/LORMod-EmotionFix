@@ -21,7 +21,7 @@ When a librarian's HP is at 20% or lower, deal 30% of Max HP to all enermies as 
       		<AbilityDesc>[Single Ally]
 Upon winning a clash, deal bonus Stagger damage equal to the dice value at a 20% chance.
 Clashing against the same target multiple times will increase the likelihood by 10%. 
-likelihood will be reset when clash with other target.</AbilityDesc>
+Likelihood will be reset when clash with other target.</AbilityDesc>
       		<FlaborText>Teddy was hugging someone tightly. Teddy loved hugs. But something was odd.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Give me a tight hug, will you? It’ll soothe your mind.</Dialogue>

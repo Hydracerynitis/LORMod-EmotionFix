@@ -56,7 +56,8 @@ namespace EmotionalFix
         public override void OnEndBattlePhase()
         {
             base.OnEndBattlePhase();
-            this._owner.view.ChangeSkinBySkinInfo(OriginalSkin);
+            Destroy();
+            //this._owner.view.ChangeSkinBySkinInfo(OriginalSkin);
         }
         public void Activate()
         {
@@ -67,11 +68,17 @@ namespace EmotionalFix
                 this._owner.view.ChangeHeight(500);
             }
         }
+        public void Destroy()
+        {
+            this._owner.view.ResetSkin();
+            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Apocalypse));
+            if (Buff != null)
+                Buff.Destroy();
+        }
         public override void OnDie(BattleUnitModel killer)
         {
             base.OnDie(killer);
-            this._owner.view.ChangeSkinBySkinInfo(OriginalSkin);
-            this._owner.view.StartEgoSkinChangeEffect("Character");
+            Destroy();
         }
         public override void OnRoundEndTheLast()
         {
@@ -215,12 +222,6 @@ namespace EmotionalFix
                 battleDiceCardModel1.ResetToOriginalData();
             }
             EmotionCardAbility_bossbird4.Summation.Clear();
-        }
-        public void Destroy()
-        {
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Apocalypse));
-            if (Buff != null)
-                Buff.Destroy();
         }
         public class Apocalypse: BattleUnitBuf
         {

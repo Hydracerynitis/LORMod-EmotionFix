@@ -47,7 +47,6 @@ namespace EmotionalFix
         }
         public class DeepBleed: BattleUnitBuf
         {
-            public override bool Hide => this.stack==0;
             protected override string keywordId => "DeepBleed";
             protected override string keywordIconId => "Bleeding";
             public int reserve;
@@ -61,14 +60,22 @@ namespace EmotionalFix
             {
                 if (!this.IsAttackDice(behavior.Detail))
                     return;
-                if (!this._owner.IsImmune(this.bufType))
-                {
-                    if (this.stack == 0)
-                        return;
-                    this._owner.TakeDamage(this.stack);
-                    if (this._owner.Book.GetBookClassInfoId() != 150013)
-                        this._owner.battleCardResultLog?.AddBufEffect("BufEffect_Bleeding");
-                }
+                if (this.stack == 0)
+                    return;
+                this._owner.TakeDamage(this.stack,DamageType.Buf);
+                this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.PrintEffect));
+                if (this._owner.Book.GetBookClassInfoId() != 150013)
+                    this._owner.battleCardResultLog?.AddBufEffect("BufEffect_Bleeding");
+            }
+            private void PrintEffect()
+            {
+                GameObject gameObject = Util.LoadPrefab("Battle/DiceAttackEffects/New/FX/DamageDebuff/FX_DamageDebuff_Blooding");
+                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null) || !((UnityEngine.Object)this._owner?.view != (UnityEngine.Object)null))
+                    return;
+                gameObject.transform.parent = this._owner.view.camRotationFollower;
+                gameObject.transform.localPosition = Vector3.zero;
+                gameObject.transform.localScale = Vector3.one;
+                gameObject.transform.localRotation = Quaternion.identity;
             }
             public override void OnRoundEnd()
             {

@@ -2,7 +2,7 @@ Diffculty Setting:
 Casual: 	Guests won't apply any emotion cards, Have fun with those reworked emotion cards
 Normal: 	The Default Diffculty, Guests will apply 3 emotion cards at most (1 from tier 1, 1 from tier 2, 1 from tier 3)
 Hard: 	Guests will apply 5 emotion cards at most (2 from tier 1, 2 from tier 2, 1 from tier 3)
-Brutal: 	Guests will not only apply 3 emotion cards at most, 
+Brutal: 	Guests will not only apply 5 emotion cards at most, 
 	at their first appearance will adjust their emotion level to equal to Librian's average emotion level 
 
 Choose Your Difficulty (Casual, Normal, Hard, Brutal):  Brutal
