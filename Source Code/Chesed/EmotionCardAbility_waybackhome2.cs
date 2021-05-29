@@ -50,6 +50,7 @@ namespace EmotionalFix
                     });
                 ++this.stack;
                 this._owner.battleCardResultLog?.SetCreatureAbilityEffect("7/WayBeckHome_Emotion_Atk", 1f);
+                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_NormalAtk");
             }
             else
                 this.stack = 0;

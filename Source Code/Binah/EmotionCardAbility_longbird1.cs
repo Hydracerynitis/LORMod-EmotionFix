@@ -19,6 +19,7 @@ namespace EmotionalFix
             behavior.card.target.TakeDamage((int)(behavior.card.target.hp * 0.15));
             Trigger = false;
             target.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Scale", 2f);
+            target.battleCardResultLog?.SetCreatureEffectSound("Creature/LongBird_On");
         }
         public override void OnRoundEndTheLast()
         {

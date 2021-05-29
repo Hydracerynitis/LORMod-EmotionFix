@@ -56,9 +56,6 @@ namespace EmotionalFix
             }
             this._recoverEffects.Clear();
         }
-        public override void OnLayerChanged(string layerName)
-        {
-        }
         public override Sprite GetAbilityBufIcon() => Resources.Load<Sprite>("Sprites/BufIcon/Ability/GalaxyBoy_Stone");
         public class BattleUnitBuf_galaxyChild_Friend : BattleUnitBuf
         {

@@ -22,6 +22,7 @@ namespace EmotionalFix
             absorption = 0;
             _effect = true;
             count = 0;
+            this.MakeEffect("6/Dango_Emotion_Spread", target: this._owner);
         }
         public override void OnSelectEmotion()
         {
@@ -59,6 +60,8 @@ namespace EmotionalFix
             MoutainCorpse moutain = new MoutainCorpse(count);
             this._owner.bufListDetail.AddBuf(moutain);
             this._owner.view.ChangeHeight((int)((double)height * (1 + (double)moutain.stack * 0.25)));
+            if(count>5)
+                PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR6);
             if (!this._effect)
             {
                 this._effect = true;
@@ -132,6 +135,8 @@ namespace EmotionalFix
                     }
                 }
                 this.MakeEffect("6/Dango_Emotion_Spread", target: this._owner);
+                SoundEffectPlayer.PlaySound("Creature/Danggo_LvUp");
+                SoundEffectPlayer.PlaySound("Creature/Danggo_Birth");
             }
         }
         public class MoutainCorpse: BattleUnitBuf

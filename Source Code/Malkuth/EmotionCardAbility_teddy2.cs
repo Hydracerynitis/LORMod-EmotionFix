@@ -110,6 +110,8 @@ namespace EmotionalFix
 
             public override void OnUseCard(BattleUnitModel owner)
             {
+                if (this._card.GetOriginCost() == 4 && this._card.GetCost() <= 0)
+                    PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR1);
                 foreach (BattleDiceCardModel battleDiceCardModel in owner.allyCardDetail.GetAllDeck().FindAll((Predicate<BattleDiceCardModel>)(x => x.GetID() == this._card.GetID())))
                     battleDiceCardModel.AddCost(-1);
             }

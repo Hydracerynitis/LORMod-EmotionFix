@@ -12,6 +12,7 @@ namespace EmotionalFix
     public class EmotionCardAbility_bluestar3 : EmotionCardAbilityBase
     {
         private int round;
+        private SoundEffectPlayer _loop;
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
@@ -36,6 +37,11 @@ namespace EmotionalFix
                 return;
             autoDestruct.time = 5f;
             autoDestruct.DestroyWhenDisable();
+            SoundEffectPlayer.PlaySound("Creature/BlueStar_Atk");
+            SingletonBehavior<BattleSoundManager>.Instance.EndBgm();
+            if (!((UnityEngine.Object)this._loop == (UnityEngine.Object)null))
+                return;
+            this._loop = SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BlueStar_Bgm", true, parent: SingletonBehavior<BattleSceneRoot>.Instance.currentMapObject.transform);
         }
 
         public override void OnWaveStart()
@@ -51,9 +57,24 @@ namespace EmotionalFix
             round--;
             if (round <= 0)
                 round = 3;
+            DestroyLoopSound();
+        }
+        public override void OnEndBattlePhase()
+        {
+            base.OnEndBattlePhase();
+            this.Destroy();
+        }
+        private void DestroyLoopSound()
+        {
+            if (!((UnityEngine.Object)this._loop != (UnityEngine.Object)null))
+                return;
+            SingletonBehavior<BattleSoundManager>.Instance.StartBgm();
+            this._loop.ManualDestroy();
+            this._loop = (SoundEffectPlayer)null;
         }
         public void Destroy()
         {
+            DestroyLoopSound();
             BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf));
             if (Buff != null)
                 Buff.Destroy();

@@ -42,7 +42,7 @@ namespace EmotionalFix
                 _effect = false;
                 SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("6_G/FX_IllusionCard_6_G_Shout", 1f, this._owner.view, this._owner.view, 3f);
                 CameraFilterUtil.EarthQuake(0.08f, 0.02f, 50f, 0.3f);
-                SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Battle/Tomary_Phase2");
+                SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Danggo_Lv2_Shout");
             }
         }
         public override void OnWaveStart()

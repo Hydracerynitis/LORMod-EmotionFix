@@ -2,6 +2,7 @@
 using LOR_DiceSystem;
 using UI;
 using UnityEngine;
+using Sound;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace EmotionalFix
     {
         private GameObject aura;
         private List<KeywordBuf> ActivatedBuf;
+        private bool _sound;
         private KeywordBuf[] debuff => new KeywordBuf[]
         {
             KeywordBuf.Burn,
@@ -23,6 +25,11 @@ namespace EmotionalFix
             KeywordBuf.Disarm,
             KeywordBuf.Binding
         };
+        public override void OnSelectEmotion()
+        {
+            base.OnSelectEmotion();
+            _sound = false;
+        }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             if (ActivatedBuf.Count <= 0)
@@ -36,7 +43,10 @@ namespace EmotionalFix
         }
         public override void OnRoundStart()
         {
-            for(int i=0; i<3;i++)
+            if (this._sound)
+                SoundEffectPlayer.PlaySound("Creature/Shark_Ocean");
+            this._sound = false;
+            for (int i=0; i<3;i++)
                 this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(RandomUtil.SelectOne<KeywordBuf>(debuff),1);
             this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("3_H/FX_IllusionCard_3_H_Dertyfeather_Loop", 1f, this._owner.view, this._owner.view)?.gameObject;
         }

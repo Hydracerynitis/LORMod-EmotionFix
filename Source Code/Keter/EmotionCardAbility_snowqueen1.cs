@@ -37,6 +37,7 @@ namespace EmotionalFix
                 breakDmg =bonus
             });
             target.battleCardResultLog?.SetNewCreatureAbilityEffect("0_K/FX_IllusionCard_0_K_SnowUnATK", 2f);
+            target.battleCardResultLog?.SetCreatureEffectSound("Creature/SnowQueen_Atk");
         }
         public class BattleUnitBuf_Emotion_Snowqueen_Aura : BattleUnitBuf
         {

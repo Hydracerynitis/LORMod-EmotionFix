@@ -60,6 +60,7 @@ namespace EmotionalFix
         {
             base.OnSucceedAttack(behavior);
             behavior?.card?.target?.battleCardResultLog?.SetNewCreatureAbilityEffect("2_Y/FX_IllusionCard_2_Y_Seven", 3f);
+            behavior?.card?.target?.battleCardResultLog?.SetCreatureEffectSound("Creature/Matan_NormalShot");
         }
         public class BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet : BattleUnitBuf
         {

@@ -21,6 +21,7 @@ namespace EmotionalFix
         {
             base.OnRoundStart();
             SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Lamp", 1f, this._owner.view, this._owner.view, 3f);
+            SoundEffectPlayer.PlaySound("Creature/Bigbird_Attract");
             if (this._owner.faction != Faction.Enemy)
                 return;
             BattleUnitModel salvation = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(Faction.Player));

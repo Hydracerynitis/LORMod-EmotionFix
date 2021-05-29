@@ -2,6 +2,7 @@
 using LOR_DiceSystem;
 using UI;
 using UnityEngine;
+using Sound;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -80,19 +81,18 @@ namespace EmotionalFix
             }
             public void Curtain()
             {
-                CreatureEffect_Alriune_Curtain original = Resources.Load<CreatureEffect_Alriune_Curtain>("Prefabs/Battle/CreatureEffect/0/CreatureEffect_Alriune_Curtain");
-                if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
-                    return;
-                CreatureEffect_Alriune_Curtain effectAlriuneCurtain = UnityEngine.Object.Instantiate<CreatureEffect_Alriune_Curtain>(original);
-                RectTransform component = effectAlriuneCurtain.gameObject.GetComponent<RectTransform>();
-                effectAlriuneCurtain.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
-                effectAlriuneCurtain.gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-                effectAlriuneCurtain.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-                component.offsetMin = new Vector2(0.0f, 0.0f);
-                component.offsetMax = new Vector2(0.0f, 0.0f);
-                effectAlriuneCurtain.gameObject.SetActive(true);
-                original.OnAndOpen();
-                effectAlriuneCurtain.gameObject.AddComponent<AutoDestruct>().time = 8f;
+                Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/4_N/FX_IllusionCard_4_N_SpringAct");
+                if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+                {
+                    Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
+                    if ((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    {
+                        AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
+                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                            autoDestruct.time = 3f;
+                    }
+                }
+                SoundEffectPlayer.PlaySound("Creature/Ali_curtain");
             }
         }
         public class BattleUnitBuf_Emotion_Alriune2 : BattleUnitBuf

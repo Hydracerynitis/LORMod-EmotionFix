@@ -52,6 +52,7 @@ namespace EmotionalFix
                 try
                 {
                     base.OnRoundEndTheLast();
+                    SoundEffectPlayer.PlaySound("Creature/Nihil_Effect");
                     foreach (BattleEmotionCardModel emotion in this._owner.emotionDetail.PassiveList)
                     {
                         switch (emotion.XmlInfo.EmotionLevel)

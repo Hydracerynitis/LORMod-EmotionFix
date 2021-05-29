@@ -18,7 +18,14 @@ namespace EmotionalFix
                 min = -3,
                 max = +5
             });
+        }
+        public override void OnRollDice(BattleDiceBehavior behavior)
+        {
+            if (behavior.DiceVanillaValue > behavior.GetDiceMin() && behavior.DiceVanillaValue<behavior.GetDiceMax())
+                return;
+            base.OnRollDice(behavior);
             this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Judgement", 3f);
+            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/LongBird_Stun");
         }
     }
 }

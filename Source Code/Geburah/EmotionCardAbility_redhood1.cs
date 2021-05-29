@@ -18,6 +18,7 @@ namespace EmotionalFix
             this._target = curCard.target;
             this._target.bufListDetail.AddBuf(new BattleUnitBuf_redhood_prey());
             this._target.battleCardResultLog?.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_Hunted", 1.5f);
+            this._target.battleCardResultLog?.SetCreatureEffectSound("Creature/RedHood_Gun");
         }
         public override void OnWaveStart()
         {

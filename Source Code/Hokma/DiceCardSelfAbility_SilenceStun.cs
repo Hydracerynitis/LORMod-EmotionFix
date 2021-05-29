@@ -1,6 +1,7 @@
 ﻿using System;
 using LOR_DiceSystem;
 using System.IO;
+using Sound;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace EmotionalFix
         public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
         {
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/ThePriceOfSilence_Filter", false, 2f);
+            SoundEffectPlayer.PlaySound("Creature/Clock_StopCard");
             Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/9_H/FX_IllusionCard_9_H_Silence");
             if ((UnityEngine.Object)original != (UnityEngine.Object)null)
             {

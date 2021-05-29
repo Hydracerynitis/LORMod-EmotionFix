@@ -17,6 +17,7 @@ namespace EmotionalFix
                 return;
             target.battleCardResultLog?.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_TeathATK");
             target.battleCardResultLog?.SetCreatureAbilityEffect("6/Nosferatu_Emotion_BloodDrain");
+            target.battleCardResultLog?.SetCreatureEffectSound("Creature/Nosferatu_Change");
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction))
                 alive.RecoverHP(10);
             this._trigger = true;

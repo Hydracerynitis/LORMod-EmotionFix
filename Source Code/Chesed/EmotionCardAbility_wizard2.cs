@@ -203,7 +203,7 @@ namespace EmotionalFix
             {
                 int count = this._owner.allyCardDetail.GetHand().Count;
                 BattleDiceCardModel Card = this._owner.allyCardDetail.GetHand()[count-1];
-                this._owner.allyCardDetail.AddNewCard(Card.GetID()).exhaust = true;
+                this._owner.allyCardDetail.AddNewCard(Card.GetID()).XmlData.optionList.Add(CardOption.ExhaustOnUse);
             }
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {

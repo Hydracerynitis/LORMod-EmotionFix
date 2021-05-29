@@ -37,6 +37,7 @@ namespace EmotionalFix
                         }
                     }
                 }
+                SoundEffectPlayer.PlaySound("Creature/Bossbird_ForestKeeper");
             }
             List<BattleUnitModel> ally = BattleObjectManager.instance.GetList(this._owner.faction);
             int num = ally.Count;

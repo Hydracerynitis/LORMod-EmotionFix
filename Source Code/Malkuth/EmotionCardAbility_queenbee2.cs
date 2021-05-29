@@ -1,4 +1,5 @@
 ﻿using System;
+using Sound;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace EmotionalFix
                 if (card != null && card.target != null)
                 {
                     card.target.bufListDetail.AddBuf(new BattleUnitBuf_queenbee_punish());
+                    SoundEffectPlayer.PlaySound("Creature/QueenBee_AtkMode");
                     return;
                 }
             }      
@@ -72,6 +74,7 @@ namespace EmotionalFix
                     }
                 }
                 battleUnitModel?.bufListDetail.AddBuf(new BattleUnitBuf_queenbee_punish());
+                SoundEffectPlayer.PlaySound("Creature/QueenBee_AtkMode");
             }
             this.dmgData.Clear();
         }

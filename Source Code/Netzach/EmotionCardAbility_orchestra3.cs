@@ -1,6 +1,7 @@
 ﻿using System;
 using LOR_DiceSystem;
 using UI;
+using Sound;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,7 @@ namespace EmotionalFix
             }
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
                 alive.cardSlotDetail.LosePlayPoint(Reduce);
+            SoundEffectPlayer.PlaySound("Creature/Sym_movment_5_finale");
         }
     }
 }

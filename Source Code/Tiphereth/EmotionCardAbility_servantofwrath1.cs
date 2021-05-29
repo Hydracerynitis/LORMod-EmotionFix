@@ -52,6 +52,7 @@ namespace EmotionalFix
             {
                 base.Init(owner);
                 this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Rage", 1f, owner.view, owner.view)?.gameObject;
+                SoundEffectPlayer.PlaySound("Creature/Angry_Meet");
             }
             public override void OnRoundEndTheLast()
             {

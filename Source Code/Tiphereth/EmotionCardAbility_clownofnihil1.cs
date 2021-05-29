@@ -111,6 +111,7 @@ namespace EmotionalFix
                 this.stack = 0;
                 owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
                 this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_MagicGirl", 1f, owner.view, owner.view)?.gameObject;
+                SoundEffectPlayer.PlaySound("Creature/Nihil_Filter");
             }
             public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
             {

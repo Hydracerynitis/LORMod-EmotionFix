@@ -24,6 +24,7 @@ namespace EmotionalFix
                     this.triggered = true;
                     this._owner.TakeDamage(this.Dmg, DamageType.Emotion, this._owner);
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_JudgementExplo", 1f, alive.view, alive.view, 2f);
+                    SoundEffectPlayer.PlaySound("Creature/BlueStar_Suicide");
                 }
             }
             if (!this.triggered)

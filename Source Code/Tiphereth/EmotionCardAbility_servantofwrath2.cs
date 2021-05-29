@@ -21,6 +21,7 @@ namespace EmotionalFix
                 if (this.GetAliveFriend() != target)
                     return;
                 target.battleCardResultLog?.SetNewCreatureAbilityEffect("5_T/FX_IllusionCard_5_T_ATKMarker", 1.5f);
+                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Angry_R_StrongAtk");
             }
         }
         public override void OnKill(BattleUnitModel target)
@@ -35,6 +36,7 @@ namespace EmotionalFix
                 alive.RecoverHP(10);
             }
             this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.KillEffect));
+            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Angry_Vert2");
         }
         public void KillEffect()
         {

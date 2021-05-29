@@ -62,6 +62,10 @@ namespace EmotionalFix
             }
             return null;
         }
-        public void Filter() => new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KingOfGreed_Yellow", false);
+        public void Filter()
+        {
+            new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KingOfGreed_Yellow", false);
+            SoundEffectPlayer.PlaySound("Creature/Greed_StrongAtk_Defensed");
+        }
     }
 }

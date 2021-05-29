@@ -24,7 +24,7 @@ namespace EmotionalFix
             }
             if (this._owner.faction == Faction.Enemy)
             {
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is PlagueDoctor)) != null)
+                if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is PlagueDoctor) != null)
                     return;
                 this._owner.bufListDetail.AddBuf(new PlagueDoctor());
             }
@@ -40,7 +40,7 @@ namespace EmotionalFix
             }
             if (this._owner.faction == Faction.Enemy)
             {
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is PlagueDoctor)) != null)
+                if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is PlagueDoctor) != null)
                     return;
                 this._owner.bufListDetail.AddBuf(new PlagueDoctor());
             }
@@ -58,7 +58,7 @@ namespace EmotionalFix
             public override void OnRoundStart()
             {
                 patient.Clear();
-                List<BattleUnitModel> alive = BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll((Predicate<BattleUnitModel>)(x => x != this._owner));
+                List<BattleUnitModel> alive = BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll(x => x != this._owner);
                 for (int i = 0; i < 2; i++)
                 {
                     if (alive.Count <= 0)

@@ -60,7 +60,14 @@ namespace EmotionalFix
                 this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, RandomUtil.Range(1, 2), this._owner);
             }
         }
-
+        public void Destroy()
+        {
+            foreach(BattleUnitModel unit in BattleObjectManager.instance.GetAliveList())
+            {
+                if (unit.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Fruischutz_Flame) is BattleUnitBuf_Emotion_Fruischutz_Flame Flame)
+                    Flame.Destroy();
+            }
+        }
         public class BattleUnitBuf_Emotion_Fruischutz_Flame : BattleUnitBuf
         {
             protected override string keywordId => "Matan_Flame";

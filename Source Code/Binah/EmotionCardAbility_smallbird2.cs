@@ -53,6 +53,7 @@ namespace EmotionalFix
                     breakDmg = dmg
                 });
                 behavior.card.target.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Attack", 2f);
+                behavior.card.target.battleCardResultLog?.SetCreatureEffectSound("Creature/SmallBird_Atk");
             }
             public override void OnRoundEnd()
             {

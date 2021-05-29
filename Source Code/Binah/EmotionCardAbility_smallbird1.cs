@@ -47,6 +47,7 @@ namespace EmotionalFix
             {
                 base.OnRoundStart();
                 this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Punising", 1f, this._owner.view, this._owner.view)?.gameObject;
+                SoundEffectPlayer.PlaySound("Creature/SmallBird_StrongAtk");
             }
             public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
             {

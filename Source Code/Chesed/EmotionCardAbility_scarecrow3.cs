@@ -52,9 +52,14 @@ namespace EmotionalFix
             foreach (int index in MathUtil.Combination(2, battleDiceCardModelList.Count))
             {
                 BattleDiceCardModel battleDiceCardModel = this._owner.allyCardDetail.AddNewCard(battleDiceCardModelList[index].GetID());
-                battleDiceCardModel.exhaust = true;
+                battleDiceCardModel.XmlData.optionList.Add(CardOption.ExhaustOnUse);
                 battleDiceCardModel.SetCurrentCost(battleDiceCardModel.GetOriginCost() - 2);
+                battleDiceCardModel.AddBuf(new BattleDiceCardBuf_scarecrowCreated());
             }
+        }
+        public class BattleDiceCardBuf_scarecrowCreated : BattleDiceCardBuf
+        {
+            public override void OnUseCard(BattleUnitModel owner) => Singleton<StageController>.Instance.waveHistory.AddRakeCreatedUsed();
         }
     }
 }

@@ -34,7 +34,10 @@ namespace EmotionalFix
         {
             base.OnRoundStart();
             if (this.count > 0)
+            {
                 this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Happiness", 1f, this._owner.view, this._owner.view);
+                SoundEffectPlayer.PlaySound("Creature/Greed_MakeDiamond");
+            }       
             this.count = 0;
         }
         public override void OnEndBattlePhase()

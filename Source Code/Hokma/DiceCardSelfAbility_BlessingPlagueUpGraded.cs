@@ -2,6 +2,7 @@
 using LOR_DiceSystem;
 using System.IO;
 using UnityEngine;
+using Sound;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace EmotionalFix
         public override void OnStartBattle()
         {
             SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("WhiteNight_Blessing", 1f, card.target.view, card.target.view);
+            SoundEffectPlayer.PlaySound("Creature/WhiteNight_Bless");
             this.card.target.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Endurance, 2);
             this.card.target.RecoverHP(12);
             EmotionCardAbility_plaguedoctor1.WhiteNightClock[this.owner.UnitData] += 1;

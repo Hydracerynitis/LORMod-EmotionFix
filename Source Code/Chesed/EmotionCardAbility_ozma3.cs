@@ -1,4 +1,5 @@
 ﻿using System;
+using Sound;
 using LOR_DiceSystem;
 using UI;
 using UnityEngine;
@@ -47,9 +48,15 @@ namespace EmotionalFix
             this._owner.breakDetail.RecoverBreak(this._owner.breakDetail.GetDefaultBreakGauge());
             this._owner.cardSlotDetail.LosePlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
             if (Singleton<StageController>.Instance.IsLogState())
+            {
                 this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Particle", 3f);
+                this._owner.battleCardResultLog?.SetCreatureEffectSound("CreatureOzma_FarAtk");
+            }
             else
+            {
                 SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Particle", 1f, this._owner.view, this._owner.view, 3f);
+                SoundEffectPlayer.PlaySound("CreatureOzma_FarAtk");
+            }
             return true;
         }
         public void Destroy()

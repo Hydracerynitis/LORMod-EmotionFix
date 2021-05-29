@@ -16,6 +16,7 @@ namespace EmotionalFix
         {
             base.OnWaveStart();
             this._aura= SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_Eye", 1f, this._owner.view, this._owner.view);
+            SoundEffectPlayer.PlaySound("Creature/MustSee_Wake_Storng");
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
             {
                 if (alive.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_BloodyTree) == null)
@@ -26,6 +27,7 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_Eye", 1f, this._owner.view, this._owner.view);
+            SoundEffectPlayer.PlaySound("Creature/MustSee_Wake_Storng");
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
             {
                 alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BloodyTree(this._owner));

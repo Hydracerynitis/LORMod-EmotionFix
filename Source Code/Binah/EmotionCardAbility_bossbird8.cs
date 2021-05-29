@@ -27,6 +27,8 @@ namespace EmotionalFix
             this._target = target;
             target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BossBird_Creature());
             target.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Terrable_Start", 2f);
+            target.battleCardResultLog?.SetCreatureEffectSound("Creature/Bossbird_Bossbird_Stab");
+            target.battleCardResultLog?.SetCreatureEffectSound("Creature/Bossbird_StoryFilter_Dead");
         }
         public override void OnRoundStart()
         {

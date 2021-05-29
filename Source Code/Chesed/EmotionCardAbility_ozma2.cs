@@ -2,6 +2,7 @@
 using LOR_DiceSystem;
 using UI;
 using System.IO;
+using Sound;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ namespace EmotionalFix
             creatureEffect.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
             creatureEffect.gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             creatureEffect.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            SoundEffectPlayer.PlaySound("Creature/Ozma_StrongAtk_Start");
         }
         public void Destory()
         {

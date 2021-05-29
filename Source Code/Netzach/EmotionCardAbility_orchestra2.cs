@@ -1,6 +1,7 @@
 ﻿using System;
 using LOR_DiceSystem;
 using UI;
+using Sound;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,7 @@ namespace EmotionalFix
                 ++this.turn;
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
                     alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Orchestra());
+                SoundEffectPlayer.PlaySound("Creature/Sym_movment_3_mov3");
             }
             if (this._owner.faction == Faction.Enemy)
             {
@@ -59,7 +61,7 @@ namespace EmotionalFix
                         DestroyFilter();
                     return;
                 }
-
+                SoundEffectPlayer.PlaySound("Creature/Sym_movment_3_mov3");
                 List<BattleUnitModel> Player = BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => !x.bufListDetail.GetActivatedBufList().Exists(y => y is Enthusiastic));
                 if (Player.Count == 0)
                     return;

@@ -1,6 +1,7 @@
 ﻿using System;
 using LOR_DiceSystem;
 using UI;
+using Sound;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,7 @@ namespace EmotionalFix
                 return;
             autoDestruct.time = 3f;
             autoDestruct.DestroyWhenDisable();
+            SoundEffectPlayer.PlaySound("Creature/Sym_movment_0_clap");
         }
         public override void OnRoundEnd()
         {

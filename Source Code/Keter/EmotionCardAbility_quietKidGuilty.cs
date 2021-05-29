@@ -19,6 +19,7 @@ namespace EmotionalFix.Source_Code.Keter
                 atkDice.owner.TakeBreakDamage(dmg, DamageType.Emotion);
             }
             atkDice.owner.battleCardResultLog?.SetNewCreatureAbilityEffect("0_K/FX_IllusionCard_0_K_RedEye", 1f);
+            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Slientgirl_Guilty");
         }
         public override double ChangeDamage(BattleUnitModel attacker, double dmg)
         {

@@ -15,6 +15,7 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/SingingMachine_Filter_Aura", false, 2f);
+            SoundEffectPlayer.PlaySound("Creature/SingingMachine_Open");
         }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {

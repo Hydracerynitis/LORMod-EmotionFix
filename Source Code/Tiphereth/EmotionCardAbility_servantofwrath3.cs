@@ -56,6 +56,7 @@ namespace EmotionalFix
                         }
                     }
                 }
+                SoundEffectPlayer.PlaySound("Creature/Angry_StrongFinish");
             }
         }
     }

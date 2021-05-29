@@ -32,15 +32,14 @@ namespace EmotionalFix
             activated = false;
             if (SearchEmotion(this._owner, "ApocalypseBird_LongArm") == null || SearchEmotion(this._owner, "ApocalypseBird_SmallPeak") == null || SearchEmotion(this._owner, "ApocalypseBird_BigEye") == null)
                 return;
+            PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR8);
             GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
             if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
                 return;
             Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
             if ((UnityEngine.Object)component != (UnityEngine.Object)null)
                 component.Init(4);
-            AutoDestruct autoDestruct = gameObject.AddComponent<AutoDestruct>();
-            autoDestruct.time = 5f;
-            autoDestruct.DestroyWhenDisable();
+            gameObject.AddComponent<AutoDestruct>().time = 10f;
             this._aura=SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
             activated=true;
         }

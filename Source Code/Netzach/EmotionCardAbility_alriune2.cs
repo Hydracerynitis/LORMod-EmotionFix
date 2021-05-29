@@ -26,6 +26,7 @@ namespace EmotionalFix
                 num = RandomUtil.Range(1, 2);
             target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Alriune_Debuf, num, this._owner);
             target.battleCardResultLog?.SetCreatureAbilityEffect("0/Alriune_Stun_Effect", 1f);
+            target.battleCardResultLog?.SetCreatureEffectSound("Creature/Ali_Guard");
         }
     }
 }

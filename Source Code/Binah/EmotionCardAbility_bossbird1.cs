@@ -23,9 +23,7 @@ namespace EmotionalFix
                 Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
                 if ((UnityEngine.Object)component != (UnityEngine.Object)null)
                     component.Init(3);
-                AutoDestruct autoDestruct = gameObject.AddComponent<AutoDestruct>();
-                autoDestruct.time = 5f;
-                autoDestruct.DestroyWhenDisable();
+                gameObject.AddComponent<AutoDestruct>().time = 10f;
             }
             if (this._owner.faction == Faction.Enemy)
                 this._owner.bufListDetail.AddBuf(new Longbird_Enemy());

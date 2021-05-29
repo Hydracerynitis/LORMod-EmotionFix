@@ -31,3 +31,9 @@ Keter(Rebalanced): "Scars" "Fervent Beats" "Curiosity" "Sword of Frost"
 
 Enjoy -----by Hydracerynitis
 Credit to elder404 for contributing some reworking ideas and abnoramlity cards rebalancing.
+
+PS:
+Since I have completely changed "Request" in Yesod and "Mountain of Corpses" in Geburah, which are related to steam achievement. 
+I changed how “This magical bullet can truly hit anyone, just like you say.” and “The smiling faces are unfamiliar yet sorrowful.” are unlocked in this mod:
+    “This magical bullet can truly hit anyone, just like you say.” ---- Kill 3 enemies with card "Request" in a single reception.
+    “The smiling faces are unfamiliar yet sorrowful.” ------ Have a librarian stack more than 5 Mountain from "Mountain of Corpses".

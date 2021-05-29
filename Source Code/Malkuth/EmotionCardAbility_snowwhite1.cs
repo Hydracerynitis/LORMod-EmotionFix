@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using LOR_DiceSystem;
+using Sound;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +71,7 @@ namespace EmotionalFix
             {
                 base.Init(owner);
                 this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("1_M/FX_IllusionCard_1_M_Vine", 1f, owner.view, owner.view);
+                SoundEffectPlayer.PlaySound("Creature/SnowWhite_StongAtk_Ready");
             }
             public override void OnDie()
             {

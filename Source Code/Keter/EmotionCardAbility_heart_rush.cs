@@ -54,6 +54,12 @@ namespace EmotionalFix
                 count += 1;
             }
         }
+        public override void OnKill(BattleUnitModel target)
+        {
+            if (target.faction != Faction.Enemy)
+                return;
+            Singleton<StageController>.Instance.GetStageModel().AddHeartKillCount();
+        }
         public override AtkResist GetResistBP(AtkResist origin, BehaviourDetail detail)
         {
             if (this._owner.faction == Faction.Player && this.count < 3)

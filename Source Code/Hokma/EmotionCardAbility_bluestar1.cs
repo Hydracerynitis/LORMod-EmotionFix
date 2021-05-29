@@ -21,6 +21,7 @@ namespace EmotionalFix
             this._owner.LoseHp(dmg);
             this._owner.view.Damaged(dmg, BehaviourDetail.None, dmg, this._owner);
             this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("9_H/FX_IllusionCard_9_H_Martyr", 3f);
+            SoundEffectPlayer.PlaySound("Creature/BlueStar_In");
             double ratio = 1 - (this._owner.hp / this._owner.MaxHp);
             double breakrate = ratio * 10 / 9;
             if (breakrate >= 1)

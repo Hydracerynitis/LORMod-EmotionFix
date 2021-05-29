@@ -35,6 +35,7 @@ namespace EmotionalFix
             base.OnSucceedAttack(behavior);
             behavior?.card?.target?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2, this._owner);
             behavior?.card?.target?.battleCardResultLog?.SetCreatureAbilityEffect("6/Nosferatu_Emotion_BloodDrain");
+            behavior?.card?.target?.battleCardResultLog?.SetCreatureEffectSound("Nosferatu_Changed_BloodEat");
         }
         public void Destroy()
         {

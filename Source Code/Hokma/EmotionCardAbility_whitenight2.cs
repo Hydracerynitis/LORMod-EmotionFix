@@ -23,6 +23,8 @@ namespace EmotionalFix
                 return;
             this._effect = true;
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/WhiteNight_Filter", false, 2f);
+            SoundEffectPlayer.PlaySound("Creature/WhiteNight_Changing");
+            SoundEffectPlayer.PlaySound("Creature/WhiteNight_Apostle_Whisper2");
         }
         public override void OnWaveStart()
         {

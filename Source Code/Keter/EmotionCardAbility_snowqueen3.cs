@@ -27,6 +27,7 @@ namespace EmotionalFix
                 return;
             autoDestruct.time = 3f;
             autoDestruct.DestroyWhenDisable();
+            SoundEffectPlayer.PlaySound("Creature/SnowQueen_StrongAtk2");
         }
         public override void OnSelectEmotion()
         {
@@ -59,7 +60,7 @@ namespace EmotionalFix
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                if (this._owner.bufListDetail.GetActivatedBuf(KeywordBuf.Stun) == null)
+                if (this._owner.bufListDetail.GetActivatedBuf(KeywordBuf.Stun) == null || this._owner.IsImmune(KeywordBuf.Stun) || this._owner.bufListDetail.IsImmune(BufPositiveType.Negative))
                     return;
                 this._owner.view.charAppearance.ChangeMotion(ActionDetail.Damaged);
                 this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateCreatureEffect("0/SnowQueen_Emotion_Frozen", 1f, this._owner.view, this._owner.view);

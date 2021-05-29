@@ -42,6 +42,7 @@ namespace EmotionalFix
                 {
                     this._owner.cardSlotDetail.SpendCost(3);
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Magic", 1f, _owner.view, _owner.view, 3f);
+                    SoundEffectPlayer.PlaySound("Creature/Oz_Atk_Up");
                     Trigger = true;
                 }
             }
