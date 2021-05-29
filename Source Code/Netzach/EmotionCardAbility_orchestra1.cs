@@ -40,6 +40,7 @@ namespace EmotionalFix
             if (!this.effect && !this.trigger)
                 return;
             this.effect = false;
+            this.trigger = false;
             this._owner.SetHp(this.savedHp);
             this._owner.breakDetail.breakGauge = this.savedBp;
             this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
