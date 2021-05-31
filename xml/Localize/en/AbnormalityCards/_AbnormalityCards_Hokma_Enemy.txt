@@ -92,7 +92,7 @@ For every 9% of Max HP lost increase outgoing Stagger damage by 10% (Up to 100%)
 		<AbnormalityCard ID="BlueStar_Atonement_Enemy">
 			<Abnormality>Blue Star</Abnormality>
 			<CardName>Penance</CardName>
-			<AbilityDesc>If any character is Staggered at the start of the Scene, they take 3-7 damage, and all allies gain 1 Strength for the Scene. (Multiple Staggered characters do not give more Strength)</AbilityDesc>
+			<AbilityDesc>If any character is Staggered at the start of the Scene, the selected guest take 3-7 damage, and all allies gain 1 Strength for the Scene. (Multiple Staggered characters do not give more Strength)</AbilityDesc>
       		<FlaborText>Our Blue Star is the only sanctuary that accepts us. We will be cleansed of our sins there.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Let us completely take off this filthy husk and shine brightly.</Dialogue>
@@ -103,7 +103,7 @@ For every 9% of Max HP lost increase outgoing Stagger damage by 10% (Up to 100%)
 		<AbnormalityCard ID="BlueStar_Melody_Enemy">
 			<Abnormality>Blue Star</Abnormality>
 			<CardName>A Nostalgic Sound</CardName>
-			<AbilityDesc>deal 2-4 additional Stagger damage for this Scene. The effect of this page activates every 3 Scenes afterwards.</AbilityDesc>
+			<AbilityDesc>Deal 2-4 additional Stagger damage for this Scene. The effect of this page activates every 3 Scenes afterwards.</AbilityDesc>
       		<FlaborText>The rise of a star is a brand new beginning. Don’t you hear the everlasting sound of the trumpet?</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Can you hear this sound? The nostalgic echo we’ve been eagerly searching for?</Dialogue>

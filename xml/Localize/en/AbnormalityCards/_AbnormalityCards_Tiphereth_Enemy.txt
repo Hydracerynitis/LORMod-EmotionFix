@@ -32,7 +32,7 @@ Deal 3-5 additional damage when attacking the 'Villain'.</AbilityDesc>
 			<Abnormality>The Queen of Hatred</Abnormality>
 			<CardName>Hate</CardName>
 			<AbilityDesc>Dice gain 1-3 Power. 
-if none of other allies take damage equal to 20% of Max HP or above in previous round, inflict 3-7 damage and 2-6 Stagger damage to all allies.</AbilityDesc>
+If none of other allies take damage equal to 20% of Max HP or above in previous round, inflict 3-7 damage and 2-6 Stagger damage to all allies.</AbilityDesc>
 			<FlaborText>She vowed to love everything in the world, but all that was left was a collapsing heart.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Why is everybody happy? I’d have no reason to exist if they are…</Dialogue>
@@ -120,7 +120,7 @@ If the first die of a Combat page lose a clash, all remaining dice on the self's
 		<AbnormalityCard ID="Angry_Angry_Enemy">
 			<Abnormality>The Servant of Wrath</Abnormality>
 			<CardName>Wrath</CardName>
-			<AbilityDesc>Use Mass attack card 'EMBODIMENTS OF EVIL!!!' targeting all other characters every Scene</AbilityDesc>
+			<AbilityDesc>Use Mass attack card 'EMBODIMENTS OF EVIL!!!' targeting all other characters every Scene.</AbilityDesc>
 			<FlaborText>The Servant was betrayed after abandoning her principles and ingeniously trusting someone with her whole heart. Now, she is dominated by the anger towards herself for what she had done.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">GRRRR!!!</Dialogue>
@@ -180,7 +180,7 @@ Whenever an abnormality cards is cleared, apply new random accessible abnormalit
 		</AbnormalityCard>
 		<AbnormalityCard ID="NihilClown_fusion_Enemy">
 			<Abnormality>The Jester of Nihil</Abnormality>
-			<CardName>Nihil</CardName>
+			<CardName>Nix</CardName>
 			<AbilityDesc>Inflict 2 Feeble, Disarm, Bind to all enemies. For each affected enemy, gain 1 Feeble, Disarm, Bind.</AbilityDesc>
 			<FlaborText>Having decided to trust its own intuition, the jester spake the names of everyone it had met on that path with each step it took.。</FlaborText>
 			<Dialogues>

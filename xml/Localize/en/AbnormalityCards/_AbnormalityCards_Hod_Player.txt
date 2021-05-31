@@ -22,7 +22,7 @@ They will soon turn red.</FlaborText>
 			<CardName>Obsession</CardName>
 			<AbilityDesc>[Single Ally]
 Mark random enemy as The Red Shoes. Can only attack The Red Shoes and inflict 3-8 damage upon hit.
-On kill The Red Shoes mark another random enemy as such.</AbilityDesc>
+When kill The Red Shoes, mark another random enemy as such.</AbilityDesc>
 			<FlaborText>I’ll break your legs, then you won’t be able to dance ever again.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">I should be the one in the spotlight!</Dialogue>
@@ -36,7 +36,7 @@ On kill The Red Shoes mark another random enemy as such.</AbilityDesc>
 			<Abnormality>The Red Shoes</Abnormality>
 			<CardName>Axe</CardName>
 			<AbilityDesc>[Single Ally]
-Upon as successful Slash hit, inflict 1 Laceration next Scene.
+Upon a successful Slash hit, inflict 1 Laceration next Scene.
 (Laceration: For the Scene, take 1 damage per stack every time rolls an Offensive die.)</AbilityDesc>
 			<FlaborText>At some point, &lt;Redacted&gt; was wearing the shoes, grinning from ear to ear. It was uh, well it was quite strange. That wasn’t a smile. It was…</FlaborText>
 			<Dialogues>

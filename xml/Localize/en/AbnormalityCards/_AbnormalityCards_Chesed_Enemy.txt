@@ -4,8 +4,8 @@
 		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
 			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
 			<CardName>Torn Off Wisdom</CardName>
-			<AbilityDesc>Remove 3 random cards from the deck。
-Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance</AbilityDesc>
+			<AbilityDesc>Remove 3 random cards from the deck.
+Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance.</AbilityDesc>
 			<FlaborText>When he returned, he had a visibly long scar on his head. People asked him how he felt, and he responded that his head felt lighter.</FlaborText>
 			<Dialogues>
         		<Dialogue ID="1">Wisdom… Give me the wisdom I lack…</Dialogue>
@@ -129,7 +129,8 @@ All dice gain 3-4 Power.</AbilityDesc>
 		<AbnormalityCard ID="Ozma_forgotten_Enemy">
 			<Abnormality>Ozma</Abnormality>
 			<CardName>Oblivion</CardName>
-			<AbilityDesc>Immobilized for next Scene; cannot be targeted. At the end of this Scene, recover 40% of Max. HP (up to 48) and fully restore Light.费</AbilityDesc>
+			<AbilityDesc>Immobilized for next Scene; cannot be targeted for the next Scene. 
+At the end of next Scene, recover 40% of Max. HP (up to 48) and fully restore Light.</AbilityDesc>
       		<FlaborText>There was such a fine and beautiful person, staring at her with a perplexed expression.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Why did I trust a stranger so naively… Why…</Dialogue>
@@ -166,7 +167,7 @@ Atfer 5 Scene, the effect will be triggered again if the Guest has sufficient Li
 		<AbnormalityCard ID="Oz_Gift_Enemy">
 			<Abnormality>The Adult who Tells Lies</Abnormality>
 			<CardName>False Present</CardName>
-			<AbilityDesc>Guest will gain one of 'Liquid Courage', 'Silk Sack of Sawdust', 'Heart of Lead', 'Home that Cannot Be Reached', and 'Transformation' without repeatition。</AbilityDesc>
+			<AbilityDesc>Guest will gain one of 'Liquid Courage', 'Silk Sack of Sawdust', 'Heart of Lead', 'Home that Cannot Be Reached', and 'Transformation' without repeatition.</AbilityDesc>
       		<FlaborText>Poor Ozma. She didn’t know that lying adults don’t approach others without reason.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Come closer. I’ll help you forget all of your woes and worries.</Dialogue>

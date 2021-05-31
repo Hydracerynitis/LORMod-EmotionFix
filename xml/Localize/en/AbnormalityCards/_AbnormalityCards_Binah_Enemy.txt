@@ -92,7 +92,7 @@ Sin can be transferred to another character by attacking and damaging them. (Onc
 			<Abnormality>Judgement Bird</Abnormality>
 			<CardName>Tilted Scale</CardName>
 			<AbilityDesc>Increase the maximun value vof dice by 5.
-reduce the minimun value of dice by 3</AbilityDesc>
+Reduce the minimun value of dice by 3.</AbilityDesc>
       		<FlaborText>All that remains is the unjust scale. The long bird continues on, doling out judgement.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">This scale always yields a clear verdict; I can make sound, precise judgement with it.</Dialogue>
@@ -141,7 +141,7 @@ Upon first successful hit on 'The Guilty' inflict damage equal to 15% of Max HP 
         <AbnormalityCard ID="ApocalypseBird_LongArm_Enemy">
 			<Abnormality>Apocalypse Bird</Abnormality>
 			<CardName>Long Arms</CardName>
-			<AbilityDesc>Immune to status ailments</AbilityDesc>
+			<AbilityDesc>Immune to status ailments.</AbilityDesc>
       		<FlaborText>The Long Bird’s arms concealed time.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">I hide away time.</Dialogue>

@@ -85,7 +85,7 @@ Lose 1-3 HP upon using pages without the Pebble.</AbilityDesc>
 			<CardName>Thorns</CardName>
 			<AbilityDesc>On a successful attack, inflict 1 Thrill to the target.
 when Thrill's stack reach 3, deal 3-7 bonus damage and Stagger damage, then remove all stacks of Thrill.
-(Resets upon attacking a different target)</AbilityDesc>
+(Resets upon attacking a different target.)</AbilityDesc>
 			<FlaborText>At first, all I had to do was be lightly pricked by one of the thorns. Now I have to rub my whole body against it to get the same high.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Sure, I’ll bend down for you~ Feel free to pet me.</Dialogue>
@@ -176,7 +176,7 @@ After the character with the Petal takes 4 hits in a single Scene, all character
 			<Abnormality>The Silent Orchestra</Abnormality>
 			<CardName>Fervent Adoration</CardName>
 			<AbilityDesc>Every 4 Scene, inflict Fervent Adoration to one random Controlable Librarian.
-(Fervent Adoration: Uncontrollable. Upon becoming Staggered, this status is removed, and the character recovers from Stagger next Scene.
+(Fervent Adoration: Uncontrollable. Upon becoming Staggered, this status is removed, and the character recovers from Stagger next Scene;
 Only takes Stagger damage from sane librarians, increase Stagger Damage taken by 100%;
 Only takes physical damage from enemy, increase damage taken by 2-4.)</AbilityDesc>
 			<FlaborText>The orchestra gives impetus to the music, bringing the entire department to its demise. When all the performers have gathered, the music that no one can hear but everyone can listen to begins.</FlaborText>

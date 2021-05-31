@@ -56,6 +56,18 @@ For every 9% of Max HP lost increase outgoing Stagger damage by 10% (Up to 100%)
         		<Dialogue ID="3">We are not dying. We’re simply returning to where we belong.</Dialogue>
       		</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="BlueStar_Atonement">
+			<Abnormality>Blue Star</Abnormality>
+			<CardName>Penance</CardName>
+			<AbilityDesc>[Single Ally]
+If any character is Staggered at the start of the Scene, the selected librarian take 3-7 damage, and all allies gain 1 Strength for the Scene. (Multiple Staggered characters do not give more Strength)</AbilityDesc>
+      		<FlaborText>Our Blue Star is the only sanctuary that accepts us. We will be cleansed of our sins there.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">Let us completely take off this filthy husk and shine brightly.</Dialogue>
+        		<Dialogue ID="2">We shouldn’t let our anxiety fester inside us, busying ourselves trying to forget our wrongdoings by erasing them.</Dialogue>
+        		<Dialogue ID="3">We’ll all eventually go back to that place and cleanse ourselves of all sin there.</Dialogue>
+      		</Dialogues>
+		</AbnormalityCard>
 		<AbnormalityCard ID="WhiteNight_White">
 			<Abnormality>WhiteNight</Abnormality>
 			<CardName>Divine Power</CardName>

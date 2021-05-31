@@ -30,7 +30,7 @@ Deal 2-6 additional damage when attacking the marked foe.</AbilityDesc>
 		<AbnormalityCard ID="Redhood_RedScar_Enemy">
 			<Abnormality>Little Red Riding Hooded Mercenary</Abnormality>
 			<CardName>Crimson Scar</CardName>
-			<AbilityDesc>Set Max HP equal to current HP.应用该异想体书页后，该来宾的最大体力会设定为其当前体力。
+			<AbilityDesc>Set Max HP equal to current HP.
 At the start of each Scene gain 1 strength per 15% of Max HP for reduced Max HP consequently.</AbilityDesc>
 			<FlaborText>I got used to grinding the axe instead of picking flowers when I was 15.</FlaborText>
 			<Dialogues>
@@ -44,7 +44,7 @@ At the start of each Scene gain 1 strength per 15% of Max HP for reduced Max HP 
 			<Abnormality>Big and Will be Bad Wolf</Abnormality>
 			<CardName>Claws of Savagery</CardName>
 			<AbilityDesc>After the guest sustains damage greater than 25% of their Max HP in one Scene, become untargetable and unclashable next Scene.
-The guest gains 2 Strength that Scene, and inflicts 1 Bleed with each successful attack</AbilityDesc>
+The guest gains 2 Strength that Scene, and inflicts 1 Bleed with each successful attack.</AbilityDesc>
 			<FlaborText>Once upon a time, these claws would cut open the bellies of numerous creatures and tear apart their guts.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">What sharp claws I had, the better to fill the role I was born for…</Dialogue>
@@ -68,7 +68,7 @@ The guest gains 2 Strength that Scene, and inflicts 1 Bleed with each successful
 		<AbnormalityCard ID="BigBadWolf_Change_Enemy">
 			<Abnormality>Big and Will be Bad Wolf</Abnormality>
 			<CardName>The Role of the Wolf</CardName>
-			<AbilityDesc>Gain 2 3-7 Slash Counter dices</AbilityDesc>
+			<AbilityDesc>Gain 2 3-7 Slash Counter dices.</AbilityDesc>
 			<FlaborText>Wolves could not cross the line when doing bad things. And wolves had to be punished. Wolves always needed to be an example.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Doesn’t matter… I’m destined to be a big bad wolf…</Dialogue>
@@ -104,7 +104,7 @@ The guest gains 2 Strength that Scene, and inflicts 1 Bleed with each successful
 		<AbnormalityCard ID="Mountain_Vomit_Enemy">
 			<Abnormality>Mountain of Smiling Bodies</Abnormality>
 			<CardName>Mountain of Corpses</CardName>
-			<AbilityDesc>For each 10% of Max HP healed, gain 1 Mountain (All dice gain 1 Power per stack; increase incoming damage by 25% per stack; Become Bigger.)
+			<AbilityDesc>For each 10% of Max HP healed, gain 1 Mountain. (All dice gain 1 Power per stack; increase incoming damage by 25% per stack; Become Bigger.)
 For each 10% of Max HP damage taken, lose 1 Mountain.</AbilityDesc>
 			<FlaborText>The more bodies it comes across, the more defined its shape becomes. And it is never satisfied.</FlaborText>
 			<Dialogues>
@@ -178,7 +178,7 @@ Prioritize the librarian with the most HP.</AbilityDesc>
 		<AbnormalityCard ID="NothingThere_Skin_Enemy">
 			<Abnormality>Nothing There</Abnormality>
 			<CardName>Shell</CardName>
-			<AbilityDesc>Nullify Stagger damage. </AbilityDesc>
+			<AbilityDesc>Nullify Stagger damage.</AbilityDesc>
 			<FlaborText>Its appearance resembles a human, but it most certainly isn’t human. It periodically devours employees and wears their shell. The skeleton and organs are misplaced during the process, so it takes a bizarre form.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Love… Lo… ou… I love you…</Dialogue>

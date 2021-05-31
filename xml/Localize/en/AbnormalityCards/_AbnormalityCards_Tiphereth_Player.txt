@@ -36,7 +36,7 @@ Deal 3-5 additional damage when attacking the 'The Villain'.</AbilityDesc>
 			<CardName>Hate</CardName>
 			<AbilityDesc>[Single Ally]
 Dice gain 1-3 Power. 
-if none of other allies take damage equal to 20% of Max HP or above in previous round, inflict 3-7 damage and 2-6 Stagger damage to all allies.
+If none of other allies take damage equal to 20% of Max HP or above in previous round, inflict 3-7 damage and 2-6 Stagger damage to all allies.
 If has 'Villain', mark Villain randomly.</AbilityDesc>
 			<FlaborText>She vowed to love everything in the world, but all that was left was a collapsing heart.</FlaborText>
 			<Dialogues>
@@ -53,7 +53,7 @@ If has 'Villain', mark Villain randomly.</AbilityDesc>
 			<AbilityDesc>[Single Ally]
 At the start of each Scene, give Blessing to ally with lowest HP for 2 Scene.
 Character with Blessing take incoming damage and Stagger damage by 30%.
-For the duration of Blessing, the selected character gain 'Sword Sharpened with Tears' effect</AbilityDesc>
+For the duration of Blessing, the selected character gain 'Sword Sharpened with Tears' effect.</AbilityDesc>
 			<FlaborText>The will to protect seems to remain unchanged after all this time; even in containment, it is still obsessed with the act of protection.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">All that remains is the hollow pride of a weathered knight.</Dialogue>
@@ -68,7 +68,7 @@ For the duration of Blessing, the selected character gain 'Sword Sharpened with 
 			<AbilityDesc>[Single Ally]
 On parry, if all Offensive Dices successfully hit target, inflict damage equal to  10% of target's Max HP. 
 On parry, if fail to give an successful attack, take damage equal to 10% of Max HP.
-Immune to Stagger Damage when multiple 'Sword Sharpened with Tears' effect activated</AbilityDesc>
+Immune to Stagger Damage when multiple 'Sword Sharpened with Tears' effect activated.</AbilityDesc>
       		<FlaborText>When Justice turns its back once more, several dozen blades will rove without a purpose. The swords will eventually point at those she could not protect.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">The edge of this sword sharpened with tears and despair is always precise.</Dialogue>
@@ -81,7 +81,7 @@ Immune to Stagger Damage when multiple 'Sword Sharpened with Tears' effect activ
 			<CardName>Despair</CardName>
 			<AbilityDesc>[Single Ally]
 Whenever an ally dies, Gain 2-3 Strength and Damage Increase, and lose 25% of Max Stagger Resist.
-If multiple allies die in previous Scene, gain 'Sword Sharpened with Tears' effect</AbilityDesc>
+If multiple allies die in previous Scene, gain 'Sword Sharpened with Tears' effect.</AbilityDesc>
 			<FlaborText>As with sorrow, perhaps sharing the burden will blunt the edge.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">The despair swelling up inside me is now overflowing through my eyes and heart…</Dialogue>
@@ -204,7 +204,7 @@ Whenever an abnormality cards is cleared, apply new random accessible abnormalit
 		</AbnormalityCard>
 		<AbnormalityCard ID="NihilClown_fusion">
 			<Abnormality>The Jester of Nihil</Abnormality>
-			<CardName>Nihil</CardName>
+			<CardName>Nix</CardName>
 			<AbilityDesc>[Single Ally]
 This page is only effective if the librarian possesses all four of the following Abnormality pages: 'Greed', 'Hate', 'Despair', and 'Wrath'.
 At the start of the Scene, inflict 5 Feeble, Disarm, and Bind to all other characters. 'Greed', 'Hate', and 'Wrath' lose their drawbacks.</AbilityDesc>

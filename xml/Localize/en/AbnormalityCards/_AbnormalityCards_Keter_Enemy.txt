@@ -75,7 +75,7 @@ Gain 1-2 Speed.</AbilityDesc>
 			<Abnormality>Heart of Aspiration</Abnormality>
 			<CardName>Fervent Beats</CardName>
 			<AbilityDesc>Gain 4 Strength, Endurance, Haste, and Protection next Scene.
-At the end of next Scene, gain Exhausted (Cannot act, increase damage and Stagger Damage taken by 2 for the duration of the Scene) next Scene.</AbilityDesc>
+At the end of next Scene, gain Exhausted. (Cannot act, increase damage and Stagger Damage taken by 2 for the duration of the Scene) next Scene.</AbilityDesc>
 			<FlaborText>A heart without an owner; it still beats even after being removed from its body.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Yes, feel the rapid beating of your heart.</Dialogue>

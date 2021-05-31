@@ -75,7 +75,7 @@ Afterwards, draw 4 cards at the start of each Scene.</AbilityDesc>
 			<Abnormality>Ozma</Abnormality>
 			<CardName>Powder of Life</CardName>
 			<AbilityDesc>[All Allies]
-When the Guest takes lethal damage, nullify it and recover 100% of Max. HP and Stagger Resist, lose all Lights. Can only activate once per reception.</AbilityDesc>
+When the Librarian takes lethal damage, nullify it and recover 100% of Max. HP and Stagger Resist, lose all Lights. Can only activate once per reception.</AbilityDesc>
       		<FlaborText>Finally, she sprinkled cinnamon powder—her favorite—and clutched the pumpkin in her arms.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">All I have left now… are these children.</Dialogue>

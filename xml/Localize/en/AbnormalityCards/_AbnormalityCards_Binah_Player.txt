@@ -59,7 +59,7 @@ Sin can be transferred to another character by attacking and damaging them. (Onc
 			<CardName>Tilted Scale</CardName>
 			<AbilityDesc>[Single Ally]
 Increase the maximun value vof dice by 5.
-reduce the minimun value of dice by 3</AbilityDesc>
+Reduce the minimun value of dice by 3.</AbilityDesc>
       		<FlaborText>All that remains is the unjust scale. The long bird continues on, doling out judgement.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">This scale always yields a clear verdict; I can make sound, precise judgement with it.</Dialogue>
@@ -112,7 +112,7 @@ Against Offensive dice, all dice gain 1-3 Power.</AbilityDesc>
 			<CardName>Long Arms</CardName>
 			<AbilityDesc>[Single Ally]
 Reduce outgoing damage and Stagger Damage by 50%.
-Upon successful hit, inflict 10% of enemy's Max HP (Max. 10)</AbilityDesc>
+Upon successful hit, inflict 10% of enemy's Max HP (Max. 10).</AbilityDesc>
 			<FlaborText>To keep the forest's peace, Long Bird weighed the sins of those who entered the forest.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">“But what if the scale doesn't tip in either direction someday?”</Dialogue>
@@ -124,7 +124,7 @@ Upon successful hit, inflict 10% of enemy's Max HP (Max. 10)</AbilityDesc>
 			<CardName>The Beast</CardName>
 			<AbilityDesc>[Single Ally]
 On select, Destroy all other Abnormality cards from all librarians.
-At the end of each Scene, gain one of 3 Apocalypse Bird Power in turn.(“Wing that Covered Sky”,“Claw that Commit Execution”“Eye that Relay Judgment”)</AbilityDesc>
+At the end of each Scene, gain one of 3 Apocalypse Bird Power in turn.(“Wing that Covered Sky”, “Claw that Commit Execution”, “Eye that Relay Judgment”)</AbilityDesc>
       		<FlaborText>The day when Big Bird’s eyes that could see hundreds of kilometers away, Long Bird who could judge any sin, and Small Bird’s mouth that could devour everything united into one, darkness fell upon the forest.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">I can’t let evil take all these precious things away.</Dialogue>

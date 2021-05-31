@@ -39,7 +39,7 @@
 		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
-		<EmotionLevel>1</EmotionLevel>
+		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>   
 		<TargetType>SelectOne</TargetType>
 		<Script>bigbadwolf1</Script>
@@ -127,7 +127,7 @@
 		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>5</Level>
-		<EmotionLevel>2</EmotionLevel>
+		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
 		<Script>nosferatu3</Script>

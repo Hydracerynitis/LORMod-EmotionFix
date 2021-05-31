@@ -5,7 +5,7 @@
 			<Abnormality>Fragment of the Universe</Abnormality>
 			<CardName>Tentacles</CardName>
 			<AbilityDesc>[Single Ally]
-Upon successful Pierce hit, enemy lose 10% of Stagger Ressist (Once per Scene for one enemy).</AbilityDesc>
+Upon successful Pierce hit, enemy lose 10% of Stagger Ressist.</AbilityDesc>
 			<FlaborText>The moment its tentacle penetrates you, it’ll drain all the interest for the life you’re currently living out of you.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Negative. Attack. Come. Help. Give.</Dialogue>
@@ -20,7 +20,7 @@ Upon successful Pierce hit, enemy lose 10% of Stagger Ressist (Once per Scene fo
 			<CardName>Incomprehensible</CardName>
 			<AbilityDesc>[Single Ally]
 Upon succesful hit, inflict 1 Feeble and Disarm next Scene at 50% chance (Three times per Scene).
-Reduce Maximun Draw Card by 2</AbilityDesc>
+Reduce Maximun Draw Card by 2.</AbilityDesc>
 			<FlaborText>Eventually, he succeeded in entering the domain of the ‘Fragment of the Universe’. However, it was obvious that his small brain couldn’t withstand it.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Understand. You. Together. Human. I.</Dialogue>
@@ -117,7 +117,7 @@ Upon a successful Pierce attack, inflict 1-2 Aroma.
 			<Abnormality>The Silent Orchestra</Abnormality>
 			<CardName>The Finale</CardName>
 			<AbilityDesc>[Single Ally]
-Whenever the selected Guest Staggers an enemy, all enemies lose 3-4 Light at the start of the next Scene.</AbilityDesc>
+Whenever the selected Librarian Staggers an enemy, all enemies lose 3-4 Light at the start of the next Scene.</AbilityDesc>
 			<FlaborText>“The music shall perforate your entire being.”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">The music shall perforate your entire being.</Dialogue>

@@ -85,7 +85,7 @@ Whenever other ally die, shuffle 3 card from that ally into deck.</AbilityDesc>
 			<Abnormality>Mountain of Smiling Bodies</Abnormality>
 			<CardName>Mountain of Corpses</CardName>
 			<AbilityDesc>[Single Ally]
-For each 10% of Max HP healed, gain 1 Mountain (All dice gain 1 Power per stack; increase incoming damage by 25% per stack)
+For each 10% of Max HP healed, gain 1 Mountain. (All dice gain 1 Power per stack; increase incoming damage by 25% per stack)
 For each 10% of Max HP damage taken, lose 1 Mountain.</AbilityDesc>
 			<FlaborText>The more bodies it comes across, the more defined its shape becomes. And it is never satisfied.</FlaborText>
 			<Dialogues>

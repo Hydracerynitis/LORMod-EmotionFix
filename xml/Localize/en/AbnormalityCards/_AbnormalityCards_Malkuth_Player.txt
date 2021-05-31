@@ -51,7 +51,7 @@ All dice lose 1-3 Power in a one-sided attack.</AbilityDesc>
       		<CardName>The Fairies’ Care</CardName>
           	<AbilityDesc>[Single Ally]
 For three Scenes, recover 20% of Max HP (Max. 24) at the end of the Scene.
-If the librarian lose 25% of Max HP (Max. 30)or above while this effect is active, lose 25% of the current HP (Max. 30) and lose this effect.</AbilityDesc>
+If the librarian lose 25% of Max HP (Max. 30) or above while this effect is active, lose 25% of the current HP (Max. 30) and lose this effect.</AbilityDesc>
       		<FlaborText>The fairies protect our employees. Everything will be peaceful while you are under the fairies’ care.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Don’t worry, now! We’ll take good care of you.</Dialogue>
@@ -65,8 +65,8 @@ If the librarian lose 25% of Max HP (Max. 30)or above while this effect is activ
       		<Abnormality>Fairy Festival</Abnormality>
       		<CardName>Predation</CardName>
       		<AbilityDesc>[Single Ally]
-Heal 50% of the amount of damage dealt. In each Scene heal at most 20% of Max HP (Max. 24)
-if fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increase damage by 30% in this Scene.</AbilityDesc>
+Heal 50% of the amount of damage dealt. In each Scene heal at most 20% of Max HP (Max. 24).
+If fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increase damage by 30% in this Scene.</AbilityDesc>
       		<FlaborText>His stomach and face were ripped off, and his eyeballs and organs were damaged as if they were eaten by something. Meanwhile, the fairies had someone’s blood and flesh smeared all over their mouths.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">My fairies are dwindling in numbers… But it can’t be helped.</Dialogue>
@@ -94,7 +94,7 @@ All Dice of the selected librarian lose 1 Power.</AbilityDesc>
       		<Abnormality>Queen Bee</Abnormality>
       		<CardName>Loyalty</CardName>
       		<AbilityDesc>[Single Ally]
-As long as there are other alive allies, Cannot act and at the start of each Scene give other allies 2 Strength, Endurance, Quickness</AbilityDesc>
+As long as there are other alive allies, Cannot act and at the start of each Scene give other allies 2 Strength, Endurance, Haste.</AbilityDesc>
       		<FlaborText>The loyalty of bees is a naturally developed instinct. If we discover a way to draw forth that instinct, many things could change.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Hurry and supply me with more honey.</Dialogue>
@@ -107,7 +107,7 @@ As long as there are other alive allies, Cannot act and at the start of each Sce
 			<Abnormality>Snow White’s Apple</Abnormality>
 			<CardName>Barrier of Thorns</CardName>
 			<AbilityDesc>[Single Ally]
-When hit and lose 1% of Max HP or above, inflict 2-8 damage and recover HP equal to the amount of damage.
+When hit, inflict 2-8 damage and recover HP equal to the amount of damage.
 Increase damage by 20% everytime the effect is applied to same attacker in one Scene.</AbilityDesc>
 			<FlaborText>The apple that dropped from Snow White’s hand after a single bite could never be happy. The apple, full of loneliness and hatred towards the princess, waited for the day it would rot away and return to the earth.</FlaborText>
 			<Dialogues>

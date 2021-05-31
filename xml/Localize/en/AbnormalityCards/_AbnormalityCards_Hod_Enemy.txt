@@ -60,7 +60,7 @@ They will soon turn red.</FlaborText>
 			<Abnormality>The Red Shoes</Abnormality>
 			<CardName>Obsession</CardName>
 			<AbilityDesc>Mark random enemy as The Red Shoes. Can only attack The Red Shoes and inflict 3-8 damage upon hit.
-On kill The Red Shoes mark another random enemy as such.</AbilityDesc>
+When kill The Red Shoes, mark another random enemy as such.</AbilityDesc>
 			<FlaborText>I’ll break your legs, then you won’t be able to dance ever again.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">I should be the one in the spotlight!</Dialogue>
@@ -112,7 +112,7 @@ On kill The Red Shoes mark another random enemy as such.</AbilityDesc>
       		<Abnormality>Spider Bud</Abnormality>
 			<CardName>Alertness</CardName>
 			<AbilityDesc>Enemies lose 1 Power in a clash against the selected Guest.
-Upon winning a clash, inflict 1 Bind and Fragile at a 50% chance.</AbilityDesc>
+Upon winning a clash, inflict 1 Bind and Fragile next Scene at a 50% chance.</AbilityDesc>
 			<FlaborText>The eyes shone in the dark, searching for prey to feed to its spiderlings.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">To clearly see in the darkness…</Dialogue>

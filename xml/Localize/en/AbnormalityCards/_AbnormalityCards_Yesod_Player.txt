@@ -19,7 +19,7 @@ Blunt dice gain 1-3 Power. Speed is fixed at 1.</AbilityDesc>
 			<Abnormality>Forsaken Murderer</Abnormality>
 			<CardName>Metallic Ringing</CardName>
 			<AbilityDesc>[Single Ally]
-Upon successful Blunt attack, reduce Physical and Stagger damage of enemy's next Offensive dice by 50%</AbilityDesc>
+Upon successful Blunt attack, reduce Physical and Stagger damage of enemy's next Offensive dice by 50%.</AbilityDesc>
 			<FlaborText>“My head… turning into metal… folds in my brain, being flattened…”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">My head is ringing. I can hear the sound of metal, clear and loud…</Dialogue>
@@ -61,7 +61,7 @@ Deal 3-5 additional damage with attacks this Act. Suffer 3-5 additional Stagger 
 			<Abnormality>Singing Machine</Abnormality>
 			<CardName>Rhythm</CardName>
 			<AbilityDesc>[Single Ally]
-For the duration of the battle, gain 1 Rhythm at the start of each Scene. Upon 3 successful hit by character with Rhythm, a random character gains 1 Rhythm next Scene
+For the duration of the battle, gain 1 Rhythm at the start of each Scene. Upon 3 successful hit by character with Rhythm, a random character gains 1 Rhythm next Scene.
 (Rhythm: Gain 1 Strength per stack, lasts 1 Scene)</AbilityDesc>
 			<FlaborText>It was creating a rhythm.</FlaborText>
 			<Dialogues>
