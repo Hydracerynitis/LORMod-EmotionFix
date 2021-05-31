@@ -10,7 +10,6 @@ namespace EmotionalFix
     public class EmotionCardAbility_redhood3 : EmotionCardAbilityBase
     {
         private int Reduce;
-        private int Threshold => (int)((double)this._owner.MaxHp * 0.15);
         private int strcount;
         private Battle.CreatureEffect.CreatureEffect aura;
         private string path = "6/RedHood_Emotion_Aura";
@@ -19,6 +18,7 @@ namespace EmotionalFix
             base.OnSelectEmotion();
             Reduce = this._owner.MaxHp - (int)this._owner.hp;
             int reduce = Reduce;
+            int Threshold= (int)((double)this._owner.MaxHp * 0.15);
             this._owner.bufListDetail.AddBuf(new Scar(Reduce));
             for (strcount=0 ; reduce > Threshold; reduce -= Threshold)
                 strcount += 1;
