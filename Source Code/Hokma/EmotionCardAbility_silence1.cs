@@ -92,6 +92,21 @@ namespace EmotionalFix
             base.OnRoundEnd();
             this.rolled = false;
         }
+        public void Destroy()
+        {
+            try
+            {
+                if (!((UnityEngine.Object)this._clock != (UnityEngine.Object)null))
+                    return;
+                UnityEngine.Object.Destroy((UnityEngine.Object)this._clock.gameObject);
+                this._clock = null;
+            }
+            catch(Exception ex)
+            {
+                Debug.Error("TimeClockDestroy", ex);
+            }
+
+        }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);
