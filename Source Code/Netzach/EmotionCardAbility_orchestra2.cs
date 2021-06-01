@@ -83,6 +83,11 @@ namespace EmotionalFix
         {
             Destroy();
         }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            Destroy();
+        }
         public void Destroy()
         {
             foreach(BattleUnitModel player in BattleObjectManager.instance.GetAliveList(Faction.Player))
