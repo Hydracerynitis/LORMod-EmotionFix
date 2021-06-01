@@ -42,11 +42,13 @@ namespace EmotionalFix
             this._owner.emotionDetail.PassiveList.Add(this._emotionCard);
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BossBird_Birth", false, 4f);
             this._owner.bufListDetail.AddBuf(new Apocalypse(this));
+            Activate();
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
             this._owner.bufListDetail.AddBuf(new Apocalypse(this));
+            Activate();
         }
         public override void OnFixedUpdateInWaitPhase(float delta)
         {
@@ -199,7 +201,7 @@ namespace EmotionalFix
             if (phase != ApocalypsePhase.Long)
                 return;
             BattleUnitModel target = behavior.card.target;
-            if (target.hp >= target.MaxHp * 0.25)
+            if (target.hp > target.MaxHp * 0.25)
                 return;
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/LongBird_Stun", false, 1f);
             target.Die();
