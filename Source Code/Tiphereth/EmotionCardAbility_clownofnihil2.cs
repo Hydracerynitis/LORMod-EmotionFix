@@ -30,7 +30,7 @@ namespace EmotionalFix
         }
         public class Clear : BattleUnitBuf
         {
-            protected override string keywordIconId => "Fusion";
+            protected override string keywordIconId => "CardBuf_NihilClown_Card";
             protected override string keywordId => "RandomEmotion";
             private int level1;
             private int level2;
