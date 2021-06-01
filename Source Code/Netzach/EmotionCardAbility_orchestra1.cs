@@ -19,6 +19,7 @@ namespace EmotionalFix
         private BattleDiceCardModel Dacapo;
         public override void OnWaveStart()
         {
+            this.effect = false;
             if(this._owner.faction==Faction.Player)
                Dacapo=this._owner.allyCardDetail.AddNewCardToDeck(1100006);
             if (this._owner.faction == Faction.Enemy)
@@ -37,10 +38,10 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (!this.effect && !this.trigger)
+            if (!this.effect)
                 return;
             this.effect = false;
-            this.trigger = false;
+            this.trigger = true;
             this._owner.SetHp(this.savedHp);
             this._owner.breakDetail.breakGauge = this.savedBp;
             this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
@@ -64,7 +65,7 @@ namespace EmotionalFix
                 return;
             if (this._owner.history.takeDamageAtOneRound < (double)this._owner.MaxHp * 0.25)
                 return;
-            this.trigger = true;
+            this.effect = true;
         }
         public void Destroy()
         {
@@ -74,6 +75,7 @@ namespace EmotionalFix
         {
             this.savedHp = (int)this._owner.hp;
             this.savedBp = this._owner.breakDetail.breakGauge;
+            this.effect = false;
             if (this._owner.faction == Faction.Enemy)
                 this.trigger = false;
             if(this._owner.faction==Faction.Player)
