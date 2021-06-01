@@ -93,7 +93,7 @@ Upon successful hit, inflict all enemy with 1 random activated status ailment ne
 			<Abnormality>Dream of a Black Swan</Abnormality>
 			<CardName>Well-worn Parasol</CardName>
 			<AbilityDesc>[Single Ally]
-Gain 2 Counter die (Slash, 6-10; On Clash Win: inflict Physical and Stagger damage equal to Power of target's die to enemy) at combat start.</AbilityDesc>
+Gain 2 Counter die (Block, 6-10; On Clash Win: inflict Physical and Stagger damage equal to Power of target's die to enemy) at combat start.</AbilityDesc>
 			<FlaborText>Believing that it would turn white, the black swan wanted to lift the curse by weaving together nettles. All that was left is a worn parasol it once treasured.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">What happens when the black swan wakes up from dreaming of a white swan?</Dialogue>

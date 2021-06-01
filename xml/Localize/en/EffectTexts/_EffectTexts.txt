@@ -192,7 +192,7 @@ Upon successful hit, inflict 10% of enemy's Max HP (Max. 10)</Desc>
 		<BattleEffectText ID="Bigbird">
       		<Name>Big Eyes</Name>
       		<Desc>Reduce Max Stagger Resist by 50%.
-Every time being targeted in one-side attack, gain Slash 4-10 counter die.</Desc>
+On being targeted in one-side attack, if the character have no retained or counter dices, gain Slash 4-10 counter die.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Bigbird_Enemy">
       		<Name>Big Eyes</Name>
@@ -222,7 +222,7 @@ If 'Eye Beams'at least hit enemy once, the enemy gain 'Horrified'.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ApocalypseBird_Long">
       		<Name>Eye that Relay Judgment</Name>
-      		<Desc>Upon successful attack, executer enemy with HP lower than 25% of Max HP for the duration of the Scene.</Desc>
+      		<Desc>For the duration of the Scene, execute enemy with HP lower than 25% of Max HP upon successful attack.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="BigBirdParalysis">
       		<Name>Horrified</Name>

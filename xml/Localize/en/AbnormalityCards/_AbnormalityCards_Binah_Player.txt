@@ -87,7 +87,7 @@ Upon first successful hit on 'The Guilty' inflict damage equal to 15% of Max HP 
 			<CardName>Big Eyes</CardName>
 			<AbilityDesc>[Single Ally]
 Reduce Max Stagger Resist by 50%.
-Every time being targeted in one-side attack, gain Slash 4-10 counter die.</AbilityDesc>
+On being targeted in one-side attack, if the character have no retained or counter dices, gain Slash 4-10 counter die.</AbilityDesc>
 			<FlaborText>For Big Bird's eyes could see very far, and see things we cannot see.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">“But what if the beast shows up in the middle of the night, when the sky is dark and everyone is asleep?”</Dialogue>
