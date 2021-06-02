@@ -12,7 +12,7 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_orchestra2 : EmotionCardAbilityBase
     {
-        private CameraFilterPack_Noise_TV_2 _filter;
+        public CameraFilterPack_Noise_TV_2 _filter;
         private int turn;
         public void Filter()
         {
@@ -35,7 +35,8 @@ namespace EmotionalFix
             base.OnSelectEmotion();
             if (this._owner.faction == Faction.Enemy)
                 turn = 3;
-            Filter();
+            if (!CheckDupFilter())
+                Filter();
         }
         public override void OnRoundStart()
         {
@@ -71,8 +72,39 @@ namespace EmotionalFix
                 unlucky.breakDetail.nextTurnBreak = false;
                 unlucky.turnState = BattleUnitTurnState.WAIT_CARD;
                 unlucky.breakDetail.RecoverBreak(unlucky.breakDetail.GetDefaultBreakGauge());
-                Filter();
+                if(!CheckDupFilter())
+                    Filter();
             }
+        }
+        private bool CheckDupFilter()
+        {
+            foreach(BattleUnitModel unit in BattleObjectManager.instance.GetAliveList())
+            {
+                BattleEmotionCardModel adoration = SearchEmotion(unit, "SilentOrchestra_Affect");
+                if (adoration == null)
+                    adoration = SearchEmotion(unit, "SilentOrchestra_Affect_Enemy");
+                if (adoration == null)
+                    continue;
+                else
+                {
+                    if(adoration.AbilityList.Find(x => x is EmotionCardAbility_orchestra2) is EmotionCardAbility_orchestra2 AdorationAbility)
+                    {
+                        if (AdorationAbility._filter != (UnityEngine.Object)null)
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+        private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
+        {
+            List<BattleEmotionCardModel> emotion = owner.emotionDetail.PassiveList;
+            foreach (BattleEmotionCardModel card in emotion)
+            {
+                if (card.XmlInfo.Name == Name)
+                    return card;
+            }
+            return null;
         }
         public override void OnEndBattlePhase()
         {
@@ -90,12 +122,26 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            foreach(BattleUnitModel player in BattleObjectManager.instance.GetAliveList(Faction.Player))
+            DestroyFilter();
+            foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
+            {
+                BattleEmotionCardModel adoration = SearchEmotion(unit, "SilentOrchestra_Affect_Enemy");
+                if (adoration != null)
+                {
+                    if (adoration.AbilityList.Find(x => x is EmotionCardAbility_orchestra2) is EmotionCardAbility_orchestra2 AdorationAbility)
+                    {
+                        if (AdorationAbility._filter == (UnityEngine.Object)null)
+                            AdorationAbility.Filter();
+                    }
+                }
+                return;
+            }
+            foreach (BattleUnitModel player in BattleObjectManager.instance.GetAliveList(Faction.Player))
             {
                 if (player.bufListDetail.GetActivatedBufList().Find(x => x is Enthusiastic) is Enthusiastic enthusiastic)
                     enthusiastic.Destroy();
             }
-            DestroyFilter();
+            
         }
         public class BattleUnitBuf_Emotion_Orchestra : BattleUnitBuf
         {
