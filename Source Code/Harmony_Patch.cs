@@ -28,6 +28,7 @@ namespace EmotionalFix
             EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
             EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
+            PassiveAbility_668.LevelUped = new List<UnitBattleDataModel>();
             enemylist = new List<BattleUnitModel>();
             MethodInfo method1 = typeof(Harmony_Patch).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
             MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
@@ -159,6 +160,7 @@ namespace EmotionalFix
         }
         public static void StageController_GameOver()
         {
+            PassiveAbility_668.LevelUped.Clear();
             EmotionCardAbility_clownofnihil2.Clown.Clear();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock.Clear();
             Hastrigger = false;

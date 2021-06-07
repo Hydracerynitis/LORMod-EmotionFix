@@ -12,6 +12,7 @@ namespace EmotionalFix
         private int Collect1;
         private int Collect2;
         private bool Collect3;
+        public static List<UnitBattleDataModel> LevelUped;
         public PassiveAbility_668(BattleUnitModel model,bool Trigger)
         {
             this.Init(model);
@@ -26,6 +27,8 @@ namespace EmotionalFix
         public override void Init(BattleUnitModel self)
         {
             base.Init(self);
+            if (LevelUped.Contains(self.UnitData))
+                return;
             List<BattleUnitModel> player = BattleObjectManager.instance.GetAliveList(Faction.Player);
             int level = 0;
             foreach (BattleUnitModel librarian in player)
@@ -36,6 +39,7 @@ namespace EmotionalFix
             self.emotionDetail.SetEmotionLevel(level);
             self.cardSlotDetail.RecoverPlayPoint(self.cardSlotDetail.GetMaxPlayPoint());
             self.OnRoundStartOnlyUI();
+            LevelUped.Add(self.UnitData);
         }
         public override void OnRoundEndTheLast()
         {
