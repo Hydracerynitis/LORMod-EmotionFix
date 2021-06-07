@@ -102,7 +102,7 @@ namespace EmotionalFix
                     return;
                 this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Aura", 1f, this._owner.view, this._owner.view)?.gameObject;
             }
-            public override void OnRoundEnd()
+            public override void OnRoundEndTheLast()
             {
                 base.OnRoundEnd();
                 this.DestroyAura();
