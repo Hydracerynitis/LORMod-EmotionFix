@@ -40,13 +40,13 @@ namespace EmotionalFix
             }
             if (active)
             {
-                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("5_T/FX_IllusionCard_5_T_HeartBroken", 2f);
                 foreach (BattleUnitModel victim in BattleObjectManager.instance.GetAliveList(this._owner.faction))
                 {
                     victim.TakeBreakDamage(BreakDmg);
                     victim.TakeDamage(Dmg);
                     active = false;
                 }
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_HeartBroken", 1f, this._owner.view, this._owner.view, 2f);
                 this.LaserEffect();
             }
         }
