@@ -31,10 +31,10 @@ namespace EmotionalFix
         public override void OnSelectEmotion() => SoundEffectPlayer.PlaySound("Creature/Teddy_On");
         public override void OnParryingStart(BattlePlayingCardDataInUnitModel card)
         {
-            if (card.target == null || this._owner.faction != Faction.Enemy)
+            if (card.target == null || this._owner.faction != Faction.Enemy || card.target.currentDiceAction is BattleKeepedCardDataInUnitModel)
                 return;
             BattleUnitBuf activatedBuf = card.target.bufListDetail.GetActivatedBuf(KeywordBuf.TeddyLove);
-            if (activatedBuf != null)
+            if (activatedBuf != null && activatedBuf.stack<5)
             {
                 ++activatedBuf.stack;
             }

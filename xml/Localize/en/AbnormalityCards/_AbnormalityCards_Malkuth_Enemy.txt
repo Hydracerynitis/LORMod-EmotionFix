@@ -57,7 +57,7 @@ At the start of each Scene, gain 3 Bind</AbilityDesc>
     	<AbnormalityCard ID="HappyTeddyBear_Memory_Enemy">
       		<Abnormality>Happy Teddy Bear</Abnormality>
       		<CardName>Happy Memories</CardName>
-      		<AbilityDesc>On parry, inflict 1 memory to target. At the end of each Scene, All Memory lose 1 stack of itself.
+      		<AbilityDesc>On parry, inflict 1 Memory (Max. 5) to target. At the end of each Scene, All Memory lose 1 stack of itself.
 All dices increase power by the amount of Memory on traget in a clash</AbilityDesc>
       		<FlaborText>But, you see, Teddy never wanted to be separate from its owner ever again.</FlaborText>
       		<Dialogues>
