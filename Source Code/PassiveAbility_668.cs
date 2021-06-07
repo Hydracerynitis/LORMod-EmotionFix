@@ -12,7 +12,6 @@ namespace EmotionalFix
         private int Collect1;
         private int Collect2;
         private bool Collect3;
-        public static List<UnitBattleDataModel> Leveluped;
         public PassiveAbility_668(BattleUnitModel model,bool Trigger)
         {
             this.Init(model);
@@ -24,11 +23,9 @@ namespace EmotionalFix
             Collect3 = this.owner.emotionDetail.PassiveList.Exists((Predicate<BattleEmotionCardModel>)(x => x.XmlInfo.EmotionLevel == 3));
             WhiteNight = Trigger;
         }
-        public override void OnRoundStart()
+        public override void Init(BattleUnitModel self)
         {
-            base.OnWaveStart();
-            if (Leveluped.Contains(this.owner.UnitData))
-                return;
+            base.Init(self);
             List<BattleUnitModel> player = BattleObjectManager.instance.GetAliveList(Faction.Player);
             int level = 0;
             foreach (BattleUnitModel librarian in player)
@@ -36,9 +33,9 @@ namespace EmotionalFix
                 level += librarian.emotionDetail.EmotionLevel;
             }
             level = level / player.Count;
-            this.owner.emotionDetail.SetEmotionLevel(level);
-            this.owner.cardSlotDetail.RecoverPlayPoint(this.owner.cardSlotDetail.GetMaxPlayPoint());
-            Leveluped.Add(this.owner.UnitData);
+            self.emotionDetail.SetEmotionLevel(level);
+            self.cardSlotDetail.RecoverPlayPoint(self.cardSlotDetail.GetMaxPlayPoint());
+            self.OnRoundStartOnlyUI();
         }
         public override void OnRoundEndTheLast()
         {

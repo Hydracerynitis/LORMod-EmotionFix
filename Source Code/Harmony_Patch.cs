@@ -28,7 +28,6 @@ namespace EmotionalFix
             EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
             EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
-            PassiveAbility_668.Leveluped = new List<UnitBattleDataModel>();
             enemylist = new List<BattleUnitModel>();
             MethodInfo method1 = typeof(Harmony_Patch).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
             MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
@@ -162,7 +161,6 @@ namespace EmotionalFix
         {
             EmotionCardAbility_clownofnihil2.Clown.Clear();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock.Clear();
-            PassiveAbility_668.Leveluped.Clear();
             Hastrigger = false;
         }
         public static bool Decay_OnRoundEnd(BattleUnitBuf_Decay __instance,BattleUnitModel ____owner,ref int ___reserve)
