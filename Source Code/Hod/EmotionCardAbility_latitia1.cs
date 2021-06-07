@@ -32,6 +32,11 @@ namespace EmotionalFix
                 return;
             this._target = null;
         }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            Destroy();
+        }
         public void Destroy()
         {
             if (_target == null)

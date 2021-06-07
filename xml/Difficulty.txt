@@ -5,4 +5,4 @@ Hard: 	Guests will apply 5 emotion cards at most (2 from tier 1, 2 from tier 2, 
 Brutal: 	Guests will not only apply 5 emotion cards at most, 
 	at their first appearance will adjust their emotion level to equal to Librian's average emotion level 
 
-Choose Your Difficulty (Casual, Normal, Hard, Brutal):  Brutal
+Choose Your Difficulty (Casual, Normal, Hard, Brutal):  Normal
