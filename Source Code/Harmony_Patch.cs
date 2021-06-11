@@ -126,7 +126,19 @@ namespace EmotionalFix
             {
                 Debug.Error("HP_" + method15.Name, ex);
             }
-
+            // Help Project Moon Fix their game
+            MethodInfo method17 = typeof(Harmony_Patch).GetMethod("PassiveAbility_170331_SpeedDiceNumAdder");
+            MethodInfo method18 = typeof(PassiveAbility_170331).GetMethod("SpeedDiceNumAdder", AccessTools.all);
+            try
+            {
+                HarmonyMethod prefix4 = new HarmonyMethod(method17);
+                harmony.Patch((MethodBase)method18, prefix: prefix4);
+                Debug.Log("Patch " + method17.Name + " Succeed");
+            }
+            catch (Exception ex)
+            {
+                Debug.Error("HP_" + method17.Name, ex);
+            }
         }
         public static void EmotionCardXmlList_GetEnemyEmotionNeutralCardList(ref List<EmotionCardXmlInfo> __result)
         {
@@ -211,6 +223,11 @@ namespace EmotionalFix
                     AssignPassive(alive);
                 }
             }
+        }
+        public static bool PassiveAbility_170331_SpeedDiceNumAdder(ref int __result)
+        {
+            __result=- 1;
+            return false;
         }
         public static Difficulty DifficultyTweak()
         {
