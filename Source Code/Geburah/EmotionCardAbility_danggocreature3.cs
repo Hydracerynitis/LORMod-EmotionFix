@@ -11,6 +11,7 @@ namespace EmotionalFix
     {
         private bool _effect;
         private int height;
+        private int previousStack;
         private int Healed => this._owner.UnitData.historyInWave.healed;
         private int Threshold => (int)((double)this._owner.MaxHp * 0.1);
         private int heal;
@@ -22,6 +23,7 @@ namespace EmotionalFix
             absorption = 0;
             _effect = true;
             count = 0;
+            previousStack = 0;
             this.MakeEffect("6/Dango_Emotion_Spread", target: this._owner);
         }
         public override void OnSelectEmotion()
@@ -29,14 +31,12 @@ namespace EmotionalFix
             heal = Healed;
             _effect = true;
             absorption = 0;
+            previousStack = 0;
             height = this._owner.UnitData.unitData.customizeData.height;
         }
         public override void OnRoundEndTheLast()
         {
-            int previous_count = 0;
             _effect = true;
-            if(this._owner.bufListDetail.GetActivatedBufList().Exists(x => x is MoutainCorpse))
-                previous_count = this._owner.bufListDetail.GetActivatedBufList().Find(x => x is MoutainCorpse).stack;
             count = 0;
             absorption += (Healed - heal);
             heal = Healed;
@@ -49,8 +49,9 @@ namespace EmotionalFix
                 count += 1;
                 Absorption -= Threshold;
             }
-            if (count > previous_count)
+            if (count > previousStack)
                 _effect = false;
+            previousStack = count;
             //this._owner.UnitData.unitData.customizeData.height = height;
             //this._owner.view.CreateSkin();
         }
