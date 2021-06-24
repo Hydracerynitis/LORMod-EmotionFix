@@ -77,7 +77,10 @@ namespace EmotionalFix
             }
             if (victim.Count == 0)
                 return;
-            BattleDiceCardModel Aoe = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(1101501));
+            DiceCardXmlInfo xml = ItemXmlDataList.instance.GetCardItem(1101501).Copy(true);
+            DiceBehaviour dice = xml.DiceBehaviourList[0];
+            dice.Dice = dice.Dice += num;
+            BattleDiceCardModel Aoe = BattleDiceCardModel.CreatePlayingCard(xml);
             BattleUnitModel target = RandomUtil.SelectOne<BattleUnitModel>(victim);
             victim.Remove(target);
             BattlePlayingCardDataInUnitModel Card = new BattlePlayingCardDataInUnitModel

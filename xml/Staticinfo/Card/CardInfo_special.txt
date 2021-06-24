@@ -8,7 +8,7 @@
 		<Script></Script>
 		<ScriptDesc></ScriptDesc>
 		<BehaviourList>
-			<Behaviour Min="3" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript="" Desc=""/>
+			<Behaviour Min="3" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript="malkuthboss_whitesnow_strongvine" Desc=""/>
 		</BehaviourList>
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
