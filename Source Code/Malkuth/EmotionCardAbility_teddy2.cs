@@ -57,7 +57,7 @@ namespace EmotionalFix
         {
             if (this._id <= 0)
                 return;
-            foreach (BattleDiceCardModel battleDiceCardModel in this._owner.allyCardDetail.GetAllDeck().FindAll((Predicate<BattleDiceCardModel>)(x => x.GetID() == this._id)))
+            foreach (BattleDiceCardModel battleDiceCardModel in this._owner.allyCardDetail.GetAllDeck().FindAll(x => x.GetID() == this._id))
             {
                 battleDiceCardModel.AddBufWithoutDuplication(new TeddyCardBuf());
                 battleDiceCardModel.SetAddedIcon("TeddyIcon");
@@ -80,7 +80,7 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Enemy)
             {
                 bool mulitteddy = false;
-                foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
+                foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(Faction.Enemy).FindAll(x => x != _owner))
                 {
                     if (SearchEmotion(unit, "HappyTeddyBear_Memory_Enemy") != null)
                         mulitteddy = true;
@@ -107,7 +107,7 @@ namespace EmotionalFix
         public class TeddyCardBuf : BattleDiceCardBuf
         {
             public override DiceCardBufType bufType => DiceCardBufType.Teddy;
-
+            protected override string keywordIconId => "TeddyIcon";
             public override void OnUseCard(BattleUnitModel owner)
             {
                 if (this._card.GetOriginCost() == 4 && this._card.GetCost() <= 0)
