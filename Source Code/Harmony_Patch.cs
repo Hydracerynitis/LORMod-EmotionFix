@@ -232,37 +232,44 @@ namespace EmotionalFix
         public static Difficulty DifficultyTweak()
         {
             Difficulty Dif = Difficulty.Normal;
-            Debug.PathDebug("/Difficulty.txt", PathType.File);
-            Debug.Log("Difficulty input found");
-            foreach(string str in File.ReadAllLines(modPath + "/Difficulty.txt"))
+            try
             {
-                string text = str.Trim();
-                if (!text.StartsWith("Choose Your Difficulty (Casual, Normal, Hard, Brutal):"))
-                    continue;
-                int i = text.IndexOf("Choose Your Difficulty (Casual, Normal, Hard, Brutal):");
-                text = text.Remove(i, "Choose Your Difficulty (Casual, Normal, Hard, Brutal):".Length);
-                if (text.Contains("Casual"))
+                Debug.PathDebug("/Difficulty.txt", PathType.File);
+                Debug.Log("Difficulty input found");
+                foreach (string str in File.ReadAllLines(modPath + "/Difficulty.txt"))
                 {
-                    Dif = Difficulty.Easy;
-                    break;
+                    string text = str.Trim();
+                    if (!text.StartsWith("Choose Your Difficulty (Casual, Normal, Hard, Brutal):"))
+                        continue;
+                    int i = text.IndexOf("Choose Your Difficulty (Casual, Normal, Hard, Brutal):");
+                    text = text.Remove(i, "Choose Your Difficulty (Casual, Normal, Hard, Brutal):".Length);
+                    if (text.Contains("Casual"))
+                    {
+                        Dif = Difficulty.Easy;
+                        break;
+                    }
+                    if (text.Contains("Normal"))
+                    {
+                        Dif = Difficulty.Normal;
+                        break;
+                    }
+                    if (text.Contains("Hard"))
+                    {
+                        Dif = Difficulty.Hard;
+                        break;
+                    }
+                    if (text.Contains("Brutal"))
+                    {
+                        Dif = Difficulty.Brutal;
+                        break;
+                    }
                 }
-                if (text.Contains("Normal"))
-                {
-                    Dif = Difficulty.Normal;
-                    break;
-                }
-                if (text.Contains("Hard"))
-                {
-                    Dif = Difficulty.Hard;
-                    break;
-                }
-                if (text.Contains("Brutal"))
-                {
-                    Dif = Difficulty.Brutal;
-                    break;
-                }
+                Debug.Log("Your Difficulty is " + Dif.ToString());
             }
-            Debug.Log("Your Difficulty is " + Dif.ToString());
+            catch(Exception ex)
+            {
+                File.WriteAllText(Application.dataPath + "/BaseMods/DifficultyError.txt", ex.Message+"\n"+ex.StackTrace);
+            }
             return Dif;
         }
         public enum Difficulty
