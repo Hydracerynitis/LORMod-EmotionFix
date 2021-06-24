@@ -64,6 +64,11 @@ namespace EmotionalFix
             base.OnEndBattlePhase();
             this.Destroy();
         }
+        public override void OnDie(BattleUnitModel killer)
+        {
+            base.OnDie(killer);
+            Destroy();
+        }
         private void DestroyLoopSound()
         {
             if (!((UnityEngine.Object)this._loop != (UnityEngine.Object)null))
