@@ -61,8 +61,6 @@ namespace EmotionalFix
             MoutainCorpse moutain = new MoutainCorpse(count);
             this._owner.bufListDetail.AddBuf(moutain);
             this._owner.view.ChangeHeight((int)((double)height * (1 + (double)moutain.stack * 0.25)));
-            if(count>5)
-                PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR6);
             if (!this._effect)
             {
                 this._effect = true;

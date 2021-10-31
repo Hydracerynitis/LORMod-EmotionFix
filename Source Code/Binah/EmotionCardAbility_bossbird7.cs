@@ -32,7 +32,6 @@ namespace EmotionalFix
             activated = false;
             if (SearchEmotion(this._owner, "ApocalypseBird_LongArm") == null || SearchEmotion(this._owner, "ApocalypseBird_SmallPeak") == null || SearchEmotion(this._owner, "ApocalypseBird_BigEye") == null)
                 return;
-            PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR8);
             GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
             if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
                 return;

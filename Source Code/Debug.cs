@@ -31,14 +31,14 @@ namespace EmotionalFix
             {
                 if (!Directory.Exists(Harmony_Patch.modPath + path))
                 {
-                    File.WriteAllText(Application.dataPath + "/BaseMods/ContingecyContractModPathError.txt", Harmony_Patch.modPath + path + " not found");
+                    File.WriteAllText(Application.dataPath + "/Mods/ContingecyContractModPathError.txt", Harmony_Patch.modPath + path + " not found");
                 }
             }
             if (type == PathType.File)
             {
                 if (!File.Exists(Harmony_Patch.modPath + path))
                 {
-                    File.WriteAllText(Application.dataPath + "/BaseMods/ContingecyContractModPathError.txt", Harmony_Patch.modPath + path + " not found");
+                    File.WriteAllText(Application.dataPath + "/Mods/ContingecyContractModPathError.txt", Harmony_Patch.modPath + path + " not found");
                 }
             }
         }

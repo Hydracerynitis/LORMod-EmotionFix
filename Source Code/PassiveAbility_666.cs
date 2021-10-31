@@ -1,5 +1,6 @@
 ﻿using System;
 using LOR_XML;
+using BaseMod;
 
 namespace EmotionalFix
 {

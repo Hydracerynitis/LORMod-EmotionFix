@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using LOR_XML;
+using BaseMod;
 
 namespace EmotionalFix
 {

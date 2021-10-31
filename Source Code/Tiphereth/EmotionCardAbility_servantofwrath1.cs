@@ -4,6 +4,7 @@ using LOR_DiceSystem;
 using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
+using BaseMod;
 
 namespace EmotionalFix
 {

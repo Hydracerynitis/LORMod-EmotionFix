@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
+using BaseMod;
 
 namespace EmotionalFix
 {

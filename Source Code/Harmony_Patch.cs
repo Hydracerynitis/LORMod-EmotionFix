@@ -214,9 +214,9 @@ namespace EmotionalFix
             {
                 if (alive.faction == Faction.Enemy)
                 {
-                    if (ExcludedEnemyID.Contains(alive.UnitData.unitData.EnemyUnitId))
+                    if (ExcludedEnemyID.Exists(x=> alive.UnitData.unitData.EnemyUnitId==x))
                         continue;
-                    if (ExcludedBookID.Contains(alive.Book.GetBookClassInfoId()))
+                    if (ExcludedBookID.Exists(x => alive.Book.GetBookClassInfoId()==x))
                         continue;
                     if (enemylist.Contains(alive))
                         continue;
@@ -268,7 +268,7 @@ namespace EmotionalFix
             }
             catch(Exception ex)
             {
-                File.WriteAllText(Application.dataPath + "/BaseMods/DifficultyError.txt", ex.Message+"\n"+ex.StackTrace);
+                File.WriteAllText(Application.dataPath + "/Mods/DifficultyError.txt", ex.Message+"\n"+ex.StackTrace);
             }
             return Dif;
         }

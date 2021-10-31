@@ -2,6 +2,7 @@
 using LOR_XML;
 using System.IO;
 using UnityEngine;
+using BaseMod;
 using System.Collections.Generic;
 
 namespace EmotionalFix

@@ -47,7 +47,6 @@ namespace EmotionalFix
         {
             if (SearchEmotion(this._owner, "QueenOfHatred_Snake") == null || SearchEmotion(this._owner, "KnightOfDespair_Despair") == null || SearchEmotion(this._owner, "Greed_Eat") == null || SearchEmotion(this._owner, "Angry_Angry") == null || this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_Nihil)) != null)
                 return;
-            PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR5);
             this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil());
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)

@@ -9,7 +9,7 @@ namespace EmotionalFix
 {
     public class DiceCardAbility_Execute : DiceCardAbilityBase
     {
-        public override void BeforRollDice() => this.behavior.ApplyDiceStatBonus(new DiceStatBonus()
+        public override void BeforeRollDice() => this.behavior.ApplyDiceStatBonus(new DiceStatBonus()
         {
             dmg = -10000,
             breakDmg = -10000

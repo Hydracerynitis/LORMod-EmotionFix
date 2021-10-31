@@ -29,7 +29,7 @@ namespace EmotionalFix
             }
             else
             {
-                List<int> intList = battleUnitBuf is BattleUnitBuf_burningGirl_Ember_New burningGirlEmberNew ? burningGirlEmberNew.TargetIDs() : (List<int>)null;
+                List<LorId> intList = battleUnitBuf is BattleUnitBuf_burningGirl_Ember_New burningGirlEmberNew ? burningGirlEmberNew.TargetIDs() : null;
                 foreach (BattleDiceCardModel battleDiceCardModel in this._owner.allyCardDetail.GetAllDeck())
                 {
                     if (intList.Contains(battleDiceCardModel.GetID()))
@@ -74,7 +74,7 @@ namespace EmotionalFix
         {
             private bool _triggered;
             private int _max;
-            private List<int> _targetIDs = new List<int>();
+            private List<LorId> _targetIDs = new List<LorId>();
             protected override string keywordId => "BurningGirl_Ember";
             protected override string keywordIconId => "Burning_Match";
             public BattleUnitBuf_burningGirl_Ember_New() => this.stack = 0;
@@ -148,7 +148,7 @@ namespace EmotionalFix
                 return card != null && this._targetIDs.Contains(card.card.GetID()) && this.IsFirstDice(behavior);
             }
             private bool IsFirstDice(BattleDiceBehavior behavior) => behavior != null && behavior.Index == 0;
-            public List<int> TargetIDs() => this._targetIDs;
+            public List<LorId> TargetIDs() => this._targetIDs;
         }
         public class BattleDiceCardBuf_Emotion_BurningGirl : BattleDiceCardBuf
         {

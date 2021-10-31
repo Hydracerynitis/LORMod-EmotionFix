@@ -91,9 +91,16 @@ namespace EmotionalFix
 
         public override void OnLayerChanged(string layerName)
         {
-            if (!((UnityEngine.Object)this._effect == (UnityEngine.Object)null))
-                return;
-            this._effect.SetLayer(layerName);
+            try
+            {
+                if (!((UnityEngine.Object)this._effect == (UnityEngine.Object)null))
+                    return;
+                this._effect.SetLayer(layerName);
+            }
+            catch(Exception ex)
+            {
+                Debug.Error("LayerChange", ex);
+            }
         }
     }
 }

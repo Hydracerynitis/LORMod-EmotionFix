@@ -11,13 +11,13 @@ namespace EmotionalFix
     public class EmotionCardAbility_pinocchio1 : EmotionCardAbilityBase
     {
         private BattleDiceCardModel learn;
-        private List<int> copyiedList;
+        private List<LorId> copyiedList;
         public override void OnWaveStart()
         {
             if (this._owner.faction == Faction.Player)
                 learn=this._owner.allyCardDetail.AddNewCard(this.GetTargetCardId());
             if (this._owner.faction == Faction.Enemy)
-                copyiedList = new List<int>();
+                copyiedList = new List<LorId>();
         }
         public override void OnSelectEmotion()
         {
@@ -25,14 +25,14 @@ namespace EmotionalFix
             if (this._owner.faction == Faction.Player)
                 learn=this._owner.allyCardDetail.AddNewCard(this.GetTargetCardId());
             if (this._owner.faction == Faction.Enemy)
-                copyiedList = new List<int>();        
+                copyiedList = new List<LorId>();        
         }
         public override void OnDrawCard()
         {
             base.OnDrawCard();
             if(this._owner.faction==Faction.Enemy)
                 SoundEffectPlayer.PlaySound("Creature/Pino_On");
-            BattleDiceCardModel copy = this._owner.allyCardDetail.AddNewCard(RandomUtil.SelectOne<int>(copyiedList));
+            BattleDiceCardModel copy = this._owner.allyCardDetail.AddNewCard(RandomUtil.SelectOne<LorId>(copyiedList));
             copy.temporary = true;
             copy.SetPriorityAdder(100);
             copyiedList.Clear();
@@ -53,7 +53,7 @@ namespace EmotionalFix
                     {
                         if (cardDataInUnitModel.card.XmlData.optionList.Contains(CardOption.Personal))
                             continue;
-                        int num = cardDataInUnitModel.card.GetID();
+                        LorId num = cardDataInUnitModel.card.GetID();
                         this.copyiedList.Add(num);
                     }
                 }

@@ -6,13 +6,13 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_teddy2 : EmotionCardAbilityBase
     {
-        private int _id = -1;
+        private LorId _id = LorId.None;
         public override void OnRoundStart()
         {
 
             if (this._owner.faction == Faction.Player)
             {
-                if (this._id < 0)
+                if (this._id== LorId.None)
                 {
                     List<BattleDiceCardModel> hand = this._owner.allyCardDetail.GetHand();
                     int highest = 0;
@@ -23,7 +23,7 @@ namespace EmotionalFix
                             highest = cost;
                     }
                     List<BattleDiceCardModel> all = hand.FindAll((Predicate<BattleDiceCardModel>)(x => x.GetCost() == highest));
-                    this._id = all.Count <= 0 ? 0 : RandomUtil.SelectOne<BattleDiceCardModel>(all).GetID();
+                    this._id = all.Count <= 0 ? LorId.None : RandomUtil.SelectOne<BattleDiceCardModel>(all).GetID();
                 }
                 this.Ability();
             }
@@ -55,7 +55,7 @@ namespace EmotionalFix
         }
         private void Ability()
         {
-            if (this._id <= 0)
+            if (this._id == LorId.None)
                 return;
             foreach (BattleDiceCardModel battleDiceCardModel in this._owner.allyCardDetail.GetAllDeck().FindAll(x => x.GetID() == this._id))
             {
@@ -110,8 +110,6 @@ namespace EmotionalFix
             protected override string keywordIconId => "TeddyIcon";
             public override void OnUseCard(BattleUnitModel owner)
             {
-                if (this._card.GetOriginCost() == 4 && this._card.GetCost() <= 0)
-                    PlatformManager.Instance.UnlockAchievement(AchievementEnum.ONCE_FLOOR1);
                 foreach (BattleDiceCardModel battleDiceCardModel in owner.allyCardDetail.GetAllDeck().FindAll((Predicate<BattleDiceCardModel>)(x => x.GetID() == this._card.GetID())))
                     battleDiceCardModel.AddCost(-1);
             }

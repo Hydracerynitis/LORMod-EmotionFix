@@ -32,17 +32,17 @@ namespace EmotionalFix
             {
                 base.Init(owner);
                 light = this._owner.cardSlotDetail.PlayPoint;
-                this._owner.ChangeTemporaryDeck(new List<int>()
+                this._owner.ChangeTemporaryDeck(new List<LorId>()
                 {
-                    9905611,
-                    9905612,
-                    9905612,
-                    9905613,
-                    9905613,
-                    9905613,
-                    9905614,
-                    9905614,
-                    9905614
+                    new LorId(9905611) ,
+                    new LorId(9905612) ,
+                    new LorId(9905612) ,
+                    new LorId(9905613) ,
+                    new LorId(9905613) ,
+                    new LorId(9905613),
+                    new LorId(9905614) ,
+                    new LorId(9905614),
+                    new LorId(9905614) 
                 }, 8);
                 this._owner.view.ChangeCreatureSkin("Nihil_HatredLibrarian");
                 this._owner.view.StartEgoSkinChangeEffect("Character");
