@@ -81,9 +81,7 @@
 		<AbnormalityCard ID="Mountain_Eat_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>死尸吸收</CardName>
-场上每有一个其他单位死亡时该来宾恢复20%血量和20%混乱抗性(上限为30)并恢复1点光芒
-			<AbilityDesc>[选择一名司书]
-			</AbilityDesc>
+			<AbilityDesc>场上每有一个其他单位死亡时该来宾恢复20%血量和20%混乱抗性(上限为30)并恢复1点光芒</AbilityDesc>
 			<FlaborText>它唯一想要的，就是浸泡在鲜血中的人肉。一闻到血腥便会狂奔而来。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">肉……好吃的……日……欧……</Dialogue>

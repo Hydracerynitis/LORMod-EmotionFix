@@ -93,7 +93,7 @@ namespace EmotionalFix
         {
             try
             {
-                if (!((UnityEngine.Object)this._effect == (UnityEngine.Object)null))
+                if (this._effect == null)
                     return;
                 this._effect.SetLayer(layerName);
             }

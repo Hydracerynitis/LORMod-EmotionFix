@@ -20,7 +20,7 @@ Upon successful Pierce hit, enemy lose 10% of Stagger Ressist.</AbilityDesc>
 			<CardName>Incomprehensible</CardName>
 			<AbilityDesc>[Single Ally]
 Upon succesful hit, inflict 1 Feeble and Disarm next Scene at 50% chance (Three times per Scene).
-Reduce Maximun Draw Card by 2.</AbilityDesc>
+Reduce the Maximum numbers of cards in hand that allowing you to draw cards from 8 to 6</AbilityDesc>
 			<FlaborText>Eventually, he succeeded in entering the domain of the ‘Fragment of the Universe’. However, it was obvious that his small brain couldn’t withstand it.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Understand. You. Together. Human. I.</Dialogue>

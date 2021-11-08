@@ -59,8 +59,8 @@
 			<Abnormality>白夜</Abnormality>
 			<CardName>权能</CardName>
 			<AbilityDesc>[选择一名司书]
-每一幕开始时使除该司书外的所有司书吸收不低于2点的伤害。(若该司书已死亡则不生效)
-该司书使用E.G.O书页“失乐园”后改为吸收不低于5点的伤害。</AbilityDesc>
+每一幕开始时使除该司书外的所有司书吸收不高于2点的伤害。(若该司书已死亡则不生效)
+该司书使用E.G.O书页“失乐园”后改为吸收不高于5点的伤害。</AbilityDesc>
 			<FlaborText>不要惊慌，我是你的救主，我与你同在。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">安心吧，任何灾祸都无法阻挡你们。</Dialogue>

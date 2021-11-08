@@ -13,6 +13,7 @@ namespace EmotionalFix
     public class EmotionCardAbility_bossbird5 : EmotionCardAbilityBase
     {
         private Battle.CreatureEffect.CreatureEffect _aura;
+        private bool init = false;
         private List<BattleDiceCardModel> Ego = new List<BattleDiceCardModel>();
         public override void OnWaveStart()
         {
@@ -25,6 +26,8 @@ namespace EmotionalFix
         }
         public override void OnSelectEmotion()
         {
+            if (init)
+                return;
             base.OnSelectEmotion();
             BattleEmotionCardModel Long = SearchEmotion(this._owner, "ApocalypseBird_LongArm_Enemy");
             BattleEmotionCardModel Big = SearchEmotion(this._owner, "ApocalypseBird_BigEye_Enemy");
@@ -123,6 +126,7 @@ namespace EmotionalFix
             Ego.Add(LongBirdEgo);
             this._owner.allyCardDetail.AddCardToDeck(Ego);
             this._owner.allyCardDetail.Shuffle();
+            init = true;
         }
         public override void OnEndBattlePhase()
         {

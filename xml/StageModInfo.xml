@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NormalInvitation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <Workshop>
+    <ID>EmotionFix@origin</ID>
+    <Title>EmotionFix</Title>
+    <Description>In this Mod, I give Guests the ability to apply random abnormality cards when leveling up in battle
+The intensity of how frequent guest acquire can be config through Difficulty.txt
+All emotion cards have been tweaked to ensure every Guest are able to gain an advantage from it,
+They may have an entirely different ability from the emotion cards Librarian harnessed
+
+Enjoy -----by Hydracerynitis
+Credit to elder404 for contributing some reworking ideas and abnoramlity cards rebalancing.
+</Description>
+    <Tag>Invitation</Tag>
+    <PreviewImage />
+  </Workshop>
+  <InvitationFile/>
+</NormalInvitation>

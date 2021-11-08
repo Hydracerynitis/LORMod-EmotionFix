@@ -14,6 +14,8 @@ namespace EmotionalFix
         private Battle.CreatureEffect.CreatureEffect _hitEffect;
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
+            if (behavior.card.card.XmlData.Spec.Ranged == CardRange.FarArea || behavior.card.card.XmlData.Spec.Ranged == CardRange.FarAreaEach)
+                return;
             if (this._owner.faction == Faction.Enemy && victim.Count != 0 && victim.Contains(behavior.card.target))
                 return;
             if (behavior.Detail != BehaviourDetail.Penetrate && this._owner.faction==Faction.Player)

@@ -36,11 +36,7 @@ namespace EmotionalFix
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
             {
                 if (alive != this._owner)
-                {
-                    alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Stun, 1);
-                    if (this._owner.faction == Faction.Player)
-                        alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SnowQueen_Stun(this._owner));
-                }
+                    alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SnowQueen_Stun(this._owner));
             }
         }
 
@@ -69,7 +65,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                if (this._owner.faction != this._attacker.faction)
+                if (this._owner.faction ==Faction.Enemy)
                     this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, Bind, this._attacker);
                 if ((UnityEngine.Object)this._aura != (UnityEngine.Object)null)
                 {
