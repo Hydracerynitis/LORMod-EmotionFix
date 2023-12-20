@@ -24,6 +24,21 @@
 	<BattleCardAbility ID="Servant">
 		<Desc>[装备时]1幕之内使自身与勇气魔法少女[同化](每4幕至多同化1次)</Desc>
 	</BattleCardAbility>
+  	<BattleCardAbility ID="WizardPotion">
+    	<Desc>[装备时]使自身获得[激发勇气的药水]</Desc>
+  	</BattleCardAbility>
+  	<BattleCardAbility ID="WizardPoket">
+    	<Desc>[装备时]使自身获得[装有锯末的布袋]</Desc>
+  	</BattleCardAbility>
+  	<BattleCardAbility ID="WizardHeart">
+    	<Desc>[装备时]使自身获得[用铅制成的心脏]</Desc>
+  	</BattleCardAbility>
+  	<BattleCardAbility ID="WizardHome">
+    	<Desc>[装备时]使自身获得[永远回不去的家]</Desc>
+  	</BattleCardAbility>
+  	<BattleCardAbility ID="WizardChange">
+    	<Desc>[装备时]使自身获得[催生变异的粉末])</Desc>
+  	</BattleCardAbility>
 	<BattleCardAbility ID="invalid">
 		<Desc>该骰子无法投掷出任何数值</Desc>
 	</BattleCardAbility>

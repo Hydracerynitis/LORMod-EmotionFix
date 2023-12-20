@@ -53,8 +53,8 @@ namespace EmotionalFix
 
             private static int Bleed => RandomUtil.Range(2, 2);
 
-            protected override string keywordId => "Latitia_Gift";
-            protected override string keywordIconId => "Latitia_Heart";
+            public override string keywordId => "Latitia_Gift";
+            public override string keywordIconId => "Latitia_Heart";
             public BattleUnitBuf_Emotion_Latitia_Gift(BattleUnitModel giver) => this._giver = giver;
             public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
             {

@@ -75,7 +75,7 @@ namespace EmotionalFix
         {
             public override bool IsActionable() => false;
             public override int SpeedDiceBreakedAdder() => 10;
-            protected override string keywordId => "Stun";
+            public override string keywordId => "Stun";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

@@ -47,8 +47,8 @@ namespace EmotionalFix
         }
         public class DeepBleed: BattleUnitBuf
         {
-            protected override string keywordId => "DeepBleed";
-            protected override string keywordIconId => "Bleeding";
+            public override string keywordId => "DeepBleed";
+            public override string keywordIconId => "Bleeding";
             public int reserve;
             public override bool independentBufIcon => true;
             public override void Init(BattleUnitModel owner)

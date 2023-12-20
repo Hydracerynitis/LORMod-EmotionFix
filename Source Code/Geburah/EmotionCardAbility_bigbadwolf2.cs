@@ -68,7 +68,7 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Emotion_Wolf_Claw : BattleUnitBuf
         {
-            protected override string keywordId => "Wolf_Claw";
+            public override string keywordId => "Wolf_Claw";
             private static int Str => RandomUtil.Range(2, 2);
             private static int Bleed => RandomUtil.Range(1, 1);
             public override void Init(BattleUnitModel owner)

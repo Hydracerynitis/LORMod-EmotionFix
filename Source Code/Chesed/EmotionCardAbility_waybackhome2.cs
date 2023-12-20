@@ -100,8 +100,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_WayBackHome_Target : BattleUnitBuf
         {
             private GameObject aura;
-            protected override string keywordId => this._owner.faction==Faction.Enemy? "WayBackHome_Emotion_Target": "WayBackHome_Emotion_Target_Enemy";
-            protected override string keywordIconId => "WayBackHome_Target";
+            public override string keywordId => this._owner.faction==Faction.Enemy? "WayBackHome_Emotion_Target": "WayBackHome_Emotion_Target_Enemy";
+            public override string keywordIconId => "WayBackHome_Target";
             public BattleUnitBuf_Emotion_WayBackHome_Target(int value) => this.stack = value;
             public override void Init(BattleUnitModel owner)
             {

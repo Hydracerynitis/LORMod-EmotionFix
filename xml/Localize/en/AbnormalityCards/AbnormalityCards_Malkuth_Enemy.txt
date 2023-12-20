@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="ScorchedGirl_Atk_Enemy">
 			<Abnormality>Scorched Girl</Abnormality>
 			<CardName>Ashes</CardName>
-			<AbilityDesc>When hit and lose 2% of Max HP or above, inflict 0-2 Burn to the attacker</AbilityDesc>
+			<AbilityDesc>When hit and lose 2% of Max HP or above, inflict 1-3 Burn to the attacker</AbilityDesc>
       		<FlaborText>“The charred body represents the child’s crumbled hope, while the ever blazing flame represents the obsession for affection.”</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">To burn all things that are bright to ashes…</Dialogue>
@@ -31,7 +31,8 @@ At the start of each Scene, gain 3 Bind</AbilityDesc>
 		<AbnormalityCard ID="ScorchedGirl_Ashes_Enemy">
 			<Abnormality>Scorched Girl</Abnormality>
 			<CardName>Matchlight</CardName>
-			<AbilityDesc>At the start of each Scene, lose 3-8% of Max HP. On hit, inflict 2-5 Burn</AbilityDesc>
+			<AbilityDesc>At the start of each Scene, gain 1 "Ember". Each stack of Ember increase the maximun roll of the first die by +1 when using pages and inflict Burn equal to "Ember" stack on hit.
+If Ember is at 4 or higher, lose HP equal to 5% of Max HP</AbilityDesc>
 			<FlaborText>“Well, she’s like a ticking time bomb. No one can tell if she’s in a good mood or not.”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Step by step… Burn into pitch black char.</Dialogue>
@@ -44,7 +45,7 @@ At the start of each Scene, gain 3 Bind</AbilityDesc>
     	<AbnormalityCard ID="HappyTeddyBear_Hug_Enemy">
       		<Abnormality>Happy Teddy Bear</Abnormality>
       		<CardName>Nostalgic Embrace of the Old Days</CardName>
-      		<AbilityDesc>Upon winning a clash, deal bonus Stagger damage equal to the dice value at a 40% chance.</AbilityDesc>
+      		<AbilityDesc>Upon winning a clash, deal bonus Stagger damage equal to the dice value at 40% chance.</AbilityDesc>
       		<FlaborText>Teddy was hugging someone tightly. Teddy loved hugs. But something was odd.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Give me a tight hug, will you? It’ll soothe your mind.</Dialogue>
@@ -57,8 +58,8 @@ At the start of each Scene, gain 3 Bind</AbilityDesc>
     	<AbnormalityCard ID="HappyTeddyBear_Memory_Enemy">
       		<Abnormality>Happy Teddy Bear</Abnormality>
       		<CardName>Happy Memories</CardName>
-      		<AbilityDesc>On parry, inflict 1 Memory (Max. 5) to target. At the end of each Scene, All Memory lose 1 stack of itself.
-All dices increase power by the amount of Memory on traget in a clash</AbilityDesc>
+      		<AbilityDesc>After a clash, inflict 1 Memory (Max. 5) to the enemy. At the end of each Scene, All Memory lose 1 stack of itself.
+In a clash, all dices increase Power by Memory stack on traget</AbilityDesc>
       		<FlaborText>But, you see, Teddy never wanted to be separate from its owner ever again.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Why are you trying to leave me? We were such good friends…</Dialogue>
@@ -71,8 +72,8 @@ All dices increase power by the amount of Memory on traget in a clash</AbilityDe
     	<AbnormalityCard ID="HappyTeddyBear_Lonely_Enemy">
       		<Abnormality>Happy Teddy Bear</Abnormality>
       		<CardName>Display of Affection</CardName>
-      		<AbilityDesc>All dice gain 1-3 Power in a clash.
-All dice lose 1-3 Power in a one-sided attack.</AbilityDesc>
+      		<AbilityDesc>All dice gain 1-2 Power in a clash.
+All dice lose 1-2 Power in a one-sided attack.</AbilityDesc>
       		<FlaborText>Its memories began with a warm hug.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">I’m so happy that you’re playing with me.</Dialogue>
@@ -85,8 +86,8 @@ All dice lose 1-3 Power in a one-sided attack.</AbilityDesc>
     	<AbnormalityCard ID="FairyCarnival_Care_Enemy">
       		<Abnormality>Fairy Festival</Abnormality>
       		<CardName>The Fairies’ Care</CardName>
-          	<AbilityDesc>For three Scenes, recover 20% of Max HP (Max. 24) at the end of the Scene.
-If the guest lose 25% of Max HP (Max. 30) or above while this effect is active, lose 25% of the current HP (Max. 30) and lose this effect.</AbilityDesc>
+          	<AbilityDesc>For three Scenes, recover 15% of Max HP at the end of the Scene.
+If the guest take damage equal to 25% of Max HP or more while this effect is active, lose 30% of Max HP and lose this effect.</AbilityDesc>
       		<FlaborText>The fairies protect our employees. Everything will be peaceful while you are under the fairies’ care.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Don’t worry, now! We’ll take good care of you.</Dialogue>
@@ -99,7 +100,7 @@ If the guest lose 25% of Max HP (Max. 30) or above while this effect is active, 
     	<AbnormalityCard ID="FairyCarnival_Gluttony_Enemy">
       		<Abnormality>Fairy Festival</Abnormality>
       		<CardName>Gluttony</CardName>
-        	<AbilityDesc>When attacking a target who already took damage in the same Scene, deal 1-3 additional damage and recover 2-5 HP on hit.</AbilityDesc>
+        	<AbilityDesc>When attacking a target who already took damage in the same Scene, deal 1-3 additional damage and recover 2% Max HP （Min. 2） on hit.</AbilityDesc>
       		<FlaborText>The fairies were no more than carnivorous monsters, and their “protection” was their method to keep the meat fresh.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">The reason we’re staying by your side? Of course it’s to protect you!</Dialogue>
@@ -112,8 +113,8 @@ If the guest lose 25% of Max HP (Max. 30) or above while this effect is active, 
     	<AbnormalityCard ID="FairyCarnival_QueenAtk_Enemy">
       		<Abnormality>Fairy Festival</Abnormality>
       		<CardName>Predation</CardName>
-      		<AbilityDesc>Heal 50% of the amount of damage dealt. In each Scene heal at most 20% of Max HP (Max. 24).
-If fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increase damage by 30% in this Scene.</AbilityDesc>
+      		<AbilityDesc>Heal 50% of the amount of damage dealt. In each Scene heal at most 20% of Max HP.
+If fail to heal 5% of Max HP, lose 5% of Max HP and increase damage by 30% in this Scene.</AbilityDesc>
       		<FlaborText>His stomach and face were ripped off, and his eyeballs and organs were damaged as if they were eaten by something. Meanwhile, the fairies had someone’s blood and flesh smeared all over their mouths.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">My fairies are dwindling in numbers… But it can’t be helped.</Dialogue>
@@ -126,7 +127,7 @@ If fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increa
 		<AbnormalityCard ID="QueenBee_Funga_Enemy">
       		<Abnormality>Queen Bee</Abnormality>
       		<CardName>Spores</CardName>
-      		<AbilityDesc>When hit and lose 2% of Max HP or above, inflict attacker 0-2 Burn and 0-2 Bleed Next Scene.</AbilityDesc>
+      		<AbilityDesc>When hit and lose 2% of Max HP or above, inflict attacker 1-3 Burn and 1-3 Bleed Next Scene.</AbilityDesc>
       		<FlaborText>It has been confirmed that the spores carry drone eggs that hatch inside a living host.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Even if a drone dies, I can always make more to fill their role.</Dialogue>
@@ -150,7 +151,7 @@ If fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increa
     	<AbnormalityCard ID="QueenBee_Loyalty_Enemy">
       		<Abnormality>Queen Bee</Abnormality>
       		<CardName>Loyalty</CardName>
-      		<AbilityDesc>As long as there are other alive allies, Cannot act and at the start of each Scene give other allies 2 Strength, Endurance, Haste.</AbilityDesc>
+      		<AbilityDesc>At the start of the Scene, all allies gain Strength based on the amount of damage the selected guest received on the previous Scene. (1 Strength per 8% Max HP damage)</AbilityDesc>
       		<FlaborText>The loyalty of bees is a naturally developed instinct. If we discover a way to draw forth that instinct, many things could change.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Hurry and supply me with more honey.</Dialogue>
@@ -163,7 +164,7 @@ If fail to heal 10% of Max HP (Max. 12), lose 10% of Max HP (Max. 12) and increa
 			<Abnormality>Snow White’s Apple</Abnormality>
 			<CardName>Vines</CardName>
       			<AbilityDesc>Inflict 6 Bind to a random enemy at the start of the Scene and prioritize attacking that enemy.
-Dice gain 1-2 Power when attacking that enemy.</AbilityDesc>
+Attack dice gain 1 Power when attacking that enemy.</AbilityDesc>
 			<FlaborText>One day, a branch grew from it. The leaves and branches were already withered and dry, but it continued to grow.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">The apple was alone for such a long time. Only rotting corpses kept its side…</Dialogue>
@@ -175,8 +176,8 @@ Dice gain 1-2 Power when attacking that enemy.</AbilityDesc>
 		<AbnormalityCard ID="SnowWhite_Thorn_Enemy">
 			<Abnormality>Snow White’s Apple</Abnormality>
 			<CardName>Barrier of Thorns</CardName>
-			<AbilityDesc>When hit and lose 1% of Max HP or above, inflict 2-8 damage and recover HP equal to the amount of damage.
-Increase damage by 20% everytime the effect is applied to same attacker in one Scene.</AbilityDesc>
+			<AbilityDesc>When hit and lose 2% of Max HP or above, inflict 2-8 damage and recover HP equal to the amount of damage.
+Increase the damage by 20% everytime the effect is applied to same attacker in one Scene.</AbilityDesc>
 			<FlaborText>The apple that dropped from Snow White’s hand after a single bite could never be happy. The apple, full of loneliness and hatred towards the princess, waited for the day it would rot away and return to the earth.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">A pretty apple, abandoned in a forlorn place. Oh, pretty apple…</Dialogue>
@@ -188,8 +189,9 @@ Increase damage by 20% everytime the effect is applied to same attacker in one S
 		<AbnormalityCard ID="SnowWhite_malice_Enemy">
 			<Abnormality>Snow White’s Apple</Abnormality>
 			<CardName>Malice</CardName>
-			<AbilityDesc>At the end of each Scene, inflict the enemy who dealt the most damage to self 1 Malice (At the start of each Scene, gain 1 Bind per stack)
-Combat Start play a Mass Attack Card ‘Roll Range: 3-6;Boost dice's max value by the sum of Bind stack all enemies have.’, targeting all enemy who has Bind.</AbilityDesc>
+			<AbilityDesc>At the end of each Scene, inflict the enemy who dealt the most damage to self 1 Malice (If no damage is dealt, inflict random enemy)
+For each stack of Malice, inflict 1 Bind at the start of each Scene.
+Combat Start play a Mass Attack Card ‘[Individual] Penetrate 3-6;Boost its max value by the numbers of Bind stack across all enemies.’, targeting all enemy who has Bind.</AbilityDesc>
 			<FlaborText>The inherent malice caused all life to crumble as soon as it bloomed.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">My existence was born from wrath and a curse, yet I served as a blessing to someone else.</Dialogue>

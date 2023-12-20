@@ -28,8 +28,8 @@ namespace EmotionalFix
         public class Tear : BattleUnitBuf
         {
             //private KnightOfDespairGroggyFilter _swordFilter = 
-            protected override string keywordIconId => "KnightOfDespair_Blessing";
-            protected override string keywordId => "Tear";
+            public override string keywordIconId => "KnightOfDespair_Blessing";
+            public override string keywordId => "Tear";
             public int reserve;
             public int reservePlus;
             private bool HasAttack;

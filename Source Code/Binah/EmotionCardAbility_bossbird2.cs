@@ -113,8 +113,8 @@ namespace EmotionalFix
         }
         public class BigBird : BattleUnitBuf
         {
-            protected override string keywordIconId => "ApocalypseBird_BigEye";
-            protected override string keywordId => "Bigbird";
+            public override string keywordIconId => "ApocalypseBird_BigEye";
+            public override string keywordId => "Bigbird";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
@@ -123,8 +123,8 @@ namespace EmotionalFix
         }
         public class Bigbird_Enemy: BattleUnitBuf
         {
-            protected override string keywordIconId => "ApocalypseBird_BigEye";
-            protected override string keywordId => "Bigbird_Enemy";
+            public override string keywordIconId => "ApocalypseBird_BigEye";
+            public override string keywordId => "Bigbird_Enemy";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

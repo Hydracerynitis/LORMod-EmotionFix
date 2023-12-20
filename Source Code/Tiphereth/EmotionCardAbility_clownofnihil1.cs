@@ -65,9 +65,9 @@ namespace EmotionalFix
         {
             public static int StackMax = 20;
 
-            protected override string keywordIconId => "CardBuf_NihilClown_Card";
+            public override string keywordIconId => "CardBuf_NihilClown_Card";
 
-            protected override string keywordId => "Buf_NihilClown_Card";
+            public override string keywordId => "Buf_NihilClown_Card";
 
             public override void Init(BattleUnitModel owner)
             {
@@ -95,9 +95,9 @@ namespace EmotionalFix
             private GameObject aura;
             private int cnt;
 
-            protected override string keywordIconId => "CardBuf_NihilClown_Card";
+            public override string keywordIconId => "CardBuf_NihilClown_Card";
 
-            protected override string keywordId => "NihilClown_Card";
+            public override string keywordId => "NihilClown_Card";
 
             public override void OnRoundStart()
             {

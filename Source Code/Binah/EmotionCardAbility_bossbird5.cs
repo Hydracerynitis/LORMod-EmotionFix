@@ -29,9 +29,9 @@ namespace EmotionalFix
             if (init)
                 return;
             base.OnSelectEmotion();
-            BattleEmotionCardModel Long = SearchEmotion(this._owner, "ApocalypseBird_LongArm_Enemy");
-            BattleEmotionCardModel Big = SearchEmotion(this._owner, "ApocalypseBird_BigEye_Enemy");
-            BattleEmotionCardModel Small= SearchEmotion(this._owner, "ApocalypseBird_SmallPeak_Enemy");
+            BattleEmotionCardModel Long = SearchEmotion(_owner, "ApocalypseBird_LongArm_Enemy");
+            BattleEmotionCardModel Big = SearchEmotion(_owner, "ApocalypseBird_BigEye_Enemy");
+            BattleEmotionCardModel Small= SearchEmotion(_owner, "ApocalypseBird_SmallPeak_Enemy");
             if (Long != null)
             {
                 foreach (EmotionCardAbilityBase ability in Long.GetAbilityList())
@@ -47,10 +47,10 @@ namespace EmotionalFix
                             Debug.Error(ability.GetType().Name + "Destroy", ex);
                         }
                 }
-                this._owner.emotionDetail.PassiveList.Remove(Long);
-                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
-                this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                _owner.emotionDetail.PassiveList.Remove(Long);
+                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                _owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             if (Big!= null)
             {
@@ -67,10 +67,10 @@ namespace EmotionalFix
                             Debug.Error(ability.GetType().Name + "Destroy", ex);
                         }
                 }
-                this._owner.emotionDetail.PassiveList.Remove(Big);
-                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
-                this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                _owner.emotionDetail.PassiveList.Remove(Big);
+                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                _owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             if (Small != null)
             {
@@ -87,16 +87,16 @@ namespace EmotionalFix
                             Debug.Error(ability.GetType().Name + "Destroy", ex);
                         }
                 }
-                this._owner.emotionDetail.PassiveList.Remove(Small);
-                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
-                this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                _owner.emotionDetail.PassiveList.Remove(Small);
+                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                _owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BossBird_Birth", false, 4f);
-            this._aura=SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
-            this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird1.Longbird_Enemy());
-            this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird2.Bigbird_Enemy());
-            this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird3.Smallbird_Enemy());
+            _aura=SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
+            _owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird1.Longbird_Enemy());
+            _owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird2.Bigbird_Enemy());
+            _owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird3.Smallbird_Enemy());
             DiceCardXmlInfo bigbirdxml = ItemXmlDataList.instance.GetCardItem(910041).Copy(true);
             bigbirdxml.optionList.Clear();
             DiceCardSpec bigbirdspec= bigbirdxml.Spec.Copy();
@@ -105,6 +105,7 @@ namespace EmotionalFix
             bigbirdxml.Priority = 100;
             bigbirdxml.Keywords.Clear();
             BattleDiceCardModel BigBirdEgo = BattleDiceCardModel.CreatePlayingCard(bigbirdxml);
+            BigBirdEgo.owner = _owner;
             Ego.Add(BigBirdEgo);
             DiceCardXmlInfo smallbirdxml = ItemXmlDataList.instance.GetCardItem(910043).Copy(true);
             smallbirdxml.optionList.Clear();
@@ -114,6 +115,7 @@ namespace EmotionalFix
             smallbirdxml.Priority = 100;
             smallbirdxml.Keywords.Clear();
             BattleDiceCardModel SmallBirdEgo = BattleDiceCardModel.CreatePlayingCard(smallbirdxml);
+            SmallBirdEgo.owner = _owner;
             Ego.Add(SmallBirdEgo);
             DiceCardXmlInfo longbirdxml = ItemXmlDataList.instance.GetCardItem(910042).Copy(true);
             longbirdxml.optionList.Clear();
@@ -122,10 +124,11 @@ namespace EmotionalFix
             longbirdxml.Spec = longbirdspec;
             longbirdxml.Priority = 100;
             longbirdxml.Keywords.Clear();
-            BattleDiceCardModel LongBirdEgo = BattleDiceCardModel.CreatePlayingCard(bigbirdxml);
+            BattleDiceCardModel LongBirdEgo = BattleDiceCardModel.CreatePlayingCard(longbirdxml);
+            LongBirdEgo.owner = _owner;
             Ego.Add(LongBirdEgo);
-            this._owner.allyCardDetail.AddCardToDeck(Ego);
-            this._owner.allyCardDetail.Shuffle();
+            _owner.allyCardDetail.AddCardToDeck(Ego);
+            _owner.allyCardDetail.Shuffle();
             init = true;
         }
         public override void OnEndBattlePhase()
@@ -140,25 +143,25 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_bossbird2.Bigbird_Enemy));
+            BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find(x => x is EmotionCardAbility_bossbird2.Bigbird_Enemy);
             if (Buff != null)
                 Buff.Destroy();
-            Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_bossbird1.Longbird_Enemy));
+            Buff = _owner.bufListDetail.GetActivatedBufList().Find(x => x is EmotionCardAbility_bossbird1.Longbird_Enemy);
             if (Buff != null)
                 Buff.Destroy();
-            Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_bossbird3.Smallbird_Enemy));
+            Buff = _owner.bufListDetail.GetActivatedBufList().Find(x => x is EmotionCardAbility_bossbird3.Smallbird_Enemy);
             if (Buff != null)
                 Buff.Destroy();
             foreach (BattleDiceCardModel EGO in Ego)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(EGO);
+                _owner.allyCardDetail.ExhaustACardAnywhere(EGO);
             DestroyAura();
         }
         public void DestroyAura()
         {
-            if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+            if (_aura == null)
                 return;
-            UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
-            this._aura = (Battle.CreatureEffect.CreatureEffect)null;
+            UnityEngine.Object.Destroy(_aura.gameObject);
+            _aura = null;
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
         {

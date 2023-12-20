@@ -63,8 +63,8 @@ namespace EmotionalFix
         {
             private BattleUnitModel _except;
             private static int Dmg => RandomUtil.Range(1, 8);
-            protected override string keywordId => "BloodyTree_Emotion_Damage";
-            protected override string keywordIconId => "HokmaFirstCounter";
+            public override string keywordId => "BloodyTree_Emotion_Damage";
+            public override string keywordIconId => "HokmaFirstCounter";
             public BattleUnitBuf_Emotion_BloodyTree(BattleUnitModel except)
             {
                 this.hide = true;

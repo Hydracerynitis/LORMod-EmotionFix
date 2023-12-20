@@ -44,8 +44,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_Wrath_Berserk : BattleUnitBuf
         {
             private GameObject aura;
-            protected override string keywordId => "Angry_Angry";
-            protected override string keywordIconId => "Wrath_Head";
+            public override string keywordId => "Angry_Angry";
+            public override string keywordIconId => "Wrath_Head";
             public override bool IsControllable => this.Controlable();
             private bool Controlable() => this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil)) != null;
             public override bool TeamKill() => true;
@@ -98,8 +98,8 @@ namespace EmotionalFix
         public class Berserk_Enemy: BattleUnitBuf
         {
             private GameObject aura;
-            protected override string keywordId => "Berserk_Enemy";
-            protected override string keywordIconId => "Wrath_Head";
+            public override string keywordId => "Berserk_Enemy";
+            public override string keywordIconId => "Wrath_Head";
             public override int SpeedDiceNumAdder() => 1;
             public override void OnRoundEndTheLast()
             {

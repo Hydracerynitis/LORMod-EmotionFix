@@ -140,8 +140,8 @@ namespace EmotionalFix
         }
         public class MoutainCorpse: BattleUnitBuf
         {
-            protected override string keywordId => "MountainCorpse";
-            protected override string keywordIconId => "DangoCreature_Emotion_Healed";
+            public override string keywordId => "MountainCorpse";
+            public override string keywordIconId => "DangoCreature_Emotion_Healed";
             public MoutainCorpse(int count)
             {
                 this.stack = count;
@@ -163,8 +163,8 @@ namespace EmotionalFix
         }
         public class Indicator: BattleUnitBuf
         {
-            protected override string keywordId => "Indicator";
-            protected override string keywordIconId => "DangoCreature_Emotion_Healed";
+            public override string keywordId => "Indicator";
+            public override string keywordIconId => "DangoCreature_Emotion_Healed";
             public Indicator(int absorption)
             {
                 this.stack = absorption;

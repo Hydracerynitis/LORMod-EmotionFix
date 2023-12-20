@@ -30,8 +30,8 @@ namespace EmotionalFix
         }
         public class Clear : BattleUnitBuf
         {
-            protected override string keywordIconId => "CardBuf_NihilClown_Card";
-            protected override string keywordId => "RandomEmotion";
+            public override string keywordIconId => "CardBuf_NihilClown_Card";
+            public override string keywordId => "RandomEmotion";
             private int level1;
             private int level2;
             private int level3;
@@ -87,7 +87,7 @@ namespace EmotionalFix
                     {
                         if (this._owner.faction == Faction.Player)
                         {
-                            EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1);
+                            EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1);
                             if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level1 += 1;
@@ -98,8 +98,8 @@ namespace EmotionalFix
                         }
                         if (this._owner.faction == Faction.Enemy)
                         {
-                            string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
-                            EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                            string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                            EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                             //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                             if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
@@ -113,7 +113,7 @@ namespace EmotionalFix
                     {
                         if (this._owner.faction == Faction.Player)
                         {
-                            EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2);
+                            EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2);
                             if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level2 += 1;
@@ -124,8 +124,8 @@ namespace EmotionalFix
                         }
                         if (this._owner.faction == Faction.Enemy)
                         {
-                            string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";
-                            EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                            string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
+                            EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                             //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
                             if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
@@ -139,7 +139,7 @@ namespace EmotionalFix
                     {
                         if (this._owner.faction == Faction.Player)
                         {
-                            EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion3);
+                            EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3);
                             if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level3 += 1;
@@ -150,8 +150,8 @@ namespace EmotionalFix
                         }
                         if (this._owner.faction == Faction.Enemy)
                         {
-                            string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion3).Name + "_Enemy";
-                            EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                            string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3).Name + "_Enemy";
+                            EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                             //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 3));
                             if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {

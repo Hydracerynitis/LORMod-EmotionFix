@@ -9,45 +9,52 @@ namespace EmotionalFix
 {
     public class EmotionCardAbility_clownofnihil3 : EmotionCardAbilityBase
     {
+        private bool _effect;
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
             SoundEffectPlayer.PlaySound("Creature/Nihil_StrongAtk");
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
-            this.GiveBuf();
+            GiveBuf();
+            _effect = false;
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
-            this.GiveBuf();
+            GiveBuf();
+            _effect = false;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._owner.faction != Faction.Enemy)
+            if (_owner.faction != Faction.Enemy)
                 return;
-            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Start", 1f, this._owner.view, this._owner.view);
+            if (!_effect)
+            {
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Start", 1f, _owner.view, _owner.view);
+                _effect = true;
+            }
             List<BattleUnitModel> player = BattleObjectManager.instance.GetAliveList(Faction.Player);
             foreach(BattleUnitModel alive in player)
             {
-                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2, this._owner);
-                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Disarm,2, this._owner);
-                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Binding, 2, this._owner);
-                alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil_Debuf());
+                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2, _owner);
+                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Disarm,2, _owner);
+                alive.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Binding, 2, _owner);
+                if (alive.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Nihil_Debuf) == null)
+                    alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil_Debuf());
             }
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, player.Count, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Disarm, player.Count, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Binding, player.Count, this._owner);
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil_Debuf());         
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, player.Count, _owner);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Disarm, player.Count, _owner);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Binding, player.Count, _owner);       
         }
         private void GiveBuf()
         {
-            if (SearchEmotion(this._owner, "QueenOfHatred_Snake") == null || SearchEmotion(this._owner, "KnightOfDespair_Despair") == null || SearchEmotion(this._owner, "Greed_Eat") == null || SearchEmotion(this._owner, "Angry_Angry") == null || this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_Nihil)) != null)
+            if (SearchEmotion(_owner, "QueenOfHatred_Snake") == null || SearchEmotion(_owner, "KnightOfDespair_Despair") == null || SearchEmotion(_owner, "Greed_Eat") == null || SearchEmotion(_owner, "Angry_Angry") == null || _owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Nihil) != null)
                 return;
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil());
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil());
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
         {
@@ -61,14 +68,15 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_Nihil)) is BattleUnitBuf_Emotion_Nihil nihil)
+            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Nihil) is BattleUnitBuf_Emotion_Nihil nihil)
                 nihil.Destroy();
         }
         public class BattleUnitBuf_Emotion_Nihil : BattleUnitBuf
         {
-            protected override string keywordId => "Nihil_Nihil";
-            protected override string keywordIconId => "Fusion";
-            public BattleUnitBuf_Emotion_Nihil() => this.stack = 0;
+            private bool _effect=false;
+            public override string keywordId => "Nihil_Nihil";
+            public override string keywordIconId => "Fusion";
+            public BattleUnitBuf_Emotion_Nihil() => stack = 0;
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEndTheLast();
@@ -76,17 +84,21 @@ namespace EmotionalFix
                 {
                     if (alive != this._owner)
                     {
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 5, this._owner);
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 5, this._owner);
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, 5, this._owner);
-                        alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil_Debuf());
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 5, _owner);
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 5, _owner);
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, 5, _owner);
+                        if(alive.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Nihil_Debuf)==null)
+                            alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Nihil_Debuf());
                     }
                 }
             }
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Start", 1f, this._owner.view, this._owner.view);
+                if (_effect)
+                    return;
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Start", 1f, _owner.view, _owner.view);
+                _effect = true;
             }
         }
 
@@ -97,19 +109,19 @@ namespace EmotionalFix
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                if (!((UnityEngine.Object)this.aura == (UnityEngine.Object)null))
+                if (aura !=null)
                     return;
-                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Aura", 1f, this._owner.view, this._owner.view)?.gameObject;
+                aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Joker_Aura", 1f, _owner.view, _owner.view)?.gameObject;
             }
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEnd();
-                this.DestroyAura();
+                DestroyAura();
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
             public override void Destroy()
             {
@@ -118,10 +130,10 @@ namespace EmotionalFix
             }
             private void DestroyAura()
             {
-                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                if (aura == null)
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura);
-                this.aura = (GameObject)null;
+                UnityEngine.Object.Destroy(aura);
+                aura = null;
             }
         }
     }

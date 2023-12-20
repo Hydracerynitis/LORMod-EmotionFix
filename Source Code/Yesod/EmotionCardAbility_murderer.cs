@@ -47,8 +47,8 @@ namespace EmotionalFix
         }
         public class HitDebuff: BattleUnitBuf
         {
-            protected override string keywordIconId => "Weak";
-            protected override string keywordId => "HitDebuff";
+            public override string keywordIconId => "Weak";
+            public override string keywordId => "HitDebuff";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
@@ -71,8 +71,8 @@ namespace EmotionalFix
         }
         public class HitDebuffEnemy : BattleUnitBuf
         {
-            protected override string keywordIconId => "Weak";
-            protected override string keywordId => "HitDebuff_Enemy";
+            public override string keywordIconId => "Weak";
+            public override string keywordId => "HitDebuff_Enemy";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

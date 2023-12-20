@@ -45,8 +45,8 @@ namespace EmotionalFix
             private BattleUnitModel _attacker;
             private Battle.CreatureEffect.CreatureEffect _aura;
             private static int Bind => RandomUtil.Range(6, 6);
-            protected override string keywordId => "SnowQueen_Emotion_Stun";
-            protected override string keywordIconId => "SnowQueen_Stun";
+            public override string keywordId => "SnowQueen_Emotion_Stun";
+            public override string keywordIconId => "SnowQueen_Stun";
             public BattleUnitBuf_Emotion_SnowQueen_Stun(BattleUnitModel attacker) => this._attacker = attacker;
             public override void Init(BattleUnitModel owner)
             {

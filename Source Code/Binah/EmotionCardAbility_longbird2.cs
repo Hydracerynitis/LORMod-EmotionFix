@@ -37,8 +37,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_LongBird_Emotion_Sin : BattleUnitBuf
         {
             private bool triggered;
-            protected override string keywordId => "Sin_AbnormalityCard";
-            protected override string keywordIconId => "Sin_Abnormality";
+            public override string keywordId => "Sin_AbnormalityCard";
+            public override string keywordIconId => "Sin_Abnormality";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

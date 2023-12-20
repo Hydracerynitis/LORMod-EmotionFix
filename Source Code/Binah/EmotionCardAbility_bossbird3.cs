@@ -44,8 +44,8 @@ namespace EmotionalFix
         }
         public class SmallBird : BattleUnitBuf
         {
-            protected override string keywordIconId => "ApocalypseBird_SmallBeak";
-            protected override string keywordId => "Smallbird";
+            public override string keywordIconId => "ApocalypseBird_SmallBeak";
+            public override string keywordId => "Smallbird";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
@@ -74,8 +74,8 @@ namespace EmotionalFix
         }
         public class Smallbird_Enemy : BattleUnitBuf
         {
-            protected override string keywordIconId => "ApocalypseBird_SmallBeak";
-            protected override string keywordId => "Smallbird_Enemy";
+            public override string keywordIconId => "ApocalypseBird_SmallBeak";
+            public override string keywordId => "Smallbird_Enemy";
             private List<BattleDiceCardModel> _cards = new List<BattleDiceCardModel>();
             public override void Init(BattleUnitModel owner)
             {

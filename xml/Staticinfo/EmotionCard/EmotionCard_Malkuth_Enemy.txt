@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>burnningGirl</Script>
+		<Script>malkuth_sorchedgirl1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90102">
 		<Name>ScorchedGirl_Walk_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-3</EmotionRate>
 		<TargetType>SelectOne</TargetType> 
-		<Script>burnningGirl2</Script>
+		<Script>malkuth_sorchedgirl2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90103">
 		<Name>ScorchedGirl_Ashes_Enemy</Name>
@@ -31,7 +31,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		 <TargetType>SelectOne</TargetType>
-		<Script>burnningGirl3</Script>
+		<Script>malkuth_sorchedgirl3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90104">
 		<Name>HappyTeddyBear_Hug_Enemy</Name>
@@ -42,7 +42,7 @@
     	<EmotionLevel>1</EmotionLevel>
    		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>teddy</Script>
+		<Script>malkuth_teddy1</Script>
   	</EmotionCard>
 	<EmotionCard ID="90105">
     	<Name>HappyTeddyBear_Memory_Enemy</Name>
@@ -53,7 +53,7 @@
    		<EmotionLevel>1</EmotionLevel>
    		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>teddy2</Script>
+		<Script>malkuth_teddy2</Script>
   	</EmotionCard>
 	<EmotionCard ID="90106">
    		<Name>HappyTeddyBear_Lonely_Enemy</Name>
@@ -64,7 +64,7 @@
    		<EmotionLevel>1</EmotionLevel>
    		<EmotionRate>-3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>teddy3</Script>
+		<Script>malkuth_teddy3</Script>
   	</EmotionCard>
 	<EmotionCard ID="90107">
    		<Name>FairyCarnival_Care_Enemy</Name>
@@ -75,7 +75,7 @@
    		<EmotionLevel>1</EmotionLevel>
    		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>fairy1</Script>
+		<Script>malkuth_fairy1</Script>
   	</EmotionCard>
 	<EmotionCard ID="90108">
    		<Name>FairyCarnival_Gluttony_Enemy</Name>
@@ -86,7 +86,7 @@
    		<EmotionLevel>2</EmotionLevel>
    		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>fairy2</Script>
+		<Script>malkuth_fairy2</Script>
   	</EmotionCard>
 	<EmotionCard ID="90109">
    		<Name>FairyCarnival_QueenAtk_Enemy</Name>
@@ -97,7 +97,7 @@
    		<EmotionLevel>2</EmotionLevel>
    		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>fairy3</Script>
+		<Script>malkuth_fairy3</Script>
   	</EmotionCard>
   	<EmotionCard ID="90110">
 		<Name>QueenBee_Funga_Enemy</Name>
@@ -108,7 +108,7 @@
    		<EmotionLevel>2</EmotionLevel>
    		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>queenbee1</Script>
+		<Script>malkuth_queenbee1</Script>
   	</EmotionCard>
 	<EmotionCard ID="90111">
 		<Name>QueenBee_Bee_Enemy</Name>
@@ -119,7 +119,7 @@
    		<EmotionLevel>2</EmotionLevel>
    		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>queenbee2</Script>
+		<Script>malkuth_queenbee2</Script>
   	</EmotionCard>
 	<EmotionCard ID="90112">
    		<Name>QueenBee_Loyalty_Enemy</Name>
@@ -130,7 +130,7 @@
    		<EmotionLevel>3</EmotionLevel>
    		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>queenbee3</Script>
+		<Script>malkuth_queenbee3</Script>
   	</EmotionCard>
 	<EmotionCard ID="90113">
 		<Name>SnowWhite_Vine_Enemy</Name>
@@ -141,7 +141,7 @@
 		<EmotionLevel>2</EmotionLevel>
  		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>snowwhite1</Script>
+		<Script>malkuth_snowwhite1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90114">
 		<Name>SnowWhite_Thorn_Enemy</Name>
@@ -152,7 +152,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>snowwhite2</Script>
+		<Script>malkuth_snowwhite2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90115">
 		<Name>SnowWhite_malice_Enemy</Name>
@@ -163,6 +163,6 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>snowwhite3</Script>
+		<Script>malkuth_snowwhite3</Script>
 	</EmotionCard>
 </EmotionCardXmlRoot>

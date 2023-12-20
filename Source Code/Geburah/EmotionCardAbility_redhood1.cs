@@ -46,8 +46,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_redhood_prey : BattleUnitBuf
         {
-            protected override string keywordId => "RedHood_Hunt";
-            protected override string keywordIconId => "Redhood_Target";
+            public override string keywordId => "RedHood_Hunt";
+            public override string keywordIconId => "Redhood_Target";
         }
     }
 }

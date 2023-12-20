@@ -29,8 +29,8 @@ namespace EmotionalFix
         }
         public class ShinyShoes: BattleUnitBuf
         {
-            protected override string keywordId => "ShinyShoes";
-            protected override string keywordIconId => "CopiousBleeding";
+            public override string keywordId => "ShinyShoes";
+            public override string keywordIconId => "CopiousBleeding";
 
             public override int GetDamageIncreaseRate() => 50;
             public override int GetBreakDamageIncreaseRate() => 50;

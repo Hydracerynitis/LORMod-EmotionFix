@@ -30,27 +30,29 @@ namespace EmotionalFix
                     this.owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90911, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                     if (emotion == null)
                         return;
                     //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90813, SephirahType.None);
                     this.owner.emotionDetail.ApplyEmotionCard(emotion);
+                    Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 }
                 Collect1 += 1;
             }
             if (this.owner.emotionDetail.EmotionLevel >= 2 && Collect1 < 2)
             {
-                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
+                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
                 while (SearchEmotion(owner, name) != null)
-                    name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                 //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                 if (emotion == null)
                     return;
                 //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90813, SephirahType.None);
                 this.owner.emotionDetail.ApplyEmotionCard(emotion);
+                Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 Collect1 += 1;
             }
             if (this.owner.emotionDetail.EmotionLevel >= 3 && Collect2<1)
@@ -59,27 +61,29 @@ namespace EmotionalFix
                     this.owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90912, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
                     if (emotion == null)
                         return;
                     //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90913, SephirahType.None);
                     this.owner.emotionDetail.ApplyEmotionCard(emotion);
+                    Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 }
                 Collect2 += 1;
             }
             if (this.owner.emotionDetail.EmotionLevel >= 4 && Collect2 < 2)
             {
-                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion2).Name + "_Enemy";
+                string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
                 while (SearchEmotion(owner, name) != null)
-                    name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion1).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                 //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
                 if (emotion == null)
                     return;
                 //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90813, SephirahType.None);
                 this.owner.emotionDetail.ApplyEmotionCard(emotion);
+                Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 Collect2 += 1;
             }
             if (this.owner.emotionDetail.EmotionLevel >= 5 && !Collect3)
@@ -88,13 +92,14 @@ namespace EmotionalFix
                     this.owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90915, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(Harmony_Patch.emotion3).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = Harmony_Patch.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 3));
                     if (emotion == null)
                         return;
                     //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90914, SephirahType.None);
                     this.owner.emotionDetail.ApplyEmotionCard(emotion);
+                    Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 }
                 Collect3 = true;
             }
@@ -112,7 +117,7 @@ namespace EmotionalFix
         public override void OnDie()
         {
             base.OnDie();
-            Harmony_Patch.Hastrigger = false;
+            EmotionFixInitializer.Hastrigger = false;
         }
     }
 }

@@ -36,8 +36,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_SmallBird_Buri : BattleUnitBuf
         {
             private int Dmg => RandomUtil.Range(2, 4);
-            protected override string keywordId => "Smallbird_Beak";
-            protected override string keywordIconId => "SmallBird_Emotion_Buri";
+            public override string keywordId => "Smallbird_Beak";
+            public override string keywordIconId => "SmallBird_Emotion_Buri";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

@@ -65,7 +65,7 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_Porccubus_Happy : BattleUnitBuf
         {
             private static int Dmg => RandomUtil.Range(2, 7);
-            protected override string keywordId => "Porccubus_Happy";
+            public override string keywordId => "Porccubus_Happy";
             public void Add()
             {
                 ++this.stack;
@@ -85,8 +85,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_Porccubus_Happy_Enemy : BattleUnitBuf
         {
             private static int Dmg => RandomUtil.Range(3, 7);
-            protected override string keywordId => "Porccubus_Happy_Enemy";
-            protected override string keywordIconId => "Porccubus_Happy";
+            public override string keywordId => "Porccubus_Happy_Enemy";
+            public override string keywordIconId => "Porccubus_Happy";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

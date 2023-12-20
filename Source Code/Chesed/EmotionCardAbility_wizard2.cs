@@ -124,8 +124,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_potion : BattleUnitBuf
         {
-            protected override string keywordId => "Wizard_potion";
-            protected override string keywordIconId => "Wizard_Courage";
+            public override string keywordId => "Wizard_potion";
+            public override string keywordIconId => "Wizard_Courage";
             public BattleUnitBuf_potion() => this.stack = 0;
             private int round = 0;
             public override void Init(BattleUnitModel owner)
@@ -189,8 +189,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_pocket : BattleUnitBuf
         {
-            protected override string keywordId => "Wizard_poket";
-            protected override string keywordIconId => "Wizard_Scarecrow_Debuf";
+            public override string keywordId => "Wizard_poket";
+            public override string keywordIconId => "Wizard_Scarecrow_Debuf";
             private int Pow => RandomUtil.Range(1, 2);
             public BattleUnitBuf_pocket() => this.stack = 0;
             public override void Init(BattleUnitModel owner)
@@ -216,8 +216,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_heart : BattleUnitBuf
         {
-            protected override string keywordId => stack==0? "Wizard_heart": "Wizard_heart_Deactivate";
-            protected override string keywordIconId => "Lumberjack_Piece_Final";
+            public override string keywordId => stack==0? "Wizard_heart": "Wizard_heart_Deactivate";
+            public override string keywordIconId => "Lumberjack_Piece_Final";
             public BattleUnitBuf_heart() => this.stack = 0;
             public override void Init(BattleUnitModel owner)
             {
@@ -246,8 +246,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_home : BattleUnitBuf
         {
-            protected override string keywordId => "Wizard_home";
-            protected override string keywordIconId => "WayBackHome_Super_Cancel";
+            public override string keywordId => "Wizard_home";
+            public override string keywordIconId => "WayBackHome_Super_Cancel";
             private int Pow => RandomUtil.Range(1, 3);
             public override void Init(BattleUnitModel owner)
             {
@@ -291,9 +291,9 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_change : BattleUnitBuf
         {
-            protected override string keywordId => "Wizard_change";
+            public override string keywordId => "Wizard_change";
 
-            protected override string keywordIconId => "Ozma_LibrarianToPumpkin";
+            public override string keywordIconId => "Ozma_LibrarianToPumpkin";
 
             public override void Init(BattleUnitModel owner)
             {

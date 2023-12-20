@@ -146,8 +146,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_Orchestra : BattleUnitBuf
         {
             private static int DmgAdd => RandomUtil.Range(2, 4);
-            protected override string keywordId => "Orchestra_Affect";
-            protected override string keywordIconId => "Orchestra_Enthusiastic";
+            public override string keywordId => "Orchestra_Affect";
+            public override string keywordIconId => "Orchestra_Enthusiastic";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
@@ -166,8 +166,8 @@ namespace EmotionalFix
             private bool _bControlable = false;
             private bool _bRecoverBreak;
             private static int DmgAdd => RandomUtil.Range(2, 4);
-            protected override string keywordId => "Enthusiastic";
-            protected override string keywordIconId => "Orchestra_Enthusiastic";
+            public override string keywordId => "Enthusiastic";
+            public override string keywordIconId => "Orchestra_Enthusiastic";
             public override bool IsControllable => this._bControlable;
             public override void Init(BattleUnitModel owner)
             {

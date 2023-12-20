@@ -36,8 +36,8 @@ namespace EmotionalFix
         {
             private GameObject _aura;
             private static int Pow => RandomUtil.Range(1, 3);
-            protected override string keywordId => "SmallBird_Punishment";
-            protected override string keywordIconId => "SmallBird_Emotion_Punish";
+            public override string keywordId => "SmallBird_Punishment";
+            public override string keywordIconId => "SmallBird_Emotion_Punish";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

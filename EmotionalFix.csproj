@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props" Condition="Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +40,7 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Publicize Include="Assembly-CSharp" />
     <Reference Include="BaseMod">
       <HintPath>D:\SteamLibrary\steamapps\workshop\content\1256670\2603522001\Assemblies\BaseMod.dll</HintPath>
     </Reference>
@@ -62,13 +66,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper.cs" />
     <Compile Include="Source Code\Binah\BattleVoidBehaviour.cs" />
-    <Compile Include="Source Code\Debug.cs" />
+    <Compile Include="Source Code\Chesed\DiceCardSelfAbility_WizardChange.cs" />
+    <Compile Include="Source Code\Chesed\DiceCardSelfAbility_WizardHome.cs" />
+    <Compile Include="Source Code\Chesed\DiceCardSelfAbility_WizardHeart.cs" />
+    <Compile Include="Source Code\Chesed\DiceCardSelfAbility_WizardPoket.cs" />
+    <Compile Include="Source Code\Chesed\DiceCardSelfAbility_WizardPotion.cs" />
+    <Compile Include="Source Code\Chesed\DiceCardSelfAbility_Wizard.cs" />
     <Compile Include="Source Code\DiceCardAbility_invalid.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_bigbadwolf1.cs" />
     <Compile Include="Source Code\Hokma\DiceCardAbility_PlagueDoctor.cs" />
     <Compile Include="Source Code\Hokma\EmotionCardAbility_bluestar3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_quietKidGuilty.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_fairy2.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_porccubus3.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardAbility_Tear.cs" />
     <Compile Include="Source Code\Hod\DiceCardAbility_Reflect.cs" />
@@ -183,26 +194,36 @@
     <Compile Include="Source Code\Yesod\EmotionCardAbility_singingMachine.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_murderer.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_murderer2.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_queenbee3.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_queenbee2.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_queenbee1.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_fairy3.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_fairy1.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_teddy3.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_teddy2.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_teddy.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl3.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl2.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_queenbee3.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_queenbee2.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_queenbee1.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_fairy3.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_fairy1.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_teddy3.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_teddy2.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_teddy1.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_sorchedgirl3.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_sorchedgirl2.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_snowwhite3.cs" />
     <Compile Include="Source Code\Malkuth\EmotionCardAbility_snowwhite2.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_snowwhite1.cs" />
-    <Compile Include="Source Code\Malkuth\EmotionCardAbility_burnningGirl.cs" />
-    <Compile Include="Source Code\Harmony_Patch.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_snowwhite1.cs" />
+    <Compile Include="Source Code\Malkuth\EmotionCardAbility_malkuth_sorchedgirl1.cs" />
+    <Compile Include="Source Code\EmotionFixInitializer.cs" />
     <Compile Include="Source Code\PassiveAbility_668.cs" />
     <Compile Include="Source Code\PassiveAbility_667.cs" />
     <Compile Include="Source Code\PassiveAbility_666.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props'))" />
+    <Error Condition="!Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets'))" />
+  </Target>
+  <Import Project="packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets" Condition="Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" />
 </Project>

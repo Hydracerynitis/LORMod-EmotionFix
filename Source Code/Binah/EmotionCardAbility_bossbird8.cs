@@ -47,8 +47,8 @@ namespace EmotionalFix
             private int ReduceDmg => RandomUtil.Range(2, 4);
             private int ReduceBreakDmg => RandomUtil.Range(2, 4);
             private int AddDmg => RandomUtil.Range(2, 4);
-            protected override string keywordIconId => "ApocalypseBird_Apocalypse";
-            protected override string keywordId => "ApocalypseBird_Peace";
+            public override string keywordIconId => "ApocalypseBird_Apocalypse";
+            public override string keywordId => "ApocalypseBird_Peace";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

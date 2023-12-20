@@ -233,7 +233,7 @@ namespace EmotionalFix
                 stack = 0;
                 Emotion = emotion;
             }
-            protected override string keywordId
+            public override string keywordId
             {
                 get
                 {
@@ -249,7 +249,7 @@ namespace EmotionalFix
                     return ("");
                 }
             }
-            protected override string keywordIconId => "ApocalypseBird_Apocalypse";
+            public override string keywordIconId => "ApocalypseBird_Apocalypse";
         }
     }
 }

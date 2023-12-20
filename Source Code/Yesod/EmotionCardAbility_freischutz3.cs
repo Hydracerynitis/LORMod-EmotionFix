@@ -70,7 +70,7 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Emotion_Fruischutz_Flame : BattleUnitBuf
         {
-            protected override string keywordId => "Matan_Flame";
+            public override string keywordId => "Matan_Flame";
 
             public override AtkResist GetResistHP(AtkResist origin, BehaviourDetail detail)
             {

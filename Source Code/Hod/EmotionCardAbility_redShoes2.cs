@@ -90,8 +90,8 @@ namespace EmotionalFix
         }
         public class TheChosen: BattleUnitBuf
         {
-            protected override string keywordId => "TheChosen";
-            protected override string keywordIconId => "CopiousBleeding";
+            public override string keywordId => "TheChosen";
+            public override string keywordIconId => "CopiousBleeding";
         }
     }
 }

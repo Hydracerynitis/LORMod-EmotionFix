@@ -68,8 +68,8 @@ namespace EmotionalFix
         }
         public class SealGauge : BattleUnitBuf
         {
-            protected override string keywordIconId => "Butterfly_Seal";
-            protected override string keywordId => "SealGauge";
+            public override string keywordIconId => "Butterfly_Seal";
+            public override string keywordId => "SealGauge";
             public override void Init(BattleUnitModel owner)
             {
                 this.stack = 0;
@@ -79,7 +79,7 @@ namespace EmotionalFix
         {
             private int addedThisTurn;
             private int deleteThisTurn;
-            protected override string keywordId => "Butterfly_Seal";
+            public override string keywordId => "Butterfly_Seal";
             public BattleUnitBuf_Butterfly_Emotion_Seal() => this.stack = 0;
             public override void OnRoundEnd()
             {

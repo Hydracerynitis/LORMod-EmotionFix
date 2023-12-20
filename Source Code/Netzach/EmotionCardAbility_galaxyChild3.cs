@@ -59,8 +59,8 @@ namespace EmotionalFix
         public override Sprite GetAbilityBufIcon() => Resources.Load<Sprite>("Sprites/BufIcon/Ability/GalaxyBoy_Stone");
         public class BattleUnitBuf_galaxyChild_Friend : BattleUnitBuf
         {
-            protected override string keywordId => "GalaxyBoy_Stone";
-            protected override string keywordIconId => "Ability/GalaxyBoy_Stone";
+            public override string keywordId => "GalaxyBoy_Stone";
+            public override string keywordIconId => "Ability/GalaxyBoy_Stone";
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();

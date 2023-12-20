@@ -19,8 +19,8 @@ namespace EmotionalFix
         }
         public class BigBirdParalysis: BattleUnitBuf
         {
-            protected override string keywordIconId => "BigBird_Charm";
-            protected override string keywordId => "BigBirdParalysis";
+            public override string keywordIconId => "BigBird_Charm";
+            public override string keywordId => "BigBirdParalysis";
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
                 base.BeforeRollDice(behavior);

@@ -44,8 +44,8 @@ namespace EmotionalFix
         }
         public class FearOfWater : BattleUnitBuf
         {
-            protected override string keywordId => "FearOfWater";
-            protected override string keywordIconId => "Nosferatu_Blight";
+            public override string keywordId => "FearOfWater";
+            public override string keywordIconId => "Nosferatu_Blight";
             public override bool IsControllable => _owner.faction == Faction.Player ? false : true; 
 
             public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int currentSlot)

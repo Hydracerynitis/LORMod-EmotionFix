@@ -29,7 +29,7 @@ namespace EmotionalFix
         }
         public class Nettle : BattleUnitBuf
         {
-            protected override string keywordId => "BlackSwan_Nettle";
+            public override string keywordId => "BlackSwan_Nettle";
 
             public Nettle(int value) => this.stack = value;
 

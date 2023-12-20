@@ -61,9 +61,9 @@ namespace EmotionalFix
         private BattleUnitModel GetAliveFriend() => BattleObjectManager.instance.GetAliveList(this._owner.faction==Faction.Player?Faction.Enemy:Faction.Player).Find((Predicate<BattleUnitModel>)(x => x.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(y => y is BattleUnitBuf_Emotion_Wrath_Friend)) != null));
         public class BattleUnitBuf_Emotion_Wrath_Friend : BattleUnitBuf
         {
-            protected override string keywordId => "Angry_Friend";
+            public override string keywordId => "Angry_Friend";
 
-            protected override string keywordIconId => "Reclus_Head";
+            public override string keywordIconId => "Reclus_Head";
 
             public BattleUnitBuf_Emotion_Wrath_Friend() => this.stack = 0;
         }

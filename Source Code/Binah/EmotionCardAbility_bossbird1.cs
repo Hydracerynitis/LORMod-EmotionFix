@@ -47,8 +47,8 @@ namespace EmotionalFix
         }
         public class LongBird : BattleUnitBuf
         {
-            protected override string keywordIconId => "ApocalypseBird_LongArm";
-            protected override string keywordId => "Longbird";
+            public override string keywordIconId => "ApocalypseBird_LongArm";
+            public override string keywordId => "Longbird";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
@@ -61,8 +61,8 @@ namespace EmotionalFix
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    dmgRate = -50,
-                    breakRate=-50
+                    dmgRate = -30,
+                    breakRate=-30
                 });
             }
             public override void OnSuccessAttack(BattleDiceBehavior behavior)
@@ -74,8 +74,8 @@ namespace EmotionalFix
         }
         public class Longbird_Enemy: BattleUnitBuf
         {
-            protected override string keywordIconId => "ApocalypseBird_LongArm";
-            protected override string keywordId => "Longbird_Enemy";
+            public override string keywordIconId => "ApocalypseBird_LongArm";
+            public override string keywordId => "Longbird_Enemy";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);

@@ -37,8 +37,8 @@ namespace EmotionalFix
         }
         public class Lion : BattleUnitBuf
         {
-            protected override string keywordId => "Lion_Player";
-            protected override string keywordIconId => "Wizard_Lion";
+            public override string keywordId => "Lion_Player";
+            public override string keywordIconId => "Wizard_Lion";
             private int Pow => RandomUtil.Range(1, 2);
             public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
             {
@@ -54,8 +54,8 @@ namespace EmotionalFix
         }
         public class Lion_Enemy : BattleUnitBuf
         {
-            protected override string keywordId => "Lion_Enemy";
-            protected override string keywordIconId => "Wizard_Lion";
+            public override string keywordId => "Lion_Enemy";
+            public override string keywordIconId => "Wizard_Lion";
             private int Pow => RandomUtil.Range(1, 2);
             public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
             {

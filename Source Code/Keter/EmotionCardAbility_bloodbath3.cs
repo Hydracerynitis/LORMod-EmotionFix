@@ -77,15 +77,15 @@ namespace EmotionalFix
 
         public class BloodBath_HandDebuf : BattleUnitBuf
         {
-            protected override string keywordIconId => "BloodBath_Hand";
-            protected override string keywordId => "Bloodbath_Hands";
+            public override string keywordIconId => "BloodBath_Hand";
+            public override string keywordId => "Bloodbath_Hands";
             public BloodBath_HandDebuf() => this.stack = 0;
             public void OnHit() => ++this.stack;
         }
         public class BloodBath_HandDebuf_Enemy : BloodBath_HandDebuf
         {
-            protected override string keywordId => "BloodBath_Hand_Enemy";
-            protected override string keywordIconId => "Ability/BloodBath_Hand";
+            public override string keywordId => "BloodBath_Hand_Enemy";
+            public override string keywordIconId => "Ability/BloodBath_Hand";
         }
 
     }

@@ -147,6 +147,76 @@
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
 	</Card>
+  <Card ID="1100023">
+    <Name>激发勇气的药水</Name>
+    <Artwork>House_LionAtk</Artwork>
+    <Rarity>Rare</Rarity>
+    <Option>Personal</Option>
+    <Option>ExhaustOnUse</Option>
+    <Spec Range="Instance" Cost="0" />
+    <Script>WizardPotion</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <Priority>0</Priority>
+  </Card>
+  <Card ID="1100024">
+    <Name>装有锯末的布袋</Name>
+    <Artwork>Scarecrow_Rake</Artwork>
+    <Rarity>Rare</Rarity>
+    <Option>Personal</Option>
+    <Option>ExhaustOnUse</Option>
+    <Spec Range="Instance" Cost="0" />
+    <Script>WizardPoket</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <Priority>0</Priority>
+  </Card>
+  <Card ID="1100025">
+    <Name>用铅制成的心脏</Name>
+    <Artwork>LumberJack_Heart</Artwork>
+    <Rarity>Rare</Rarity>
+    <Option>Personal</Option>
+    <Option>ExhaustOnUse</Option>
+    <Spec Range="Instance" Cost="0" />
+    <Script>WizardHeart</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <Priority>0</Priority>
+  </Card>
+  <Card ID="1100026">
+    <Name>永远回不去的家</Name>
+    <Artwork>House_Atk</Artwork>
+    <Rarity>Rare</Rarity>
+    <Option>Personal</Option>
+    <Option>ExhaustOnUse</Option>
+    <Spec Range="Instance" Cost="0" />
+    <Script>WizardHome</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <Priority>0</Priority>
+  </Card>
+  	<Card ID="1100027">
+    	<Name>催生变异的粉末</Name>
+    	<Artwork>Ozma_forgotten</Artwork>
+    	<Rarity>Rare</Rarity>
+    	<Option>Personal</Option>
+    	<Option>ExhaustOnUse</Option>
+    	<Spec Range="Instance" Cost="0" />
+    	<Script>WizardChange</Script>
+    	<ScriptDesc></ScriptDesc>
+    	<BehaviourList>
+    	</BehaviourList>
+    	<Chapter>7</Chapter>
+    	<Priority>0</Priority>
+  	</Card>
 	<Card ID="1107401">
 		<Name>巨目</Name>
 		<Artwork>Bigbird_Save</Artwork>

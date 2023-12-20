@@ -89,7 +89,7 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Emotion_BlueStar_SoundBuf : BattleUnitBuf
         {
-            protected override string keywordId => "Emotion_BlueStar_SoundBuf";
+            public override string keywordId => "Emotion_BlueStar_SoundBuf";
 
             private int BDmg => RandomUtil.Range(2, 4);
 
@@ -116,7 +116,7 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool : BattleUnitBuf
         {
-            protected override string keywordId => "Emotion_BlueStar_SoundBuf_Cool";
+            public override string keywordId => "Emotion_BlueStar_SoundBuf_Cool";
             public BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(int cooldown)
             {
                 this.Init(this._owner);

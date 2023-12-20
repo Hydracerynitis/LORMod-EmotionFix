@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<effectTextList>
-    	<BattleEffectText ID="Teddy_Memory">
-      		<Name>记忆</Name>
-      		<Desc>带有“幸福的记忆”的来宾与状态拥有者拼点时骰子威力+{0}</Desc>
+	<!--Malkuth-->
+	<BattleEffectText ID="EF_Ember">
+      		<Name>火苗</Name>
+      		<Desc>使用书页时第一颗骰子的最大值+{0},命中时该骰子施加{0}层烧伤</Desc>
     	</BattleEffectText>
-    	<BattleEffectText ID="Malice_Enemy">
+    	<BattleEffectText ID="EF_Memory">
+      		<Name>记忆</Name>
+      		<Desc>带有“幸福的记忆”的来宾与自身拼点时所有骰子威力+{0}</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_Malice">
       		<Name>恶意</Name>
       		<Desc>每回合开始时施加{0}层缠绕</Desc>
     	</BattleEffectText>

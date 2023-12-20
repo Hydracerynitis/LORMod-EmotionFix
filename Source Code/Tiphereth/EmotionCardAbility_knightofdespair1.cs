@@ -79,7 +79,7 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Gaho : BattleUnitBuf
         {
-            protected override string keywordId => "Gaho";
+            public override string keywordId => "Gaho";
             public override int GetDamageIncreaseRate() => -30;
             public override int GetBreakDamageIncreaseRate() => -30;
             public override void OnRoundEnd()

@@ -64,7 +64,7 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet : BattleUnitBuf
         {
-            protected override string keywordId => "Freischutz_Bullet";
+            public override string keywordId => "Freischutz_Bullet";
             public BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet() => this.stack = 0;
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {

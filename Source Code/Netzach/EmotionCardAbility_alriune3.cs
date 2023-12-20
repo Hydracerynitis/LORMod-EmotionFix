@@ -27,8 +27,8 @@ namespace EmotionalFix
             private BattleUnitModel _target;
             private int cnt;
             private static int BDmg => RandomUtil.Range(3, 7);
-            protected override string keywordId => "Alriune_Flower";
-            protected override string keywordIconId => "Alriune_Petal";
+            public override string keywordId => "Alriune_Flower";
+            public override string keywordIconId => "Alriune_Petal";
             public BattleUnitBuf_Emotion_Alriune(BattleUnitModel target)
             {
                 this._target = target;
@@ -98,8 +98,8 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_Alriune2 : BattleUnitBuf
         {
             private bool added = true;
-            protected override string keywordId => "NoTargeting";
-            protected override string keywordIconId => "Alriune_Attacker";
+            public override string keywordId => "NoTargeting";
+            public override string keywordIconId => "Alriune_Attacker";
             public override bool IsTargetable() => this.added;
             public override void OnRoundEnd()
             {

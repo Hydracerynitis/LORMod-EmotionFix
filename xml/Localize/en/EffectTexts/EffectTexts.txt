@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<effectTextList>
-    	<BattleEffectText ID="Teddy_Memory">
-      		<Name>Memory</Name>
-      		<Desc>All dices of enemy with “Happy Memory” increase {0} in a clash with self.</Desc>
+	<!--Malkuth-->
+	<BattleEffectText ID="EF_Ember">
+      		<Name>Ember</Name>
+      		<Desc>When using pages, increase the maximun value of the first die by +{0} and inflict {0} Burn on hit</Desc>
     	</BattleEffectText>
-    	<BattleEffectText ID="Malice_Enemy">
+    	<BattleEffectText ID="EF_Memory">
+      		<Name>Memory</Name>
+      		<Desc>In a clash with enemy equiped with “Happy Memory”, all dices of enemy gain +{0} Power</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_Malice">
       		<Name>Malice</Name>
       		<Desc>At the start of each Scene, inflict {0} Bind.</Desc>
     	</BattleEffectText>

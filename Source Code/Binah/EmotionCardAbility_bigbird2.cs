@@ -29,8 +29,8 @@ namespace EmotionalFix
         }
         public class Charm: BattleUnitBuf
         {
-            protected override string keywordId => "Charm";
-            protected override string keywordIconId => "BigBird_Charm";
+            public override string keywordId => "Charm";
+            public override string keywordIconId => "BigBird_Charm";
             private BattleUnitModel BigBird;
             public Charm(BattleUnitModel bigbird)
             {

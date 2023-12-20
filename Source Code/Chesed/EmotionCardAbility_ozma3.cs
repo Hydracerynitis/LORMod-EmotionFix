@@ -66,8 +66,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_ozmaReviveCheck : BattleUnitBuf
         {
-            protected override string keywordId => "Ozma_revive";
-            protected override string keywordIconId => "Ozma_AwakenPumpkin";
+            public override string keywordId => "Ozma_revive";
+            public override string keywordIconId => "Ozma_AwakenPumpkin";
             public BattleUnitBuf_ozmaReviveCheck() => this.stack = 0;
         }
     }

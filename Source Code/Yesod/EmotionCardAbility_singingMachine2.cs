@@ -56,7 +56,7 @@ namespace EmotionalFix
         {
             private Battle.CreatureEffect.CreatureEffect _effect;
             private int reserve;
-            protected override string keywordId => "SingingMachine_Rhythm";
+            public override string keywordId => "SingingMachine_Rhythm";
             private int _count;
             public BattleUnitBuf_Emotion_SingingMachine_Rhythm(int value = 0)
             {

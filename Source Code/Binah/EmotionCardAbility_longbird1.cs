@@ -44,8 +44,8 @@ namespace EmotionalFix
         }
         public class Sinner : BattleUnitBuf
         {
-            protected override string keywordId => "Sinner";
-            protected override string keywordIconId => "Sin_Abnormality";
+            public override string keywordId => "Sinner";
+            public override string keywordIconId => "Sin_Abnormality";
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
