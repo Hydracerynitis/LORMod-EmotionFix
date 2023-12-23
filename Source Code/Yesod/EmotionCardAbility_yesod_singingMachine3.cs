@@ -5,12 +5,10 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EmotionalFix.Yesod
 {
-    public class EmotionCardAbility_singingMachine3 : EmotionCardAbilityBase
+    public class EmotionCardAbility_yesod_singingMachine3 : EmotionCardAbilityBase
     {
-        private static int Add => RandomUtil.Range(1, 3);
-        private static int Minus => RandomUtil.Range(1, 3);
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
@@ -20,20 +18,20 @@ namespace EmotionalFix
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);
-            if (this.IsAttackDice(behavior.Detail))
+            if (IsAttackDice(behavior.Detail))
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    power = Add
+                    power = RandomUtil.Range(1, 3)
                 });
             }
             else
             {
-                if (!this.IsDefenseDice(behavior.Detail))
+                if (!IsDefenseDice(behavior.Detail))
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    power = -Minus
+                    power = -RandomUtil.Range(1, 3)
                 });
             }
         }

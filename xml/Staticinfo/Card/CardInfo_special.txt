@@ -13,19 +13,6 @@
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
 	</Card>
-	<Card ID="1100005">
-		<Name>委托</Name>
-		<Artwork>Matan_Request</Artwork>
-		<Rarity>Rare</Rarity>
-		<Spec Range="FarAreaEach" Cost="0" Affection="All"/>
-		<Script>Request</Script>
-		<ScriptDesc></ScriptDesc>
-		<BehaviourList>
-			<Behaviour Min="7" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript="yesodboss_freischutz_2ndbullet" Desc=""/>
-		</BehaviourList>
-		<Chapter>0</Chapter>
-		<Priority>0</Priority>
-	</Card>
 	<Card ID="1101005">
 		<Name>第七颗子弹</Name>
 		<Artwork>Matan_Seven</Artwork>

@@ -27,7 +27,7 @@ namespace EmotionalFix
                 attack = dmgData[owner];
                 first = false;
             }
-            int Dmg = (int)((Damage*(1+0.2*attack);
+            int Dmg = (int)(Damage*(1+0.2*attack));
             if (_owner.faction == Faction.Enemy)
             {
                 if (dmg < _owner.MaxHp * 0.02)

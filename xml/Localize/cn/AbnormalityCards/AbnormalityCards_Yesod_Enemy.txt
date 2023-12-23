@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="ForsakenMurderer_Metal_Enemy">
+			<Abnormality>被遗弃的杀人魔</Abnormality>
+			<CardName>铁块的回声</CardName>
+			<AbilityDesc>该来宾击中目标时将使目标下一个进攻骰减少50%的伤害和混乱伤害。</AbilityDesc>
+			<FlaborText>“脑袋……铁块……大脑上的褶皱……变光滑了……”</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">俺的脑袋又在嗡嗡响了，又吵又闹的……铁块，敲击声……</Dialogue>
+				<Dialogue ID="2">感觉就像，脑袋变成了冰冷的铁块。</Dialogue>
+				<Dialogue ID="3">俺的脑袋，真就变成铁块了？</Dialogue>
+				<Dialogue ID="4">脑袋一碰，就会响起清脆的声音。</Dialogue>
+				<Dialogue ID="5">大脑变成铁块的话，上面的褶皱也会消失吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
 		<AbnormalityCard ID="ForsakenMurderer_Tie_Enemy">
 			<Abnormality>被遗弃的杀人魔</Abnormality>
 			<CardName>受缚的愤怒</CardName>
-			<AbilityDesc>该来宾的进攻骰子威力+1~2
+			<AbilityDesc>该来宾的进攻骰子威力+1-2
 速度固定为1点。</AbilityDesc>
 			<FlaborText>即使全身遭到束缚，他仍比任何人都要自由。这还远远无法阻止他施暴。</FlaborText>
 			<Dialogues>
@@ -13,19 +26,6 @@
 				<Dialogue ID="3">别用那种眼神盯着俺，可怜的家伙是你们才对……</Dialogue>
 				<Dialogue ID="4">这东西绑不住俺！！！</Dialogue>
 				<Dialogue ID="5">就算被绑成这副鸟样，你们也照样会怕俺。</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="ForsakenMurderer_Metal_Enemy">
-			<Abnormality>被遗弃的杀人魔</Abnormality>
-			<CardName>铁块的回声</CardName>
-			<AbilityDesc>该来宾击中目标时将削弱目标下一个进攻骰子并减少其25%的伤害和混乱伤害。</AbilityDesc>
-			<FlaborText>“脑袋……铁块……大脑上的褶皱……变光滑了……”</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">俺的脑袋又在嗡嗡响了，又吵又闹的……铁块，敲击声……</Dialogue>
-				<Dialogue ID="2">感觉就像，脑袋变成了冰冷的铁块。</Dialogue>
-				<Dialogue ID="3">俺的脑袋，真就变成铁块了？</Dialogue>
-				<Dialogue ID="4">脑袋一碰，就会响起清脆的声音。</Dialogue>
-				<Dialogue ID="5">大脑变成铁块的话，上面的褶皱也会消失吧。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="ForsakenMurderer_Violence_Enemy">
@@ -81,7 +81,7 @@
 		<AbnormalityCard ID="SingingMachine_Music_Enemy">
 			<Abnormality>歌唱机</Abnormality>
 			<CardName>音乐</CardName>
-			<AbilityDesc>该来宾击中目标时伤害+3~5，被击中时将追加承受3~5点混乱伤害。</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时伤害+4~8，被击中时将追加承受4~8点混乱伤害。</AbilityDesc>
 			<FlaborText>此乃，旋律。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">由一个活人制造出的旋律是最美妙的。</Dialogue>
@@ -94,8 +94,8 @@
 		<AbnormalityCard ID="SingingMachine_Rhythm_Enemy">
 			<Abnormality>歌唱机</Abnormality>
 			<CardName>旋律</CardName>
-			<AbilityDesc>每一幕开始时该司书将获得1层“节奏”。拥有“节奏”的角色每击中目标3次便在下一幕中随机使1名角色获得1层“节奏”。
-(节奏: “进攻型”骰子威力+1）</AbilityDesc>
+			<AbilityDesc>每一幕开始时该来宾将获得1层“节奏”。拥有“节奏”的角色每击中目标3次便在下一幕中随机使1名角色获得1层“节奏”。
+(节奏: “进攻型”骰子威力+1)</AbilityDesc>
 			<FlaborText>这世上再也没有比“人”更加动听的旋律了。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">大家都想再听我唱歌呢。</Dialogue>
@@ -121,7 +121,7 @@
 		<AbnormalityCard ID="Butterfly_White_Enemy">
 			<Abnormality>亡蝶葬仪</Abnormality>
 			<CardName>安息</CardName>
-			<AbilityDesc>该来宾击中目标时根据所损失的体力伤害提高0~7</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时根据所损失的体力伤害提高2~7</AbilityDesc>
 			<FlaborText>人死后会化作有着小小翅膀的美妙存在，这实在荒谬。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">永恒的长眠……愿你安息。</Dialogue>
@@ -134,7 +134,7 @@
 		<AbnormalityCard ID="Butterfly_Fly_Enemy">
 			<Abnormality>亡蝶葬仪</Abnormality>
 			<CardName>哀悼</CardName>
-			<AbilityDesc>该来宾击中目标时根据所损失的混乱抗性混乱伤害提高0~7</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时根据所损失的混乱抗性混乱伤害提高2~7</AbilityDesc>
 			<FlaborText>身负重担的悼念者，
 前来此地救赎众生。</FlaborText>
 			<Dialogues>
@@ -162,8 +162,10 @@
 		<AbnormalityCard ID="Matan_Request_Enemy">
 			<Abnormality>魔弹射手</Abnormality>
 			<CardName>委托</CardName>
-			<AbilityDesc>将1张0费“射杀委托”置入该来宾手中。
-效果为“[范围杀伤书页][交锋] 突刺(7~11)使用会消耗其拥有者25%最大混乱抗性, 将除自身外的其余角色指定为攻击目标</AbilityDesc>
+			<AbilityDesc>应用该异想体书页后，该司书击中的第1名来宾将被标记为“委托目标”。
+该司书击中“委托目标”时伤害+3~5
+若该司书击杀“委托目标”，则恢复所有混乱抗性.
+“委托目标”死亡后，该司书可将其余来宾标记为“委托目标”。</AbilityDesc>
 			<FlaborText>恶魔的子弹会穿透你指定的任何目标，直到永远。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">有人称其为正义的猎手。也有人，称其为血腥的屠夫。</Dialogue>
@@ -190,7 +192,7 @@
 			<Abnormality>魔弹射手</Abnormality>
 			<CardName>黑焰</CardName>
 			<AbilityDesc>[仅限本舞台] 所有角色的“耐性”或“抵抗”攻击抗性将变为“脆弱”或“致命”
-每一幕开始时该来宾将获得1~2层“强壮”与2~4层“敏捷”。</AbilityDesc>
+每一幕开始时该来宾将获得层“强壮”与3层“敏捷”。</AbilityDesc>
 			<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>

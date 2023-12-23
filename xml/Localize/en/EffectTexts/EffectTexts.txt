@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<effectTextList>
-	<!--Malkuth-->
-	<BattleEffectText ID="EF_Ember">
+		<!--Malkuth-->
+		<BattleEffectText ID="EF_Ember">
       		<Name>Ember</Name>
       		<Desc>When using pages, increase the maximun value of the first die by +{0} and inflict {0} Burn on hit</Desc>
     	</BattleEffectText>
@@ -14,29 +14,30 @@
       		<Name>Malice</Name>
       		<Desc>At the start of each Scene, inflict {0} Bind.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="HitDebuff">
+		<!--Yesod-->
+		<BattleEffectText ID="EF_HitDebuff">
       		<Name>Ringing</Name>
-      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 50%.</Desc>
+      		<Desc>Next {0} Offensive Dices' Physical and Stagger Damager are reduced by 50%.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="HitDebuff_Enemy">
-      		<Name>Ringing</Name>
-      		<Desc>Next {0} Offensive Dices' Physic and Stagger Damager are reduced by 25%.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SingingMachine_Rhythm">
+		<BattleEffectText ID="EF_Rhythm">
       		<Name>Rhythm</Name>
       		<Desc>At the start of Scnee, gain {0} Strength ，clear all stack at the end of the Scene.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="SealGauge">
+		<BattleEffectText ID="EF_SealGauge">
       		<Name>Coffin</Name>
       		<Desc>Currently Progres is {0}%. When reach 100%, one speed dice is sealed for one Scene.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Freischutz_Bullet">
+		<BattleEffectText ID="EF_ButterflySeal">
+			<Name>Sealed</Name>
+			<Desc>{0} Speed dice become unusable. Leftmost dice is sealed first.</Desc>
+		</BattleEffectText>
+		<BattleEffectText ID="EF_Bullet">
       		<Name>Magic Bullet</Name>
       		<Desc>Increase damage by 1 per stack.Increase Power by 1 per 2 stacks.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="Flame">
       		<Name>Dark Flume</Name>
-      		<Desc>At the start of the Scene, gain {0} Strength and Protection. Reduce Max Stagger Resist by 12% per stack.</Desc>
+      		<Desc>The "Endured/Ineffective" resistances of the Key Page change to "Weak/Fatal".</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ShinyShoes">
       		<Name>Glittering Shoes</Name>

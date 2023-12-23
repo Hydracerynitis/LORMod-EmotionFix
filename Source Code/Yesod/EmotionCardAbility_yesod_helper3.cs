@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using LOR_DiceSystem;
 
-namespace EmotionalFix.Source_Code.Yesod
+namespace EmotionalFix.Yesod
 {
-    public class EmotionCardAbility_helper3 : EmotionCardAbilityBase
+    public class EmotionCardAbility_yesod_helper3 : EmotionCardAbilityBase
     {
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
-            base.BeforeRollDice(behavior);
             if (behavior?.card?.target == null)
                 return;
             int a = behavior.card.speedDiceResultValue - behavior.card.target.speedDiceResult[behavior.card.targetSlotOrder].value;

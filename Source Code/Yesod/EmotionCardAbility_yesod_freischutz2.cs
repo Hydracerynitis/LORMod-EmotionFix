@@ -7,23 +7,22 @@ using UnityEngine;
 
 namespace EmotionalFix
 {
-    public class EmotionCardAbility_freischutz2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_yesod_freischutz2 : EmotionCardAbilityBase
     {
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
-            base.OnUseCard(curCard);
             if (curCard.isKeepedCard || curCard.card.GetID()== 1101005)
                 return;
-            if (!(this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet)) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet))
+            if (!(_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet))
             {
                 BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet Bullet = new BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet();
-                this._owner.bufListDetail.AddBuf(Bullet);
+                _owner.bufListDetail.AddBuf(Bullet);
                 Bullet.stack+=1;
             }
             else
             {
                 bullet.stack+=1;
-                if (bullet.stack != 7)
+                if (bullet.stack < 7)
                     return;
                 BattleDiceCardModel TheBullet = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(1101005));
                 DiceBehaviour dice = TheBullet.XmlData.DiceBehaviourList[0];
@@ -39,19 +38,19 @@ namespace EmotionalFix
                 {
                     card = TheBullet
                 };
-                BattleUnitModel Gunner= RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player));
+                BattleUnitModel Gunner= RandomUtil.SelectOne(BattleObjectManager.instance.GetAliveList_opponent(_owner.faction));
                 if (Gunner == null)
-                    Card.owner = this._owner;
+                    Card.owner = _owner;
                 else
                     Card.owner = Gunner;
-                Singleton<StageController>.Instance.AddAllCardListInBattle(Card, this._owner);
+                StageController.Instance.AddAllCardListInBattle(Card, _owner);
                 curCard.DestroyDice(DiceMatch.AllDice, DiceUITiming.Start);
                 bullet.Destroy();
             }
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet)) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet)) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet)
             {
                 bullet.Destroy();
             }
@@ -64,7 +63,8 @@ namespace EmotionalFix
         }
         public class BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet : BattleUnitBuf
         {
-            public override string keywordId => "Freischutz_Bullet";
+            public override string keywordId => "EF_Bullet";
+            public override string keywordIconId => "Freischutz_Bullet";
             public BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet() => this.stack = 0;
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
@@ -73,8 +73,8 @@ namespace EmotionalFix
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    dmg = this.stack,
-                    power=(int)((double)this.stack/2)
+                    dmg = stack,
+                    power=stack/2
                 });
             }
         }

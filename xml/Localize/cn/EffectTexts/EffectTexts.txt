@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<effectTextList>
-	<!--Malkuth-->
-	<BattleEffectText ID="EF_Ember">
+		<!--Malkuth-->
+		<BattleEffectText ID="EF_Ember">
       		<Name>火苗</Name>
       		<Desc>使用书页时第一颗骰子的最大值+{0},命中时该骰子施加{0}层烧伤</Desc>
     	</BattleEffectText>
@@ -14,29 +14,30 @@
       		<Name>恶意</Name>
       		<Desc>每回合开始时施加{0}层缠绕</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="HitDebuff">
+		<!--Yesod-->
+		<BattleEffectText ID="EF_HitDebuff">
       		<Name>回声</Name>
-      		<Desc>下{0}个进攻骰会被削弱而且其伤害和混乱伤害-50%</Desc>
+      		<Desc>下{0}个进攻骰的伤害和混乱伤害-50%</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="HitDebuff_Enemy">
-      		<Name>回声</Name>
-      		<Desc>下{0}个进攻骰会被削弱而且其伤害和混乱伤害-25%</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SingingMachine_Rhythm">
+		<BattleEffectText ID="EF_Rhythm">
       		<Name>节奏</Name>
       		<Desc>每一幕开始开始时施加{0}层强壮，每一幕结束时清空层数</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="SealGauge">
+		<BattleEffectText ID="EF_SealGauge">
       		<Name>棺柩</Name>
       		<Desc>目前{0}%进度，如果达到100%则会封印目标一个速度骰</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Freischutz_Bullet">
+		<BattleEffectText ID="EF_ButterflySeal">
+			<Name>封印</Name>
+			<Desc>这一幕中{0}颗速度骰子无法使用。</Desc>
+		</BattleEffectText>
+		<BattleEffectText ID="EF_Bullet">
       		<Name>魔法子弹</Name>
       		<Desc>每层伤害+1，每2层威力+1</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Flame">
+		<BattleEffectText ID="EF_Flame">
       		<Name>黑焰</Name>
-      		<Desc>每一幕开始时获得{0}层强壮守护</Desc>
+      		<Desc>该角色的耐性/抵抗攻击抗性已变为脆弱/致命</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="ShinyShoes">
       		<Name>闪亮亮鞋子</Name>

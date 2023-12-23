@@ -61,7 +61,7 @@ namespace EmotionalFix
         {
             int num = 0;
             List<BattleUnitModel> victim = new List<BattleUnitModel>();
-            foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList_opponent(_owner.faction)
+            foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList_opponent(_owner.faction))
             {
                 if (enemy.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_binding) is BattleUnitBuf_binding bind)
                 {

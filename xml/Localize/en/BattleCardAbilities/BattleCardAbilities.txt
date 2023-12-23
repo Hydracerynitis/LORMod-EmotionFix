@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BattleCardAbilityDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<BattleCardAbility ID="Request">
-		<Desc>Spend 25% Max Stagger Resist to use</Desc>
-	</BattleCardAbility>
 	<BattleCardAbility ID="Execute">
 		<Desc>Inflict damage equal to the Power of this die</Desc>
 	</BattleCardAbility>

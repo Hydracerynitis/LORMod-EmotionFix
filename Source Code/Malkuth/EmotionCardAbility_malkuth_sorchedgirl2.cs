@@ -4,7 +4,7 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix
+namespace EmotionalFix.Malkuth
 {
     public class EmotionCardAbility_malkuth_sorchedgirl2 : EmotionCardAbilityBase
     {
