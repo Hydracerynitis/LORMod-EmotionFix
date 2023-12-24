@@ -152,7 +152,7 @@
     	<AbnormalityCard ID="QueenBee_Loyalty_Enemy">
       		<Abnormality>蜂后</Abnormality>
       		<CardName>忠诚</CardName>
-      		<AbilityDesc>上一幕该来宾每承受等同于8%最大生命值的伤害，便在这一幕中使所有司书获得1层“强壮”</AbilityDesc>
+      		<AbilityDesc>上一幕该来宾每承受等同于10%最大生命值的伤害，便在这一幕中使所有司书获得1层“强壮”</AbilityDesc>
       		<FlaborText>蜜蜂的忠诚是一种自然本能，一旦找到激发这种本能的方法，那么许多事情都将改变。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">快为我献上更多蜜来。</Dialogue>

@@ -42,7 +42,7 @@
 		<AbnormalityCard ID="RedShoes_Kirakira_Enemy">
 			<Abnormality>红舞鞋</Abnormality>
 			<CardName>闪亮</CardName>
-			<AbilityDesc>该来宾会获得”闪亮亮鞋子“(进攻威力+1~3并且速度提升1~2，受到的伤害的混乱伤害提升50%)
+			<AbilityDesc>该来宾会获得”闪亮亮鞋子“(进攻威力+1~3并且速度提升1~2，受到的伤害和混乱伤害提升50%)
 被击杀时击杀者会获得”闪亮亮鞋子“，若无击杀者则击杀方随机1个角色会获得”闪亮亮鞋子“</AbilityDesc>
 			<FlaborText>这双鞋是无色的。
 不过很快就会染红了。</FlaborText>
@@ -57,7 +57,7 @@
 		<AbnormalityCard ID="RedShoes_Desire_Enemy">
 			<Abnormality>红舞鞋</Abnormality>
 			<CardName>血之渴望</CardName>
-			<AbilityDesc>该来宾会标记随机来宾为”红舞鞋“，该来宾只能攻击”红舞鞋“并且命中”红舞鞋“会追加造成3~8点伤害
+			<AbilityDesc>该来宾会标记随机来宾为”红舞鞋“，该来宾会优先攻击”红舞鞋“并且命中”红舞鞋“时会追加造成3~8点伤害
 击杀“红舞鞋”后会标记其他随机司书为”红舞鞋“</AbilityDesc>
 			<FlaborText>我要砍断你的狗腿，这辈子都别想跳舞。</FlaborText>
 			<Dialogues>
@@ -71,8 +71,8 @@
 		<AbnormalityCard ID="RedShoes_Cut_Enemy">
 			<Abnormality>红舞鞋</Abnormality>
 			<CardName>利斧</CardName>
-			<AbilityDesc>命中目标时会有40%几率在下一幕施加1层创口撕裂
-(投掷进攻骰时会受到等于该层数的伤害，回合结束时清零)。</AbilityDesc>
+			<AbilityDesc>该来宾的进攻骰子威力+1~2
+该来宾使用斩击骰子时若未能击中目标，则承受2~5点混乱伤害</AbilityDesc>
 			<FlaborText>前辈突然换上舞鞋，颇为满意地露出微笑。她的笑容有些奇怪，不……那根本不是在笑……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">把斧刃磨快……一下就能砍断……</Dialogue>
@@ -83,7 +83,7 @@
 		<AbnormalityCard ID="SpiderBud_Cocoon_Enemy">
 			<Abnormality>蜘蛛巢</Abnormality>
 			<CardName>茧缚</CardName>
-			<AbilityDesc>若该来宾击中目标且掷出最大值，则下一幕中对目标施加1~2层“麻痹”，“束缚”与“易损”。</AbilityDesc>
+			<AbilityDesc>若该来宾击中目标且掷出最大值，则下一幕中对目标施加3层“麻痹”，“束缚”与“易损”. (每一幕最多触发1次)</AbilityDesc>
 			<FlaborText>没有人自愿取回茧中的尸体。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">是哪个不长眼的踩死了我的宝宝？</Dialogue>
@@ -133,25 +133,12 @@
 				<Dialogue ID="4">啊偶……我把小秘密说出来了。</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="Laetitia_HeartGift_Enemy">
-			<Abnormality>蕾蒂希娅</Abnormality>
-			<CardName>奇趣恶作剧</CardName>
-			<AbilityDesc>该来宾使用书页时第1颗骰子必定掷出最小值或最大值。
-若掷出最小值，则该司书将失去2~7点体力。</AbilityDesc>
-			<FlaborText>小不点儿决定留下来，直到为每个人带来欢声和笑语！</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">来和我玩吧！和我的朋友一起哈哈大笑吧！</Dialogue>
-				<Dialogue ID="2">喜欢我的小小恶作剧吗？很有意思吧？对吧对吧？就是那种表情！</Dialogue>
-				<Dialogue ID="3">这里没有笑声……大家看起来都好难过哦。</Dialogue>
-				<Dialogue ID="4">希望我的小小恶作剧能让大家绽放笑容！</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="Laetitia_Friend_Enemy">
 			<Abnormality>蕾蒂希娅</Abnormality>
 			<CardName>小伙伴</CardName>
-			<AbilityDesc>每两幕随机为所有司书手中的1张书页赋予“伙伴标记”。
+			<AbilityDesc>每一幕随机为一个随机司书手中的1张书页赋予“伙伴标记”。
 “伙伴书页”中的所有骰子威力+1。
-若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该来宾失去3~8点体力。</AbilityDesc>
+若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该司书失去3~8点体力。</AbilityDesc>
 			<FlaborText>小不点儿很伤心，她舍不得离开亲爱的朋友们。小眼珠子咕噜一转，她想出了一个绝妙的主意！</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">不能就这么丢下重要的朋友们……所以，我想出了一个绝妙的主意！</Dialogue>
@@ -160,10 +147,23 @@
 				<Dialogue ID="4">希望能在这里交到许多朋友~</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="Laetitia_HeartGift_Enemy">
+			<Abnormality>蕾蒂希娅</Abnormality>
+			<CardName>奇趣恶作剧</CardName>
+			<AbilityDesc>该来宾使用书页时第1颗骰子必定掷出最小值或最大值。
+若掷出最小值，则该来宾将失去2~7点体力。</AbilityDesc>
+			<FlaborText>小不点儿决定留下来，直到为每个人带来欢声和笑语！</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">来和我玩吧！和我的朋友一起哈哈大笑吧！</Dialogue>
+				<Dialogue ID="2">喜欢我的小小恶作剧吗？很有意思吧？对吧对吧？就是那种表情！</Dialogue>
+				<Dialogue ID="3">这里没有笑声……大家看起来都好难过哦。</Dialogue>
+				<Dialogue ID="4">希望我的小小恶作剧能让大家绽放笑容！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
 		<AbnormalityCard ID="BlackSwan_Feather_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>污秽</CardName>
-			<AbilityDesc>该来宾每一幕开始时获得3层随机负面buff，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
+			<AbilityDesc>该来宾每一幕开始时获得3层随机负面buff(“束缚”,“易损”,“虚弱”,"破绽"或者“麻痹”)，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
 			<FlaborText>艾丽莎痛苦地跪倒在地，也如旁人那般呕吐不止……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">徐徐水波划过湖面，仿佛有一群天鹅刚刚起飞……</Dialogue>
@@ -189,8 +189,7 @@
 		<AbnormalityCard ID="BlackSwan_Family_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>亲爱的家人</CardName>
-			<AbilityDesc>将3张0费编织衣物置入该司书牌库，效果为使用时抽取一张牌并使所有友方单位获得2层荨麻衣
-(所受伤害和混乱伤害减少2)</AbilityDesc>
+			<AbilityDesc>该来宾将获得6层“荨麻衣”，每一幕开始时所有敌人获得“荨麻衣”层数的“守护”,“振奋”，每一幕结束时失去1层“荨麻衣”</AbilityDesc>
 			<FlaborText>艾丽莎动身寻找她的哥哥们。她期盼着用荨麻衣解除家人的诅咒，与他们一同分享幸福的梦。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">虽然没有值钱的东西能传给他们，可他们人人怀揣着名为“勤奋”与“真诚”的珍贵宝石。</Dialogue>

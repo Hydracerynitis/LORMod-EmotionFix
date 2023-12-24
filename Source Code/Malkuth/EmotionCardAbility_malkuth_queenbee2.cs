@@ -48,11 +48,11 @@ namespace EmotionalFix.Malkuth
         }
         public override void OnRoundStart()
         {
-            foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Player : Faction.Enemy))
+            foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(_owner.faction))
             {
                 if (unit.bufListDetail.GetActivatedBufList().Exists(x => x is BattleUnitBuf_queenbee_attacker))
                     continue;
-                if (Helper.SearchEmotion(unit, "QueenBee_Bee_Enemy")!=null)
+                if (Helper.SearchEmotion(unit, "QueenBee_Bee_Enemy")!=null || Helper.SearchEmotion(unit, "QueenBee_Bee") != null)
                     continue;
                 unit.bufListDetail.AddBuf(new BattleUnitBuf_queenbee_attacker());
             }

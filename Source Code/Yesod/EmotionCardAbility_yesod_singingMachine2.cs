@@ -37,7 +37,7 @@ namespace EmotionalFix.Yesod
             {
                 stack = value;
                 _count = 0;
-                reserve = Mathf.Max(0, 1 - value);
+                reserve = value == 0 ? 1 : 0;
             }
             public override void Init(BattleUnitModel owner)
             {

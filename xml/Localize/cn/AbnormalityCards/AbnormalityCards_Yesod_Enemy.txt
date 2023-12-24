@@ -192,7 +192,7 @@
 			<Abnormality>魔弹射手</Abnormality>
 			<CardName>黑焰</CardName>
 			<AbilityDesc>[仅限本舞台] 所有角色的“耐性”或“抵抗”攻击抗性将变为“脆弱”或“致命”
-每一幕开始时该来宾将获得层“强壮”与3层“敏捷”。</AbilityDesc>
+每一幕开始时该来宾将获得2层“强壮”与3层“敏捷”。</AbilityDesc>
 			<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>

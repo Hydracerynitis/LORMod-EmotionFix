@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>shyLook</Script>
+		<Script>hod_shyLook1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90302">
 		<Name>ShyLookToday_Shy_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>shyLook2</Script>
+		<Script>hod_shyLook2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90303">
 		<Name>ShyLookToday_Normalface_Enemy</Name>
@@ -31,7 +31,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>shyLook3</Script>
+		<Script>hod_shyLook3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90304">
 		<Name>RedShoes_Kirakira_Enemy</Name>
@@ -42,7 +42,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>redShoes</Script>
+		<Script>hod_redShoes1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90305">
 		<Name>RedShoes_Desire_Enemy</Name>
@@ -53,7 +53,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>  
 		<TargetType>AllIncludingEnemy</TargetType>
-		<Script>redShoes2</Script>
+		<Script>hod_redShoes2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90306">
 		<Name>RedShoes_Cut_Enemy</Name>
@@ -64,7 +64,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>  
 		<TargetType>SelectOne</TargetType>
-		<Script>redShoes3</Script>
+		<Script>hod_redShoes3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90307">
 		<Name>SpiderBud_Cocoon_Enemy</Name>
@@ -75,7 +75,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>spiderBud</Script>
+		<Script>hod_spiderBud1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90308">
 		<Name>SpiderBud_BabyAtk_Enemy</Name>
@@ -86,7 +86,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>spiderBud2</Script>
+		<Script>hod_spiderBud2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90309">
 		<Name>SpiderBud_Dinner_Enemy</Name>
@@ -97,7 +97,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>spiderBud3</Script>
+		<Script>hod_spiderBud3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90310">
 		<Name>Laetitia_Present_Enemy</Name>
@@ -108,7 +108,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>latitia1</Script>
+		<Script>hod_latitia1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90311">
 		<Name>Laetitia_Friend_Enemy</Name>
@@ -119,7 +119,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>latitia2</Script>
+		<Script>hod_latitia2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90312">
 		<Name>Laetitia_HeartGift_Enemy</Name>
@@ -130,7 +130,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>latitia3</Script>
+		<Script>hod_latitia3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90313">
 		<Name>BlackSwan_Feather_Enemy</Name>
@@ -141,7 +141,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>blackswan1</Script>
+		<Script>hod_blackswan1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90314">
 		<Name>BlackSwan_Umbrella_Enemy</Name>
@@ -152,7 +152,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>blackswan2</Script>
+		<Script>hod_blackswan2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90315">
 		<Name>BlackSwan_Family_Enemy</Name>
@@ -163,6 +163,6 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>blackswan3</Script>
+		<Script>hod_blackswan3</Script>
 	</EmotionCard>
 </EmotionCardXmlRoot>

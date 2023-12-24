@@ -42,9 +42,9 @@ namespace EmotionalFix
                         {
                             destroy.Invoke(ability, new object[] { });
                         }
-                        catch (Exception ex)
+                        catch 
                         {
-                            Debug.Error(ability.GetType().Name + "Destroy", ex);
+
                         }
                 }
                 _owner.emotionDetail.PassiveList.Remove(Long);
@@ -62,9 +62,9 @@ namespace EmotionalFix
                         {
                             destroy.Invoke(ability, new object[] { });
                         }
-                        catch (Exception ex)
+                        catch 
                         {
-                            Debug.Error(ability.GetType().Name + "Destroy", ex);
+
                         }
                 }
                 _owner.emotionDetail.PassiveList.Remove(Big);
@@ -82,10 +82,10 @@ namespace EmotionalFix
                         {
                             destroy.Invoke(ability, new object[] { });
                         }
-                        catch (Exception ex)
+                        catch 
                         {
-                            Debug.Error(ability.GetType().Name + "Destroy", ex);
                         }
+
                 }
                 _owner.emotionDetail.PassiveList.Remove(Small);
                 string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";

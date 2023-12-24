@@ -42,7 +42,7 @@ namespace EmotionalFix.Malkuth
         {
             public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int currentSlot)
             {
-                List<BattleUnitModel> vine = BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => x.bufListDetail.GetActivatedBufList().Exists(y => y is BattleUnitBuf_snowwhite_vine));
+                List<BattleUnitModel> vine = BattleObjectManager.instance.GetAliveList_opponent(_owner.faction).FindAll(x => x.bufListDetail.GetActivatedBufList().Exists(y => y is BattleUnitBuf_snowwhite_vine));
                 if (vine.Count <= 0 && currentSlot>_owner.speedDiceResult.Count/2)
                     return base.ChangeAttackTarget(card,currentSlot);
                 return RandomUtil.SelectOne(vine);

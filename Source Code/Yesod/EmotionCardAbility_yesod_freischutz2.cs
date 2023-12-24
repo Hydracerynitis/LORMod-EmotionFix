@@ -13,9 +13,9 @@ namespace EmotionalFix
         {
             if (curCard.isKeepedCard || curCard.card.GetID()== 1101005)
                 return;
-            if (!(_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet))
+            if (!(_owner.bufListDetail.GetActivatedBufList().Find(x => x is Bullet) is Bullet bullet))
             {
-                BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet Bullet = new BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet();
+                Bullet Bullet = new Bullet();
                 _owner.bufListDetail.AddBuf(Bullet);
                 Bullet.stack+=1;
             }
@@ -50,7 +50,7 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            if (_owner.bufListDetail.GetActivatedBufList().Find((x => x is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet)) is BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet bullet)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((x => x is Bullet)) is Bullet bullet)
             {
                 bullet.Destroy();
             }
@@ -61,11 +61,11 @@ namespace EmotionalFix
             behavior?.card?.target?.battleCardResultLog?.SetNewCreatureAbilityEffect("2_Y/FX_IllusionCard_2_Y_Seven", 3f);
             behavior?.card?.target?.battleCardResultLog?.SetCreatureEffectSound("Creature/Matan_NormalShot");
         }
-        public class BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet : BattleUnitBuf
+        public class Bullet : BattleUnitBuf
         {
             public override string keywordId => "EF_Bullet";
             public override string keywordIconId => "Freischutz_Bullet";
-            public BattleUnitBuf_Freischutz_Emotion_Seventh_Bullet() => this.stack = 0;
+            public Bullet() => stack = 0;
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
                 base.BeforeRollDice(behavior);

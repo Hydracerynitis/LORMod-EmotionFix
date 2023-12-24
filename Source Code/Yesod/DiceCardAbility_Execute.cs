@@ -9,7 +9,7 @@ namespace EmotionalFix
 {
     public class DiceCardAbility_Execute : DiceCardAbilityBase
     {
-        public override void BeforeRollDice() => this.behavior.ApplyDiceStatBonus(new DiceStatBonus()
+        public override void BeforeRollDice() => behavior.ApplyDiceStatBonus(new DiceStatBonus()
         {
             dmg = -10000,
             breakDmg = -10000
@@ -17,10 +17,10 @@ namespace EmotionalFix
 
         public override void AfterAction()
         {
-            this.behavior.card.target.TakeDamage(this.behavior.DiceResultValue);
-            this.behavior.card.target.TakeBreakDamage(this.behavior.DiceResultValue);
+            behavior.card.target.TakeDamage(behavior.DiceResultValue);
+            behavior.card.target.TakeBreakDamage(behavior.DiceResultValue);
             behavior?.card?.target?.battleCardResultLog?.SetNewCreatureAbilityEffect("2_Y/FX_IllusionCard_2_Y_Seven", 3f);
-            this.behavior.card.target.battleCardResultLog?.SetCreatureEffectSound("Creature/Matan_FinalShot");
+            behavior.card.target.battleCardResultLog?.SetCreatureEffectSound("Creature/Matan_FinalShot");
         }
     }
 }

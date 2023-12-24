@@ -59,7 +59,7 @@ They will soon turn red.</FlaborText>
 		<AbnormalityCard ID="RedShoes_Desire_Enemy">
 			<Abnormality>The Red Shoes</Abnormality>
 			<CardName>Obsession</CardName>
-			<AbilityDesc>Mark random enemy as The Red Shoes. Can only attack The Red Shoes and inflict 3-8 damage upon hit.
+			<AbilityDesc>Mark random enemy as The Red Shoes. Prioritize attack The Red Shoes and inflict 3-8 damage upon hit.
 When kill The Red Shoes, mark another random enemy as such.</AbilityDesc>
 			<FlaborText>I’ll break your legs, then you won’t be able to dance ever again.</FlaborText>
 			<Dialogues>
@@ -73,8 +73,8 @@ When kill The Red Shoes, mark another random enemy as such.</AbilityDesc>
 		<AbnormalityCard ID="RedShoes_Cut_Enemy">
 			<Abnormality>The Red Shoes</Abnormality>
 			<CardName>Axe</CardName>
-			<AbilityDesc>Upon a successful hit inflict 1 Laceration by 40% chance next Scene.
-(Laceration: For the Scene, take 1 damage per stack every time rolls an Offensive die.)</AbilityDesc>
+			<AbilityDesc>Offensive dice gain 1-3 Power.
+Take 2-5 Stagger damage when a Slash attack does not connect. (Excludes Mass Attacks)</AbilityDesc>
 			<FlaborText>At some point, &lt;Redacted&gt; was wearing the shoes, grinning from ear to ear. It was uh, well it was quite strange. That wasn’t a smile. It was…</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Hone the axe over and over… So that it can chop them off in one swing.</Dialogue>
@@ -85,7 +85,7 @@ When kill The Red Shoes, mark another random enemy as such.</AbilityDesc>
 		<AbnormalityCard ID="SpiderBud_Cocoon_Enemy">
       		<Abnormality>Spider Bud</Abnormality>
       		<CardName>Cocoon</CardName>
-			<AbilityDesc>On hit, if the dice rolled maximum value: inflict 1-2 Paralysis, Bind, and Fragile.</AbilityDesc>
+			<AbilityDesc>On hit, if the dice rolled maximum value: inflict 3 Paralysis, Bind, and Fragile. (Once Per Scene)</AbilityDesc>
 			<FlaborText>Unsurprisingly, not a single employee volunteered to retrieve the corpse of their cocooned colleague.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">What careless fool stepped on my baby?</Dialogue>
@@ -135,6 +135,20 @@ When the 'Giftee' dies, a new 'Gift' can be given.</AbilityDesc>
 				<Dialogue ID="4">Whoops… There goes the secret of the gift.</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="Laetitia_Friend_Enemy">
+			<Abnormality>Laetitia</Abnormality>
+			<CardName>Friend</CardName>
+			<AbilityDesc>Sneak a 'friend' into one of the Combat pages in hand of one random librarians for each Scene.
+The page with the 'friend' gains 1 Power.
+However, if the page is not used within 2 Scenes, discard it and draw 1 card, dealing 3-8 damage to the Guest.</AbilityDesc>
+			<FlaborText>She was so sad that she had to leave her dear friends behind, so she came up with a brilliant idea!</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">I couldn’t leave my dear friends behind… So I came up with a brilliant idea!</Dialogue>
+				<Dialogue ID="2">Don’t you worry~ Only meanies hurt friends.</Dialogue>
+				<Dialogue ID="3">This place will get livelier the more friends I have!</Dialogue>
+				<Dialogue ID="4">I hope to find lots of friends here too~</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
 		<AbnormalityCard ID="Laetitia_HeartGift_Enemy">
 			<Abnormality>Laetitia</Abnormality>
 			<CardName>Funny Prank</CardName>
@@ -148,25 +162,11 @@ Take 2-7 damage if it rolled the minimum value.</AbilityDesc>
 				<Dialogue ID="4">I want you to be pleased with my pranks!</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="Laetitia_Friend_Enemy">
-			<Abnormality>Laetitia</Abnormality>
-			<CardName>Friend</CardName>
-			<AbilityDesc>Sneak a 'friend' into one of the Combat pages in hand of all librarians per 2 Scene.
-The page with the 'friend' gains 1 Power.
-However, if the page is not used within 2 Scenes, discard it and draw 1 card, dealing 3-8 damage to the Guest.</AbilityDesc>
-			<FlaborText>She was so sad that she had to leave her dear friends behind, so she came up with a brilliant idea!</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">I couldn’t leave my dear friends behind… So I came up with a brilliant idea!</Dialogue>
-				<Dialogue ID="2">Don’t you worry~ Only meanies hurt friends.</Dialogue>
-				<Dialogue ID="3">This place will get livelier the more friends I have!</Dialogue>
-				<Dialogue ID="4">I hope to find lots of friends here too~</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="BlackSwan_Feather_Enemy">
 			<Abnormality>Dream of a Black Swan</Abnormality>
 			<CardName>Gooey Waste</CardName>
-			<AbilityDesc>At start of each Scene, inflict self with 1 random status ailment (Burn, Bleed, Paralysis, Feeble, Disarm, Bind, or Fragile) 3 times.
-Upon successful hit, inflict all enemy with 1 random activated status ailment next Scene.</AbilityDesc>
+			<AbilityDesc>At start of each Scene, inflict self with 1 random status ailment (Paralysis, Feeble, Disarm, Bind, or Fragile) 3 times.
+Upon successful hit, inflict all enemy with 1 random inflicted status ailment next Scene.</AbilityDesc>
 			<FlaborText>Elijah fell to her knees and finally started to puke up the thing everyone else was vomiting.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">The lake ripples gently. As if a number of swans just took flight.</Dialogue>
@@ -191,8 +191,7 @@ Upon successful hit, inflict all enemy with 1 random activated status ailment ne
 		<AbnormalityCard ID="BlackSwan_Family_Enemy">
 			<Abnormality>Dream of a Black Swan</Abnormality>
 			<CardName>Loving Family</CardName>
-			<AbilityDesc>3 'Weaving Clothes' pages are shuffled into the deck.
-On use 'Weaving Clothes', draw 1 card and all allies gain 2 Nettle Clothes (Reduce 1 Physical and Stagger damage taken per stack)</AbilityDesc>
+			<AbilityDesc>Gain 6 'Nettle Clothing', all enemies grants Protection and Stagger Protection equal to its amount each Scene. A stack of 'Nettle Clothing' is lost at the end of each Scene.</AbilityDesc>
 			<FlaborText>She began to look for her brothers. Her family who needed to wear the nettle clothing to be free from the curse. Ones whom she shared happy dreams with.</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">Although they didn’t have anything to pass onto her, they had honesty and diligence as their most valuable treasure.</Dialogue>

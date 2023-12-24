@@ -6,9 +6,6 @@
 	<BattleCardAbility ID="Reflect">
 		<Desc>[拼点胜利]对目标造成目标骰子威力的伤害和混乱伤害</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="Clothes">
-		<Desc>[使用时]抽取一张书页，使所有友方单位获得2层荨麻衣</Desc>
-	</BattleCardAbility>
 	<BattleCardAbility ID="Queen">
 		<Desc>[装备时]1幕之内使自身与博爱魔法少女[同化](每4幕至多同化1次)</Desc>
 	</BattleCardAbility>

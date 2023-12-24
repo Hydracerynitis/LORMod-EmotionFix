@@ -34,7 +34,7 @@ namespace EmotionalFix.Yesod
             target.battleCardResultLog?.SetCreatureEffectSound("Creature/Matan_Flame");
         }
 
-        private BattleUnitModel GetAliveTarget() => BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find(x => x.bufListDetail.GetActivatedBufList().Find(y => y is EmotionCardAbility_freischutz1.BattleUnitBuf_Emotion_Freischutz_Target) != null);
+        private BattleUnitModel GetAliveTarget() => BattleObjectManager.instance.GetAliveList_opponent(_owner.faction).Find(x => x.bufListDetail.GetActivatedBufList().Find(y => y is EmotionCardAbility_freischutz1.BattleUnitBuf_Emotion_Freischutz_Target) != null);
 
         public override void OnKill(BattleUnitModel target)
         {

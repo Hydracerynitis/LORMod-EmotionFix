@@ -101,9 +101,9 @@ namespace EmotionalFix
                 UnityEngine.Object.Destroy((UnityEngine.Object)this._clock.gameObject);
                 this._clock = null;
             }
-            catch(Exception ex)
+            catch
             {
-                Debug.Error("TimeClockDestroy", ex);
+
             }
 
         }

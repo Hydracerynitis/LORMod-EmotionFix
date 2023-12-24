@@ -5,33 +5,32 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EmotionalFix.Hod
 {
-    public class EmotionCardAbility_redShoes : EmotionCardAbilityBase
+    public class EmotionCardAbility_hod_redShoes1 : EmotionCardAbilityBase
     {
         public override void OnRoundStart()
         {
-            if (!(this._owner.bufListDetail.GetActivatedBufList().Exists((Predicate<BattleUnitBuf>)(x => x is ShinyShoes))))
+            if (!(_owner.bufListDetail.GetActivatedBufList().Exists(x => x is ShinyShoes)))
             {
-                this._owner.bufListDetail.AddBuf(new ShinyShoes());
-                SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedShoes_On")?.SetGlobalPosition(this._owner.view.WorldPosition);
+                _owner.bufListDetail.AddBuf(new ShinyShoes());
+                SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedShoes_On")?.SetGlobalPosition(_owner.view.WorldPosition);
             }
         }
         public override void OnSelectEmotion()
         {
-            this._owner.bufListDetail.AddBuf(new ShinyShoes());
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedShoes_On")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            _owner.bufListDetail.AddBuf(new ShinyShoes());
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedShoes_On")?.SetGlobalPosition(_owner.view.WorldPosition);
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is ShinyShoes)) is ShinyShoes shoe)
+            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is ShinyShoes) is ShinyShoes shoe)
                 shoe.Destroy();
         }
         public class ShinyShoes: BattleUnitBuf
         {
-            public override string keywordId => "ShinyShoes";
+            public override string keywordId => "EF_ShinyShoes";
             public override string keywordIconId => "CopiousBleeding";
-
             public override int GetDamageIncreaseRate() => 50;
             public override int GetBreakDamageIncreaseRate() => 50;
             public override int GetSpeedDiceAdder(int speedDiceResult)
@@ -49,11 +48,9 @@ namespace EmotionalFix
             }
             public override void OnDie()
             {
-                BattleUnitModel killer= this._owner.lastAttacker;
+                BattleUnitModel killer= _owner.lastAttacker;
                 if (killer == null)
-                {
-                    killer = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player));
-                }
+                    killer = RandomUtil.SelectOne(BattleObjectManager.instance.GetAliveList_opponent(_owner.faction));
                 killer.bufListDetail.AddBuf(new ShinyShoes());
             }
         }

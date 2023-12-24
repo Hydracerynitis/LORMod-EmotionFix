@@ -40,19 +40,6 @@
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
 	</Card>
-	<Card ID="1103502">
-		<Name>荨麻衣</Name>
-		<Artwork>BlackSwan_Family</Artwork>
-		<Rarity>Uncommon</Rarity>
-		<Spec Range="Near" Cost="0"/>
-		<Script>Clothes</Script>
-		<ScriptDesc></ScriptDesc>
-		<BehaviourList>
-			<Behaviour Min="3" Dice="9" Type="Def" Detail="Evasion" Motion="G" EffectRes="" Script="" ActionScript="" Desc=""/>
-		</BehaviourList>
-		<Chapter>0</Chapter>
-		<Priority>0</Priority>
-	</Card>
 	<Card ID="1104401">
 		<Name>邪恶的化身</Name>
 		<Artwork>Angry_Angry</Artwork>

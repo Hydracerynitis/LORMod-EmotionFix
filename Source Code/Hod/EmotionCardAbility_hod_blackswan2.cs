@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Hod
 {
-    public class EmotionCardAbility_blackswan2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_hod_blackswan2 : EmotionCardAbilityBase
     {
         public override void OnStartBattle()
         {
@@ -15,7 +15,7 @@ namespace EmotionalFix
             if (playingCard == null)
                 return;
             foreach (BattleDiceBehavior diceCardBehavior in playingCard.CreateDiceCardBehaviorList())
-                this._owner.cardSlotDetail.keepCard.AddBehaviourForOnlyDefense(playingCard, diceCardBehavior);
+                _owner.cardSlotDetail.keepCard.AddBehaviourForOnlyDefense(playingCard, diceCardBehavior);
         }
     }
 }

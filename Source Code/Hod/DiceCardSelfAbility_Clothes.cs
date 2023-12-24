@@ -14,9 +14,9 @@ namespace EmotionalFix
         public override void OnUseCard()
         {
             this.owner.allyCardDetail.DrawCards(1);
-            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(this.owner.faction==Faction.Player? Faction.Player : Faction.Enemy))
+            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(owner.faction))
             {
-                if (!(ally.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Nettle)) is Nettle nettle))
+                if (!(ally.bufListDetail.GetActivatedBufList().Find(x => x is Nettle) is Nettle nettle))
                 {
                     Nettle Nettle = new Nettle(2);
                     ally.bufListDetail.AddBuf(Nettle);
@@ -31,15 +31,15 @@ namespace EmotionalFix
         {
             public override string keywordId => "BlackSwan_Nettle";
 
-            public Nettle(int value) => this.stack = value;
+            public Nettle(int value) => stack = value;
 
             public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
-                return this.stack;
+                return stack;
             }
             public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
             {
-                return this.stack;
+                return stack;
             }
         }
     }

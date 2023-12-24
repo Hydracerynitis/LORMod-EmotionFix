@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using LOR_XML;
+using UnityEngine;
 using BaseMod;
 
 namespace EmotionalFix
@@ -99,7 +100,6 @@ namespace EmotionalFix
                         return;
                     //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90914, SephirahType.None);
                     this.owner.emotionDetail.ApplyEmotionCard(emotion);
-                    Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 }
                 Collect3 = true;
             }

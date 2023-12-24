@@ -13,7 +13,7 @@ namespace EmotionalFix.Malkuth
         private int _dmg;
         public override void OnRoundStart()
         {
-            int stack = _dmg / (int)(0.08 * _owner.MaxHp);
+            int stack = _dmg / (int)(0.1 * _owner.MaxHp);
             if (stack > 0)
             {
                 new GameObject().AddComponent<SpriteFilter_Queenbee_Spore>().Init("EmotionCardFilter/QueenBee_Filter_Spore", false, 2f);
@@ -29,4 +29,4 @@ namespace EmotionalFix.Malkuth
             _dmg = _owner.history.takeDamageAtOneRound;
         }
     }
-    }
+}

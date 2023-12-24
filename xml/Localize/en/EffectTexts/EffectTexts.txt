@@ -35,30 +35,33 @@
       		<Name>Magic Bullet</Name>
       		<Desc>Increase damage by 1 per stack.Increase Power by 1 per 2 stacks.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Flame">
+		<BattleEffectText ID="EF_Flame">
       		<Name>Dark Flume</Name>
       		<Desc>The "Endured/Ineffective" resistances of the Key Page change to "Weak/Fatal".</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="ShinyShoes">
+		<!--Hod-->
+		<BattleEffectText ID="EF_ShinyShoes">
       		<Name>Glittering Shoes</Name>
       		<Desc>Offensive Dice gain 1-3 power and increase Speed by 1-2, increase Physical and Stagger Damage taken by 50%.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="TheChosen">
+		<BattleEffectText ID="EF_TheChosen">
       		<Name>The Red Shoes</Name>
       		<Desc>Enemy with “Obsession” can only attack self and inflict 3-8 damage upon hit.</Desc>
     	</BattleEffectText>			
-		<BattleEffectText ID="DeepBleed">
-      		<Name>Laceration</Name>
-      		<Desc>For the Scene, take 1 damage per stack every time rolls an Offensive die.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Latitia_Gift">
+		<BattleEffectText ID="EF_Gift">
       		<Name>Giftee</Name>
-      		<Desc>Upon clashes against a character other than the Guest that gave the 'Gift', the 'Gift' explodes with a 50% chance, dealing 3-8 damage at the start of the clash and inflicting 2 Bleed next Scene.</Desc>
+      		<Desc>Upon clashes against a character other than {0}, the 'Gift' explodes with a 50% chance, dealing 3-8 damage at the start of the clash and inflicting 2 Bleed next Scene.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="BlackSwan_Nettle">
+		<BattleEffectText ID="EF_Gift_indicator">
+      		<Name>Friend</Name>
+      		<Desc>There are {0} pages with "friend" in this liberaian's hands</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nettle">
       		<Name>Nettle Clothes</Name>
-      		<Desc>Reduce Physical and Stagger Damage taken by {0}</Desc>
+      		<Desc>All allies grants {0} Protection and Stagger Protection equal to its amount at the start of each Scene
+	Lose 1 stack at each Scene</Desc>
     	</BattleEffectText>
+		<!--Netzach-->
 		<BattleEffectText ID="Porccubus_Happy_Enemy">
       		<Name>Thrill</Name>
       		<Desc>When Thrill's stack reach 3, taake 3-7 Physical and Stagger damage and remove all stacks</Desc>

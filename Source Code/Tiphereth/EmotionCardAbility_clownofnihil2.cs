@@ -22,9 +22,9 @@ namespace EmotionalFix
                 Clown.Add(this._owner.UnitData);
                 Debug.Log(string.Format("虚无buff添加给{0}成功", this._owner.UnitData.unitData.name));
             }
-            catch(Exception ex)
+            catch
             {
-                Debug.Error("ClownBuffDuplicate", ex);
+
             }
 
         }
@@ -75,9 +75,9 @@ namespace EmotionalFix
                                 {
                                     destroy.Invoke(ability, new object[] { });
                                 }
-                                catch(Exception ex)
+                                catch
                                 {
-                                    Debug.Error(ability.GetType().Name + "Destroy", ex);
+                                    
                                 }
 
                         }
@@ -162,9 +162,9 @@ namespace EmotionalFix
                         }
                     }
                 }
-                catch(Exception ex)
+                catch
                 {
-                    Debug.Error("ClownAddBuff", ex);
+
                 }
 
             }

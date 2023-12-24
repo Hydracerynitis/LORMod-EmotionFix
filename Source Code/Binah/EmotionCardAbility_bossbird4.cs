@@ -31,9 +31,8 @@ namespace EmotionalFix
                             {
                                 destroy.Invoke(ability, new object[] { });
                             }
-                            catch (Exception ex)
+                            catch
                             {
-                                Debug.Error(ability.GetType().Name + "Destroy", ex);
                             }
                     }
                 }

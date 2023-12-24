@@ -6,9 +6,6 @@
 	<BattleCardAbility ID="Reflect">
 		<Desc>[On Clash Win] inflict Physical and Stagger damage equal to Power of target's die to enemy</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="Clothes">
-		<Desc>[On Use] Draw 1 Card，all allies gain 2 Nettle Clothes</Desc>
-	</BattleCardAbility>
 	<BattleCardAbility ID="Queen">
 		<Desc>[On play] [Synchronize] with the Magical Girl of Love for the duration of the Scene. (At most once per 4 Scene)</Desc>
 	</BattleCardAbility>

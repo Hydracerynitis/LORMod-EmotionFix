@@ -151,7 +151,7 @@ If fail to heal 5% of Max HP, lose 5% of Max HP and increase damage by 30% in th
     	<AbnormalityCard ID="QueenBee_Loyalty_Enemy">
       		<Abnormality>Queen Bee</Abnormality>
       		<CardName>Loyalty</CardName>
-      		<AbilityDesc>At the start of the Scene, all allies gain Strength based on the amount of damage the selected guest received on the previous Scene. (1 Strength per 8% Max HP damage)</AbilityDesc>
+      		<AbilityDesc>At the start of the Scene, all allies gain Strength based on the amount of damage the selected guest received on the previous Scene. (1 Strength per 10% Max HP damage)</AbilityDesc>
       		<FlaborText>The loyalty of bees is a naturally developed instinct. If we discover a way to draw forth that instinct, many things could change.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Hurry and supply me with more honey.</Dialogue>

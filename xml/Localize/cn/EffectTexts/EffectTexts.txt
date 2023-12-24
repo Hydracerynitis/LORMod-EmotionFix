@@ -39,26 +39,29 @@
       		<Name>黑焰</Name>
       		<Desc>该角色的耐性/抵抗攻击抗性已变为脆弱/致命</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="ShinyShoes">
+		<!--Hod-->
+		<BattleEffectText ID="EF_ShinyShoes">
       		<Name>闪亮亮鞋子</Name>
       		<Desc>进攻威力+1~3并且速度提升1~2，受到的伤害的混乱伤害提升50%</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="TheChosen">
+		<BattleEffectText ID="EF_TheChosen">
       		<Name>红舞鞋</Name>
-      		<Desc>带有”血之渴望“的角色只能攻击该角色而且命中时额外追加3~8点伤害</Desc>
+      		<Desc>带有”血之渴望“的角色优先攻击该角色而且命中时额外追加3~8点伤害</Desc>
     	</BattleEffectText>			
-		<BattleEffectText ID="DeepBleed">
-      		<Name>创口撕裂</Name>
-      		<Desc>投掷进攻骰时会受到等于该层数的伤害，这一幕结束时层数清零</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Latitia_Gift">
+		<BattleEffectText ID="EF_Gift">
       		<Name>小小礼物</Name>
-      		<Desc>该角色与非赠礼者拼点时有50%的概率承受3~8点伤害并在下一幕中获得2层“流血”。</Desc>
+      		<Desc>该角色与{0}外的敌人拼点时有50%的概率承受3~8点伤害并在下一幕中获得2层“流血”。</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="BlackSwan_Nettle">
+		<BattleEffectText ID="EF_Gift_indicator">
+      		<Name>小朋友</Name>
+      		<Desc>该司书有{0}张书页有“伙伴标记”</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nettle">
       		<Name>荨麻衣</Name>
-      		<Desc>所受伤害和混乱伤害减少{0}</Desc>
+      		<Desc>每一幕开始时所有友方单位获得{0}的“守护”,“振奋”
+每一幕结束时失去1层</Desc>
     	</BattleEffectText>
+		<!--Netzach-->
 		<BattleEffectText ID="Porccubus_Happy_Enemy">
       		<Name>快感</Name>
       		<Desc>当快感达到3层时受到3~7伤害和混乱伤害并层数清零</Desc>

@@ -42,7 +42,7 @@
     </Reference>
     <Publicize Include="Assembly-CSharp" />
     <Reference Include="BaseMod">
-      <HintPath>D:\SteamLibrary\steamapps\workshop\content\1256670\2603522001\Assemblies\BaseMod.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\1256670\2603522001\Assemblies\BaseMod.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -76,6 +76,12 @@
     <Compile Include="Source Code\Chesed\DiceCardSelfAbility_Wizard.cs" />
     <Compile Include="Source Code\DiceCardAbility_invalid.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_bigbadwolf1.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_latitia3.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_shyLook3.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_shyLook2.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_shyLook1.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_spiderBud3.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_spiderBud1.cs" />
     <Compile Include="Source Code\Hokma\DiceCardAbility_PlagueDoctor.cs" />
     <Compile Include="Source Code\Hokma\EmotionCardAbility_bluestar3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_quietKidGuilty.cs" />
@@ -87,7 +93,6 @@
     <Compile Include="Source Code\Hokma\DiceCardSelfAbility_BlessingPlagueUpGraded.cs" />
     <Compile Include="Source Code\Hokma\DiceCardSelfAbility_BlessingPlague.cs" />
     <Compile Include="Source Code\Hokma\DiceCardSelfAbility_SilenceStun.cs" />
-    <Compile Include="Source Code\Hod\DiceCardSelfAbility_Clothes.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardSelfAbility_King.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardSelfAbility_Servant.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardSelfAbility_Knight.cs" />
@@ -176,15 +181,15 @@
     <Compile Include="Source Code\Netzach\EmotionCardAbility_fragmentSpace3.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_fragmentSpace2.cs" />
     <Compile Include="Source Code\Netzach\EmotionCardAbility_fragmentSpace.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_blackswan3.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_blackswan2.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_blackswan1.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_latitia1.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_latitia2.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_spiderBud2.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_redShoes3.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_redShoes2.cs" />
-    <Compile Include="Source Code\Hod\EmotionCardAbility_redShoes.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_blackswan3.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_blackswan2.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_blackswan1.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_latitia1.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_latitia2.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_spiderBud2.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_redShoes3.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_redShoes2.cs" />
+    <Compile Include="Source Code\Hod\EmotionCardAbility_hod_redShoes1.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_yesod_freischutz3.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_yesod_freischutz2.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_yesod_butterfly3.cs" />
