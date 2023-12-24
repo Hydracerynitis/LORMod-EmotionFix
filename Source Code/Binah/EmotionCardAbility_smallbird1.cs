@@ -13,24 +13,24 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this.dmged = false;
+            dmged = false;
         }
         public override bool BeforeTakeDamage(BattleUnitModel attacker, int dmg)
         {
             base.BeforeTakeDamage(attacker, dmg);
-            if (this._owner.IsImmuneDmg() || this._owner.IsInvincibleHp(null))
+            if (_owner.IsImmuneDmg() || _owner.IsInvincibleHp(null))
                 return false;
-            if (this._owner.faction == Faction.Enemy && dmg < (int)((double)this._owner.MaxHp * 0.02))
+            if (_owner.faction == Faction.Enemy && dmg < (int)((double)_owner.MaxHp * 0.02))
                 return false;
-            this.dmged = true;
+            dmged = true;
             return false;
         }
         public override void OnRoundEndTheLast()
         {
             base.OnRoundEndTheLast();
-            if (this.dmged)
-                this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SmallBird_Punish());
-            this.dmged = false;
+            if (dmged)
+                _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SmallBird_Punish());
+            dmged = false;
         }
         public class BattleUnitBuf_Emotion_SmallBird_Punish : BattleUnitBuf
         {
@@ -41,12 +41,12 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Punising", 1f, this._owner.view, this._owner.view)?.gameObject;
+                _aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Punising", 1f, _owner.view, _owner.view)?.gameObject;
                 SoundEffectPlayer.PlaySound("Creature/SmallBird_StrongAtk");
             }
             public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
@@ -60,26 +60,26 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
 
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
 
             private void DestroyAura()
             {
-                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                if (!(_aura != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura);
-                this._aura = (GameObject)null;
+                UnityEngine.Object.Destroy(_aura);
+                _aura = (GameObject)null;
             }
         }
     }

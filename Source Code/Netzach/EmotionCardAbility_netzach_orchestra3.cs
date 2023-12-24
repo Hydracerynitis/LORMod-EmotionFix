@@ -10,37 +10,36 @@ using System.Threading.Tasks;
 
 namespace EmotionalFix
 {
-    public class EmotionCardAbility_orchestra3 : EmotionCardAbilityBase
+    public class EmotionCardAbility_netzach_orchestra3 : EmotionCardAbilityBase
     {
         private bool trigger;
-        private static int Reduce => RandomUtil.Range(3, 4);
         public override void OnMakeBreakState(BattleUnitModel target)
         {
             base.OnMakeBreakState(target);
-            this.trigger = true;
+            trigger = true;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (!this.trigger)
+            if (!trigger)
                 return;
-            this.trigger = false;
+            trigger = false;
             Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/4_N/FX_IllusionCard_4_N_Orchestra_Light");
-            if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+            if (original != null)
             {
-                Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-                if ((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+                if (creatureEffect?.gameObject.GetComponent<AutoDestruct>() == null)
                 {
                     AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
-                    if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                    if (autoDestruct != null)
                     {
                         autoDestruct.time = 3f;
                         autoDestruct.DestroyWhenDisable();
                     }
                 }
             }
-            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
-                alive.cardSlotDetail.LosePlayPoint(Reduce);
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
+                alive.cardSlotDetail.LosePlayPoint(RandomUtil.Range(1, 6));
             SoundEffectPlayer.PlaySound("Creature/Sym_movment_5_finale");
         }
     }

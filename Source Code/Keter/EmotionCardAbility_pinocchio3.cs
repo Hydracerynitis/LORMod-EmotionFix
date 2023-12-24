@@ -13,14 +13,14 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Pino_Success")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Pino_Success")?.SetGlobalPosition(_owner.view.WorldPosition);
         }
         public override void OnDrawCard()
         {
             base.OnDrawCard();
-            this._owner.allyCardDetail.ReturnAllToDeck();
-            this._owner.allyCardDetail.DrawCards(4);
-            this.MakeEffect("0/Pinocchio_Curiosity", destroyTime: 3f);
+            _owner.allyCardDetail.ReturnAllToDeck();
+            _owner.allyCardDetail.DrawCards(4);
+            MakeEffect("0/Pinocchio_Curiosity", destroyTime: 3f);
         }
     }
 }

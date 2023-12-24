@@ -9,7 +9,7 @@ namespace EmotionalFix
     public class EmotionCardAbility_redhood2 : EmotionCardAbilityBase
     {
         private int DamageTaken;
-        private int EnemyThreshold => (int)((double)this._owner.MaxHp * 0.1);
+        private int EnemyThreshold => (int)((double)_owner.MaxHp * 0.1);
         public override void OnWaveStart()
         {
             DamageTaken=0;
@@ -26,14 +26,14 @@ namespace EmotionalFix
             base.OnRoundEnd();
             int threshold;
             int strcount = 0;
-            DamageTaken += this._owner.history.takeDamageAtOneRound;
-            if (this._owner.faction == Faction.Player)
+            DamageTaken += _owner.history.takeDamageAtOneRound;
+            if (_owner.faction == Faction.Player)
                 threshold = 5;
             else
                 threshold = EnemyThreshold;
             for (; DamageTaken > threshold; DamageTaken -= threshold)
                 strcount += 1;
-            this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, Math.Min(strcount,4), this._owner);
+            _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, Math.Min(strcount,4), _owner);
         }
     }
 }

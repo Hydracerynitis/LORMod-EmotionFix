@@ -16,8 +16,8 @@ namespace EmotionalFix.Malkuth
                 return;
             if (dmg < _owner.MaxHp * 0.02)
                 return;
-            atkDice?.owner?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Burn, Burn, this._owner);
-            atkDice?.owner?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, Bleed, this._owner);
+            atkDice?.owner?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Burn, Burn, _owner);
+            atkDice?.owner?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, Bleed, _owner);
             atkDice.owner.battleCardResultLog?.SetCreatureEffectSound("Creature/QueenBee_Funga");
             _owner.battleCardResultLog?.SetCreatureAbilityEffect("1/Queenbee_Spore", 2f);
         }

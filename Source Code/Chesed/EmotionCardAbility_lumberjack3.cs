@@ -14,14 +14,14 @@ namespace EmotionalFix
             base.OnSucceedAttack(behavior);
             behavior.card.target.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Bloodmeet", 2f);
             behavior.card.target.battleCardResultLog?.SetCreatureEffectSound("Creature/WoodMachine_Kill");
-            this._owner.cardSlotDetail.RecoverPlayPoint(1);
+            _owner.cardSlotDetail.RecoverPlayPoint(1);
         }
         public override void OnRoundEnd()
         {
-            if (this._owner.cardSlotDetail.PlayPoint < this._owner.cardSlotDetail.GetMaxPlayPoint())
+            if (_owner.cardSlotDetail.PlayPoint < _owner.cardSlotDetail.GetMaxPlayPoint())
             {
-                this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 2);
-                this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 2);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 2);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 2);
             }
         }
     }

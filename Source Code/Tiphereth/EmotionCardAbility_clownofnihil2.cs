@@ -16,11 +16,11 @@ namespace EmotionalFix
             try
             {
                 base.OnSelectEmotion();
-                if (Clown.Contains(this._owner.UnitData))
+                if (Clown.Contains(_owner.UnitData))
                     return;
-                this._owner.bufListDetail.AddBuf(new Clear());
-                Clown.Add(this._owner.UnitData);
-                Debug.Log(string.Format("虚无buff添加给{0}成功", this._owner.UnitData.unitData.name));
+                _owner.bufListDetail.AddBuf(new Clear());
+                Clown.Add(_owner.UnitData);
+                Debug.Log(string.Format("虚无buff添加给{0}成功", _owner.UnitData.unitData.name));
             }
             catch
             {
@@ -38,7 +38,7 @@ namespace EmotionalFix
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                //SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Void", 1f, this._owner.view, this._owner.view, 2f);
+                //SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Void", 1f, _owner.view, _owner.view, 2f);
             }
             public override void Init(BattleUnitModel owner)
             {
@@ -53,7 +53,7 @@ namespace EmotionalFix
                 {
                     base.OnRoundEndTheLast();
                     SoundEffectPlayer.PlaySound("Creature/Nihil_Effect");
-                    foreach (BattleEmotionCardModel emotion in this._owner.emotionDetail.PassiveList)
+                    foreach (BattleEmotionCardModel emotion in _owner.emotionDetail.PassiveList)
                     {
                         switch (emotion.XmlInfo.EmotionLevel)
                         {
@@ -82,83 +82,83 @@ namespace EmotionalFix
 
                         }
                     }
-                    this._owner.emotionDetail.PassiveList.Clear();
+                    _owner.emotionDetail.PassiveList.Clear();
                     for (; level1 > 0; level1--)
                     {
-                        if (this._owner.faction == Faction.Player)
+                        if (_owner.faction == Faction.Player)
                         {
                             EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1);
-                            if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
+                            if (_owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level1 += 1;
                                 continue;
                             }
-                            this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                            _owner.emotionDetail.ApplyEmotionCard(emotion);
                             Debug.Log(string.Format("添加新的情感卡{0}成功", emotion.Name));
                         }
-                        if (this._owner.faction == Faction.Enemy)
+                        if (_owner.faction == Faction.Enemy)
                         {
                             string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
                             EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                             //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
-                            if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
+                            if (_owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level1 += 1;
                                 continue;
                             }
-                            this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                            _owner.emotionDetail.ApplyEmotionCard(emotion);
                         }
                     }
                     for (; level2 > 0; level2--)
                     {
-                        if (this._owner.faction == Faction.Player)
+                        if (_owner.faction == Faction.Player)
                         {
                             EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2);
-                            if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
+                            if (_owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level2 += 1;
                                 continue;
                             }
-                            this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                            _owner.emotionDetail.ApplyEmotionCard(emotion);
                             Debug.Log(string.Format("添加新的情感卡{0}成功", emotion.Name));
                         }
-                        if (this._owner.faction == Faction.Enemy)
+                        if (_owner.faction == Faction.Enemy)
                         {
                             string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
                             EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                             //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
-                            if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
+                            if (_owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level2 += 1;
                                 continue;
                             }
-                            this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                            _owner.emotionDetail.ApplyEmotionCard(emotion);
                         }
                     }
                     for (; level3 > 0; level3--)
                     {
-                        if (this._owner.faction == Faction.Player)
+                        if (_owner.faction == Faction.Player)
                         {
                             EmotionCardXmlInfo emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3);
-                            if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
+                            if (_owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level3 += 1;
                                 continue;
                             }
-                            this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                            _owner.emotionDetail.ApplyEmotionCard(emotion);
                             Debug.Log(string.Format("添加新的情感卡{0}成功", emotion.Name));
                         }
-                        if (this._owner.faction == Faction.Enemy)
+                        if (_owner.faction == Faction.Enemy)
                         {
                             string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3).Name + "_Enemy";
                             EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
                             //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 3));
-                            if (this._owner.emotionDetail.CheckPassiveDuplicate(emotion))
+                            if (_owner.emotionDetail.CheckPassiveDuplicate(emotion))
                             {
                                 level3 += 1;
                                 continue;
                             }
-                            this._owner.emotionDetail.ApplyEmotionCard(emotion);
+                            _owner.emotionDetail.ApplyEmotionCard(emotion);
                         }
                     }
                 }

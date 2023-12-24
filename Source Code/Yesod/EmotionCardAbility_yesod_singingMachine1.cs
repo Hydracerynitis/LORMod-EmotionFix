@@ -18,7 +18,7 @@ namespace EmotionalFix.Yesod
         public override void OnKill(BattleUnitModel target)
         {
             base.OnKill(target);
-            _owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Filter));
+            _owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(Filter));
         }
         public override void BeforeGiveDamage(BattleDiceBehavior behavior)
         {

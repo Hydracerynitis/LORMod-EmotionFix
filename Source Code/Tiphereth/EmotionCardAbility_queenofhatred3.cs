@@ -18,7 +18,7 @@ namespace EmotionalFix
         {
             base.BeforeRollDice(behavior);
             int power = Pow;
-            this._owner.battleCardResultLog?.SetEmotionAbility(true, this._emotionCard, 0, ResultOption.Sign, power);
+            _owner.battleCardResultLog?.SetEmotionAbility(true, _emotionCard, 0, ResultOption.Sign, power);
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
                 power = power
@@ -27,42 +27,42 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (SearchEmotion(this._owner, "QueenOfHatred_Gun") == null || this._owner.faction != Faction.Player)
+            if (SearchEmotion(_owner, "QueenOfHatred_Gun") == null || _owner.faction != Faction.Player)
             {
-                if (SearchEmotion(this._owner, "QueenOfHatred_Gun").GetAbilityList().Find((x => x is EmotionCardAbility_queenofhatred2)) is EmotionCardAbility_queenofhatred2 villain)
+                if (SearchEmotion(_owner, "QueenOfHatred_Gun").GetAbilityList().Find((x => x is EmotionCardAbility_queenofhatred2)) is EmotionCardAbility_queenofhatred2 villain)
                 {
                     villain.target = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(Faction.Enemy));
-                    if (!((UnityEngine.Object)villain.effect != (UnityEngine.Object)null))
+                    if (!(villain.effect != null))
                         return;
-                    UnityEngine.Object.Destroy((UnityEngine.Object)villain.effect.gameObject);
-                    villain.effect = this.MakeEffect("5/MagicalGirl_Villain", target: villain.target);
+                    UnityEngine.Object.Destroy(villain.effect.gameObject);
+                    villain.effect = MakeEffect("5/MagicalGirl_Villain", target: villain.target);
                 }
             }
             if (active)
             {
-                foreach (BattleUnitModel victim in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+                foreach (BattleUnitModel victim in BattleObjectManager.instance.GetAliveList(_owner.faction))
                 {
                     victim.TakeBreakDamage(BreakDmg);
                     victim.TakeDamage(Dmg);
                     active = false;
                 }
-                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_HeartBroken", 1f, this._owner.view, this._owner.view, 2f);
-                this.LaserEffect();
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_HeartBroken", 1f, _owner.view, _owner.view, 2f);
+                LaserEffect();
             }
         }
         public override void OnRoundEnd()
         {
-            if (Chaos() || ifNilil(this._owner))
+            if (Chaos() || ifNilil(_owner))
                 return;
             active = true;
         }
         public bool ifNilil(BattleUnitModel owner)
         {
-            return this._owner.bufListDetail.GetActivatedBufList().Find((x => x is EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil)) != null;
+            return _owner.bufListDetail.GetActivatedBufList().Find((x => x is EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil)) != null;
         }
         public bool Chaos()
         {
-            List<BattleUnitModel> People = BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll((x => x != this._owner));
+            List<BattleUnitModel> People = BattleObjectManager.instance.GetAliveList(_owner.faction).FindAll((x => x != _owner));
             if (People.Count <= 0)
                 return true;
             foreach (BattleUnitModel people in People)
@@ -75,7 +75,7 @@ namespace EmotionalFix
         private void LaserEffect()
         {
             Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/5/QueenOfHatred_Laser");
-            if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+            if (!(original != null))
                 return;
             Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
             creatureEffect.transform.localScale = Vector3.one;

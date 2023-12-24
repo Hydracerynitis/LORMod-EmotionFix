@@ -14,21 +14,21 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction != Faction.Enemy || this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Home)) !=null)
+            if (_owner.faction != Faction.Enemy || _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Home)) !=null)
                 return;
-            this._owner.bufListDetail.AddBuf(new Home());
+            _owner.bufListDetail.AddBuf(new Home());
             
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (this._owner.faction != Faction.Enemy || this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Home)) != null)
+            if (_owner.faction != Faction.Enemy || _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Home)) != null)
                 return;
-            this._owner.bufListDetail.AddBuf(new Home());
+            _owner.bufListDetail.AddBuf(new Home());
         }
         public void Destroy()
         {
-            BattleUnitBuf buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Home));
+            BattleUnitBuf buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Home));
             if (buff != null)
                 buff.Destroy();
         }
@@ -37,29 +37,29 @@ namespace EmotionalFix
             BattleUnitModel target = curCard?.target;
             if (target == null)
                 return;
-            if (this.CheckAbility(target))
+            if (CheckAbility(target))
             {
                 curCard.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
                 {
-                    dmg = 2 * this.stack
+                    dmg = 2 * stack
                 });
-                if(this._owner.faction==Faction.Player)
+                if(_owner.faction==Faction.Player)
                     curCard.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
                     {
-                        power = 1 * this.stack
+                        power = 1 * stack
                     });
-                ++this.stack;
-                this._owner.battleCardResultLog?.SetCreatureAbilityEffect("7/WayBeckHome_Emotion_Atk", 1f);
-                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_NormalAtk");
+                ++stack;
+                _owner.battleCardResultLog?.SetCreatureAbilityEffect("7/WayBeckHome_Emotion_Atk", 1f);
+                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_NormalAtk");
             }
             else
-                this.stack = 0;
+                stack = 0;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            this.stack = 1;
-            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player);
+            stack = 1;
+            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player);
             double num1 = Math.Ceiling((double)aliveList.Count * 0.5);
             int num2 = 0;
             while (aliveList.Count > 0 && num1 > 0.0)
@@ -78,7 +78,7 @@ namespace EmotionalFix
         private bool CheckAbility(BattleUnitModel target)
         {
             BattleUnitBuf battleUnitBuf = target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_WayBackHome_Target));
-            return battleUnitBuf != null && battleUnitBuf.stack == this.stack;
+            return battleUnitBuf != null && battleUnitBuf.stack == stack;
         }
         public class Home : BattleUnitBuf
         {
@@ -86,7 +86,7 @@ namespace EmotionalFix
             {
                 if (idx >= 3)
                     return base.ChangeAttackTarget(card, idx);
-                foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
+                foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
                 {
                     if (enemy.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_WayBackHome_Target)) is BattleUnitBuf_Emotion_WayBackHome_Target goldbrick)
                     {
@@ -100,35 +100,35 @@ namespace EmotionalFix
         public class BattleUnitBuf_Emotion_WayBackHome_Target : BattleUnitBuf
         {
             private GameObject aura;
-            public override string keywordId => this._owner.faction==Faction.Enemy? "WayBackHome_Emotion_Target": "WayBackHome_Emotion_Target_Enemy";
+            public override string keywordId => _owner.faction==Faction.Enemy? "WayBackHome_Emotion_Target": "WayBackHome_Emotion_Target_Enemy";
             public override string keywordIconId => "WayBackHome_Target";
-            public BattleUnitBuf_Emotion_WayBackHome_Target(int value) => this.stack = value;
+            public BattleUnitBuf_Emotion_WayBackHome_Target(int value) => stack = value;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateCreatureEffect("7/WayBeckHome_Emotion_Way", 1f, owner.view, owner.view)?.gameObject;
+                aura = SingletonBehavior<DiceEffectManager>.Instance.CreateCreatureEffect("7/WayBeckHome_Emotion_Way", 1f, owner.view, owner.view)?.gameObject;
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
             private void DestroyAura()
             {
-                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                if (!(aura != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura);
-                this.aura = (GameObject)null;
+                UnityEngine.Object.Destroy(aura);
+                aura = (GameObject)null;
             }
         }
     }

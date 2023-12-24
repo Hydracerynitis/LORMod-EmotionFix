@@ -22,84 +22,84 @@ namespace EmotionalFix
         {
             get
             {
-                if ((UnityEngine.Object)this._clock == (UnityEngine.Object)null)
-                    this._clock = SingletonBehavior<BattleManagerUI>.Instance.EffectLayer.GetComponentInChildren<Silence_Emotion_Clock>();
-                if ((UnityEngine.Object)this._clock == (UnityEngine.Object)null)
+                if (_clock == null)
+                    _clock = SingletonBehavior<BattleManagerUI>.Instance.EffectLayer.GetComponentInChildren<Silence_Emotion_Clock>();
+                if (_clock == null)
                 {
                     Silence_Emotion_Clock original = Resources.Load<Silence_Emotion_Clock>("Prefabs/Battle/CreatureEffect/8/Silence_Emotion_Clock");
-                    if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+                    if (original != null)
                     {
                         Silence_Emotion_Clock silenceEmotionClock = UnityEngine.Object.Instantiate<Silence_Emotion_Clock>(original);
                         silenceEmotionClock.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
                         silenceEmotionClock.gameObject.transform.localPosition = new Vector3(0.0f, 800f, 0.0f);
                         silenceEmotionClock.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
                     }
-                    this._clock = original;
+                    _clock = original;
                 }
-                return this._clock;
+                return _clock;
             }
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this.Init();
+            Init();
         }
         private void Init()
         {
-            this._elapsed = 0.0f;
-            this._bTimeLimitOvered = false;
-            this.rolled = false;
+            _elapsed = 0.0f;
+            _bTimeLimitOvered = false;
+            rolled = false;
         }
         public override void OnFixedUpdateInWaitPhase(float delta)
         {
             base.OnFixedUpdateInWaitPhase(delta);
-            if (!this.rolled || this._bTimeLimitOvered)
+            if (!rolled || _bTimeLimitOvered)
                 return;
-            this.Clock?.Run(this._elapsed);
-            this._elapsed += delta;
-            if ((double)this._elapsed < 30.0 || SingletonBehavior<BattleCamManager>.Instance.IsCamIsReturning)
+            Clock?.Run(_elapsed);
+            _elapsed += delta;
+            if ((double)_elapsed < 30.0 || SingletonBehavior<BattleCamManager>.Instance.IsCamIsReturning)
                 return;
-            this.Trigger = false;
-            this.TriggerEnemy = true;
-            this._bTimeLimitOvered = true;
-            this.Clock?.OnStartUnitMoving();
+            Trigger = false;
+            TriggerEnemy = true;
+            _bTimeLimitOvered = true;
+            Clock?.OnStartUnitMoving();
             if (!damaged)
             {
                 SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Clock_StopCard");
-                if (this._owner.faction == Faction.Player)
-                    this._owner.TakeDamage((int)(this._owner.hp * 0.15), DamageType.Emotion);
+                if (_owner.faction == Faction.Player)
+                    _owner.TakeDamage((int)(_owner.hp * 0.15), DamageType.Emotion);
                 damaged = true;
             }
         }
         public override void OnAfterRollSpeedDice()
         {
             base.OnAfterRollSpeedDice();
-            this.Init();
-            this.rolled = true;
-            this.Trigger = true;
-            this.TriggerEnemy = false;
-            this.damaged = false;
-            this.Clock?.OnStartRollSpeedDice();
-            this._elapsed = 0.0f;
+            Init();
+            rolled = true;
+            Trigger = true;
+            TriggerEnemy = false;
+            damaged = false;
+            Clock?.OnStartRollSpeedDice();
+            _elapsed = 0.0f;
         }
         public override void OnStartBattle()
         {
             base.OnStartBattle();
-            this.Clock?.OnStartUnitMoving();
+            Clock?.OnStartUnitMoving();
         }
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            this.rolled = false;
+            rolled = false;
         }
         public void Destroy()
         {
             try
             {
-                if (!((UnityEngine.Object)this._clock != (UnityEngine.Object)null))
+                if (!(_clock != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this._clock.gameObject);
-                this._clock = null;
+                UnityEngine.Object.Destroy(_clock.gameObject);
+                _clock = null;
             }
             catch
             {
@@ -110,7 +110,7 @@ namespace EmotionalFix
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);
-            if ((this._owner.faction == Faction.Player && Trigger) || (this._owner.faction == Faction.Enemy && TriggerEnemy))
+            if ((_owner.faction == Faction.Player && Trigger) || (_owner.faction == Faction.Enemy && TriggerEnemy))
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {

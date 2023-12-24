@@ -14,35 +14,35 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            WhiteNightClock.Add(this._owner.UnitData, 0);
-            if (this._owner.faction == Faction.Player)
+            WhiteNightClock.Add(_owner.UnitData, 0);
+            if (_owner.faction == Faction.Player)
             {
                 int cardId = 1100019;
-                if (SearchEmotion(this._owner, "WhiteNight_Red") != null)
+                if (SearchEmotion(_owner, "WhiteNight_Red") != null)
                     cardId = 1100020;
-                this._owner.allyCardDetail.AddNewCard(cardId);
+                _owner.allyCardDetail.AddNewCard(cardId);
             }
-            if (this._owner.faction == Faction.Enemy)
+            if (_owner.faction == Faction.Enemy)
             {
-                if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is PlagueDoctor) != null)
+                if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is PlagueDoctor) != null)
                     return;
-                this._owner.bufListDetail.AddBuf(new PlagueDoctor());
+                _owner.bufListDetail.AddBuf(new PlagueDoctor());
             }
         }
         public override void OnWaveStart()
         {
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
                 int cardId = 1100019;
-                if (SearchEmotion(this._owner, "WhiteNight_Red") != null)
+                if (SearchEmotion(_owner, "WhiteNight_Red") != null)
                     cardId = 1100020;
-                this._owner.allyCardDetail.AddNewCard(cardId);
+                _owner.allyCardDetail.AddNewCard(cardId);
             }
-            if (this._owner.faction == Faction.Enemy)
+            if (_owner.faction == Faction.Enemy)
             {
-                if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is PlagueDoctor) != null)
+                if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is PlagueDoctor) != null)
                     return;
-                this._owner.bufListDetail.AddBuf(new PlagueDoctor());
+                _owner.bufListDetail.AddBuf(new PlagueDoctor());
             }
         }
         public class PlagueDoctor : BattleUnitBuf
@@ -52,13 +52,13 @@ namespace EmotionalFix
             public override int SpeedDiceNumAdder() => bless;
             public override void Init(BattleUnitModel model)
             {
-                this.Init(model);
+                Init(model);
                 patient = new List<BattleUnitModel>();
             }
             public override void OnRoundStart()
             {
                 patient.Clear();
-                List<BattleUnitModel> alive = BattleObjectManager.instance.GetAliveList(this._owner.faction).FindAll(x => x != this._owner);
+                List<BattleUnitModel> alive = BattleObjectManager.instance.GetAliveList(_owner.faction).FindAll(x => x != _owner);
                 for (int i = 0; i < 2; i++)
                 {
                     if (alive.Count <= 0)
@@ -72,18 +72,18 @@ namespace EmotionalFix
             public override void OnDrawCard()
             {
                 base.OnDrawCard();
-                for (int i = 1; i < this.bless + 1; i++)
+                for (int i = 1; i < bless + 1; i++)
                 {
                     DiceCardXmlInfo bless = ItemXmlDataList.instance.GetCardItem(1108401).Copy(true);
                     bless.Script = "BlessingPlague";
-                    if (SearchEmotion(this._owner, "WhiteNight_Red_Enemy") != null)
+                    if (SearchEmotion(_owner, "WhiteNight_Red_Enemy") != null)
                         bless.Script = "BlessingPlagueUpGraded";
-                    int num = EmotionCardAbility_plaguedoctor1.WhiteNightClock[this._owner.UnitData] + i;
+                    int num = EmotionCardAbility_plaguedoctor1.WhiteNightClock[_owner.UnitData] + i;
                     bless.DiceBehaviourList[0].Dice = num;
                     bless.DiceBehaviourList[0].Min = num;
                     BattleDiceCardModel card = BattleDiceCardModel.CreatePlayingCard(bless);
                     card.temporary = true;
-                    List<BattleDiceCardModel> hand = typeof(BattleAllyCardDetail).GetField("_cardInHand", AccessTools.all).GetValue(this._owner.allyCardDetail) as List<BattleDiceCardModel>;
+                    List<BattleDiceCardModel> hand = typeof(BattleAllyCardDetail).GetField("_cardInHand", AccessTools.all).GetValue(_owner.allyCardDetail) as List<BattleDiceCardModel>;
                     hand.Add(card);
                 }
             }
@@ -118,15 +118,15 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            EmotionCardAbility_plaguedoctor1.WhiteNightClock.Remove(this._owner.UnitData);
-            if (this._owner.faction == Faction.Player)
+            EmotionCardAbility_plaguedoctor1.WhiteNightClock.Remove(_owner.UnitData);
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.allyCardDetail.ExhaustCard(1100019);
-                this._owner.allyCardDetail.ExhaustCard(1100020);
+                _owner.allyCardDetail.ExhaustCard(1100019);
+                _owner.allyCardDetail.ExhaustCard(1100020);
             }
-            if (this._owner.faction == Faction.Enemy)
+            if (_owner.faction == Faction.Enemy)
             {
-                BattleUnitBuf doctor = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is PlagueDoctor));
+                BattleUnitBuf doctor = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is PlagueDoctor));
                 if (doctor != null)
                     doctor.Destroy();                
             }

@@ -13,19 +13,19 @@ namespace EmotionalFix
     {
         public override bool CanForcelyAggro()
         {
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return base.CanForcelyAggro();
             return true;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Lamp", 1f, this._owner.view, this._owner.view, 3f);
+            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Lamp", 1f, _owner.view, _owner.view, 3f);
             SoundEffectPlayer.PlaySound("Creature/Bigbird_Attract");
-            if (this._owner.faction != Faction.Enemy)
+            if (_owner.faction != Faction.Enemy)
                 return;
             BattleUnitModel salvation = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(Faction.Player));
-            salvation.bufListDetail.AddBuf(new Charm(this._owner));
+            salvation.bufListDetail.AddBuf(new Charm(_owner));
         }
         public class Charm: BattleUnitBuf
         {
@@ -47,7 +47,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
     }

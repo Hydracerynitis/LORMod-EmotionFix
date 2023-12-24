@@ -18,11 +18,11 @@ namespace EmotionalFix
             if (behavior == null)
                 return;
             int dmg = damage;
-            this._owner.LoseHp(dmg);
-            this._owner.view.Damaged(dmg, BehaviourDetail.None, dmg, this._owner);
-            this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("9_H/FX_IllusionCard_9_H_Martyr", 3f);
+            _owner.LoseHp(dmg);
+            _owner.view.Damaged(dmg, BehaviourDetail.None, dmg, _owner);
+            _owner.battleCardResultLog?.SetNewCreatureAbilityEffect("9_H/FX_IllusionCard_9_H_Martyr", 3f);
             SoundEffectPlayer.PlaySound("Creature/BlueStar_In");
-            double ratio = 1 - (this._owner.hp / this._owner.MaxHp);
+            double ratio = 1 - (_owner.hp / _owner.MaxHp);
             double breakrate = ratio * 10 / 9;
             if (breakrate >= 1)
                 breakrate = 1;

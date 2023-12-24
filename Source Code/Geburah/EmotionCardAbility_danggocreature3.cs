@@ -12,8 +12,8 @@ namespace EmotionalFix
         private bool _effect;
         private int height;
         private int previousStack;
-        private int Healed => this._owner.UnitData.historyInWave.healed;
-        private int Threshold => (int)((double)this._owner.MaxHp * 0.1);
+        private int Healed => _owner.UnitData.historyInWave.healed;
+        private int Threshold => (int)((double)_owner.MaxHp * 0.1);
         private int heal;
         private int absorption;
         private int count;
@@ -24,7 +24,7 @@ namespace EmotionalFix
             _effect = true;
             count = 0;
             previousStack = 0;
-            this.MakeEffect("6/Dango_Emotion_Spread", target: this._owner);
+            MakeEffect("6/Dango_Emotion_Spread", target: _owner);
         }
         public override void OnSelectEmotion()
         {
@@ -32,7 +32,7 @@ namespace EmotionalFix
             _effect = true;
             absorption = 0;
             previousStack = 0;
-            height = this._owner.UnitData.unitData.customizeData.height;
+            height = _owner.UnitData.unitData.customizeData.height;
         }
         public override void OnRoundEndTheLast()
         {
@@ -40,7 +40,7 @@ namespace EmotionalFix
             count = 0;
             absorption += (Healed - heal);
             heal = Healed;
-            absorption -= this._owner.history.takeDamageAtOneRound;
+            absorption -= _owner.history.takeDamageAtOneRound;
             if (absorption <= 0)
                 absorption = 0;
             int Absorption = absorption;
@@ -52,47 +52,47 @@ namespace EmotionalFix
             if (count > previousStack)
                 _effect = false;
             previousStack = count;
-            //this._owner.UnitData.unitData.customizeData.height = height;
-            //this._owner.view.CreateSkin();
+            //_owner.UnitData.unitData.customizeData.height = height;
+            //_owner.view.CreateSkin();
         }
         public override void OnRoundStart()
         {
-            this._owner.bufListDetail.AddBuf(new Indicator(absorption));
+            _owner.bufListDetail.AddBuf(new Indicator(absorption));
             MoutainCorpse moutain = new MoutainCorpse(count);
-            this._owner.bufListDetail.AddBuf(moutain);
-            this._owner.view.ChangeHeight((int)((double)height * (1 + (double)moutain.stack * 0.25)));
-            if (!this._effect)
+            _owner.bufListDetail.AddBuf(moutain);
+            _owner.view.ChangeHeight((int)((double)height * (1 + (double)moutain.stack * 0.25)));
+            if (!_effect)
             {
-                this._effect = true;
+                _effect = true;
                 CameraFilterUtil.EarthQuake(0.18f, 0.16f, 90f, 0.45f);
                 Battle.CreatureEffect.CreatureEffect original1 = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/6/Dango_Emotion_Effect");
-                if ((UnityEngine.Object)original1 != (UnityEngine.Object)null)
+                if (original1 != null)
                 {
                     Battle.CreatureEffect.CreatureEffect creatureEffect1 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original1, SingletonBehavior<BattleSceneRoot>.Instance.transform);
                     Battle.CreatureEffect.CreatureEffect creatureEffect2 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original1, SingletonBehavior<BattleSceneRoot>.Instance.transform);
                     Battle.CreatureEffect.CreatureEffect creatureEffect3 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original1, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-                    if ((UnityEngine.Object)creatureEffect1?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect1?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect1?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();
                         }
                     }
-                    if ((UnityEngine.Object)creatureEffect2?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect2?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect2?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();
                         }
                     }
-                    if ((UnityEngine.Object)creatureEffect3?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect3?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect3?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();
@@ -100,40 +100,40 @@ namespace EmotionalFix
                     }
                 }
                 Battle.CreatureEffect.CreatureEffect original2 = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/7/Lumberjack_final_blood_1st");
-                if ((UnityEngine.Object)original2 != (UnityEngine.Object)null)
+                if (original2 != null)
                 {
                     Battle.CreatureEffect.CreatureEffect creatureEffect1 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original2, SingletonBehavior<BattleSceneRoot>.Instance.transform);
                     Battle.CreatureEffect.CreatureEffect creatureEffect2 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original2, SingletonBehavior<BattleSceneRoot>.Instance.transform);
                     Battle.CreatureEffect.CreatureEffect creatureEffect3 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original2, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-                    if ((UnityEngine.Object)creatureEffect1?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect1?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect1?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();
                         }
                     }
-                    if ((UnityEngine.Object)creatureEffect2?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect2?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect2?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();
                         }
                     }
-                    if ((UnityEngine.Object)creatureEffect3?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect3?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect3?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();
                         }
                     }
                 }
-                this.MakeEffect("6/Dango_Emotion_Spread", target: this._owner);
+                MakeEffect("6/Dango_Emotion_Spread", target: _owner);
                 SoundEffectPlayer.PlaySound("Creature/Danggo_LvUp");
                 SoundEffectPlayer.PlaySound("Creature/Danggo_Birth");
             }
@@ -144,7 +144,7 @@ namespace EmotionalFix
             public override string keywordIconId => "DangoCreature_Emotion_Healed";
             public MoutainCorpse(int count)
             {
-                this.stack = count;
+                stack = count;
             }
             public override int GetDamageIncreaseRate() => 25*stack;
             public override void BeforeRollDice(BattleDiceBehavior behavior)
@@ -158,7 +158,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
         public class Indicator: BattleUnitBuf
@@ -167,12 +167,12 @@ namespace EmotionalFix
             public override string keywordIconId => "DangoCreature_Emotion_Healed";
             public Indicator(int absorption)
             {
-                this.stack = absorption;
+                stack = absorption;
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
     }

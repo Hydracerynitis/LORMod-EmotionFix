@@ -18,33 +18,33 @@ namespace EmotionalFix
         public override void OnDieOtherUnit(BattleUnitModel unit)
         {
             base.OnDieOtherUnit(unit);
-            if (unit.faction != this._owner.faction)
+            if (unit.faction != _owner.faction)
                 return;
-            ++this.stack;
+            ++stack;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStartOnce();
-            if (this.tempStack > 0)
+            if (tempStack > 0)
             {
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, Power);
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.DmgUp, DmgUp);
-                if (!ifNilil(this._owner))
+                _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, Power);
+                _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.DmgUp, DmgUp);
+                if (!ifNilil(_owner))
                 {
-                    int num = (int)((double)this._owner.breakDetail.GetDefaultBreakGauge() * 0.25);
-                    this._owner.breakDetail.LoseBreakGauge(num);
-                    this._owner.view.BreakDamaged(num, BehaviourDetail.Penetrate, this._owner, AtkResist.Normal);
+                    int num = (int)((double)_owner.breakDetail.GetDefaultBreakGauge() * 0.25);
+                    _owner.breakDetail.LoseBreakGauge(num);
+                    _owner.view.BreakDamaged(num, BehaviourDetail.Penetrate, _owner, AtkResist.Normal);
                 }
-                if (tempStack >= 2 && this._owner.faction==Faction.Player)
+                if (tempStack >= 2 && _owner.faction==Faction.Player)
                 {
-                    if (!(this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear tear))
+                    if (!(_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear tear))
                     {
                         EmotionCardAbility_knightofdespair3.Tear Tear = new EmotionCardAbility_knightofdespair3.Tear
                         {
                             stack=1,
                             reserve= 1
                         };
-                        this._owner.bufListDetail.AddBuf(Tear);
+                        _owner.bufListDetail.AddBuf(Tear);
                     }
                     else
                     {
@@ -52,30 +52,30 @@ namespace EmotionalFix
                         tear.reserve+= 1;
                     }
                 }
-                if ((UnityEngine.Object)this._filter == (UnityEngine.Object)null)
+                if (_filter == null)
                 {
-                    this._filter = new GameObject().AddComponent<SpriteFilter_Despair>();
-                    this._filter.Init("EmotionCardFilter/KnightOfDespair_Gaho", true, 1f);
+                    _filter = new GameObject().AddComponent<SpriteFilter_Despair>();
+                    _filter.Init("EmotionCardFilter/KnightOfDespair_Gaho", true, 1f);
                 }
             }
-            this.tempStack = 0;
+            tempStack = 0;
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear Tear)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear Tear)
                 Tear.Destroy();
             DestroyFilter();
         }
         public bool ifNilil(BattleUnitModel owner)
         {
-            return this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil)) != null;
+            return _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil)) != null;
         }
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
             DestroyFilter();
-            this.tempStack = this.stack;
-            this.stack = 0;
+            tempStack = stack;
+            stack = 0;
         }
         public override void OnEndBattlePhase()
         {
@@ -84,10 +84,10 @@ namespace EmotionalFix
         }
         public void DestroyFilter()
         {
-            if ((UnityEngine.Object)this._filter == (UnityEngine.Object)null)
+            if (_filter == null)
                 return;
-            this._filter.ManualDestroy();
-            this._filter = (SpriteFilter_Despair)null;
+            _filter.ManualDestroy();
+            _filter = (SpriteFilter_Despair)null;
         }
     }
 }

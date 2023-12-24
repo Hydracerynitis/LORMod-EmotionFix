@@ -11,11 +11,11 @@ namespace EmotionalFix
     {
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            if (this.card.cardBehaviorQueue.Count == 0)
+            if (card.cardBehaviorQueue.Count == 0)
             {
-                this.owner.battleCardResultLog?.SetCreatureEffectSound("Creature/KnightOfDespair_Atk_Strong");
-                this.owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Despair));
-                this.card.target.TakeDamage((int)((double)this.card.target.MaxHp * 0.1));
+                owner.battleCardResultLog?.SetCreatureEffectSound("Creature/KnightOfDespair_Atk_Strong");
+                owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Despair));
+                card.target.TakeDamage((int)((double)card.target.MaxHp * 0.1));
             }
             else
             {
@@ -23,13 +23,13 @@ namespace EmotionalFix
                 {
                     if (IsAttackDice(battleDice.Detail))
                     {
-                        this.card.ApplyDiceAbility(DiceMatch.NextAttackDice, new DiceCardAbility_Tear());
+                        card.ApplyDiceAbility(DiceMatch.NextAttackDice, new DiceCardAbility_Tear());
                         return;
                     }
                 }
-                this.owner.battleCardResultLog?.SetCreatureEffectSound("Creature/KnightOfDespair_Atk_Strong");
-                this.owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Despair));
-                this.card.target.TakeDamage((int)((double)this.card.target.MaxHp * 0.1));
+                owner.battleCardResultLog?.SetCreatureEffectSound("Creature/KnightOfDespair_Atk_Strong");
+                owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Despair));
+                card.target.TakeDamage((int)((double)card.target.MaxHp * 0.1));
             }           
         }
     }

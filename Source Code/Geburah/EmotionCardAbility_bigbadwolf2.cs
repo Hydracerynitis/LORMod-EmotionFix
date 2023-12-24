@@ -19,52 +19,52 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._accumulatedDmg = 0;
-            if ((UnityEngine.Object)this.aura == (UnityEngine.Object)null)
+            _accumulatedDmg = 0;
+            if (aura == null)
                 return;
-            this.DestroyAura();
+            DestroyAura();
         }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this._accumulatedDmg = 0;
+            _accumulatedDmg = 0;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (!this.trigger)
+            if (!trigger)
                 return;
-            this.trigger = false;
-            this._accumulatedDmg = 0;
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Wolf_Claw());
-            if (!((UnityEngine.Object)this.aura == (UnityEngine.Object)null))
+            trigger = false;
+            _accumulatedDmg = 0;
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Wolf_Claw());
+            if (!(aura == null))
                 return;
-            this.aura = this.MakeEffect(this.path, target: this._owner, apply: false);
+            aura = MakeEffect(path, target: _owner, apply: false);
         }
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            this.DestroyAura();
-            _accumulatedDmg += this._owner.history.takeDamageAtOneRound;
-            if ((double)this._accumulatedDmg >= (double)this._owner.MaxHp * 0.25 && this._owner.faction==Faction.Player)
-                this.trigger = true;
-            if (this._owner.faction == Faction.Enemy)
+            DestroyAura();
+            _accumulatedDmg += _owner.history.takeDamageAtOneRound;
+            if ((double)_accumulatedDmg >= (double)_owner.MaxHp * 0.25 && _owner.faction==Faction.Player)
+                trigger = true;
+            if (_owner.faction == Faction.Enemy)
             {
-                if ((double)this._accumulatedDmg >= (double)this._owner.MaxHp * 0.5)
-                    this.trigger = true;
-                this._accumulatedDmg = 0;
+                if ((double)_accumulatedDmg >= (double)_owner.MaxHp * 0.5)
+                    trigger = true;
+                _accumulatedDmg = 0;
             }
         }
         public override void OnDie(BattleUnitModel killer)
         {
             base.OnDie(killer);
-            this.DestroyAura();
+            DestroyAura();
         }
         private void DestroyAura()
         {
-            if ((UnityEngine.Object)this.aura != (UnityEngine.Object)null && (UnityEngine.Object)this.aura.gameObject != (UnityEngine.Object)null)
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
-            this.aura = (Battle.CreatureEffect.CreatureEffect)null;
+            if (aura != null && aura.gameObject != null)
+                UnityEngine.Object.Destroy(aura.gameObject);
+            aura = (Battle.CreatureEffect.CreatureEffect)null;
         }
         public class BattleUnitBuf_Emotion_Wolf_Claw : BattleUnitBuf
         {
@@ -80,12 +80,12 @@ namespace EmotionalFix
             public override void OnSuccessAttack(BattleDiceBehavior behavior)
             {
                 base.OnSuccessAttack(behavior);
-                behavior?.card?.target?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, EmotionCardAbility_bigbadwolf2.BattleUnitBuf_Emotion_Wolf_Claw.Bleed, this._owner);
+                behavior?.card?.target?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, EmotionCardAbility_bigbadwolf2.BattleUnitBuf_Emotion_Wolf_Claw.Bleed, _owner);
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
             public override bool IsTargetable() => false;
             public override bool DirectAttack() => true;

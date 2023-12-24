@@ -12,7 +12,7 @@ namespace EmotionalFix
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);
-            this._owner.battleCardResultLog?.SetEmotionAbility(true, this._emotionCard, 0, ResultOption.Sign, 3);
+            _owner.battleCardResultLog?.SetEmotionAbility(true, _emotionCard, 0, ResultOption.Sign, 3);
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
                 min = -3,
@@ -24,8 +24,8 @@ namespace EmotionalFix
             if (behavior.DiceVanillaValue > behavior.GetDiceMin() && behavior.DiceVanillaValue<behavior.GetDiceMax())
                 return;
             base.OnRollDice(behavior);
-            this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Judgement", 3f);
-            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/LongBird_Stun");
+            _owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Judgement", 3f);
+            _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/LongBird_Stun");
         }
     }
 }

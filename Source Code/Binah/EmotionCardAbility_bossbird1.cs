@@ -14,34 +14,34 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.bufListDetail.AddBuf(new LongBird());
+                _owner.bufListDetail.AddBuf(new LongBird());
                 GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
-                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+                if (!(gameObject != null))
                     return;
                 Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
-                if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+                if (component != null)
                     component.Init(3);
                 gameObject.AddComponent<AutoDestruct>().time = 10f;
             }
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Longbird_Enemy());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Longbird_Enemy());
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (this._owner.faction == Faction.Player)
-                this._owner.bufListDetail.AddBuf(new LongBird());
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Longbird_Enemy());
+            if (_owner.faction == Faction.Player)
+                _owner.bufListDetail.AddBuf(new LongBird());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Longbird_Enemy());
         }
         public void Destroy()
         {
-            BattleUnitBuf Buff= this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is LongBird));
+            BattleUnitBuf Buff= _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is LongBird));
             if(Buff!=null)
                 Buff.Destroy();
-            Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Longbird_Enemy));
+            Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Longbird_Enemy));
             if (Buff != null)
                 Buff.Destroy();
         }
@@ -80,7 +80,7 @@ namespace EmotionalFix
             {
                 base.Init(owner);
                 stack = 0;
-                this._owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
+                _owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
             }
             public override bool IsImmune(BattleUnitBuf buf)
             {

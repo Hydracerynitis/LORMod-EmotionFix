@@ -62,19 +62,15 @@
 每一幕结束时失去1层</Desc>
     	</BattleEffectText>
 		<!--Netzach-->
-		<BattleEffectText ID="Porccubus_Happy_Enemy">
+		<BattleEffectText ID="EF_Pebble">
+      		<Name>卵石</Name>
+      		<Desc>卵石现在与{0}攻击方式共鸣</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Thrill">
       		<Name>快感</Name>
-      		<Desc>当快感达到3层时受到3~7伤害和混乱伤害并层数清零</Desc>
+      		<Desc>当快感达到3层时受到2~7伤害和混乱伤害并层数清零</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Porccubus_Happy">
-      		<Name>快感</Name>
-      		<Desc>当快感达到4层时受到2~7伤害和混乱伤害并层数清零</Desc>
-    	</BattleEffectText>
-    	<BattleEffectText ID="Alriune_Debuf">
-      		<Name>余香</Name>
-      		<Desc>每一幕开始时承受{0}点混乱伤害，随后该层数减少1/3。(向下取整)</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Enthusiastic">
+		<BattleEffectText ID="EF_Enthusiastic">
       		<Name>狂热崇拜</Name>
       		<Desc>角色已失去控制若陷入混乱则在下一幕开始时解除此状态。被没失去理智的司书击中时该角色将只承受混乱伤害并且该混乱伤害提高100%。并被来宾击中时所受伤害+2~4</Desc>
     	</BattleEffectText>

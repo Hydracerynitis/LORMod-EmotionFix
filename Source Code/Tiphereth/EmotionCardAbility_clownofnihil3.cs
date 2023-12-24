@@ -82,7 +82,7 @@ namespace EmotionalFix
                 base.OnRoundEndTheLast();
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
                 {
-                    if (alive != this._owner)
+                    if (alive != _owner)
                     {
                         alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 5, _owner);
                         alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 5, _owner);
@@ -126,7 +126,7 @@ namespace EmotionalFix
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
             private void DestroyAura()
             {

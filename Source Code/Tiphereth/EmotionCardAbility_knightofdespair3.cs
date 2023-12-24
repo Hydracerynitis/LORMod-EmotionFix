@@ -12,13 +12,13 @@ namespace EmotionalFix
     {
         public override void OnRoundStart()
         {
-            if (!(this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Tear)) is Tear tear))
+            if (!(_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Tear)) is Tear tear))
             {
                 BattleUnitBuf Tear = new Tear
                 {
                     stack = 1
                 };
-                this._owner.bufListDetail.AddBuf(Tear);
+                _owner.bufListDetail.AddBuf(Tear);
             }
             else
             {
@@ -59,27 +59,27 @@ namespace EmotionalFix
             {
                 if (HasAttack)
                     return;
-                this._owner.TakeDamage((int)((double)this._owner.MaxHp * 0.1));
-                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/KnightOfDespair_Change");
-                this._owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Despair));
+                _owner.TakeDamage((int)((double)_owner.MaxHp * 0.1));
+                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/KnightOfDespair_Change");
+                _owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Despair));
                 //new GameObject().AddComponent<SpriteFilter_Despair>().Init("EmotionCardFilter/Wolf_Filter_Eye", false, 1f);
-                //this._swordFilter.gameObject.SetActive(true);
-                //this._swordFilter.MoveSwordSprite();
-                //this._swordFilter.ResetSwordPosition();
-                //this._swordFilter.gameObject.SetActive(false);
+                //_swordFilter.gameObject.SetActive(true);
+                //_swordFilter.MoveSwordSprite();
+                //_swordFilter.ResetSwordPosition();
+                //_swordFilter.gameObject.SetActive(false);
             }
-            public override bool IsInvincibleBp(BattleUnitModel attacker) => this.stack>=2;
+            public override bool IsInvincibleBp(BattleUnitModel attacker) => stack>=2;
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEnd();
-                this.stack = 0;
-                this.stack += reserve;
+                stack = 0;
+                stack += reserve;
                 reserve = 0;
-                this.stack += reservePlus;
+                stack += reservePlus;
                 reserve += reservePlus;
                 reservePlus = 0;
                 if (stack <= 0)
-                    this.Destroy();
+                    Destroy();
             }
         }
     }

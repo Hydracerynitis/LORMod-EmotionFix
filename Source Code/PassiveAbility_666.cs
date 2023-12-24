@@ -13,13 +13,13 @@ namespace EmotionalFix
         private bool Collect3;
         public PassiveAbility_666(BattleUnitModel model,bool Trigger)
         {
-            this.Init(model);
-            this.name = Singleton<PassiveDescXmlList>.Instance.GetName(666);
-            this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(666);
-            this.rare = Rarity.Unique;
-            Collect1 = this.owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 1);
-            Collect2 = this.owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 2);
-            Collect3 = this.owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 3);
+            Init(model);
+            name = Singleton<PassiveDescXmlList>.Instance.GetName(666);
+            desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(666);
+            rare = Rarity.Unique;
+            Collect1 = owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 1);
+            Collect2 = owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 2);
+            Collect3 = owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 3);
             WhiteNight = Trigger;
         }
         public override void OnRoundEndTheLast()
@@ -28,7 +28,7 @@ namespace EmotionalFix
             if (owner.emotionDetail.EmotionLevel >= 1 && !Collect1)
             {
                 if (WhiteNight)
-                    this.owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90911, SephirahType.None));
+                    owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90911, SephirahType.None));
                 else
                 {
                     string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
@@ -42,10 +42,10 @@ namespace EmotionalFix
                 }
                 Collect1 = true;
             }
-            if (this.owner.emotionDetail.EmotionLevel >= 3 && !Collect2)
+            if (owner.emotionDetail.EmotionLevel >= 3 && !Collect2)
             {
                 if (WhiteNight)
-                    this.owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90912, SephirahType.None));
+                    owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90912, SephirahType.None));
                 else
                 {
                     string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
@@ -59,10 +59,10 @@ namespace EmotionalFix
                 }
                 Collect2 = true;
             }
-            if (this.owner.emotionDetail.EmotionLevel >= 5 && !Collect3)
+            if (owner.emotionDetail.EmotionLevel >= 5 && !Collect3)
             {
                 if (WhiteNight)
-                    this.owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90915, SephirahType.None));
+                    owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90915, SephirahType.None));
                 else
                 {
                     string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3).Name + "_Enemy";
@@ -71,7 +71,7 @@ namespace EmotionalFix
                     if (emotion == null)
                         return;
                     //emotion = Singleton<EmotionCardXmlList>.Instance.GetData(90914, SephirahType.None);
-                    this.owner.emotionDetail.ApplyEmotionCard(emotion);
+                    owner.emotionDetail.ApplyEmotionCard(emotion);
                     Debug.Log(owner.UnitData.unitData.name + " receive " + name);
                 }
                 Collect3 = true;

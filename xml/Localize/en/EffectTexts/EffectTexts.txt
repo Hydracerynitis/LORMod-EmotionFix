@@ -62,19 +62,15 @@
 	Lose 1 stack at each Scene</Desc>
     	</BattleEffectText>
 		<!--Netzach-->
-		<BattleEffectText ID="Porccubus_Happy_Enemy">
+		<BattleEffectText ID="EF_Pebble">
+      		<Name>Pebble</Name>
+      		<Desc>The Pebble is resonating with {0} attack type</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Thrill">
       		<Name>Thrill</Name>
-      		<Desc>When Thrill's stack reach 3, taake 3-7 Physical and Stagger damage and remove all stacks</Desc>
+      		<Desc>When Thrill's stack reach 3, taake 2-7 Physical and Stagger damage and remove all stacks</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Porccubus_Happy">
-      		<Name>Thrill</Name>
-      		<Desc>When Thrill's stack reach 4, taake 2-7 Physical and Stagger damage and remove all stacks</Desc>
-    	</BattleEffectText>
-    	<BattleEffectText ID="Alriune_Debuf">
-      		<Name>Aroma</Name>
-      		<Desc>At the start of the Scene, take {0} Stagger damage and halve the stack. (Rounded down)</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Enthusiastic">
+		<BattleEffectText ID="EF_Enthusiastic">
       		<Name>Fervent Adoration</Name>
       		<Desc>Uncontrollable. Upon becoming Staggered, this status is removed, and the character recovers from Stagger next Scene.
 Only takes Stagger damage from sane librarians, increase Stagger Damage taken by 100%;

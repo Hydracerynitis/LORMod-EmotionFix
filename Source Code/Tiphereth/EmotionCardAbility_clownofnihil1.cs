@@ -14,28 +14,28 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this.GiveCard();
+                GiveCard();
             }
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this.GiveCard();
+                GiveCard();
             }
         }
         private void GiveCard()
         {
-            if (SearchEmotion(this._owner, "QueenOfHatred_Laser") == null || SearchEmotion(this._owner, "KnightOfDespair_Gaho") == null || SearchEmotion(this._owner, "Greed_Protect") == null || SearchEmotion(this._owner, "Angry_Poison") == null)
+            if (SearchEmotion(_owner, "QueenOfHatred_Laser") == null || SearchEmotion(_owner, "KnightOfDespair_Gaho") == null || SearchEmotion(_owner, "Greed_Protect") == null || SearchEmotion(_owner, "Angry_Poison") == null)
                 return;
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104501));
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104502));
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104503));
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCardToDeck(1104504));
-            this._owner.allyCardDetail.Shuffle();
+            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104501));
+            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104502));
+            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104503));
+            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104504));
+            _owner.allyCardDetail.Shuffle();
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
         {
@@ -50,14 +50,14 @@ namespace EmotionalFix
         public override void OnLoseParrying(BattleDiceBehavior behavior)
         {
             base.OnLoseParrying(behavior);
-            if (this._owner.faction != Faction.Enemy)
+            if (_owner.faction != Faction.Enemy)
                 return;
-            if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void) != null)
+            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void) != null)
                 return;
-            if (!(this._owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void_Ready) is BattleUnitBuf_Emotion_Void_Ready emotionVoidReady))
+            if (!(_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void_Ready) is BattleUnitBuf_Emotion_Void_Ready emotionVoidReady))
             {
                 emotionVoidReady = new BattleUnitBuf_Emotion_Void_Ready();
-                this._owner.bufListDetail.AddBuf(emotionVoidReady);
+                _owner.bufListDetail.AddBuf(emotionVoidReady);
             }
             emotionVoidReady.Add();
         }
@@ -72,22 +72,22 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEndTheLast();
-                if (this.stack < StackMax)
+                if (stack < StackMax)
                     return;
-                this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Void());
-                this.Destroy();
+                _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Void());
+                Destroy();
             }
             public void Add()
             {
-                ++this.stack;
-                if (this.stack <= StackMax)
+                ++stack;
+                if (stack <= StackMax)
                     return;
-                this.stack = StackMax;
+                stack = StackMax;
             }
         }
         public class BattleUnitBuf_Emotion_Void : BattleUnitBuf
@@ -102,44 +102,44 @@ namespace EmotionalFix
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                this.cnt = 0;
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, 5, this._owner);
+                cnt = 0;
+                _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, 5, _owner);
             }
             public override bool IsImmune(BattleUnitBuf buf) => buf.positiveType == BufPositiveType.Negative || base.IsImmune(buf);
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
                 owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
-                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_MagicGirl", 1f, owner.view, owner.view)?.gameObject;
+                aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_MagicGirl", 1f, owner.view, owner.view)?.gameObject;
                 SoundEffectPlayer.PlaySound("Creature/Nihil_Filter");
             }
             public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
             {
                 base.OnTakeDamageByAttack(atkDice, dmg);
                 BattleUnitModel owner = atkDice?.owner;
-                if (owner == null || this.cnt >= 2)
+                if (owner == null || cnt >= 2)
                     return;
-                ++this.cnt;
-                owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 1, this._owner);
-                owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Vulnerable, 1, this._owner);
+                ++cnt;
+                owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 1, _owner);
+                owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Vulnerable, 1, _owner);
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
             private void DestroyAura()
             {
-                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                if (!(aura != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura);
-                this.aura = (GameObject)null;
+                UnityEngine.Object.Destroy(aura);
+                aura = (GameObject)null;
             }
         }
     }

@@ -24,21 +24,21 @@ namespace EmotionalFix
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
             base.OnUseCard(curCard);
-            this.win = 0;
+            win = 0;
             if (curCard == null)
                 return;
             BattleDiceBehavior[] array = curCard.cardBehaviorQueue?.ToArray();
             if (array == null || array.Length == 0)
                 return;
-            this.last = array[array.Length - 1];
+            last = array[array.Length - 1];
         }
         public override void OnWinParrying(BattleDiceBehavior behavior)
         {
             base.OnWinParrying(behavior);
             BattlePlayingCardDataInUnitModel card = behavior?.card;
-            if (card == null || behavior == this.last)
+            if (card == null || behavior == last)
                 return;
-            this.win++;
+            win++;
             card.ApplyDiceStatBonus(DiceMatch.LastDice, new DiceStatBonus()
             {
                 power = Pow
@@ -48,12 +48,12 @@ namespace EmotionalFix
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             base.OnSucceedAttack(behavior);
-            if (behavior != this.last)
+            if (behavior != last)
                 return;
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Wolf_Bite");
             for(int i = 0; i < win; i++)
             {
-                this._owner.RecoverHP(Heal);
+                _owner.RecoverHP(Heal);
             }
         }
     }

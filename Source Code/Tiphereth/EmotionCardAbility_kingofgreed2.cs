@@ -15,30 +15,30 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KingOfGreed_Yellow", false, 2f);
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCard(902523));
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCard(902523));
+            AddedCard.Add(_owner.allyCardDetail.AddNewCard(902523));
+            AddedCard.Add(_owner.allyCardDetail.AddNewCard(902523));
         }
         public override void OnKill(BattleUnitModel target)
         {
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
             base.OnKill(target);
-            if (SearchEmotion(this._owner, "Greed_Break") == null)
+            if (SearchEmotion(_owner, "Greed_Break") == null)
                 return;
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KingOfGreed_Yellow", false, 2f);
-            AddedCard.Add(this._owner.allyCardDetail.AddNewCard(902523));
+            AddedCard.Add(_owner.allyCardDetail.AddNewCard(902523));
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this.count > 0)
+            if (count > 0)
             {
-                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Happiness", 1f, this._owner.view, this._owner.view);
+                aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_Happiness", 1f, _owner.view, _owner.view);
                 SoundEffectPlayer.PlaySound("Creature/Greed_MakeDiamond");
             }       
-            this.count = 0;
+            count = 0;
         }
         public override void OnEndBattlePhase()
         {
@@ -53,22 +53,22 @@ namespace EmotionalFix
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            this.DestroyAura();
-            if (this.count <= 0 || this._owner.faction!=Faction.Enemy)
+            DestroyAura();
+            if (count <= 0 || _owner.faction!=Faction.Enemy)
                 return;
-            for(int i=this.GetStack(count);i>0 ;i--)
+            for(int i=GetStack(count);i>0 ;i--)
             {
                 int j = RandomUtil.Range(1, 3);
                 switch (j)
                 {
                     case 1:
-                        this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+                        _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
                         break;
                     case 2:
-                        this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Endurance, 1);
+                        _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Endurance, 1);
                         break;
                     case 3:
-                        this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Quickness, 1);
+                        _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Quickness, 1);
                         break;
                 }
             }
@@ -76,20 +76,20 @@ namespace EmotionalFix
         public override void OnWinParrying(BattleDiceBehavior behavior)
         {
             base.OnWinParrying(behavior);
-            ++this.count;
+            ++count;
         }
         public void DestroyAura()
         {
-            if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+            if (!(aura != null))
                 return;
-            UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
-            this.aura = (Battle.CreatureEffect.CreatureEffect)null;
+            UnityEngine.Object.Destroy(aura.gameObject);
+            aura = (Battle.CreatureEffect.CreatureEffect)null;
         }
 
         public void Destroy()
         {
             foreach (BattleDiceCardModel card in AddedCard)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(card);
+                _owner.allyCardDetail.ExhaustACardAnywhere(card);
             DestroyAura();
         }
         private int GetStack(int cnt) => Mathf.Min(3, cnt);

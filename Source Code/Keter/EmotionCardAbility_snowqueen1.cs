@@ -18,7 +18,7 @@ namespace EmotionalFix
             BattleUnitModel target = behavior?.card?.target;
             if (target == null || !Prob)
                 return;
-            target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, Bind, this._owner);
+            target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, Bind, _owner);
             if (target.bufListDetail.GetReadyBufList().Find(x => x is BattleUnitBuf_Emotion_Snowqueen_Aura) != null)
                 return;
             target.bufListDetail.AddReadyBuf(new BattleUnitBuf_Emotion_Snowqueen_Aura());
@@ -28,7 +28,7 @@ namespace EmotionalFix
         {
             base.BeforeRollDice(behavior);
             BattleUnitModel target = behavior?.card?.target;
-            if (target == null || !this.IsAttackDice(behavior.Detail) || target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x.bufType == KeywordBuf.Binding)) == null)
+            if (target == null || !IsAttackDice(behavior.Detail) || target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x.bufType == KeywordBuf.Binding)) == null)
                 return;
             int bonus = Dmg;
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
@@ -46,31 +46,31 @@ namespace EmotionalFix
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                if (this._owner == null)
+                if (_owner == null)
                     return;
-                this.aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_SnowAura", 1f, this._owner.view, this._owner.view)?.gameObject;
+                aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_SnowAura", 1f, _owner.view, _owner.view)?.gameObject;
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
             public void DestroyAura()
             {
-                if (!((UnityEngine.Object)this.aura != (UnityEngine.Object)null))
+                if (!(aura != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
-                this.aura = (GameObject)null;
+                UnityEngine.Object.Destroy(aura.gameObject);
+                aura = (GameObject)null;
             }
         }
     }

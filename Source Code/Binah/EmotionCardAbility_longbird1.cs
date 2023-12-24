@@ -27,7 +27,7 @@ namespace EmotionalFix
             Trigger = true;
             int num = 0;
             List<BattleUnitModel> sinner = new List<BattleUnitModel>();
-            foreach(BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(this._owner.faction==Faction.Player?Faction.Enemy: Faction.Player))
+            foreach(BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(_owner.faction==Faction.Player?Faction.Enemy: Faction.Player))
             {
                 if (enemy.history.damageToEnemyAtRound > num)
                 {
@@ -49,11 +49,11 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void OnRoundEnd()
             {
-                this.Destroy();
+                Destroy();
             }
         }
     }

@@ -21,7 +21,7 @@ namespace EmotionalFix.Malkuth
         {
             if (_owner.faction != Faction.Player)
                 return;
-            foreach (BattlePlayingCardDataInUnitModel card in this._owner.cardSlotDetail.cardAry)
+            foreach (BattlePlayingCardDataInUnitModel card in _owner.cardSlotDetail.cardAry)
             {
                 if (card != null && card.target != null)
                 {

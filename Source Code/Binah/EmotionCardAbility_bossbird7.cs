@@ -24,29 +24,29 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
+            _aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
         }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
             activated = false;
-            if (SearchEmotion(this._owner, "ApocalypseBird_LongArm") == null || SearchEmotion(this._owner, "ApocalypseBird_SmallPeak") == null || SearchEmotion(this._owner, "ApocalypseBird_BigEye") == null)
+            if (SearchEmotion(_owner, "ApocalypseBird_LongArm") == null || SearchEmotion(_owner, "ApocalypseBird_SmallPeak") == null || SearchEmotion(_owner, "ApocalypseBird_BigEye") == null)
                 return;
             GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
-            if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+            if (!(gameObject != null))
                 return;
             Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
-            if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+            if (component != null)
                 component.Init(4);
             gameObject.AddComponent<AutoDestruct>().time = 10f;
-            this._aura=SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
+            _aura=SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_MonsterAura", 1f, _owner.view, _owner.view);
             activated=true;
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
             activated = false;
-            if (SearchEmotion(this._owner, "ApocalypseBird_LongArm") == null || SearchEmotion(this._owner, "ApocalypseBird_SmallPeak") == null || SearchEmotion(this._owner, "ApocalypseBird_BigEye") == null)
+            if (SearchEmotion(_owner, "ApocalypseBird_LongArm") == null || SearchEmotion(_owner, "ApocalypseBird_SmallPeak") == null || SearchEmotion(_owner, "ApocalypseBird_BigEye") == null)
                 return;
             activated = true;
         }
@@ -109,10 +109,10 @@ namespace EmotionalFix
         }
         public void DestroyAura()
         {
-            if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+            if (!(_aura != null))
                 return;
-            UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
-            this._aura = (Battle.CreatureEffect.CreatureEffect)null;
+            UnityEngine.Object.Destroy(_aura.gameObject);
+            _aura = (Battle.CreatureEffect.CreatureEffect)null;
         }
         public void GiveHitDamage(BattleUnitModel enemy,BattleDiceBehavior dice)
         {

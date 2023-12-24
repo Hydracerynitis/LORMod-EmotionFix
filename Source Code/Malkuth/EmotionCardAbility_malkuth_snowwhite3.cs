@@ -79,7 +79,7 @@ namespace EmotionalFix
             victim.Remove(target);
             BattlePlayingCardDataInUnitModel Card = new BattlePlayingCardDataInUnitModel
             {
-                owner = this._owner,
+                owner = _owner,
                 card = Aoe,
                 cardAbility = Aoe.CreateDiceCardSelfAbilityScript(),
                 target = target,

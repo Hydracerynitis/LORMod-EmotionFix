@@ -15,7 +15,7 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            List<BattleDiceCardModel> Deck = this._owner.allyCardDetail.GetAllDeck();
+            List<BattleDiceCardModel> Deck = _owner.allyCardDetail.GetAllDeck();
             List<BattleDiceCardModel> Exhaust = new List<BattleDiceCardModel>();
             for (int i = 0; i < 3; i++)
             {
@@ -25,13 +25,13 @@ namespace EmotionalFix
             }
             Lost.AddRange(Exhaust);
             foreach (BattleDiceCardModel card in Exhaust)
-                this._owner.allyCardDetail.ExhaustACard(card);
+                _owner.allyCardDetail.ExhaustACard(card);
         }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this.SetFilter();
-            List<BattleDiceCardModel> Deck = this._owner.allyCardDetail.GetAllDeck();
+            SetFilter();
+            List<BattleDiceCardModel> Deck = _owner.allyCardDetail.GetAllDeck();
             List<BattleDiceCardModel> Exhaust = new List<BattleDiceCardModel>();
             for(int i=0; i < 3; i++)
             {
@@ -41,7 +41,7 @@ namespace EmotionalFix
             }
             Lost.AddRange(Exhaust);
             foreach (BattleDiceCardModel card in Exhaust)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(card);
+                _owner.allyCardDetail.ExhaustACardAnywhere(card);
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
@@ -53,29 +53,29 @@ namespace EmotionalFix
                 RandomUtil.SelectOne<BattleDiceCardModel>(behavior.card.target.allyCardDetail.GetAllDeck())
             };
             Gain.AddRange(Wisdom);
-            this._owner.allyCardDetail.AddCardToDeck(Wisdom);
-            this._owner.allyCardDetail.Shuffle();
-            this._owner.battleCardResultLog?.SetEndCardActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.PrintSound));
+            _owner.allyCardDetail.AddCardToDeck(Wisdom);
+            _owner.allyCardDetail.Shuffle();
+            _owner.battleCardResultLog?.SetEndCardActionEvent(new BattleCardBehaviourResult.BehaviourEvent(PrintSound));
         }
         public void Destroy()
         {
             foreach (BattleDiceCardModel card in Gain)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(card);
-            this._owner.allyCardDetail.AddCardToDeck(Lost);
-            this._owner.allyCardDetail.Shuffle();
+                _owner.allyCardDetail.ExhaustACardAnywhere(card);
+            _owner.allyCardDetail.AddCardToDeck(Lost);
+            _owner.allyCardDetail.Shuffle();
         }
         private void PrintSound() => SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Scarecrow_Special");
         private void SetFilter()
         {
             GameObject gameObject = SingletonBehavior<BattleCamManager>.Instance.EffectCam.gameObject;
-            if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+            if (!(gameObject != null))
                 return;
             CameraFilterPack_Distortion_ShockWave distortionShockWave = gameObject.AddComponent<CameraFilterPack_Distortion_ShockWave>();
             distortionShockWave.PosX = 0.5f;
             distortionShockWave.PosY = 0.5f;
             distortionShockWave.Speed = 1.2f;
             AutoScriptDestruct autoScriptDestruct = SingletonBehavior<BattleCamManager>.Instance?.EffectCam.gameObject.AddComponent<AutoScriptDestruct>() ?? (AutoScriptDestruct)null;
-            if (!((UnityEngine.Object)autoScriptDestruct != (UnityEngine.Object)null))
+            if (!(autoScriptDestruct != null))
                 return;
             autoScriptDestruct.targetScript = (MonoBehaviour)distortionShockWave;
             autoScriptDestruct.time = 1.5f;

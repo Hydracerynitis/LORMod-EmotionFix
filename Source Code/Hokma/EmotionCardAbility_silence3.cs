@@ -15,19 +15,19 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if(this._owner.faction==Faction.Player)
-                this.GiveCards();
-            if (this._owner.faction == Faction.Enemy)
-                this.Silence();
+            if(_owner.faction==Faction.Player)
+                GiveCards();
+            if (_owner.faction == Faction.Enemy)
+                Silence();
         }
 
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction == Faction.Player)
-                this.GiveCards();
-            if (this._owner.faction == Faction.Enemy)
-                this.Silence();
+            if (_owner.faction == Faction.Player)
+                GiveCards();
+            if (_owner.faction == Faction.Enemy)
+                Silence();
         }
         public override void OnRoundStart()
         {
@@ -38,7 +38,7 @@ namespace EmotionalFix
                 new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/ThePriceOfSilence_Filter", false, 2f);
                 SoundEffectPlayer.PlaySound("Creature/Clock_StopCard");
                 Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/9_H/FX_IllusionCard_9_H_Silence");
-                if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+                if (original != null)
                 {
                     Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original);
                     creatureEffect.gameObject.transform.SetParent(SingletonBehavior<BattleManagerUI>.Instance.EffectLayer);
@@ -49,12 +49,12 @@ namespace EmotionalFix
         }
         private void GiveCards()
         {
-            silence=this._owner.allyCardDetail.AddNewCard(1108101);
+            silence=_owner.allyCardDetail.AddNewCard(1108101);
         }
         public void Destroy()
         {
-            if (this._owner.faction == Faction.Player)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(silence);
+            if (_owner.faction == Faction.Player)
+                _owner.allyCardDetail.ExhaustACardAnywhere(silence);
         }
         public void Silence()
         {
@@ -69,7 +69,7 @@ namespace EmotionalFix
             BattleUnitModel victim = RandomUtil.SelectOne<BattleUnitModel>(nonstun);
             _effect = true;
             victim.bufListDetail.AddBuf(new SilenceStun());
-            this._owner.bufListDetail.AddBuf(new SilenceStun());
+            _owner.bufListDetail.AddBuf(new SilenceStun());
         }
         public class SilenceStun : BattleUnitBuf
         {
@@ -79,13 +79,13 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
                 SingletonBehavior<DiceEffectManager>.Instance.CreateBufEffect("BufEffect_Disarm", owner.view);
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
     }

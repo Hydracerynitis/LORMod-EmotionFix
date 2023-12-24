@@ -22,13 +22,13 @@ namespace EmotionalFix
             if (Trigger)
                 return;
             Trigger = true;
-            if (target == null || behavior == null || (!Prob && SearchEmotion(this._owner, "Greed_Eat")==null))
+            if (target == null || behavior == null || (!Prob && SearchEmotion(_owner, "Greed_Eat")==null))
                 return;
             target.currentDiceAction.ApplyDiceStatBonus(DiceMatch.AllDice,new DiceStatBonus() 
             { 
                 power =-2
             });
-            this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Filter));
+            _owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(Filter));
         }
         public override void OnDrawParrying(BattleDiceBehavior behavior)
         {
@@ -43,13 +43,13 @@ namespace EmotionalFix
             if (Trigger)
                 return;
             Trigger = true;
-            if (behavior == null || (!Prob && SearchEmotion(this._owner, "Greed_Eat") == null))
+            if (behavior == null || (!Prob && SearchEmotion(_owner, "Greed_Eat") == null))
                 return;
             behavior.card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
             {
                 power = -2
             });
-            this._owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Filter));
+            _owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(Filter));
 
         }
         private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)

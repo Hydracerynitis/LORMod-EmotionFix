@@ -11,11 +11,11 @@ namespace EmotionalFix.Hod
     {
         public override void OnWinParryingDefense()
         {
-            if (this.behavior.TargetDice == null)
+            if (behavior.TargetDice == null)
                 return;
-            this.card.target.battleCardResultLog?.SetCreatureAbilityEffect("3/BlackSwan_Barrier", 0.8f);
-            this.card.target.TakeDamage(this.behavior.TargetDice.DiceResultValue, DamageType.Rebound,this.owner);
-            this.card.target.TakeBreakDamage(this.behavior.TargetDice.DiceResultValue, DamageType.Rebound, this.owner);
+            card.target.battleCardResultLog?.SetCreatureAbilityEffect("3/BlackSwan_Barrier", 0.8f);
+            card.target.TakeDamage(behavior.TargetDice.DiceResultValue, DamageType.Rebound,owner);
+            card.target.TakeBreakDamage(behavior.TargetDice.DiceResultValue, DamageType.Rebound,owner);
         }
     }
 }

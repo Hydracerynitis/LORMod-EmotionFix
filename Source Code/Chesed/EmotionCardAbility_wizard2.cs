@@ -13,13 +13,13 @@ namespace EmotionalFix
 
         public override void OnSelectEmotion()
         {
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.personalEgoDetail.AddCard(1100023);
-                this._owner.personalEgoDetail.AddCard(1100024);
-                this._owner.personalEgoDetail.AddCard(1100025);
-                this._owner.personalEgoDetail.AddCard(1100026);
-                this._owner.personalEgoDetail.AddCard(1100027);
+                _owner.personalEgoDetail.AddCard(1100023);
+                _owner.personalEgoDetail.AddCard(1100024);
+                _owner.personalEgoDetail.AddCard(1100025);
+                _owner.personalEgoDetail.AddCard(1100026);
+                _owner.personalEgoDetail.AddCard(1100027);
                 return;
             }
             _remainedList.Clear();
@@ -37,56 +37,56 @@ namespace EmotionalFix
             switch (bufType)
             {
                 case WizardBufType.Potion:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_potion());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_potion());
                     break;
                 case WizardBufType.Pocket:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_pocket());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_pocket());
                     break;
                 case WizardBufType.Heart:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_heart());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_heart());
                     break;
                 case WizardBufType.Home:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_home());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_home());
                     break;
                 case WizardBufType.Change:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_change());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_change());
                     break;
             }
             _selectedBuf = bufType;
         }
         public override void OnWaveStart()
         {
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.personalEgoDetail.AddCard(1100023);
-                this._owner.personalEgoDetail.AddCard(1100024);
-                this._owner.personalEgoDetail.AddCard(1100025);
-                this._owner.personalEgoDetail.AddCard(1100026);
-                this._owner.personalEgoDetail.AddCard(1100027);
+                _owner.personalEgoDetail.AddCard(1100023);
+                _owner.personalEgoDetail.AddCard(1100024);
+                _owner.personalEgoDetail.AddCard(1100025);
+                _owner.personalEgoDetail.AddCard(1100026);
+                _owner.personalEgoDetail.AddCard(1100027);
                 return;
             }
             switch (_selectedBuf)
             {
                 case WizardBufType.Potion:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_potion());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_potion());
                     break;
                 case WizardBufType.Pocket:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_pocket());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_pocket());
                     break;
                 case WizardBufType.Heart:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_heart());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_heart());
                     break;
                 case WizardBufType.Home:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_home());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_home());
                     break;
                 case WizardBufType.Change:
-                    this._owner.bufListDetail.AddBuf(new BattleUnitBuf_change());
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_change());
                     break;
             }
         }
         public bool CheckBuff(WizardBufType bufType)
         {
-            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(_owner.faction))
             {
                 switch (bufType)
                 {
@@ -126,12 +126,12 @@ namespace EmotionalFix
         {
             public override string keywordId => "Wizard_potion";
             public override string keywordIconId => "Wizard_Courage";
-            public BattleUnitBuf_potion() => this.stack = 0;
+            public BattleUnitBuf_potion() => stack = 0;
             private int round = 0;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                if(this._owner.faction==Faction.Player)
+                if(_owner.faction==Faction.Player)
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
             }
             public override void OnRoundStart()
@@ -140,16 +140,16 @@ namespace EmotionalFix
                 switch (round)
                 {
                     case 1:
-                        this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
+                        _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
                         break;
                     case 2:
-                        this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
+                        _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
                         break;
                     case 3:
-                        this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
+                        _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
                         break;
                     case 4:
-                        this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
+                        _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
                         round = 0;
                         break;
                 }
@@ -157,7 +157,7 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
                 foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(Faction.Player))
                 {
@@ -173,17 +173,17 @@ namespace EmotionalFix
                         change.Destroy();
                 }
             }
-            if (this._owner.faction == Faction.Enemy)
+            if (_owner.faction == Faction.Enemy)
             {
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_pocket)) is BattleUnitBuf_pocket pocket)
+                if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_pocket)) is BattleUnitBuf_pocket pocket)
                     pocket.Destroy();
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_potion)) is BattleUnitBuf_potion potion)
+                if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_potion)) is BattleUnitBuf_potion potion)
                     potion.Destroy();
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_heart)) is BattleUnitBuf_heart heart)
+                if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_heart)) is BattleUnitBuf_heart heart)
                     heart.Destroy();
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_home)) is BattleUnitBuf_home home)
+                if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_home)) is BattleUnitBuf_home home)
                     home.Destroy();
-                if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_change)) is BattleUnitBuf_change change)
+                if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_change)) is BattleUnitBuf_change change)
                     change.Destroy();
             }
         }
@@ -192,18 +192,18 @@ namespace EmotionalFix
             public override string keywordId => "Wizard_poket";
             public override string keywordIconId => "Wizard_Scarecrow_Debuf";
             private int Pow => RandomUtil.Range(1, 2);
-            public BattleUnitBuf_pocket() => this.stack = 0;
+            public BattleUnitBuf_pocket() => stack = 0;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                if (this._owner.faction == Faction.Player)
+                if (_owner.faction == Faction.Player)
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
             }
             public override void OnDrawCard()
             {
-                int count = this._owner.allyCardDetail.GetHand().Count;
-                BattleDiceCardModel Card = this._owner.allyCardDetail.GetHand()[count-1];
-                this._owner.allyCardDetail.AddNewCard(Card.GetID()).XmlData.optionList.Add(CardOption.ExhaustOnUse);
+                int count = _owner.allyCardDetail.GetHand().Count;
+                BattleDiceCardModel Card = _owner.allyCardDetail.GetHand()[count-1];
+                _owner.allyCardDetail.AddNewCard(Card.GetID()).XmlData.optionList.Add(CardOption.ExhaustOnUse);
             }
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
@@ -218,30 +218,30 @@ namespace EmotionalFix
         {
             public override string keywordId => stack==0? "Wizard_heart": "Wizard_heart_Deactivate";
             public override string keywordIconId => "Lumberjack_Piece_Final";
-            public BattleUnitBuf_heart() => this.stack = 0;
+            public BattleUnitBuf_heart() => stack = 0;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                if (this._owner.faction == Faction.Player)
+                if (_owner.faction == Faction.Player)
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
             }
             public override void OnRoundStart()
             {
                 if (stack > 0)
                     return;
-                stack = this._owner.cardSlotDetail.GetMaxPlayPoint() - this._owner.cardSlotDetail.PlayPoint;
-                this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
+                stack = _owner.cardSlotDetail.GetMaxPlayPoint() - _owner.cardSlotDetail.PlayPoint;
+                _owner.cardSlotDetail.RecoverPlayPoint(_owner.cardSlotDetail.GetMaxPlayPoint());
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
                 if (stack > 0)
                 {
-                    this._owner.cardSlotDetail.SetRecoverPoint(0);
+                    _owner.cardSlotDetail.SetRecoverPoint(0);
                     stack -= 1;
                     return;
                 }
-                this._owner.cardSlotDetail.SetRecoverPointDefault();
+                _owner.cardSlotDetail.SetRecoverPointDefault();
             }
         }
         public class BattleUnitBuf_home : BattleUnitBuf
@@ -252,12 +252,12 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                if (this._owner.faction == Faction.Player)
+                if (_owner.faction == Faction.Player)
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
             }
             public BattleUnitBuf_home()
             {
-                this.stack = 0;
+                stack = 0;
                 TargetList = new List<BattleUnitModel>();
             }
             private List<BattleUnitModel> TargetList;
@@ -298,16 +298,16 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                if (this._owner.faction == Faction.Player)
+                if (_owner.faction == Faction.Player)
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Gift", 1f, owner.view, owner.view, 2f);
             }
-            public BattleUnitBuf_change() => this.stack = 0;
+            public BattleUnitBuf_change() => stack = 0;
 
             public override void OnRoundStart()
             {
-                BattleUnitModel ally = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(this._owner.faction));
-                ally.RecoverHP((int)((double)this._owner.MaxHp * 0.3));
-                ally.breakDetail.RecoverBreak((int)((double)this._owner.breakDetail.GetDefaultBreakGauge() * 0.4));
+                BattleUnitModel ally = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(_owner.faction));
+                ally.RecoverHP((int)((double)_owner.MaxHp * 0.3));
+                ally.breakDetail.RecoverBreak((int)((double)_owner.breakDetail.GetDefaultBreakGauge() * 0.4));
                 if (ally.IsBreakLifeZero())
                 {
                     ally.breakDetail.nextTurnBreak = false;

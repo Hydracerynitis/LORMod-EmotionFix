@@ -19,7 +19,7 @@ namespace EmotionalFix
         }
         public override void OnDieOtherUnit(BattleUnitModel unit)
         {
-            if (unit == this._owner || this._owner.faction!=unit.faction)
+            if (unit == _owner || _owner.faction!=unit.faction)
                 return;
             _effect = true;
             List<BattleDiceCardModel> deadman = unit.allyCardDetail.GetAllDeck();
@@ -30,9 +30,9 @@ namespace EmotionalFix
                 deadman.Remove(deadcard);
                 remain.Add(deadcard);
             }
-            this._owner.allyCardDetail.AddCardToDeck(remain);
+            _owner.allyCardDetail.AddCardToDeck(remain);
             Dead.AddRange(remain);
-            this._owner.allyCardDetail.Shuffle();
+            _owner.allyCardDetail.Shuffle();
         }
         public override void OnRoundStart()
         {
@@ -40,7 +40,7 @@ namespace EmotionalFix
             if (_effect)
             {
                 _effect = false;
-                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("6_G/FX_IllusionCard_6_G_Shout", 1f, this._owner.view, this._owner.view, 3f);
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("6_G/FX_IllusionCard_6_G_Shout", 1f, _owner.view, _owner.view, 3f);
                 CameraFilterUtil.EarthQuake(0.08f, 0.02f, 50f, 0.3f);
                 SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Danggo_Lv2_Shout");
             }
@@ -48,15 +48,15 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._owner.allyCardDetail.AddCardToDeck(Dead);
-            this._owner.allyCardDetail.Shuffle();
+            _owner.allyCardDetail.AddCardToDeck(Dead);
+            _owner.allyCardDetail.Shuffle();
         }
         public void Destroy()
         {
             if (Dead.Count <= 0)
                 return;
             foreach (BattleDiceCardModel card in Dead)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(card);
+                _owner.allyCardDetail.ExhaustACardAnywhere(card);
         }
     }
 }

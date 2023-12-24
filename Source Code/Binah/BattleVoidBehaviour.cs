@@ -21,93 +21,93 @@ namespace EmotionalFix
         public DiceStatBonus OriginalStatBonus;
         public int _diceResultValue;
         public int _diceFinalResultValue;
-        public int GetDiceVanillaMax() => this.behaviourInCard.Dice;
-        public int GetDiceVanillaMin() => this.behaviourInCard.Min;
-        public int GetDiceMin() => Mathf.Max(1, this.behaviourInCard.Min + this._statBonus.min);
-        public int GetDiceMax() => Mathf.Max(1, this.behaviourInCard.Dice + this._statBonus.face * 3 + this._statBonus.max);
+        public int GetDiceVanillaMax() => behaviourInCard.Dice;
+        public int GetDiceVanillaMin() => behaviourInCard.Min;
+        public int GetDiceMin() => Mathf.Max(1, behaviourInCard.Min + _statBonus.min);
+        public int GetDiceMax() => Mathf.Max(1, behaviourInCard.Dice + _statBonus.face * 3 + _statBonus.max);
         public BattleVoidBehaviour(BattleDiceBehavior OriginalDice)
         {
             this.OriginalDice = OriginalDice;
-            this.owner = OriginalDice.owner;
-            this.behaviourInCard = OriginalDice.behaviourInCard;
-            this.abilityList = OriginalDice.abilityList;
-            this.card = OriginalDice.card;
+            owner = OriginalDice.owner;
+            behaviourInCard = OriginalDice.behaviourInCard;
+            abilityList = OriginalDice.abilityList;
+            card = OriginalDice.card;
             if (OriginalDice.TargetDice != null && OriginalDice.TargetDice.Detail == BehaviourDetail.Guard)
                 _damageReductionByGuard = OriginalDice.TargetDice.DiceResultValue;
             else
                 _damageReductionByGuard = 0;
-            _statBonus = typeof(BattleDiceBehavior).GetField("_statBonus", AccessTools.all).GetValue(this.OriginalDice) as DiceStatBonus;
+            _statBonus = typeof(BattleDiceBehavior).GetField("_statBonus", AccessTools.all).GetValue(OriginalDice) as DiceStatBonus;
             OriginalStatBonus = _statBonus.Copy();
         }
         public void RefreshStatBonus()
         {
-            _statBonus = typeof(BattleDiceBehavior).GetField("_statBonus", AccessTools.all).GetValue(this.OriginalDice) as DiceStatBonus;
-            typeof(BattleDiceBehavior).GetField("_statBonus", AccessTools.all).SetValue(this.OriginalDice, OriginalStatBonus);
+            _statBonus = typeof(BattleDiceBehavior).GetField("_statBonus", AccessTools.all).GetValue(OriginalDice) as DiceStatBonus;
+            typeof(BattleDiceBehavior).GetField("_statBonus", AccessTools.all).SetValue(OriginalDice, OriginalStatBonus);
         }
         public void BeforeRollDice()
         {
             OriginalDice.OnEventDiceAbility(DiceCardAbilityBase.DiceCardPassiveType.BeforeRollDice);
-            this.RefreshStatBonus();
+            RefreshStatBonus();
         }
         public void RollDice()
         {
-            this._diceResultValue = DiceStatCalculator.MakeDiceResult(this.GetDiceMin(), this.GetDiceMax(), 0);
-            this.owner.passiveDetail.ChangeDiceResult(OriginalDice, ref this._diceResultValue);
-            this.owner.emotionDetail.ChangeDiceResult(OriginalDice, ref this._diceResultValue);
-            this.owner.bufListDetail.ChangeDiceResult(OriginalDice, ref this._diceResultValue);
-            if (this._diceResultValue < this.GetDiceMin())
-                this._diceResultValue = this.GetDiceMin();
-            if (this._diceResultValue < 1)
-                this._diceResultValue = 1;
+            _diceResultValue = DiceStatCalculator.MakeDiceResult(GetDiceMin(), GetDiceMax(), 0);
+            owner.passiveDetail.ChangeDiceResult(OriginalDice, ref _diceResultValue);
+            owner.emotionDetail.ChangeDiceResult(OriginalDice, ref _diceResultValue);
+            owner.bufListDetail.ChangeDiceResult(OriginalDice, ref _diceResultValue);
+            if (_diceResultValue < GetDiceMin())
+                _diceResultValue = GetDiceMin();
+            if (_diceResultValue < 1)
+                _diceResultValue = 1;
             OriginalDice.OnEventDiceAbility(DiceCardAbilityBase.DiceCardPassiveType.RollDice);
-            this.RefreshStatBonus();
+            RefreshStatBonus();
         }
         public void UpdateDiceFinalValue()
         {
-            this._diceFinalResultValue = Mathf.Max(1, _diceResultValue);
-            if (this.abilityList.Exists((Predicate<DiceCardAbilityBase>)(x => x.Invalidity)))
+            _diceFinalResultValue = Mathf.Max(1, _diceResultValue);
+            if (abilityList.Exists((Predicate<DiceCardAbilityBase>)(x => x.Invalidity)))
             {
-                this._diceFinalResultValue = 0;
+                _diceFinalResultValue = 0;
             }
             else
             {
-                if (this._statBonus.ignorePower)
+                if (_statBonus.ignorePower)
                     return;
                 if (card != null && card.ignorePower)
                     return;
-                if (this.owner != null && this.owner.IsNullifyPower())
+                if (owner != null && owner.IsNullifyPower())
                     return;
-                int power = this._statBonus.power;
-                if (this.abilityList.Find((Predicate<DiceCardAbilityBase>)(x => x.IsDoublePower())) != null)
-                    power += this._statBonus.power;
-                if (this.owner != null && this.owner.IsHalfPower())
+                int power = _statBonus.power;
+                if (abilityList.Find((Predicate<DiceCardAbilityBase>)(x => x.IsDoublePower())) != null)
+                    power += _statBonus.power;
+                if (owner != null && owner.IsHalfPower())
                     power /= 2;
-                this._diceFinalResultValue = Mathf.Max(1, _diceResultValue + power);
+                _diceFinalResultValue = Mathf.Max(1, _diceResultValue + power);
             }
         }
         public void GiveDamage(BattleUnitModel target)
         {
             if (target == null)
                 return;
-            this.abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage()));
-            this.abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage(target)));
-            this.owner.BeforeGiveDamage(OriginalDice);
+            abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage()));
+            abilityList.ForEach((Action<DiceCardAbilityBase>)(x => x.BeforeGiveDamage(target)));
+            owner.BeforeGiveDamage(OriginalDice);
             if (OriginalDice.IsBlocked)
             {
-                this.RefreshStatBonus();
-                this.owner.battleCardResultLog.SetIsBlocked(true);
+                RefreshStatBonus();
+                owner.battleCardResultLog.SetIsBlocked(true);
                 return;
             }
-            double num1 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.dmg + this.owner.UnitData.unitData.giftInventory.GetStatBonus_Dmg(this.behaviourInCard.Detail)) - (double)target.GetDamageReduction(OriginalDice)) * (double)Mathf.Max((1.0f + (float)(this._statBonus.dmgRate + target.GetDamageIncreaseRate()) / 100.0f), 0.0f) * (double)target.GetDamageRate();
-            double num2 = ((double)(_diceFinalResultValue - this._damageReductionByGuard + this._statBonus.breakDmg) - (double)target.GetBreakDamageReduction(OriginalDice)) * (double)Mathf.Max((1.0f + (float)(this._statBonus.breakRate + target.GetBreakDamageIncreaseRate()) / 100.0f), 0f) * (double)target.GetBreakDamageRate();
+            double num1 = ((double)(_diceFinalResultValue - _damageReductionByGuard + _statBonus.dmg + owner.UnitData.unitData.giftInventory.GetStatBonus_Dmg(behaviourInCard.Detail)) - (double)target.GetDamageReduction(OriginalDice)) * (double)Mathf.Max((1.0f + (float)(_statBonus.dmgRate + target.GetDamageIncreaseRate()) / 100.0f), 0.0f) * (double)target.GetDamageRate();
+            double num2 = ((double)(_diceFinalResultValue - _damageReductionByGuard + _statBonus.breakDmg) - (double)target.GetBreakDamageReduction(OriginalDice)) * (double)Mathf.Max((1.0f + (float)(_statBonus.breakRate + target.GetBreakDamageIncreaseRate()) / 100.0f), 0f) * (double)target.GetBreakDamageRate();
             if (target.emotionDetail.IsTakeDamageDouble())
                 num1 *= 2.0;
-            if (this.owner.emotionDetail.IsGiveDamageDouble())
+            if (owner.emotionDetail.IsGiveDamageDouble())
                 num1 *= 2.0;
-            AtkResist resistHp = target.GetResistHP(this.behaviourInCard.Detail);
-            AtkResist resistBp = target.GetResistBP(this.behaviourInCard.Detail);
+            AtkResist resistHp = target.GetResistHP(behaviourInCard.Detail);
+            AtkResist resistBp = target.GetResistBP(behaviourInCard.Detail);
             bool flag = false;
-            foreach (DiceCardAbilityBase ability in this.abilityList)
+            foreach (DiceCardAbilityBase ability in abilityList)
             {
                 if (ability.IsPercentDmg)
                 {
@@ -120,7 +120,7 @@ namespace EmotionalFix
             if (flag)
             {
                 int num3 = int.MaxValue;
-                foreach (DiceCardAbilityBase ability in this.abilityList)
+                foreach (DiceCardAbilityBase ability in abilityList)
                 {
                     int maximumPercentDmg = ability.GetMaximumPercentDmg();
                     if (maximumPercentDmg < num3)
@@ -136,8 +136,8 @@ namespace EmotionalFix
             else
                 dmg = (int)(num1 * (double)BookModel.GetResistRate(resistHp));
             breakdmg = (int)(num2 * (double)BookModel.GetResistRate(resistBp));
-            dmg = (int)target.ChangeDamage(this.owner, (double)dmg);
-            if (this.card != null && this.card.cardAbility != null && this.card.cardAbility.IsTrueDamage())
+            dmg = (int)target.ChangeDamage(owner, (double)dmg);
+            if (card != null && card.cardAbility != null && card.cardAbility.IsTrueDamage())
             {
                 dmg = _diceFinalResultValue;
                 breakdmg = _diceFinalResultValue;
@@ -146,12 +146,12 @@ namespace EmotionalFix
                 dmg = 0;
             if (breakdmg < 1)
                 breakdmg = 0;
-            if (this.card.card.GetSpec().Ranged == CardRange.Far && target.passiveDetail.IsImmuneByFarAtk())
+            if (card.card.GetSpec().Ranged == CardRange.Far && target.passiveDetail.IsImmuneByFarAtk())
             {
                 dmg = 0;
                 breakdmg = 0;
             }
-            if (this.abilityList.Exists((Predicate<DiceCardAbilityBase>)(x => x.Invalidity)))
+            if (abilityList.Exists((Predicate<DiceCardAbilityBase>)(x => x.Invalidity)))
             {
                 dmg = 0;
                 breakdmg = 0;
@@ -161,22 +161,22 @@ namespace EmotionalFix
                 dmg = 0;
                 breakdmg = 0;
             }
-            int damage = target.TakeDamage((int)dmg, attacker: this.owner);
-            this.owner.emotionDetail.CheckDmg(damage, target);
-            this.owner.passiveDetail.AfterGiveDamage(damage);
-            target.TakeBreakDamage((int)breakdmg, attacker: this.owner, atkResist: resistBp);
-            this.owner.battleCardResultLog.SetDamageGiven(damage);
-            this.owner.battleCardResultLog.SetBreakDmgGiven((int)breakdmg);
+            int damage = target.TakeDamage((int)dmg, attacker: owner);
+            owner.emotionDetail.CheckDmg(damage, target);
+            owner.passiveDetail.AfterGiveDamage(damage);
+            target.TakeBreakDamage((int)breakdmg, attacker: owner, atkResist: resistBp);
+            owner.battleCardResultLog.SetDamageGiven(damage);
+            owner.battleCardResultLog.SetBreakDmgGiven((int)breakdmg);
             target.battleCardResultLog.SetDeathState(target.IsDead());
-            this.owner.history.damageAtOneRoundByDice += damage;
+            owner.history.damageAtOneRoundByDice += damage;
             if (target.faction == Faction.Player)
             {
-                if (this.owner.UnitData.unitData.EnemyUnitId == 20003 || this.owner.UnitData.unitData.EnemyUnitId == 20002)
+                if (owner.UnitData.unitData.EnemyUnitId == 20003 || owner.UnitData.unitData.EnemyUnitId == 20002)
                     ++target.UnitData.historyInStage.damagedByIsadoraJulia;
                 if (target.Book.GetBookClassInfoId() == 200004)
                     ++target.UnitData.unitData.history.damagedFinnBook;
             }
-            this.RefreshStatBonus();
+            RefreshStatBonus();
         }
     }
 }

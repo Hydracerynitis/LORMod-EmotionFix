@@ -14,14 +14,14 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_WhiteNight_Guard());
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_WhiteNight_Guard());
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._effect)
+            if (_effect)
                 return;
-            this._effect = true;
+            _effect = true;
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/WhiteNight_Filter", false, 2f);
             SoundEffectPlayer.PlaySound("Creature/WhiteNight_Changing");
             SoundEffectPlayer.PlaySound("Creature/WhiteNight_Apostle_Whisper2");
@@ -29,11 +29,11 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_WhiteNight_Guard());
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_WhiteNight_Guard());
         }
         public void Destroy()
         {
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_WhiteNight_Guard));
+            BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_WhiteNight_Guard));
             if (Buff != null)
                 Buff.Destroy();
         }
@@ -61,7 +61,7 @@ namespace EmotionalFix
             }
             else
             {
-                foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
+                foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
                 {
                     int emotionLevel = battleUnitModel.emotionDetail.EmotionLevel;
                     for (int key = emotionLevel; key >= 0; --key)
@@ -90,9 +90,9 @@ namespace EmotionalFix
 
             public override bool IsTargetable(BattleUnitModel attacker)
             {
-                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(_owner.faction))
                 {
-                    if (alive != this._owner && alive.IsTargetable(attacker))
+                    if (alive != _owner && alive.IsTargetable(attacker))
                         return false;
                 }
                 return base.IsTargetable(attacker);

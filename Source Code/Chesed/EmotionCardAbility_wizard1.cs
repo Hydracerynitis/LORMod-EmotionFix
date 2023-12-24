@@ -16,14 +16,14 @@ namespace EmotionalFix
         private int _targetID = 1100015;
         public override void OnWaveStart()
         {
-            if(this._owner.faction==Faction.Player)
-                jade=this._owner.allyCardDetail.AddNewCardToDeck(this._targetID);
+            if(_owner.faction==Faction.Player)
+                jade=_owner.allyCardDetail.AddNewCardToDeck(_targetID);
         }
         public override void OnSelectEmotion()
         {
-            if(this._owner.faction==Faction.Player)
-                jade=this._owner.allyCardDetail.AddNewCard(this._targetID);
-            if (this._owner.faction == Faction.Enemy)
+            if(_owner.faction==Faction.Player)
+                jade=_owner.allyCardDetail.AddNewCard(_targetID);
+            if (_owner.faction == Faction.Enemy)
             {
                 round = 4;
                 Trigger = false;
@@ -32,15 +32,15 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStartOnce();
-            if (this._owner.faction != Faction.Enemy)
+            if (_owner.faction != Faction.Enemy)
                 return;
             if (round!=5)
                 round += 1;
             if (round == 5)
             {
-                if (this._owner.cardSlotDetail.PlayPoint >= 3)
+                if (_owner.cardSlotDetail.PlayPoint >= 3)
                 {
-                    this._owner.cardSlotDetail.SpendCost(3);
+                    _owner.cardSlotDetail.SpendCost(3);
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("7_C/FX_IllusionCard_7_C_Magic", 1f, _owner.view, _owner.view, 3f);
                     SoundEffectPlayer.PlaySound("Creature/Oz_Atk_Up");
                     Trigger = true;
@@ -49,7 +49,7 @@ namespace EmotionalFix
         }
         public override void OnStartBattle()
         {
-            if (!Trigger || this._owner.faction != Faction.Enemy)
+            if (!Trigger || _owner.faction != Faction.Enemy)
                 return;
             BattleUnitModel victim = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(Faction.Player));
             victim.cardSlotDetail.DestroyCard(2);
@@ -58,8 +58,8 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            if (this._owner.faction == Faction.Player)
-                this._owner.allyCardDetail.ExhaustACardAnywhere(jade);
+            if (_owner.faction == Faction.Player)
+                _owner.allyCardDetail.ExhaustACardAnywhere(jade);
         }
     }
 }

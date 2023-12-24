@@ -14,31 +14,31 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.bufListDetail.AddBuf(new SmallBird());
+                _owner.bufListDetail.AddBuf(new SmallBird());
                 GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
-                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+                if (!(gameObject != null))
                     return;
                 Creature_Final_Binah_ImageFilter component = gameObject?.GetComponent<Creature_Final_Binah_ImageFilter>();
-                if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+                if (component != null)
                     component.Init(2);
                 gameObject.AddComponent<AutoDestruct>().time = 10f;
             }
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Smallbird_Enemy());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Smallbird_Enemy());
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (this._owner.faction == Faction.Player)
-                this._owner.bufListDetail.AddBuf(new SmallBird());
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Smallbird_Enemy());
+            if (_owner.faction == Faction.Player)
+                _owner.bufListDetail.AddBuf(new SmallBird());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Smallbird_Enemy());
         }
         public override StatBonus GetStatBonus()
         {
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
                 return new StatBonus() { hpRate = -50 };
             return base.GetStatBonus();
         }
@@ -64,13 +64,13 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find(x => x is SmallBird);
+            BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find(x => x is SmallBird);
             if (Buff != null)
                 Buff.Destroy();
-            Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Smallbird_Enemy));
+            Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Smallbird_Enemy));
             if (Buff != null)
                 Buff.Destroy();
-            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(this._owner, this._owner.faction, this._owner.hp, this._owner.breakDetail.breakGauge);
+            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(_owner, _owner.faction, _owner.hp, _owner.breakDetail.breakGauge);
         }
         public class Smallbird_Enemy : BattleUnitBuf
         {
@@ -94,24 +94,24 @@ namespace EmotionalFix
                     {
                         BattleDiceCardModel battleDiceCardModel = RandomUtil.SelectOne<BattleDiceCardModel>(hand);
                         battleDiceCardModel.AddCost(1);
-                        this._cards.Add(battleDiceCardModel);
+                        _cards.Add(battleDiceCardModel);
                         hand.Remove(battleDiceCardModel);
                     }
                 }
             }
-            public override void OnRoundEnd() => this.ResetCardsCost();
+            public override void OnRoundEnd() => ResetCardsCost();
             public override void Destroy()
             {
                 base.Destroy();
-                this.ResetCardsCost();
+                ResetCardsCost();
             }
             private void ResetCardsCost()
             {
-                if (this._cards.Count <= 0)
+                if (_cards.Count <= 0)
                     return;
-                foreach (BattleDiceCardModel card in this._cards)
+                foreach (BattleDiceCardModel card in _cards)
                     card.AddCost(-1);
-                this._cards.Clear();
+                _cards.Clear();
             }
         }
     }

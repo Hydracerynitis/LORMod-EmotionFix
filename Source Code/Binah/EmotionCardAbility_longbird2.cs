@@ -42,21 +42,21 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
             {
                 base.OnUseCard(card);
-                this.triggered = false;
+                triggered = false;
             }
             public override void OnSuccessAttack(BattleDiceBehavior behavior)
             {
                 base.OnSuccessAttack(behavior);
                 BattleUnitModel target = behavior.card?.target;
-                if (target == null || this.triggered || this.stack <= 0)
+                if (target == null || triggered || stack <= 0)
                     return;
-                --this.stack;
-                this.triggered = true;
+                --stack;
+                triggered = true;
                 BattleUnitBuf buf = target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_LongBird_Emotion_Sin));
                 if (buf == null)
                 {
@@ -68,12 +68,12 @@ namespace EmotionalFix
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEndTheLast();
-                if (this.stack < 4)
+                if (stack < 4)
                     return;
-                this._owner.TakeDamage(Mathf.RoundToInt((float)this._owner.MaxHp * 0.1f), DamageType.Buf,this._owner);
-                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Judgement", 1f, this._owner.view, this._owner.view, 3f);
+                _owner.TakeDamage(Mathf.RoundToInt((float)_owner.MaxHp * 0.1f), DamageType.Buf,_owner);
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_Judgement", 1f, _owner.view, _owner.view, 3f);
                 SoundEffectPlayer.PlaySound("Creature/LongBird_Down");
-                this.Destroy();
+                Destroy();
             }
         }
     }

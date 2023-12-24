@@ -33,7 +33,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
     }

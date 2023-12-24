@@ -29,10 +29,10 @@ namespace EmotionalFix
         }
         public override bool BeforeTakeDamage(BattleUnitModel attacker, int dmg)
         {
-            if (this._owner.faction == Faction.Player && Prob)
+            if (_owner.faction == Faction.Player && Prob)
             {
-                this._owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
-                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
+                _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
+                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                 return true;
             }
             return base.BeforeTakeDamage(attacker, dmg);
@@ -61,13 +61,13 @@ namespace EmotionalFix
             switch (RandomUtil.SelectOne<BehaviourDetail>(Dmg))
             {
                 case BehaviourDetail.Slash:
-                    this._owner.bufListDetail.AddBuf(new SlashProt(this._emotionCard));
+                    _owner.bufListDetail.AddBuf(new SlashProt(_emotionCard));
                     break;
                 case BehaviourDetail.Hit:
-                    this._owner.bufListDetail.AddBuf(new HitProt(this._emotionCard));
+                    _owner.bufListDetail.AddBuf(new HitProt(_emotionCard));
                     break;
                 case BehaviourDetail.Penetrate:
-                    this._owner.bufListDetail.AddBuf(new PenetrateProt(this._emotionCard));
+                    _owner.bufListDetail.AddBuf(new PenetrateProt(_emotionCard));
                     break;
             }
             dict = new Dictionary<BehaviourDetail, int>() { { BehaviourDetail.Slash, 0 }, { BehaviourDetail.Hit, 0 }, { BehaviourDetail.Penetrate, 0 } };
@@ -88,9 +88,9 @@ namespace EmotionalFix
                 if (behavior.Detail == BehaviourDetail.Slash)
                 {
                     int reduce = EmotionCardAbility_bloodbath2.Reduce;
-                    this._owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
-                    this._owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
-                    this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
+                    _owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
+                    _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
+                    _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                     return reduce;
                 }
                 return base.GetDamageReduction(behavior);
@@ -98,7 +98,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
         public class HitProt : BattleUnitBuf
@@ -116,9 +116,9 @@ namespace EmotionalFix
                 if (behavior.Detail == BehaviourDetail.Hit)
                 {
                     int reduce = EmotionCardAbility_bloodbath2.Reduce;
-                    this._owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
-                    this._owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
-                    this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
+                    _owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
+                    _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
+                    _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                     return reduce;
                 }
                 return base.GetDamageReduction(behavior);
@@ -126,7 +126,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
         public class PenetrateProt : BattleUnitBuf
@@ -144,9 +144,9 @@ namespace EmotionalFix
                 if (behavior.Detail == BehaviourDetail.Penetrate)
                 {
                     int reduce = EmotionCardAbility_bloodbath2.Reduce;
-                    this._owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
-                    this._owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
-                    this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
+                    _owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
+                    _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
+                    _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
                     return reduce;
                 }
                 return base.GetDamageReduction(behavior);
@@ -154,7 +154,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
     }

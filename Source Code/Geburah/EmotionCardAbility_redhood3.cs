@@ -16,10 +16,10 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            Reduce = this._owner.MaxHp - (int)this._owner.hp;
+            Reduce = _owner.MaxHp - (int)_owner.hp;
             int reduce = Reduce;
-            int Threshold= (int)((double)this._owner.MaxHp * 0.15);
-            this._owner.bufListDetail.AddBuf(new Scar(Reduce));
+            int Threshold= (int)((double)_owner.MaxHp * 0.15);
+            _owner.bufListDetail.AddBuf(new Scar(Reduce));
             for (strcount=0 ; reduce > Threshold; reduce -= Threshold)
                 strcount += 1;
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedHood_Change");
@@ -27,38 +27,38 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._owner.bufListDetail.AddBuf(new Scar(Reduce));
+            _owner.bufListDetail.AddBuf(new Scar(Reduce));
         }
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            this.DestroyAura();
+            DestroyAura();
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, strcount, this._owner);
-            if (!((UnityEngine.Object)this.aura == (UnityEngine.Object)null))
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, strcount, _owner);
+            if (!(aura == null))
                 return;
-            this.aura = this.MakeEffect(this.path, target: this._owner, apply: false);
+            aura = MakeEffect(path, target: _owner, apply: false);
         }
         public override void OnDie(BattleUnitModel killer)
         {
             base.OnDie(killer);
-            this.DestroyAura();
+            DestroyAura();
         }
         public void Destroy()
         {
-            this.DestroyAura();
-            BattleUnitBuf buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Scar));
+            DestroyAura();
+            BattleUnitBuf buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Scar));
             if (buff != null)
                 buff.Destroy();
         }
         private void DestroyAura()
         {
-            if ((UnityEngine.Object)this.aura != (UnityEngine.Object)null && (UnityEngine.Object)this.aura.gameObject != (UnityEngine.Object)null)
-                UnityEngine.Object.Destroy((UnityEngine.Object)this.aura.gameObject);
-            this.aura = (Battle.CreatureEffect.CreatureEffect)null;
+            if (aura != null && aura.gameObject != null)
+                UnityEngine.Object.Destroy(aura.gameObject);
+            aura = (Battle.CreatureEffect.CreatureEffect)null;
         }
         public class Scar : BattleUnitBuf
         {

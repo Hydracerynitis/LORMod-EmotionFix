@@ -17,39 +17,39 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             round = 3;
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf());
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(round));
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf());
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(round));
 
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf)) == null)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf)) == null)
                 return;
             Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/9_H/FX_IllusionCard_9_H_Voice");
-            if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+            if (!(original != null))
                 return;
             Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-            if (!((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null))
+            if (!(creatureEffect?.gameObject.GetComponent<AutoDestruct>() == null))
                 return;
             AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
-            if (!((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null))
+            if (!(autoDestruct != null))
                 return;
             autoDestruct.time = 5f;
             autoDestruct.DestroyWhenDisable();
             SoundEffectPlayer.PlaySound("Creature/BlueStar_Atk");
             SingletonBehavior<BattleSoundManager>.Instance.EndBgm();
-            if (!((UnityEngine.Object)this._loop == (UnityEngine.Object)null))
+            if (!(_loop == null))
                 return;
-            this._loop = SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BlueStar_Bgm", true, parent: SingletonBehavior<BattleSceneRoot>.Instance.currentMapObject.transform);
+            _loop = SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BlueStar_Bgm", true, parent: SingletonBehavior<BattleSceneRoot>.Instance.currentMapObject.transform);
         }
 
         public override void OnWaveStart()
         {
             base.OnWaveStart();
             if(round==3)
-                this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf());
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(round));
+                _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf());
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(round));
         }
         public override void OnRoundEndTheLast()
         {
@@ -62,7 +62,7 @@ namespace EmotionalFix
         public override void OnEndBattlePhase()
         {
             base.OnEndBattlePhase();
-            this.Destroy();
+            Destroy();
         }
         public override void OnDie(BattleUnitModel killer)
         {
@@ -71,19 +71,19 @@ namespace EmotionalFix
         }
         private void DestroyLoopSound()
         {
-            if (!((UnityEngine.Object)this._loop != (UnityEngine.Object)null))
+            if (!(_loop != null))
                 return;
             SingletonBehavior<BattleSoundManager>.Instance.StartBgm();
-            this._loop.ManualDestroy();
-            this._loop = (SoundEffectPlayer)null;
+            _loop.ManualDestroy();
+            _loop = (SoundEffectPlayer)null;
         }
         public void Destroy()
         {
             DestroyLoopSound();
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf));
+            BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf));
             if (Buff != null)
                 Buff.Destroy();
-            Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool));
+            Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool));
             if (Buff != null)
                 Buff.Destroy();
         }
@@ -96,7 +96,7 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
@@ -105,13 +105,13 @@ namespace EmotionalFix
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    breakDmg = this.BDmg
+                    breakDmg = BDmg
                 });
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
         public class BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool : BattleUnitBuf
@@ -119,19 +119,19 @@ namespace EmotionalFix
             public override string keywordId => "Emotion_BlueStar_SoundBuf_Cool";
             public BattleUnitBuf_Emotion_BlueStar_SoundBuf_Cool(int cooldown)
             {
-                this.Init(this._owner);
-                this.stack = cooldown;
+                Init(_owner);
+                stack = cooldown;
                 if (stack >= 3)
                     stack = 3;
             }
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEndTheLast();
-                --this.stack;
-                if (this.stack > 0)
+                --stack;
+                if (stack > 0)
                     return;
-                this.stack = 3;
-                this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf());
+                stack = 3;
+                _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BlueStar_SoundBuf());
             }
         }
     }

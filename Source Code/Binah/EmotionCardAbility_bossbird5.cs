@@ -18,11 +18,11 @@ namespace EmotionalFix
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird1.Longbird_Enemy());
-            this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird2.Bigbird_Enemy());
-            this._owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird3.Smallbird_Enemy());
-            this._owner.allyCardDetail.AddCardToDeck(Ego);
-            this._owner.allyCardDetail.Shuffle();
+            _owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird1.Longbird_Enemy());
+            _owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird2.Bigbird_Enemy());
+            _owner.bufListDetail.AddBuf(new EmotionCardAbility_bossbird3.Smallbird_Enemy());
+            _owner.allyCardDetail.AddCardToDeck(Ego);
+            _owner.allyCardDetail.Shuffle();
         }
         public override void OnSelectEmotion()
         {

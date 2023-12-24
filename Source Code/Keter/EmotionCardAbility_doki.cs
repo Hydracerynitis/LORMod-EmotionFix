@@ -13,7 +13,7 @@ namespace EmotionalFix
         private int count;
         public override void OnSelectEmotion()
         {
-            SingletonBehavior<BattleCamManager>.Instance?.StartCoroutine(this.Pinpong(SingletonBehavior<BattleCamManager>.Instance?.AddCameraFilter<CameraFilterPack_Blur_Radial>()));
+            SingletonBehavior<BattleCamManager>.Instance?.StartCoroutine(Pinpong(SingletonBehavior<BattleCamManager>.Instance?.AddCameraFilter<CameraFilterPack_Blur_Radial>()));
             count = 0;
         }
         public override void OnWaveStart()
@@ -30,14 +30,14 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
+                _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
                 if(count>=2)
-                    this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
+                    _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
             }
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 2);
         }
         private IEnumerator Pinpong(CameraFilterPack_Blur_Radial r)
         {
@@ -57,11 +57,11 @@ namespace EmotionalFix
         }
         public override void OnRoundEnd()
         {
-            if(this._owner.faction==Faction.Player&& !this._owner.IsBreakLifeZero())
+            if(_owner.faction==Faction.Player&& !_owner.IsBreakLifeZero())
                 count++;
-            if (this._owner.history.damageAtOneRound > 0)
+            if (_owner.history.damageAtOneRound > 0)
                 return;
-            this._owner.breakDetail.TakeBreakDamage((int)((double)this._owner.breakDetail.GetDefaultBreakGauge() * 0.25));
+            _owner.breakDetail.TakeBreakDamage((int)((double)_owner.breakDetail.GetDefaultBreakGauge() * 0.25));
         }
     }
 }

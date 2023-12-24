@@ -12,7 +12,7 @@ namespace EmotionalFix
         public override void OnRoundEndTheLast()
         {
             base.OnRoundEndTheLast();
-            if (this._owner.history.takeDamageAtOneRound > 0)
+            if (_owner.history.takeDamageAtOneRound > 0)
                 return;
             GiveBuf();
         }
@@ -28,9 +28,9 @@ namespace EmotionalFix
         }
         private void GiveBuf()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_SmallBird_Buri) != null)
+            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_SmallBird_Buri) != null)
                 return;
-            this._owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SmallBird_Buri());
+            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SmallBird_Buri());
         }
 
         public class BattleUnitBuf_Emotion_SmallBird_Buri : BattleUnitBuf
@@ -41,7 +41,7 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void BeforeGiveDamage(BattleDiceBehavior behavior)
             {
@@ -58,7 +58,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
         }
     }

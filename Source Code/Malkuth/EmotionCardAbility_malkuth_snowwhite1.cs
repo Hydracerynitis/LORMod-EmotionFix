@@ -55,30 +55,30 @@ namespace EmotionalFix.Malkuth
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("1_M/FX_IllusionCard_1_M_Vine", 1f, owner.view, owner.view);
+                _aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("1_M/FX_IllusionCard_1_M_Vine", 1f, owner.view, owner.view);
                 SoundEffectPlayer.PlaySound("Creature/SnowWhite_StongAtk_Ready");
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
             public void DestroyAura()
             {
-                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                if (!(_aura != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
-                this._aura = (Battle.CreatureEffect.CreatureEffect)null;
+                UnityEngine.Object.Destroy(_aura.gameObject);
+                _aura = (Battle.CreatureEffect.CreatureEffect)null;
             }
         }
     }

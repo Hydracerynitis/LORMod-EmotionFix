@@ -15,42 +15,42 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this.count = 0;
-            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_FastBeat", 1f, this._owner.view, this._owner.view);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            count = 0;
+            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_FastBeat", 1f, _owner.view, _owner.view);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(_owner.view.WorldPosition);
         }
 
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_FastBeat", 1f, this._owner.view, this._owner.view);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("0_K/FX_IllusionCard_0_K_FastBeat", 1f, _owner.view, _owner.view);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Heart_Fast")?.SetGlobalPosition(_owner.view.WorldPosition);
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._owner.faction == Faction.Enemy && count > 0)
+            if (_owner.faction == Faction.Enemy && count > 0)
                 return;
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 4, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 4, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Quickness, 4, this._owner);
-            this._owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, 4, this._owner);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 4, _owner);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 4, _owner);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Quickness, 4, _owner);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Protection, 4, _owner);
         }
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                ++this.count;
-                if (this.count < 3)
+                ++count;
+                if (count < 3)
                     return;
-                this._owner.Die();
+                _owner.Die();
             }
-            if (this._owner.faction == Faction.Enemy)
+            if (_owner.faction == Faction.Enemy)
             {
-                if (this.count > 0)
+                if (count > 0)
                     return;
-                this._owner.bufListDetail.AddBuf(new Exhaust());
+                _owner.bufListDetail.AddBuf(new Exhaust());
                 count += 1;
             }
         }
@@ -62,7 +62,7 @@ namespace EmotionalFix
         }
         public override AtkResist GetResistBP(AtkResist origin, BehaviourDetail detail)
         {
-            if (this._owner.faction == Faction.Player && this.count < 3)
+            if (_owner.faction == Faction.Player && count < 3)
                 return AtkResist.Immune;
             return base.GetResistBP(origin, detail);
         }
@@ -86,7 +86,7 @@ namespace EmotionalFix
                 count++;
                 if (count < 2)
                     return;
-                this.Destroy();
+                Destroy();
             }
         }
     }

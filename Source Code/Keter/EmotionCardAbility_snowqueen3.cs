@@ -13,17 +13,17 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._effect)
+            if (_effect)
                 return;
-            this._effect = true;
+            _effect = true;
             Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/New_IllusionCardFX/0_K/FX_IllusionCard_0_K_Blizzard");
-            if (!((UnityEngine.Object)original != (UnityEngine.Object)null))
+            if (!(original != null))
                 return;
             Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-            if (!((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null))
+            if (!(creatureEffect?.gameObject.GetComponent<AutoDestruct>() == null))
                 return;
             AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
-            if (!((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null))
+            if (!(autoDestruct != null))
                 return;
             autoDestruct.time = 3f;
             autoDestruct.DestroyWhenDisable();
@@ -32,11 +32,11 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this._effect = false;
+            _effect = false;
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
             {
-                if (alive != this._owner)
-                    alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SnowQueen_Stun(this._owner));
+                if (alive != _owner)
+                    alive.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SnowQueen_Stun(_owner));
             }
         }
 
@@ -47,33 +47,33 @@ namespace EmotionalFix
             private static int Bind => RandomUtil.Range(6, 6);
             public override string keywordId => "SnowQueen_Emotion_Stun";
             public override string keywordIconId => "SnowQueen_Stun";
-            public BattleUnitBuf_Emotion_SnowQueen_Stun(BattleUnitModel attacker) => this._attacker = attacker;
+            public BattleUnitBuf_Emotion_SnowQueen_Stun(BattleUnitModel attacker) => _attacker = attacker;
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Stun, 1);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Stun, 1);
             }
             public override void OnRoundStart()
             {
                 base.OnRoundStart();
-                if (this._owner.bufListDetail.GetActivatedBuf(KeywordBuf.Stun) == null || this._owner.IsImmune(KeywordBuf.Stun) || this._owner.bufListDetail.IsImmune(BufPositiveType.Negative))
+                if (_owner.bufListDetail.GetActivatedBuf(KeywordBuf.Stun) == null || _owner.IsImmune(KeywordBuf.Stun) || _owner.bufListDetail.IsImmune(BufPositiveType.Negative))
                     return;
-                this._owner.view.charAppearance.ChangeMotion(ActionDetail.Damaged);
-                this._aura = SingletonBehavior<DiceEffectManager>.Instance.CreateCreatureEffect("0/SnowQueen_Emotion_Frozen", 1f, this._owner.view, this._owner.view);
+                _owner.view.charAppearance.ChangeMotion(ActionDetail.Damaged);
+                _aura = SingletonBehavior<DiceEffectManager>.Instance.CreateCreatureEffect("0/SnowQueen_Emotion_Frozen", 1f, _owner.view, _owner.view);
             }
 
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                if (this._owner.faction ==Faction.Enemy)
-                    this._owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, Bind, this._attacker);
-                if ((UnityEngine.Object)this._aura != (UnityEngine.Object)null)
+                if (_owner.faction ==Faction.Enemy)
+                    _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, Bind, _attacker);
+                if (_aura != null)
                 {
-                    UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
-                    this._aura = (Battle.CreatureEffect.CreatureEffect)null;
-                    this._owner.view.charAppearance.ChangeMotion(ActionDetail.Default);
+                    UnityEngine.Object.Destroy(_aura.gameObject);
+                    _aura = (Battle.CreatureEffect.CreatureEffect)null;
+                    _owner.view.charAppearance.ChangeMotion(ActionDetail.Default);
                 }
-                this.Destroy();
+                Destroy();
             }
         }
     }

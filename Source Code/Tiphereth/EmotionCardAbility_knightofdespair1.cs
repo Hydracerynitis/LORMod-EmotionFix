@@ -10,40 +10,40 @@ namespace EmotionalFix
     {
         public override void OnSelectEmotion()
         {
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
             BattleUnitBuf Gaho = new BattleUnitBuf_Gaho
             {
                 stack = 2
             };
-            Weakest(BattleObjectManager.instance.GetAliveList(this._owner.faction)).bufListDetail.AddBuf(Gaho);
-            if (!(this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear tear))
+            Weakest(BattleObjectManager.instance.GetAliveList(_owner.faction)).bufListDetail.AddBuf(Gaho);
+            if (!(_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear tear))
             {
                 EmotionCardAbility_knightofdespair3.Tear Tear = new EmotionCardAbility_knightofdespair3.Tear
                 {
                     stack=0,
                     reservePlus = 1
                 };
-                this._owner.bufListDetail.AddBuf(Tear);
+                _owner.bufListDetail.AddBuf(Tear);
             }
             else
             {
                 tear.reservePlus += 1;
             }
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KnightOfDespair_Gaho", false, 2f);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/KnightOfDespair_Gaho")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/KnightOfDespair_Gaho")?.SetGlobalPosition(_owner.view.WorldPosition);
         }
         public override void OnRoundStart()
         {
-            if (this._owner.faction != Faction.Enemy)
+            if (_owner.faction != Faction.Enemy)
                 return;
             BattleUnitBuf Gaho = new BattleUnitBuf_Gaho
             {
                 stack = 1
             };
-            Weakest(BattleObjectManager.instance.GetAliveList(this._owner.faction)).bufListDetail.AddBuf(Gaho);
+            Weakest(BattleObjectManager.instance.GetAliveList(_owner.faction)).bufListDetail.AddBuf(Gaho);
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/KnightOfDespair_Gaho", false, 2f);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/KnightOfDespair_Gaho")?.SetGlobalPosition(this._owner.view.WorldPosition);
+            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/KnightOfDespair_Gaho")?.SetGlobalPosition(_owner.view.WorldPosition);
         }
         private BattleUnitModel Weakest(List<BattleUnitModel> list)
         {
@@ -69,9 +69,9 @@ namespace EmotionalFix
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear Tear)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_knightofdespair3.Tear)) is EmotionCardAbility_knightofdespair3.Tear Tear)
                 Tear.Destroy();
-            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(_owner.faction))
             {
                 if (ally.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_Gaho)) is BattleUnitBuf_Gaho Gaho)
                     Gaho.Destroy();
@@ -85,9 +85,9 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.stack -= 1;
+                stack -= 1;
                 if(stack<=0)
-                    this.Destroy();
+                    Destroy();
             }
         }
     }

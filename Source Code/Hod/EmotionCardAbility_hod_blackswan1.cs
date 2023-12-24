@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Http.Headers;
 
 namespace EmotionalFix.Hod
 {
     public class EmotionCardAbility_hod_blackswan1 : EmotionCardAbilityBase
     {
         private GameObject aura;
-        private List<KeywordBuf> ActivatedBuf;
+        private List<KeywordBuf> ActivatedBuf=new List<KeywordBuf>();
         private KeywordBuf[] debuff => new KeywordBuf[]
         {
             KeywordBuf.Paralysis,

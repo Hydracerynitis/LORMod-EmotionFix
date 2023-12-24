@@ -13,43 +13,43 @@ namespace EmotionalFix
         {
             base.OnSelectEmotion();
             _effect = false;
-            if (this._owner.faction == Faction.Enemy)
+            if (_owner.faction == Faction.Enemy)
             {
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Player))
-                    alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, this._owner);
+                    alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, _owner);
             }
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
                 foreach(BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
                 {
                     if(alive.bufListDetail.GetActivatedBufList().Exists((Predicate<BattleUnitBuf>)(x => x is EmotionCardAbility_servantofwrath2.BattleUnitBuf_Emotion_Wrath_Friend)))
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, this._owner);
-                    alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, this._owner);
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, _owner);
+                    alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, _owner);
                 }
             }
         }
         public override void OnWaveStart()
         {
-            if (this._owner.faction != Faction.Enemy)
+            if (_owner.faction != Faction.Enemy)
                 return;
             _effect = false;
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Player))
-                alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, this._owner);
+                alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Decay, 3, _owner);
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (!this._effect)
+            if (!_effect)
             {
-                this._effect = true;
+                _effect = true;
                 Battle.CreatureEffect.CreatureEffect original = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/5/Servant_Emotion_Effect");
-                if ((UnityEngine.Object)original != (UnityEngine.Object)null)
+                if (original != null)
                 {
                     Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-                    if ((UnityEngine.Object)creatureEffect?.gameObject.GetComponent<AutoDestruct>() == (UnityEngine.Object)null)
+                    if (creatureEffect?.gameObject.GetComponent<AutoDestruct>() == null)
                     {
                         AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
-                        if ((UnityEngine.Object)autoDestruct != (UnityEngine.Object)null)
+                        if (autoDestruct != null)
                         {
                             autoDestruct.time = 3f;
                             autoDestruct.DestroyWhenDisable();

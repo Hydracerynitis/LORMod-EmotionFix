@@ -16,20 +16,20 @@ namespace EmotionalFix
         public override void OnRoundEndTheLast()
         {
             base.OnRoundEndTheLast();
-            this.triggered = false;
+            triggered = false;
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
             {
                 if (alive.IsBreakLifeZero() && !triggered)
                 {
-                    this.triggered = true;
-                    this._owner.TakeDamage(this.Dmg, DamageType.Emotion, this._owner);
+                    triggered = true;
+                    _owner.TakeDamage(Dmg, DamageType.Emotion, _owner);
                     SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("9_H/FX_IllusionCard_9_H_JudgementExplo", 1f, alive.view, alive.view, 2f);
                     SoundEffectPlayer.PlaySound("Creature/BlueStar_Suicide");
                     foreach (BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(Faction.Player))
-                        ally.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1, this._owner);
+                        ally.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1, _owner);
                 }
             }
-            if (!this.triggered)
+            if (!triggered)
                 return;
         }
     }

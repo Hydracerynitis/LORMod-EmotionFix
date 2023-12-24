@@ -12,18 +12,18 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this._owner.bufListDetail.AddBuf(new FearOfWater());
+            _owner.bufListDetail.AddBuf(new FearOfWater());
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._owner.bufListDetail.AddBuf(new FearOfWater());
+            _owner.bufListDetail.AddBuf(new FearOfWater());
         }
         private int AddDmg => RandomUtil.Range(3, 7);
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);
-            if (!this.IsAttackDice(behavior.Detail))
+            if (!IsAttackDice(behavior.Detail))
                 return;
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
@@ -33,13 +33,13 @@ namespace EmotionalFix
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             base.OnSucceedAttack(behavior);
-            behavior?.card?.target?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2, this._owner);
+            behavior?.card?.target?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2, _owner);
             behavior?.card?.target?.battleCardResultLog?.SetCreatureAbilityEffect("6/Nosferatu_Emotion_BloodDrain");
             behavior?.card?.target?.battleCardResultLog?.SetCreatureEffectSound("Nosferatu_Changed_BloodEat");
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is FearOfWater)) is FearOfWater fear)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is FearOfWater)) is FearOfWater fear)
                 fear.Destroy();
         }
         public class FearOfWater : BattleUnitBuf
@@ -52,9 +52,9 @@ namespace EmotionalFix
             {
                 int num = 0;
                 List<BattleUnitModel> battleUnitModelList = new List<BattleUnitModel>();
-                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
+                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
                 {
-                    if (alive.speedDiceResult.Count > 0 && alive.IsTargetable(this._owner))
+                    if (alive.speedDiceResult.Count > 0 && alive.IsTargetable(_owner))
                     {
                         int hp = (int)alive.hp;
                         if (hp > num)

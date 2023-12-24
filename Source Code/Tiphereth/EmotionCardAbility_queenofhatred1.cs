@@ -16,14 +16,14 @@ namespace EmotionalFix
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            if (this._owner.faction != Faction.Player || count == 0)
+            if (_owner.faction != Faction.Player || count == 0)
                 return;
             count -= 1;
         }
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
             count = 1;
             foreach(BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
@@ -38,38 +38,38 @@ namespace EmotionalFix
         public override void OnWinParrying(BattleDiceBehavior behavior)
         {
             base.OnWinParrying(behavior);
-            if(this._owner.faction == Faction.Player && count == 0)
+            if(_owner.faction == Faction.Player && count == 0)
                 return;
-            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/MagicalGirl_kiss");
-            this._owner.battleCardResultLog?.SetEmotionAbilityEffect("5/MagicalGirl_Heart");
-            if (this.IsAttackDice(behavior.Detail))
+            _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/MagicalGirl_kiss");
+            _owner.battleCardResultLog?.SetEmotionAbilityEffect("5/MagicalGirl_Heart");
+            if (IsAttackDice(behavior.Detail))
             {
-                if (this._owner.faction == Faction.Enemy)
+                if (_owner.faction == Faction.Enemy)
                 {
-                    foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_random(this._owner.faction, 1))
+                    foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_random(_owner.faction, 1))
                         battleUnitModel.RecoverHP(RecoverHP);
                 }
-                if (this._owner.faction == Faction.Player && count!=0)
+                if (_owner.faction == Faction.Player && count!=0)
                 {
-                    foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+                    foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(_owner.faction))
                         battleUnitModel.RecoverHP(RecoverHP);
                 }
             }
             else
             {
-                if (!this.IsDefenseDice(behavior.Detail))
+                if (!IsDefenseDice(behavior.Detail))
                     return;
                 List<BattleUnitModel> list = new List<BattleUnitModel>();
-                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(_owner.faction))
                 {
                     if (!alive.IsBreakLifeZero())
                         list.Add(alive);
                 }
-                if (this._owner.faction == Faction.Enemy)
+                if (_owner.faction == Faction.Enemy)
                 {
                     RandomUtil.SelectOne<BattleUnitModel>(list).breakDetail.RecoverBreak(RecoverBreak);
                 }
-                if(this._owner.faction==Faction.Player && count != 0)
+                if(_owner.faction==Faction.Player && count != 0)
                 {
                     foreach (BattleUnitModel battleUnitModel in list)
                         battleUnitModel.breakDetail.RecoverBreak(RecoverBreak);

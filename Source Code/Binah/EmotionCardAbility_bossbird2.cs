@@ -14,56 +14,56 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
             {
-                this._owner.bufListDetail.AddBuf(new BigBird());
+                _owner.bufListDetail.AddBuf(new BigBird());
                 GameObject gameObject = Util.LoadPrefab("Battle/CreatureEffect/FinalBattle/BinahFinalBattle_ImageFilter");
-                if (!((UnityEngine.Object)gameObject != (UnityEngine.Object)null))
+                if (!(gameObject != null))
                     return;
                 Creature_Final_Binah_ImageFilter component = gameObject.GetComponent<Creature_Final_Binah_ImageFilter>();
-                if ((UnityEngine.Object)component != (UnityEngine.Object)null)
+                if (component != null)
                     component.Init(1);
                 gameObject.AddComponent<AutoDestruct>().time = 10f;
             }
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Bigbird_Enemy());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Bigbird_Enemy());
         }
         public void Effect()
         {
             if (Singleton<StageController>.Instance.IsLogState())
-                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_See", 2f);
+                _owner.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_See", 2f);
             else
-                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_See", 1f, this._owner.view, this._owner.view, 2f);
+                SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("8_B/FX_IllusionCard_8_B_See", 1f, _owner.view, _owner.view, 2f);
         }
 
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            if (this._owner.faction == Faction.Player)
-                this._owner.bufListDetail.AddBuf(new BigBird());
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Bigbird_Enemy());
+            if (_owner.faction == Faction.Player)
+                _owner.bufListDetail.AddBuf(new BigBird());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Bigbird_Enemy());
         }
         public override StatBonus GetStatBonus()
         {
-            if (this._owner.faction == Faction.Player)
+            if (_owner.faction == Faction.Player)
                 return new StatBonus() { breakRate = -50 };
             return base.GetStatBonus();
         }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            this.Effect();
+            Effect();
         }
         public override void OnStartTargetedOneSide(BattlePlayingCardDataInUnitModel curCard)
         {
             base.OnStartTargetedOneSide(curCard);
-            this.Effect();
+            Effect();
         }
         public override void OnStartBattle()
         {
             base.OnStartBattle();
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
             DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(1107401);
             List<BattleDiceBehavior> behaviourList = new List<BattleDiceBehavior>();
@@ -77,14 +77,14 @@ namespace EmotionalFix
                 battleDiceBehavior.SetIndex(num++);
                 behaviourList.Add(battleDiceBehavior);
             }
-            this._owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(cardItem), behaviourList);
+            _owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(cardItem), behaviourList);
         }
         public override void OnEndParrying(BattlePlayingCardDataInUnitModel curCard)
         {
             base.OnEndParrying(curCard);
-            if (this._owner.faction != Faction.Player)
+            if (_owner.faction != Faction.Player)
                 return;
-            if (this._owner.cardSlotDetail.keepCard.cardBehaviorQueue.Count <= 0)
+            if (_owner.cardSlotDetail.keepCard.cardBehaviorQueue.Count <= 0)
             {
                 DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(1107401);
                 List<BattleDiceBehavior> behaviourList = new List<BattleDiceBehavior>();
@@ -98,18 +98,18 @@ namespace EmotionalFix
                     battleDiceBehavior.SetIndex(num++);
                     behaviourList.Add(battleDiceBehavior);
                 }
-                this._owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(cardItem), behaviourList);
+                _owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(cardItem), behaviourList);
             }
         }
         public void Destroy()
         {
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BigBird));
+            BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BigBird));
             if (Buff != null)
                 Buff.Destroy();
-            Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Bigbird_Enemy));
+            Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Bigbird_Enemy));
             if (Buff != null)
                 Buff.Destroy();
-            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(this._owner, this._owner.faction, this._owner.hp, this._owner.breakDetail.breakGauge);
+            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(_owner, _owner.faction, _owner.hp, _owner.breakDetail.breakGauge);
         }
         public class BigBird : BattleUnitBuf
         {

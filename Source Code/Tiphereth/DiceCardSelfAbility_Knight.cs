@@ -31,8 +31,8 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                light = this._owner.cardSlotDetail.PlayPoint;
-                this._owner.ChangeTemporaryDeck(new List<LorId>()
+                light = _owner.cardSlotDetail.PlayPoint;
+                _owner.ChangeTemporaryDeck(new List<LorId>()
                 {
                     new LorId(9905621),
                     new LorId(9905621),
@@ -44,20 +44,20 @@ namespace EmotionalFix
                     new LorId(9905623),
                     new LorId(9905623)
                 }, 8);
-                this._owner.view.ChangeCreatureSkin("Nihil_DespairLibrarian");
-                this._owner.view.StartEgoSkinChangeEffect("Character");
-                this._owner.cardSlotDetail.RecoverPlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
-                this._owner.OnRoundStartOnlyUI();
-                this._owner.RollSpeedDice();
+                _owner.view.ChangeCreatureSkin("Nihil_DespairLibrarian");
+                _owner.view.StartEgoSkinChangeEffect("Character");
+                _owner.cardSlotDetail.RecoverPlayPoint(_owner.cardSlotDetail.GetMaxPlayPoint());
+                _owner.OnRoundStartOnlyUI();
+                _owner.RollSpeedDice();
             }
             public override void OnRoundEnd()
             {
-                this._owner.view.ResetSkin();
-                this._owner.ReturnToOriginalDeck();
-                this._owner.view.StartEgoSkinChangeEffect("Character");
-                this._owner.cardSlotDetail.LosePlayPoint(this._owner.cardSlotDetail.GetMaxPlayPoint());
-                this._owner.cardSlotDetail.RecoverPlayPoint(light);
-                this.Destroy();
+                _owner.view.ResetSkin();
+                _owner.ReturnToOriginalDeck();
+                _owner.view.StartEgoSkinChangeEffect("Character");
+                _owner.cardSlotDetail.LosePlayPoint(_owner.cardSlotDetail.GetMaxPlayPoint());
+                _owner.cardSlotDetail.RecoverPlayPoint(light);
+                Destroy();
             }
         }
         public class Cooldown_Knight : BattleUnitBuf
@@ -68,9 +68,9 @@ namespace EmotionalFix
             }
             public override void OnRoundEnd()
             {
-                this.stack-=1;
+                stack-=1;
                 if (stack <= 0)
-                    this.Destroy();
+                    Destroy();
             }
         }
     }

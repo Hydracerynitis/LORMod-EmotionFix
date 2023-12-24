@@ -17,50 +17,50 @@ namespace EmotionalFix
         {
             base.OnRoundEnd();
             BattleUnitModel battleUnitModel = (BattleUnitModel)null;
-            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(this._owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
             {
                 int damageToEnemyAtRound = alive.history.damageToEnemyAtRound;
-                if (damageToEnemyAtRound > this.max)
+                if (damageToEnemyAtRound > max)
                 {
                     battleUnitModel = alive;
-                    this.max = damageToEnemyAtRound;
+                    max = damageToEnemyAtRound;
                 }
             }
-            this.target = battleUnitModel;
-            this.max = 0;
-            if (!((UnityEngine.Object)this.effect != (UnityEngine.Object)null))
+            target = battleUnitModel;
+            max = 0;
+            if (!(effect != null))
                 return;
-            UnityEngine.Object.Destroy((UnityEngine.Object)this.effect.gameObject);
-            this.effect = (Battle.CreatureEffect.CreatureEffect)null;
+            UnityEngine.Object.Destroy(effect.gameObject);
+            effect = (Battle.CreatureEffect.CreatureEffect)null;
         }
 
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this.target == null || this.target.IsDead() || this.effect!=null)
+            if (target == null || target.IsDead() || effect!=null)
                 return;
-            this.effect=this.MakeEffect("5/MagicalGirl_Villain", target: this.target);
+            effect=MakeEffect("5/MagicalGirl_Villain", target: target);
             target.bufListDetail.AddBuf(new Villain());
         }
         public override void BeforeGiveDamage(BattleDiceBehavior behavior)
         {
             base.BeforeGiveDamage(behavior);
-            if (this.target != behavior.card?.target)
+            if (target != behavior.card?.target)
                 return;
             int num = RandomUtil.Range(3, 5);
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
                 dmg = num
             });
-            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/MagicalGirl_Gun");
-            this._owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Pink));
+            _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/MagicalGirl_Gun");
+            _owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Pink));
         }
         public void Destroy()
         {
-            if (!((UnityEngine.Object)this.effect != (UnityEngine.Object)null))
+            if (!(effect != null))
                 return;
-            UnityEngine.Object.Destroy((UnityEngine.Object)this.effect.gameObject);
-            this.effect = (Battle.CreatureEffect.CreatureEffect)null;
+            UnityEngine.Object.Destroy(effect.gameObject);
+            effect = (Battle.CreatureEffect.CreatureEffect)null;
         }
         public class Villain: BattleUnitBuf
         {
@@ -68,12 +68,12 @@ namespace EmotionalFix
             public override void OnRoundEndTheLast()
             {
                 base.OnRoundEndTheLast();
-                this.Destroy();
+                Destroy();
             }
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
         }
     }

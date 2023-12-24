@@ -17,7 +17,7 @@ namespace EmotionalFix
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            if (this._owner.faction != Faction.Enemy || behavior.card.target==null || Trigger)
+            if (_owner.faction != Faction.Enemy || behavior.card.target==null || Trigger)
                 return;
             Trigger = true;
             List<BattleDiceBehavior> diceinhand = new List<BattleDiceBehavior>();
@@ -28,16 +28,16 @@ namespace EmotionalFix
             if (diceinhand.Count == 0)
                 return;
             behavior.card.AddDice(RandomUtil.SelectOne<BattleDiceBehavior>(diceinhand));
-            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Scarecrow_Dead");
+            _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Scarecrow_Dead");
         }
         public override void OnMakeBreakState(BattleUnitModel target)
         {
             base.OnMakeBreakState(target);
-            if (target == null || target == this._owner || this._owner.faction!=Faction.Player)
+            if (target == null || target == _owner || _owner.faction!=Faction.Player)
                 return;
-            this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Scarecrow_Dead");
+            _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Scarecrow_Dead");
             List<BattleDiceCardModel> battleDiceCardModelList = new List<BattleDiceCardModel>();
-            switch (this._owner.Book.ClassInfo.RangeType)
+            switch (_owner.Book.ClassInfo.RangeType)
             {
                 case EquipRangeType.Melee:
                     battleDiceCardModelList = target.allyCardDetail.GetAllDeck().FindAll((Predicate<BattleDiceCardModel>)(x => x.GetSpec().Ranged == CardRange.Near));
@@ -51,7 +51,7 @@ namespace EmotionalFix
             }
             foreach (int index in MathUtil.Combination(2, battleDiceCardModelList.Count))
             {
-                BattleDiceCardModel battleDiceCardModel = this._owner.allyCardDetail.AddNewCard(battleDiceCardModelList[index].GetID());
+                BattleDiceCardModel battleDiceCardModel = _owner.allyCardDetail.AddNewCard(battleDiceCardModelList[index].GetID());
                 battleDiceCardModel.XmlData.optionList.Add(CardOption.ExhaustOnUse);
                 battleDiceCardModel.SetCurrentCost(battleDiceCardModel.GetOriginCost() - 2);
                 battleDiceCardModel.AddBuf(new BattleDiceCardBuf_scarecrowCreated());

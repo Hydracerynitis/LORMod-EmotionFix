@@ -19,7 +19,7 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(this._owner.faction))
+            foreach(BattleUnitModel ally in BattleObjectManager.instance.GetAliveList(_owner.faction))
             {
                 foreach (BattleEmotionCardModel emotion in ally.emotionDetail.PassiveList)
                 {
@@ -38,15 +38,15 @@ namespace EmotionalFix
                 }
                 ally.emotionDetail.PassiveList.Clear();
             }
-            this._owner.emotionDetail.PassiveList.Add(this._emotionCard);
+            _owner.emotionDetail.PassiveList.Add(_emotionCard);
             SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BossBird_Birth", false, 4f);
-            this._owner.bufListDetail.AddBuf(new Apocalypse(this));
+            _owner.bufListDetail.AddBuf(new Apocalypse(this));
             Activate();
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this._owner.bufListDetail.AddBuf(new Apocalypse(this));
+            _owner.bufListDetail.AddBuf(new Apocalypse(this));
             Activate();
         }
         public override void OnFixedUpdateInWaitPhase(float delta)
@@ -58,21 +58,21 @@ namespace EmotionalFix
         {
             base.OnEndBattlePhase();
             Destroy();
-            //this._owner.view.ChangeSkinBySkinInfo(OriginalSkin);
+            //_owner.view.ChangeSkinBySkinInfo(OriginalSkin);
         }
         public void Activate()
         {
-            if (this._owner.view.GetCurrentSkinInfo().skinName != "EGO_ApocalypseBird")
+            if (_owner.view.GetCurrentSkinInfo().skinName != "EGO_ApocalypseBird")
             {
-                OriginalSkin = this._owner.view.GetCurrentSkinInfo();
-                this._owner.view.ChangeEgoSkin("EGO_ApocalypseBird");
-                this._owner.view.ChangeHeight(500);
+                OriginalSkin = _owner.view.GetCurrentSkinInfo();
+                _owner.view.ChangeEgoSkin("EGO_ApocalypseBird");
+                _owner.view.ChangeHeight(500);
             }
         }
         public void Destroy()
         {
-            this._owner.view.ResetSkin();
-            BattleUnitBuf Buff = this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Apocalypse));
+            _owner.view.ResetSkin();
+            BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Apocalypse));
             if (Buff != null)
                 Buff.Destroy();
         }
@@ -87,15 +87,15 @@ namespace EmotionalFix
             switch (round)
             {
                 case 0:
-                    this.phase = ApocalypsePhase.Big;
+                    phase = ApocalypsePhase.Big;
                     round += 1;
                     break;
                 case 1:
-                    this.phase = ApocalypsePhase.Small;
+                    phase = ApocalypsePhase.Small;
                     round += 1;
                     break;
                 case 2:
-                    this.phase = ApocalypsePhase.Long;
+                    phase = ApocalypsePhase.Long;
                     round = 0;
                     break;
             }
@@ -103,9 +103,9 @@ namespace EmotionalFix
         public override void OnStartBattle()
         {
             base.OnStartBattle();
-            if (phase != ApocalypsePhase.Big || this._owner.allyCardDetail.GetAllDeck().Count <= 0)
+            if (phase != ApocalypsePhase.Big || _owner.allyCardDetail.GetAllDeck().Count <= 0)
                 return;
-            DiceCardXmlInfo xmldata = RandomUtil.SelectOne<BattleDiceCardModel>(this._owner.allyCardDetail.GetAllDeck()).XmlData.Copy(true);
+            DiceCardXmlInfo xmldata = RandomUtil.SelectOne<BattleDiceCardModel>(_owner.allyCardDetail.GetAllDeck()).XmlData.Copy(true);
             foreach (DiceBehaviour dice in xmldata.DiceBehaviourList)
             {
                 dice.ActionScript = "Final_ApcBird_LaserArea";
@@ -121,19 +121,19 @@ namespace EmotionalFix
             BattleUnitModel target = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(Faction.Enemy));
             BattlePlayingCardDataInUnitModel EyeAoe = new BattlePlayingCardDataInUnitModel()
             {
-                owner = this._owner,
+                owner = _owner,
                 card = EyeAtk,
                 cardAbility = EyeAtk.CreateDiceCardSelfAbilityScript(),
                 target=target,
                 targetSlotOrder= RandomUtil.Range(0, target.cardSlotDetail.cardAry.Count - 1),
-                slotOrder= RandomUtil.Range(0, this._owner.cardSlotDetail.cardAry.Count - 1)
+                slotOrder= RandomUtil.Range(0, _owner.cardSlotDetail.cardAry.Count - 1)
             };
             List<BattleUnitModel> battleUnitModelList = BattleObjectManager.instance.GetAliveList(Faction.Enemy);
             battleUnitModelList.Remove(target);
             EyeAoe.subTargets = new List<BattlePlayingCardDataInUnitModel.SubTarget>();
             foreach (BattleUnitModel battleUnitModel in battleUnitModelList)
             {
-                if (battleUnitModel != target && battleUnitModel.IsTargetable(this._owner))
+                if (battleUnitModel != target && battleUnitModel.IsTargetable(_owner))
                 {
                     BattlePlayingCardSlotDetail cardSlotDetail = battleUnitModel.cardSlotDetail;
                     int num1;
@@ -162,9 +162,9 @@ namespace EmotionalFix
         }
         public override void OnRoundStart()
         {
-            if (this.phase != ApocalypsePhase.Small || this._owner.allyCardDetail.GetAllDeck().Count <= 0)
+            if (phase != ApocalypsePhase.Small || _owner.allyCardDetail.GetAllDeck().Count <= 0)
                 return;
-            foreach(BattleDiceCardModel card in this._owner.allyCardDetail.GetAllDeck())
+            foreach(BattleDiceCardModel card in _owner.allyCardDetail.GetAllDeck())
             {
                 card.CopySelf();
                 DiceCardXmlInfo xmlInfo = card.XmlData.Copy(true);

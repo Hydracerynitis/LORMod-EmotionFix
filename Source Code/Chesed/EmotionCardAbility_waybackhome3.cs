@@ -13,26 +13,26 @@ namespace EmotionalFix
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            this.GiveBuf();
+            GiveBuf();
         }
 
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            this.GiveBuf();
+            GiveBuf();
         }
         public void GiveBuf()
         {
-            if (this._owner.faction == Faction.Player)
-                this._owner.bufListDetail.AddBuf(new Lion());
-            if (this._owner.faction == Faction.Enemy)
-                this._owner.bufListDetail.AddBuf(new Lion_Enemy());
+            if (_owner.faction == Faction.Player)
+                _owner.bufListDetail.AddBuf(new Lion());
+            if (_owner.faction == Faction.Enemy)
+                _owner.bufListDetail.AddBuf(new Lion_Enemy());
         }
         public void Destroy()
         {
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Lion)) is Lion lion)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Lion)) is Lion lion)
                 lion.Destroy();
-            if (this._owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Lion_Enemy)) is Lion_Enemy lionenemy)
+            if (_owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Lion_Enemy)) is Lion_Enemy lionenemy)
                 lionenemy.Destroy();
         }
         public class Lion : BattleUnitBuf
@@ -43,13 +43,13 @@ namespace EmotionalFix
             public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
             {
                 base.OnStartParrying(card);
-                if(card.target.currentDiceAction.earlyTarget!=this._owner)
+                if(card.target.currentDiceAction.earlyTarget!=_owner)
                     card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
                     {
-                         power = this.Pow
+                         power = Pow
                     });
-                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Together", 2f);
-                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_MakeRoad");
+                _owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Together", 2f);
+                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_MakeRoad");
             }
         }
         public class Lion_Enemy : BattleUnitBuf
@@ -63,10 +63,10 @@ namespace EmotionalFix
                 if (card.earlyTarget==card.target)
                     card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
                     {
-                        power = this.Pow
+                        power = Pow
                     });
-                this._owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Together", 2f);
-                this._owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_MakeRoad");
+                _owner.battleCardResultLog?.SetNewCreatureAbilityEffect("7_C/FX_IllusionCard_7_C_Together", 2f);
+                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/House_MakeRoad");
             }
         }
     }

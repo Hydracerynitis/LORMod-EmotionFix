@@ -22,9 +22,9 @@ namespace EmotionalFix
         {
             base.OnSucceedAttack(behavior);
             BattleUnitModel target = behavior?.card?.target;
-            if (target == null || this.GetAliveCreature() != null)
+            if (target == null || GetAliveCreature() != null)
                 return;
-            this._target = target;
+            _target = target;
             target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BossBird_Creature());
             target.battleCardResultLog?.SetNewCreatureAbilityEffect("8_B/FX_IllusionCard_8_B_Terrable_Start", 2f);
             target.battleCardResultLog?.SetCreatureEffectSound("Creature/Bossbird_Bossbird_Stab");
@@ -33,14 +33,14 @@ namespace EmotionalFix
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (this._target != null && !this._target.IsDead())
+            if (_target != null && !_target.IsDead())
             {
-                this._target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BossBird_Creature());
+                _target.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_BossBird_Creature());
                 return;
             }
-            this._target =null;
+            _target =null;
         }
-        private BattleUnitModel GetAliveCreature() => BattleObjectManager.instance.GetAliveList(Faction.Player).Find((Predicate<BattleUnitModel>)(x => x.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(y => y is BattleUnitBuf_Emotion_BossBird_Creature)) != null)) ?? this._target;
+        private BattleUnitModel GetAliveCreature() => BattleObjectManager.instance.GetAliveList(Faction.Player).Find((Predicate<BattleUnitModel>)(x => x.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(y => y is BattleUnitBuf_Emotion_BossBird_Creature)) != null)) ?? _target;
         public class BattleUnitBuf_Emotion_BossBird_Creature : BattleUnitBuf
         {
             private Battle.CreatureEffect.CreatureEffect _aura;
@@ -52,15 +52,15 @@ namespace EmotionalFix
             public override void Init(BattleUnitModel owner)
             {
                 base.Init(owner);
-                this.stack = 0;
+                stack = 0;
             }
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
                 base.BeforeRollDice(behavior);
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    dmg = -this.ReduceDmg,
-                    breakDmg = -this.ReduceBreakDmg
+                    dmg = -ReduceDmg,
+                    breakDmg = -ReduceBreakDmg
                 });
             }
             public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
@@ -70,7 +70,7 @@ namespace EmotionalFix
             public override void OnRoundEnd()
             {
                 base.OnRoundEnd();
-                this.Destroy();
+                Destroy();
             }
             public override int GetDamageReduction(BattleDiceBehavior behavior)
             {
@@ -79,19 +79,19 @@ namespace EmotionalFix
             public override void OnDie()
             {
                 base.OnDie();
-                this.Destroy();
+                Destroy();
             }
             public override void Destroy()
             {
                 base.Destroy();
-                this.DestroyAura();
+                DestroyAura();
             }
             public void DestroyAura()
             {
-                if (!((UnityEngine.Object)this._aura != (UnityEngine.Object)null))
+                if (!(_aura != null))
                     return;
-                UnityEngine.Object.Destroy((UnityEngine.Object)this._aura.gameObject);
-                this._aura = (Battle.CreatureEffect.CreatureEffect)null;
+                UnityEngine.Object.Destroy(_aura.gameObject);
+                _aura = (Battle.CreatureEffect.CreatureEffect)null;
             }
         }
     }

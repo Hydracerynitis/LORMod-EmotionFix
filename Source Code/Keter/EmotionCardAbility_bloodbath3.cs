@@ -15,72 +15,72 @@ namespace EmotionalFix
     {
         private BattleUnitModel _target;
         private int _stack;
-        public override int GetCounter() => this._stack;
+        public override int GetCounter() => _stack;
         public override void OnRollDice(BattleDiceBehavior behavior)
         {
             base.OnRollDice(behavior);
-            if (!this.IsAttackDice(behavior.Detail) || this._target == null || this._target == behavior.card.target)
+            if (!IsAttackDice(behavior.Detail) || _target == null || _target == behavior.card.target)
                 return;
-            if (this._target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
-                this._target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
-            this._target = null;
+            if (_target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+                _target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
+            _target = null;
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             base.OnSucceedAttack(behavior);
-            if (this._target != behavior.card.target)
+            if (_target != behavior.card.target)
             {
-                this._target = behavior.card.target;
-                this._stack = 1;
+                _target = behavior.card.target;
+                _stack = 1;
                 if(_owner.faction==Faction.Player)
-                    this._target.bufListDetail.AddBuf(new BloodBath_HandDebuf());
+                    _target.bufListDetail.AddBuf(new BloodBath_HandDebuf());
                 else
-                    this._target.bufListDetail.AddBuf(new BloodBath_HandDebuf_Enemy());
-                if (!(this._target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf))
+                    _target.bufListDetail.AddBuf(new BloodBath_HandDebuf_Enemy());
+                if (!(_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf))
                     return;
                 bloodBathHandDebuf.OnHit();
             }
             else
             {
-                ++this._stack;
-                if (this._target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+                ++_stack;
+                if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
                     bloodBathHandDebuf.OnHit();
-                if (this._stack < 3)
+                if (_stack < 3)
                     return;
-                this.Ability();
+                Ability();
             }
         }
 
         private void Ability()
         {
-            if (this._target == null)
+            if (_target == null)
                 return;
-            if(this._owner.faction==Faction.Player)
-                this._target.TakeBreakDamage(RandomUtil.Range(3, 10), DamageType.Emotion,this._owner);
-            if(this._owner.faction==Faction.Enemy)
-                this._target.TakeBreakDamage(RandomUtil.Range(3, 12), DamageType.Emotion,this._owner);
-            if (this._target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
-                this._target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
-            this._target.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_PaleHand_Hit", 3f);
-            this._target = null;
-            this._stack = 0;
+            if(_owner.faction==Faction.Player)
+                _target.TakeBreakDamage(RandomUtil.Range(3, 10), DamageType.Emotion,_owner);
+            if(_owner.faction==Faction.Enemy)
+                _target.TakeBreakDamage(RandomUtil.Range(3, 12), DamageType.Emotion,_owner);
+            if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+                _target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
+            _target.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_PaleHand_Hit", 3f);
+            _target = null;
+            _stack = 0;
         }
         public void Destroy()
         {
             if (_target == null)
                 return;
-            if (this._target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
-                this._target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
-            this._target = null;
-            this._stack = 0;
+            if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+                _target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
+            _target = null;
+            _stack = 0;
         }
 
         public class BloodBath_HandDebuf : BattleUnitBuf
         {
             public override string keywordIconId => "BloodBath_Hand";
             public override string keywordId => "Bloodbath_Hands";
-            public BloodBath_HandDebuf() => this.stack = 0;
-            public void OnHit() => ++this.stack;
+            public BloodBath_HandDebuf() => stack = 0;
+            public void OnHit() => ++stack;
         }
         public class BloodBath_HandDebuf_Enemy : BloodBath_HandDebuf
         {

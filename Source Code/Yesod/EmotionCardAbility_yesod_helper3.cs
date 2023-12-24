@@ -14,7 +14,7 @@ namespace EmotionalFix.Yesod
             if (behavior?.card?.target == null)
                 return;
             int a = behavior.card.speedDiceResultValue - behavior.card.target.speedDiceResult[behavior.card.targetSlotOrder].value;
-            if (a <= 0 || !this.IsAttackDice(behavior.Detail))
+            if (a <= 0 || !IsAttackDice(behavior.Detail))
                 return;
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
