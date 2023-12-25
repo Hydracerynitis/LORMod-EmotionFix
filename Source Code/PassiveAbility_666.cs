@@ -7,11 +7,11 @@ namespace EmotionalFix
 {
     public class PassiveAbility_666: PassiveAbilityBase
     {
-        private bool WhiteNight;
+        private EmotionBundle bundle = EmotionBundle.None;
         private bool Collect1;
         private bool Collect2;
         private bool Collect3;
-        public PassiveAbility_666(BattleUnitModel model,bool Trigger)
+        public PassiveAbility_666(BattleUnitModel model,EmotionBundle emotionBundle)
         {
             Init(model);
             name = Singleton<PassiveDescXmlList>.Instance.GetName(666);
@@ -20,18 +20,20 @@ namespace EmotionalFix
             Collect1 = owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 1);
             Collect2 = owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 2);
             Collect3 = owner.emotionDetail.PassiveList.Exists(x => x.XmlInfo.EmotionLevel == 3);
-            WhiteNight = Trigger;
+            if (emotionBundle == EmotionBundle.Clown)
+                return;
+            bundle = emotionBundle;
         }
         public override void OnRoundEndTheLast()
         {
 
             if (owner.emotionDetail.EmotionLevel >= 1 && !Collect1)
             {
-                if (WhiteNight)
-                    owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90911, SephirahType.None));
+                if (bundle==EmotionBundle.Whitenight)
+                    owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90911, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                    string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
                     EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                     if (emotion == null)
@@ -44,12 +46,12 @@ namespace EmotionalFix
             }
             if (owner.emotionDetail.EmotionLevel >= 3 && !Collect2)
             {
-                if (WhiteNight)
-                    owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90912, SephirahType.None));
+                if (bundle == EmotionBundle.Whitenight)
+                    owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90912, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
                     if (emotion == null)
                         return;
@@ -61,12 +63,12 @@ namespace EmotionalFix
             }
             if (owner.emotionDetail.EmotionLevel >= 5 && !Collect3)
             {
-                if (WhiteNight)
-                    owner.emotionDetail.ApplyEmotionCard(Singleton<EmotionCardXmlList>.Instance.GetData(90915, SephirahType.None));
+                if (bundle == EmotionBundle.Whitenight)
+                    owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90915, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion3).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion3).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 3));
                     if (emotion == null)
                         return;
@@ -76,11 +78,6 @@ namespace EmotionalFix
                 }
                 Collect3 = true;
             }
-        }
-        public override void OnDie()
-        {
-            base.OnDie();
-            EmotionFixInitializer.Hastrigger = false;
         }
     }
 }

@@ -104,25 +104,17 @@
 			<Desc>若被未获得“钉与锤”的来宾命中，则承受“‘钉’层数x5”的伤害并重置该层数。</Desc>
 		</BattleEffectText>
 		<!--Tiphereth-->
-		<BattleEffectText ID="Gaho">
+		<BattleEffectText ID="EF_Gaho">
       		<Name>加护</Name>
       		<Desc>减少30%所受伤害和混乱伤害</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Tear">
+		<BattleEffectText ID="EF_Tear">
       		<Name>泪剑</Name>
-      		<Desc>拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%的伤害，如果没有一颗骰子命中则对自身造成最大生命值10%的伤害。</Desc>
+      		<Desc>拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%的伤害(至多12点)</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Angry_Angry">
-      		<Name>愤怒</Name>
-      		<Desc>该司书已失去控制且指定攻击目标时不分敌我。每一幕开始时获得2层“强壮”，恢复2点光芒并额外抽取2张书页。若场上有“朋友”则优先攻击朋友</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Berserk_Enemy">
+		<BattleEffectText ID="EF_Berserk">
       		<Name>愤怒</Name>
       		<Desc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Decay">
-      		<Name>腐蚀</Name>
-      		<Desc>每一幕开始时承受等同于“腐蚀”层数的伤害，随后将“腐蚀”层数清零。被击中时将失去等同于“腐蚀”层数的体力与混乱抗性。</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="RandomEmotion">
       		<Name>空虚</Name>

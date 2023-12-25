@@ -6,18 +6,6 @@
 	<BattleCardAbility ID="Reflect">
 		<Desc>[拼点胜利]对目标造成目标骰子威力的伤害和混乱伤害</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="Queen">
-		<Desc>[装备时]1幕之内使自身与博爱魔法少女[同化](每4幕至多同化1次)</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="Knight">
-		<Desc>[装备时]1幕之内使自身与正义魔法少女[同化](每4幕至多同化1次)</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="King">
-		<Desc>[装备时]1幕之内使自身与幸运魔法少女[同化](每4幕至多同化1次)</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="Servant">
-		<Desc>[装备时]1幕之内使自身与勇气魔法少女[同化](每4幕至多同化1次)</Desc>
-	</BattleCardAbility>
   	<BattleCardAbility ID="WizardPotion">
     	<Desc>[装备时]使自身获得[激发勇气的药水]</Desc>
   	</BattleCardAbility>

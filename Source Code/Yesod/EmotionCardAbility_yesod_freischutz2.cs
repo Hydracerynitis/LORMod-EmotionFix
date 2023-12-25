@@ -3,7 +3,7 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 using Battle.CreatureEffect;
-using UnityEngine;
+using BaseMod;
 
 namespace EmotionalFix
 {
@@ -24,7 +24,7 @@ namespace EmotionalFix
                 bullet.stack+=1;
                 if (bullet.stack < 7)
                     return;
-                BattleDiceCardModel TheBullet = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(1101005));
+                BattleDiceCardModel TheBullet = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1101005)));
                 DiceBehaviour dice = TheBullet.XmlData.DiceBehaviourList[0];
                 dice.Min = 0;
                 dice.Dice = 0;

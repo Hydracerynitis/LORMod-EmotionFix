@@ -14,7 +14,8 @@ namespace EmotionalFix
     {
         public static Difficulty diff;
         public static string modPath;
-        public static bool Hastrigger;
+        public static bool WhiteNightTrigger;
+        public static bool ClownTrigger;
         public static List<BattleUnitModel> enemylist;
         public static List<EmotionCardXmlInfo> emotion1;
         public static List<EmotionCardXmlInfo> emotion2;
@@ -142,8 +143,8 @@ namespace EmotionalFix
         }
         public static void EmotionCardXmlList_GetEnemyEmotionNeutralCardList(ref List<EmotionCardXmlInfo> __result)
         {
-            __result.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(1, SephirahType.None));
-            __result.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(4, SephirahType.None));
+            __result.Remove(EmotionCardXmlList.Instance.GetData(1, SephirahType.None));
+            __result.Remove(EmotionCardXmlList.Instance.GetData(4, SephirahType.None));
         }
         public static void StageController_StartBattle(StageType ____stageType)
         {
@@ -152,13 +153,22 @@ namespace EmotionalFix
                 emotion1 = LoadEmotion(1);
                 emotion2 = LoadEmotion(2);
                 emotion3 = LoadEmotion(3);
-                emotion1.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(11, SephirahType.Hokma));
-                emotion2.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(12, SephirahType.Hokma));
-                emotion3.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(15, SephirahType.Hokma));
-                enermy = Singleton<EmotionCardXmlList>.Instance.GetDataList_enemy(SephirahType.None);
-                enemylist.Clear();
-                Hastrigger = false;
                 diff = DifficultyTweak();
+                if (diff >= Difficulty.Hard)
+                {
+                    emotion1.Remove(EmotionCardXmlList.Instance.GetData(3, SephirahType.Tiphereth));
+                    emotion1.Remove(EmotionCardXmlList.Instance.GetData(5, SephirahType.Tiphereth));
+                    emotion2.Remove(EmotionCardXmlList.Instance.GetData(9, SephirahType.Tiphereth));
+                    emotion2.Remove(EmotionCardXmlList.Instance.GetData(10, SephirahType.Tiphereth));
+                }
+                emotion3.Remove(EmotionCardXmlList.Instance.GetData(15, SephirahType.Tiphereth));
+                emotion1.Remove(EmotionCardXmlList.Instance.GetData(11, SephirahType.Hokma));
+                emotion2.Remove(EmotionCardXmlList.Instance.GetData(12, SephirahType.Hokma));
+                emotion3.Remove(EmotionCardXmlList.Instance.GetData(15, SephirahType.Hokma));
+                enermy = EmotionCardXmlList.Instance.GetDataList_enemy(SephirahType.None);
+                enemylist.Clear();
+                WhiteNightTrigger = false;
+                
                 foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
                 {
                     if (EmotionCardAbility_clownofnihil2.Clown.Contains(alive.UnitData))
@@ -175,7 +185,9 @@ namespace EmotionalFix
             PassiveAbility_668.LevelUped.Clear();
             EmotionCardAbility_clownofnihil2.Clown.Clear();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock.Clear();
-            Hastrigger = false;
+            WhiteNightTrigger = false;
+            if (ClownTrigger)
+                ClownTrigger = false;
         }
         public static bool Decay_OnRoundEnd(BattleUnitBuf_Decay __instance,BattleUnitModel ____owner,ref int ___reserve)
         {
@@ -278,19 +290,20 @@ namespace EmotionalFix
             Hard,
             Brutal
         }
+        
         public static List<EmotionCardXmlInfo> LoadEmotion(int emotionlevel)
         {
             List<EmotionCardXmlInfo> list=new List<EmotionCardXmlInfo>();
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Malkuth, LibraryModel.Instance.GetFloor(SephirahType.Malkuth).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Yesod, LibraryModel.Instance.GetFloor(SephirahType.Yesod ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Hod , LibraryModel.Instance.GetFloor(SephirahType.Hod ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Netzach , LibraryModel.Instance.GetFloor(SephirahType.Netzach).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Tiphereth , LibraryModel.Instance.GetFloor(SephirahType.Tiphereth ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Gebura , LibraryModel.Instance.GetFloor(SephirahType.Gebura ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Chesed , LibraryModel.Instance.GetFloor(SephirahType.Chesed ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Binah , LibraryModel.Instance.GetFloor(SephirahType.Binah ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Hokma , LibraryModel.Instance.GetFloor(SephirahType.Hokma ).Level, emotionlevel));
-            list.AddRange(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.Keter , LibraryModel.Instance.GetFloor(SephirahType.Keter ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Malkuth, LibraryModel.Instance.GetFloor(SephirahType.Malkuth).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Yesod, LibraryModel.Instance.GetFloor(SephirahType.Yesod ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Hod , LibraryModel.Instance.GetFloor(SephirahType.Hod ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Netzach , LibraryModel.Instance.GetFloor(SephirahType.Netzach).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Tiphereth , LibraryModel.Instance.GetFloor(SephirahType.Tiphereth ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Gebura , LibraryModel.Instance.GetFloor(SephirahType.Gebura ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Chesed , LibraryModel.Instance.GetFloor(SephirahType.Chesed ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Binah , LibraryModel.Instance.GetFloor(SephirahType.Binah ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Hokma , LibraryModel.Instance.GetFloor(SephirahType.Hokma ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Keter , LibraryModel.Instance.GetFloor(SephirahType.Keter ).Level, emotionlevel));
             return list;
         }
         public static void AssignPassive(BattleUnitModel unit)
@@ -301,27 +314,31 @@ namespace EmotionalFix
                 if (ExcluededPassive.Contains(passive.GetType().ToString()))
                     continue;
             }
-            bool trigger = false;
-            if (!Hastrigger)
+            EmotionBundle EB = EmotionBundle.None;
+            if (!WhiteNightTrigger && RandomUtil.valueForProb <= 0.02) 
+            { 
+                WhiteNightTrigger = true;
+                EB = EmotionBundle.Whitenight;
+            }
+            if(EB==EmotionBundle.None && diff>=Difficulty.Hard && !ClownTrigger && RandomUtil.valueForProb <= 0.02)
             {
-                trigger = RandomUtil.valueForProb <= 0.01;
-                if (trigger)
-                    Hastrigger = true;
+                ClownTrigger = true;
+                EB = EmotionBundle.Clown;
             }
             switch (diff)
             {
                 case (Difficulty.Easy):
                     break;
                 case (Difficulty.Normal):
-                    passiveList.Add(new PassiveAbility_666(unit, trigger));
+                    passiveList.Add(new PassiveAbility_666(unit, EB));
                     typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
                     break;
                 case (Difficulty.Hard):
-                    passiveList.Add(new PassiveAbility_667(unit, trigger));
+                    passiveList.Add(new PassiveAbility_667(unit, EB));
                     typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
                     break;
                 case (Difficulty.Brutal):
-                    passiveList.Add(new PassiveAbility_668(unit, trigger));
+                    passiveList.Add(new PassiveAbility_668(unit, EB));
                     typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
                     break;
             }

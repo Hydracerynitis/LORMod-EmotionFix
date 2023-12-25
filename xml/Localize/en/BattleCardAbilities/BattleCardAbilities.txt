@@ -6,18 +6,6 @@
 	<BattleCardAbility ID="Reflect">
 		<Desc>[On Clash Win] inflict Physical and Stagger damage equal to Power of target's die to enemy</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="Queen">
-		<Desc>[On play] [Synchronize] with the Magical Girl of Love for the duration of the Scene. (At most once per 4 Scene)</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="Knight">
-		<Desc>[On play] [Synchronize] with the Magical Girl of Justice for the duration of the Scene. (At most once per 4 Scene)</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="King">
-		<Desc>[On play] [Synchronize] with the Magical Girl of Happiness for the duration of the Scene. (At most once per 4 Scene)</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="Servant">
-		<Desc>[On play] [Synchronize] with the Magical Girl of Courage for the duration of the Scene. (At most once per 4 Scene)</Desc>
-	</BattleCardAbility>
   <BattleCardAbility ID="WizardPotion">
     <Desc>[On Play]Grant the status 'Liquid Courage'</Desc>
   </BattleCardAbility>

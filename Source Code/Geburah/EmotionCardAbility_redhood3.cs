@@ -65,7 +65,7 @@ namespace EmotionalFix
             private int Reduce;
             public Scar(int Reduce)
             {
-                Reduce = Reduce;
+                this.Reduce = Reduce;
             }
             public override StatBonus GetStatBonus()
             {

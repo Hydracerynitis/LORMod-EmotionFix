@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Tiphereth
 {
-    public class EmotionCardAbility_queenofhatred2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_tiphereth_queenofhatred2 : EmotionCardAbilityBase
     {
         public BattleUnitModel target;
         public Battle.CreatureEffect.CreatureEffect effect;
@@ -16,8 +16,8 @@ namespace EmotionalFix
         public override void OnRoundEnd()
         {
             base.OnRoundEnd();
-            BattleUnitModel battleUnitModel = (BattleUnitModel)null;
-            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(_owner.faction == Faction.Player ? Faction.Enemy : Faction.Player))
+            BattleUnitModel battleUnitModel = null;
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList_opponent(_owner.faction))
             {
                 int damageToEnemyAtRound = alive.history.damageToEnemyAtRound;
                 if (damageToEnemyAtRound > max)
@@ -28,10 +28,10 @@ namespace EmotionalFix
             }
             target = battleUnitModel;
             max = 0;
-            if (!(effect != null))
+            if (effect == null)
                 return;
             UnityEngine.Object.Destroy(effect.gameObject);
-            effect = (Battle.CreatureEffect.CreatureEffect)null;
+            effect = null;
         }
 
         public override void OnRoundStart()
@@ -47,20 +47,12 @@ namespace EmotionalFix
             base.BeforeGiveDamage(behavior);
             if (target != behavior.card?.target)
                 return;
-            int num = RandomUtil.Range(3, 5);
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
-                dmg = num
+                dmg = RandomUtil.Range(3, 5)
             });
             _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/MagicalGirl_Gun");
             _owner.battleCardResultLog.SetAttackEffectFilter(typeof(ImageFilter_ColorBlend_Pink));
-        }
-        public void Destroy()
-        {
-            if (!(effect != null))
-                return;
-            UnityEngine.Object.Destroy(effect.gameObject);
-            effect = (Battle.CreatureEffect.CreatureEffect)null;
         }
         public class Villain: BattleUnitBuf
         {

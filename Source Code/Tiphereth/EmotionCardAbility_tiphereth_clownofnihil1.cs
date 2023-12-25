@@ -6,64 +6,25 @@ using System.Collections.Generic;
 using Sound;
 using BaseMod;
 
-namespace EmotionalFix
+namespace EmotionalFix.Tiphereth
 {
-    public class EmotionCardAbility_clownofnihil1 : EmotionCardAbilityBase
+    public class EmotionCardAbility_tiphereth_clownofnihil1 : EmotionCardAbilityBase
     {
-        private List<BattleDiceCardModel> AddedCard = new List<BattleDiceCardModel>();
-        public override void OnSelectEmotion()
-        {
-            base.OnSelectEmotion();
-            if (_owner.faction == Faction.Player)
-            {
-                GiveCard();
-            }
-        }
-        public override void OnWaveStart()
-        {
-            base.OnWaveStart();
-            if (_owner.faction == Faction.Player)
-            {
-                GiveCard();
-            }
-        }
-        private void GiveCard()
-        {
-            if (SearchEmotion(_owner, "QueenOfHatred_Laser") == null || SearchEmotion(_owner, "KnightOfDespair_Gaho") == null || SearchEmotion(_owner, "Greed_Protect") == null || SearchEmotion(_owner, "Angry_Poison") == null)
-                return;
-            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104501));
-            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104502));
-            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104503));
-            AddedCard.Add(_owner.allyCardDetail.AddNewCardToDeck(1104504));
-            _owner.allyCardDetail.Shuffle();
-        }
-        private BattleEmotionCardModel SearchEmotion(BattleUnitModel owner, string Name)
-        {
-            List<BattleEmotionCardModel> emotion = owner.emotionDetail.PassiveList;
-            foreach (BattleEmotionCardModel card in emotion)
-            {
-                if (card.XmlInfo.Name == Name)
-                    return card;
-            }
-            return null;
-        }
         public override void OnLoseParrying(BattleDiceBehavior behavior)
         {
             base.OnLoseParrying(behavior);
-            if (_owner.faction != Faction.Enemy)
+            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is Void) != null)
                 return;
-            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void) != null)
-                return;
-            if (!(_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_Void_Ready) is BattleUnitBuf_Emotion_Void_Ready emotionVoidReady))
+            if (!(_owner.bufListDetail.GetActivatedBufList().Find(x => x is VoidReady) is VoidReady emotionVoidReady))
             {
-                emotionVoidReady = new BattleUnitBuf_Emotion_Void_Ready();
+                emotionVoidReady = new VoidReady();
                 _owner.bufListDetail.AddBuf(emotionVoidReady);
             }
             emotionVoidReady.Add();
         }
-        public class BattleUnitBuf_Emotion_Void_Ready : BattleUnitBuf
+        public class VoidReady : BattleUnitBuf
         {
-            public static int StackMax = 20;
+            public int StackMax = 25;
 
             public override string keywordIconId => "CardBuf_NihilClown_Card";
 
@@ -79,7 +40,7 @@ namespace EmotionalFix
                 base.OnRoundEndTheLast();
                 if (stack < StackMax)
                     return;
-                _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_Void());
+                _owner.bufListDetail.AddBuf(new Void());
                 Destroy();
             }
             public void Add()
@@ -90,7 +51,7 @@ namespace EmotionalFix
                 stack = StackMax;
             }
         }
-        public class BattleUnitBuf_Emotion_Void : BattleUnitBuf
+        public class Void : BattleUnitBuf
         {
             private GameObject aura;
             private int cnt;
@@ -111,7 +72,7 @@ namespace EmotionalFix
                 base.Init(owner);
                 stack = 0;
                 owner.bufListDetail.RemoveBufAll(BufPositiveType.Negative);
-                aura = SingletonBehavior<DiceEffectManager>.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_MagicGirl", 1f, owner.view, owner.view)?.gameObject;
+                aura = DiceEffectManager.Instance.CreateNewFXCreatureEffect("5_T/FX_IllusionCard_5_T_MagicGirl", 1f, owner.view, owner.view)?.gameObject;
                 SoundEffectPlayer.PlaySound("Creature/Nihil_Filter");
             }
             public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
@@ -136,10 +97,10 @@ namespace EmotionalFix
             }
             private void DestroyAura()
             {
-                if (!(aura != null))
+                if (aura == null)
                     return;
                 UnityEngine.Object.Destroy(aura);
-                aura = (GameObject)null;
+                aura = null;
             }
         }
     }

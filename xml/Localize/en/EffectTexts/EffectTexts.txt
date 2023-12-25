@@ -106,28 +106,17 @@ Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
 			<Desc>When hit by guest without "Hammer and Nail", the character takes 5 damage for every stack of this status, which is then removed.</Desc>
 		</BattleEffectText>
 		<!--Tiphereth-->
-		<BattleEffectText ID="Gaho">
+		<BattleEffectText ID="EF_Gaho">
       		<Name>Blessing</Name>
       		<Desc>Reduce incomming damage and Stagger Damage by 30% for {0} Scenes</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Tear">
+		<BattleEffectText ID="EF_Tear">
       		<Name>Sword Sharpened with Tears</Name>
-      		<Desc>On parry, if all Offensive Dices successfully hit target, inflict damage equal to  10% of target's Max HP. 
-On parry, if fail to give an successful attack, take damage equal to 10% of Max HP.</Desc>
+      		<Desc>In a clash, if all Offensive Dices successfully hit target, inflict damage equal to  10% of target's Max HP (Max 12).</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Angry_Angry">
-      		<Name>Wrath</Name>
-      		<Desc>The librarian will become uncontrollable and target random characters, including allies.
-Also, the librarian gains 2 Strength, restores 2 Light, and draws 2 more pages each Scene.
-Prioritize 'Companion' if 'Companion' exist.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Berserk_Enemy">
+		<BattleEffectText ID="EF_Berserk">
       		<Name>Wrath</Name>
       		<Desc>Use Mass attack card 'EMBODIMENTS OF EVIL!!!' targeting all other characters every Scene</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Decay">
-      		<Name>Erosion</Name>
-      		<Desc>At the end of the Scene, take damage equal to the amount of Erosion and lose all stack; when taking a hit, take bonus damage and Stagger damage equal to the amount of Erosion.</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="RandomEmotion">
       		<Name>Void</Name>

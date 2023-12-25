@@ -19,4 +19,10 @@ namespace EmotionalFix
             return null;
         }
     }
+    public enum EmotionBundle
+    {
+        None,
+        Clown,
+        Whitenight
+    }
 }

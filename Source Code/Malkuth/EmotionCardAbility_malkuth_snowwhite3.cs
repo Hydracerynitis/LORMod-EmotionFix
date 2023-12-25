@@ -7,6 +7,7 @@ using System.Linq;
 using LOR_DiceSystem;
 using System.Text;
 using System.Threading.Tasks;
+using BaseMod;
 
 namespace EmotionalFix
 {
@@ -71,7 +72,7 @@ namespace EmotionalFix
             }
             if (victim.Count == 0)
                 return;
-            DiceCardXmlInfo xml = ItemXmlDataList.instance.GetCardItem(1101501).Copy(true);
+            DiceCardXmlInfo xml = ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1101501)).Copy(true);
             DiceBehaviour dice = xml.DiceBehaviourList[0];
             dice.Dice = dice.Dice += num;
             BattleDiceCardModel Aoe = BattleDiceCardModel.CreatePlayingCard(xml);

@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>    
 		<TargetType>SelectOne</TargetType>
-		<Script>queenofhatred1</Script>
+		<Script>tiphereth_queenofhatred1</Script>
 	</EmotionCard> 
 	<EmotionCard ID="90502">
 		<Name>QueenOfHatred_Gun_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>  
 		<TargetType>SelectOne</TargetType>
-		<Script>queenofhatred2</Script>
+		<Script>tiphereth_queenofhatred2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90503">
 		<Name>QueenOfHatred_Snake_Enemy</Name>
@@ -31,7 +31,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>    
 		<TargetType>SelectOne</TargetType>
-		<Script>queenofhatred3</Script>
+		<Script>tiphereth_queenofhatred3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90504">
 		<Name>KnightOfDespair_Gaho_Enemy</Name>
@@ -42,18 +42,18 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>2</EmotionRate>   
 		<TargetType>SelectOne</TargetType>
-		<Script>knightofdespair1</Script>
+		<Script>tiphereth_knightofdespair1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90505">
 		<Name>KnightOfDespair_Despair_Enemy</Name>
 		<Artwork>KnightOfDespair_Despair</Artwork>
-		<State>Negative</State>
+		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>3</Level>
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>   
 		<TargetType>SelectOne</TargetType>
-		<Script>knightofdespair2</Script>
+		<Script>tiphereth_knightofdespair2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90506">
 		<Name>KnightOfDespair_Sword_Enemy</Name>
@@ -64,7 +64,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>  
 		<TargetType>SelectOne</TargetType>
-		<Script>knightofdespair3</Script>
+		<Script>tiphereth_knightofdespair3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90507">
 		<Name>Greed_Break_Enemy</Name>
@@ -75,7 +75,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>kingofgreed1</Script>
+		<Script>tiphereth_kingofgreed1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90508">
 		<Name>Greed_Protect_Enemy</Name>
@@ -86,7 +86,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>kingofgreed2</Script>
+		<Script>tiphereth_kingofgreed2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90509">
 		<Name>Greed_Eat_Enemy</Name>
@@ -97,7 +97,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>kingofgreed3</Script>
+		<Script>tiphereth_kingofgreed3</Script>
 	</EmotionCard>
 		<EmotionCard ID="90510">
 		<Name>Angry_Angry_Enemy</Name>
@@ -108,7 +108,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>servantofwrath1</Script>
+		<Script>tiphereth_servantofwrath1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90511">
 		<Name>Angry_Friend_Enemy</Name>
@@ -117,9 +117,9 @@
 		<Sephirah>None</Sephirah>
 		<Level>5</Level>
 		<EmotionLevel>2</EmotionLevel>
-		<EmotionRate>2</EmotionRate>\
+		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>servantofwrath2</Script>
+		<Script>tiphereth_servantofwrath2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90512">
 		<Name>Angry_Poison_Enemy</Name>
@@ -127,10 +127,10 @@
 		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>5</Level>
-		<EmotionLevel>2</EmotionLevel>
+		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>servantofwrath3</Script>
+		<Script>tiphereth_servantofwrath3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90513">
 		<Name>NihilClown_Card_Enemy</Name>
@@ -138,10 +138,10 @@
 		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>6</Level>
-		<EmotionLevel>3</EmotionLevel>
+		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>clownofnihil1</Script>
+		<Script>tiphereth_clownofnihil1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90514">
 		<Name>NihilClown_Nihil_Enemy</Name>
@@ -152,7 +152,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>clownofnihil2</Script>
+		<Script>tiphereth_clownofnihil2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90515">
 		<Name>NihilClown_fusion_Enemy</Name>
@@ -163,6 +163,6 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>clownofnihil3</Script>
+		<Script>tiphereth_clownofnihil3</Script>
 	</EmotionCard>
 </EmotionCardXmlRoot>

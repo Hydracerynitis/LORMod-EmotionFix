@@ -1,5 +1,5 @@
 ﻿using System;
-using LOR_DiceSystem;
+using BaseMod;
 using UI;
 using Sound;
 using UnityEngine;
@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Keter
 {
     public class EmotionCardAbility_keter_bloodbath1 : EmotionCardAbilityBase
     {
-        private List<BattleDiceBehavior> DefenseDice;
+        private List<BattleDiceBehavior> DefenseDice = new List<BattleDiceBehavior>();
         private Battle.CreatureEffect.CreatureEffect effect;
         public override void OnSelectEmotion()
         {
@@ -20,12 +20,6 @@ namespace EmotionalFix
             if (effect != null)
                 effect.transform.SetParent(_owner.view.characterRotationCenter.transform.parent);
             SoundEffectManager.Instance.PlayClip("Creature/BloodBath_Water")?.SetGlobalPosition(_owner.view.WorldPosition);
-            DefenseDice = new List<BattleDiceBehavior>();
-        }
-        public override void OnWaveStart()
-        {
-            base.OnWaveStart();
-            DefenseDice = new List<BattleDiceBehavior>();
         }
         public override int GetBreakDamageReduction(BattleDiceBehavior behavior)
         {
@@ -46,7 +40,7 @@ namespace EmotionalFix
         {
             base.OnStartBattle();
             if (DefenseDice.Count > 0)
-                _owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(1110001)), DefenseDice);
+                _owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1110001))), DefenseDice);
         }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {

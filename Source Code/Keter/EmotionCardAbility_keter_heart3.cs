@@ -46,7 +46,6 @@ namespace EmotionalFix.Keter
         {
             public override string keywordIconId => "Stun";
             public override string keywordId => "EF_HeartExhaust";
-            private int count;
             public override int SpeedDiceBreakedAdder() => 100;
             public override int GetDamageReduction(BattleDiceBehavior behavior) => -2;
             public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail) => -2;

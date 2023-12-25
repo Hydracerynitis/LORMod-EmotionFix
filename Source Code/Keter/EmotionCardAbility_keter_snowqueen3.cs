@@ -42,7 +42,6 @@ namespace EmotionalFix.Keter
 
         public class SnowQueen_Stun : BattleUnitBuf
         {
-            private BattleUnitModel _attacker;
             private Battle.CreatureEffect.CreatureEffect _aura;
             public override string keywordId => "Stun";
             public override string keywordIconId => "SnowQueen_Stun";

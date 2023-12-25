@@ -40,6 +40,19 @@
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
 	</Card>
+	<Card ID="1110001">
+		<Name>鲜血</Name>
+		<Artwork>Bloodbath_Blood</Artwork>
+		<Rarity>Unique</Rarity>
+		<Spec Range="Near" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
+	</Card>
 	<Card ID="1104401">
 		<Name>邪恶的化身</Name>
 		<Artwork>Angry_Angry</Artwork>
@@ -55,45 +68,20 @@
 		<Chapter>0</Chapter>
 		<Priority>100</Priority>
 	</Card>
-	<Card ID="1104501">
-		<Name>博爱魔法少女</Name>
-		<Artwork>QueenOfHatred_Laser</Artwork>
-		<Rarity>Unique</Rarity>
-		<Spec Range="Instance" Cost="0"/>
-		<Script>Queen</Script>
+	<Card ID="1104402">
+		<Name>邪恶的化身</Name>
+		<Artwork>Angry_Angry</Artwork>
+		<Rarity>Rare</Rarity>
+		<Spec Range="FarAreaEach" Cost="0" Affection="Team"/>
+		<Script></Script>
 		<ScriptDesc></ScriptDesc>
-		<Chapter>6</Chapter>
-		<Priority>0</Priority>
-	</Card>
-	<Card ID="1104502">
-		<Name>绝望魔法少女</Name>
-		<Artwork>KnightOfDespair_Gaho</Artwork>
-		<Rarity>Unique</Rarity>
-		<Spec Range="Instance" Cost="0"/>
-		<Script>Knight</Script>
-		<ScriptDesc></ScriptDesc>
-		<Chapter>6</Chapter>
-		<Priority>0</Priority>
-	</Card>
-	<Card ID="1104503">
-		<Name>幸运魔法少女</Name>
-		<Artwork>Greed_Protect</Artwork>
-		<Rarity>Unique</Rarity>
-		<Spec Range="Instance" Cost="0"/>
-		<Script>King</Script>
-		<ScriptDesc></ScriptDesc>
-		<Chapter>6</Chapter>
-		<Priority>0</Priority>
-	</Card>
-	<Card ID="1104504">
-		<Name>勇气魔法少女</Name>
-		<Artwork>Angry_Poison</Artwork>
-		<Rarity>Unique</Rarity>
-		<Spec Range="Instance" Cost="0"/>
-		<Script>Servant</Script>
-		<ScriptDesc></ScriptDesc>
-		<Chapter>6</Chapter>
-		<Priority>0</Priority>
+		<BehaviourList>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_1st" Desc=""/>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_1st" Desc=""/>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_2nd" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
 	</Card>
 	<Card ID="1106201">
 		<Name>狼的角色</Name>
@@ -235,19 +223,6 @@
 		<ScriptDesc></ScriptDesc>
 		<BehaviourList>
 			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="PlagueDoctor" ActionScript="" Desc=""/>
-		</BehaviourList>
-		<Chapter>0</Chapter>
-		<Priority>100</Priority>
-	</Card>
-	<Card ID="1110001">
-		<Name>鲜血</Name>
-		<Artwork>Bloodbath_Blood</Artwork>
-		<Rarity>Unique</Rarity>
-		<Spec Range="Near" Cost="0"/>
-		<Script></Script>
-		<ScriptDesc></ScriptDesc>
-		<BehaviourList>
-			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
 		</BehaviourList>
 		<Chapter>0</Chapter>
 		<Priority>100</Priority>

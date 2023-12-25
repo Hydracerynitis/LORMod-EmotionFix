@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Yesod
 {
     public class DiceCardAbility_Execute : DiceCardAbilityBase
     {

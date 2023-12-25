@@ -17,7 +17,7 @@
 		</AbnormalityCard>
 		<AbnormalityCard ID="QueenOfHatred_Gun_Enemy">
 			<Abnormality>憎恶皇后</Abnormality>
-			<CardName>坏蛋</CardName>
+			<CardName>正义</CardName>
 			<AbilityDesc>每一幕中通过直接攻击对来宾方造成最多伤害的司书将被标记为“坏蛋”。
 该来宾击中“坏蛋”时伤害+3~5</AbilityDesc>
 			<FlaborText>如果我与正义同在，就一定有人与邪恶同在。没有坏蛋，我就失去了存在的意义。</FlaborText>
@@ -31,7 +31,8 @@
 		<AbnormalityCard ID="QueenOfHatred_Snake_Enemy">
 			<Abnormality>憎恶皇后</Abnormality>
 			<CardName>憎恶</CardName>
-			<AbilityDesc>提高1~3点骰子威力，每一幕开始时若其他来宾上一幕没有承受其最大生命值20%的伤害则对所有来宾造成3~7点伤害和2~6点混乱伤害</AbilityDesc>
+			<AbilityDesc>该司书拼点失败时将追加承受2~4点混乱伤害并在下一幕中获得1层“强壮”(每一幕至多获得2次)
+若1幕之内拼点失败3次，则失去10%混乱抗性再次使用当前书页(每一幕至多触发1次)</AbilityDesc>
 			<FlaborText>我发誓要用爱去对待世间万物，然而最终只剩下一颗伤痕累累的，破碎的心。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">为什么大家都那么幸福？这样我就没有存在的理由了……</Dialogue>
@@ -43,7 +44,7 @@
 		</AbnormalityCard>
 		<AbnormalityCard ID="KnightOfDespair_Gaho_Enemy">
 			<Abnormality>绝望骑士</Abnormality>
-			<CardName>正义</CardName>
+			<CardName>加护</CardName>
 			<AbilityDesc>每一幕开始时“加护”血量最低的来宾。被“加护”的司书将减少30%所受伤害和混乱伤害持续一幕</AbilityDesc>
 			<FlaborText>即使身陷桎梏，她依然狂热地试图守护他人，一如既往。</FlaborText>
 			<Dialogues>
@@ -51,17 +52,6 @@
 				<Dialogue ID="2">如果我仍有机会守护他人……</Dialogue>
 				<Dialogue ID="3">别担心，这次我会全力守护你。</Dialogue>
 				<Dialogue ID="4">安心地，睡吧……</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
-		<AbnormalityCard ID="KnightOfDespair_Sword_Enemy">
-			<Abnormality>绝望骑士</Abnormality>
-			<CardName>泪剑</CardName>
-			<AbilityDesc>若该来宾拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%的伤害，如果没有一颗骰子命中则对自身造成最大生命值10%的伤害。</AbilityDesc>
-			<FlaborText>若是再度被正义背叛，数十把利剑便将迷茫地四处飘荡，最终指向无法守护之人。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">以泪水和绝望磨砺的剑锋，永远精准。</Dialogue>
-				<Dialogue ID="2">向这把以绝望与泪水磨就的利剑，宣誓。</Dialogue>
-				<Dialogue ID="3">忌用卑劣手段，不得心存怜悯……</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="KnightOfDespair_Despair_Enemy">
@@ -77,11 +67,21 @@
 				<Dialogue ID="5">我曾誓言守护，可我再三辜负他人……</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
+		<AbnormalityCard ID="KnightOfDespair_Sword_Enemy">
+			<Abnormality>绝望骑士</Abnormality>
+			<CardName>泪剑</CardName>
+			<AbilityDesc>若该来宾拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%(至多12点)的伤害</AbilityDesc>
+			<FlaborText>若是再度被正义背叛，数十把利剑便将迷茫地四处飘荡，最终指向无法守护之人。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">以泪水和绝望磨砺的剑锋，永远精准。</Dialogue>
+				<Dialogue ID="2">向这把以绝望与泪水磨就的利剑，宣誓。</Dialogue>
+				<Dialogue ID="3">忌用卑劣手段，不得心存怜悯……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
 		<AbnormalityCard ID="Greed_Break_Enemy">
 			<Abnormality>贪婪国王</Abnormality>
 			<CardName>放纵</CardName>
-			<AbilityDesc>该来宾拼点时若当前书页的第1颗骰子取得拼点胜利，则有50%的概率使目标当前书页的所有骰子威力-2。
-若当前书页的第1颗骰子取得拼点失败，则有50%的概率使自身当前书页的所有骰子威力-2</AbilityDesc>
+			<AbilityDesc>该来宾使用书页时若第1颗骰子取得拼点胜利，则有25%的概率摧毁目标当前书页的所有骰子</AbilityDesc>
 			<FlaborText>第一颗欲望之种源于对幸福的纯粹向往。小小的种子不甘于现状，逐渐变得又大又硬。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">小小的声音于脑海中回响，要我沉浸在追求幸福的贪欲之中……</Dialogue>
@@ -92,8 +92,8 @@
 		</AbnormalityCard>
 		<AbnormalityCard ID="Greed_Protect_Enemy">
 			<Abnormality>贪婪国王</Abnormality>
-			<CardName>幸福</CardName>
-			<AbilityDesc>该来宾每取得1次拼点胜利，便在下一幕中使自身获得1层随机增益(“忍耐”,"强壮"，“敏捷”)。(每一幕至多触发3次)</AbilityDesc>
+			<CardName>幸福之路</CardName>
+			<AbilityDesc>该来宾每取得1次拼点胜利，便在下一幕中使自身获得1层随机增益(“忍耐”,"强壮"，“敏捷”)。(每种增益一幕至多触发3次)</AbilityDesc>
 			<FlaborText>幸福化作痴迷，痴迷又化成贪婪，而贪婪则永远凝结为金黄的琥珀。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">最终，纯洁的欲望化作金色的琥珀，变得无比坚硬。</Dialogue>
@@ -105,8 +105,8 @@
 		<AbnormalityCard ID="Greed_Eat_Enemy">
 			<Abnormality>贪婪国王</Abnormality>
 			<CardName>贪婪</CardName>
-			<AbilityDesc>该司书拼点时若点数超出目标4点，则追加3~7点伤害并为自身恢复2~5点体力。
-若点数低于目标4点，则失去3~7点体力并为目标恢复2~5点体力。</AbilityDesc>
+			<AbilityDesc>该司书拼点胜利时若点数超出目标4点，则追加3~7点伤害并为自身恢复2~5点体力。
+拼点失败时若点数低于目标4点，则失去3~7点体力并为目标恢复2~5点体力。</AbilityDesc>
 			<FlaborText>不再是魔法少女的女孩吃掉了许多东西。权力，金钱，名誉，以及其他形式的欢愉。她将目光所及的一切吞噬殆尽，如今只剩下本能的贪婪。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">宝石加剧了欲望的饥渴。</Dialogue>
@@ -131,7 +131,7 @@
 			<Abnormality>愤怒侍从</Abnormality>
 			<CardName>朋友</CardName>
 			<AbilityDesc>应用该异想体书页后，该来宾击中的第1名司书将被标记为“朋友”。
-若该来宾击杀“朋友”，则为所有来宾恢复3点光芒及10点体力与混乱抗性。
+若该来宾击杀“朋友”，则为所有来宾恢复3点光芒及10%最大体力与最大混乱抗性。
 “朋友”死亡后，该来宾可将其余司书标记为“朋友”。</AbilityDesc>
 			<FlaborText>尽管愤怒侍从比任何人都注重正义与均衡，却仍与她们的敌人“隐士”分享学识，暗中成为了朋友。</FlaborText>
 			<Dialogues>
@@ -143,8 +143,8 @@
 		</AbnormalityCard>
 		<AbnormalityCard ID="Angry_Poison_Enemy">
 			<Abnormality>愤怒侍从</Abnormality>
-			<CardName>勇气</CardName>
-			<AbilityDesc>对所有司书施加3层“腐蚀”。</AbilityDesc>
+			<CardName>毒液</CardName>
+			<AbilityDesc>对所有司书施加5层“腐蚀”。</AbilityDesc>
 			<FlaborText>终于，在那相遇之日，隐士带领一众手下毁灭了侍从的世界。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">均衡崩坏，正义消亡……</Dialogue>
@@ -156,7 +156,7 @@
 				<AbnormalityCard ID="NihilClown_Card_Enemy">
 			<Abnormality>虚无弄臣</Abnormality>
 			<CardName>魔法少女</CardName>
-			<AbilityDesc>若累计取得20次拼点失败，则自下一幕起该司书将免疫所有负面状态并在每一幕开始时获得5层“守护”。
+			<AbilityDesc>若累计取得25次拼点失败后，则自下一幕起该司书将免疫所有负面状态并在每一幕开始时获得5层“守护”。
 该效果触发后，该司书拼点失败或被击中时将在下一幕中对目标施加1层“腐蚀”与“易损”(每一幕至多触发2次)</AbilityDesc>
 			<FlaborText>弄臣沿着每个人来时的路往回走，却发现路的尽头总会出现祂自己。也不知是她们合在一起变成了祂，还是祂正逐渐变成她们了呢。</FlaborText>
 			<Dialogues>
@@ -168,7 +168,8 @@
 		<AbnormalityCard ID="NihilClown_Nihil_Enemy">
 			<Abnormality>虚无弄臣</Abnormality>
 			<CardName>空虚</CardName>
-			<AbilityDesc>每一幕开始时清空自身所有的异想体，每清除一个异想体书页从所有已解锁的异想体里随机选择1个应用到自身</AbilityDesc>
+			<AbilityDesc>命中时移除目标随机一张书页(每张书页只触发一次)
+因此被移除书页的司书将永久获得2层强壮与忍耐</AbilityDesc>
 			<FlaborText>沉思的弄臣。可悲的小丑。祂甚至没有那只指明方向的勇敢的毛孩，只是毫无意义地迈出步伐。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">哪一条才是正确的路。我该去往何处？</Dialogue>
@@ -180,7 +181,9 @@
 		<AbnormalityCard ID="NihilClown_fusion_Enemy">
 			<Abnormality>虚无弄臣</Abnormality>
 			<CardName>虚无</CardName>
-			<AbilityDesc>在每一幕开始时对所有司书施加2层“虚弱”，“破绽”与“束缚”，每有一个司书受到影响便对自身施加1层“虚弱”，“破绽”与“束缚”。</AbilityDesc>
+			<AbilityDesc>该异想体书页仅可对同时应用“贪婪”，“憎恶”，“绝望”与“愤怒”这4张异想体书页的来宾生效。
+移除“贪婪”，“憎恶”与“愤怒”的负面效果。
+每一幕开始时对除该司书外的所有角色施加3层“虚弱”，“破绽”与“束缚”</AbilityDesc>
 			<FlaborText>决定相信自己的直觉后，弄臣边走边说出了在这条路上遇见的每一个人的名字。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">愚昧指引前路，除此再无他物。</Dialogue>
