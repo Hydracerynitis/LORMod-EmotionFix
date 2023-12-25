@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="Bloodbath_Blood_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>鲜血</CardName>
-			<AbilityDesc>该来宾的“防御型”骰子威力+1~3，被击中时所受混乱伤害+2~4
+			<AbilityDesc>该来宾的“防御型”骰子威力+1~2，被击中时所受混乱伤害+3~5
 每一幕结束时保留反击池里所有防御骰</AbilityDesc>
 			<FlaborText>望向浴缸内部，你会莫名感到无法承受的忧郁。</FlaborText>
 			<Dialogues>
@@ -18,7 +18,7 @@
 		<AbnormalityCard ID="Bloodbath_Scar_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>疤痕</CardName>
-			<AbilityDesc>根据上一幕所受伤害该来宾被造成最多伤害类型的骰子受到击中时所受伤害-2~4</AbilityDesc>
+			<AbilityDesc>根据上一幕所受伤害该来宾被造成最多伤害类型的骰子受到击中时所受伤害-2~5</AbilityDesc>
 			<FlaborText>当我注视着她那伤痕累累的手腕时，我想起了我们的酒窖。那一夜，我把最后一瓶喝得精光。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">要想割开手腕，必须拥有强大的勇气与意志。</Dialogue>
@@ -46,7 +46,7 @@
 		<AbnormalityCard ID="HeartofAspiration_Heart_Enemy">
 			<Abnormality>渴望之心</Abnormality>
 			<CardName>脉动</CardName>
-			<AbilityDesc>每一幕开始时改将在这一幕中获得2层“强壮”，若一幕内未使用“进攻型”骰子造成伤害则承受25%的最大混乱抗性的混乱伤害。</AbilityDesc>
+			<AbilityDesc>每一幕开始时改将在这一幕中获得1-2层“强壮”，若一幕内未使用“进攻型”骰子造成伤害则失去5%的最大血量。</AbilityDesc>
 			<FlaborText>过度的渴望会使人发狂。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">过度的渴望将使人发狂。</Dialogue>
@@ -99,7 +99,7 @@
 		<AbnormalityCard ID="Pinocchio_Lie_Enemy">
 			<Abnormality>匹诺曹</Abnormality>
 			<CardName>谎言</CardName>
-				<AbilityDesc>每一幕开始时随机调整该司书手中书页的费用。(仅调整0~3费书页)</AbilityDesc>
+			<AbilityDesc>每一幕开始时随机调整随机一名司书手中书页的费用。(仅调整0~3费书页)</AbilityDesc>
 			<FlaborText>人人都在说谎，这有啥不好的？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">人们总是说着相反的话。</Dialogue>
@@ -112,7 +112,7 @@
 		<AbnormalityCard ID="Pinocchio_Curious_Enemy">
 			<Abnormality>匹诺曹</Abnormality>
 			<CardName>好奇</CardName>
-			<AbilityDesc>每一幕开始抽牌时洗回该来宾手中的书页并抽取4张书页。</AbilityDesc>
+			<AbilityDesc>每一幕开始所有司书洗回随机一张手中书页并从牌库中再抽取一张书页</AbilityDesc>
 			<FlaborText>我今天也在努力学习，要向你展示一下吗？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我要多多学习，我还有很多想看，想了解的东西。</Dialogue>
@@ -125,7 +125,7 @@
 			<Abnormality>冰雪女皇</Abnormality>
 			<CardName>凌剑</CardName>
 			<AbilityDesc>该来宾拼点胜利时有50%的概率在下一幕中对目标施加1~3层“束缚”。
-该来宾击中处于“束缚”状态下的目标时将追加2~4点伤害和混乱伤害。</AbilityDesc>
+该来宾击中处于“束缚”状态下的目标时将追加2~5点混乱伤害。</AbilityDesc>
 			<FlaborText>寒冷的冬林中，唯有一位女皇。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">锐利的剑锋冰冷无比。</Dialogue>
@@ -139,7 +139,7 @@
 			<Abnormality>冰雪女皇</Abnormality>
 			<CardName>亲吻</CardName>
 			<AbilityDesc>若该来宾以1张战斗书页至少取得2次拼点胜利，则对目标施加1层“霜凌”。
-每一幕结束时“霜凌”层数大于2的来宾将在下一幕中陷入“眩晕”并重置该层数。</AbilityDesc>
+每一幕结束时“霜凌”层数大于2的司书将在下一幕中陷入“眩晕”并重置该层数。</AbilityDesc>
 			<FlaborText>冰雪女皇的吻冰封了他的内心，使他不再寒冷。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">唯有知晓玫瑰芬芳之人，方能了结这一切。</Dialogue>
@@ -165,8 +165,8 @@
         <AbnormalityCard ID="QuietKid_Hammer_Enemy">
 			<Abnormality>噤默处子</Abnormality>
       		<CardName>钉与锤</CardName>
-      		<AbilityDesc>该来宾以突刺骰子击中目标时将对其施加1层“钉”。
-拥有“钉”的角色被打击骰子击中时将承受“‘钉’层数x5”的伤害并重置该层数。</AbilityDesc>
+      		<AbilityDesc>该来宾击中目标时将对其施加1层“钉”。
+拥有“钉”的角色被未获得“钉与锤”的来宾击中时将承受“‘钉’层数x5”的伤害并重置该层数。</AbilityDesc>
       		<FlaborText>当她用锤敲入钉时，心中的裂痕将持续增大，最终支离破碎。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">在你心中，有能敲入钉子的缝隙吗？</Dialogue>
@@ -192,7 +192,7 @@
       		<Abnormality>噤默处子</Abnormality>
       		<CardName>负罪感</CardName>
       		<AbilityDesc>该来宾被击中时所受混乱伤害-1~3
-被司书击中时承受伤害减少该司书这一幕累计攻击伤害的1/5</AbilityDesc>
+被来宾击中时承受伤害减少该司书这一幕累计攻击伤害的1/5</AbilityDesc>
       		<FlaborText>然而，若是遇见心中怀有“负罪感”或“恐惧”的人，她便会取出藏在身后的钉与锤。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">带着如此痛苦的记忆活到现在……可怜的朋友。</Dialogue>

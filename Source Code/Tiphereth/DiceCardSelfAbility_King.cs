@@ -64,7 +64,7 @@ namespace EmotionalFix
         {
             public Cooldown_King(int stack)
             {
-                this.stack = stack;
+                stack = stack;
             }
             public override void OnRoundEnd()
             {

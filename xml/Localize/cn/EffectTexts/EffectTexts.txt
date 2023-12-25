@@ -74,6 +74,36 @@
       		<Name>狂热崇拜</Name>
       		<Desc>角色已失去控制若陷入混乱则在下一幕开始时解除此状态。被没失去理智的司书击中时该角色将只承受混乱伤害并且该混乱伤害提高100%。并被来宾击中时所受伤害+2~4</Desc>
     	</BattleEffectText>
+		<!--Keter-->
+		<BattleEffectText ID="EF_SlashProtect"> 
+      		<Name>疤痕-斩击</Name>
+      		<Desc>被斩击骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_HitProtect">
+      		<Name>疤痕-打击</Name>
+      		<Desc>被打击骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_PenetrateProtect">
+      		<Name>疤痕-穿刺</Name>
+      		<Desc>被穿刺骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_BloodbathHands">
+      		<Name>瘆白之手</Name>
+      		<Desc>被应用异想体书页-“瘆白之手”的来宾连续击中3次时将追加承受3~12点混乱伤害并重置该计数。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_HeartExhaust">
+      		<Name>疲倦</Name>
+      		<Desc>这一幕内无法行动并且受到伤害提高2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Lie">
+      		<Name>谎言</Name>
+      		<Desc>该司书手中书页的费用被随机调整(仅对初始费用为0~3费的书页生效)</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nail">
+			<Name>钉</Name> 
+			<Desc>若被未获得“钉与锤”的来宾命中，则承受“‘钉’层数x5”的伤害并重置该层数。</Desc>
+		</BattleEffectText>
+		<!--Tiphereth-->
 		<BattleEffectText ID="Gaho">
       		<Name>加护</Name>
       		<Desc>减少30%所受伤害和混乱伤害</Desc>
@@ -231,34 +261,6 @@
 		<BattleEffectText ID="BloodyTree_Emotion_Damage">
       		<Name>不要转移视线</Name>
       		<Desc>与非应用“他人的视线”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SlashProtect"> 
-      		<Name>疤痕-斩击</Name>
-      		<Desc>被斩击骰子击中时减少2~4伤害</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="HitProtect">
-      		<Name>疤痕-打击</Name>
-      		<Desc>被打击骰子击中时减少2~4伤害</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="PenetrateProtect">
-      		<Name>疤痕-穿刺</Name>
-      		<Desc>被穿刺骰子击中时减少2~4伤害</Desc>
-    	</BattleEffectText>
-    	<BattleEffectText ID="BloodBath_Hand_Enemy">
-      		<Name>瘆白之手</Name>
-      		<Desc>被应用异想体书页-“瘆白之手”的来宾连续击中3次时将追加承受3~12点混乱伤害并重置该计数。</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="AspirationHeart">
-      		<Name>渴望</Name>
-      		<Desc>速度+1~2，体力上限+15%并恢复等量体力。若在这一幕造成30点伤害则在下一幕获得1个速度骰</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="HeartExhaust">
-      		<Name>疲倦</Name>
-      		<Desc>这一幕内无法行动并且受到伤害提高2</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SnowQueen_Emotion_Stun">
-      		<Name>雪暴</Name>
-      		<Desc>若该角色为来宾则下一幕中获得6层“束缚”。</Desc>
     	</BattleEffectText>
 	</effectTextList>
 </BattleEffectTextRoot>

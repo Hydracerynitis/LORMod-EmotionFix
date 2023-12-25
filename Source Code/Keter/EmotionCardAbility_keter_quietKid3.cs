@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Source_Code.Keter
+namespace EmotionalFix.Keter
 {
-    public class EmotionCardAbility_quietKidGuilty: EmotionCardAbilityBase
+    public class EmotionCardAbility_keter_quietKid3: EmotionCardAbilityBase
     {
         public override int GetBreakDamageReduction(BattleDiceBehavior behavior) => RandomUtil.Range(1, 3);
 
@@ -14,10 +14,6 @@ namespace EmotionalFix.Source_Code.Keter
         {
             if (atkDice.owner == null)
                 return;
-            if (_owner.faction == Faction.Player)
-            {
-                atkDice.owner.TakeBreakDamage(dmg, DamageType.Emotion);
-            }
             atkDice.owner.battleCardResultLog?.SetNewCreatureAbilityEffect("0_K/FX_IllusionCard_0_K_RedEye", 1f);
             _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/Slientgirl_Guilty");
         }

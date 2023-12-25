@@ -27,7 +27,7 @@ namespace EmotionalFix
         public int GetDiceMax() => Mathf.Max(1, behaviourInCard.Dice + _statBonus.face * 3 + _statBonus.max);
         public BattleVoidBehaviour(BattleDiceBehavior OriginalDice)
         {
-            this.OriginalDice = OriginalDice;
+            OriginalDice = OriginalDice;
             owner = OriginalDice.owner;
             behaviourInCard = OriginalDice.behaviourInCard;
             abilityList = OriginalDice.abilityList;

@@ -10,18 +10,16 @@ using System.Threading.Tasks;
 
 namespace EmotionalFix
 {
-    public class EmotionCardAbility_bloodbath : EmotionCardAbilityBase
+    public class EmotionCardAbility_keter_bloodbath1 : EmotionCardAbilityBase
     {
         private List<BattleDiceBehavior> DefenseDice;
         private Battle.CreatureEffect.CreatureEffect effect;
-        private static int Pow => RandomUtil.Range(1, 3);
-        private static int BrDmg => RandomUtil.Range(2, 5);
         public override void OnSelectEmotion()
         {
             effect = MakeEffect("0/BloodyBath_Blood");
             if (effect != null)
                 effect.transform.SetParent(_owner.view.characterRotationCenter.transform.parent);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/BloodBath_Water")?.SetGlobalPosition(_owner.view.WorldPosition);
+            SoundEffectManager.Instance.PlayClip("Creature/BloodBath_Water")?.SetGlobalPosition(_owner.view.WorldPosition);
             DefenseDice = new List<BattleDiceBehavior>();
         }
         public override void OnWaveStart()
@@ -31,9 +29,8 @@ namespace EmotionalFix
         }
         public override int GetBreakDamageReduction(BattleDiceBehavior behavior)
         {
-            int brDmg = BrDmg;
-            _owner.battleCardResultLog?.SetEmotionAbility(true, _emotionCard, 0, ResultOption.Sign, brDmg);
-            return -brDmg;
+            _owner.battleCardResultLog?.SetEmotionAbility(true, _emotionCard, 0, ResultOption.Sign, RandomUtil.Range(2, 5));
+            return -RandomUtil.Range(2, 5);
         }
         public override void OnRoundEnd()
         {
@@ -55,11 +52,10 @@ namespace EmotionalFix
         {
             if (!IsDefenseDice(behavior.Detail))
                 return;
-            int pow = Pow;
             _owner.battleCardResultLog?.SetEmotionAbility(false, _emotionCard, 1, ResultOption.Default);
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
-                power = pow
+                power = RandomUtil.Range(1, 2)
             });
         }
         public override void OnLayerChanged(string layerName)

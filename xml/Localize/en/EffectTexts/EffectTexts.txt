@@ -76,6 +76,36 @@
 Only takes Stagger damage from sane librarians, increase Stagger Damage taken by 100%;
 Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
     	</BattleEffectText>
+		<!--Keter-->
+		<BattleEffectText ID="EF_SlashProtect"> 
+      		<Name>Scar -- Slash</Name>
+      		<Desc>Take 2-5 less damage from Slash attacks.</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_HitProtect">
+      		<Name>Scar -- Blunt</Name>
+      		<Desc>Take 2-5 less damage from Blunt attacks.</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="PenetrateProtect">
+      		<Name>Scar -- Pierce</Name>
+      		<Desc>Take 2-5 less damage from Pierce attacks.</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_BloodbathHands">
+      		<Name>Pale Hands</Name>
+      		<Desc>Will take 3-12 additional Stagger damage on every third hit from the Guest with 'Pale Hands'.</Desc>
+   		</BattleEffectText>
+		<BattleEffectText ID="EF_HeartExhaust">
+      		<Name>Exhaust</Name>
+      		<Desc>Increase damage and Stagger damage by 2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Lie">
+      		<Name>Lies</Name>
+      		<Desc>The Costs of all pages whose original Cost is less than 4 are randomized</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nail">
+			<Name>Nails</Name>
+			<Desc>When hit by guest without "Hammer and Nail", the character takes 5 damage for every stack of this status, which is then removed.</Desc>
+		</BattleEffectText>
+		<!--Tiphereth-->
 		<BattleEffectText ID="Gaho">
       		<Name>Blessing</Name>
       		<Desc>Reduce incomming damage and Stagger Damage by 30% for {0} Scenes</Desc>
@@ -240,30 +270,6 @@ If 'Eye Beams'at least hit enemy once, the enemy gain 'Horrified'.</Desc>
 		<BattleEffectText ID="BloodyTree_Emotion_Damage">
       		<Name>Attention and Focus</Name>
       		<Desc>Clash with enemy other than the character with "Gaze of Others" will deal 1-8 damage and Stagger damage to each other.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SlashProtect"> 
-      		<Name>Scar -- Slash</Name>
-      		<Desc>Take 2-4 less damage from Slash attacks.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="HitProtect">
-      		<Name>Scar -- Blunt</Name>
-      		<Desc>Take 2-4 less damage from Blunt attacks.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="PenetrateProtect">
-      		<Name>Scar -- Pierce</Name>
-      		<Desc>Take 2-4 less damage from Pierce attacks.</Desc>
-    	</BattleEffectText>
-    	<BattleEffectText ID="BloodBath_Hand_Enemy">
-      		<Name>Pale Hands</Name>
-      		<Desc>Will take 3-12 additional Stagger damage on every third hit from the Guest with 'Pale Hands'.</Desc>
-   		</BattleEffectText>
-		<BattleEffectText ID="HeartExhaust">
-      		<Name>Exhaust</Name>
-      		<Desc>Increase damage and Stagger damage by 2</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SnowQueen_Emotion_Stun">
-      		<Name>Blizzard</Name>
-      		<Desc>if the character is guest, gian 6 Bind Next Scene</Desc>
     	</BattleEffectText>
 	</effectTextList>
 </BattleEffectTextRoot>

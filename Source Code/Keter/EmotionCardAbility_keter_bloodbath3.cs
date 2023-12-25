@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BaseMod;
 
-namespace EmotionalFix
+namespace EmotionalFix.Keter
 {
-    public class EmotionCardAbility_bloodbath3 : EmotionCardAbilityBase
+    public class EmotionCardAbility_keter_bloodbath3 : EmotionCardAbilityBase
     {
         private BattleUnitModel _target;
         private int _stack;
@@ -21,7 +22,7 @@ namespace EmotionalFix
             base.OnRollDice(behavior);
             if (!IsAttackDice(behavior.Detail) || _target == null || _target == behavior.card.target)
                 return;
-            if (_target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+            if (_target.bufListDetail.GetActivatedBufList().Find(x => x is BloodBathHand) is BloodBathHand bloodBathHandDebuf)
                 _target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
             _target = null;
         }
@@ -32,18 +33,13 @@ namespace EmotionalFix
             {
                 _target = behavior.card.target;
                 _stack = 1;
-                if(_owner.faction==Faction.Player)
-                    _target.bufListDetail.AddBuf(new BloodBath_HandDebuf());
-                else
-                    _target.bufListDetail.AddBuf(new BloodBath_HandDebuf_Enemy());
-                if (!(_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf))
-                    return;
+                BloodBathHand bloodBathHandDebuf=_target.bufListDetail.AddBufByEtc<BloodBathHand>(0);
                 bloodBathHandDebuf.OnHit();
             }
             else
             {
                 ++_stack;
-                if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+                if (_target.bufListDetail.GetActivatedBufList().Find(x => x is BloodBathHand) is BloodBathHand bloodBathHandDebuf)
                     bloodBathHandDebuf.OnHit();
                 if (_stack < 3)
                     return;
@@ -55,11 +51,8 @@ namespace EmotionalFix
         {
             if (_target == null)
                 return;
-            if(_owner.faction==Faction.Player)
-                _target.TakeBreakDamage(RandomUtil.Range(3, 10), DamageType.Emotion,_owner);
-            if(_owner.faction==Faction.Enemy)
-                _target.TakeBreakDamage(RandomUtil.Range(3, 12), DamageType.Emotion,_owner);
-            if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+            _target.TakeBreakDamage(RandomUtil.Range(3, 12), DamageType.Emotion, _owner);
+            if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBathHand)) is BloodBathHand bloodBathHandDebuf)
                 _target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
             _target.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_PaleHand_Hit", 3f);
             _target = null;
@@ -69,24 +62,18 @@ namespace EmotionalFix
         {
             if (_target == null)
                 return;
-            if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBath_HandDebuf)) is BloodBath_HandDebuf bloodBathHandDebuf)
+            if (_target.bufListDetail.GetActivatedBufList().Find((x => x is BloodBathHand)) is BloodBathHand bloodBathHandDebuf)
                 _target.bufListDetail.RemoveBuf(bloodBathHandDebuf);
             _target = null;
             _stack = 0;
         }
 
-        public class BloodBath_HandDebuf : BattleUnitBuf
+        public class BloodBathHand : BattleUnitBuf
         {
             public override string keywordIconId => "BloodBath_Hand";
-            public override string keywordId => "Bloodbath_Hands";
-            public BloodBath_HandDebuf() => stack = 0;
+            public override string keywordId => "EF_BloodbathHands";
+            public BloodBathHand() => stack = 0;
             public void OnHit() => ++stack;
         }
-        public class BloodBath_HandDebuf_Enemy : BloodBath_HandDebuf
-        {
-            public override string keywordId => "BloodBath_Hand_Enemy";
-            public override string keywordIconId => "Ability/BloodBath_Hand";
-        }
-
     }
 }

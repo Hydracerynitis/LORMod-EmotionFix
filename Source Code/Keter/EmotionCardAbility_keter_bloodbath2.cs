@@ -8,12 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Keter
 {
-    public class EmotionCardAbility_bloodbath2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_keter_bloodbath2 : EmotionCardAbilityBase
     {
-        private static bool Prob => (double)RandomUtil.valueForProb < 0.2;
-        private static int Reduce => RandomUtil.Range(2, 4);
+        private static int Reduce => RandomUtil.Range(2, 5);
         private Dictionary<BehaviourDetail, int> dict;
         private BehaviourDetail atk;
         public override void OnSelectEmotion()
@@ -26,16 +25,6 @@ namespace EmotionalFix
             atk = atkDice.Detail;
             dict[atk] += dmg;
             base.OnTakeDamageByAttack(atkDice, dmg);
-        }
-        public override bool BeforeTakeDamage(BattleUnitModel attacker, int dmg)
-        {
-            if (_owner.faction == Faction.Player && Prob)
-            {
-                _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
-                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
-                return true;
-            }
-            return base.BeforeTakeDamage(attacker, dmg);
         }
         public override void OnRoundStart()
         {
@@ -58,7 +47,7 @@ namespace EmotionalFix
             }
             else if (dict[BehaviourDetail.Penetrate] == num)
                 Dmg.Add(BehaviourDetail.Penetrate);
-            switch (RandomUtil.SelectOne<BehaviourDetail>(Dmg))
+            switch (RandomUtil.SelectOne(Dmg))
             {
                 case BehaviourDetail.Slash:
                     _owner.bufListDetail.AddBuf(new SlashProt(_emotionCard));
@@ -77,7 +66,7 @@ namespace EmotionalFix
         {
             private BattleEmotionCardModel emotionCard;
             public override string keywordIconId => "Roland_4th_DmgReduction_Slash";
-            public override string keywordId => "SlashProtect";
+            public override string keywordId => "EF_SlashProtect";
             public SlashProt(BattleEmotionCardModel card)
             {
                 emotionCard = card;
@@ -87,7 +76,7 @@ namespace EmotionalFix
             {
                 if (behavior.Detail == BehaviourDetail.Slash)
                 {
-                    int reduce = EmotionCardAbility_bloodbath2.Reduce;
+                    int reduce = Reduce;
                     _owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
                     _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
                     _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
@@ -105,7 +94,7 @@ namespace EmotionalFix
         {
             private BattleEmotionCardModel emotionCard;
             public override string keywordIconId => "Roland_4th_DmgReduction_Hit";
-            public override string keywordId => "HitProtect";
+            public override string keywordId => "EF_HitProtect";
             public HitProt(BattleEmotionCardModel card)
             {
                 emotionCard = card;
@@ -115,7 +104,7 @@ namespace EmotionalFix
             {
                 if (behavior.Detail == BehaviourDetail.Hit)
                 {
-                    int reduce = EmotionCardAbility_bloodbath2.Reduce;
+                    int reduce = Reduce;
                     _owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
                     _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
                     _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
@@ -133,7 +122,7 @@ namespace EmotionalFix
         {
             private BattleEmotionCardModel emotionCard;
             public override string keywordIconId => "Roland_4th_DmgReduction_Penetrate";
-            public override string keywordId => "PenetrateProtect";
+            public override string keywordId => "EF_PenetrateProtect";
             public PenetrateProt(BattleEmotionCardModel card)
             {
                 emotionCard = card;
@@ -143,7 +132,7 @@ namespace EmotionalFix
             {
                 if (behavior.Detail == BehaviourDetail.Penetrate)
                 {
-                    int reduce = EmotionCardAbility_bloodbath2.Reduce;
+                    int reduce = Reduce;
                     _owner.battleCardResultLog?.SetEmotionAbility(true, emotionCard, 0, ResultOption.Sign, -reduce);
                     _owner.battleCardResultLog?.SetCreatureAbilityEffect("0/BloodyBath_Scar", 1f);
                     _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/BloodBath_Barrier");
