@@ -7,7 +7,7 @@ using Sound;
 
 namespace EmotionalFix
 {
-    public class EmotionCardAbility_redhood3 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_redhood3 : EmotionCardAbilityBase
     {
         private int Reduce;
         private int strcount;
@@ -18,11 +18,11 @@ namespace EmotionalFix
             base.OnSelectEmotion();
             Reduce = _owner.MaxHp - (int)_owner.hp;
             int reduce = Reduce;
-            int Threshold= (int)((double)_owner.MaxHp * 0.15);
+            int Threshold= (int)(_owner.MaxHp * 0.2);
             _owner.bufListDetail.AddBuf(new Scar(Reduce));
             for (strcount=0 ; reduce > Threshold; reduce -= Threshold)
                 strcount += 1;
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedHood_Change");
+            SoundEffectManager.Instance.PlayClip("Creature/RedHood_Change");
         }
         public override void OnWaveStart()
         {
@@ -38,7 +38,7 @@ namespace EmotionalFix
         {
             base.OnRoundStart();
             _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, strcount, _owner);
-            if (!(aura == null))
+            if (aura != null)
                 return;
             aura = MakeEffect(path, target: _owner, apply: false);
         }
@@ -50,7 +50,7 @@ namespace EmotionalFix
         public void Destroy()
         {
             DestroyAura();
-            BattleUnitBuf buff = _owner.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is Scar));
+            BattleUnitBuf buff = _owner.bufListDetail.GetActivatedBufList().Find(x => x is Scar);
             if (buff != null)
                 buff.Destroy();
         }

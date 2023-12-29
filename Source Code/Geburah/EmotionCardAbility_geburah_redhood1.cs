@@ -3,20 +3,20 @@ using UnityEngine;
 using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
+using Prey = EmotionCardAbility_redhood1.BattleUnitBuf_redhood_prey;
 
-namespace EmotionalFix
+namespace EmotionalFix.Geburah
 {
-    public class EmotionCardAbility_redhood1 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_redhood1 : EmotionCardAbilityBase
     {
         private BattleUnitModel _target;
-        private static int Dmg => RandomUtil.Range(2, 6);
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
             base.OnUseCard(curCard);
             if ((_target != null && !_target.IsDead()) || curCard.target.faction == _owner.faction || curCard.GetDiceBehaviorList().Find(x => x.Type == BehaviourType.Atk) == null)
                 return;
             _target = curCard.target;
-            _target.bufListDetail.AddBuf(new BattleUnitBuf_redhood_prey());
+            _target.bufListDetail.AddBuf(new Prey());
             _target.battleCardResultLog?.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_Hunted", 1.5f);
             _target.battleCardResultLog?.SetCreatureEffectSound("Creature/RedHood_Gun");
         }
@@ -36,18 +36,13 @@ namespace EmotionalFix
                 return;
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
-                dmg = Dmg
+                dmg = RandomUtil.Range(2, 6)
             });
         }
         public void Destroy()
         {
-            if (_target.bufListDetail.GetActivatedBufList().Find((Predicate<BattleUnitBuf>)(x => x is BattleUnitBuf_redhood_prey)) is BattleUnitBuf_redhood_prey prey)
+            if (_target.bufListDetail.GetActivatedBufList().Find(x => x is Prey) is Prey prey)
                 prey.Destroy();
-        }
-        public class BattleUnitBuf_redhood_prey : BattleUnitBuf
-        {
-            public override string keywordId => "RedHood_Hunt";
-            public override string keywordIconId => "Redhood_Target";
         }
     }
 }

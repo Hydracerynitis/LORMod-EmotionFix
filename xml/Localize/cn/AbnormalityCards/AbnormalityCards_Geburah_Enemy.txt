@@ -30,14 +30,27 @@
 		<AbnormalityCard ID="Redhood_RedScar_Enemy">
 			<Abnormality>小红帽雇佣兵</Abnormality>
 			<CardName>伤疤</CardName>
-			<AbilityDesc>应用该异想体书页后，该来宾的最大体力会设定为其当前体力。
-因此每损失15%的最大生命值便永久获得1点“强壮”</AbilityDesc>
+			<AbilityDesc>应用该异想体书页时，将该来宾的最大体力会设定为其当前体力。
+因此每损失20%的最大生命值便永久获得1点“强壮”</AbilityDesc>
 			<FlaborText>15岁时，磨斧子取代了采野花，成为我生命中习以为常的一部分。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">这并非幸存者的勋章，而是求生意志的证明。</Dialogue>
 				<Dialogue ID="2">伤疤越多，求生的意志就越是强大。</Dialogue>
 				<Dialogue ID="3">可别以此为荣，每一道伤疤都在诉说你的无能。</Dialogue>
 				<Dialogue ID="4">……这些伤疤让我毛骨悚然，牙齿打颤。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BigBadWolf_Eat_Enemy">
+			<Abnormality>又大又可能很坏的狼</Abnormality>
+			<CardName>掠食本能</CardName>
+			<AbilityDesc>该来宾拼点胜利时将使自身当前书页的最后一颗骰子威力+1~2(不计入反击骰子)
+若以该骰子击中目标便为自身恢复3~7点体力。</AbilityDesc>
+			<FlaborText>好久没吃到，如此鲜美的肉了。从那时起，想要自律变得越来越难。不过没关系，我是一头又大又“坏”的狼。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">有股难闻的气息……在呼唤着我……</Dialogue>
+				<Dialogue ID="2">正如黑暗填满新月，我的胃也要被填满……</Dialogue>
+				<Dialogue ID="3">你们让我……口水直流……</Dialogue>
+				<Dialogue ID="4">只要填饱肚子……我就满足了……</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="BigBadWolf_Claw_Enemy">
@@ -53,23 +66,10 @@
 				<Dialogue ID="4">要想撕裂内脏，没有什么能比这对爪子更好……</Dialogue>
 			</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="BigBadWolf_Eat_Enemy">
-			<Abnormality>又大又可能很坏的狼</Abnormality>
-			<CardName>掠食本能</CardName>
-			<AbilityDesc>该来宾拼点胜利时将使自身当前书页的最后一颗骰子威力+1~2(不计入反击骰子)
-若以该骰子击中目标，之前每拼点是胜利一次便为自身恢复3~7点体力。</AbilityDesc>
-			<FlaborText>好久没吃到，如此鲜美的肉了。从那时起，想要自律变得越来越难。不过没关系，我是一头又大又“坏”的狼。</FlaborText>
-			<Dialogues>
-				<Dialogue ID="1">有股难闻的气息……在呼唤着我……</Dialogue>
-				<Dialogue ID="2">正如黑暗填满新月，我的胃也要被填满……</Dialogue>
-				<Dialogue ID="3">你们让我……口水直流……</Dialogue>
-				<Dialogue ID="4">只要填饱肚子……我就满足了……</Dialogue>
-			</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="BigBadWolf_Change_Enemy">
 			<Abnormality>又大又可能很坏的狼</Abnormality>
 			<CardName>狼的角色</CardName>
-			<AbilityDesc>该来宾被单方面攻击时以两个3~7斩击的反击骰迎战</AbilityDesc>
+			<AbilityDesc>该来宾被单方面攻击时以两个4~7斩击的反击骰迎战</AbilityDesc>
 			<FlaborText>狼做坏事时绝不能越界，狼理应受到惩罚，狼永远是坏榜样……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">没关系……谁叫我是一头又大又坏的狼……</Dialogue>
@@ -81,7 +81,7 @@
 		<AbnormalityCard ID="Mountain_Eat_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>死尸吸收</CardName>
-			<AbilityDesc>场上每有一个其他单位死亡时该来宾恢复20%血量和20%混乱抗性(上限为30)并恢复1点光芒</AbilityDesc>
+			<AbilityDesc>场上其他单位死亡时该来宾恢复20%血量(上限为50)并恢复1点光芒</AbilityDesc>
 			<FlaborText>它唯一想要的，就是浸泡在鲜血中的人肉。一闻到血腥便会狂奔而来。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">肉……好吃的……日……欧……</Dialogue>
@@ -93,7 +93,7 @@
 		<AbnormalityCard ID="Mountain_Shout_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>尸体在笑</CardName>
-			<AbilityDesc>当其他来宾死亡时将死亡司书牌库里3张随机书页置入该来宾的牌库</AbilityDesc>
+			<AbilityDesc>当司书死亡时将死亡司书牌库里3张随机书页置入该来宾的手牌并下一幕额外获得一个速度骰</AbilityDesc>
 			<FlaborText>一座尸山。那些死尸面带微笑，成为互相分享残肢的一个整体。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">咕噜噜……咕噜……嗝……</Dialogue>
@@ -105,8 +105,7 @@
 		<AbnormalityCard ID="Mountain_Vomit_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>尸山</CardName>
-			<AbilityDesc>该来宾每恢复10%的最大生命值的血量，获得1层“尸山”(骰子威力+1但提高25z'W%所受伤害)
-每一幕开始时司书每损失10%最大生命值的血量便失去1层“尸山”</AbilityDesc>
+			<AbilityDesc>每击杀1名司书，该来宾便永久获得1层“强壮”，“守护”与“迅捷”且光芒上限与光芒恢复量+1</AbilityDesc>
 			<FlaborText>尸体越多，它的体型就越是庞大。而且永不满足。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">必须……重新……合为……一体……</Dialogue>
@@ -118,8 +117,7 @@
 	    <AbnormalityCard ID="Nosferatu_BloodHope_Enemy">
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>恐水症</CardName>
-			<AbilityDesc>该来宾击中目标时伤害+3~7并在下一幕中对其施加2层“流血”。
-该来宾只会攻击血量最高的司书</AbilityDesc>
+			<AbilityDesc>该来宾击中目标时失去2-7点血量，提高造成伤害+3~7点并在下一幕中对其施加2层“流血”.</AbilityDesc>
 			<FlaborText>他们彷徨着。像在寻找什么，却又不明白自己究竟想要什么。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">血……我要血！！！</Dialogue>
@@ -143,7 +141,7 @@
 		<AbnormalityCard ID="Nosferatu_Vampire_Enemy">
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>吸血</CardName>
-			<AbilityDesc>该来宾击中处于“流血”状态下的目标时伤害+2~4将恢复2~5点体力。</AbilityDesc>
+			<AbilityDesc>该来宾击中低于50%最大血量的目标时伤害+2~4将恢复2~5点体力。</AbilityDesc>
 			<FlaborText>……饥渴，永不满足。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">死亡将与诸位共舞！被吞噬的命运也是公平的！</Dialogue>

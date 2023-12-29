@@ -116,30 +116,13 @@
       		<Name>愤怒</Name>
       		<Desc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="RandomEmotion">
-      		<Name>空虚</Name>
-      		<Desc>每一幕开始时清空自身所有的异想体，每清除一个异想体书页从所有已解锁的异想体里随机选择1个应用到自身</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Nihil_Nihil">
+		<BattleEffectText ID="EF_Nihil">
       		<Name>虚无</Name>
-      		<Desc>移除异想体书页“贪婪”，“憎恶”，“绝望”与“愤怒”的负面效果。
-每一幕开始时对除该司书外的其余角色施加5层“虚弱”，“破绽”与“束缚”。
+      		<Desc>移除异想体书页“贪婪”，“憎恶”，与“愤怒”的负面效果。
+每一幕开始时对除该司书外的其余角色施加3层“虚弱”，“破绽”与“束缚”。
 “贪婪”- 效果仅对自身生效。
-“憎恶”- 不再对其他司书造成伤害。
-“绝望”-其他司书死亡时不会失去混乱抗性
-“愤怒”- 可控制处于“愤怒”状态下的司书。</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="MountainCorpse">
-      		<Name>尸山</Name>
-      		<Desc>每层骰子威力+1，所受伤害提高25%并提高体型</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Indicator">
-      		<Name>计数器</Name>
-      		<Desc>恢复量为{0}</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="FearOfWater">
-      		<Name>恐水症</Name>
-      		<Desc>该单位不受控制并且只能攻击血量最高的敌人</Desc>
+“憎恶”- 拼点失败不再失去混乱。
+“愤怒”- “邪恶的化身！！！”不再指定友方单位为目标</Desc>
     	</BattleEffectText>
     	<BattleEffectText ID="WayBackHome_Emotion_Target">
       		<Name>回家吧</Name>

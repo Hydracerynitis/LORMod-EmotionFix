@@ -4,12 +4,12 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix
+namespace EmotionalFix.Geburah
 {
-    public class EmotionCardAbility_redhood2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_redhood2 : EmotionCardAbilityBase
     {
         private int DamageTaken;
-        private int EnemyThreshold => (int)((double)_owner.MaxHp * 0.1);
+        private int EnemyThreshold => (int)(_owner.MaxHp * 0.1);
         public override void OnWaveStart()
         {
             DamageTaken=0;
@@ -19,7 +19,7 @@ namespace EmotionalFix
             base.OnSelectEmotion();
             DamageTaken = 0;
             new GameObject().AddComponent<SpriteFilter_Queenbee_Spore>().Init("EmotionCardFilter/RedHood_Filter", false, 2f);
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/RedHood_Change_mad");
+            SoundEffectManager.Instance.PlayClip("Creature/RedHood_Change_mad");
         }
         public override void OnRoundEndTheLast()
         {

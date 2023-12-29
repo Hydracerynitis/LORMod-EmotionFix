@@ -5,28 +5,19 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EmotionalFix.Geburah
 {
-    public class EmotionCardAbility_danggocreature1 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_danggocreature1 : EmotionCardAbilityBase
     {
         private Vector3 effectPos = Vector3.zero;
         public override void OnDieOtherUnit(BattleUnitModel unit)
         {
             if (unit == _owner)
                 return;
-            int Hp = (int)((double)_owner.MaxHp * 0.2);
-            if (Hp >= 30)
-                Hp = 30;
+            int Hp = (int)(_owner.MaxHp * 0.2);
+            if (Hp >= 50)
+                Hp = 50;
             _owner.RecoverHP(Hp);
-            int Break= (int)((double)_owner.breakDetail.GetDefaultBreakGauge() * 0.2);
-            if (Break >= 30)
-                Break = 30;
-            _owner.breakDetail.RecoverBreak(Break);
-            if (_owner.IsBreakLifeZero())
-            {
-                _owner.breakDetail.nextTurnBreak = false;
-                _owner.RecoverBreakLife(1);
-            }
             _owner.cardSlotDetail.RecoverPlayPoint(1);
         }
         public override void OnKill(BattleUnitModel target)
@@ -43,7 +34,7 @@ namespace EmotionalFix
             Battle.CreatureEffect.CreatureEffect original1 = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/6/Dango_Emotion_Effect");
             if (original1 != null)
             {
-                Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original1, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+                Battle.CreatureEffect.CreatureEffect creatureEffect = UnityEngine.Object.Instantiate(original1, SingletonBehavior<BattleSceneRoot>.Instance.transform);
                 if (creatureEffect?.gameObject.GetComponent<AutoDestruct>() == null)
                 {
                     AutoDestruct autoDestruct = creatureEffect?.gameObject.AddComponent<AutoDestruct>();
@@ -55,13 +46,13 @@ namespace EmotionalFix
                 }
             }
             Battle.CreatureEffect.CreatureEffect original2 = Resources.Load<Battle.CreatureEffect.CreatureEffect>("Prefabs/Battle/CreatureEffect/7/Lumberjack_final_blood_1st");
-            if (!(original2 != null))
+            if (original2 == null)
                 return;
-            Battle.CreatureEffect.CreatureEffect creatureEffect1 = UnityEngine.Object.Instantiate<Battle.CreatureEffect.CreatureEffect>(original2, SingletonBehavior<BattleSceneRoot>.Instance.transform);
-            if (!(creatureEffect1?.gameObject.GetComponent<AutoDestruct>() == null))
+            Battle.CreatureEffect.CreatureEffect creatureEffect1 = UnityEngine.Object.Instantiate(original2, SingletonBehavior<BattleSceneRoot>.Instance.transform);
+            if (creatureEffect1?.gameObject.GetComponent<AutoDestruct>() != null)
                 return;
             AutoDestruct autoDestruct1 = creatureEffect1?.gameObject.AddComponent<AutoDestruct>();
-            if (!(autoDestruct1 != null))
+            if (autoDestruct1 == null)
                 return;
             autoDestruct1.time = 3f;
             autoDestruct1.DestroyWhenDisable();

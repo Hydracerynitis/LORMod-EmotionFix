@@ -126,9 +126,7 @@
     <Compile Include="Source Code\Geburah\EmotionCardAbility_danggocreature3.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_danggocreature2.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_danggocreature1.cs" />
-    <Compile Include="Source Code\Tiphereth\EmotionCardAbility_clownofnihil2.cs" />
     <Compile Include="Source Code\Tiphereth\EmotionCardAbility_tiphereth_clownofnihil1.cs" />
-    <Compile Include="Source Code\Tiphereth\EmotionCardAbility_clownofnihil3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_heart3.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_longbird3.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_longbird1.cs" />

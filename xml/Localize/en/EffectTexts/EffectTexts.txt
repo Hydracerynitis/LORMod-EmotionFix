@@ -118,31 +118,13 @@ Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
       		<Name>Wrath</Name>
       		<Desc>Use Mass attack card 'EMBODIMENTS OF EVIL!!!' targeting all other characters every Scene</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="RandomEmotion">
-      		<Name>Void</Name>
-      		<Desc>At the start of each Scene, clear all euqiped abnormality cards.
-Whenever an abnormality cards is cleared, apply new random accessible abnormality cards to self.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Nihil_Nihil">
+		<BattleEffectText ID="EF_Nihil">
       		<Name>Nihil</Name>
-      		<Desc>At the start of each Scene, inflict 5 Feeble, Disarm, and Bind to all other characters.
+      		<Desc>At the start of each Scene, inflict 3 Feeble, Disarm, and Bind to all other characters.
 'Greed', 'Hate', and 'Wrath' lose their drawbacks.
 'Greed'- Only the librarian can activate this effect.
-'Hate'- No longer inflict damage to allies.
-'Despair'- No longer lose Stagger Resist when other allies die.
-'Wrath'- Can control Librarian in wrath state</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="MountainCorpse">
-      		<Name>Mountain</Name>
-      		<Desc>All dice gain 1 Power; Increase incomming damage by 25% per stack; Become Bigger.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Indicator">
-      		<Name>Counter</Name>
-      		<Desc>Net healing is {0}</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="FearOfWater">
-      		<Name>Fear of Water</Name>
-      		<Desc>Uncontrollable, prioritize enemy with highest HP</Desc>
+'Hate'- Losing a clash no longer take Stagger Damage.
+'Wrath'- 'EMBODIMENTS OF EVIL!!!' no longer target allies</Desc>
     	</BattleEffectText>
     	<BattleEffectText ID="WayBackHome_Emotion_Target">
       		<Name>Stepping Stone</Name>

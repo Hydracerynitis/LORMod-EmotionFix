@@ -8,14 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Geburah
 {
-    public class EmotionCardAbility_bigbadwolf1 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_bigbadwolf1 : EmotionCardAbilityBase
     {
         private BattleDiceBehavior last;
-        private int win;
-        private static int Pow => RandomUtil.Range(1, 2);
-        private static int Heal => RandomUtil.Range(3, 7);
+        private bool win;
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
@@ -24,7 +22,7 @@ namespace EmotionalFix
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
             base.OnUseCard(curCard);
-            win = 0;
+            win = false;
             if (curCard == null)
                 return;
             BattleDiceBehavior[] array = curCard.cardBehaviorQueue?.ToArray();
@@ -38,10 +36,10 @@ namespace EmotionalFix
             BattlePlayingCardDataInUnitModel card = behavior?.card;
             if (card == null || behavior == last)
                 return;
-            win++;
+            win=true;
             card.ApplyDiceStatBonus(DiceMatch.LastDice, new DiceStatBonus()
             {
-                power = Pow
+                power = RandomUtil.Range(1, 2)
             });
         }
 
@@ -50,11 +48,9 @@ namespace EmotionalFix
             base.OnSucceedAttack(behavior);
             if (behavior != last)
                 return;
-            SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Wolf_Bite");
-            for(int i = 0; i < win; i++)
-            {
-                _owner.RecoverHP(Heal);
-            }
+            SoundEffectManager.Instance.PlayClip("Creature/Wolf_Bite");
+            if(win)
+                _owner.RecoverHP(RandomUtil.Range(3, 7));
         }
     }
 }

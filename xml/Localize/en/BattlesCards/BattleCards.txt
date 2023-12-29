@@ -10,23 +10,14 @@
     <BattleCardDesc ID="1103501">
       <LocalizedName>Well-worn Parasol</LocalizedName>
     </BattleCardDesc>
-    <BattleCardDesc ID="1103502">
-      <LocalizedName>Weaving Clothes</LocalizedName>
+    <BattleCardDesc ID="1110001">
+      <LocalizedName>Blood</LocalizedName>
     </BattleCardDesc>
     <BattleCardDesc ID="1104401">
       <LocalizedName>EMBODIMENTS OF EVIL!!!</LocalizedName>
     </BattleCardDesc>
-    <BattleCardDesc ID="1104501">
-      <LocalizedName>The Magical Girl of Love</LocalizedName>
-    </BattleCardDesc>
-    <BattleCardDesc ID="1104502">
-      <LocalizedName>The Magical Girl of Justice</LocalizedName>
-    </BattleCardDesc>
-    <BattleCardDesc ID="1104503">
-      <LocalizedName>The Magical Girl of Happiness</LocalizedName>
-    </BattleCardDesc>
-    <BattleCardDesc ID="1104504">
-      <LocalizedName>The Magical Girl of Courage</LocalizedName>
+    <BattleCardDesc ID="1104402">
+      <LocalizedName>EMBODIMENTS OF EVIL!!!</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="1106201">
       <LocalizedName>The Role of Wolf</LocalizedName>
@@ -42,9 +33,6 @@
     </BattleCardDesc>
 	<BattleCardDesc ID="1108401">
       <LocalizedName>Baptism</LocalizedName>
-    </BattleCardDesc>
-    <BattleCardDesc ID="1110001">
-      <LocalizedName>Blood</LocalizedName>
     </BattleCardDesc>
   </cardDescList>
 </BattleCardDescRoot>

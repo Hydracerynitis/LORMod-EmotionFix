@@ -5,16 +5,14 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EmotionalFix.Geburah
 {
-    public class EmotionCardAbility_nosferatu2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_nosferatu2 : EmotionCardAbilityBase
     {
         private bool _trigger;
         public override void OnKill(BattleUnitModel target)
         {
             base.OnKill(target);
-            if (_owner.faction==Faction.Player && target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding) == null)
-                return;
             target.battleCardResultLog?.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_TeathATK");
             target.battleCardResultLog?.SetCreatureAbilityEffect("6/Nosferatu_Emotion_BloodDrain");
             target.battleCardResultLog?.SetCreatureEffectSound("Creature/Nosferatu_Change");
