@@ -7,9 +7,9 @@ using HarmonyLib;
 using System.Collections.Generic;
 using System.IO;
 
-namespace EmotionalFix
+namespace EmotionalFix.Hokma
 {
-    public class EmotionCardAbility_bluestar2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_hokma_bluestar2 : EmotionCardAbilityBase
     {
         private bool triggered;
         private int Dmg => RandomUtil.Range(3, 7);

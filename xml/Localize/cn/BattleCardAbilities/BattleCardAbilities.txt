@@ -9,9 +9,6 @@
 	<BattleCardAbility ID="invalid">
 		<Desc>该骰子无法投掷出任何数值</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="SilenceStun">
-		<Desc>[装备时]使目标和自身在这一幕内施加眩晕</Desc>
-	</BattleCardAbility>
 	<BattleCardAbility ID="BlessingPlague">
 		<Desc>[战斗开始]使目标在这一幕获得1层忍耐并恢复6点血量</Desc>
 	</BattleCardAbility>

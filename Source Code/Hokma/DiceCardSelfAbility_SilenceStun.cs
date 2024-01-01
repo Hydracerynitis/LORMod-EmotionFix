@@ -25,11 +25,11 @@ namespace EmotionalFix
                 creatureEffect.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
             }
             base.OnUseInstance(unit, self, targetUnit);
-            unit.bufListDetail.AddBuf(new EmotionCardAbility_silence3.SilenceStun());
+            unit.bufListDetail.AddBuf(new EmotionCardAbility_hokma_silence3.SilenceStun());
             unit.view.speedDiceSetterUI.DeselectAll();
             unit.OnRoundStartOnlyUI();
             unit.RollSpeedDice();
-            targetUnit.bufListDetail.AddBuf(new EmotionCardAbility_silence3.SilenceStun());
+            targetUnit.bufListDetail.AddBuf(new EmotionCardAbility_hokma_silence3.SilenceStun());
             targetUnit.view.speedDiceSetterUI.DeselectAll();
             targetUnit.OnRoundStartOnlyUI();
             targetUnit.RollSpeedDice();

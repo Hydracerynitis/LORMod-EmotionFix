@@ -1,6 +1,8 @@
-﻿using System;
+﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +19,14 @@ namespace EmotionalFix
                     return card;
             }
             return null;
+        }
+        public static bool CheckOtherMod(string DLLname)
+        {
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                if(assembly.GetName().Name == DLLname) return true;
+            }
+            return false;
         }
     }
     public enum EmotionBundle

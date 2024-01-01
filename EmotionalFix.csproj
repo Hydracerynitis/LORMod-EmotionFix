@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source Code\Binah\EmotionCardAbility_binah_bigbird1.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_bigbird3.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_lumberjack2.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_ozma1.cs" />
@@ -76,6 +77,11 @@
     <Compile Include="Source Code\Geburah\EmotionCardAbility_geburah_nothing3.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_geburah_nothing2.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_geburah_nothing1.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_onebadmanygood1.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_bloodytree3.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_bloodytree1.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_silence2.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_whitenight1.cs" />
     <Compile Include="Source Code\Tiphereth\DiceCardAbility_Tear.cs" />
     <Compile Include="Source Code\Helper.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_geburah_bigbadwolf1.cs" />
@@ -86,7 +92,7 @@
     <Compile Include="Source Code\Hod\EmotionCardAbility_hod_spiderBud3.cs" />
     <Compile Include="Source Code\Hod\EmotionCardAbility_hod_spiderBud1.cs" />
     <Compile Include="Source Code\Hokma\DiceCardAbility_PlagueDoctor.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_bluestar3.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_bluestar3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_heart2.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_pinocchio2.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_quietKid2.cs" />
@@ -108,8 +114,8 @@
     <Compile Include="Source Code\Yesod\EmotionCardAbility_yesod_helper1.cs" />
     <Compile Include="Source Code\Yesod\EmotionCardAbility_yesod_helper3.cs" />
     <Compile Include="Source Code\Yesod\DiceCardAbility_Execute.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_bluestar1.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_bluestar2.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_bluestar1.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_bluestar2.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_bossbird3.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_bossbird2.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_bossbird1.cs" />
@@ -119,7 +125,7 @@
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_bloodbath3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_bloodbath2.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_bloodbath1.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_bloodytree2.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_bloodytree2.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_bigbird2.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_geburah_bigbadwolf3.cs" />
     <Compile Include="Source Code\Geburah\EmotionCardAbility_geburah_bigbadwolf2.cs" />
@@ -135,18 +141,18 @@
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_ozma3.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_ozma2.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_pinocchio3.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_plaguedoctor1.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_plaguedoctor1.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_snowqueen3.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_snowqueen1.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_silence3.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_silence1.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_silence3.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_silence1.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_smallbird3.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_smallbird2.cs" />
     <Compile Include="Source Code\Binah\EmotionCardAbility_binah_smallbird1.cs" />
     <Compile Include="Source Code\Keter\EmotionCardAbility_keter_pinocchio1.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_whitenight4.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_whitenight3.cs" />
-    <Compile Include="Source Code\Hokma\EmotionCardAbility_whitenight2.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_whitenight4.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_whitenight3.cs" />
+    <Compile Include="Source Code\Hokma\EmotionCardAbility_hokma_whitenight2.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_wizard2.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_wizard3.cs" />
     <Compile Include="Source Code\Chesed\EmotionCardAbility_chesed_wizard1.cs" />

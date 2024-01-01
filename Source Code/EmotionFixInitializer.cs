@@ -7,6 +7,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using LOR_DiceSystem;
 using UnityEngine;
+using EmotionalFix.Hokma;
 
 namespace EmotionalFix
 {
@@ -26,7 +27,6 @@ namespace EmotionalFix
         {
             Harmony harmony = new Harmony("Hydracerynitis.EmotionFix");
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
-            EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
             enemylist = new List<BattleUnitModel>();
             MethodInfo method1 = typeof(EmotionFixInitializer).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
             MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
@@ -132,7 +132,7 @@ namespace EmotionalFix
         public static void StageController_GameOver()
         {
             PassiveAbility_668.LevelUped.Clear();
-            EmotionCardAbility_plaguedoctor1.WhiteNightClock.Clear();
+            EmotionCardAbility_hokma_plaguedoctor1.WhiteNightClock.Clear();
             TriggerReset();
         }
         public static void StageController_RoundStartPhase_System()

@@ -1,14 +1,9 @@
-﻿using System;
-using LOR_DiceSystem;
-using System.Collections.Generic;
-using Sound;
-using HarmonyLib;
-using Battle.CreatureEffect;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EmotionalFix.Hokma
 {
-    public class EmotionCardAbility_whitenight4 : EmotionCardAbilityBase
+    public class EmotionCardAbility_hokma_whitenight4 : EmotionCardAbilityBase
     {
         private bool _effect;
         public override void OnSelectEmotion()
@@ -27,7 +22,7 @@ namespace EmotionalFix
                 {
                     WhiteNightApostleDeadFilter component = gameObject?.GetComponent<WhiteNightApostleDeadFilter>();
                     if (component != null)
-                        component.Init(11, 12, (WhiteNightMapManager.DeadApostleFilterEndEvent)null, (BattleUnitModel)null, (List<BattleUnitModel>)null);
+                        component.Init(11, 12, null,null, null);
                     AutoDestruct autoDestruct = gameObject.AddComponent<AutoDestruct>();
                     if (autoDestruct != null)
                     {
@@ -40,17 +35,16 @@ namespace EmotionalFix
             {
                 if (alive != _owner)
                 {
-                    BattleUnitBuf_Emotion_WhiteNight_Apostle whiteNightApostle = new BattleUnitBuf_Emotion_WhiteNight_Apostle(_owner);
-                    alive.bufListDetail.AddBuf((BattleUnitBuf)whiteNightApostle);
+                    Apostal whiteNightApostle = new Apostal(_owner);
+                    alive.bufListDetail.AddBuf(whiteNightApostle);
                 }
             }
         }
-        public class BattleUnitBuf_Emotion_WhiteNight_Apostle : BattleUnitBuf
+        public class Apostal : BattleUnitBuf
         {
             private BattleUnitModel _god;
-            private int Dmg => RandomUtil.Range(2, 7);
             public override bool Hide => true;
-            public BattleUnitBuf_Emotion_WhiteNight_Apostle(BattleUnitModel god) => _god = god;
+            public Apostal(BattleUnitModel god) => _god = god;
             public override void BeforeRollDice(BattleDiceBehavior behavior)
             {
                 base.BeforeRollDice(behavior);
@@ -59,9 +53,9 @@ namespace EmotionalFix
                 if (behavior != null)
                     behavior.ApplyDiceStatBonus(new DiceStatBonus()
                     {
-                        dmg = Dmg
+                        dmg = RandomUtil.Range(2, 7)
                     });
-                if (EmotionCardAbility_plaguedoctor1.WhiteNightClock.ContainsKey(_god.UnitData) || EmotionCardAbility_plaguedoctor1.WhiteNightClock[_god.UnitData]<12)
+                if (EmotionCardAbility_hokma_plaguedoctor1.WhiteNightClock.ContainsKey(_god.UnitData) || EmotionCardAbility_hokma_plaguedoctor1.WhiteNightClock[_god.UnitData]<12)
                     return;
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {

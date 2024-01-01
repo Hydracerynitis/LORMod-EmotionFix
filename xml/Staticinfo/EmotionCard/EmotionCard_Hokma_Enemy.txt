@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bloodytree1</Script>
+		<Script>hokma_bloodytree1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90902">
 		<Name>Bloodytree_Gaze_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bloodytree2</Script>
+		<Script>hokma_bloodytree2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90903">
 		<Name>Bloodytree_Forcus_Enemy</Name>
@@ -31,7 +31,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bloodytree3</Script>
+		<Script>hokma_bloodytree3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90904">
 		<Name>Clock_Time_Enemy</Name>
@@ -42,7 +42,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>silence1</Script>
+		<Script>hokma_silence1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90905">
 		<Name>Clock_Thirteen_Enemy</Name>
@@ -53,7 +53,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>silence2</Script>
+		<Script>hokma_silence2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90906">
 		<Name>Clock_Kill_Enemy</Name>
@@ -64,7 +64,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>silence3</Script>
+		<Script>hokma_silence3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90907">
 		<Name>BlueStar_martyrdom_Enemy</Name>
@@ -75,7 +75,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bluestar1</Script>
+		<Script>hokma_bluestar1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90908">
 		<Name>BlueStar_Atonement_Enemy</Name>
@@ -86,7 +86,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bluestar2</Script>
+		<Script>hokma_bluestar2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90909">
 		<Name>BlueStar_Melody_Enemy</Name>
@@ -97,7 +97,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>All</TargetType>
-		<Script>bluestar3</Script>
+		<Script>hokma_bluestar3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90910">
 		<Name>WhiteNight_Confess_Enemy</Name>
@@ -108,7 +108,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>All</TargetType>
-		<Script>onebadmanygood1</Script>
+		<Script>hokma_onebadmanygood1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90911">
 		<Name>WhiteNight_Bless_Enemy</Name>
@@ -119,7 +119,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>plaguedoctor1</Script>
+		<Script>hokma_plaguedoctor1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90912">
 		<Name>WhiteNight_Red_Enemy</Name>
@@ -130,7 +130,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>whitenight1</Script>
+		<Script>hokma_whitenight1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90913">
 		<Name>WhiteNight_Guard_Enemy</Name>
@@ -141,7 +141,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>3</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>whitenight2</Script>
+		<Script>hokma_whitenight2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90914">
 		<Name>WhiteNight_White_Enemy</Name>
@@ -152,7 +152,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>whitenight3</Script>
+		<Script>hokma_whitenight3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90915">
 		<Name>WhiteNight_Apostle_Enemy</Name>
@@ -163,6 +163,6 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>whitenight4</Script>
+		<Script>hokma_whitenight4</Script>
 	</EmotionCard>
 </EmotionCardXmlRoot>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix
+namespace EmotionalFix.Hokma
 {
     public class DiceCardAbility_PlagueDoctor : DiceCardAbilityBase
     {

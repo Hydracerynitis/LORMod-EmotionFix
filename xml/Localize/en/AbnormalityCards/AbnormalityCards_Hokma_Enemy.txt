@@ -16,8 +16,8 @@
 		<AbnormalityCard ID="Bloodytree_Gaze_Enemy">
 			<Abnormality>Burrowing Heaven</Abnormality>
 			<CardName>Gaze of Others</CardName>
-			<AbilityDesc>Upon start of clash between other characters, deal 1-8 damage and Stagger damage to each other.
-The effect no longer trigger after the selected guest dies.</AbilityDesc>
+			<AbilityDesc>Deal +2-4 damage in a one-sided attack.
+In a clash, deal 3-6 less damage with attacks, but Block dice gain 1-3 Power.</AbilityDesc>
       		<FlaborText>That’s what a gaze is. Attention. An invisible string that connects us. Sole focus.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Just close your eyes. That’s right, you’re doing good…</Dialogue>
@@ -66,9 +66,7 @@ The dice on the page also gain the following effect: ‘[On Hit] Deal bonus dama
 		<AbnormalityCard ID="Clock_Kill_Enemy">
 			<Abnormality>The Price of Silence</Abnormality>
 			<CardName>Silence</CardName>
-			<AbilityDesc>[Single Ally]
-Inflict Stun to random enemy and self next Scene.
-The effect will trigger agian at the start of new Act.</AbilityDesc>
+			<AbilityDesc>Inflict Stun to a random enemy and self every three Scene.</AbilityDesc>
       		<FlaborText>Rarely, I feel as if time has stopped. Fleeting moments of silence sometimes befall me.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Silence does not always bring peace.</Dialogue>
@@ -80,8 +78,8 @@ The effect will trigger agian at the start of new Act.</AbilityDesc>
 		<AbnormalityCard ID="BlueStar_martyrdom_Enemy">
 			<Abnormality>Blue Star</Abnormality>
 			<CardName>Martyr</CardName>
-			<AbilityDesc>Upon dealing damage, lose 2-4 HP.
-For every 9% of Max HP lost increase outgoing Stagger damage by 10% (Up to 100%).</AbilityDesc>
+			<AbilityDesc>Before inflicitng damage, lose 2-4 HP.
+For every 7.5% of Max HP lost increase outgoing Stagger damage by 10% (Up to 100%).</AbilityDesc>
       		<FlaborText>Let us meet again as stars.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Let’s relish eternal happiness at the end of this universe together.</Dialogue>

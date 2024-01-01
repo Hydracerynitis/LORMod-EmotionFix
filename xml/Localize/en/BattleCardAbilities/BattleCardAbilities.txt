@@ -9,9 +9,6 @@
 	<BattleCardAbility ID="invalid">
 		<Desc>This die is invalid</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="SilenceStun">
-		<Desc>[On Play] Inflict Stun to target and self for the duration of the Scene.</Desc>
-	</BattleCardAbility>
 	<BattleCardAbility ID="BlessingPlague">
 		<Desc>[Combat Start] target gain 1 Endurance for this Scene and recover 6 HP.</Desc>
 	</BattleCardAbility>
