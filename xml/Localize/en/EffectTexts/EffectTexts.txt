@@ -126,23 +126,16 @@ Only takes physical damage from enemy, increase damage taken by 2-4.</Desc>
 'Hate'- Losing a clash no longer take Stagger Damage.
 'Wrath'- 'EMBODIMENTS OF EVIL!!!' no longer target allies</Desc>
     	</BattleEffectText>
-    	<BattleEffectText ID="WayBackHome_Emotion_Target">
+		<!--Chesed-->
+    	<BattleEffectText ID="EF_WayBackHome">
       		<Name>Stepping Stone</Name>
-      		<Desc>The librarian with the Abnormality page deals 2 more damage and increase all dice Power by 1 whenever they attack a target in the right order.</Desc>
+      		<Desc>The Guest with the Abnormality page deals 3 more damage whenever they attack a target in the right order.</Desc>
     	</BattleEffectText>
-    	<BattleEffectText ID="WayBackHome_Emotion_Enemy">
-      		<Name>Stepping Stone</Name>
-      		<Desc>The Guest with the Abnormality page deals 2 more damage and increase all dice Power by 1 whenever they attack a target in the right order.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Lion_Player">
+		<BattleEffectText ID="EF_Lion">
       		<Name>A Road Walked Together</Name>
-      		<Desc>If athe character redirects an attack that was initially targeting other allies, dice on the character's page gain 1-2 Power in the clash.</Desc>
+      		<Desc>When attacking its intended targets (which means failing to redirect its attack), all dice on the guest's pages gain 1-2 Power.</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Lion_Enemy">
-      		<Name>A Road Walked Together</Name>
-      		<Desc>If librarians failed to redirect the selected guest's attack, all dice on the guest's page gain 1-2 Power.</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Ozma_revive"> 		
+		<BattleEffectText ID="EF_OzmaRevive"> 		
       		<Name>Powder of Life</Name>
       		<Desc>Can revive from the effect of the Abnormality page 'Powder of Life'</Desc>
     	</BattleEffectText>

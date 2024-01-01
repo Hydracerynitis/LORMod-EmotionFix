@@ -4,8 +4,7 @@
 		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
 			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
 			<CardName>Torn Off Wisdom</CardName>
-			<AbilityDesc>Remove 3 random cards from the deck.
-Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance.</AbilityDesc>
+			<AbilityDesc>Reduce all Dice's Power by -1-3, and at 25% chance reuse itself on roll (Once per Die).</AbilityDesc>
 			<FlaborText>When he returned, he had a visibly long scar on his head. People asked him how he felt, and he responded that his head felt lighter.</FlaborText>
 			<Dialogues>
         		<Dialogue ID="1">Wisdom… Give me the wisdom I lack…</Dialogue>
@@ -18,7 +17,7 @@ Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance.</Abilit
 		<AbnormalityCard ID="Scarecrow_Harvest_Enemy">
 			<Abnormality>Scarecrow Searching for Wisdom</Abnormality>
 			<CardName>Gleaning</CardName>
-			<AbilityDesc>After attacking an enemy with a higher amount of Stagger Resist, deal 2-4 bonus Stagger damage, and recover 2-5 Stagger Resist.</AbilityDesc>
+			<AbilityDesc>After attacking an enemy recover 2-5 Stagger Resist, deal 2-4 Stagger Damage if enemy's stagger resist is higher.</AbilityDesc>
       		<FlaborText>It shows aggression towards certain employees, attempting to take their brains. These employees are those who scored “Excellent” on the intelligence test.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">I feel much smarter… I can know anything now…</Dialogue>
@@ -40,7 +39,7 @@ Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance.</Abilit
 		<AbnormalityCard ID="LumberJack_Cut_Enemy">
 			<Abnormality>Warm-hearted Woodsman</Abnormality>
 			<CardName>A Warm Heart</CardName>
-			<AbilityDesc>At the start of the Scene, boost the Power of Offensive dice by +1-2 for the Scene if the guest has 3 or more Light.</AbilityDesc>
+			<AbilityDesc>When attacking enemies with more than 2 remaining Light, boost Power of Offensive Dice by +1-2.</AbilityDesc>
 			<FlaborText>In anger, he swung his axe through the wizard’s heart. The warm heart was pulsing vigorously.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">This is… how it feels to have a thumping heart…</Dialogue>
@@ -49,31 +48,29 @@ Upon hit, Shuffle 1 copy of random card from enemy's deck by 25% chance.</Abilit
         		<Dialogue ID="4">The heart is a peculiar thing… I can laugh now…</Dialogue>
       		</Dialogues>
 		</AbnormalityCard>
-		<AbnormalityCard ID="LumberJack_Tree_Enemy">
-			<Abnormality>Warm-hearted Woodsman</Abnormality>
-			<CardName>Timber</CardName>
-			<AbilityDesc>Upon successful hit, recover 1 Light.
-At the start of each Scene, if the selected Guest doesn't have maximun light, inflict 2 Feeble and Disarm to self.</AbilityDesc>
-      		<FlaborText>This is a forest full of hearts. No matter how many he cuts down, the forest still remains dense.</FlaborText>
-      		<Dialogues>
-        		<Dialogue ID="1">I chop, and chop… Yet the forest remains dense…</Dialogue>
-        		<Dialogue ID="2">I want to be warm… I need something stronger…</Dialogue>
-        		<Dialogue ID="3">I crammed all I could find into this empty canister… yet it is… still cold…</Dialogue>
-        		<Dialogue ID="4">To cut more trees, I never neglected sharpening the axe…</Dialogue>
-      		</Dialogues>
-		</AbnormalityCard>
 		<AbnormalityCard ID="LumberJack_Heart_Enemy">
 			<Abnormality>Warm-hearted Woodsman</Abnormality>
 			<CardName>Cardiae</CardName>
 			<AbilityDesc>After dealing 15 or more damage to enemies in a single Scene, reduce the Cost of the two most expensive pages in hand by 1.
-On kill, reduce the Cost to 0 instead.
-The Cost reduction is reset when the pages are used.</AbilityDesc>
+When using pages with less than 2 cost, deal +25% more Damage.</AbilityDesc>
       		<FlaborText>There will never be enough hearts. Once a Woodsman, he now fells people instead of trees.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">I require an object… to fill this empty void…</Dialogue>
         		<Dialogue ID="2">I do not want to feel this empty and lonely feeling anymore…</Dialogue>
         		<Dialogue ID="3">The heart made of lead… was stiff and cold.</Dialogue>
         		<Dialogue ID="4">I clutched my empty chest and grieved…</Dialogue>
+      		</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LumberJack_Tree_Enemy">
+			<Abnormality>Warm-hearted Woodsman</Abnormality>
+			<CardName>Timber</CardName>
+			<AbilityDesc>Upon successful hit, drain 1 Light from target (Max Twice per Scene).</AbilityDesc>
+      		<FlaborText>This is a forest full of hearts. No matter how many he cuts down, the forest still remains dense.</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">I chop, and chop… Yet the forest remains dense…</Dialogue>
+        		<Dialogue ID="2">I want to be warm… I need something stronger…</Dialogue>
+        		<Dialogue ID="3">I crammed all I could find into this empty canister… yet it is… still cold…</Dialogue>
+        		<Dialogue ID="4">To cut more trees, I never neglected sharpening the axe…</Dialogue>
       		</Dialogues>
 		</AbnormalityCard>
 		<AbnormalityCard ID="House_LionAtk_Enemy">
@@ -104,7 +101,7 @@ The guest will attack in the correct order. Increase outgoing damage by 2 for th
 		<AbnormalityCard ID="House_Home_Enemy">
 			<Abnormality>The Road Home</Abnormality>
 			<CardName>A Road Walked Together</CardName>
-			<AbilityDesc>If librarians failed to redirect the selected guest's attack, all dice on the guest's page gain 1-2 Power.</AbilityDesc>
+			<AbilityDesc>When attacking its intended targets (which means failing to redirect its attack), all dice on the guest's pages gain 1-2 Power.</AbilityDesc>
       		<FlaborText>Let’s walk together. To a wonderful land… The world of dreams.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">I was sound asleep, then the adventure suddenly began.</Dialogue>
@@ -130,7 +127,7 @@ All dice gain 3-4 Power.</AbilityDesc>
 			<Abnormality>Ozma</Abnormality>
 			<CardName>Oblivion</CardName>
 			<AbilityDesc>Immobilized for next Scene; cannot be targeted for the next Scene. 
-At the end of next Scene, recover 40% of Max. HP (up to 48) and fully restore Light.</AbilityDesc>
+At the end of next Scene, recover 40% of Max. HP.</AbilityDesc>
       		<FlaborText>There was such a fine and beautiful person, staring at her with a perplexed expression.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">Why did I trust a stranger so naively… Why…</Dialogue>
@@ -142,7 +139,7 @@ At the end of next Scene, recover 40% of Max. HP (up to 48) and fully restore Li
 		<AbnormalityCard ID="Ozma_Immortal_Enemy">
 			<Abnormality>Ozma</Abnormality>
 			<CardName>Powder of Life</CardName>
-			<AbilityDesc>When the Guest takes lethal damage, nullify it and recover 100% of Max. HP and Stagger Resist, lose all Lights. Can only activate once per reception.</AbilityDesc>
+			<AbilityDesc>When the Guest takes lethal damage, nullify it and recover 50% of Max. HP and all Stagger Resist. Can only activate once per reception.</AbilityDesc>
       		<FlaborText>Finally, she sprinkled cinnamon powder—her favorite—and clutched the pumpkin in her arms.</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">All I have left now… are these children.</Dialogue>
@@ -154,7 +151,7 @@ At the end of next Scene, recover 40% of Max. HP (up to 48) and fully restore Li
 		<AbnormalityCard ID="Oz_Emerald_Enemy">
 			<Abnormality>The Adult who Tells Lies</Abnormality>
 			<CardName>Emerald</CardName>
-			<AbilityDesc>Atfer selecting, spend 3 Lights in the next Scene and at Combat Start, Destroy 2 pages from librarians.
+			<AbilityDesc>Atfer selecting, spend 3 Lights in the next Scene and at Combat Start, Destroy 2 pages from a random librarians (prioritize those not in a clash).
 Atfer 5 Scene, the effect will be triggered again if the Guest has sufficient Lights.</AbilityDesc>
       		<FlaborText>Oz came up with a brilliant idea. Her emerald eyes seemed to shine even brighter.</FlaborText>
       		<Dialogues>
@@ -180,6 +177,7 @@ Atfer 5 Scene, the effect will be triggered again if the Guest has sufficient Li
 			<Abnormality>The Adult who Tells Lies</Abnormality>
 			<CardName>Magic Trick</CardName>
 			<AbilityDesc>Atfer selecting, spend 4 Lights in the next Scene and at Combat Start, Reduce the Cost of all pages in hand to 0. When used, their Cost is reset to the value before this effect was applied.
+If those cards' original cost is 0, then boost their dice's Power by +1-2.
 Atfer 4 Scene, the effect will be triggered again if the Guest has sufficient Lights.</AbilityDesc>
       		<FlaborText>Soon, Oz came to be called a wizard by the people.</FlaborText>
       		<Dialogues>

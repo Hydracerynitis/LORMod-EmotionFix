@@ -27,10 +27,7 @@ namespace EmotionalFix.Geburah
             int threshold;
             int strcount = 0;
             DamageTaken += _owner.history.takeDamageAtOneRound;
-            if (_owner.faction == Faction.Player)
-                threshold = 5;
-            else
-                threshold = EnemyThreshold;
+            threshold = EnemyThreshold;
             for (; DamageTaken > threshold; DamageTaken -= threshold)
                 strcount += 1;
             _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, Math.Min(strcount,4), _owner);

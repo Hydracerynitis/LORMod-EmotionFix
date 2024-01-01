@@ -7,51 +7,14 @@ using System.Threading.Tasks;
 
 namespace EmotionalFix.Geburah
 {
-    public class EmotionCardAbility_geburah_nothing1 : EmotionCardAbilityBase
+    public class EmotionCardAbility_geburah_nothing2 : EmotionCardAbilityBase
     {
         private bool _triggered;
 
-        public override void OnRollDice(BattleDiceBehavior behavior)
+        public override void OnRoundStart()
         {
-            base.OnRollDice(behavior);
-            if (!CheckTrigger(behavior))
-                return;
-            _triggered = true;
-            int num = behavior.DiceVanillaValue + behavior.PowerAdder;
-            behavior.ApplyDiceStatBonus(new DiceStatBonus()
-            {
-                power = num
-            });
-            if (Singleton<StageController>.Instance.IsLogState())
-                _owner.battleCardResultLog?.SetAfterActionEvent(new BattleCardBehaviourResult.BehaviourEvent(Filter));
-            else
-                Filter();
-        }
-
-        public void Filter()
-        {
-            CameraFilterUtil.RedColorFilter();
-            SoundEffectPlayer.PlaySound("Creature/NothingThere_Goodbye");
-        }
-
-        private bool CheckTrigger(BattleDiceBehavior behavior)
-        {
-            if (_triggered)
-                return false;
-            BattlePlayingCardDataInUnitModel[] array = Singleton<StageController>.Instance.GetAllCards().ToArray();
-            BattlePlayingCardDataInUnitModel card = behavior.card;
-            foreach (BattlePlayingCardDataInUnitModel cardDataInUnitModel in array)
-            {
-                if (cardDataInUnitModel.owner == _owner && cardDataInUnitModel != card)
-                    return false;
-            }
-            if (card != null)
-            {
-                Queue<BattleDiceBehavior> cardBehaviorQueue = card.cardBehaviorQueue;
-                if(cardBehaviorQueue != null && cardBehaviorQueue.Count<=0)
-                    return true;
-            }
-            return false;
+            base.OnRoundStart();
+            _triggered = false;
         }
 
         public override void OnRoundEnd()
@@ -60,10 +23,22 @@ namespace EmotionalFix.Geburah
             _triggered = false;
         }
 
-        public override void OnRoundStart()
+        public override void CheckDmg(int dmg, BattleUnitModel target)
         {
-            base.OnRoundStart();
-            _triggered = false;
+            base.CheckDmg(dmg, target);
+            if (_triggered)
+                return;
+            _triggered = true;
+            target?.battleCardResultLog?.SetCreatureAbilityEffect("6/Nothing_Gun_Effect", 3f);
+            _owner.battleCardResultLog?.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_HelloHeal", 2f);
+            _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/NothingThere_Hello");
+            _owner.RecoverHP(dmg);
+        }
+
+        public override void AfterDiceAction(BattleDiceBehavior behavior)
+        {
+            base.AfterDiceAction(behavior);
+            _triggered = true;
         }
     }
 }

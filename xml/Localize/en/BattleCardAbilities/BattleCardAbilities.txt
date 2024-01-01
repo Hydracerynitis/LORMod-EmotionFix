@@ -6,21 +6,6 @@
 	<BattleCardAbility ID="Reflect">
 		<Desc>[On Clash Win] inflict Physical and Stagger damage equal to Power of target's die to enemy</Desc>
 	</BattleCardAbility>
-  <BattleCardAbility ID="WizardPotion">
-    <Desc>[On Play]Grant the status 'Liquid Courage'</Desc>
-  </BattleCardAbility>
-  <BattleCardAbility ID="WizardPoket">
-    <Desc>[On Play]Grant the status 'Silk Sack of Sawdust'</Desc>
-  </BattleCardAbility>
-  <BattleCardAbility ID="WizardHeart">
-    <Desc>[On Play]Grant the status 'Heart of Lead'</Desc>
-  </BattleCardAbility>
-  <BattleCardAbility ID="WizardHome">
-    <Desc>[On Play]Grant the status 'Home that Cannot Be Reached'</Desc>
-  </BattleCardAbility>
-  <BattleCardAbility ID="WizardChange">
-    <Desc>[On Play]Grant the status 'Transformation'</Desc>
-  </BattleCardAbility>
 	<BattleCardAbility ID="invalid">
 		<Desc>This die is invalid</Desc>
 	</BattleCardAbility>

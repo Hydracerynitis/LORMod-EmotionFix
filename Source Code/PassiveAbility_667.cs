@@ -69,6 +69,8 @@ namespace EmotionalFix
                     owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90509, SephirahType.None));
                 if (bundle == EmotionBundle.Whitenight)
                     owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90912, SephirahType.None));
+                if (bundle == EmotionBundle.Gift)
+                    owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90714, SephirahType.None));
                 else
                 {
                     string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";

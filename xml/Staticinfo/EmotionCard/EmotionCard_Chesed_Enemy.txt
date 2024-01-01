@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>    
 		<TargetType>SelectOne</TargetType>
-		<Script>scarecrow1</Script>
+		<Script>chesed_scarecrow1</Script>
 	</EmotionCard>  
 	<EmotionCard ID="90702">
 		<Name>Scarecrow_Harvest_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>		
 		<TargetType>SelectOne</TargetType>
-		<Script>scarecrow2</Script>
+		<Script>chesed_scarecrow2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90703">
 		<Name>Scarecrow_Rake_Enemy</Name>
@@ -31,7 +31,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>3</EmotionRate>  
 		<TargetType>SelectOne</TargetType>
-		<Script>scarecrow3</Script>
+		<Script>chesed_scarecrow3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90704">
 		<Name>LumberJack_Cut_Enemy</Name>
@@ -42,7 +42,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate> 
 		<TargetType>SelectOne</TargetType>
-		<Script>lumberjack1</Script>
+		<Script>chesed_lumberjack1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90705">
 		<Name>LumberJack_Heart_Enemy</Name>
@@ -53,7 +53,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>2</EmotionRate> 
 		<TargetType>SelectOne</TargetType>
-		<Script>lumberjack2</Script>
+		<Script>chesed_lumberjack2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90706">
 		<Name>LumberJack_Tree_Enemy</Name>
@@ -64,7 +64,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-1</EmotionRate> 
 		<TargetType>SelectOne</TargetType>
-		<Script>lumberjack3</Script>
+		<Script>chesed_lumberjack3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90707">
 		<Name>House_LionAtk_Enemy</Name>
@@ -75,7 +75,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>waybackhome1</Script>
+		<Script>chesed_waybackhome1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90708">
 		<Name>House_BigHouse_Enemy</Name>
@@ -86,7 +86,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>waybackhome2</Script>
+		<Script>chesed_waybackhome2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90709">
 		<Name>House_Home_Enemy</Name>
@@ -97,7 +97,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>waybackhome3</Script>
+		<Script>chesed_waybackhome3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90710">
 		<Name>Ozma_Boom_Enemy</Name>
@@ -108,7 +108,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>ozma1</Script>
+		<Script>chesed_ozma1</Script>
 	</EmotionCard> 
 	<EmotionCard ID="90711">
 		<Name>Ozma_forgotten_Enemy</Name>
@@ -119,7 +119,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>ozma2</Script>
+		<Script>chesed_ozma2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90712">
 		<Name>Ozma_Immortal_Enemy</Name>
@@ -130,7 +130,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>ozma3</Script>
+		<Script>chesed_ozma3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90713">
 		<Name>Oz_Emerald_Enemy</Name>
@@ -141,7 +141,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>wizard1</Script>
+		<Script>chesed_wizard1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90714">
 		<Name>Oz_Gift_Enemy</Name>
@@ -152,7 +152,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>wizard2</Script>
+		<Script>chesed_wizard2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90715">
 		<Name>Oz_Control_Enemy</Name>
@@ -163,6 +163,6 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>wizard3</Script>
+		<Script>chesed_wizard3</Script>
 	</EmotionCard>
 </EmotionCardXmlRoot>

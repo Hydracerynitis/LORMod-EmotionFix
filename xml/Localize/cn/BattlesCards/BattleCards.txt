@@ -34,6 +34,5 @@
 	<BattleCardDesc ID="1108401">
       <LocalizedName>洗礼</LocalizedName>
     </BattleCardDesc>
-    
   </cardDescList>
 </BattleCardDescRoot>

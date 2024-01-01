@@ -58,7 +58,7 @@ namespace EmotionalFix
         {
             if (aura != null && aura.gameObject != null)
                 UnityEngine.Object.Destroy(aura.gameObject);
-            aura = (Battle.CreatureEffect.CreatureEffect)null;
+            aura = null;
         }
         public class Scar : BattleUnitBuf
         {

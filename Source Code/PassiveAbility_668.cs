@@ -52,8 +52,8 @@ namespace EmotionalFix
                     owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90911, SephirahType.None));
                 else
                 {
-                    string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion1).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find((Predicate<EmotionCardXmlInfo>)(x => x.Name == name));
+                    string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                     if (emotion == null)
                         return;
@@ -88,6 +88,8 @@ namespace EmotionalFix
                     owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90509, SephirahType.None));
                 if (bundle == EmotionBundle.Whitenight)
                     owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90912, SephirahType.None));
+                if (bundle == EmotionBundle.Gift)
+                    owner.emotionDetail.ApplyEmotionCard(EmotionCardXmlList.Instance.GetData(90714, SephirahType.None));
                 else
                 {
                     string name = RandomUtil.SelectOne<EmotionCardXmlInfo>(EmotionFixInitializer.emotion2).Name + "_Enemy";

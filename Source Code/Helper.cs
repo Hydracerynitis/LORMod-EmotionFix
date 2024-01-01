@@ -23,6 +23,7 @@ namespace EmotionalFix
     {
         None,
         Clown,
-        Whitenight
+        Whitenight,
+        Gift
     }
 }

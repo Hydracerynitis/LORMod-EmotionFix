@@ -9,17 +9,6 @@ namespace EmotionalFix.Geburah
 {
     public class EmotionCardAbility_geburah_nosferatu1 : EmotionCardAbilityBase
     {
-        public override void OnSelectEmotion()
-        {
-            base.OnSelectEmotion();
-            _owner.bufListDetail.AddBuf(new FearOfWater());
-        }
-        public override void OnWaveStart()
-        {
-            base.OnWaveStart();
-            _owner.bufListDetail.AddBuf(new FearOfWater());
-        }
-        private int AddDmg => RandomUtil.Range(3, 7);
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             base.BeforeRollDice(behavior);
@@ -27,12 +16,13 @@ namespace EmotionalFix.Geburah
                 return;
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
-                dmg = AddDmg
+                dmg = RandomUtil.Range(3, 7)
             });
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             base.OnSucceedAttack(behavior);
+            _owner.LoseHp(RandomUtil.Range(2, 7));
             behavior?.card?.target?.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2, _owner);
             behavior?.card?.target?.battleCardResultLog?.SetCreatureAbilityEffect("6/Nosferatu_Emotion_BloodDrain");
             behavior?.card?.target?.battleCardResultLog?.SetCreatureEffectSound("Nosferatu_Changed_BloodEat");

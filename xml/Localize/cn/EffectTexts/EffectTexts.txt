@@ -124,23 +124,16 @@
 “憎恶”- 拼点失败不再失去混乱。
 “愤怒”- “邪恶的化身！！！”不再指定友方单位为目标</Desc>
     	</BattleEffectText>
-    	<BattleEffectText ID="WayBackHome_Emotion_Target">
+		<!--Chesed-->
+    	<BattleEffectText ID="EF_WayBackHome">
       		<Name>回家吧</Name>
-      		<Desc>应用异想体书页-“家”的司书按1-2-3的顺序攻击对应来宾时将使其“进攻型”骰子伤害+2威力+1</Desc>
+      		<Desc>应用异想体书页-“家”的来宾按1-2-3的顺序攻击对应司书时将使其“进攻型”骰子伤害+3</Desc>
     	</BattleEffectText>
-    	<BattleEffectText ID="WayBackHome_Emotion_Target_Enemy">
-      		<Name>回家吧</Name>
-      		<Desc>应用异想体书页-“家”的来宾按1-2-3的顺序攻击对应司书时将使其“进攻型”骰子伤害+2</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Lion_Player">
+		<BattleEffectText ID="EF_Lion">
       		<Name>同行之路</Name>
-      		<Desc>若该司书保护某司书免受攻击(转移攻击目标)，则使该司书当前书页的所有骰子威力+1~2</Desc>
+      		<Desc>该来宾攻击其指定目标时(也就是未能通过转移其攻击目标保护目标司书)，该来宾当前书页的所有骰子威力+1~2</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Lion_Enemy">
-      		<Name>同行之路</Name>
-      		<Desc>若未能保护某司书免受该来宾攻击(转移攻击目标)，则使该来宾当前书页的所有骰子威力+1~2</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Ozma_revive">
+		<BattleEffectText ID="EF_OzmaRevive">
       		<Name>生命的粉末</Name>
       		<Desc>异想体书页-“生命的粉末”可生效。
 承受致死伤害时将无视此次伤害并恢复所有体力和混乱抗性，并在之后清空其所有的光芒。</Desc>

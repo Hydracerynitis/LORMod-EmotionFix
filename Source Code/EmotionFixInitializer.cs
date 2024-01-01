@@ -16,6 +16,7 @@ namespace EmotionalFix
         public static string modPath;
         public static bool WhiteNightTrigger;
         public static bool ClownTrigger;
+        public static bool GiftTrigger;
         public static List<BattleUnitModel> enemylist;
         public static List<EmotionCardXmlInfo> emotion1;
         public static List<EmotionCardXmlInfo> emotion2;
@@ -26,7 +27,6 @@ namespace EmotionalFix
             Harmony harmony = new Harmony("Hydracerynitis.EmotionFix");
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
             EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
-            EmotionCardAbility_clownofnihil2.Clown = new List<UnitBattleDataModel>();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
             PassiveAbility_668.LevelUped = new List<UnitBattleDataModel>();
             enemylist = new List<BattleUnitModel>();
@@ -78,42 +78,7 @@ namespace EmotionalFix
             {
 
             }
-            MethodInfo method9 = typeof(EmotionFixInitializer).GetMethod("Decay_OnRoundEnd");
-            MethodInfo method10 = typeof(BattleUnitBuf_Decay).GetMethod("OnRoundEnd", AccessTools.all);
-            try
-            {
-                HarmonyMethod prefix1 = new HarmonyMethod(method9);
-                harmony.Patch((MethodBase)method10, prefix: prefix1);
-                Debug.Log("Patch " + method9.Name + " Succeed");
-            }
-            catch 
-            {
-
-            }
-            MethodInfo method11 = typeof(EmotionFixInitializer).GetMethod("BattleDiceBehavior_UpdateDiceFinalValue");
-            MethodInfo method12 = typeof(BattleDiceBehavior).GetMethod("UpdateDiceFinalValue", AccessTools.all);
-            try
-            {
-                HarmonyMethod prefix2 = new HarmonyMethod(method11);
-                harmony.Patch((MethodBase)method12, prefix: prefix2);
-                Debug.Log("Patch " + method11.Name + " Succeed");
-            }
-            catch 
-            {
-
-            }
-            MethodInfo method13 = typeof(EmotionFixInitializer).GetMethod("BattleUnitBuf_Alriune_Debuf_OnRoundEndTheLast");
-            MethodInfo method14 = typeof(BattleUnitBuf_Alriune_Debuf).GetMethod("OnRoundEndTheLast", AccessTools.all);
-            try
-            {
-                HarmonyMethod prefix3 = new HarmonyMethod(method13);
-                harmony.Patch((MethodBase)method14, prefix: prefix3);
-                Debug.Log("Patch " + method13.Name + " Succeed");
-            }
-            catch
-            {
-
-            }//RoundStartPhase_System
+            //RoundStartPhase_System
             MethodInfo method15 = typeof(EmotionFixInitializer).GetMethod("StageController_RoundStartPhase_System");
             MethodInfo method16 = typeof(StageController).GetMethod("RoundStartPhase_System", AccessTools.all);
             try
@@ -167,14 +132,14 @@ namespace EmotionalFix
                 emotion3.Remove(EmotionCardXmlList.Instance.GetData(15, SephirahType.Hokma));
                 enermy = EmotionCardXmlList.Instance.GetDataList_enemy(SephirahType.None);
                 enemylist.Clear();
-                WhiteNightTrigger = false;
-                
-                foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
-                {
-                    if (EmotionCardAbility_clownofnihil2.Clown.Contains(alive.UnitData))
-                        alive.bufListDetail.AddBuf(new EmotionCardAbility_clownofnihil2.Clear());
-                }
+                TriggerReset();
             }
+        }
+        private static void TriggerReset()
+        {
+            WhiteNightTrigger = false;
+            ClownTrigger = false;
+            GiftTrigger= false;
         }
         public static void StageController_EndBattlePhase()
         {
@@ -183,57 +148,22 @@ namespace EmotionalFix
         public static void StageController_GameOver()
         {
             PassiveAbility_668.LevelUped.Clear();
-            EmotionCardAbility_clownofnihil2.Clown.Clear();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock.Clear();
-            WhiteNightTrigger = false;
-            if (ClownTrigger)
-                ClownTrigger = false;
-        }
-        public static bool Decay_OnRoundEnd(BattleUnitBuf_Decay __instance,BattleUnitModel ____owner,ref int ___reserve)
-        {
-            if (!____owner.IsImmune(KeywordBuf.Decay))
-            {
-                ____owner.TakeDamage(__instance.stack);
-                SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Angry_Decay");
-            }
-            if (__instance.stack > 0)
-                __instance.stack=0;
-            __instance.stack += ___reserve;
-            ___reserve = 0;
-            if (__instance.stack <= 0)
-                 __instance.Destroy();
-            return false;
-        }
-        public static bool BattleDiceBehavior_UpdateDiceFinalValue(int ____diceResultValue,ref int ____diceFinalResultValue)
-        {
-            ____diceFinalResultValue = Mathf.Max(1, ____diceResultValue);
-            return true;
-        }
-        public static bool BattleUnitBuf_Alriune_Debuf_OnRoundEndTheLast(BattleUnitBuf_Alriune_Debuf __instance, ref int ___reserve, BattleUnitModel ____owner)
-        {
-            ____owner.TakeBreakDamage(__instance.stack, DamageType.Buf);
-            __instance.stack= __instance.stack * 2 / 3;
-            __instance.stack += ___reserve;
-            ___reserve = 0;
-            if (__instance.stack > 0)
-                return false;
-            __instance.Destroy();
-            return false;
+            TriggerReset();
         }
         public static void StageController_RoundStartPhase_System()
         {
-            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList())
+            if (!GiftTrigger && RandomUtil.valueForProb <= 0.02)
+                GiftTrigger = true;
+            foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
             {
-                if (alive.faction == Faction.Enemy)
-                {
-                    if (ExcludedEnemyID.Exists(x=> alive.UnitData.unitData.EnemyUnitId==x))
-                        continue;
-                    if (ExcludedBookID.Exists(x => alive.Book.GetBookClassInfoId()==x))
-                        continue;
-                    if (enemylist.Contains(alive))
-                        continue;
-                    AssignPassive(alive);
-                }
+                if (ExcludedEnemyID.Exists(x => alive.UnitData.unitData.EnemyUnitId == x))
+                    continue;
+                if (ExcludedBookID.Exists(x => alive.Book.GetBookClassInfoId() == x))
+                    continue;
+                if (enemylist.Contains(alive))
+                    continue;
+                AssignPassive(alive);
             }
         }
         public static bool PassiveAbility_170331_SpeedDiceNumAdder(ref int __result)
@@ -315,12 +245,14 @@ namespace EmotionalFix
                     continue;
             }
             EmotionBundle EB = EmotionBundle.None;
+            if (GiftTrigger)
+                EB = EmotionBundle.Gift;
             if (!WhiteNightTrigger && RandomUtil.valueForProb <= 0.02) 
             { 
                 WhiteNightTrigger = true;
                 EB = EmotionBundle.Whitenight;
             }
-            if(EB==EmotionBundle.None && diff>=Difficulty.Hard && !ClownTrigger && RandomUtil.valueForProb <= 0.02)
+            if (EB==EmotionBundle.None && diff>=Difficulty.Hard && !ClownTrigger && RandomUtil.valueForProb <= 0.02)
             {
                 ClownTrigger = true;
                 EB = EmotionBundle.Clown;
