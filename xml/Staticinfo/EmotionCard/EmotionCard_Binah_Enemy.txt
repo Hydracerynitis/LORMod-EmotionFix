@@ -9,7 +9,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bigbird1</Script>
+		<Script>binah_bigbird1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90802">
 		<Name>Bigbird_Lamp_Enemy</Name>
@@ -20,7 +20,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bigbird2</Script>
+		<Script>binah_bigbird2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90803">
 		<Name>Bigbird_Save_Enemy</Name>
@@ -31,7 +31,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bigbird3</Script>
+		<Script>binah_bigbird3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90804">
 		<Name>SmallBird_Punishment_Enemy</Name>
@@ -42,7 +42,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>smallbird1</Script>
+		<Script>binah_smallbird1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90805">
 		<Name>SmallBird_Beak_Enemy</Name>
@@ -53,7 +53,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>smallbird2</Script>
+		<Script>binah_smallbird2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90806">
 		<Name>Smallbird_Fly_Enemy</Name>
@@ -64,7 +64,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>smallbird3</Script>
+		<Script>binah_smallbird3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90807">
 		<Name>LongBird_Sin_Enemy</Name>
@@ -75,29 +75,29 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>longbird2</Script>
+		<Script>binah_longbird1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90808">
 		<Name>LongBird_Judgement_Enemy</Name>
 		<Artwork>LongBird_Judgement</Artwork>
-		<State>Positive</State>
+		<State>Negative</State>
 		<Sephirah>None</Sephirah>
 		<Level>4</Level>
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>longbird1</Script>
+		<Script>binah_longbird2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90809">
 		<Name>LongBird_Scale_Enemy</Name>
 		<Artwork>LongBird_Scale</Artwork>
-		<State>Negative</State>
+		<State>Positive</State>
 		<Sephirah>None</Sephirah>
 		<Level>4</Level>
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>longbird3</Script>
+		<Script>binah_longbird3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90810">
 		<Name>ApocalypseBird_LongArm_Enemy</Name>
@@ -108,7 +108,7 @@
 		<EmotionLevel>1</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bossbird1</Script>
+		<Script>binah_bossbird1</Script>
 	</EmotionCard>
 	<EmotionCard ID="90811">
 		<Name>ApocalypseBird_BigEye_Enemy</Name>
@@ -119,7 +119,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-2</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bossbird2</Script>
+		<Script>binah_bossbird2</Script>
 	</EmotionCard>
 	<EmotionCard ID="90812">
 		<Name>ApocalypseBird_SmallPeak_Enemy</Name>
@@ -130,7 +130,7 @@
 		<EmotionLevel>2</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bossbird3</Script>
+		<Script>binah_bossbird3</Script>
 	</EmotionCard>
 	<EmotionCard ID="90813">
 		<Name>ApocalypseBird_Apocalypse_Enemy</Name>
@@ -141,7 +141,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>-1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bossbird5</Script>
+		<Script>binah_bossbird4</Script>
 	</EmotionCard>
 	<EmotionCard ID="90814">
 		<Name>ApocalypseBird_Gate_Enemy</Name>
@@ -152,7 +152,7 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>0</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bossbird6</Script>
+		<Script>binah_bossbird5</Script>
 	</EmotionCard>
 	<EmotionCard ID="90815">
 		<Name>ApocalypseBird_Atk_Enemy</Name>
@@ -163,6 +163,6 @@
 		<EmotionLevel>3</EmotionLevel>
 		<EmotionRate>1</EmotionRate>
 		<TargetType>SelectOne</TargetType>
-		<Script>bossbird8</Script>
+		<Script>binah_bossbird6</Script>
 	</EmotionCard>
 </EmotionCardXmlRoot>

@@ -138,93 +138,26 @@
       		<Desc>异想体书页-“生命的粉末”可生效。
 承受致死伤害时将无视此次伤害并恢复所有体力和混乱抗性，并在之后清空其所有的光芒。</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Wizard_potion">
-      		<Name>激发勇气的药水</Name>
-      		<Desc>将交替体验勇敢阶段(获得2点强壮持续2幕)和胆小阶段(获得2点虚弱持续2幕)</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Wizard_poket">
-      		<Name>装有锯末的布袋</Name>
-      		<Desc>每一幕开始的抽牌时将最后加入手牌的书页的佚失复制置入手牌，所有牌骰子威力-1~2</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Wizard_heart">
-      		<Name>用铅制成的心脏</Name>
-      		<Desc>这一幕开始时恢复所有得光芒并获得恢复光芒数量的层数</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Wizard_heart_Deactivate">
-      		<Name>用铅制成的心脏</Name>
-      		<Desc>每一幕开始时不再获得光芒持续{0}幕。</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Wizard_home">
-      		<Name>永远回不去的家</Name>
-      		<Desc>如果在这一幕未曾攻击过目标则进攻骰子威力加1~3，否则进攻骰子威力-1~3</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Wizard_change">
-      		<Name>催生变异的粉末</Name>
-      		<Desc>每一幕开始时恢复随机友方角色30%血量和混乱抗性并将角色随机1张手牌变形为南瓜</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Charm">
-      		<Name>魅惑</Name>
-      		<Desc>这一幕只能攻击使用“永燃灯”的来宾</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="SmallBird_Punishment">
-      		<Name>惩戒</Name>
-      		<Desc>这一幕中使用书页的第1颗骰子威力+1~3</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Smallbird_Beak">
+		<!--Binah-->
+		<BattleEffectText ID="EF_Beak">
       		<Name>责罚之喙</Name>
-      		<Desc>伤害和混乱伤害提高2~4</Desc>
+      		<Desc>这一幕伤害提高3~7</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Sinner">
-      		<Name>罪人</Name>
-      		<Desc>应用了“审判”的角色第一次命中“罪人”时会追加其15%生命值的伤害</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Longbird">
-      		<Name>长臂</Name>
-      		<Desc>进攻骰伤害和混乱伤害-50%，命中时造成目标10%的最大生命值伤害(最高10点)</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Longbird_Enemy">
+		<BattleEffectText ID="EF_Longbird">
       		<Name>长臂</Name>
       		<Desc>免疫原版的负面状态</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Bigbird">
-      		<Name>巨目</Name>
-      		<Desc>最大混乱抗性减少50%，被单方面攻击时以斩击4-10的反击骰迎战</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Bigbird_Enemy">
+		<BattleEffectText ID="EF_Bigbird">
       		<Name>巨目</Name>
       		<Desc>每一幕开始时使随机一位司书的本幕内威力加成减半</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="HalfPower">
+		<BattleEffectText ID="EF_HalfPower">
       		<Name>威力减半</Name>
       		<Desc>这一幕内威力加成减半</Desc>
     	</BattleEffectText>
-		<BattleEffectText ID="Smallbird">
+		<BattleEffectText ID="EF_Smallbird">
       		<Name>小喙</Name>
-      		<Desc>最大血量减少50%，与进攻骰拼点时骰子威力提高1~3点</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="Smallbird_Enemy">
-      		<Name>小喙</Name>
-      		<Desc>每一幕开始时随机一个司书的2张手牌费用+1</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="ApocalypseBird_Big">
-      		<Name>遮掩天空的黑翼</Name>
-      		<Desc>战斗开始时将以牌库内的随机一张书页为蓝本释放范围杀伤交锋“眼棱”，若该书页至少命中目标一次则使其获得“恐慌”</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="ApocalypseBird_Small">
-      		<Name>处以极刑的巨爪</Name>
-      		<Desc>这一幕内将所有书页转化为清算范围杀伤书页</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="ApocalypseBird_Long">
-      		<Name>随意断罪的独眼</Name>
-      		<Desc>这一幕内命中时斩杀血量低于25%的敌人</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="BigBirdParalysis">
-      		<Name>恐慌</Name>
-      		<Desc>这一幕内所有骰子上限-5</Desc>
-    	</BattleEffectText>
-		<BattleEffectText ID="ApocalypseBird_Peace">
-      		<Name>入侵者</Name>
-      		<Desc>造成伤害和混乱伤害减少3~5，所受伤害和混乱伤害提高3~5</Desc>
+      		<Desc>每一幕开始时使这一幕内随机一个司书的2张手牌费用+1</Desc>
     	</BattleEffectText>
 		<BattleEffectText ID="BloodyTree_Emotion_Damage">
       		<Name>不要转移视线</Name>

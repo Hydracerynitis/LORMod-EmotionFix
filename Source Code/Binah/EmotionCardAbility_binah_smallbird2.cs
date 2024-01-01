@@ -5,38 +5,22 @@ using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix
+namespace EmotionalFix.Binah
 {
-    public class EmotionCardAbility_smallbird2 : EmotionCardAbilityBase
+    public class EmotionCardAbility_binah_smallbird2 : EmotionCardAbilityBase
     {
         public override void OnRoundEndTheLast()
         {
             base.OnRoundEndTheLast();
             if (_owner.history.takeDamageAtOneRound > 0)
                 return;
-            GiveBuf();
-        }
-        public override void BeforeRollDice(BattleDiceBehavior behavior)
-        {
-            base.BeforeRollDice(behavior);
-            if (behavior.TargetDice == null)
-                return;
-            behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus()
-            {
-                power = -1
-            });
-        }
-        private void GiveBuf()
-        {
-            if (_owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Emotion_SmallBird_Buri) != null)
-                return;
-            _owner.bufListDetail.AddBuf(new BattleUnitBuf_Emotion_SmallBird_Buri());
+            _owner.bufListDetail.AddBuf(new Beak());
         }
 
-        public class BattleUnitBuf_Emotion_SmallBird_Buri : BattleUnitBuf
+        public class Beak : BattleUnitBuf
         {
-            private int Dmg => RandomUtil.Range(2, 4);
-            public override string keywordId => "Smallbird_Beak";
+            private int Dmg => RandomUtil.Range(3, 7);
+            public override string keywordId => "EF_Beak";
             public override string keywordIconId => "SmallBird_Emotion_Buri";
             public override void Init(BattleUnitModel owner)
             {

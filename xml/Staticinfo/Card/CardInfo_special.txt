@@ -97,29 +97,6 @@
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
 	</Card>
-	<Card ID="1107401">
-		<Name>巨目</Name>
-		<Artwork>Bigbird_Save</Artwork>
-		<Rarity>Rare</Rarity>
-		<Spec Range="Near" Cost="0"/>
-		<Script></Script>
-		<ScriptDesc></ScriptDesc>
-		<BehaviourList>
-			<Behaviour Min="4" Dice="10" Type="Standby" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
-		</BehaviourList>
-		<Chapter>0</Chapter>
-		<Priority>0</Priority>
-	</Card>
-	<Card ID="1107501">
-		<Name>遮盖天空的双翅</Name>
-		<Artwork>ApocalypseBird_EGO_Laser</Artwork>
-		<Rarity>Unique</Rarity>
-		<Spec Range="FarAreaEach" Cost="0"/>
-		<Script>BigBirdParalysis</Script>
-		<ScriptDesc></ScriptDesc>
-		<Chapter>0</Chapter>
-		<Priority>0</Priority>
-	</Card>
 	<Card ID="1108101">
 		<Name>沉默</Name>
 		<Artwork>Clock_Kill</Artwork>

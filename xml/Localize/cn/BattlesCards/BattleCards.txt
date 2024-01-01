@@ -22,12 +22,6 @@
 	<BattleCardDesc ID="1106201">
       <LocalizedName>狼的角色</LocalizedName>
     </BattleCardDesc>
-	<BattleCardDesc ID="1107401">
-      <LocalizedName>拯救</LocalizedName>
-    </BattleCardDesc>
-	<BattleCardDesc ID="1107501">
-      <LocalizedName>眼棱</LocalizedName>
-    </BattleCardDesc>
 	<BattleCardDesc ID="1108101">
       <LocalizedName>沉默</LocalizedName>
     </BattleCardDesc>

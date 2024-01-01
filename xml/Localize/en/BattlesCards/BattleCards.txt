@@ -22,12 +22,6 @@
 	<BattleCardDesc ID="1106201">
       <LocalizedName>The Role of Wolf</LocalizedName>
     </BattleCardDesc>
-	<BattleCardDesc ID="1107401">
-      <LocalizedName>Salvation</LocalizedName>
-    </BattleCardDesc>
-	<BattleCardDesc ID="1107501">
-      <LocalizedName>Eye Beams</LocalizedName>
-    </BattleCardDesc>
 	<BattleCardDesc ID="1108101">
       <LocalizedName>Silence</LocalizedName>
     </BattleCardDesc>

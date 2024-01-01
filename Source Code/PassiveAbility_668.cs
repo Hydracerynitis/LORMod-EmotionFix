@@ -13,7 +13,7 @@ namespace EmotionalFix
         private int Collect1;
         private int Collect2;
         private bool Collect3;
-        public static List<UnitBattleDataModel> LevelUped;
+        public static List<UnitBattleDataModel> LevelUped= new List<UnitBattleDataModel>();
         public PassiveAbility_668(BattleUnitModel model, EmotionBundle emotionBundle)
         {
             Init(model);

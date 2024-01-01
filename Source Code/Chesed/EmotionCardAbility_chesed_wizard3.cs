@@ -14,8 +14,7 @@ namespace EmotionalFix.Chesed
         private int round;
         public override void OnSelectEmotion()
         {
-            if (_owner.faction == Faction.Enemy)
-                round = 3;
+            round = 3;
         }
         public override void OnDrawCard()
         {

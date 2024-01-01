@@ -26,9 +26,7 @@ namespace EmotionalFix
         {
             Harmony harmony = new Harmony("Hydracerynitis.EmotionFix");
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
-            EmotionCardAbility_bossbird4.Summation = new List<BattleDiceCardModel>();
             EmotionCardAbility_plaguedoctor1.WhiteNightClock = new Dictionary<UnitBattleDataModel, int>();
-            PassiveAbility_668.LevelUped = new List<UnitBattleDataModel>();
             enemylist = new List<BattleUnitModel>();
             MethodInfo method1 = typeof(EmotionFixInitializer).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
             MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
@@ -54,18 +52,7 @@ namespace EmotionalFix
             {
 
             }
-            MethodInfo method5 = typeof(EmotionFixInitializer).GetMethod("StageController_EndBattlePhase");
-            MethodInfo method6 = typeof(StageController).GetMethod("EndBattlePhase", AccessTools.all);
-            try
-            {
-                HarmonyMethod postfix3 = new HarmonyMethod(method5);
-                harmony.Patch((MethodBase)method6, postfix: postfix3);
-                Debug.Log("Patch " + method5.Name + " Succeed");
-            }
-            catch
-            {
-
-            }
+           
             MethodInfo method7 = typeof(EmotionFixInitializer).GetMethod("StageController_GameOver");
             MethodInfo method8 = typeof(StageController).GetMethod("GameOver", AccessTools.all);
             try
@@ -128,6 +115,7 @@ namespace EmotionalFix
                 }
                 emotion3.Remove(EmotionCardXmlList.Instance.GetData(15, SephirahType.Tiphereth));
                 emotion1.Remove(EmotionCardXmlList.Instance.GetData(11, SephirahType.Hokma));
+                emotion2.Remove(EmotionCardXmlList.Instance.GetData(14, SephirahType.Chesed));
                 emotion2.Remove(EmotionCardXmlList.Instance.GetData(12, SephirahType.Hokma));
                 emotion3.Remove(EmotionCardXmlList.Instance.GetData(15, SephirahType.Hokma));
                 enermy = EmotionCardXmlList.Instance.GetDataList_enemy(SephirahType.None);
@@ -140,10 +128,6 @@ namespace EmotionalFix
             WhiteNightTrigger = false;
             ClownTrigger = false;
             GiftTrigger= false;
-        }
-        public static void StageController_EndBattlePhase()
-        {
-            EmotionCardAbility_bossbird4.ClearCard();
         }
         public static void StageController_GameOver()
         {
