@@ -34,7 +34,7 @@ namespace EmotionalFix
                 else
                 {
                     string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                     if (emotion == null)
                         return;
@@ -53,7 +53,7 @@ namespace EmotionalFix
                     string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
                     while (Helper.SearchEmotion(owner, name) != null)
                         name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 1));
                     if (emotion == null)
                         return;
@@ -74,7 +74,7 @@ namespace EmotionalFix
                 else
                 {
                     string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
                     if (emotion == null)
                         return;
@@ -92,8 +92,8 @@ namespace EmotionalFix
                 {
                     string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";
                     while (Helper.SearchEmotion(owner, name) != null)
-                        name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                        name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 2));
                     if (emotion == null)
                         return;
@@ -112,7 +112,7 @@ namespace EmotionalFix
                 else
                 {
                     string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion3).Name + "_Enemy";
-                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                    EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                     //emotion = RandomUtil.SelectOne<EmotionCardXmlInfo>(Singleton<EmotionCardXmlList>.Instance.GetDataList(SephirahType.None, 10, 3));
                     if (emotion == null)
                         return;

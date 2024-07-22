@@ -7,10 +7,11 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using LOR_DiceSystem;
 using UnityEngine;
-using EmotionalFix.Hokma;
+using EmotionalFix;
 
 namespace EmotionalFix
 {
+    [HarmonyPatch]
     public class EmotionFixInitializer: ModInitializer
     {
         public static Difficulty diff;
@@ -18,86 +19,27 @@ namespace EmotionalFix
         public static bool WhiteNightTrigger;
         public static bool ClownTrigger;
         public static bool GiftTrigger;
-        public static List<BattleUnitModel> enemylist;
-        public static List<EmotionCardXmlInfo> emotion1;
-        public static List<EmotionCardXmlInfo> emotion2;
-        public static List<EmotionCardXmlInfo> emotion3;
-        public static List<EmotionCardXmlInfo> enermy;
+        public static List<BattleUnitModel> enemylist = new List<BattleUnitModel>();
+        public static List<EmotionCardXmlInfo> emotion1 = new List<EmotionCardXmlInfo>();
+        public static List<EmotionCardXmlInfo> emotion2 = new List<EmotionCardXmlInfo>();
+        public static List<EmotionCardXmlInfo> emotion3 = new List<EmotionCardXmlInfo>();
+        public static List<EmotionCardXmlInfo> enemy = new List<EmotionCardXmlInfo>();
+        public static List<UnitBattleDataModel> LevelUped = new List<UnitBattleDataModel>();
         public override void OnInitializeMod()
         {
             Harmony harmony = new Harmony("Hydracerynitis.EmotionFix");
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
-            enemylist = new List<BattleUnitModel>();
-            MethodInfo method1 = typeof(EmotionFixInitializer).GetMethod("EmotionCardXmlList_GetEnemyEmotionNeutralCardList");
-            MethodInfo method2 = typeof(EmotionCardXmlList).GetMethod("GetEnemyEmotionNeutralCardList", AccessTools.all);
-            try
-            {
-                HarmonyMethod postfix1 = new HarmonyMethod(method1);
-                harmony.Patch((MethodBase)method2, postfix: postfix1);
-                Debug.Log("Patch " + method1.Name + " Succeed");
-            }
-            catch
-            {
-
-            }
-            MethodInfo method3 = typeof(EmotionFixInitializer).GetMethod("StageController_StartBattle");
-            MethodInfo method4 = typeof(StageController).GetMethod("StartBattle", AccessTools.all);
-            try
-            {
-                HarmonyMethod postfix2 = new HarmonyMethod(method3);
-                harmony.Patch((MethodBase)method4, postfix: postfix2);
-                Debug.Log("Patch " + method3.Name + " Succeed");
-            }
-            catch
-            {
-
-            }
-           
-            MethodInfo method7 = typeof(EmotionFixInitializer).GetMethod("StageController_GameOver");
-            MethodInfo method8 = typeof(StageController).GetMethod("GameOver", AccessTools.all);
-            try
-            {
-                HarmonyMethod postfix4 = new HarmonyMethod(method7);
-                harmony.Patch((MethodBase)method8, postfix: postfix4);
-                Debug.Log("Patch " + method7.Name + " Succeed");
-            }
-            catch
-            {
-
-            }
-            //RoundStartPhase_System
-            MethodInfo method15 = typeof(EmotionFixInitializer).GetMethod("StageController_RoundStartPhase_System");
-            MethodInfo method16 = typeof(StageController).GetMethod("RoundStartPhase_System", AccessTools.all);
-            try
-            {
-                HarmonyMethod postfix5 = new HarmonyMethod(method15);
-                harmony.Patch((MethodBase)method16, postfix: postfix5);
-                Debug.Log("Patch " + method15.Name + " Succeed");
-            }
-            catch 
-            {
-
-            }
-            // Help Project Moon Fix their game
-            MethodInfo method17 = typeof(EmotionFixInitializer).GetMethod("PassiveAbility_170331_SpeedDiceNumAdder");
-            MethodInfo method18 = typeof(PassiveAbility_170331).GetMethod("SpeedDiceNumAdder", AccessTools.all);
-            try
-            {
-                HarmonyMethod prefix4 = new HarmonyMethod(method17);
-                harmony.Patch((MethodBase)method18, prefix: prefix4);
-                Debug.Log("Patch " + method17.Name + " Succeed");
-            }
-            catch 
-            {
-
-            }
+            harmony.PatchAll(typeof(EmotionFixInitializer));
 /*            InitConfig("EmotionFix", EmotionalFixConfig.Instance);*/
         }
+        [HarmonyPatch(typeof(EmotionCardXmlList),nameof(EmotionCardXmlList.GetEnemyEmotionNeutralCardList))]
+        [HarmonyPostfix]
         public static void EmotionCardXmlList_GetEnemyEmotionNeutralCardList(ref List<EmotionCardXmlInfo> __result)
         {
-            __result.Remove(EmotionCardXmlList.Instance.GetData(1, SephirahType.None));
-            __result.Remove(EmotionCardXmlList.Instance.GetData(4, SephirahType.None));
+            __result.Clear();
         }
+        [HarmonyPatch(typeof(StageController),nameof(StageController.StartBattle))]
+        [HarmonyPostfix]
         public static void StageController_StartBattle(StageType ____stageType)
         {
             if (____stageType == StageType.Invitation)
@@ -118,9 +60,11 @@ namespace EmotionalFix
                 emotion2.Remove(EmotionCardXmlList.Instance.GetData(14, SephirahType.Chesed));
                 emotion2.Remove(EmotionCardXmlList.Instance.GetData(12, SephirahType.Hokma));
                 emotion3.Remove(EmotionCardXmlList.Instance.GetData(15, SephirahType.Hokma));
-                enermy = EmotionCardXmlList.Instance.GetDataList_enemy(SephirahType.None);
+                enemy = EmotionCardXmlList.Instance.GetDataList_enemy(SephirahType.None);
                 enemylist.Clear();
                 TriggerReset();
+                if (!GiftTrigger && RandomUtil.valueForProb <= 0.02)
+                    GiftTrigger = true;
             }
         }
         private static void TriggerReset()
@@ -129,16 +73,18 @@ namespace EmotionalFix
             ClownTrigger = false;
             GiftTrigger= false;
         }
+        [HarmonyPatch(typeof(StageController),nameof(StageController.GameOver))]
+        [HarmonyPostfix]
         public static void StageController_GameOver()
         {
             PassiveAbility_668.LevelUped.Clear();
-            EmotionCardAbility_hokma_plaguedoctor1.WhiteNightClock.Clear();
+            //EmotionCardAbility_hokma_plaguedoctor1.WhiteNightClock.Clear();
             TriggerReset();
         }
+        [HarmonyPatch(typeof(StageController),nameof(StageController.RoundStartPhase_System))]
+        [HarmonyPostfix]
         public static void StageController_RoundStartPhase_System()
         {
-            if (!GiftTrigger && RandomUtil.valueForProb <= 0.02)
-                GiftTrigger = true;
             foreach (BattleUnitModel alive in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
             {
                 if (ExcludedEnemyID.Exists(x => alive.UnitData.unitData.EnemyUnitId == x))
@@ -150,6 +96,8 @@ namespace EmotionalFix
                 AssignPassive(alive);
             }
         }
+        [HarmonyPatch(typeof(PassiveAbility_170331),nameof(PassiveAbility_170331.SpeedDiceNumAdder))]
+        [HarmonyPrefix]
         public static bool PassiveAbility_170331_SpeedDiceNumAdder(ref int __result)
         {
             __result=- 1;
@@ -183,11 +131,6 @@ namespace EmotionalFix
                         Dif = Difficulty.Hard;
                         break;
                     }
-                    if (text.Contains("Brutal"))
-                    {
-                        Dif = Difficulty.Brutal;
-                        break;
-                    }
                 }
                 Debug.Log("Your Difficulty is " + Dif.ToString());
             }
@@ -197,13 +140,7 @@ namespace EmotionalFix
             }
             return Dif;
         }
-        public enum Difficulty
-        {
-            Easy,
-            Normal,
-            Hard,
-            Brutal
-        }
+        
         
         public static List<EmotionCardXmlInfo> LoadEmotion(int emotionlevel)
         {
@@ -223,9 +160,9 @@ namespace EmotionalFix
         public static void AssignPassive(BattleUnitModel unit)
         {
             List<PassiveAbilityBase> passiveList = unit.passiveDetail.PassiveList;
-            foreach (PassiveAbilityBase passive in passiveList)
+            foreach (PassiveAbilityBase P in passiveList)
             {
-                if (ExcluededPassive.Contains(passive.GetType().ToString()))
+                if (ExcluededPassive.Contains(P.GetType().ToString()))
                     continue;
             }
             EmotionBundle EB = EmotionBundle.None;
@@ -241,23 +178,21 @@ namespace EmotionalFix
                 ClownTrigger = true;
                 EB = EmotionBundle.Clown;
             }
+            PassiveAbilityBase passive = null;
             switch (diff)
             {
                 case (Difficulty.Easy):
+                    passive=new PassiveAbility_666(unit, EB);
                     break;
                 case (Difficulty.Normal):
-                    passiveList.Add(new PassiveAbility_666(unit, EB));
-                    typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
+                    passive = new PassiveAbility_667(unit, EB);
                     break;
                 case (Difficulty.Hard):
-                    passiveList.Add(new PassiveAbility_667(unit, EB));
-                    typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
-                    break;
-                case (Difficulty.Brutal):
-                    passiveList.Add(new PassiveAbility_668(unit, EB));
-                    typeof(BattleUnitPassiveDetail).GetField("_passiveList", AccessTools.all).SetValue(unit.passiveDetail, passiveList);
-                    break;
+                    passive = new PassiveAbility_668(unit, EB);
+                break;
             }
+            if(passive!=null)
+                unit.passiveDetail._passiveList.Add(passive);
             enemylist.Add(unit);
             Debug.Log("Passive is Added to " + unit.UnitData.unitData.name);
         }

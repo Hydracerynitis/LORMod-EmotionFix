@@ -36,4 +36,10 @@ namespace EmotionalFix
         Whitenight,
         Gift
     }
+    public enum Difficulty
+    {
+        Easy,
+        Normal,
+        Hard
+    }
 }

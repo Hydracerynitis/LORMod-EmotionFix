@@ -13,13 +13,14 @@ namespace EmotionalFix.Hokma
             base.OnSelectEmotion();
             count = 2;
         }
-        public override void OnRoundStart()
+        public override void OnRoundEnd()
         {
             base.OnRoundStart();
             count++;
             if (count < 3)
                 return;
             Silence();
+            count = 0;
         }
         public void Silence()
         {

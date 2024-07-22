@@ -13,9 +13,6 @@ namespace EmotionalFix.Geburah
 {
     public class EmotionCardAbility_geburah_bigbadwolf3 : EmotionCardAbilityBase
     {
-        private int cnt;
-        private BattleUnitModel target;
-
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
@@ -23,9 +20,6 @@ namespace EmotionalFix.Geburah
         }
         public override void OnStartBattle()
         {
-            cnt = 0;
-            if (_owner.faction != Faction.Enemy)
-                return;
             DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1106201));
             List<BattleDiceBehavior> behaviourList = new List<BattleDiceBehavior>();
             int num = 0;

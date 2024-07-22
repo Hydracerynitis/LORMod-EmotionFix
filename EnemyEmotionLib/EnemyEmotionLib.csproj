@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props" Condition="Exists('..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C826F9A9-A33C-4FBF-8A46-5E90BA217B00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnemyEmotionLib</RootNamespace>
+    <AssemblyName>EnemyEmotionLib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" />
+    <Reference Include="0Harmony, Version=2.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Library of ruina custom\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseMod">
+      <HintPath>..\..\..\..\Desktop\Library of ruina custom\BaseMod.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binah\EmotionCardAbility_binah_bigbird1.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bigbird2.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bigbird3.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bossbird1.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bossbird2.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bossbird3.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bossbird4.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bossbird5.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_bossbird6.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_longbird1.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_longbird2.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_longbird3.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_smallbird1.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_smallbird2.cs" />
+    <Compile Include="Binah\EmotionCardAbility_binah_smallbird3.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_lumberjack1.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_lumberjack2.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_lumberjack3.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_ozma1.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_ozma2.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_ozma3.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_scarecrow1.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_scarecrow2.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_scarecrow3.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_waybackhome1.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_waybackhome2.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_waybackhome3.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_wizard1.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_wizard2.cs" />
+    <Compile Include="Chesed\EmotionCardAbility_chesed_wizard3.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_bigbadwolf1.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_bigbadwolf2.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_bigbadwolf3.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_danggocreature1.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_danggocreature2.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_danggocreature3.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_nosferatu1.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_nosferatu2.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_nosferatu3.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_nothing1.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_nothing2.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_nothing3.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_redhood1.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_redhood2.cs" />
+    <Compile Include="Geburah\EmotionCardAbility_geburah_redhood3.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Hod\DiceCardAbility_Reflect.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_blackswan1.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_blackswan2.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_blackswan3.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_latitia1.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_latitia2.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_latitia3.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_redShoes1.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_redShoes2.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_redShoes3.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_shyLook1.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_shyLook2.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_shyLook3.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_spiderBud1.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_spiderBud2.cs" />
+    <Compile Include="Hod\EmotionCardAbility_hod_spiderBud3.cs" />
+    <Compile Include="Hokma\DiceCardAbility_PlagueDoctor.cs" />
+    <Compile Include="Hokma\DiceCardSelfAbility_BlessingPlague.cs" />
+    <Compile Include="Hokma\DiceCardSelfAbility_BlessingPlagueUpGraded.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_bloodytree1.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_bloodytree2.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_bloodytree3.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_bluestar1.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_bluestar2.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_bluestar3.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_onebadmanygood1.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_plaguedoctor1.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_silence1.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_silence2.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_silence3.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_whitenight1.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_whitenight2.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_whitenight3.cs" />
+    <Compile Include="Hokma\EmotionCardAbility_hokma_whitenight4.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_bloodbath1.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_bloodbath2.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_bloodbath3.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_heart1.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_heart2.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_heart3.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_pinocchio1.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_pinocchio2.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_pinocchio3.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_quietKid1.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_quietKid2.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_quietKid3.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_snowqueen1.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_snowqueen2.cs" />
+    <Compile Include="Keter\EmotionCardAbility_keter_snowqueen3.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_fairy1.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_fairy2.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_fairy3.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_queenbee1.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_queenbee2.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_queenbee3.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_snowwhite1.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_snowwhite2.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_snowwhite3.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_sorchedgirl1.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_sorchedgirl2.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_sorchedgirl3.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_teddy1.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_teddy2.cs" />
+    <Compile Include="Malkuth\EmotionCardAbility_malkuth_teddy3.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_alriune1.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_alriune2.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_alriune3.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_fragmentSpace1.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_fragmentSpace2.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_fragmentSpace3.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_galaxyChild1.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_galaxyChild2.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_galaxyChild3.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_orchestra1.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_orchestra2.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_orchestra3.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_porccubus1.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_porccubus2.cs" />
+    <Compile Include="Netzach\EmotionCardAbility_netzach_porccubus3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tiphereth\DiceCardAbility_Tear.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_clownofnihil1.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_clownofnihil2.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_clownofnihil3.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_kingofgreed1.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_kingofgreed2.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_kingofgreed3.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_knightofdespair1.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_knightofdespair2.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_knightofdespair3.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_queenofhatred1.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_queenofhatred2.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_queenofhatred3.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_servantofwrath1.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_servantofwrath2.cs" />
+    <Compile Include="Tiphereth\EmotionCardAbility_tiphereth_servantofwrath3.cs" />
+    <Compile Include="Yesod\DiceCardAbility_Execute.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_butterfly1.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_butterfly2.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_butterfly3.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_freischutz1.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_freischutz2.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_freischutz3.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_helper1.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_helper2.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_helper3.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_murderer1.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_murderer2.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_murderer3.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_singingMachine1.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_singingMachine2.cs" />
+    <Compile Include="Yesod\EmotionCardAbility_yesod_singingMachine3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props'))" />
+    <Error Condition="!Exists('..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets'))" />
+  </Target>
+  <Import Project="..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets" Condition="Exists('..\EmotionFix\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" />
+</Project>

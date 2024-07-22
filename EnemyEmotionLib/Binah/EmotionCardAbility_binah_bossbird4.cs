@@ -8,10 +8,11 @@ using HarmonyLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using EmotionalFix;
 
 namespace EmotionalFix.Binah
 {
-    public class EmotionCardAbility_binah_bossbird4 : EmotionCardAbilityBase
+    /*public class EmotionCardAbility_binah_bossbird4 : EmotionCardAbilityBase
     {
         private Battle.CreatureEffect.CreatureEffect _aura;
         private List<BattleDiceCardModel> egos = new List<BattleDiceCardModel>();
@@ -37,7 +38,7 @@ namespace EmotionalFix.Binah
                     longbird.Destroy();
                 _owner.emotionDetail.PassiveList.Remove(Long);
                 string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion1).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                 _owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             if (Big!= null)
@@ -47,7 +48,7 @@ namespace EmotionalFix.Binah
                     bigbird.Destroy();
                 _owner.emotionDetail.PassiveList.Remove(Big);
                 string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                 _owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             if (Small != null)
@@ -57,7 +58,7 @@ namespace EmotionalFix.Binah
                     smallbird.Destroy();
                 _owner.emotionDetail.PassiveList.Remove(Small);
                 string name = RandomUtil.SelectOne(EmotionFixInitializer.emotion2).Name + "_Enemy";
-                EmotionCardXmlInfo emotion = EmotionFixInitializer.enermy.Find(x => x.Name == name);
+                EmotionCardXmlInfo emotion = EmotionFixInitializer.enemy.Find(x => x.Name == name);
                 _owner.emotionDetail.ApplyEmotionCard(emotion);
             }
             SoundEffectManager.Instance.PlayClip("Creature/BossBird_Birth", false, 4f);
@@ -99,5 +100,5 @@ namespace EmotionalFix.Binah
             UnityEngine.Object.Destroy(_aura.gameObject);
             _aura = null;
         }
-    }
+    }*/
 }
