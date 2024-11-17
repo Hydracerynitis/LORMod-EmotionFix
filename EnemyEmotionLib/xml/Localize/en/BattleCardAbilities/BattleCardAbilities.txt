@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<BattleCardAbility ID="Execute">
+		<Desc>Inflict damage equal to the Power of this die</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Reflect">
+		<Desc>[On Clash Win] inflict Physical and Stagger damage equal to Power of target's die to enemy</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="PlagueDoctor">
+		<Desc>[I shall heal you, curing you of all disease and injury you possess.]</Desc>
+	</BattleCardAbility>
+</BattleCardAbilityDescRoot>

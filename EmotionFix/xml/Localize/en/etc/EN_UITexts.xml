@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<localize xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<text id="EF_difficulty_title1">EmotionalFix</text>
+	<text id="EF_difficulty_title2">Difficulty</text>
+	<text id="EF_difficulty_None">None</text>
+	<text id="EF_difficulty_Easy">Easy</text>
+	<text id="EF_difficulty_Normal">Normal</text>
+	<text id="EF_difficulty_Hard">Hard</text>
+</localize>

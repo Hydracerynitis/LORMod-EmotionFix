@@ -8,6 +8,8 @@ using HarmonyLib;
 using LOR_DiceSystem;
 using UnityEngine;
 using EmotionalFix;
+using UI;
+using TMPro;
 
 namespace EmotionalFix
 {
@@ -25,12 +27,13 @@ namespace EmotionalFix
         public static List<EmotionCardXmlInfo> emotion3 = new List<EmotionCardXmlInfo>();
         public static List<EmotionCardXmlInfo> enemy = new List<EmotionCardXmlInfo>();
         public static List<UnitBattleDataModel> LevelUped = new List<UnitBattleDataModel>();
+        public static DifficultyOption DifficultyUI = null;
+        private static bool HasLoadEmotion = false;
         public override void OnInitializeMod()
         {
             Harmony harmony = new Harmony("Hydracerynitis.EmotionFix");
             modPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
             harmony.PatchAll(typeof(EmotionFixInitializer));
-/*            InitConfig("EmotionFix", EmotionalFixConfig.Instance);*/
         }
         [HarmonyPatch(typeof(EmotionCardXmlList),nameof(EmotionCardXmlList.GetEnemyEmotionNeutralCardList))]
         [HarmonyPostfix]
@@ -47,7 +50,7 @@ namespace EmotionalFix
                 emotion1 = LoadEmotion(1);
                 emotion2 = LoadEmotion(2);
                 emotion3 = LoadEmotion(3);
-                diff = DifficultyTweak();
+                diff = ReadDifficulty();
                 if (diff >= Difficulty.Hard)
                 {
                     emotion1.Remove(EmotionCardXmlList.Instance.GetData(3, SephirahType.Tiphereth));
@@ -103,7 +106,48 @@ namespace EmotionalFix
             __result=- 1;
             return false;
         }
-        public static Difficulty DifficultyTweak()
+        [HarmonyPatch(typeof(UIOptionWindow),nameof(UIOptionWindow.Open))]
+        [HarmonyPostfix]
+        public static void UIOptionWindow_Open(UIOptionWindow __instance)
+        {
+            if (DifficultyUI == null)
+            {
+                DifficultyUI = new DifficultyOption();
+                TMP_Dropdown new_dropdown = UnityEngine.Object.Instantiate<TMP_Dropdown>(__instance.languageDropdown, __instance.languageDropdown.transform.parent);
+                new_dropdown.transform.localPosition += new Vector3(0f, -200f);
+                GameObject textObject= __instance.root.transform.GetChild(4).GetChild(0).GetChild(3).gameObject;
+                TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
+                InitText(text, textObject, "EF_difficulty_title1", -190f);
+                InitText(text, textObject, "EF_difficulty_title2", -210f);
+                DifficultyUI.DifficultyDropDown = new_dropdown;
+            }
+            diff = ReadDifficulty();
+            DifficultyUI.Init(AbleChangeDiff());
+        }
+        public static bool AbleChangeDiff()
+        {
+            UIPhase gameState = UI.UIController.Instance.CurrentUIPhase;
+            return !(gameState == UIPhase.DUMMY);
+        }
+        [HarmonyPatch(typeof(UIOptionWindow), nameof(UIOptionWindow.ApplyAndClose))]
+        [HarmonyPostfix]
+        public static void UIOptionWindow_ApplyAndClose(UIOptionWindow __instance)
+        {
+            if (DifficultyUI == null)
+                return;
+            diff = DifficultyUI.ApplySetting();
+            File.WriteAllText(modPath + "/Difficulty.txt", DifficultyTextPrefix +" "+ diff.ToString());
+        }
+        private static string DifficultyTextPrefix = "Current EmotionFix's Difficulty (None, Easy, Normal, Hard):";
+        public static void InitText(TextMeshProUGUI original, GameObject originalObject,string key,float downwardVector)
+        {
+            TextMeshProUGUI new_text = UnityEngine.Object.Instantiate<TextMeshProUGUI>(original, originalObject.transform.parent);
+            new_text.color=original.color;
+            new_text.transform.localPosition += new Vector3(0f, downwardVector);
+            UITextDataLoader textloader = new_text.transform.gameObject.GetComponent<UITextDataLoader>();
+            textloader.key = key;
+        }
+        public static Difficulty ReadDifficulty()
         {
             Difficulty Dif = Difficulty.Normal;
             try
@@ -112,25 +156,11 @@ namespace EmotionalFix
                 foreach (string str in File.ReadAllLines(modPath + "/Difficulty.txt"))
                 {
                     string text = str.Trim();
-                    if (!text.StartsWith("Choose Your Difficulty (Casual, Normal, Hard, Brutal):"))
+                    if (!text.StartsWith(DifficultyTextPrefix))
                         continue;
-                    int i = text.IndexOf("Choose Your Difficulty (Casual, Normal, Hard, Brutal):");
-                    text = text.Remove(i, "Choose Your Difficulty (Casual, Normal, Hard, Brutal):".Length);
-                    if (text.Contains("Casual"))
-                    {
-                        Dif = Difficulty.Easy;
-                        break;
-                    }
-                    if (text.Contains("Normal"))
-                    {
-                        Dif = Difficulty.Normal;
-                        break;
-                    }
-                    if (text.Contains("Hard"))
-                    {
-                        Dif = Difficulty.Hard;
-                        break;
-                    }
+                    int i = text.IndexOf(DifficultyTextPrefix);
+                    text = text.Remove(i, DifficultyTextPrefix.Length).Trim();
+                    return (Difficulty) Enum.Parse(typeof(Difficulty), text);  
                 }
                 Debug.Log("Your Difficulty is " + Dif.ToString());
             }
@@ -145,16 +175,16 @@ namespace EmotionalFix
         public static List<EmotionCardXmlInfo> LoadEmotion(int emotionlevel)
         {
             List<EmotionCardXmlInfo> list=new List<EmotionCardXmlInfo>();
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Malkuth, LibraryModel.Instance.GetFloor(SephirahType.Malkuth).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Yesod, LibraryModel.Instance.GetFloor(SephirahType.Yesod ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Hod , LibraryModel.Instance.GetFloor(SephirahType.Hod ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Netzach , LibraryModel.Instance.GetFloor(SephirahType.Netzach).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Tiphereth , LibraryModel.Instance.GetFloor(SephirahType.Tiphereth ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Gebura , LibraryModel.Instance.GetFloor(SephirahType.Gebura ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Chesed , LibraryModel.Instance.GetFloor(SephirahType.Chesed ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Binah , LibraryModel.Instance.GetFloor(SephirahType.Binah ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Hokma , LibraryModel.Instance.GetFloor(SephirahType.Hokma ).Level, emotionlevel));
-            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Keter , LibraryModel.Instance.GetFloor(SephirahType.Keter ).Level, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Malkuth, 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Yesod, 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Hod , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Netzach , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Tiphereth , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Gebura , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Chesed , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Binah , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Hokma , 7, emotionlevel));
+            list.AddRange(EmotionCardXmlList.Instance.GetDataList(SephirahType.Keter , 7, emotionlevel));
             return list;
         }
         public static void AssignPassive(BattleUnitModel unit)
@@ -216,6 +246,12 @@ namespace EmotionalFix
             27925201, 27925202, 27925203, //秘法师1
             27925214,27925215,27925216, //秘法师2
             27925205,27925206,27925207,27925208,27925209, //秘法师3
+            226769011,226769012,226769013,226769014,226769015,226769016,226769017,226769018,226769019,226769020, //永远亭
+            226769021,226769022,226769023,226769024,226769025,226769026,226769027,226769028,226769029,226769030,
+            226769031,226769032,226769033,226769034,226769035,226769036,226769037,226769038,226769039,226769040,
+            226769041,226769042,226769043,226769044,226769045,226769046,226769047,226769048,226769049,226769050,
+            226769011,226769012,226769013,226769014,226769015,226769016,226769017,226769018,226769059,226769060,
+
         };
         public static List<int> ExcludedEnemyID => new List<int>()
         {
@@ -237,5 +273,20 @@ namespace EmotionalFix
                 ConfigAPI.Init(name, config);
             }
         }*/
+    }
+
+    public enum EmotionBundle
+    {
+        None,
+        Clown,
+        Whitenight,
+        Gift
+    }
+    public enum Difficulty
+    {
+        None,
+        Easy,
+        Normal,
+        Hard
     }
 }

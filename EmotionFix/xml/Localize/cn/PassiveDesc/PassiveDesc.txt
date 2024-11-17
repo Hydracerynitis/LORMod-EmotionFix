@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PassiveDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<PassiveDesc ID="666">
-		<Name>我思故我在</Name> 
-		<Desc>每一幕结束时若来宾已达到情感等级1,3,5则获取一个随机已解锁的异想体书页</Desc>
+		<Name>EmotionFix 简单</Name> 
+		<Desc>每一幕结束时若来宾已达到情感等级1,3,5则获取一个随机异想体书页</Desc>
 	</PassiveDesc>
 	<PassiveDesc ID="667">
-		<Name>最美妙的声音</Name> 
-		<Desc>每一幕结束时若来宾已提升情感等级候则获取一个随机已解锁的异想体书页</Desc>
+		<Name>EmotionFix 正常</Name> 
+		<Desc>每一幕结束时若来宾已提升情感等级候则获取一个随机异想体书页</Desc>
 	</PassiveDesc>
 	<PassiveDesc ID="668">
-		<Name>光之种</Name> 
+		<Name>EmotionFix 困难</Name> 
 		<Desc>首次开启舞台时根据司书方平均情感等级提升情感等级
-每一幕结束时若来宾已提升情感等级则获取一个随机已解锁的异想体书页</Desc>
+每一幕结束时若来宾已提升情感等级则获取一个随机异想体书页</Desc>
 	</PassiveDesc>
 </PassiveDescRoot>
